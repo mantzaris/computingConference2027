@@ -1,0 +1,33 @@
+{
+  "actual_local_generation": true,
+  "bank_hash": "3024c44cd28a9a0a63e14493666c52d7b4f21b6623b7f68c297287139c82197c",
+  "candidate_count": 8,
+  "complete": true,
+  "counts": {
+    "accepted_changes": 1,
+    "cycles": 0,
+    "duplicate_graphs": 0,
+    "invalid_nodes": 0,
+    "malformed_output": 0,
+    "score_rejections": 5,
+    "valid_new_edits": 6,
+    "valid_no_change": 0
+  },
+  "item": {
+    "budget": 100,
+    "d": 5,
+    "data_hash": "eb2c5789f31d8380ee35b9cde0405cfa982abe665bcc3e8a707cf14a3521c86f",
+    "data_id": "p2-dev-heteroscedastic-d5-s295101-B100-semantic",
+    "family": "heteroscedastic",
+    "seed": 295101,
+    "study": "semantic"
+  },
+  "no_main_or_final_outcomes": true,
+  "revision": {
+    "device": "cuda",
+    "license": "apache-2.0",
+    "model": "Qwen/Qwen3-8B",
+    "precision": "bfloat16",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  }
+}

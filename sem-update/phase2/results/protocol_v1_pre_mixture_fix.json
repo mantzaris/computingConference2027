@@ -1,0 +1,488 @@
+{
+  "config": {
+    "additional_gpu_hours": 16,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 261017,
+    "budgets": [
+      100,
+      400
+    ],
+    "checkpoints": {
+      "fit_seconds": [
+        60,
+        120,
+        180,
+        240,
+        360
+      ],
+      "fitting_updates": [
+        4000,
+        6000,
+        8000,
+        10000,
+        12000
+      ]
+    },
+    "corruptions": [
+      0.2,
+      0.5
+    ],
+    "dcdi": {
+      "batch_size": 256,
+      "block_steps": 100,
+      "flow_layers": 2,
+      "flow_width": 8,
+      "layers": 2,
+      "learning_rate": 0.001,
+      "max_indegree": 3,
+      "reg_coeff": 0.1,
+      "seed": 8821,
+      "steps": 60000,
+      "threshold": 0.5,
+      "width": 64
+    },
+    "evaluation_projections": 256,
+    "evaluation_samples": 2048,
+    "families": [
+      "linear",
+      "nonlinear",
+      "heteroscedastic"
+    ],
+    "family_seed_bases": {
+      "heteroscedastic": 213001,
+      "linear": 211001,
+      "nonlinear": 212001
+    },
+    "metadata_variants": [
+      "coherent",
+      "anonymous",
+      "shuffled"
+    ],
+    "parallel_workers": 3,
+    "real_block_rows": 10,
+    "rho": 0.5,
+    "ridge_alpha": 0.1,
+    "ridge_grid": [
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "ridge_variance_floor": 0.0001,
+    "scms_per_family": 5,
+    "search": {
+      "audit_nll_slack": 0.05,
+      "audit_w_factor": 1.05,
+      "audit_w_slack": 0.001,
+      "beta": 1.0,
+      "candidate_budget": 12,
+      "diagnostic_cap": 256,
+      "edge_penalty": 0.02,
+      "improvement": 0.005,
+      "per_round": 3,
+      "permutations": 32,
+      "projections": 64,
+      "rounds": 4,
+      "samples": 512,
+      "seed": 491
+    },
+    "semantic_seeds": [
+      241001,
+      241002,
+      241003,
+      241004,
+      241005
+    ],
+    "sizes": [
+      5
+    ],
+    "tau": 0.01,
+    "train": {
+      "batch_size": 256,
+      "bins": 8,
+      "check_every": 50,
+      "learning_rate": 0.001,
+      "patience": 5,
+      "seed": 707,
+      "steps": 1000,
+      "transforms": 2,
+      "weight_decay": 1e-05,
+      "width": 64
+    },
+    "version": 2
+  },
+  "correctness_sha256": "1950b039781d08d6a7f6b58e8d9d89d57c04c817a9ec896e589e4cf3021539ee",
+  "dependency_lock_sha256": "7ab175510e213e0078c6e85361518125755b404ed34547331a29042e31ddf6a3",
+  "historical_commit": "ad21e604ef37f65e20ce32d78b0c2d04a0737cd7",
+  "human_scientific_review": "pending; no approval inferred",
+  "illustration_source_at_freeze": "8165ce2a31fb9f27fc884a935940848bc36fab393ef96f182c88ccf18bfef0e1",
+  "matrix": [
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "d080ca249b712fd36e131cec67180f8effe22118a90afec65706b2cac240832d",
+      "data_id": "p2-main-linear-d5-s211001-B100",
+      "family": "linear",
+      "manifest_sha256": "2267003eaa44c14b3ab66f7af2a328417a7ca706ac0eae7ead4f524f79ad1236",
+      "seed": 211001,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "60a9f8c14a63826644fa331b2b2b4f72318a8599aab317ba7e975f0e1f44a221",
+      "data_id": "p2-main-linear-d5-s211001-B400",
+      "family": "linear",
+      "manifest_sha256": "37788f37723bb86435453ffe8ee550790fdf0cffc45483cb69ee3489d2e8a4fb",
+      "seed": 211001,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "5d558a13b31059afb4770266a600615783ffb0f7fb75d92047d6fe579ac34109",
+      "data_id": "p2-main-linear-d5-s211002-B100",
+      "family": "linear",
+      "manifest_sha256": "463ea8e9e616d1fc9dd899c5fc56275338eb9af37ab5a9ba1a0ce3a05a305594",
+      "seed": 211002,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "7bc80131605efe4e91e07681658c4a71d320633a5d39b2fdfa028e57b3072599",
+      "data_id": "p2-main-linear-d5-s211002-B400",
+      "family": "linear",
+      "manifest_sha256": "34d0ebf522cbd6d7507ab654a1c4062edae1a30f28ed2dd696a671cc352c0d47",
+      "seed": 211002,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "7c56d4b1b341072b905581a5817abdb0d67f285582a9f4c6837599ae4d100115",
+      "data_id": "p2-main-linear-d5-s211003-B100",
+      "family": "linear",
+      "manifest_sha256": "9f71d813de35b92d5a6129b34e4aaaf2b69f1364ebb02d908f48ec3010add39e",
+      "seed": 211003,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "bd20cbc07471d94b9635f63350465280f4200fdfbe9db0d5033e3e5609704896",
+      "data_id": "p2-main-linear-d5-s211003-B400",
+      "family": "linear",
+      "manifest_sha256": "64a06adee644f3cfd4916f4869ec252ee9361099eefacc9d43c980f2c7ff7b36",
+      "seed": 211003,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "02eab91b075413e6e8a84cb24ce6671e1343da9c576880eebdfe3e168b12189d",
+      "data_id": "p2-main-linear-d5-s211004-B100",
+      "family": "linear",
+      "manifest_sha256": "abc6036b4162ec50730435a20f5a7dc339221320e627983f2428de6b1ebadff6",
+      "seed": 211004,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "9c3f8cd9ed5a6d2bde47dcbd7aad7855fccc5f153e87a822baf6b424b11b3498",
+      "data_id": "p2-main-linear-d5-s211004-B400",
+      "family": "linear",
+      "manifest_sha256": "bcaaf3a2839dcfb90730fd471aa8da49757cb7e0574d8cf164c87e0e743a07c2",
+      "seed": 211004,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "c0237caf096c9efd2af515b279f81e542fc9a923e435a0db7a32b79ddccd0131",
+      "data_id": "p2-main-linear-d5-s211005-B100",
+      "family": "linear",
+      "manifest_sha256": "a994793850451ad0f69fb739a77c81e4c0db80cda948148b22cc5c95f55308b3",
+      "seed": 211005,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "ab3d98c08953d1fc40ba88aaada1f7878e1d21512bbcd10e4c2613220b8e0535",
+      "data_id": "p2-main-linear-d5-s211005-B400",
+      "family": "linear",
+      "manifest_sha256": "ac5126f2b6461260af48e9dfff47f8346cfb9f2aa019b820e7d226da9b78e73a",
+      "seed": 211005,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "12c56c31bb01cb520e8a731750291b880923cd09bb364b2445fa5281392d505e",
+      "data_id": "p2-main-nonlinear-d5-s212001-B100",
+      "family": "nonlinear",
+      "manifest_sha256": "e9476d42cedba9357fc304bf7400a67f7587b12ca61a6163dc2823e7c7dd3691",
+      "seed": 212001,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "6eeba99071577eebe266ac70cc9fd1b6a90b95f33cff5064f376793c3346fd16",
+      "data_id": "p2-main-nonlinear-d5-s212001-B400",
+      "family": "nonlinear",
+      "manifest_sha256": "67148254d6bcfae00cd0624c64614c7505e18d0d0d6db878c52b2feaef334ded",
+      "seed": 212001,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "5c757fdead15c34851ce7623c30897869726b06083c8d44aab3bd436b27cc3d6",
+      "data_id": "p2-main-nonlinear-d5-s212002-B100",
+      "family": "nonlinear",
+      "manifest_sha256": "5777ad1d6e9fc9df8d8c1591f0073f7146e05655f4ffbd28bf63409b621d4a20",
+      "seed": 212002,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "9fffba322c64f33d26f0f9ff052a96ea3250c36cd816823505104df980866d2d",
+      "data_id": "p2-main-nonlinear-d5-s212002-B400",
+      "family": "nonlinear",
+      "manifest_sha256": "8c19b5e3a8a0cd9f407af83a61df34daba8301709d4704a3037e79acbe8d49b5",
+      "seed": 212002,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "8c110d60f77bf466fc881480ad0699385c52ed2fb9d9883d40a8fc17e38f940b",
+      "data_id": "p2-main-nonlinear-d5-s212003-B100",
+      "family": "nonlinear",
+      "manifest_sha256": "6a693a609550c205d88250f0832efa6d9ec44f2076e355aca493160bf04f75a7",
+      "seed": 212003,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "57d208c8365a31c3468d9f27aeddfaa06cb95b919677996b5c8d7e2118c31021",
+      "data_id": "p2-main-nonlinear-d5-s212003-B400",
+      "family": "nonlinear",
+      "manifest_sha256": "f6f7535e7362303fd96926a8f4100085aac4d1585889f9aa6fb26a585f8d56fa",
+      "seed": 212003,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "f50a67efe63137a8ef68858e2dceef1b7cdbf20eca805a4e1f814d1571d737ee",
+      "data_id": "p2-main-nonlinear-d5-s212004-B100",
+      "family": "nonlinear",
+      "manifest_sha256": "9aef3eb7c3c57fd51afb92c6a7088caa6126a138b30d66b6b0ae26cc94cf3fe5",
+      "seed": 212004,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "f918a61dccec720a0bfa718d743e5221e8d74a3862eb1a365d40b001d88a4eea",
+      "data_id": "p2-main-nonlinear-d5-s212004-B400",
+      "family": "nonlinear",
+      "manifest_sha256": "2665628fa42f89dae24abb6d443cd2d86dad026822902cda4b53347d43cb867d",
+      "seed": 212004,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "efff204740b93bf0466ee2b3e392663d68b4714aa520775e00267540b847f92b",
+      "data_id": "p2-main-nonlinear-d5-s212005-B100",
+      "family": "nonlinear",
+      "manifest_sha256": "b9ec72200f40824a6b927e27b5c40c65991be5f6d08b347fed7cbe9b9804669f",
+      "seed": 212005,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "ea53c921444cebdfa917bb6a32e3a1ac99a5e95e395eb8f54ca5fc4230adbf2e",
+      "data_id": "p2-main-nonlinear-d5-s212005-B400",
+      "family": "nonlinear",
+      "manifest_sha256": "dc26beb16457e036d5aed4eb123d3a7c4c0a0ee9334d2fe8ee287ad0bf596310",
+      "seed": 212005,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "437b3abaebbc57203ad30983ff145aecb9c85c2b9c67e468fa9e73e2ae1767bb",
+      "data_id": "p2-main-heteroscedastic-d5-s213001-B100",
+      "family": "heteroscedastic",
+      "manifest_sha256": "1bb76c1a30d76930d24760554c8d069f0e43b111b86ebaf3a3c8b7c67671026b",
+      "seed": 213001,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "092b53d8498e2e35e05fc9af973ca851144e8b0dcfbd550fd14a77015f162834",
+      "data_id": "p2-main-heteroscedastic-d5-s213001-B400",
+      "family": "heteroscedastic",
+      "manifest_sha256": "4f8afa7e60058ddc4c8892166ed98a41bf7859a5f48619955f6444a72318c933",
+      "seed": 213001,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "5d3f79c3220acd8b4f94fb498d9b6b8897c008f3c35f5f91f22feae2d3b2a73d",
+      "data_id": "p2-main-heteroscedastic-d5-s213002-B100",
+      "family": "heteroscedastic",
+      "manifest_sha256": "752d962aa9bdf7931ee40f0e559080828338af14370592e0367bff1ffe196865",
+      "seed": 213002,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "829847acbad2fbe311a9193329b4cca2083257e1a08c3d842a1481d565a3fcd6",
+      "data_id": "p2-main-heteroscedastic-d5-s213002-B400",
+      "family": "heteroscedastic",
+      "manifest_sha256": "a3fecc1525ba69d5e243b3ff6d1a437ebd7460e9ae68c655825df06cf79e8200",
+      "seed": 213002,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "732193d6e75393da040e8142ee46459ecc1afbab9c9965b48c5621d1c6018390",
+      "data_id": "p2-main-heteroscedastic-d5-s213003-B100",
+      "family": "heteroscedastic",
+      "manifest_sha256": "06f61d7789b236c4d4f0dd1092f6c0744c09ff7b9ef9736ab22cb913aa5c89ff",
+      "seed": 213003,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "afc5a5efc8118ce29184d6deb917da4eb066645d33a633fda0dded2a6578d55a",
+      "data_id": "p2-main-heteroscedastic-d5-s213003-B400",
+      "family": "heteroscedastic",
+      "manifest_sha256": "cf354c123221f5e043f71acee0381591b0c95bd9a39b7d06f03b6f7f821a85ec",
+      "seed": 213003,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "22163d342eaf2722fec1d77279c13e7ec1c61b79e72471952cb9c4d4adf9ca8a",
+      "data_id": "p2-main-heteroscedastic-d5-s213004-B100",
+      "family": "heteroscedastic",
+      "manifest_sha256": "b707c3c913e7e01b4fa9769c7be402e73da658d6807628e1b9f691b8e0a593c3",
+      "seed": 213004,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "fc725721fd66039f54fdd8f90e552f03aab157bb5989fcb4a18671f15ccdd144",
+      "data_id": "p2-main-heteroscedastic-d5-s213004-B400",
+      "family": "heteroscedastic",
+      "manifest_sha256": "214999702d1c53387187f6af8d1dc68f757c9b80e93e6aeca65964c569a464a9",
+      "seed": 213004,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "22a44ba55f7755249900a35d1ad3ef5f17529c4abfa0a0934964028da7034ce6",
+      "data_id": "p2-main-heteroscedastic-d5-s213005-B100",
+      "family": "heteroscedastic",
+      "manifest_sha256": "7ba4dfffcafca9eee2c6fe823d3392e1e3ac2a57211d1d88c2678eaf0942a490",
+      "seed": 213005,
+      "study": "controlled"
+    },
+    {
+      "budget": 400,
+      "d": 5,
+      "data_hash": "d1c543f7af0aafe377dadd154c6e85a905e4e5bf3401d3ccb817b2a117a13e94",
+      "data_id": "p2-main-heteroscedastic-d5-s213005-B400",
+      "family": "heteroscedastic",
+      "manifest_sha256": "a79ae648089e83ee47c9e2fd5b240a0c3ef73547d7976f0e110211bdc1febcae",
+      "seed": 213005,
+      "study": "controlled"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "86305a2a20e4a16650c3ad53714acef1e882b25c26830d80394db57b55fb14c0",
+      "data_id": "p2-main-heteroscedastic-d5-s241001-B100-semantic",
+      "family": "heteroscedastic",
+      "manifest_sha256": "fab2bc7b7fd6be1af7bdf6d9a781551280d394a582135b4f7d1d87534ebb3440",
+      "seed": 241001,
+      "study": "semantic"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "464464c8ef7bd4eff076591a3186aad12ef0163e0cd8d5d49d482e4d24f86eaa",
+      "data_id": "p2-main-heteroscedastic-d5-s241002-B100-semantic",
+      "family": "heteroscedastic",
+      "manifest_sha256": "435927e2e59d09ac561f82f135336baf662925c92fe42d2ac4fe49a2e8f9074f",
+      "seed": 241002,
+      "study": "semantic"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "683a5ff373a826aaa963d3c19ef34fd145b7eacdb00cd2158a7fcc88bab93201",
+      "data_id": "p2-main-heteroscedastic-d5-s241003-B100-semantic",
+      "family": "heteroscedastic",
+      "manifest_sha256": "e3f9d5220e0c546b74a34b00870957896ef32d94e508a61f63a38834862a7726",
+      "seed": 241003,
+      "study": "semantic"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "fb79a0e49312dfbecd543bc6c8ed2a72b2c1e3be0a6a2650c2486a31fcbd3bf7",
+      "data_id": "p2-main-heteroscedastic-d5-s241004-B100-semantic",
+      "family": "heteroscedastic",
+      "manifest_sha256": "0f75925795f88deabe17697caca8b11c7a054156047d0b3dde1a7052738b7774",
+      "seed": 241004,
+      "study": "semantic"
+    },
+    {
+      "budget": 100,
+      "d": 5,
+      "data_hash": "772d76457e131d5688a4d592c44e9721ebe25758d5988f5e3bda800d4d0e0dc0",
+      "data_id": "p2-main-heteroscedastic-d5-s241005-B100-semantic",
+      "family": "heteroscedastic",
+      "manifest_sha256": "8cd9b38cb8c6d4383c21da499dc8620e3bc4b4856c585262d095fbea9cd95751",
+      "seed": 241005,
+      "study": "semantic"
+    },
+    {
+      "budget": 400,
+      "d": 6,
+      "data_hash": "23dbbe3d1494a07aa585b47f311b222d3e2f29d2008e1077942eff4e59de9468",
+      "data_id": "p2-chambers-B400",
+      "family": "real",
+      "manifest_sha256": "8e73f8b59e05d00779040b66b8630555c5b98c4ba332962a0aec82429fc3499d",
+      "seed": 244001,
+      "study": "real"
+    }
+  ],
+  "pilots_sha256": "8bfeef79c3e20888f41fb074ec74f0836780ad5cb4c9880bcaab1f22aece457b",
+  "primary_endpoint": "T2 standardized joint non-target sliced Wasserstein, equal environments",
+  "protocol_hash": "f35e3c3fb8673c02fbfeae8e12b41c7837884090a47fd8ff8463e2674af85285",
+  "reporting_source_at_freeze": "136c7482a607c4c5f4caf51f89f42b2381f39108a706ad7d28fa0324b2a45096",
+  "scientific_hash": "cadf90621872671e58ebe3ec46d66f56fd37f1dd170a96d827ac1944f8c8e663",
+  "splits_sha256": "0027cc75e16e45240ccc0171aba6bb68bc27998c6219da39da8bd945d770de78",
+  "timestamp_utc": "2026-10-07T17:57:22Z"
+}

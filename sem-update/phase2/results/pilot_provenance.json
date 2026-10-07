@@ -1,0 +1,7 @@
+{
+  "source_archive": ".artifacts/phase2/archives/pilot-source.tar.gz",
+  "archive_sha256": "9c4c45743efe503f8b8207f2f14952c0425f01be2bd14092bbef9be5b4163746",
+  "config": "phase2/configs/pilots.json",
+  "config_sha256": "a892dbfad9c62c8cd5f0ac11662cd4954c3124edfc6423a8d4456b16ddfce16c",
+  "note": "Original executed pilot source/configuration retained. Main cap and cache-isolation changes were made before protocol freeze; pilots are development-only."
+}

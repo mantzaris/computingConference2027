@@ -1,0 +1,22 @@
+study,endpoint,metadata_variant,method,mean,low,high,interval_type
+semantic,T2,coherent,M0,0.110261224,0.103652484,0.117500323,SCM-cluster
+semantic,T2,coherent,M1,0.10155354,0.0894190505,0.117680674,SCM-cluster
+semantic,T2,coherent,M2,0.0947348355,0.0829271505,0.109776225,SCM-cluster
+semantic,T2,coherent,M3,0.111664542,0.0869559561,0.142403592,SCM-cluster
+semantic,T2,coherent,M4,0.104708896,0.080445528,0.140965782,SCM-cluster
+semantic,T2,coherent,M5,0.0925045991,0.0741757904,0.115057696,SCM-cluster
+semantic,T2,coherent,llm_edit,0.118084678,0.0978796602,0.147050658,SCM-cluster
+real,T2,coherent,M0,2.71087337,2.68442841,2.73193344,conditional within-run reporting-block
+real,T2,coherent,M1,0.0855734125,0.0736848725,0.114092628,conditional within-run reporting-block
+real,T2,coherent,M2,0.172341704,0.153831526,0.197414481,conditional within-run reporting-block
+real,T2,coherent,M3,0.134851247,0.118391833,0.160377855,conditional within-run reporting-block
+real,T2,coherent,M4,0.134851247,0.118391833,0.160377855,conditional within-run reporting-block
+real,T2,coherent,M5,0.145990953,0.128401076,0.171157175,conditional within-run reporting-block
+real,T2,coherent,llm_edit,0.219696581,0.199507114,0.244693826,conditional within-run reporting-block
+real,T2_exploratory,coherent,M0,1.27834638,1.26363918,1.292477,conditional within-run reporting-block
+real,T2_exploratory,coherent,M1,0.130826776,0.123152501,0.149357413,conditional within-run reporting-block
+real,T2_exploratory,coherent,M2,0.11432004,0.106805972,0.134157376,conditional within-run reporting-block
+real,T2_exploratory,coherent,M3,0.115376299,0.108832314,0.134820221,conditional within-run reporting-block
+real,T2_exploratory,coherent,M4,0.115376299,0.108832314,0.134820221,conditional within-run reporting-block
+real,T2_exploratory,coherent,M5,0.113104152,0.105596491,0.133685949,conditional within-run reporting-block
+real,T2_exploratory,coherent,llm_edit,0.114318793,0.107054493,0.133702916,conditional within-run reporting-block

@@ -1,0 +1,172 @@
+{
+  "arrows": [
+    [
+      [
+        2.5,
+        3.0
+      ],
+      [
+        2.5,
+        2.81
+      ]
+    ],
+    [
+      [
+        1.53,
+        2.56
+      ],
+      [
+        1.6,
+        2.56
+      ]
+    ],
+    [
+      [
+        1.99,
+        2.3
+      ],
+      [
+        1.12,
+        1.99
+      ]
+    ],
+    [
+      [
+        2.5,
+        2.3
+      ],
+      [
+        2.8,
+        1.99
+      ]
+    ],
+    [
+      [
+        3.01,
+        2.3
+      ],
+      [
+        4.48,
+        1.99
+      ]
+    ],
+    [
+      [
+        0.82,
+        1.36
+      ],
+      [
+        1.7,
+        1.11
+      ]
+    ],
+    [
+      [
+        2.5,
+        1.36
+      ],
+      [
+        2.5,
+        1.11
+      ]
+    ],
+    [
+      [
+        4.18,
+        1.36
+      ],
+      [
+        3.3,
+        1.11
+      ]
+    ],
+    [
+      [
+        2.5,
+        0.65
+      ],
+      [
+        2.5,
+        0.44
+      ]
+    ]
+  ],
+  "boxes": [
+    [
+      "fit",
+      "Fit + early stop\nshared intact flow mechanisms",
+      2.5,
+      3.23,
+      2.55,
+      0.47
+    ],
+    [
+      "search",
+      "Search data\n+ graph proposals",
+      0.82,
+      2.56,
+      1.38,
+      0.48
+    ],
+    [
+      "bank",
+      "Immutable candidate bank\nincludes initial G0",
+      2.5,
+      2.56,
+      1.75,
+      0.48
+    ],
+    [
+      "cal",
+      "Calibration data\nno additional fitting",
+      4.18,
+      2.56,
+      1.38,
+      0.48
+    ],
+    [
+      "M3",
+      "M3: average\nscore selection",
+      0.82,
+      1.68,
+      1.42,
+      0.57
+    ],
+    [
+      "M4",
+      "M4: robust selection\n\u03c1 = 0.5",
+      2.5,
+      1.68,
+      1.42,
+      0.57
+    ],
+    [
+      "M5",
+      "M5: predictive mixture\n\u03c4 = 0.01",
+      4.18,
+      1.68,
+      1.42,
+      0.57
+    ],
+    [
+      "audit",
+      "One audit comparison; rejection returns G0",
+      2.5,
+      0.88,
+      3.6,
+      0.42
+    ],
+    [
+      "test",
+      "Frozen final prediction: T1 / T2 / T3",
+      2.5,
+      0.2,
+      3.6,
+      0.42
+    ]
+  ],
+  "rho": 0.5,
+  "scope": "M3/M4/M5 share one bank; M0/M1/M2 are separate main controls",
+  "source": "phase2/results/protocol.json; schematic, no experimental outcome values",
+  "tau": 0.01
+}

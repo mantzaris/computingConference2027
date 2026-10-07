@@ -1,0 +1,25 @@
+method,comparison,paired_scms,mean,low,high,independent_scms
+M0,anonymous - coherent,5,0,0,0,5
+M0,shuffled - coherent,5,0,0,0,5
+M1,anonymous - coherent,5,-0.00100364506,-0.00464898236,0.00192519702,5
+M1,shuffled - coherent,5,-0.00679895124,-0.0305758588,0.00897123412,5
+M2,anonymous - coherent,5,0,0,0,5
+M2,shuffled - coherent,5,0,0,0,5
+M3,anonymous - coherent,5,0.00744245146,0,0.01757751,5
+M3,shuffled - coherent,5,0.0135197065,-0.0013100168,0.0317504529,5
+M4,anonymous - coherent,5,0.0143980974,0.0023749222,0.0264212726,5
+M4,shuffled - coherent,5,0.0204753524,0.00375751246,0.0371931924,5
+M5,anonymous - coherent,5,-0.00188909962,-0.007945889,0.00350581124,5
+M5,shuffled - coherent,5,-0.00954679842,-0.0263454423,0.00330788396,5
+fixed,anonymous - coherent,5,0.00351634322,-0.0053511828,0.0145397077,5
+fixed,shuffled - coherent,5,0.00161143336,-0.0188597366,0.0174513985,5
+llm_edit,anonymous - coherent,5,-0.0073070722,-0.0325879728,0.0107345538,5
+llm_edit,shuffled - coherent,5,-0.00764455316,-0.0215219463,-3.38988e-05,5
+random,anonymous - coherent,5,0.0081535985,-0.00174523392,0.019161274,5
+random,shuffled - coherent,5,0.0097021667,-0.0227691515,0.0417728195,5
+rho0,anonymous - coherent,5,0.00744245146,0,0.01757751,5
+rho0,shuffled - coherent,5,0.0135197065,-0.0013100168,0.0317504529,5
+tau0,anonymous - coherent,5,-0.00561697444,-0.0333512746,0.0129370048,5
+tau0,shuffled - coherent,5,-0.0142049657,-0.0508605859,0.0118387722,5
+uniform,anonymous - coherent,5,0.00061772478,-0.00309825972,0.00410441756,5
+uniform,shuffled - coherent,5,-0.00771270094,-0.022529542,0.00346901814,5

@@ -1,0 +1,47 @@
+{
+  "actual_job_cost_scope": "single-device union, including development and failed attempts; do not sum duplicated method-condition runtime fields",
+  "controlled_independent_scms": 15,
+  "cost_scope": "logical full bank per method; actual incremental attribution follows execution order and can recur where a dataset model serves several conditions",
+  "cumulative_device_hours": 16.09346407989661,
+  "datasets": 36,
+  "failed_jobs": [],
+  "historical_device_hours": 10.318524638083247,
+  "maximum_recorded_method_peak_allocated_vram_bytes": 16705772032,
+  "method_conditions_selected": 2390,
+  "mixture_grid_fallbacks": 0,
+  "phase2_device_hours": 5.774939441813363,
+  "retried_jobs": [
+    {
+      "attempts": 2,
+      "config_hash": "95a593c062fc584689bfd897128c93049b259089670f04836030f999e3e47555",
+      "error": null,
+      "id": "phase2-p2-main-linear-d5-s211001-B400-discovery",
+      "status": "complete"
+    },
+    {
+      "attempts": 2,
+      "config_hash": "6759f3d96d8648bcb3041fc3cdafc56bb925db798d635e1c1e34f2bcb1768313",
+      "error": null,
+      "id": "phase2-p2-main-linear-d5-s211002-B100-discovery",
+      "status": "complete"
+    },
+    {
+      "attempts": 2,
+      "config_hash": "59980d561eab4a74a7892d3b473c5fd63a32149af36e90317b4e48a5d57b79d4",
+      "error": null,
+      "id": "phase2-p2-main-linear-d5-s211001-B100-discovery",
+      "status": "complete"
+    }
+  ],
+  "sampled_device_memory": {
+    "artifact": "logs/gpu_utilization.csv",
+    "maximum_used_mib": 16933.0,
+    "readings": 4137,
+    "sampling_scope": "nvidia-smi heartbeat samples approximately every ten seconds per active job; maximum observed device use, not a continuously measured peak",
+    "sha256": "7d3c2b15eaa9110946f412802be37688ead90b55f74437e51183672015e2fba0"
+  },
+  "semantic_independent_scms": 5,
+  "settings": 78,
+  "six_main_conditions": 468,
+  "vram_scope": "maximum allocated CUDA tensor memory per process/stage, including separate LLM stages; not a continuous device-wide reserved-memory trace"
+}

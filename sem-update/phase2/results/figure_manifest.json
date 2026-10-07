@@ -1,0 +1,65 @@
+{
+  "analysis_sources": {
+    "illustrations.py": "7f0f7fc9c7d69c922e91f00b266fab6f0ca1ef83d4c99b27aacdd56b0c028153",
+    "reporting.py": "878406a63914e370d0c930bb5c540813bcc1ae74e38bc52afa3c80e15b2cc8a4"
+  },
+  "files": {
+    "F0_method_overview.pdf": "d37c9ae045c49cb30ad07c9a9eb00b9eb0eedda18f1298202faccd80395dc6b4",
+    "F0_method_overview.png": "0bed0804320179e9ee74a234fed3e720bdf087259b379bc3f6e7d02c0ec270e3",
+    "F0_method_overview.svg": "a869ffe84aa2eb44d5c36a3c464cd63922e6bf9f6503f4e9882d62a281d6d7d1",
+    "F1_family_budget.pdf": "a5d79cacacda4769fff939030c030e2adb1b99aafb70c4290ef7f0327c3a12a9",
+    "F1_family_budget.png": "66dc6f3bffa69f2e0773f072f055165817605e6b8824fa34de175051e600139f",
+    "F1_family_budget.svg": "1727ca6992ac1aca4ee6a3c4e31fa68bb4a3d2493fc955464c8389efae446c73",
+    "F2_matched_compute.pdf": "e404334e20698b8d488f432adba640746d8dbab41e4fb3ffb4c526363bb176c7",
+    "F2_matched_compute.png": "8db287bca4601e6d77950592dc03c238e7c157b5cd0821fc6585f3c80ec9bf8b",
+    "F2_matched_compute.svg": "a3ebd6bd681984f94adc8f7dd83ebb560b593ae181b951dbe0aec686d9ebe381",
+    "F3_reliability_cost.pdf": "8ab3aa65b5f1fddf1aad756cb6794da0e10d2357866a5d76fef0bcbdcfee62ce",
+    "F3_reliability_cost.png": "a7304c47aa5558461cbefcfb89ce691bd2179b347b0c574309f0e9c14d6386d5",
+    "F3_reliability_cost.svg": "343e9d17a1ecfe3c8c895c2f66cfb006977b720ad2e48cf69d04dc4fc7554e10",
+    "F4_graphs.pdf": "ce2bda6007c1b04ca005699599153a613145fe826fd439fcf8e02fae101c9605",
+    "F4_graphs.png": "8e0a833ba0a84378ebd476b596af1bccb828afb30e05059db833b6667dc8308a",
+    "F4_graphs.svg": "b52b37dfe230d133db0400acf0912d9d032250aafeab1f09cd66ce858cadee62",
+    "F5_adverse_graphs.pdf": "47f4f362ff35884d0855f67071618076658dfa525874aa4b0c8690b5ef574a70",
+    "F5_adverse_graphs.png": "e9887a3a2981ef91736a2a892d3b93a4f74147f25b77d91ecebfff813efe17d8",
+    "F5_adverse_graphs.svg": "6cb534fcd669d9e98079e31fa33871efded50af763e38ad571b3e73a6e5d7309",
+    "F6_response_curves.pdf": "d3d243c3a655a3378330d5601fb295c6670d9943174f8767a5d2f211144e30cd",
+    "F6_response_curves.png": "bb707447a3d8cba0d43fb370d2fb5680afeddd359313879cf2bd26959e49ddb9",
+    "F6_response_curves.svg": "137c5a5fa880021017c0ea377ed0b343de85243f09ee099a48e3bf29bd81f4f9",
+    "F7_separate_panels.pdf": "fa96c17c651e47175c45b191733bf468328b41d13ff6e275485b62c08c89a304",
+    "F7_separate_panels.png": "e53c4ba4a55f061cbb20a843ad94fc2c71dfec3fa7637e28cea096dafaf3cb4f",
+    "F7_separate_panels.svg": "f75b12cbe1832aadf167cd56f808ace36e00ef680ae86ecbad5eabcfb5558f09",
+    "F8_corruption_budget.pdf": "0e53808e4399bd937d29a5525bd337438164cab991a109c9224f659c1e5749ff",
+    "F8_corruption_budget.png": "c65440fdbcca34178f7aad12a7ddb02c8ce899b95b59d837f598cb0831eb28de",
+    "F8_corruption_budget.svg": "b0ab5c467a493bce5f681237d1027720b74462b178b31266c245593d33f0f267"
+  },
+  "illustration_choices": {
+    "adverse": "p2-main-linear-d5-s211004-B100-c0.2-none",
+    "adverse_error_change": 0.07696505640000001,
+    "adverse_harm_threshold": 0.004907310880000001,
+    "adverse_method": "M3",
+    "representative": "p2-main-nonlinear-d5-s212005-B400-c0.5-none"
+  },
+  "intervals": "SCM-cluster confidence intervals; response bands separately labeled predictive",
+  "metrics_sha256": "d36633821f088e9ff91608c093311c897d324fa8eef6841b87fe650d203c6bcd",
+  "plotting_tables": {
+    "F0_plotting.json": "54612c6862bc7e3847159465ca6d78ad9e1e1709d052856cdfdeda4b7dd8c9a3",
+    "F1_plotting.csv": "ca009389b4065ab0e140795784acdcd9f8a35f5941b91429f95c5d0f70e23482",
+    "F4_graphs_plotting.json": "3e318e252356cb3ddf75eb29b76569104ed36a4c545b79c551569445e0effa38",
+    "F5_adverse_graphs_plotting.json": "59a0861d5eaaa6db675cede0994cd40e5df7356149698ce2c684b33417e5525f",
+    "F7_plotting.csv": "30854839ef423fae10764e13022e74141f66f3a834e47bc838dbc1402439d087",
+    "F8_plotting.csv": "a60960bcd1bb3695904daccf1c0cf701df95b854ef18a7f3b7579721d5da13f8",
+    "checkpoint_summary.csv": "08af2536c789e36dd16c47ca98b03c93470312c1f10c114b68264f1956ded37f",
+    "method_summary.csv": "f88f4a60ff1e277f14a258ed91a49bc9bffed619b9997963bbe86b13390f9183",
+    "metrics.csv": "d36633821f088e9ff91608c093311c897d324fa8eef6841b87fe650d203c6bcd",
+    "paired_repairs.csv": "48adbdde0a44b327f11a296c165d73c09dee01cb4533e69b809abab9d2d23ffc",
+    "protocol.json": "a3ba6dee4d8dc38876ff744ead26ee08c339866eaf7d8e901c627809464e19c5",
+    "real_block_intervals.csv": "4eb138994958e537da48b147818fb6b1c29b7b220ca2bed5e86c58faadeed1f6",
+    "repair_reliability.csv": "fc5d046e36f87d871f535aea39cc67ecb0cdc58d4250b2fc45912974d5f76ad8",
+    "response_curves.csv": "085b290fd8d36eba599a422b0f672809c30558e39afac0f9d29513e6550c6b6e",
+    "selected_models.json": "140c732aa71b14a3958246d9c13512ab6abdb4970e6843f7d6b0ce912a01419f"
+  },
+  "source_at_freeze": {
+    "illustration_source_at_freeze": "8165ce2a31fb9f27fc884a935940848bc36fab393ef96f182c88ccf18bfef0e1",
+    "reporting_source_at_freeze": "136c7482a607c4c5f4caf51f89f42b2381f39108a706ad7d28fa0324b2a45096"
+  }
+}

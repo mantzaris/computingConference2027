@@ -1,0 +1,28 @@
+{
+  "actual_development_generation": true,
+  "counts": [
+    {
+      "accepted_changes": 1,
+      "candidate_count": 8,
+      "cycles": 0,
+      "duplicate_graphs": 0,
+      "evaluated_new_candidates": 6,
+      "invalid_nodes": 0,
+      "malformed_output": 0,
+      "metadata_variant": "coherent",
+      "raw_queries_verified": 3,
+      "repeated_valid_proposals_across_retry": 0,
+      "score_rejections": 5,
+      "seed": 295101,
+      "study": "semantic",
+      "task_id": "p2-dev-heteroscedastic-d5-s295101-B100-semantic-llm-validation",
+      "valid_new_edits": 6,
+      "valid_no_change": 0,
+      "valid_unique_proposals_not_evaluated": 0,
+      "validated_unique_proposals_within_round": 6
+    }
+  ],
+  "main_final_outcomes_accessed": false,
+  "passed": true,
+  "reporting_sha256": "ae4a59b6043861a03d8c299e1c38e11854e114d3b03f61dd019e5e929d88bf0c"
+}

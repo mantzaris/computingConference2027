@@ -1,0 +1,9 @@
+{
+  "mechanism_manifest_sha256": "1b0b0d96bbb41d2348ff4f51277b51c06737fa9899bd13e1063b90c5028b0e78",
+  "protocol_hash": "a77be30ed7ca7a89c1f0c24e00f4b7f1f0059bd19b7cc8bbe5ecc42afa4249cf",
+  "scientific_hash": "ddcfef9c2dc87df3cbc196f67fbd35a9c0b4883e9dda5b3038ee6cf3fc1ec3f3",
+  "selected_models_sha256": "140c732aa71b14a3958246d9c13512ab6abdb4970e6843f7d6b0ce912a01419f",
+  "simple_model_manifest_sha256": "e223d113bfb9618e13f123ceb0dc5b5a2130548d0159e9a39556e7ad9aa6eb9b",
+  "tasks": 78,
+  "timestamp_utc": "2026-10-07T23:09:37Z"
+}

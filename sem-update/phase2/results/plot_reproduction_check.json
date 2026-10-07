@@ -1,0 +1,159 @@
+{
+  "checked_at_utc": "2026-10-07T23:25:38.377815+00:00",
+  "exit_code": 0,
+  "cuda_visible_devices": "",
+  "torch_cuda_available": false,
+  "raw_data_or_models_copied": false,
+  "changed_numeric_or_graph_inputs": [],
+  "outputs": {
+    "phase2/paper/figures/F0_method_overview.pdf": {
+      "expected_sha256": "d37c9ae045c49cb30ad07c9a9eb00b9eb0eedda18f1298202faccd80395dc6b4",
+      "reproduced_sha256": "d37c9ae045c49cb30ad07c9a9eb00b9eb0eedda18f1298202faccd80395dc6b4",
+      "identical": true
+    },
+    "phase2/paper/figures/F0_method_overview.png": {
+      "expected_sha256": "0bed0804320179e9ee74a234fed3e720bdf087259b379bc3f6e7d02c0ec270e3",
+      "reproduced_sha256": "0bed0804320179e9ee74a234fed3e720bdf087259b379bc3f6e7d02c0ec270e3",
+      "identical": true
+    },
+    "phase2/paper/figures/F0_method_overview.svg": {
+      "expected_sha256": "a869ffe84aa2eb44d5c36a3c464cd63922e6bf9f6503f4e9882d62a281d6d7d1",
+      "reproduced_sha256": "a869ffe84aa2eb44d5c36a3c464cd63922e6bf9f6503f4e9882d62a281d6d7d1",
+      "identical": true
+    },
+    "phase2/paper/figures/F1_family_budget.pdf": {
+      "expected_sha256": "a5d79cacacda4769fff939030c030e2adb1b99aafb70c4290ef7f0327c3a12a9",
+      "reproduced_sha256": "a5d79cacacda4769fff939030c030e2adb1b99aafb70c4290ef7f0327c3a12a9",
+      "identical": true
+    },
+    "phase2/paper/figures/F1_family_budget.png": {
+      "expected_sha256": "66dc6f3bffa69f2e0773f072f055165817605e6b8824fa34de175051e600139f",
+      "reproduced_sha256": "66dc6f3bffa69f2e0773f072f055165817605e6b8824fa34de175051e600139f",
+      "identical": true
+    },
+    "phase2/paper/figures/F1_family_budget.svg": {
+      "expected_sha256": "1727ca6992ac1aca4ee6a3c4e31fa68bb4a3d2493fc955464c8389efae446c73",
+      "reproduced_sha256": "1727ca6992ac1aca4ee6a3c4e31fa68bb4a3d2493fc955464c8389efae446c73",
+      "identical": true
+    },
+    "phase2/paper/figures/F2_matched_compute.pdf": {
+      "expected_sha256": "e404334e20698b8d488f432adba640746d8dbab41e4fb3ffb4c526363bb176c7",
+      "reproduced_sha256": "e404334e20698b8d488f432adba640746d8dbab41e4fb3ffb4c526363bb176c7",
+      "identical": true
+    },
+    "phase2/paper/figures/F2_matched_compute.png": {
+      "expected_sha256": "8db287bca4601e6d77950592dc03c238e7c157b5cd0821fc6585f3c80ec9bf8b",
+      "reproduced_sha256": "8db287bca4601e6d77950592dc03c238e7c157b5cd0821fc6585f3c80ec9bf8b",
+      "identical": true
+    },
+    "phase2/paper/figures/F2_matched_compute.svg": {
+      "expected_sha256": "a3ebd6bd681984f94adc8f7dd83ebb560b593ae181b951dbe0aec686d9ebe381",
+      "reproduced_sha256": "a3ebd6bd681984f94adc8f7dd83ebb560b593ae181b951dbe0aec686d9ebe381",
+      "identical": true
+    },
+    "phase2/paper/figures/F3_reliability_cost.pdf": {
+      "expected_sha256": "8ab3aa65b5f1fddf1aad756cb6794da0e10d2357866a5d76fef0bcbdcfee62ce",
+      "reproduced_sha256": "8ab3aa65b5f1fddf1aad756cb6794da0e10d2357866a5d76fef0bcbdcfee62ce",
+      "identical": true
+    },
+    "phase2/paper/figures/F3_reliability_cost.png": {
+      "expected_sha256": "a7304c47aa5558461cbefcfb89ce691bd2179b347b0c574309f0e9c14d6386d5",
+      "reproduced_sha256": "a7304c47aa5558461cbefcfb89ce691bd2179b347b0c574309f0e9c14d6386d5",
+      "identical": true
+    },
+    "phase2/paper/figures/F3_reliability_cost.svg": {
+      "expected_sha256": "343e9d17a1ecfe3c8c895c2f66cfb006977b720ad2e48cf69d04dc4fc7554e10",
+      "reproduced_sha256": "343e9d17a1ecfe3c8c895c2f66cfb006977b720ad2e48cf69d04dc4fc7554e10",
+      "identical": true
+    },
+    "phase2/paper/figures/F4_graphs.pdf": {
+      "expected_sha256": "ce2bda6007c1b04ca005699599153a613145fe826fd439fcf8e02fae101c9605",
+      "reproduced_sha256": "ce2bda6007c1b04ca005699599153a613145fe826fd439fcf8e02fae101c9605",
+      "identical": true
+    },
+    "phase2/paper/figures/F4_graphs.png": {
+      "expected_sha256": "8e0a833ba0a84378ebd476b596af1bccb828afb30e05059db833b6667dc8308a",
+      "reproduced_sha256": "8e0a833ba0a84378ebd476b596af1bccb828afb30e05059db833b6667dc8308a",
+      "identical": true
+    },
+    "phase2/paper/figures/F4_graphs.svg": {
+      "expected_sha256": "b52b37dfe230d133db0400acf0912d9d032250aafeab1f09cd66ce858cadee62",
+      "reproduced_sha256": "b52b37dfe230d133db0400acf0912d9d032250aafeab1f09cd66ce858cadee62",
+      "identical": true
+    },
+    "phase2/paper/figures/F5_adverse_graphs.pdf": {
+      "expected_sha256": "47f4f362ff35884d0855f67071618076658dfa525874aa4b0c8690b5ef574a70",
+      "reproduced_sha256": "47f4f362ff35884d0855f67071618076658dfa525874aa4b0c8690b5ef574a70",
+      "identical": true
+    },
+    "phase2/paper/figures/F5_adverse_graphs.png": {
+      "expected_sha256": "e9887a3a2981ef91736a2a892d3b93a4f74147f25b77d91ecebfff813efe17d8",
+      "reproduced_sha256": "e9887a3a2981ef91736a2a892d3b93a4f74147f25b77d91ecebfff813efe17d8",
+      "identical": true
+    },
+    "phase2/paper/figures/F5_adverse_graphs.svg": {
+      "expected_sha256": "6cb534fcd669d9e98079e31fa33871efded50af763e38ad571b3e73a6e5d7309",
+      "reproduced_sha256": "6cb534fcd669d9e98079e31fa33871efded50af763e38ad571b3e73a6e5d7309",
+      "identical": true
+    },
+    "phase2/paper/figures/F6_response_curves.pdf": {
+      "expected_sha256": "d3d243c3a655a3378330d5601fb295c6670d9943174f8767a5d2f211144e30cd",
+      "reproduced_sha256": "d3d243c3a655a3378330d5601fb295c6670d9943174f8767a5d2f211144e30cd",
+      "identical": true
+    },
+    "phase2/paper/figures/F6_response_curves.png": {
+      "expected_sha256": "bb707447a3d8cba0d43fb370d2fb5680afeddd359313879cf2bd26959e49ddb9",
+      "reproduced_sha256": "bb707447a3d8cba0d43fb370d2fb5680afeddd359313879cf2bd26959e49ddb9",
+      "identical": true
+    },
+    "phase2/paper/figures/F6_response_curves.svg": {
+      "expected_sha256": "137c5a5fa880021017c0ea377ed0b343de85243f09ee099a48e3bf29bd81f4f9",
+      "reproduced_sha256": "137c5a5fa880021017c0ea377ed0b343de85243f09ee099a48e3bf29bd81f4f9",
+      "identical": true
+    },
+    "phase2/paper/figures/F7_separate_panels.pdf": {
+      "expected_sha256": "fa96c17c651e47175c45b191733bf468328b41d13ff6e275485b62c08c89a304",
+      "reproduced_sha256": "fa96c17c651e47175c45b191733bf468328b41d13ff6e275485b62c08c89a304",
+      "identical": true
+    },
+    "phase2/paper/figures/F7_separate_panels.png": {
+      "expected_sha256": "e53c4ba4a55f061cbb20a843ad94fc2c71dfec3fa7637e28cea096dafaf3cb4f",
+      "reproduced_sha256": "e53c4ba4a55f061cbb20a843ad94fc2c71dfec3fa7637e28cea096dafaf3cb4f",
+      "identical": true
+    },
+    "phase2/paper/figures/F7_separate_panels.svg": {
+      "expected_sha256": "f75b12cbe1832aadf167cd56f808ace36e00ef680ae86ecbad5eabcfb5558f09",
+      "reproduced_sha256": "f75b12cbe1832aadf167cd56f808ace36e00ef680ae86ecbad5eabcfb5558f09",
+      "identical": true
+    },
+    "phase2/paper/figures/F8_corruption_budget.pdf": {
+      "expected_sha256": "0e53808e4399bd937d29a5525bd337438164cab991a109c9224f659c1e5749ff",
+      "reproduced_sha256": "0e53808e4399bd937d29a5525bd337438164cab991a109c9224f659c1e5749ff",
+      "identical": true
+    },
+    "phase2/paper/figures/F8_corruption_budget.png": {
+      "expected_sha256": "c65440fdbcca34178f7aad12a7ddb02c8ce899b95b59d837f598cb0831eb28de",
+      "reproduced_sha256": "c65440fdbcca34178f7aad12a7ddb02c8ce899b95b59d837f598cb0831eb28de",
+      "identical": true
+    },
+    "phase2/paper/figures/F8_corruption_budget.svg": {
+      "expected_sha256": "b0ab5c467a493bce5f681237d1027720b74462b178b31266c245593d33f0f267",
+      "reproduced_sha256": "b0ab5c467a493bce5f681237d1027720b74462b178b31266c245593d33f0f267",
+      "identical": true
+    },
+    "phase2/paper/tables/repair_reliability.tex": {
+      "expected_sha256": "e8ce257d70d8f79e1fc0d1baa184774eb14be2beb472d3d5d16f18671f9a466e",
+      "reproduced_sha256": "e8ce257d70d8f79e1fc0d1baa184774eb14be2beb472d3d5d16f18671f9a466e",
+      "identical": true
+    },
+    "phase2/paper/tables/six_methods.tex": {
+      "expected_sha256": "88fb82a30100825c461c9a0fb42eeedb1a68f1aaca3f6757539a7bc2ae6fbbb2",
+      "reproduced_sha256": "88fb82a30100825c461c9a0fb42eeedb1a68f1aaca3f6757539a7bc2ae6fbbb2",
+      "identical": true
+    }
+  },
+  "all_outputs_identical": true,
+  "source_script_sha256": "e2869b946c5bb0acc038860df5cbbc220da735677f0a6c2c9f30f357c54d4b15",
+  "archive": "archives/plot-reproduction-ssn54rhc/sem-update",
+  "log": "logs/plot-reproduction.log"
+}

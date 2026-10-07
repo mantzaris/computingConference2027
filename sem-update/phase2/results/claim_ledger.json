@@ -1,0 +1,56 @@
+[
+  {
+    "claim": "The six-method controlled matrix was executed on fresh independent SCMs",
+    "evidence": "results/metrics.csv; results/protocol.json",
+    "status": "supported"
+  },
+  {
+    "claim": "M3 attain the lowest observed controlled mean T2 error",
+    "evidence": "results/method_summary.csv",
+    "limit": "descriptive tested-matrix ranking; use corrected paired comparisons for superiority",
+    "status": "supported"
+  },
+  {
+    "claim": "M4 or M5 must improve every setting or prevent harmful repairs",
+    "evidence": "results/repair_reliability.csv",
+    "status": "unsupported"
+  },
+  {
+    "claim": "A generated or highest-weight graph establishes causality",
+    "evidence": "docs/protocol.md",
+    "status": "unsupported"
+  },
+  {
+    "claim": "The extensions are first in the literature or have new causal guarantees",
+    "evidence": "docs/novelty.md",
+    "status": "untested"
+  },
+  {
+    "claim": "The failed historical LLM interface shows LLM-guided refinement is ineffective",
+    "evidence": "results/historical_llm_audit.json",
+    "status": "unsupported"
+  },
+  {
+    "claim": "Real follow-up is independent-apparatus confirmation",
+    "evidence": "docs/protocol.md",
+    "status": "unsupported"
+  },
+  {
+    "claim": "M4 improves observed mean prediction over M3 across the separate tested panels",
+    "evidence": "results/method_summary.csv; results/repair_comparisons.csv",
+    "limit": "descriptive point-estimate assessment; corrected primary tests and separate panel uncertainty govern inferential claims",
+    "panels_better": 1,
+    "panels_equal": 8,
+    "panels_worse": 1,
+    "status": "mixed"
+  },
+  {
+    "claim": "M5 improves observed mean prediction over M3 across the separate tested panels",
+    "evidence": "results/method_summary.csv; results/repair_comparisons.csv",
+    "limit": "descriptive point-estimate assessment; corrected primary tests and separate panel uncertainty govern inferential claims",
+    "panels_better": 6,
+    "panels_equal": 0,
+    "panels_worse": 4,
+    "status": "mixed"
+  }
+]

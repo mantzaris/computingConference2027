@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "passed": true,
+  "scientific_hash": "ddcfef9c2dc87df3cbc196f67fbd35a9c0b4883e9dda5b3038ee6cf3fc1ec3f3",
+  "test_files": [
+    "phase2/tests/test_phase2_protocol.py",
+    "phase2/tests/test_methods.py"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "additional_gpu_hours": 16,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 261017,
+  "budgets": [
+    100,
+    400
+  ],
+  "checkpoints": {
+    "fit_seconds": [
+      60,
+      120,
+      180,
+      240,
+      360
+    ],
+    "fitting_updates": [
+      4000,
+      6000,
+      8000,
+      10000,
+      12000
+    ]
+  },
+  "corruptions": [
+    0.2,
+    0.5
+  ],
+  "dcdi": {
+    "batch_size": 256,
+    "block_steps": 100,
+    "flow_layers": 2,
+    "flow_width": 8,
+    "layers": 2,
+    "learning_rate": 0.001,
+    "max_indegree": 3,
+    "reg_coeff": 0.1,
+    "seed": 8821,
+    "steps": 60000,
+    "threshold": 0.5,
+    "width": 64
+  },
+  "evaluation_projections": 256,
+  "evaluation_samples": 2048,
+  "families": [
+    "linear",
+    "nonlinear",
+    "heteroscedastic"
+  ],
+  "family_seed_bases": {
+    "heteroscedastic": 213001,
+    "linear": 211001,
+    "nonlinear": 212001
+  },
+  "metadata_variants": [
+    "coherent",
+    "anonymous",
+    "shuffled"
+  ],
+  "parallel_workers": 3,
+  "real_block_rows": 10,
+  "rho": 0.5,
+  "ridge_alpha": 0.1,
+  "ridge_grid": [
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "ridge_variance_floor": 0.0001,
+  "scms_per_family": 5,
+  "search": {
+    "audit_nll_slack": 0.05,
+    "audit_w_factor": 1.05,
+    "audit_w_slack": 0.001,
+    "beta": 1.0,
+    "candidate_budget": 12,
+    "diagnostic_cap": 256,
+    "edge_penalty": 0.02,
+    "improvement": 0.005,
+    "per_round": 3,
+    "permutations": 32,
+    "projections": 64,
+    "rounds": 4,
+    "samples": 512,
+    "seed": 491
+  },
+  "semantic_seeds": [
+    241001,
+    241002,
+    241003,
+    241004,
+    241005
+  ],
+  "sizes": [
+    5
+  ],
+  "tau": 0.01,
+  "train": {
+    "batch_size": 256,
+    "bins": 8,
+    "check_every": 50,
+    "learning_rate": 0.001,
+    "patience": 5,
+    "seed": 707,
+    "steps": 1000,
+    "transforms": 2,
+    "weight_decay": 1e-05,
+    "width": 64
+  },
+  "version": 2
+}

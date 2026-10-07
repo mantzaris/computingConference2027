@@ -1,0 +1,229 @@
+{
+  "complete": true,
+  "datasets": 36,
+  "datasets_verified": [
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "6f20bf485ce23e69474fbba6208e2483bb43f1749ba652d219813e7a37e92514",
+      "data_id": "p2-main-linear-d5-s211001-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "7675ace1ffa636fb041e7869769f52232c3d3f47dd97cbc88adeacafa55aeb84",
+      "data_id": "p2-main-linear-d5-s211001-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "15352bf53dcbfcacbd85e01c93956a37394cc60f1d4af11b1df7981240356e2d",
+      "data_id": "p2-main-linear-d5-s211002-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "a56dfb72e20575ef1622dde463858e285d2e13e81e6429bab47b37c538d82563",
+      "data_id": "p2-main-linear-d5-s211002-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "eb88fc0db45276e55ba7eb1ae3ddd32e567dc5694ff07f546b5abb4d7585fbbb",
+      "data_id": "p2-main-linear-d5-s211003-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "744bbced0460527d4f7a7f604ebe2b6a680266b2ab0ba23372130daa82dcf164",
+      "data_id": "p2-main-linear-d5-s211003-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "390443e6cf00050560ac85ed3485b4c991a0caa6f788bc0950f8d5f3a6963be0",
+      "data_id": "p2-main-linear-d5-s211004-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "5b9c0873eb527789446d78746979ffbf45bb5031b5039bc37fa4a8e930f9d7b8",
+      "data_id": "p2-main-linear-d5-s211004-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "30a3ab0374d14bd818a24876fa71ab9a3611682ce663a323d254a05ec85e08f2",
+      "data_id": "p2-main-linear-d5-s211005-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "5a401c0f340a4ac5ef7c4efa7be60b0f44695dd2a9646fe3204fd5504d78ed9f",
+      "data_id": "p2-main-linear-d5-s211005-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "44863cf71efd0083d00c93fce6b44b446d8399fe717c61ba1778b122472193cb",
+      "data_id": "p2-main-nonlinear-d5-s212001-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "99e192d3da7e18124bf7a976f5802963437a3360eac49628d74aa550f9276861",
+      "data_id": "p2-main-nonlinear-d5-s212001-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "a2bcd89e07fb27a905bf9b6e9b994660fbe61ef03132a6afdf1355f90fae0923",
+      "data_id": "p2-main-nonlinear-d5-s212002-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "462b0ed09fa600deace3ec2f02222d0bbf16e8e690e84f2dbbfddfec58efb357",
+      "data_id": "p2-main-nonlinear-d5-s212002-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "5c9e040e2e2e35917a3e4019ece9cca6df0209fb928ac8f43d7b1a66c2ce684d",
+      "data_id": "p2-main-nonlinear-d5-s212003-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "8a1a71507baa3c6d46619091ba7f86625756cc49073f72e6f715cb15a9bb17a3",
+      "data_id": "p2-main-nonlinear-d5-s212003-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "dd6ca09182f27cb4396ac623489e963109dc5a797ec3162602815cf4b94a1586",
+      "data_id": "p2-main-nonlinear-d5-s212004-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "1784f79edc04dada8639f660bafca25eb20a67ac3a46807131b8955f710e32ee",
+      "data_id": "p2-main-nonlinear-d5-s212004-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "0b81735960d7f2fde325ee3795ee1bd935a250d2eda0fffb99ff0b35230b341e",
+      "data_id": "p2-main-nonlinear-d5-s212005-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "d575272a0ccd66e7c967c99d04fd8d0e6c5734e9663feb2ef618674c2d14ab52",
+      "data_id": "p2-main-nonlinear-d5-s212005-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "4694d125e92377cf15c1de20921025d14c9e539c72c076531e60014e3174edba",
+      "data_id": "p2-main-heteroscedastic-d5-s213001-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "bbf0ee484b1220aea2dff086a5d1add7ef4c455dbbc2986c0380244b96513233",
+      "data_id": "p2-main-heteroscedastic-d5-s213001-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "25a4e27a5ba2b5bddb7dbf12a6133e582b653692ed698cbb365f2d7dea43ce93",
+      "data_id": "p2-main-heteroscedastic-d5-s213002-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "b67a0952c6b3bf2679a1770dc4d4974da8602268ea183b7bca20aebf690cea1a",
+      "data_id": "p2-main-heteroscedastic-d5-s213002-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "53cc627df6291ee032d2d5dd46d142a75912d66efd09d9962ef2d6ab6667aae9",
+      "data_id": "p2-main-heteroscedastic-d5-s213003-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "8a59074805e734c7154885ca45970436d2fa90c17a8eade4d057bb88820acfe0",
+      "data_id": "p2-main-heteroscedastic-d5-s213003-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "12025c7a3db4d56cfaf93b2256bc1f1a179e519f2fc90df560a85a12eb642588",
+      "data_id": "p2-main-heteroscedastic-d5-s213004-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "2b40bbeb320b2de2f8eb071ff6b68046e2727e22585278b2b05e2d263c4152a6",
+      "data_id": "p2-main-heteroscedastic-d5-s213004-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "e8e8d75e83b2086ac5d9e4402329eaebe101990f66cdb8884b3e777b020ed01b",
+      "data_id": "p2-main-heteroscedastic-d5-s213005-B100",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "bd186a96e0e6054756eddc707727b3b42e5e4e587f8ad711fc561ba64f422077",
+      "data_id": "p2-main-heteroscedastic-d5-s213005-B400",
+      "measured_intervention_rows": 1200
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "b0e32048a3f79e240d01a9876c1046e9e43ccf01f98d6fd6b626e8497e6e9142",
+      "data_id": "p2-main-heteroscedastic-d5-s241001-B100-semantic",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "7a4c8fb0cffa0efb6662c6f24cbb3bed5d22cc13442836b8e143c4aa243a023f",
+      "data_id": "p2-main-heteroscedastic-d5-s241002-B100-semantic",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "026158e78098363c4ff908db2d297837e88f0e9d7df62fc4d086e1c5c4fc9d6f",
+      "data_id": "p2-main-heteroscedastic-d5-s241003-B100-semantic",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "e124d3520038c3e5d6c71b2068d722399ce31345deb00c29a80fa3eb2f0d62c8",
+      "data_id": "p2-main-heteroscedastic-d5-s241004-B100-semantic",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "ecdb9b23ee10397d2e2c831ce8219a04f246c369eddc407be318d0d372145942",
+      "data_id": "p2-main-heteroscedastic-d5-s241005-B100-semantic",
+      "measured_intervention_rows": 300
+    },
+    {
+      "all_five_partitions_counted": true,
+      "arrays_sha256": "d8c245bab2cf833681c0d29f2694137b2d4f906ef378b97812c9169fb30fa383",
+      "data_id": "p2-chambers-B400",
+      "measured_intervention_rows": 8072
+    }
+  ],
+  "final_outcomes_loaded": false,
+  "historical_seed_overlap": [],
+  "independent_scms": {
+    "controlled": 15,
+    "semantic": 5
+  },
+  "protocol_hash": "a77be30ed7ca7a89c1f0c24e00f4b7f1f0059bd19b7cc8bbe5ecc42afa4249cf"
+}

@@ -1,0 +1,14 @@
+{
+  "archive_bytes": 503811430,
+  "archive_filesystem": "/home/resort/Documents/repos/computingConference2027 /dev/nvme0n1p2[/home/resort/Documents/repos/computingConference2027] ext4",
+  "archive_path": "sem-update/.artifacts/phase2/archives/durable-evidence.tar.gz",
+  "archive_sha256": "be18ea94cdca45ec0c7d8cdeefb75e425e42982972b5d05cec1fcd82c8fe3884",
+  "artifact_manifest_sha256": "b913c0a17bc279f596e447fd6aa150ab1ec28469b4066f9686bf84eeb3c2f848",
+  "checked_utc": "2026-10-07T23:34:27Z",
+  "errors": [],
+  "files": 10058,
+  "pod_termination_authorized": false,
+  "uncompressed_bytes": 691756598,
+  "verification": "Every archived evidence file checked against its recorded SHA256 and byte size, without extraction",
+  "verified": true
+}

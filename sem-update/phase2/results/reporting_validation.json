@@ -1,0 +1,20 @@
+{
+  "checkpoint_summary_rows": 20,
+  "complete": true,
+  "cuda_visible": false,
+  "development_scms": [
+    295001,
+    295002
+  ],
+  "frozen_scientific_hash_verified": "ddcfef9c2dc87df3cbc196f67fbd35a9c0b4883e9dda5b3038ee6cf3fc1ec3f3",
+  "main_outcomes_accessed": false,
+  "metric_rows": 262,
+  "outputs": "runs/reporting-development-v2",
+  "primary_comparisons": 15,
+  "repair_summary_rows": 14,
+  "reporting_sha256": "033a2f558283a5c164a1e62ca5bb9cb03d5fc93970f68dd9e40e28d84c1bb226",
+  "seconds": 18.756273990496993,
+  "six_method_rows": 6,
+  "test_count": 5,
+  "test_log": ".artifacts/phase2/logs/reporting_cpu_tests.log"
+}

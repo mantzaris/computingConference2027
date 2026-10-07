@@ -1,0 +1,17 @@
+{
+  "cuda_visible_devices": "",
+  "exit_code": 0,
+  "log": "logs/auxiliary_tests_closeout.log",
+  "passed": true,
+  "result": ".......                                                                  [100%]\n7 passed in 5.81s",
+  "scope": "CPU statistics and archive-integrity tests",
+  "seconds": 7.352703295648098,
+  "source_sha256": {
+    "phase2/tools/archive_evidence.py": "a86eae0c10f6c733f9ccb06040a0de591a8fb73ac78b7571dbca510b22a7a8c0",
+    "src/sem_update/phase2/reporting.py": "ecc9930a0bc19281fe4b0c6a349400c23d4b1577effc4fdab90d333da093ad7d"
+  },
+  "test_files": [
+    "phase2/tests/test_reporting.py",
+    "phase2/tests/test_archive.py"
+  ]
+}

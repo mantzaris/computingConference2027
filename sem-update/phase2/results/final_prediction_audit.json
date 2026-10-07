@@ -1,0 +1,25 @@
+{
+  "all_frozen_method_conditions": 2390,
+  "checks": [
+    "complete six-method and supplementary T2 coverage",
+    "unique task/method/stage/endpoint rows",
+    "all prescribed endpoints retained",
+    "frozen specification identity",
+    "finite and faithfully rounded endpoint metrics",
+    "empirical-control NLL unavailable",
+    "saved sample SHA256 and finite values",
+    "equal final sample counts including mixtures",
+    "identical prescribed target draws across methods"
+  ],
+  "generated_observations_in_checked_archives": 10985472,
+  "metric_rows": 5642,
+  "metrics_sha256": "d36633821f088e9ff91608c093311c897d324fa8eef6841b87fe650d203c6bcd",
+  "passed": true,
+  "protocol_hash": "a77be30ed7ca7a89c1f0c24e00f4b7f1f0059bd19b7cc8bbe5ecc42afa4249cf",
+  "sample_archives": 596,
+  "scope": "CPU integrity audit of already executed CUDA predictions; no new fitting, sampling, selection or tuning",
+  "six_main_conditions": 468,
+  "target_design_streams_checked": 288,
+  "unique_model_environment_predictions": 5364,
+  "unique_prediction_artifacts": 596
+}

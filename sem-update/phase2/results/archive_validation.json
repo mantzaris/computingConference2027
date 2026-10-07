@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "tests": 2,
+  "scope": "CPU software-fixture tests, not experiments",
+  "log_sha256": "570d6eca2cee31278223b2b6adcac2ab615ae9199c8a0c16418279c36414f36e",
+  "script_sha256": "5a6fc55f74959d93e6877c98f8cb5157a8beb37e068146061f81df4503af7c02"
+}

@@ -1,0 +1,28 @@
+{
+  "capability": [
+    12,
+    0
+  ],
+  "compiled_arches": [
+    "sm_70",
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "cuda_runtime": "12.8",
+  "device": "NVIDIA RTX PRO 4500 Blackwell",
+  "gradient_device": "cuda:0",
+  "gradient_norm": 8.878226280212402,
+  "loss": 506.2225341796875,
+  "memory_free_bytes": 33229176832,
+  "memory_total_bytes": 33685569536,
+  "mount": "/      overlay overlay",
+  "nvidia_smi": "NVIDIA RTX PRO 4500 Blackwell, 580.159.04, 32623 MiB, 31690 MiB",
+  "python": "3.12.3",
+  "storage": "Filesystem       1B-blocks        Used   Available Use% Mounted on\noverlay        80530636800 20228739072 60301897728  26% /",
+  "timestamp_utc": "2026-10-07T16:53:03.328882+00:00",
+  "torch": "2.8.0+cu128"
+}

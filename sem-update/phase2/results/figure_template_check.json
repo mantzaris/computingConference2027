@@ -1,0 +1,23 @@
+{
+  "return_code": 0,
+  "figures": {
+    "F0_method_overview.pdf": "d37c9ae045c49cb30ad07c9a9eb00b9eb0eedda18f1298202faccd80395dc6b4",
+    "F1_family_budget.pdf": "a5d79cacacda4769fff939030c030e2adb1b99aafb70c4290ef7f0327c3a12a9",
+    "F2_matched_compute.pdf": "e404334e20698b8d488f432adba640746d8dbab41e4fb3ffb4c526363bb176c7",
+    "F3_reliability_cost.pdf": "8ab3aa65b5f1fddf1aad756cb6794da0e10d2357866a5d76fef0bcbdcfee62ce",
+    "F4_graphs.pdf": "ce2bda6007c1b04ca005699599153a613145fe826fd439fcf8e02fae101c9605",
+    "F5_adverse_graphs.pdf": "47f4f362ff35884d0855f67071618076658dfa525874aa4b0c8690b5ef574a70",
+    "F6_response_curves.pdf": "d3d243c3a655a3378330d5601fb295c6670d9943174f8767a5d2f211144e30cd",
+    "F7_separate_panels.pdf": "fa96c17c651e47175c45b191733bf468328b41d13ff6e275485b62c08c89a304",
+    "F8_corruption_budget.pdf": "0e53808e4399bd937d29a5525bd337438164cab991a109c9224f659c1e5749ff"
+  },
+  "tables": {
+    "repair_reliability.tex": "e8ce257d70d8f79e1fc0d1baa184774eb14be2beb472d3d5d16f18671f9a466e",
+    "six_methods.tex": "88fb82a30100825c461c9a0fb42eeedb1a68f1aaca3f6757539a7bc2ae6fbbb2"
+  },
+  "template_sha256": "d5ed3f489b336450dd98e4f33844c44e842a6d022f84b0ef868dc19dcf84abc8",
+  "latex_version": "pdfTeX 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian)",
+  "layout_warnings": [],
+  "artifact_pdf": "paper_layout_check/layout.pdf",
+  "manuscript_or_submission": false
+}

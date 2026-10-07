@@ -1,0 +1,8 @@
+{
+  "adverse": "p2-main-linear-d5-s211004-B100-c0.2-none",
+  "adverse_error_change": 0.07696505640000001,
+  "adverse_harm_threshold": 0.004907310880000001,
+  "adverse_method": "M3",
+  "representative": "p2-main-nonlinear-d5-s212005-B400-c0.5-none",
+  "rule": "median M3 d5/B400/c0.5; largest harmful M3/M4/M5 change"
+}

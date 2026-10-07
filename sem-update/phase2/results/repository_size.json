@@ -1,0 +1,16 @@
+{
+  "artifact_files_staged": 0,
+  "comparison_base": "ef2e0cac3fd2d572caf16c98f68cf45392882d28",
+  "full_audit": "sem-update/.artifacts/phase2/logs/git-size-audit.json",
+  "historical_blob_bytes": 12500164,
+  "history_and_index_unique_blob_bytes": 23296287,
+  "largest_blob_bytes": 4045448,
+  "limits": {
+    "cumulative_bytes": 26214400,
+    "individual_bytes": 5242880
+  },
+  "new_files": 144,
+  "new_unique_blob_bytes": 10796123,
+  "passed": true,
+  "scope": "Actual Git blobs, including all historical intermediate project versions; not a network transfer estimate"
+}
