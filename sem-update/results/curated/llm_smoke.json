@@ -1,0 +1,226 @@
+{
+  "actual_local_generation": true,
+  "metadata": [
+    {
+      "description": "Dimensionless electronically assigned light-source control.",
+      "id": "V0",
+      "name": "Source brightness control A"
+    },
+    {
+      "description": "Dimensionless independently assigned light-source control.",
+      "id": "V1",
+      "name": "Source brightness control B"
+    },
+    {
+      "description": "Independently assigned setting of a filter in an optical assembly.",
+      "id": "V2",
+      "name": "Optical filter setting"
+    },
+    {
+      "description": "Noisy intensity measurement at one position in the assembly.",
+      "id": "V3",
+      "name": "Light sensor A"
+    },
+    {
+      "description": "Noisy intensity measurement at a second position in the assembly.",
+      "id": "V4",
+      "name": "Light sensor B"
+    }
+  ],
+  "records": [
+    {
+      "attempt": 0,
+      "graphs": [
+        {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        }
+      ],
+      "prompt_sha256": "f241cf4e6f62617454ca13b3a66b04f180d421a5f0074ca31d00634333f01669",
+      "proposal": 0,
+      "proposals": [
+        {
+          "edges": [
+            {
+              "rationale": "Brightness control affects sensor measurement",
+              "source": "V0",
+              "target": "V3"
+            },
+            {
+              "rationale": "Brightness control affects sensor measurement",
+              "source": "V0",
+              "target": "V4"
+            },
+            {
+              "rationale": "Brightness control affects sensor measurement",
+              "source": "V1",
+              "target": "V3"
+            },
+            {
+              "rationale": "Brightness control affects sensor measurement",
+              "source": "V1",
+              "target": "V4"
+            },
+            {
+              "rationale": "Filter setting affects sensor measurement",
+              "source": "V2",
+              "target": "V3"
+            },
+            {
+              "rationale": "Filter setting affects sensor measurement",
+              "source": "V2",
+              "target": "V4"
+            }
+          ],
+          "nodes": [
+            "V0",
+            "V1",
+            "V2",
+            "V3",
+            "V4"
+          ]
+        }
+      ],
+      "raw_sha256": "85de9f2e4fd0affa8ec627a86b27a8a822da508877736c04efa7fd9661d1615a",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 308,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 190,
+        "peak_vram_bytes": 16498084864,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 8.004765024408698,
+        "seed": 77710
+      },
+      "valid": true
+    },
+    {
+      "attempt": 0,
+      "graphs": [
+        {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        }
+      ],
+      "prompt_sha256": "f241cf4e6f62617454ca13b3a66b04f180d421a5f0074ca31d00634333f01669",
+      "proposal": 1,
+      "proposals": [
+        {
+          "edges": [
+            {
+              "rationale": "Light source control affects sensor measurement",
+              "source": "V0",
+              "target": "V3"
+            },
+            {
+              "rationale": "Light source control affects sensor measurement",
+              "source": "V0",
+              "target": "V4"
+            },
+            {
+              "rationale": "Light source control affects sensor measurement",
+              "source": "V1",
+              "target": "V3"
+            },
+            {
+              "rationale": "Light source control affects sensor measurement",
+              "source": "V1",
+              "target": "V4"
+            },
+            {
+              "rationale": "Optical filter affects sensor measurement",
+              "source": "V2",
+              "target": "V3"
+            },
+            {
+              "rationale": "Optical filter affects sensor measurement",
+              "source": "V2",
+              "target": "V4"
+            }
+          ],
+          "nodes": [
+            "V0",
+            "V1",
+            "V2",
+            "V3",
+            "V4"
+          ]
+        }
+      ],
+      "raw_sha256": "507372ae9dc56c98ed45d503ab67ec8ebd649baafd48582cc27196aaf75e7e6b",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 308,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 196,
+        "peak_vram_bytes": 16498969600,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 7.52501604706049,
+        "seed": 77720
+      },
+      "valid": true
+    }
+  ],
+  "request_hash": "173f28e054f297c242a6e0fa54819c52a63ea0994d22e74b32cd6ce74d274f74",
+  "revision": {
+    "device": "cuda",
+    "license": "apache-2.0",
+    "model": "Qwen/Qwen3-8B",
+    "precision": "bfloat16",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  }
+}

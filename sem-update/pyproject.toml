@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sem-update"
+version = "0.1.0"
+description = "Budgeted disturbance-guided repair of generative SCMs"
+requires-python = ">=3.12"
+dependencies = ["torch>=2.8", "numpy", "scipy", "pandas", "networkx", "matplotlib", "nflows==0.14", "pyyaml", "pytest", "transformers>=4.51", "accelerate", "huggingface-hub", "causalchamber"]
+
+[project.scripts]
+sem-update = "sem_update.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

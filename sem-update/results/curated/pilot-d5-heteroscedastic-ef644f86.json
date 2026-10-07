@@ -1,0 +1,72 @@
+{
+  "audit": {
+    "initial": {
+      "edge_penalty": 0.032,
+      "environment_sw1": [
+        0.14949244260787964,
+        0.25334233045578003,
+        0.1816493719816208
+      ],
+      "nll": 1.2916463613510132,
+      "sw1": 0.19482804834842682,
+      "total": 1.51847440969944
+    },
+    "pass": true,
+    "selected": {
+      "edge_penalty": 0.036,
+      "environment_sw1": [
+        0.14535635709762573,
+        0.17554053664207458,
+        0.14692863821983337
+      ],
+      "nll": 1.2608776092529297,
+      "sw1": 0.15594184398651123,
+      "total": 1.452819453239441
+    }
+  },
+  "candidate_count": 12,
+  "config": {
+    "search": {
+      "audit_nll_slack": 0.05,
+      "audit_w_factor": 1.05,
+      "audit_w_slack": 0.001,
+      "beta": 1.0,
+      "candidate_budget": 12,
+      "diagnostic_cap": 256,
+      "edge_penalty": 0.02,
+      "improvement": 0.005,
+      "per_round": 3,
+      "permutations": 32,
+      "projections": 64,
+      "rounds": 4,
+      "samples": 512,
+      "seed": 491
+    },
+    "train": {
+      "batch_size": 256,
+      "bins": 8,
+      "check_every": 50,
+      "learning_rate": 0.001,
+      "patience": 5,
+      "seed": 707,
+      "steps": 1000,
+      "transforms": 2,
+      "weight_decay": 1e-05,
+      "width": 64
+    }
+  },
+  "d": 5,
+  "data_hash": "59b5f515f014d104276ac74c0e4dc33036c547a9ce9b07bf233637a5e502dced",
+  "family": "heteroscedastic",
+  "new_parent_sets": 18,
+  "optimizer_updates": 6700,
+  "peak_vram_bytes": 111570944,
+  "run_id": "pilot-d5-heteroscedastic-ef644f86",
+  "source": {
+    "dirty_diff_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repository_commit": "ef2e0cac3fd2d572caf16c98f68cf45392882d28",
+    "source_hash": "a35d46a2971c72c402625dfeea08ea5f383745a1206c6d75c9bf06fbcbd6617c"
+  },
+  "unique_parent_sets": 18,
+  "wall_seconds": 130.9639682006091
+}

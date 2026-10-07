@@ -1,0 +1,7 @@
+{
+  "device": "cuda",
+  "license": "apache-2.0",
+  "model": "Qwen/Qwen3-8B",
+  "precision": "bfloat16",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+}

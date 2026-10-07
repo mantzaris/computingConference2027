@@ -1,0 +1,33 @@
+{
+  "assumptions": [
+    "Cold concurrent pilots estimate flow throughput; fixed DAG allowance 40% of a full repair; matched caching may reduce work",
+    "DCDI d5 allowance 600s, d10 900s, conservative twofold throughput for three workers",
+    "Semantic/real LLM and flow stages execute sequentially with an 8h allowance",
+    "Estimates are forecasts; runtime ledger enforces actual 64h cap and stops new admissions"
+  ],
+  "cap_gpu_job_hours": 64,
+  "datasets": 66,
+  "decision": "full d=5,10 matrix",
+  "estimated_remaining_hours": 38.57337990045177,
+  "estimated_remaining_hours_by_component": {
+    "controlled_dcdi": 6.25,
+    "controlled_fixed_graph_fits": 5.90745891536719,
+    "controlled_flow_repair": 11.415920985084579,
+    "defect_recovery_reserve": 4.0,
+    "final_evaluation_and_figures": 3.0,
+    "semantic_real_llm_flows_dcdi": 8.0
+  },
+  "final_benchmark_outcomes_opened": false,
+  "fixed_runs": 474,
+  "hours_already_used": 1.5917446201377445,
+  "independent_controlled_scms": 30,
+  "measured_task_sum_to_pool_ratio": 2.168633128837395,
+  "method_runs": 869,
+  "pilot_wall_seconds": 331.6244167499244,
+  "planning_upper_remaining_hours": 52,
+  "real_cases": 1,
+  "repair_runs": 395,
+  "semantic_scms": 5,
+  "timestamp_utc": "2026-10-07T02:57:13Z",
+  "workers_controlled": 3
+}

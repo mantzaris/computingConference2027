@@ -1,0 +1,1272 @@
+RESEARCH AND IMPLEMENTATION PLAN
+Intervention-Guided Repair of Generative Structural Equation Models
+with Language-Model Graph Proposals
+
+Prepared for Alex on October 6, 2026, America/New_York.
+Repository: https://github.com/mantzaris/computingConference2027
+Project directory: sem-update/
+Execution target: one RunPod NVIDIA RTX PRO 4500 GPU.
+Target: Computing Conference 2027, October 15, 2026 submission round.
+Status: executable research design, with provisional choices and explicit gates.
+No experiments have been executed as part of preparing this document.
+
+1. RECOMMENDATION AND SCOPE
+
+Build a modular generative structural causal model (SCM) whose mechanisms are
+conditional normalizing flows. Use a frozen, locally executed language model
+to propose initial causal graphs from variable descriptions. Fit the mechanisms
+to observational data and limited intervention data. Use held-out disturbance
+diagnostics to prioritize a small number of graph edits, then select models
+using intervention prediction and validation likelihood.
+
+The primary research question is:
+
+At a fixed candidate-fitting budget, can disturbance-guided graph repair
+improve held-out intervention-distribution predictions over fixed graph
+proposals, randomly prioritized repairs, and LLM-proposed repairs?
+
+A separate question is whether informative language-model proposals provide
+an advantage over data-only initialization. Do not bundle these questions into
+one claim. The repair method can succeed even if LLM proposals add no value.
+
+The proposed incremental contribution is a budgeted diagnostic-to-edit policy
+for generative SEMs, evaluated with a separate repair audit, unseen intervention
+settings/targets, and explicit harmful-repair measurements. Generative SEMs,
+language-model graph proposals, intervention likelihood masking, and iterative
+graph refinement are established ideas. Their combination alone is insufficient
+as a novelty claim. In particular, CauScientist [R7] is a close 2026 comparison.
+
+Use the working method name "disturbance-guided repair" in code and prose.
+Prefer a descriptive paper title over a new acronym. A defensible final title
+if the experiments support it is the title above. If the LLM component is not
+useful, remove it from the title and discuss it as a measured negative result.
+
+Deliver software, executed experiments, an evidence report, and publication
+figures. Prepare a manuscript outline and reproducible LaTeX tables/figures;
+write scientific conclusions only from observed results and human review.
+The attached earlier brief requested planning only; this handoff authorizes
+the subsequent Codex session to implement and run the research.
+
+2. VENUE, TIMELINE, AND HUMAN SCIENTIFIC ROLE
+
+Official pages checked on October 6, 2026 [V1,V2]: Round 1 deadline October 15,
+2026 AoE; conference July 8-9, 2027; virtual participation is available for
+authors unable to travel; virtual author registration is listed at GBP 600.
+The call specifies double-blind PDF review, a 150-250 word abstract, and at
+most 18 pages of main text, excluding references and appendices with an
+additional up-to-7-page provision. Verify the exact interpretation in the
+current template before final formatting. Target 12-15 main-text pages and
+keep references plus appendices within seven pages as a conservative choice.
+
+Proceedings are to appear in Springer LNNS and be submitted for indexing.
+Do not promise indexing of a future volume or guaranteed Google Scholar
+coverage. Recheck the official submission instructions before submission.
+
+The conference requires GenAI disclosure and human responsibility; its policy
+reserves development of scientific ideas, arguments, results, and conclusions
+to human authors [V1]. Accordingly, this is a proposed protocol for Alex to
+adopt or revise. Codex can implement computations and prepare evidence for
+review, but its reports do not constitute human scientific approval. Record
+Alex's review of the contribution, assumptions, protocol, and final conclusions.
+Disclose both the LLM used within the method and coding/writing assistance.
+Do not automatically submit, register, or claim acceptance.
+
+3. POSITIONING AGAINST PRIOR WORK
+
+Reading status: full method text was accessible for Pearl, Pawlowski, DCDI,
+Javaloy, the Chambers manuscript, the ABAPC-LLM preprint, and CauScientist.
+For CMA and Balgi, publication/abstract pages were accessible, but the full
+papers were not successfully retrieved in this planning session. Their detailed
+algorithm comparison remains a Day 1 task. Some 2026 search results were
+accessible only as records/snippets; do not base novelty claims on those alone.
+
+Prior work | Already established | Proposed difference | Required evidence
+
+Pearl [R1] | Structural assignments, modular interventions, counterfactual
+semantics | No new causal semantics claimed | Correct implementation and
+clear assumptions.
+
+Pawlowski et al. [R2] | Deep SCM mechanisms with tractable noise inference,
+including conditional flows | Criticize and revise a supplied graph | Same
+flow family on fixed and repaired graphs.
+
+Brouillard et al., DCDI [R3] | Differentiable structure learning from
+interventions, including expressive flow densities and shared unaffected
+mechanisms | Bounded local repair of imperfect proposals, with diagnostics
+used for scheduling | DCDI comparison and equal-budget repair ablations.
+
+Javaloy et al. [R4] | Causal normalizing-flow architecture, causal consistency,
+intervention/counterfactual computation | Node-local mechanisms with repair
+and caching; architecture itself is not the contribution | Correct graph
+masking and intervention tests; avoid claiming all flows are automatically SCMs.
+
+Abdulaal et al., CMA [R5] | Combining metadata/LLM reasoning with DSCMs for
+causal discovery | Specific disturbance-guided scheduling and prospective
+intervention prediction | Read full method and compare shared components.
+
+Li and Russo, ABAPC-LLM [R6] | Defeasible LLM structural suggestions combined
+with data constraints; attention to benchmark memorization | Continuous
+generative mechanisms and intervention-distribution evaluation | Semantic,
+anonymous-name, and misleading-description controls.
+
+Peng et al., CauScientist [R7] | Hybrid graph initialization, LLM edits,
+intervention-aware neural likelihood scoring, rejection memory | Disturbance
+diagnostics prioritize edits; selection includes generated distributions;
+evaluate independent intervention predictions and harmful repairs | A close
+LLM-edit baseline with the same flow verifier and information budget. Label
+this continuous-data adaptation; do not call it an exact reproduction.
+
+Balgi et al. [R8] | Counterfactual equivalence under additional monotonicity
+conditions | Counterfactuals are optional synthetic diagnostics here | State
+extra assumptions; do not infer individual truth from distribution fit.
+
+Gamella et al. [R9] | Real physical interventional benchmark with documented
+causal relationships | Evaluation of graph repair and generative predictions
+on one restricted physical system | Protocol/schema audit and honest limits
+on real-data ground truth and independent replication.
+
+Search leads requiring full-text verification before final claims:
+EvoCause, arXiv:2607.27290; CausalSteward, arXiv:2607.01936; and work on
+invariant causal prediction, residual independence, and intervention-guided
+model criticism. EvoCause's retrieved record describes LLM graph edits and
+validation for root-cause analysis, so generic "LLM graph repair" is plainly
+too broad a claimed contribution. Record the search cutoff as October 6, 2026.
+Do not assert that this is the first method without a completed comparison.
+
+Novelty gate: before the main runs, write docs/novelty.md with exact references,
+method overlaps, and the remaining testable difference. If the proposed
+diagnostic policy is already covered, retain the software but frame the paper
+as a controlled reliability study. A fallback contribution is the empirical
+boundary between successful repair, underfitting, and inappropriate repair
+under mechanism drift. Do not hide overlap or invent a theorem.
+
+4. MATHEMATICAL MODEL
+
+4.1 Structural equations and likelihood
+
+Let G=(V,E) be a DAG with d continuous observed variables, adjacency A, and
+parents Pa_G(j). The initial scope assumes causal sufficiency, no feedback,
+known intervention targets, and independent exogenous variables U_j~N(0,1).
+
+    X_j := T_theta_j(U_j; X_Pa_G(j)),  j=1,...,d.                 (1)
+
+Each T_theta_j is invertible and monotonically increasing in its scalar noise
+argument. Its dependence on parents can be nonlinear and non-monotone.
+Implement conditional rational-quadratic spline transforms and an affine
+location/scale component, with positive derivative and scale constraints.
+Root mechanisms are unconditional flows. Enforce parent masks exactly.
+
+For u_j=T_theta_j^{-1}(x_j;x_Pa_G(j)),
+
+    log p_theta_j(x_j|x_Pa_G(j))
+      = log phi(u_j) - log |d T_theta_j(u_j;x_Pa_G(j))/d u_j|.    (2)
+
+This is a generative model: it learns distributions and produces new samples.
+The neural flows are the core use of generative AI, even without the LLM.
+Do not substitute a set of deterministic regressions and call it generative.
+
+For environment e with targets I_e and n_e fitting observations, let
+E_j={e: j not in I_e}. Use environment-balanced, node-balanced fitting:
+
+    L_fit(G,theta) = (1/d) sum_j (1/|E_j|) sum_{e in E_j}
+                    [-(1/n_e) sum_n log p_theta_j(x_nj|x_n,Pa(j))]. (3)
+
+The observational environment e=0 has I_0=empty, so E_j is nonempty.
+This weighting is deliberate: large observational samples must not silently
+overwhelm small experimental environments. Implement a sampler that matches
+the stated weights. An unweighted truncated NLL is a sensitivity analysis.
+Use the same convention for validation NLL. Report nats per active mechanism.
+
+Only L_fit plus declared optimizer weight decay is differentiated during
+mechanism training. Neither graph-selection discrepancies nor diagnostic
+statistics are silently added to this training loss.
+
+4.2 Intervention semantics
+
+For a perfect fixed intervention on k, replace (1) at k by X_k:=a. For a
+stochastic perfect intervention, replace it by X_k:=V_k, with V_k~q_e
+independent of the original parents/noises. For multiple independently
+randomized targets, use the product assignment law; for correlated target
+assignments use their documented joint assignment law instead.
+
+    p_theta^e(x) = q_e(x_I_e)
+                   product_{j not in I_e} p_theta_j(x_j|x_Pa(j)). (4)
+
+Sample in topological order, assigning targets directly and using unchanged
+mechanisms elsewhere. Passing an intervention as a conditioning value in
+the observational density is not a do-operation. Do not include the original
+target mechanism in fitting or validation NLL for an intervened observation.
+
+Soft interventions preserve some parental dependence but alter the target
+mechanism. Exclude them from the primary evaluation. A separate soft-intervention
+experiment must provide or estimate T_j^e explicitly; truncating the original
+factor alone does not specify how to generate the changed target. Unknown
+targets, hidden interventions, dynamic feedback, and latent confounders are
+outside the core method and must not be silently treated as ordinary rows.
+
+4.3 Disturbance criticism
+
+On held-out search observations, invert each intact mechanism:
+
+    u_hat_nj^e = T_theta_j^{-1}(x_nj^e; x_n,Pa(j)^e).             (5)
+
+Use three diagnostics, computed separately within eligible environments:
+
+    M_j = mean_{e != 0, j not in I_e}
+          MMD^2({u_hat_j^e}, {u_hat_j^0});                       (6)
+
+    P_j = mean_{e in E_j} HSIC(u_hat_j^e, X_Pa(j)^e);           (7)
+
+    C_j = mean_{e in E_j} mean_{k != j, k not in I_e}
+          HSIC(u_hat_j^e, u_hat_k^e).                           (8)
+
+M_j checks marginal invariance; P_j checks noise-parent independence; C_j
+checks pairwise dependence among inferred disturbances. Empty averages are
+zero with a separate "unavailable" flag. Roots have P_j=0. Do not calculate
+C_j using residuals of target mechanisms. Pairwise independence is weaker
+than joint independence; describe C_j accordingly.
+
+Use Gaussian kernels with bandwidths fixed from fitting data, not recomputed
+to flatter each candidate. Residual MMD can use fixed normal-scale bandwidths
+{0.5,1,2}. Parent kernels use fitting-data standardization and a frozen
+bandwidth rule. Use biased nonnegative empirical MMD squared for ranking;
+identify that estimator explicitly. Use centered-kernel empirical HSIC.
+
+Raw statistics differ in scale. For each statistic, use 32 seeded permutations
+on a capped search subsample to obtain its permutation mean and standard
+deviation. Define z(s)=max(0,(s-mean_perm)/(sd_perm+1e-6)). For MMD permute
+environment labels; for HSIC permute one paired argument. For real dependent
+data use block permutations or mark the normalization descriptive. Then:
+
+    D_j = mean z(MMD terms) + mean z(parent HSIC terms)
+          + mean z(residual-pair HSIC terms).                   (9)
+
+Use this only as a scheduling heuristic, not a calibrated test or posterior.
+Repeated adaptive testing invalidates naive p-value interpretations. Small
+intervention samples make rankings noisy; record sample sizes and instability.
+Kernel matrices are capped at 256 samples per environment during search and
+evaluated in GPU batches. Do not allocate quadratic matrices for all data.
+
+A flexible conditional flow can make observational probability-integral
+transforms look independent even for a wrong graph. Invariance may also hold
+for equivalent graphs, and added redundant parents need not fail a diagnostic.
+These statistics therefore do not identify a graph by themselves. Underfitting,
+sensor changes, weak interventions, or confounding can also trigger them.
+Performance against random scheduling is the required test of their value.
+
+4.4 Graph selection
+
+Use training-observational means and standard deviations to put all variables
+on a common scale. Fit these once, then keep them fixed across environments,
+methods, candidates, and test data. Retain transformations back to physical
+units. Never standardize each environment independently.
+
+For each search intervention, generate samples from the documented assignment
+law and candidate SCM. Measure sliced Wasserstein-1 distance over the joint
+vector of non-target outcomes, using 64 fixed unit-vector projections and
+empirical quantiles on a common grid. With standardized outcome vector Y,
+
+    SW_1(P,Q) = (1/L) sum_l integral_0^1
+                 |F^{-1}_{v_l^T Y,P}(t)-F^{-1}_{v_l^T Y,Q}(t)| dt. (10)
+
+Define W_search as the equal-environment average. Fix projections and base
+noise draws for candidate comparisons. For multiple-dimensional target
+assignments, add a secondary joint assignment-outcome check to expose a model
+that matches aggregate outcomes but loses assignment-response dependence.
+
+    S(G) = L_search(G) + beta W_search(G)
+           + lambda_edge |E(G)|/d + eta H_llm(G).                (11)
+
+H_llm is an optional bounded disagreement heuristic in [0,1]. If used, let
+q_ab be the fraction of K valid LLM proposals containing a->b and use
+H_llm=(1/[d(d-1)]) sum_{a!=b}[A_ab(1-q_ab)+(1-A_ab)q_ab].
+q_ab is not a calibrated probability. Never turn LLM proposals into hard
+constraints. Primary experiments use eta=0: the LLM affects initialization
+and proposed edits, while observed validation data determine acceptance.
+
+Provisional defaults: beta=1, lambda_edge=0.02, eta=0. Use at most the four
+development configurations beta in {0.5,1}, lambda_edge in {0.01,0.05};
+choose one on separate development SCMs. If defaults are retained without
+tuning, document that and do not count them as a fifth tuned configuration.
+Because inputs are standardized and terms averaged, report raw components
+as well as their sum; weights are design choices, not universal constants.
+Do not call the edge penalty a BIC penalty for neural networks.
+
+Accept an in-search edit if S decreases by at least 0.005. This provisional
+tolerance can be changed only on development tasks before protocol freeze.
+Keep an edit history and a cache of already evaluated DAGs.
+
+After search, compare only the selected graph and the original starting graph
+on the audit split, exactly once. Accept the selected graph if both
+
+    W_audit(selected) <= 1.05 W_audit(initial) + 0.001,
+    L_audit(selected) <= L_audit(initial) + 0.05.                (12)
+
+Otherwise return the initial graph. These are engineering tolerances, not a
+statistical safety guarantee. Measure outcomes before and after this gate.
+No retrying other candidates, changing weights, or restarting search after
+seeing audit results. Low audit sample counts must be reported. The final
+test remains untouched until all selections and configurations are frozen.
+
+4.5 Identifiability and optional counterfactuals
+
+The method assumes stable intact mechanisms, sufficient measurement of common
+causes, support overlap, and accurate intervention labels. Finite interventions
+may distinguish only an equivalence class. A recovered DAG is a hypothesis,
+not proof that every directed edge is physically correct. Intervention-induced
+changes can reflect a total effect along a path, not necessarily a direct edge.
+
+Scalar monotone flow models can represent many conditional distributions, but
+their cross-world coupling imposes extra structure. For synthetic generators
+that are monotone in the same scalar noise, optional counterfactual evaluation
+uses abduction, action, and prediction with the same inferred U. Never resample
+U when computing an individual counterfactual. Add a non-monotone-noise stress
+case if making any counterfactual claim. Distributional intervention accuracy
+alone cannot validate individual counterfactuals on the real benchmark.
+
+5. BOUNDED REPAIR ALGORITHM
+
+The unit of budget is a previously unseen candidate DAG submitted to the
+mechanism-fitting/evaluation pipeline. Also report new mechanism fits,
+optimizer updates, elapsed time, and GPU time; caching makes DAG counts alone
+an imperfect compute comparison. Cached candidates still count toward the
+same declared proposal budget if a method selects them for evaluation.
+
+Default: maximum 12 distinct evaluated DAGs per repair run, including starts;
+maximum 4 rounds, 3 candidates per round when budget allows; keep one incumbent;
+maximum indegree 3. The number of starts reduces the remaining edit budget.
+This is intentionally small and must be tested in a pilot before scaling.
+
+Controlled-corruption study: one shared supplied initial DAG. Do not secretly
+reset to a data-only graph halfway through a run. Candidate additions, deletions,
+and reversals may involve any observed variables, subject to acyclicity.
+
+Actual-LLM study: evaluate up to two LLM DAGs and one observational data-driven
+DAG as starting candidates, then select by S. Include this entire initialization
+within the 12-candidate budget. An empty graph is a fallback if a data-driven
+starter is unavailable. Hard constraints may encode verified experimental
+design, such as an independently randomized actuator having no measured
+parents; give the same constraints to every applicable baseline.
+
+Default observational starter: greedy linear-Gaussian BIC search from the empty
+DAG, using fitting observations only, valid add/delete/reverse moves, maximum
+indegree 3, and a 100-accepted-move cap. Freeze tie-breaking and preprocessing.
+This is a cheap initializer, not the strong intervention-aware baseline. Use
+the identical starter in the LLM and data-only arms; count its compute.
+
+An edit a changes mechanism set M(a): one child for an addition/deletion, two
+nodes for a reversal. Set priority(a)=sum_{j in M(a)} D_j. In each round,
+allocate roughly 75% of candidate slots to high-priority edits and 25% to
+uniform valid global edits, accumulated across rounds. This prevents the
+diagnostic from excluding all alternative neighborhoods. Within equal
+priorities use deterministic seeded random ordering; in the actual-LLM study
+LLM disagreement may break ties only as a separately recorded option.
+
+Parent dependence or disturbance dependence does not justify an edge direction.
+Generate both legal directions and let intervention validation discriminate.
+The upper indegree limit is a computational assumption; true synthetic graphs
+must satisfy it. Report when real mechanisms may violate it.
+
+Pseudocode:
+
+    validate split manifest; freeze configuration; initialize budget ledger
+    fit and score allowed starting DAGs on fit/early-stop/search splits
+    initial = lowest-search-score allowed start
+    incumbent = initial
+    while budget remains and round_count < 4:
+        invert intact mechanisms on search data
+        compute disturbance diagnostics and node priorities
+        enumerate legal add/delete/reverse operations
+        deduplicate DAG hashes and select diagnostic/global edit mix
+        for each candidate within budget:
+            fit only changed parent-set mechanisms from canonical initialization
+            reuse unchanged mechanisms and cached parent sets
+            generate intervention samples; evaluate the common search score
+            append candidate result and raw score components to local ledger
+        move to best candidate only if improvement exceeds frozen tolerance
+        stop after two rounds without an accepted improvement
+    audit incumbent against initial once, with the fixed rule
+    freeze selected graph and mechanisms
+    evaluate the predeclared final tests once
+    export compact metrics, graph edits, and plotting inputs
+
+Cache key: dataset checksum, exact fit/early-stop split hashes, node identifier,
+ordered parent set, preprocessing hash, architecture/training configuration,
+and optimization seed. Mechanism parameters are independent across nodes.
+An unchanged mechanism therefore need not be retrained after another node's
+parent set changes. A changed parent set is trained from a canonical seed,
+not arbitrary path-dependent warm starts. This makes results comparable and
+lets multiple baselines share work without sharing held-out test information.
+
+6. SYNTHETIC EXPERIMENTS AND DATA SEPARATION
+
+6.1 Generators
+
+Use d in {5,10}. Independently sample sparse DAGs with a random topological
+order, expected indegree around 1.5, and maximum indegree 3. Save the generating
+equations and true graph outside the learner's inputs. Relabel nodes with a
+separate random permutation so column order does not reveal causal order.
+Draw coefficients with random signs and magnitudes in [0.5,1.5]. Rescale
+parent contributions to control explosive variance, using a fixed generator
+rule rather than the evaluation data. Save rejected/unstable generator draws
+and reasons; do not reject graphs because a method performs poorly.
+
+Use three mechanism families, all with independent U_j~N(0,1):
+
+    Linear:       X_j = sum_k w_jk X_k + sigma_j U_j.
+
+    Nonlinear:    X_j = sum_k w_jk tanh(X_k)
+                       + 0.3 sum_{k<l} b_jkl tanh(X_k X_l)
+                       + sigma_j U_j.
+
+    Heterosced.:  X_j = m_j(X_Pa(j))
+                       + [0.3+0.7 sigmoid(sum_k c_jk X_k)] U_j.
+
+For nonlinear and heteroscedastic roots, use a fixed scalar monotone nonlinear
+noise transform such as U+0.1 U^3 if desired, with the choice frozen globally.
+sigma_j is sampled once per mechanism from [0.3,0.8]. These are benchmark
+design choices, not claimed physical equations. More complex noise families
+are stretch goals after the main results are complete.
+
+6.2 Intervention design and sample budget
+
+Choose 3 development-visible intervention targets for d=5 and 6 for d=10
+by a seeded random choice independent of the discovery outputs. The remaining
+targets are never intervened on in fitting, search, or audit data. All nodes
+remain observed, including in the observational fitting data.
+
+Core training interventions are stochastic perfect replacements near one
+standardized setting, q_e=N(+1,0.25^2) in fixed observational scale. Target
+identity and assignment distribution are supplied to every applicable method.
+Use B in {100,400} total non-test observations per seen target/environment,
+divided 60% fit, 10% early-stop, 20% search, and 10% audit. B includes all
+interventional observations used in model selection; it is not just the
+gradient-training sample count. Use nested samples across budgets.
+
+Observational sample counts per task: 4096 fit, 1024 early-stop, 1024 search,
+512 audit, and 1024 final observational test. Fit standardization using the
+observational fitting split only. Store row provenance and random seeds.
+
+Final intervention evaluations, generated independently with 2048 observations
+per environment, have three separate labels:
+
+  T1: New observations at seen intervention targets and the seen setting.
+  T2: New settings, q=N(-1,0.25^2), for seen targets. This is the primary
+      intervention-generalization endpoint.
+  T3: Previously unseen targets at q=N(+1,0.25^2). This is a separate,
+      more demanding secondary endpoint, not pooled silently with T2.
+
+Fixed do-values and a 21-point response grid from -2 to +2 are final synthetic
+visualization queries, created only after selection. Use interventional
+expectations over fresh noises for curves. Do not use curve points as new
+training data. If a setting is outside observed support, label extrapolation.
+
+Keep model-development SCMs fully separate from final benchmark SCMs.
+Hyperparameters and thresholds are chosen only on 3 development SCMs per
+family at d=5. Do not optimize settings against final graph SHD or test effects.
+Use only one optimization seed per discovery task in the core suite; add
+three optimization seeds on a prespecified subset to quantify training noise.
+Optimization seeds are not independent causal systems.
+
+6.3 Controlled-corruption study A
+
+Create DAG priors by applying legal edge deletions, additions, and reversals
+to the true graph. Use two main corruption levels: approximately 20% and
+50% of the true edge count as edit operations, with at least one operation.
+Use a seeded balanced operation schedule; reject cycles, duplicate graph
+states, and exact undo operations. Report actual SHD, edit types, edge count,
+and distance achievable for small sparse graphs. Intended corruption fraction
+is not the same thing as realized SHD.
+
+Add an uncorrupted starting-graph condition on the heteroscedastic subset
+as a repair-damage control. A controlled prior derived from ground truth
+is an experimental device and must never be described as an LLM output.
+
+Core matrix:
+
+  2 graph sizes x 3 families x 5 independent SCMs per size/family
+  x 2 intervention budgets x 2 corruption levels = 120 task settings.
+
+This represents 30 independently sampled SCMs, not 120 independent SCMs.
+Methods not depending on corruption are run once per SCM/budget and reused
+only for reporting comparisons. Cache parent-set fits across matched tasks.
+
+If the full matrix is unaffordable, preserve the paired comparisons and
+independent SCM count by first using d=5 only: 60 settings and 15 SCMs.
+Expand to d=10 if the pilot-based runtime permits. Do not collapse to one
+graph with many random neural initialization seeds and call it replication.
+
+6.4 Actual-language-model study B
+
+Random DAGs with arbitrary physical-sounding names do not form an honest test
+of semantic reasoning. Use a separate semantically grounded synthetic set.
+Create a small procedural family of physical modules, for example light
+sources, independently assigned actuator settings, filters, and noisy sensors.
+Fix a library of variable roles and public metadata templates first; sample
+admissible graph instances and numerical coefficients afterward. Metadata may
+describe a variable's role, unit, or location, but must not list true parents,
+edges, equations, or downstream experimental outcomes. It can narrow possible
+graphs without uniquely revealing the realized graph. Publish the complete
+generator/template policy and describe this designed semantic signal honestly.
+
+Use 5 independent semantically grounded SCM instances with 5-8 variables,
+one nonlinear/heteroscedastic family, and B=100 initially. For each instance
+compare coherent descriptions, anonymous identifiers, and shuffled descriptions.
+Keep the underlying data and graph fixed across those metadata variants.
+Use identical LLM query budgets and deterministic parsing rules. Do not choose
+the descriptions or instances after seeing which favor the LLM.
+
+Use Qwen/Qwen3-8B as the provisional local model [H4]. Pin its exact model and
+tokenizer revision and license; do not claim it is the newest or best model.
+Start with BF16 and a short context, since it is loaded separately from flow
+training. If memory or kernel compatibility prevents this, use a documented
+compatible 4-bit mode or smaller local model, preserving the model identity
+in each result. Do not use CPU offload and report it as full-GPU inference.
+
+Generate two proposals per metadata condition, with a fixed decoding policy,
+at most 2048 new tokens per proposal, and at most one schema-repair retry.
+Use the documented non-thinking mode if available. Require structured JSON
+with nodes, directed edges, and concise edge rationales. Validate names,
+self-loops, duplicate edges, acyclicity, and indegree. Invalid proposals are
+logged; any deterministic cycle resolution must be declared and measured.
+Keep a raw-output hash and the actual sanitized proposal. No model fine-tuning.
+Count invalid outputs and retries in the query budget.
+
+Do not allow web retrieval of the benchmark graph during proposal generation.
+Give only the metadata file, not the dataset name, paper, ground-truth graph,
+synthetic generator code, or future observations. For the real known benchmark,
+acknowledge that name anonymization cannot rule out all pretraining memorization.
+Treat that study as practical evaluation, not proof of semantic generalization.
+
+7. REAL INTERVENTIONAL DATA
+
+Primary dataset: Causal Chambers lt_interventions_standard_v1 [R9,D1,D2].
+The source confirms observational/interventional light-tunnel data and a
+uniform_reference experiment. Dataset availability is verified at the catalog
+level. Exact downloaded columns, experiment names, assignment policies,
+licensing, and run boundaries still need inspection; no data download was
+completed when preparing this plan. Do not invent a ready-to-use column list.
+
+Implement a Day 1 schema/protocol audit producing data/README.md and a compact
+metadata manifest. Record all columns, units, controllable variables, sensor
+settings, intervention targets, assignment distributions, run identifiers,
+sampling intervals, missingness, quantization, and SHA-256 checksums.
+Download through the authors' dataset/package interface into the artifact
+directory. Pin the dataset and package versions and source repository revision.
+Consult the authors' causal_discovery_iid notebook for its justified subset;
+do not reproduce ground-truth-tuned hyperparameter selection from an example.
+
+Provisional physical subset: RGB source settings, two polarizer settings if
+they affect included sensors, and a small selection of light sensors. Prefer
+5-10 modeled variables only if all omitted relevant causes are fixed by design
+or included as observed context. Map these physical concepts to actual columns
+after inspection. Do not assume a sensor reading is a direct physical cause
+of another sensor just because they respond to a shared optical signal.
+
+If a smaller sensor subset marginalizes varying shared causes, it may violate
+causal sufficiency. Expand the subset, restrict to genuinely fixed nuisance
+settings, or condition every method on the same observed nuisance context.
+Conditioning changes the estimand to a context-conditional intervention law;
+state that explicitly. Avoid conditioning on effects of the intervention.
+An induced subgraph alone is not a valid latent-projection argument.
+
+Distinguish manipulated settings from their noisy measurements. A fixed setting
+may be a deterministic target/context rather than a variable to which a
+continuous flow density is fitted. For stochastic assigned root variables,
+use the documented assignment law when available. Quantized sensor readings
+require a fixed dequantization/measurement model or an appropriate discrete
+likelihood; test sensitivity if quantization is material. Do not allow a flow
+to maximize likelihood by collapsing onto repeated deterministic values.
+
+Treat a reference environment as a documented regime, not necessarily as a
+natural observational population. Verify that each selected intervention is
+an exogenous setting replacement. Sensor-gain changes can instead be
+measurement-mechanism changes; exclude them from the primary causal claim
+or put them into a clearly labeled stress evaluation.
+
+Split whole acquisition runs/assignment blocks where possible. If one long
+run is the only source for a regime, use disjoint chronological blocks with
+gaps selected from training-only autocorrelation diagnostics. Label dependence
+and do not treat adjacent time points as independent trials. Match artificial
+intervention budgets using blocks, not randomly scattered rows. Report both
+row count and independent block/run count.
+
+Reserve complete documented intervention regimes for final setting/target
+generalization. Require enough non-test regimes for fit, early-stop, search,
+and audit, and at least two independent held-out regimes if available. A
+held-out target is truly absent from all non-test interventions. If the dataset
+cannot support that distinction, report new-run or new-setting evaluation
+accurately and retain unseen-target claims only for synthetic experiments.
+Do not train the assignment distribution on held-out outcome measurements.
+If the protocol lacks a known assignment law, any empirical assignment model
+must use a separate design-calibration partition with outcomes withheld, and
+the information given to every method must be identical.
+
+Day 2 gate: if a causally defensible small subset and honest split cannot be
+established, keep the real dataset as a predictive validation study with
+explicit limitations, or use another documented Chambers configuration after
+an equivalent audit. Sachs data is a last-resort alternative requiring its
+own intervention and confounding review, not an automatic drop-in replacement.
+Never silently replace the required real-data study with more synthetic data.
+
+8. COMPARISONS AND ABLATIONS
+
+Method | Information and role | Required scope
+
+Proposed repair | Same initial graph/data; full diagnostics; common flow
+verifier | All controlled settings, semantic tasks, and real case.
+
+Fixed initial graph | Same mechanism architecture/training, no edge repair |
+All matched settings; tests whether repair adds value at all.
+
+Random-priority repair | Same starts, valid edit operators, candidate cap,
+audit rule, and verifier; uniform edit selection | All controlled settings;
+isolates the value of diagnostics.
+
+Data-only repair | No semantic information; a declared observational starter
+plus empty-graph fallback; same generative mechanisms and repair policy |
+Once per SCM/budget and all practical tasks; total pipeline comparison.
+
+DCDI | Official or carefully ported intervention-aware implementation, known
+targets, recorded hyperparameter budget | At least all minimum-scope synthetic
+settings and the real case; extend to full matrix if runtime permits.
+
+Additive-noise neural SEM | Parent-conditioned mean plus parent-independent
+Gaussian noise, same supplied graph as the flow counterpart | Compare on the
+common initial graph and synthetic oracle graph across every family, avoiding
+graph selection that favors flows. A selected-graph comparison is secondary;
+additionally perform repair with this simpler family on the prespecified
+heteroscedastic subset.
+
+Oracle-graph flow | True synthetic graph with identical fitting data and
+architecture | Once per synthetic SCM/budget; finite-sample diagnostic
+reference, not a guaranteed numerical upper bound.
+
+LLM-edit plus common verifier | CauScientist-inspired add/delete/reverse
+proposals with rejection memory, same starting graph, flow score, data, and
+candidate cap; no disturbance statistics supplied | All 5 semantic SCMs,
+metadata controls, and real case. Explicit continuous-data adaptation.
+
+The LLM-edit comparator is essential because of [R7]. Replacing its original
+discrete complexity score with the common continuous-flow verifier makes a
+controlled proposer comparison. Do not present those adapted numbers as
+published CauScientist reproduction scores. An exact reproduction on the
+original discrete benchmarks is optional and does not replace this comparison.
+
+For DCDI, allocate a prespecified tuning grid and report convergence violations,
+failed fits, and actual runtime. Do not use a broken installation as a weak
+baseline. If the flow version is impractical, use DCDI-G and disclose the
+restriction. A GIES linear-Gaussian fallback is acceptable only as an explicitly
+weaker baseline with limited nonlinear relevance. If no credible nonlinear
+intervention-aware baseline runs, flag a limitation of the paper rather than
+claiming state-of-the-art performance.
+
+Report graph-only discovery methods after refitting the same conditional flows
+on their output graphs for the intervention-prediction endpoint. Separate
+discovery time from common mechanism-refitting time. Retain their native
+structural metrics as well. For equivalence-class outputs, preserve class
+information; evaluate a prespecified sample of valid DAG extensions selected
+without test outcomes, report variation, and never orient using the truth.
+Do not convert a PAG with possible confounding into an arbitrary DAG unnoticed.
+
+Ablations, on a fixed 5-node heteroscedastic subset before expanding:
+  - Marginal invariance M_j alone versus M_j+P_j+C_j.
+  - No W_search term, with otherwise identical likelihood/complexity score.
+  - No audit gate versus the one-time audit gate.
+  - Semantic descriptions versus anonymous/shuffled descriptions.
+  - Optional eta>0 disagreement penalty versus eta=0.
+
+Use matched candidate limits for scheduling comparisons and report achieved
+compute. A fixed graph naturally uses less computation; do not pad its runtime
+artificially. All methods receive the same intervention labels, fitting samples,
+preprocessing, and verified design constraints unless their stated interface
+cannot use them; list information asymmetries in the results.
+
+9. ENDPOINTS, UNCERTAINTY, AND INTERPRETATION
+
+Primary endpoint: macro-average SW_1 of the joint non-target outcome distribution
+on T2, with 256 frozen projections at final evaluation and 2048 generated samples
+per environment. Average environments within each task first; then pair methods
+within each underlying SCM and condition. Lower is better. Use the same
+projection sets and random-number policy for all methods. Different numbers
+of observed/generated samples are handled by the declared quantile grid.
+
+Secondary endpoints:
+  - T1 and T3 SW_1, reported separately.
+  - Multivariate energy distance using independent sample-pair estimates;
+    compute in chunks and report the estimator, including possible negative
+    finite-sample unbiased estimates rather than silently clipping them.
+  - Marginal Wasserstein-1 and mean/variance errors per variable.
+  - Intervention mean-effect RMSE relative to true synthetic effects.
+  - Observational and interventional truncated validation/test NLL.
+  - Directed-edge precision/recall/F1 and SHD, with one reversal counted as
+    one SHD operation; also skeleton/orientation summaries where appropriate.
+  - Calibration: generated marginal 50% and 90% predictive interval coverage
+    within regimes, with interval widths. These are predictive intervals,
+    not confidence intervals on causal effects.
+  - Runtime, GPU memory peak, optimizer updates, candidates, unique fitted
+    parent sets, LLM calls/tokens, and rejected/invalid proposals.
+
+Repair gains are measured from paired initial and selected models. Define a
+harmful repair as final T2 SW_1 exceeding the initial value by more than
+max(0.001, 0.05*initial_SW_1). Beneficial repair uses the symmetric decrease;
+everything else is neutral. These thresholds are prespecified design choices.
+Report all paired deltas, counts, proportions, and failures, including cases
+where the audit rejected a potentially helpful edit. Keep the initial and
+selected models available until these calculations are verified.
+
+For uncertainty, resample independent SCM instances as clusters, keeping all
+their budgets, corruptions, metadata variants, and method pairs together.
+Use a stratified paired cluster bootstrap with 2000 replicates for aggregate
+mean differences; report the modest number of independent SCMs prominently.
+Do not bootstrap thousands of generated samples and call that uncertainty
+about performance across causal systems. Within-cell intervals with only five
+SCMs are descriptive and may be unstable. Report the actual points.
+
+Predeclare two core paired comparisons: proposed versus fixed graph and
+proposed versus random-priority repair on T2. The semantic study adds proposed
+versus LLM-edit, as a separate exploratory comparison at its smaller sample
+size. If reporting p-values for a family of comparisons, use an appropriate
+paired test and Holm adjustment; effect sizes and intervals remain primary.
+
+For the single physical system, bootstrap independent runs/blocks where
+defensible. Repeated neural seeds or time samples do not establish replication
+across physical systems. Show uncertainty conditional on this apparatus and
+protocol; do not pool real and synthetic results into a single headline score.
+
+Evidence decisions, all provisional design rules:
+  - Positive repair evidence requires a favorable paired effect on T2 versus
+    fixed graphs, with diagnostic scheduling beating equal-budget random
+    scheduling in aggregate and a useful comparison against LLM edits.
+  - A 10% relative SW_1 improvement is a practical-interest target, not a
+    promised result or a mandatory significance threshold. Also report
+    absolute changes because ratios become unstable near zero.
+  - If only T1 improves, restrict the claim to familiar intervention regimes.
+  - If flow and additive-noise models tie, report that extra flexibility did
+    not provide detectable benefit under the tested conditions.
+  - If LLM initialization ties or harms, report that directly and revise the
+    title/emphasis. Do not search extra seeds until it wins.
+  - A negative result can support a reliability paper if the design is sound.
+
+10. IMPLEMENTATION ARCHITECTURE
+
+All maintained source, configuration, documentation, and curated paper outputs
+belong under sem-update/. Inspect the repository and every applicable
+AGENTS.md first. Do not overwrite unrelated work, reset the repository, or
+create a second project at its root. Repository contents were not successfully
+retrieved during this planning session; no assumptions about existing files
+or branch state have been verified.
+
+Suggested tracked layout:
+
+  sem-update/README.md
+  sem-update/RESEARCH_PLAN.txt
+  sem-update/pyproject.toml
+  sem-update/uv.lock or a tested equivalent lock file
+  sem-update/.gitignore
+  sem-update/.env.example
+  sem-update/configs/{development,smoke,minimum,core,semantic,real}.yaml
+  sem-update/src/sem_update/data/{synthetic,chambers,splits,metadata}.py
+  sem-update/src/sem_update/models/{flows,additive,scm}.py
+  sem-update/src/sem_update/graphs/{operations,priors,validation}.py
+  sem-update/src/sem_update/diagnostics/{kernels,disturbances}.py
+  sem-update/src/sem_update/search/{repair,scoring,cache}.py
+  sem-update/src/sem_update/baselines/{dcdi,llm_edits,data_only}.py
+  sem-update/src/sem_update/evaluation/{metrics,statistics,protocol}.py
+  sem-update/src/sem_update/visualization/{style,graphs,plots,export}.py
+  sem-update/src/sem_update/runtime/{artifacts,budget,provenance}.py
+  sem-update/src/sem_update/cli.py
+  sem-update/tests/
+  sem-update/scripts/{bootstrap,run_smoke,run_suite,export_paper,check_staged}.*
+  sem-update/prompts/graph_proposal.txt
+  sem-update/prompts/graph_edit.txt
+  sem-update/docs/{novelty,protocol,dataset_audit,decisions,status}.md
+  sem-update/data/README.md
+  sem-update/results/curated/{metrics,summary,graph_edits,run_index}.csv
+  sem-update/results/curated/provenance.json
+  sem-update/paper/{outline,references,tables,figures}/
+
+Use Python, PyTorch, a tested conditional spline implementation, NumPy,
+SciPy, pandas, NetworkX, matplotlib, and Graphviz where available. Prefer
+simple typed dataclasses/config schemas and a small CLI over a large service
+framework. Clear names such as intervention_targets and artifact_directory
+are preferable to unexplained abbreviations. Keep training and evaluation
+interfaces separate so a learner cannot accidentally request test data.
+
+Suggested CLI contract to implement, not existing commands to assume:
+
+  python -m sem_update.cli doctor
+  python -m sem_update.cli prepare-data --config configs/real.yaml
+  python -m sem_update.cli smoke --config configs/smoke.yaml
+  python -m sem_update.cli run --config configs/minimum.yaml --resume
+  python -m sem_update.cli run --config configs/semantic.yaml --resume
+  python -m sem_update.cli evaluate --frozen-manifest <manifest>
+  python -m sem_update.cli export-paper --run-index <run-index>
+  python -m sem_update.cli verify-artifacts --run-index <run-index>
+
+Core model APIs: log_probability, sample_observational, sample_intervention,
+infer_disturbances, and optional sample_counterfactual. Separate a graph object,
+mechanism bundle, intervention specification, split manifest, and run record.
+Export graph JSON with nodes, units, directed edges, edit provenance, and
+stable display positions. Report edge stability only when actually estimated.
+
+11. GPU EXECUTION AND REALISTIC COMPUTE
+
+NVIDIA documents RTX PRO 4500 Blackwell configurations with 32 GB memory [H1].
+The actual RunPod device, free VRAM, driver, and mounted disk must be detected
+with nvidia-smi and PyTorch; the model name alone is not proof of available
+memory or compatible kernels. Use one existing authorized GPU. Do not create
+additional paid pods or provision new storage without a separate instruction.
+
+Run the doctor command before any suite: record GPU name/UUID, total/free
+memory, compute capability, driver, torch version, torch CUDA runtime, Python,
+container image identifier if available, package versions, and a CUDA tensor
+operation. Use a Blackwell-compatible PyTorch/CUDA distribution; official
+PyTorch 2.7 notes added Blackwell support with CUDA 12.8 wheels [H2]. This is a
+compatibility reference, not an instruction to pin an outdated release. Pin
+the actually tested current compatible combination and record it.
+
+Train flows, neural baselines, intervention sampling, and substantial diagnostic
+kernel operations on CUDA. Require a --require-cuda mode for production runs
+that fails clearly if CUDA is unavailable. CPU-only smoke tests are useful,
+but they do not count as the requested GPU experiments. Record utilization
+periodically and measured wall/GPU time; do not invent acceleration factors.
+
+Provisional flow configuration: two conditional spline transforms, 8 bins,
+linear tails outside standardized [-5,5], conditioner MLP with two hidden
+layers of width 64, smooth activations, and constrained spline derivatives.
+Include an affine shift/scale so tails are not needlessly tied to one fixed
+standard normal. Start batch size 256 and Adam at learning rate 1e-3 with
+weight decay 1e-5; cap at 1000 optimizer steps per new parent-set fit and
+check early-stop NLL every 50 steps, patience 5 checks. These values are
+provisional until the development pilot; freezing precedes benchmark runs.
+
+For numerical stability, keep spline inversion, log determinants, and kernel
+statistics in float32; use float64 for small numerical correctness tests.
+Mixed precision in conditioners is optional only after matching the float32
+reference on development tasks. Do not train the whole flow in FP4/FP16 just
+because the GPU supports it. Finite values and correct Jacobians matter more
+than maximum nominal Tensor Core throughput.
+
+Small 5-10-node MLPs may not saturate this GPU. Batch node/parent-set training
+when shapes permit, use a measured small pool of independent jobs if useful,
+and keep minibatches resident where feasible. Do not enlarge networks merely
+to increase utilization. Run local LLM proposal generation in a separate
+process/stage, write the small outputs, then unload its weights before flow
+training. Reusing cached proposals across matching tasks avoids repeated LLM
+inference. CPU work can handle plotting, data preparation, and graph bookkeeping.
+
+Runtime planning is a conditional estimate, not a measured promise:
+
+  - Initial environment, data, and pilots: 4 GPU-hours allocation.
+  - Minimum/core flow search and final evaluations: 32 GPU-hours allocation.
+  - DCDI and other fitting baselines: 12 GPU-hours allocation.
+  - Semantic/real runs and local LLM inference: 8 GPU-hours allocation.
+  - Reruns for demonstrated defects and figure regeneration: 8 GPU-hours.
+  - Initial total GPU-job time cap: 64 hours on one device.
+
+This is a job runtime ceiling, not a monetary budget or permission to rent
+resources automatically. Billing also includes idle pod time and storage.
+Use the user's actual displayed hourly rate if estimating cost; none is assumed
+here. Schedule within the existing paid allocation if one is already specified.
+Measure the 64-hour cap as the union of intervals in which the experiment
+runner uses/reserves the one GPU, including LLM inference and baselines; count
+concurrent jobs only once toward elapsed device time. Also retain each job's
+individual timing for method comparisons.
+
+Before launching the matrix, time at least three complete repair tasks covering
+both graph sizes and the most expensive family. Extrapolate from measured
+unique parent-set fits, caching, DCDI runtime, and sample generation. At a
+12-DAG cap, the 120 settings x two repair schedules plus 60 data-only runs can
+involve about 3600 DAG evaluations before optional work. Node-local caching
+is essential, but its actual savings must be measured. If even the minimum
+suite exceeds the available cap, reduce optional dimensions before launching.
+
+Fallback order: remove optional counterfactuals/viewer and extra model seeds;
+then omit the 10-node expansion; then trim optional ablations. Preserve the
+three mechanism families, at least five independent SCMs per included family,
+two intervention budgets, both core scheduling comparisons, actual LLM runs,
+one credible intervention-aware baseline, and a real dataset. If those cannot
+finish, report the scope gap instead of declaring a complete study.
+
+Stop launching new jobs when projected runtime exceeds the cap. Finish and
+checkpoint the active safe unit, write a concrete remaining-job estimate, and
+request an extension only if needed. Retry each failed job at most twice for
+identified transient/numerical causes; preserve the failure record. Atomic
+checkpoints must include optimizer state, RNG states, data/config hashes,
+completed-task status, and the budget ledger. Resume only exact compatible
+unfinished tasks; never silently mix incompatible configurations.
+
+12. REPOSITORY HYGIENE AND ARTIFACT STORAGE
+
+Keep the complete project under sem-update/, as requested. Large operational
+outputs stay out of Git under the ignored project-local directory:
+
+  SEM_UPDATE_ARTIFACT_ROOT=<absolute-repository-path>/sem-update/.artifacts
+
+Within it use data/raw, data/processed, runs, checkpoints, generated_samples,
+logs, model_cache, figures_preview, and archives. Put framework/model caches
+there through documented cache-path settings. Place the checkout on a verified
+persistent RunPod mount where possible. Resolve the mount and disk space first;
+/workspace is a conventional location, not a durability guarantee.
+RunPod volume storage and independently retained network volumes have different
+lifetimes [H3]. Document the actual one. A pod-local volume can be lost on pod
+deletion. Before termination, preserve necessary artifacts on an already
+authorized durable destination and verify a manifest/checksum. Do not delete
+or terminate a pod merely because scripts have finished.
+
+If an external durable artifact destination is already explicitly configured
+by the user, support it as an override and retain a manifest in sem-update/.
+The default remains the ignored project-local directory. Large files being
+ignored is not the same as being backed up. Do not create paid storage, upload
+data to a new service, or invent credentials.
+
+Commit only source, tests, configuration/lockfiles, dataset acquisition notes,
+small sanitized prompts/proposals, compact run provenance, per-SCM summarized
+metrics, selected graph JSON, final vector figures, figure-generation scripts,
+tables, and manuscript sources. Every plotted numeric value must be reproducible
+from a small committed plotting table plus the stated aggregation procedure.
+Retain enough per-independent-unit metrics to recompute confidence intervals.
+
+Never commit downloaded datasets, full synthetic arrays, LLM weights,
+checkpoints/optimizer states, full stdout/stderr logs, TensorBoard/W&B runs,
+per-step traces, large generated-sample files, environments, caches, temporary
+PDF builds, credentials, or copied third-party repositories. No Git LFS by
+default: it still adds storage obligations and is unnecessary for this plan.
+
+Suggested sem-update/.gitignore entries, merge with existing rules:
+
+  .artifacts/
+  .venv/
+  .env
+  .env.*
+  !.env.example
+  __pycache__/
+  .pytest_cache/
+  .mypy_cache/
+  .ruff_cache/
+  .ipynb_checkpoints/
+  data/*
+  !data/README.md
+  runs/
+  logs/
+  checkpoints/
+  model_cache/
+  generated_samples/
+  outputs/
+  wandb/
+  tensorboard/
+  *.pt
+  *.pth
+  *.ckpt
+  *.safetensors
+  *.npy
+  *.npz
+  *.h5
+  *.hdf5
+  *.parquet
+  *.log
+  paper/build/
+
+Do not blanket-ignore all CSV, JSON, PDF, or SVG files because compact metrics
+and final paper figures need to be versioned. Put full logs in ignored
+directories and curate outputs through an explicit exporter.
+
+Implement a staged-file gate that reads the actual Git index, not just working
+tree file sizes. Reject staged raw/checkpoint/cache paths, secrets, individual
+files above 5 MiB without an explicit final-paper exception, and an aggregate
+new blob size above 25 MiB for this project change. A final manuscript PDF can
+be a documented exception up to 8 MiB; source and figures should normally
+suffice. Validate with git check-ignore for representative artifact paths.
+Existing unrelated large files must not cause cleanup or history rewriting.
+
+Never use "git add ." or "git add -A" indiscriminately. Stage an explicit
+allowlist after inspecting git status, git diff, and the staged-size report.
+Ignoring a file does not untrack it. If newly staged generated files are found,
+unstage only those files while preserving local data and the user's staging.
+For pre-existing tracked experimental files, report the finding and avoid
+rewriting history or deleting data as an unrequested cleanup.
+
+Commit cohesive source/curated-output changes only if the execution environment
+and repository instructions permit. Do not push, merge, force-push, or alter
+repository visibility without the user's authorization. The user asked for
+work in this repository, not blanket publication of raw experimental material.
+
+Maintain results/curated/provenance.json with repository commit, dirty-diff
+hash when applicable, config hashes, data source/checksums, split hashes,
+software/model revisions, seeds, hardware, timestamps, run status, and a
+relative artifact manifest reference. Never commit signed URLs, private SSH
+details, access tokens, API keys, or a secret-bearing environment dump.
+
+13. CORRECTNESS AND COMPLETION GATES
+
+These tests are required because mistakes change the scientific interpretation:
+
+  1. Flow inverse(forward(U)) round trip and analytic-vs-autodiff Jacobian on
+     representative values, including spline boundaries and tails.
+  2. Conditional independence of network output from masked nonparents.
+  3. Analytic linear-SCM intervention means/covariances match Monte Carlo.
+  4. Intervention assignments are honored exactly; original target mechanisms
+     receive no contribution from targeted rows in the training loss.
+  5. Changing an intervention leaves non-descendants unchanged under common
+     exogenous draws in a correctly specified synthetic SCM.
+  6. Stochastic targets do not accidentally inherit original parent dependence.
+  7. Optional counterfactuals reuse abducted noises and match analytic toy cases.
+  8. Add/delete/reverse validity, canonical DAG hashes, and topological sampling.
+  9. Cached parent-set fits agree with uncached fits using the same canonical
+     initialization and data. Cache keys change with preprocessing or splits.
+ 10. No overlap of data IDs/blocks between fit, early-stop, search, audit, test;
+     no final test loader is reachable from fitting/search code paths.
+ 11. Synthetic truth and test metadata/outcomes are excluded from LLM prompts.
+ 12. Fixed graph, random scheduling, and proposed method share the exact
+     intended samples, starts, score, training limits, and candidate budgets.
+ 13. GPU smoke test shows CUDA tensors and gradients, finite losses, recorded
+     device, successful checkpoint/restart, and exact task deduplication.
+ 14. Exported table/figure values reproduce from curated per-SCM metrics;
+     failed runs are not silently discarded or represented as zero error.
+
+Meaningful sanity checks: on an easy linear chain with adequate data, the
+oracle graph predicts interventions accurately; observational conditioning and
+do-intervention produce distinguishable results in a confounded toy example;
+changing a fixed split seed changes only the intended task. Do not require
+the research method to outperform competitors as a unit test.
+
+After correctness passes, run development pilots, freeze the protocol, then
+run the minimum suite and only justified expansions. Do not run broad sweeps
+while a known causal-semantics bug remains. If a bug is found after evaluation,
+record the defect and invalidate affected runs rather than silently overwriting
+numbers or tuning to the exposed test set. Mark rerun results accordingly.
+
+14. PAPER FIGURES AND VISUAL COMMUNICATION
+
+Use matplotlib plus Graphviz/NetworkX, producing vector PDF and SVG and a
+300-dpi PNG preview. No AI-generated chart images. Export original data and
+plotting scripts. Use consistent typography, a white background, a colorblind
+palette, and legible 8-10 pt labels at final publication size. Check both
+single-column and full-width versions. Rasterize dense point clouds only.
+
+F1. Method diagram: metadata and fitting data enter distinct branches; show
+initial DAG, flow mechanisms, disturbance criticism, candidate repairs,
+one-time audit, and locked final tests. Draw split boundaries explicitly.
+This is a schematic, not empirical evidence.
+
+F2. Graph comparison: initial, repaired, and true/reference graphs with shared
+node positions. Blue solid edges retained, orange dashed edges removed,
+green solid edges added; reversals clearly annotated. Keep an inset listing
+the actual edits and their search-score changes. Use a development-chosen
+example or the median final paired improvement, selected by a declared rule.
+Also show one harmful or rejected repair if any occurred.
+
+F3. Intervention responses: at least two target-outcome pairs; true synthetic
+mean curves and predictions from initial/repaired/oracle models. Real-data
+points represent actual intervention regimes. Do not invent real observations
+between measured settings. State whether ribbons are predictive quantiles,
+Monte Carlo uncertainty, or variation across independently fitted models.
+
+F4. Performance by corruption and intervention budget: paired points plus
+aggregate intervals, with separate panels for mechanism family and size.
+Show baseline ranges without hiding negative improvements. Include actual
+realized SHD or its summary beside nominal corruption levels.
+
+F5. Repair reliability and cost: distribution of paired performance changes,
+beneficial/neutral/harmful counts, and quality versus evaluated candidates or
+GPU time. Distinguish before-audit and after-audit outputs.
+
+F6, supplementary. Diagnostic heatmap: nodes by environment, with targeted
+mechanisms visibly excluded. Label values as diagnostic scores, not causal
+probabilities. Compare marginal-only and combined diagnostics.
+
+Edge thickness may show selection frequency only from a real resampling or
+optimization-repeat analysis, and must be called stability. Effect magnitude
+belongs in a separate signed effect plot; neither quantity is automatically
+a posterior probability or statistical confidence level. If no stability
+study was run, draw edges at equal thickness.
+
+Curate final figures into sem-update/paper/figures/. Keep rendering intermediates,
+all per-run graph images, interactive HTML viewers, and dashboards out of Git.
+An interactive graph viewer is optional only after all required experiments
+and static figures are complete. It must not consume the final analysis day.
+
+15. PAPER OUTLINE AND EVIDENCE REPORT
+
+Recommended main-text allocation, adjusted to the official template:
+  - Abstract and introduction: 1.5-2 pages.
+  - Related work and narrow contribution: 1-1.5 pages.
+  - SCM assumptions and method, equations, algorithm: 3 pages.
+  - Data, splits, baselines, and statistical protocol: 2 pages.
+  - Synthetic results: 2-3 pages.
+  - Real-data and semantic proposal results: 1.5-2 pages.
+  - Failure modes, limitations, conclusion: 1 page.
+  - GenAI/reproducibility statements and references as required.
+
+Create an evidence report before prose conclusions. Every claim needs a run
+identifier, metric table, and uncertainty assessment. Maintain a claim ledger
+with "supported", "mixed", "unsupported", or "not evaluated" status. Include
+negative findings and failed baseline runs. Manuscript values must be generated
+from curated results, never manually estimated for nicer tables.
+
+For double-blind review, remove author identifiers, affiliations, funding,
+identifying acknowledgments, and the identifying GitHub repository URL from
+the submitted PDF unless the venue permits an anonymized artifact mechanism.
+Keep the real repository for development without changing its visibility.
+An anonymized artifact copy can be prepared for Alex to review if needed.
+
+16. DAY-BY-DAY PLAN
+
+October 6 evening / October 7:
+Inspect repository instructions/state and the GPU; set artifact paths and
+ignore/size gates; verify closest literature, especially CauScientist; audit
+real dataset access/schema/protocol; implement synthetic SCMs and split IDs.
+Write novelty and decision notes before launching expensive work.
+
+October 8:
+Implement conditional flows, topological interventions, node-local caching,
+and mathematical correctness tests. Run GPU pilots and inspect the real-data
+subset/splits. Gate: stable inversion, correct do-semantics, and usable data.
+
+October 9:
+Implement diagnostic scheduling, common scoring/audit, fixed/random/data-only
+baselines, and local LLM proposals. Install/run the DCDI baseline. Benchmark
+three complete tasks. Freeze configurations, splits, statistical endpoints,
+candidate/time limits, and a runtime-based minimum/full matrix decision.
+
+October 10-11:
+Execute the minimum synthetic matrix, matched baselines, real-data runs, and
+semantic LLM comparisons. Resume cleanly after interruptions. Expand to the
+10-node matrix only if the measured remaining budget supports completion.
+Generate preliminary plots from development/search results, not final-test
+feedback used to revise the algorithm.
+
+October 12:
+Finish prespecified ablations and any already-budgeted expansion. Freeze all
+selected models and complete final evaluation. Aggregate paired results and
+harmful-repair outcomes. Identify missing runs and honest scope limitations.
+
+October 13:
+Produce final graphs, response curves, tables, evidence report, and claim
+ledger. Alex reviews whether the scientific claim is supported and whether
+the assumptions, real-data framing, and comparison scope are appropriate.
+
+October 14:
+Assemble/revise manuscript material under Alex's scientific direction; verify
+citations, anonymization, GenAI disclosure, figure legibility, and reproducibility.
+Perform a clean export of figures/tables from curated metrics. Avoid new
+exploratory model changes. Target a submission-ready package that evening.
+
+October 15:
+Final author review and submission by the official deadline. The nominal AoE
+end of October 15 corresponds to October 16 at 07:59:59 in New York while
+daylight saving time applies, but use an internal October 15 evening deadline
+and verify the submission portal instead of relying on last-minute conversion.
+Codex does not submit automatically.
+
+17. MINIMUM COMPLETE STUDY, STRETCH GOALS, AND REVIEW ITEMS
+
+Minimum complete study:
+  - A working GPU-trained generative SCM and verified interventions.
+  - Five-node synthetic DAGs, three mechanism families, five independent SCMs
+    per family, two intervention budgets, two prior-corruption levels.
+  - Fixed graph, equal-budget random repair, data-only repair, credible
+    intervention-aware discovery, simpler SEM, and oracle-graph comparisons.
+  - Actual local-LLM proposals and a close LLM-edit comparator on the separate
+    semantic set and real case, including metadata controls.
+  - One real interventional dataset with defensible subset and split audit.
+  - T2 primary prediction results, separate T1/T3 where applicable, graph
+    recovery on synthetic data, harmful repair rates, and measured compute.
+  - At least four final paper figures, compact reproducibility files, and an
+    evidence report with candid limitations.
+
+Stretch goals in order: 10-node expansion; three optimization seeds on a
+fixed subset; hidden-confounding and mechanism-drift stress tests; synthetic
+counterfactuals; interactive graph viewer. Do not substitute stretch work for
+missing baselines or real-data validation.
+
+Alex's scientific review items:
+  1. Adopt/revise the narrow contribution relative to CauScientist and DCDI.
+  2. Approve interpretation of the physical variables and intervention types.
+  3. Review the frozen analysis protocol and any deviations from this plan.
+  4. Decide which supported/negative findings constitute the paper's claims.
+  5. Review the final manuscript and truthful AI-assistance disclosure.
+
+Routine implementation choices can proceed autonomously and be recorded.
+Do not repeatedly stop for naming, plotting style, or library choices. Missing
+remote credentials, a required increase in paid resources, unsupported causal
+assumptions, or a scientifically material scope change should be surfaced with
+the concrete work already completed and a specific next decision.
+
+Completion means actual experiments and evidence, not a scaffold, launch
+script, dry-run, or list of proposed commands. If access prevents execution,
+finish everything possible locally and clearly identify the unexecuted work.
+
+18. SOURCE REGISTER
+
+Primary sources below were consulted or explicitly marked as pending above.
+Use these URLs in documentation; retrieve accurate BibTeX from the publication
+records when assembling references. Check versions and dates. Summaries and
+the proposed method are distinct: sources do not certify the novelty or likely
+success of this particular plan.
+
+[R1] Pearl (2009), Causal inference in statistics: An overview.
+https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf
+
+[R2] Pawlowski, Castro, Glocker (2020), Deep Structural Causal Models for
+Tractable Counterfactual Inference.
+https://arxiv.org/abs/2006.06485
+https://arxiv.org/html/2006.06485v2
+
+[R3] Brouillard et al. (2020), Differentiable Causal Discovery from
+Interventional Data.
+https://arxiv.org/abs/2007.01754
+https://arxiv.org/html/2007.01754v2
+
+[R4] Javaloy et al. (2023), Causal normalizing flows: from theory to practice.
+https://arxiv.org/abs/2306.05415
+https://arxiv.org/pdf/2306.05415
+
+[R5] Abdulaal et al. (2024), Causal Modelling Agents: Causal Graph Discovery
+through Synergising Metadata- and Data-driven Reasoning.
+https://openreview.net/forum?id=pAoqRlTBtY
+https://discovery.ucl.ac.uk/id/eprint/10195820/
+
+[R6] Li and Russo (2026), Leveraging Large Language Models for Causal
+Discovery: a Constraint-based, Argumentation-driven Approach.
+https://proceedings.mlr.press/v337/li26e.html
+https://arxiv.org/html/2602.16481v1
+The preprint was used for method inspection; reconcile it with the final
+UAI version before quoting exact implementation details.
+
+[R7] Peng et al. (2026), CauScientist: Teaching LLMs to Respect Data for
+Causal Discovery. Preprint version inspected, not assumed peer-reviewed.
+https://arxiv.org/abs/2601.13614
+https://arxiv.org/html/2601.13614v1
+https://github.com/OpenCausaLab/CauScientist
+
+[R8] Balgi, Pena, Daoud (2024), Counterfactually-Equivalent Structural Causal
+Modelling Using Causal Graphical Normalizing Flows.
+https://proceedings.mlr.press/v246/balgi24b.html
+
+[R9] Gamella, Peters, Buhlmann, The Causal Chambers: Real Physical Systems
+as a Testbed for AI Methodology (2024 preprint; journal article published
+as Causal chambers as a real-world physical testbed for AI methodology).
+https://arxiv.org/html/2404.11341v2
+https://www.nature.com/articles/s42256-024-00964-x
+
+[D1] Authors' dataset repository and catalog.
+https://github.com/juangamella/causal-chamber
+[D2] Authors' benchmark code and dataset package.
+https://github.com/juangamella/causal-chamber-paper
+https://github.com/juangamella/causal-chamber-package
+
+[V1] Official call, submission, formatting, and GenAI policy.
+https://saiconference.com/Computing/CallforPapers
+[V2] Official registration categories.
+https://saiconference.com/Computing/Register
+
+[H1] NVIDIA RTX PRO 4500 product documentation.
+https://www.nvidia.com/en-gb/products/workstations/professional-desktop-gpus/rtx-pro-4500/
+[H2] PyTorch Blackwell support reference.
+https://pytorch.org/blog/pytorch-2-7/
+[H3] RunPod storage lifetimes and mount conventions.
+https://docs.runpod.io/pods/storage/types
+[H4] Provisional local LLM model card and implementation guidance.
+https://huggingface.co/Qwen/Qwen3-8B

@@ -1,0 +1,11 @@
+{
+  "exit_code": 0,
+  "log": "logs/correctness-20261007T024622.log",
+  "passed": true,
+  "scientific_implementation_hash": "8772cd93dfb99d288bdf789a3ad0db963532214c2362cc51f86964d667b5d14f",
+  "source": {
+    "dirty_diff_hash": "6372453e72b2d142abd221af9b39c73bf4b07214ae14f2a199558560dd00d07b",
+    "repository_commit": "ef2e0cac3fd2d572caf16c98f68cf45392882d28",
+    "source_hash": "d1bd609b03fc29d388b471798eb853f2b4604ca999cd11464a5a8108637f0a47"
+  }
+}

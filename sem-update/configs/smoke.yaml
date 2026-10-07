@@ -1,0 +1,5 @@
+{
+  "production_device": "cuda",
+  "pytest_tests": "tests/",
+  "study": "correctness"
+}

@@ -1,0 +1,30 @@
+{
+  "credentials": "public downloads with implicit token use disabled",
+  "dcdi_commit": "594d328eae7795785e0d1a1138945e28a4fec037",
+  "download_is_not_gpu_validation": true,
+  "downloaded_file_bytes": {
+    ".gitattributes": 1570,
+    "LICENSE": 11343,
+    "README.md": 16660,
+    "config.json": 728,
+    "generation_config.json": 239,
+    "merges.txt": 1671853,
+    "model-00001-of-00005.safetensors": 3996250744,
+    "model-00002-of-00005.safetensors": 3993160032,
+    "model-00003-of-00005.safetensors": 3959604768,
+    "model-00004-of-00005.safetensors": 3187841392,
+    "model-00005-of-00005.safetensors": 1244659840,
+    "model.safetensors.index.json": 32878,
+    "tokenizer.json": 11422654,
+    "tokenizer_config.json": 9732,
+    "vocab.json": 2776833
+  },
+  "license_sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+  "model": {
+    "device": "cuda",
+    "license": "apache-2.0",
+    "model": "Qwen/Qwen3-8B",
+    "precision": "bfloat16",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  }
+}

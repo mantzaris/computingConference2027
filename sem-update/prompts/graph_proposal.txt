@@ -1,0 +1,7 @@
+Propose a fallible causal DAG hypothesis using only the supplied variable metadata.
+Do not claim that names or this proposal establish causality. Do not retrieve any
+external information. Use only supplied IDs; no hidden nodes, self-loops, cycles,
+duplicate edges, or more than three parents per node. Verified independently
+assigned roots cannot have parents. Return JSON only, with keys "nodes" (all IDs
+in their supplied order) and "edges" (a list of objects with "source", "target",
+and a concise "rationale"). Include isolated nodes in "nodes". Be parsimonious.

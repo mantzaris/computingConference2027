@@ -1,0 +1,1870 @@
+{
+  "complete": true,
+  "criterion": "development search score only; no reference graph or final outcomes",
+  "mean_scores": {
+    "0.1": 1.405513048262508,
+    "1.0": 1.5576559790240394
+  },
+  "rows": [
+    {
+      "data_hash": "c3f5d1c83dae0ce0cde8a39a29471a9a775df9b833ad954fabf892a118518209",
+      "discovery": {
+        "converged": true,
+        "convergence_reporting_correction": "normalized criterion actually used by optimizer; original discovery.json retained",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ]
+        },
+        "h_normalized": 9.728490140391135e-09,
+        "h_raw": 4.968307596442401e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 0.1,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "c3f5d1c83dae0ce0cde8a39a29471a9a775df9b833ad954fabf892a118518209",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.9987012147903442,
+            0.9275829792022705,
+            0.5575058460235596,
+            0.00013691982894670218
+          ],
+          [
+            7.123658329888372e-10,
+            0.0,
+            6.142283268673054e-07,
+            1.2807736027298233e-07,
+            1.632748336533041e-08
+          ],
+          [
+            8.841742338283609e-10,
+            0.5847296714782715,
+            0.0,
+            2.3590180717292242e-05,
+            3.775302320718765e-05
+          ],
+          [
+            8.306464849283657e-09,
+            0.10328587144613266,
+            0.0024260645732283592,
+            0.0,
+            9.200302883982658e-06
+          ],
+          [
+            3.9713431760901585e-05,
+            0.36310186982154846,
+            0.000730920466594398,
+            0.002268668729811907,
+            0.0
+          ]
+        ],
+        "optimization_steps": 31800,
+        "original_raw_convergence_label": false,
+        "peak_vram_bytes": 82240512,
+        "projection_removed_edges": [],
+        "seconds": 452.1121534258127
+      },
+      "family": "linear",
+      "refit_seconds": 44.98508764989674,
+      "reg_coeff": 0.1,
+      "score": {
+        "edge_penalty": 0.016,
+        "environment_sw1": [
+          0.21560180187225342,
+          0.1678709238767624,
+          0.25244948267936707
+        ],
+        "nll": 1.2775219678878784,
+        "sw1": 0.21197406947612762,
+        "total": 1.505496037364006
+      },
+      "seed": 90001
+    },
+    {
+      "data_hash": "c3f5d1c83dae0ce0cde8a39a29471a9a775df9b833ad954fabf892a118518209",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        "h_normalized": 9.510019819451467e-09,
+        "h_raw": 4.856735529301659e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 1.0,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "c3f5d1c83dae0ce0cde8a39a29471a9a775df9b833ad954fabf892a118518209",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.9974353909492493,
+            4.460118816496106e-06,
+            0.10471890866756439,
+            3.988529684306741e-08
+          ],
+          [
+            1.5121476293344926e-10,
+            0.0,
+            0.0020176549442112446,
+            2.182497667035932e-07,
+            4.7893124133224774e-08
+          ],
+          [
+            9.750741725156331e-08,
+            0.00018251672736369073,
+            0.0,
+            2.153156628992292e-06,
+            4.4935077880836616e-08
+          ],
+          [
+            1.1186708661625744e-06,
+            7.930024003144354e-05,
+            1.897333703482218e-07,
+            0.0,
+            3.778194468395668e-08
+          ],
+          [
+            2.185574885515962e-06,
+            8.682913903612643e-05,
+            9.308587323175743e-07,
+            8.619313121016603e-07,
+            0.0
+          ]
+        ],
+        "optimization_steps": 28900,
+        "peak_vram_bytes": 82143744,
+        "projection_removed_edges": [],
+        "seconds": 425.0569706559181
+      },
+      "family": "linear",
+      "refit_seconds": 41.08676528558135,
+      "reg_coeff": 1.0,
+      "score": {
+        "edge_penalty": 0.004,
+        "environment_sw1": [
+          0.23892614245414734,
+          0.18237130343914032,
+          0.2678679823875427
+        ],
+        "nll": 1.3801757097244263,
+        "sw1": 0.22972180942694345,
+        "total": 1.6138975191513698
+      },
+      "seed": 90001
+    },
+    {
+      "data_hash": "425304a1cb89e495c7e39075b1bbce296b3a01175e9af850895929f68658c775",
+      "discovery": {
+        "converged": false,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        "h_normalized": 3.8103278966107386e-08,
+        "h_raw": 1.9459217988071487e-06,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 0.1,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "425304a1cb89e495c7e39075b1bbce296b3a01175e9af850895929f68658c775",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.9739392399787903,
+            2.6027668909023305e-08,
+            0.3463658392429352,
+            0.0005869796150363982
+          ],
+          [
+            5.79703063330328e-10,
+            0.0,
+            5.452219231649735e-10,
+            0.9954743981361389,
+            0.0001830362598411739
+          ],
+          [
+            0.0631875991821289,
+            0.9990938901901245,
+            0.0,
+            0.3515797257423401,
+            0.0020399088971316814
+          ],
+          [
+            5.254159884948706e-10,
+            1.3083796090995747e-07,
+            5.894230659109212e-10,
+            0.0,
+            0.9184455871582031
+          ],
+          [
+            1.6042364103796558e-09,
+            3.404739572943072e-06,
+            1.4432104400441403e-09,
+            2.7646271405501466e-07,
+            0.0
+          ]
+        ],
+        "optimization_steps": 40000,
+        "peak_vram_bytes": 82530816,
+        "projection_removed_edges": [],
+        "seconds": 562.2645779177547
+      },
+      "family": "linear",
+      "refit_seconds": 47.33746420033276,
+      "reg_coeff": 0.1,
+      "score": {
+        "edge_penalty": 0.016,
+        "environment_sw1": [
+          0.44496241211891174,
+          0.3452330231666565,
+          0.16899853944778442
+        ],
+        "nll": 1.2060002088546753,
+        "sw1": 0.31973132491111755,
+        "total": 1.5417315337657929
+      },
+      "seed": 90002
+    },
+    {
+      "data_hash": "425304a1cb89e495c7e39075b1bbce296b3a01175e9af850895929f68658c775",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              2,
+              1
+            ]
+          ]
+        },
+        "h_normalized": 9.603490571300604e-09,
+        "h_raw": 4.904470731759147e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 1.0,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "425304a1cb89e495c7e39075b1bbce296b3a01175e9af850895929f68658c775",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            1.1946672202611808e-05,
+            2.3176917238743044e-06,
+            3.4788808989105746e-05,
+            2.7366706490283832e-05
+          ],
+          [
+            1.002640237857122e-05,
+            0.0,
+            5.4238665114780815e-08,
+            0.1436082273721695,
+            0.0005838742363266647
+          ],
+          [
+            0.00017997891700360924,
+            0.9382907152175903,
+            0.0,
+            0.0013799708103761077,
+            0.00026824462111108005
+          ],
+          [
+            2.122419857641944e-07,
+            6.958088505371052e-08,
+            4.2271658173831383e-08,
+            0.0,
+            0.48931413888931274
+          ],
+          [
+            1.536425600079383e-07,
+            7.195896159828408e-06,
+            4.98691690609121e-07,
+            3.3342456617901917e-07,
+            0.0
+          ]
+        ],
+        "optimization_steps": 28700,
+        "peak_vram_bytes": 82821120,
+        "projection_removed_edges": [],
+        "seconds": 400.0348002910614
+      },
+      "family": "linear",
+      "refit_seconds": 30.94674444757402,
+      "reg_coeff": 1.0,
+      "score": {
+        "edge_penalty": 0.004,
+        "environment_sw1": [
+          0.44823136925697327,
+          0.4898637533187866,
+          0.2240346074104309
+        ],
+        "nll": 1.3267123699188232,
+        "sw1": 0.3873765766620636,
+        "total": 1.7180889465808868
+      },
+      "seed": 90002
+    },
+    {
+      "data_hash": "12e19fa9fdb123f21dca3132a3147fe3eb35db76c045ea5547171281f7652552",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        "h_normalized": 9.971314830282936e-09,
+        "h_raw": 5.092317358901255e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 0.1,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "12e19fa9fdb123f21dca3132a3147fe3eb35db76c045ea5547171281f7652552",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.9996572732925415,
+            0.998116135597229,
+            0.992184579372406,
+            0.9948386549949646
+          ],
+          [
+            2.0855124571728112e-10,
+            0.0,
+            6.61216359443273e-10,
+            1.791934245432003e-08,
+            8.18098612853646e-07
+          ],
+          [
+            5.559775417829371e-10,
+            0.9958083629608154,
+            0.0,
+            0.9944301247596741,
+            0.528276801109314
+          ],
+          [
+            4.4253997688592506e-10,
+            0.9919068813323975,
+            6.517618000856373e-09,
+            0.0,
+            0.9989068508148193
+          ],
+          [
+            3.001660309198684e-10,
+            0.29284194111824036,
+            1.28955157663313e-09,
+            2.3836552998091065e-07,
+            0.0
+          ]
+        ],
+        "optimization_steps": 40000,
+        "peak_vram_bytes": 83208192,
+        "projection_removed_edges": [],
+        "seconds": 561.7511329445988
+      },
+      "family": "linear",
+      "refit_seconds": 64.98788051120937,
+      "reg_coeff": 0.1,
+      "score": {
+        "edge_penalty": 0.036,
+        "environment_sw1": [
+          0.15500104427337646,
+          0.24053026735782623,
+          0.33038920164108276
+        ],
+        "nll": 0.932973325252533,
+        "sw1": 0.24197350442409515,
+        "total": 1.2109468296766281
+      },
+      "seed": 90003
+    },
+    {
+      "data_hash": "12e19fa9fdb123f21dca3132a3147fe3eb35db76c045ea5547171281f7652552",
+      "discovery": {
+        "converged": false,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              0
+            ]
+          ]
+        },
+        "h_normalized": 1.0345920067955126e-06,
+        "h_raw": 5.2836270093337134e-05,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 1.0,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "12e19fa9fdb123f21dca3132a3147fe3eb35db76c045ea5547171281f7652552",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.9996033310890198,
+            0.3015487790107727,
+            9.126647881885219e-08,
+            6.462412471819334e-08
+          ],
+          [
+            3.7176540956807e-08,
+            0.0,
+            0.001254421309567988,
+            6.300847399387521e-09,
+            4.570830824945915e-08
+          ],
+          [
+            9.577429409546312e-07,
+            0.028683533892035484,
+            0.0,
+            5.378083005780354e-05,
+            1.2928446722071385e-06
+          ],
+          [
+            0.0002553236554376781,
+            0.997638463973999,
+            0.24369098246097565,
+            0.0,
+            0.9997574687004089
+          ],
+          [
+            0.9994245767593384,
+            0.0003224893589504063,
+            0.012294745072722435,
+            9.386654786780468e-10,
+            0.0
+          ]
+        ],
+        "optimization_steps": 40000,
+        "peak_vram_bytes": 83692032,
+        "projection_removed_edges": [],
+        "seconds": 524.007617412135
+      },
+      "family": "linear",
+      "refit_seconds": 58.5420079305768,
+      "reg_coeff": 1.0,
+      "score": {
+        "edge_penalty": 0.016,
+        "environment_sw1": [
+          0.29854029417037964,
+          0.25503411889076233,
+          0.5289796590805054
+        ],
+        "nll": 1.0125244855880737,
+        "sw1": 0.36085135738054913,
+        "total": 1.389375842968623
+      },
+      "seed": 90003
+    },
+    {
+      "data_hash": "13ced5eccc3fe2137b5adb3f5e1e21d02e43a7ce6375fd182c22ea8e8ab8cf6b",
+      "discovery": {
+        "converged": false,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        "h_normalized": 1.0326581343861005e-08,
+        "h_raw": 5.273750787182507e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 0.1,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "13ced5eccc3fe2137b5adb3f5e1e21d02e43a7ce6375fd182c22ea8e8ab8cf6b",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.9997926354408264,
+            0.9982894062995911,
+            0.9984147548675537,
+            0.09424759447574615
+          ],
+          [
+            3.2640062874733644e-10,
+            0.0,
+            0.4474458694458008,
+            0.040176499634981155,
+            0.03283903747797012
+          ],
+          [
+            1.40040590235202e-10,
+            2.204141757999878e-08,
+            0.0,
+            0.9996337890625,
+            0.9998148083686829
+          ],
+          [
+            1.0403836819827816e-10,
+            1.3759984085481847e-07,
+            7.319193029431403e-10,
+            0.0,
+            0.08350919187068939
+          ],
+          [
+            2.0275955914250687e-10,
+            1.4096340095193227e-08,
+            5.310277217951409e-10,
+            5.69261555938283e-06,
+            0.0
+          ]
+        ],
+        "optimization_steps": 40000,
+        "peak_vram_bytes": 84175872,
+        "projection_removed_edges": [],
+        "seconds": 516.1326345913112
+      },
+      "family": "nonlinear",
+      "refit_seconds": 69.86221217364073,
+      "reg_coeff": 0.1,
+      "score": {
+        "edge_penalty": 0.02,
+        "environment_sw1": [
+          0.10362417995929718,
+          0.13343290984630585,
+          0.14566023647785187
+        ],
+        "nll": 1.1694469451904297,
+        "sw1": 0.12757244209448496,
+        "total": 1.3170193872849147
+      },
+      "seed": 91001
+    },
+    {
+      "data_hash": "13ced5eccc3fe2137b5adb3f5e1e21d02e43a7ce6375fd182c22ea8e8ab8cf6b",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        "h_normalized": 9.205512676217285e-09,
+        "h_raw": 4.7012247428313003e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 1.0,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "13ced5eccc3fe2137b5adb3f5e1e21d02e43a7ce6375fd182c22ea8e8ab8cf6b",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.9996256828308105,
+            0.30154576897621155,
+            0.04583294689655304,
+            0.0749000832438469
+          ],
+          [
+            3.753531929717724e-10,
+            0.0,
+            0.017120571807026863,
+            0.001297422219067812,
+            0.00044253471423871815
+          ],
+          [
+            1.4834723449652643e-09,
+            7.998251930985134e-06,
+            0.0,
+            0.00224676844663918,
+            0.9995813965797424
+          ],
+          [
+            1.5546448572933969e-09,
+            6.0038029914721847e-05,
+            3.155186334424798e-08,
+            0.0,
+            0.0007600423996336758
+          ],
+          [
+            9.008584989089741e-10,
+            2.7661522835842334e-05,
+            2.2906489205443137e-10,
+            4.969630481355125e-06,
+            0.0
+          ]
+        ],
+        "optimization_steps": 38700,
+        "peak_vram_bytes": 84659712,
+        "projection_removed_edges": [],
+        "seconds": 456.88293419219553
+      },
+      "family": "nonlinear",
+      "refit_seconds": 13.195767736062407,
+      "reg_coeff": 1.0,
+      "score": {
+        "edge_penalty": 0.008,
+        "environment_sw1": [
+          0.2607964873313904,
+          0.1632811278104782,
+          0.17402347922325134
+        ],
+        "nll": 1.2367817163467407,
+        "sw1": 0.19936703145503998,
+        "total": 1.4441487478017807
+      },
+      "seed": 91001
+    },
+    {
+      "data_hash": "fa0f9246205234d4318c293f1f5b7fbf3ad6548e08685cfb5bb770d13977f473",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              2
+            ]
+          ]
+        },
+        "h_normalized": 9.941751461886139e-09,
+        "h_raw": 5.077219444871162e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 0.1,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "fa0f9246205234d4318c293f1f5b7fbf3ad6548e08685cfb5bb770d13977f473",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            1.080608527104232e-07,
+            0.01140502467751503,
+            9.437315373617139e-10,
+            3.615473644913436e-07
+          ],
+          [
+            0.11089407652616501,
+            0.0,
+            0.0024797124788165092,
+            3.2542032957216804e-10,
+            0.7001486420631409
+          ],
+          [
+            3.148557152599096e-05,
+            1.3443973934101905e-08,
+            0.0,
+            2.1245817605208828e-10,
+            2.396147946726046e-09
+          ],
+          [
+            0.04846372455358505,
+            0.9998503923416138,
+            0.9564900398254395,
+            0.0,
+            0.9763739109039307
+          ],
+          [
+            0.2462775707244873,
+            4.270400211225933e-08,
+            0.9986287355422974,
+            2.591030445753262e-10,
+            0.0
+          ]
+        ],
+        "optimization_steps": 36300,
+        "peak_vram_bytes": 82143744,
+        "projection_removed_edges": [],
+        "seconds": 523.0818831305951
+      },
+      "family": "nonlinear",
+      "refit_seconds": 60.57250142097473,
+      "reg_coeff": 0.1,
+      "score": {
+        "edge_penalty": 0.02,
+        "environment_sw1": [
+          0.15970665216445923,
+          0.16733035445213318,
+          0.18286876380443573
+        ],
+        "nll": 1.193060278892517,
+        "sw1": 0.1699685901403427,
+        "total": 1.3830288690328598
+      },
+      "seed": 91002
+    },
+    {
+      "data_hash": "fa0f9246205234d4318c293f1f5b7fbf3ad6548e08685cfb5bb770d13977f473",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              3,
+              1
+            ]
+          ]
+        },
+        "h_normalized": 9.948399921476359e-09,
+        "h_raw": 5.08061479109756e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 1.0,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "fa0f9246205234d4318c293f1f5b7fbf3ad6548e08685cfb5bb770d13977f473",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.0004205958393868059,
+            5.3956566262058914e-05,
+            0.00020648349891416728,
+            0.0025834031403064728
+          ],
+          [
+            3.9849172850381365e-08,
+            0.0,
+            2.2473319404525682e-05,
+            2.9843544524510435e-08,
+            0.3417079746723175
+          ],
+          [
+            6.681071340608469e-08,
+            2.6680097562348237e-06,
+            0.0,
+            3.0399032624472966e-08,
+            4.862386617787706e-07
+          ],
+          [
+            2.8471242785599316e-07,
+            0.9982665181159973,
+            0.0014273381093516946,
+            0.0,
+            4.4478969130068435e-07
+          ],
+          [
+            5.589627605218084e-08,
+            1.1625537581494427e-06,
+            0.08435828983783722,
+            6.181712475239465e-09,
+            0.0
+          ]
+        ],
+        "optimization_steps": 29600,
+        "peak_vram_bytes": 82240512,
+        "projection_removed_edges": [],
+        "seconds": 409.94096418097615
+      },
+      "family": "nonlinear",
+      "refit_seconds": 24.236443454399705,
+      "reg_coeff": 1.0,
+      "score": {
+        "edge_penalty": 0.004,
+        "environment_sw1": [
+          0.34158265590667725,
+          0.3796919584274292,
+          0.2553451657295227
+        ],
+        "nll": 1.3524223566055298,
+        "sw1": 0.3255399266878764,
+        "total": 1.6819622832934062
+      },
+      "seed": 91002
+    },
+    {
+      "data_hash": "5210176e33d628d2dd6cd29379e03c5809654f50271b124540f16430d423b8e9",
+      "discovery": {
+        "converged": false,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ]
+          ]
+        },
+        "h_normalized": 1.6703523059780606e-08,
+        "h_raw": 8.530433737163889e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 0.1,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "5210176e33d628d2dd6cd29379e03c5809654f50271b124540f16430d423b8e9",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.9998053908348083,
+            0.6023698449134827,
+            0.9998264908790588,
+            0.05134263634681702
+          ],
+          [
+            9.93525706149967e-10,
+            0.0,
+            9.582980419509113e-05,
+            3.3680171327432618e-06,
+            0.9997130036354065
+          ],
+          [
+            8.973292109359932e-10,
+            2.674243262390519e-07,
+            0.0,
+            1.2510503744067591e-08,
+            9.13708149141712e-08
+          ],
+          [
+            1.1280066880559048e-09,
+            0.04438383877277374,
+            0.7787600755691528,
+            0.0,
+            0.06522476673126221
+          ],
+          [
+            2.033456514283216e-09,
+            8.918082272657557e-09,
+            0.7739114165306091,
+            5.7881475186150055e-06,
+            0.0
+          ]
+        ],
+        "optimization_steps": 40000,
+        "peak_vram_bytes": 82917888,
+        "projection_removed_edges": [],
+        "seconds": 553.1821435317397
+      },
+      "family": "nonlinear",
+      "refit_seconds": 62.4278532397002,
+      "reg_coeff": 0.1,
+      "score": {
+        "edge_penalty": 0.024,
+        "environment_sw1": [
+          0.09485416114330292,
+          0.14467571675777435,
+          0.18374669551849365
+        ],
+        "nll": 1.1851612329483032,
+        "sw1": 0.14109219113985697,
+        "total": 1.3502534240881603
+      },
+      "seed": 91003
+    },
+    {
+      "data_hash": "5210176e33d628d2dd6cd29379e03c5809654f50271b124540f16430d423b8e9",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        "h_normalized": 9.38590250405468e-09,
+        "h_raw": 4.793349228648935e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 1.0,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "5210176e33d628d2dd6cd29379e03c5809654f50271b124540f16430d423b8e9",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.13012786209583282,
+            1.725212541714427e-07,
+            0.9997528195381165,
+            0.0004594727361109108
+          ],
+          [
+            3.6571295822795946e-06,
+            0.0,
+            1.440772052774264e-07,
+            4.3434611143311486e-05,
+            0.9992932081222534
+          ],
+          [
+            0.0008990882197394967,
+            8.850431186147034e-05,
+            0.0,
+            3.9654052670812234e-05,
+            6.899684376548976e-05
+          ],
+          [
+            3.278500526615602e-10,
+            3.7586517009913223e-07,
+            3.4329211473504984e-08,
+            0.0,
+            0.0002198822912760079
+          ],
+          [
+            6.264346819051525e-09,
+            1.498518253928438e-10,
+            6.355660531198737e-08,
+            1.0603566806821618e-05,
+            0.0
+          ]
+        ],
+        "optimization_steps": 32100,
+        "peak_vram_bytes": 83304960,
+        "projection_removed_edges": [],
+        "seconds": 451.34456497617066
+      },
+      "family": "nonlinear",
+      "refit_seconds": 32.32607087120414,
+      "reg_coeff": 1.0,
+      "score": {
+        "edge_penalty": 0.008,
+        "environment_sw1": [
+          0.3644825220108032,
+          0.3026752173900604,
+          0.2950116991996765
+        ],
+        "nll": 1.3261269330978394,
+        "sw1": 0.32072314620018005,
+        "total": 1.6548500792980194
+      },
+      "seed": 91003
+    },
+    {
+      "data_hash": "59b5f515f014d104276ac74c0e4dc33036c547a9ce9b07bf233637a5e502dced",
+      "discovery": {
+        "converged": false,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              3
+            ]
+          ]
+        },
+        "h_normalized": 2.4355949683480494e-08,
+        "h_raw": 1.2438502592360123e-06,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 0.1,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "59b5f515f014d104276ac74c0e4dc33036c547a9ce9b07bf233637a5e502dced",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.9854885935783386,
+            0.9925859570503235,
+            0.28971874713897705,
+            0.9988458156585693
+          ],
+          [
+            2.1579775466573636e-10,
+            0.0,
+            2.230957761639729e-05,
+            2.796282760897384e-09,
+            1.3133847787116792e-08
+          ],
+          [
+            1.7056651924196586e-10,
+            0.04724428430199623,
+            0.0,
+            1.772976077063504e-07,
+            8.335108159229776e-10
+          ],
+          [
+            3.838259432509261e-10,
+            0.9796860814094543,
+            0.9982342720031738,
+            0.0,
+            4.4622530670501703e-10
+          ],
+          [
+            3.282818183958369e-10,
+            0.06176732853055,
+            0.6351272463798523,
+            0.9898243546485901,
+            0.0
+          ]
+        ],
+        "optimization_steps": 40000,
+        "peak_vram_bytes": 82046976,
+        "projection_removed_edges": [],
+        "seconds": 562.554995816201
+      },
+      "family": "heteroscedastic",
+      "refit_seconds": 43.85685412772,
+      "reg_coeff": 0.1,
+      "score": {
+        "edge_penalty": 0.028000000000000004,
+        "environment_sw1": [
+          0.3281061053276062,
+          0.2179141640663147,
+          0.14698278903961182
+        ],
+        "nll": 1.3031373023986816,
+        "sw1": 0.23100101947784424,
+        "total": 1.562138321876526
+      },
+      "seed": 92001
+    },
+    {
+      "data_hash": "59b5f515f014d104276ac74c0e4dc33036c547a9ce9b07bf233637a5e502dced",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              3,
+              2
+            ]
+          ]
+        },
+        "h_normalized": 9.950740887712493e-09,
+        "h_raw": 5.081810314777613e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 1.0,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "59b5f515f014d104276ac74c0e4dc33036c547a9ce9b07bf233637a5e502dced",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            2.3280955829818595e-08,
+            0.04526761546730995,
+            0.0007169637829065323,
+            5.9177580169489374e-08
+          ],
+          [
+            0.01725686714053154,
+            0.0,
+            2.3938911908771843e-05,
+            1.347465712342455e-07,
+            8.953708174885833e-08
+          ],
+          [
+            1.0846204531844705e-05,
+            2.5262657743496675e-08,
+            0.0,
+            3.3821667688727075e-09,
+            3.5526852570910705e-08
+          ],
+          [
+            7.928430250103702e-07,
+            3.5038890899841135e-08,
+            0.9978426694869995,
+            0.0,
+            1.0021654617275999e-07
+          ],
+          [
+            0.14849594235420227,
+            2.9200579731991638e-08,
+            0.0014240064192563295,
+            5.308348249855044e-08,
+            0.0
+          ]
+        ],
+        "optimization_steps": 35800,
+        "peak_vram_bytes": 82337280,
+        "projection_removed_edges": [],
+        "seconds": 483.2193424627185
+      },
+      "family": "heteroscedastic",
+      "refit_seconds": 41.50000464729965,
+      "reg_coeff": 1.0,
+      "score": {
+        "edge_penalty": 0.004,
+        "environment_sw1": [
+          0.29398688673973083,
+          0.2025366723537445,
+          0.21176095306873322
+        ],
+        "nll": 1.3530911207199097,
+        "sw1": 0.23609483738740286,
+        "total": 1.5931859581073124
+      },
+      "seed": 92001
+    },
+    {
+      "data_hash": "a7cc6b1e9c80f8cb85eb2958fe7fced5e718c43b9e4d8b0a46098bc505b1138d",
+      "discovery": {
+        "converged": false,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              3
+            ]
+          ]
+        },
+        "h_normalized": 2.1910842380642716e-08,
+        "h_raw": 1.1189794415500387e-06,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 0.1,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "a7cc6b1e9c80f8cb85eb2958fe7fced5e718c43b9e4d8b0a46098bc505b1138d",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            1.9944469897836825e-07,
+            6.582598643944948e-08,
+            6.773867085030361e-07,
+            3.603222165082798e-10
+          ],
+          [
+            0.5949424505233765,
+            0.0,
+            5.282713573251385e-07,
+            3.677003633129061e-06,
+            1.4342671494915749e-09
+          ],
+          [
+            0.034774113446474075,
+            0.000995841808617115,
+            0.0,
+            0.9984158277511597,
+            4.772401918096136e-10
+          ],
+          [
+            0.24936912953853607,
+            0.1965143084526062,
+            3.154817740380622e-09,
+            0.0,
+            3.385895730456667e-10
+          ],
+          [
+            0.9978596568107605,
+            0.2225026786327362,
+            0.9994112253189087,
+            0.9727373719215393,
+            0.0
+          ]
+        ],
+        "optimization_steps": 40000,
+        "peak_vram_bytes": 82821120,
+        "projection_removed_edges": [],
+        "seconds": 555.9975385349244
+      },
+      "family": "heteroscedastic",
+      "refit_seconds": 57.62475461885333,
+      "reg_coeff": 0.1,
+      "score": {
+        "edge_penalty": 0.02,
+        "environment_sw1": [
+          0.1933000087738037,
+          0.1044776663184166,
+          0.20802050828933716
+        ],
+        "nll": 1.2009962797164917,
+        "sw1": 0.16859939446051916,
+        "total": 1.3895956741770108
+      },
+      "seed": 92002
+    },
+    {
+      "data_hash": "a7cc6b1e9c80f8cb85eb2958fe7fced5e718c43b9e4d8b0a46098bc505b1138d",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              4,
+              2
+            ]
+          ]
+        },
+        "h_normalized": 9.376666031889553e-09,
+        "h_raw": 4.788632192997966e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 1.0,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "a7cc6b1e9c80f8cb85eb2958fe7fced5e718c43b9e4d8b0a46098bc505b1138d",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            3.9248101302291616e-07,
+            0.0004969959845766425,
+            1.1009468181555349e-07,
+            1.207415152748581e-06
+          ],
+          [
+            1.244167037839361e-06,
+            0.0,
+            5.0133825425291434e-05,
+            0.00036286981776356697,
+            0.00012081391469109803
+          ],
+          [
+            0.0001601037074578926,
+            0.00028158642817288637,
+            0.0,
+            2.6532420633884612e-06,
+            2.6800353936096144e-08
+          ],
+          [
+            0.011069185100495815,
+            0.00020000222139060497,
+            0.04462636262178421,
+            0.0,
+            0.023748524487018585
+          ],
+          [
+            0.04079919680953026,
+            9.709491450848873e-07,
+            0.9799190759658813,
+            2.8193771868245676e-06,
+            0.0
+          ]
+        ],
+        "optimization_steps": 33600,
+        "peak_vram_bytes": 82917888,
+        "projection_removed_edges": [],
+        "seconds": 457.59360377676785
+      },
+      "family": "heteroscedastic",
+      "refit_seconds": 28.91190187819302,
+      "reg_coeff": 1.0,
+      "score": {
+        "edge_penalty": 0.004,
+        "environment_sw1": [
+          0.22708898782730103,
+          0.219813734292984,
+          0.2256811559200287
+        ],
+        "nll": 1.3057924509048462,
+        "sw1": 0.2241946260134379,
+        "total": 1.5339870769182842
+      },
+      "seed": 92002
+    },
+    {
+      "data_hash": "2ab6c8a11b85f065b4d433021a9f70604de5d103c53238f4adc0600a4ecfbdd1",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              1
+            ]
+          ]
+        },
+        "h_normalized": 9.62725728127441e-09,
+        "h_raw": 4.916608311589243e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 0.1,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "2ab6c8a11b85f065b4d433021a9f70604de5d103c53238f4adc0600a4ecfbdd1",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            0.0007688887417316437,
+            6.715958443237469e-05,
+            0.043212275952100754,
+            0.0018693197052925825
+          ],
+          [
+            1.7704060155665502e-06,
+            0.0,
+            4.941848263939619e-09,
+            1.240555320691783e-07,
+            0.9990528225898743
+          ],
+          [
+            7.681495480937883e-05,
+            0.0025952563155442476,
+            0.0,
+            0.9996802806854248,
+            0.0016857809387147427
+          ],
+          [
+            2.763195652732975e-06,
+            0.9998327493667603,
+            2.9112423582944302e-09,
+            0.0,
+            0.33679673075675964
+          ],
+          [
+            4.103980245417915e-06,
+            7.101078125515414e-08,
+            4.366867312199929e-09,
+            6.80058747093426e-08,
+            0.0
+          ]
+        ],
+        "optimization_steps": 34900,
+        "peak_vram_bytes": 83692032,
+        "projection_removed_edges": [],
+        "seconds": 472.8374204467982
+      },
+      "family": "heteroscedastic",
+      "refit_seconds": 73.32155039347708,
+      "reg_coeff": 0.1,
+      "score": {
+        "edge_penalty": 0.012,
+        "environment_sw1": [
+          0.13160797953605652,
+          0.16600003838539124,
+          0.12901140749454498
+        ],
+        "nll": 1.2352008819580078,
+        "sw1": 0.14220647513866425,
+        "total": 1.389407357096672
+      },
+      "seed": 92003
+    },
+    {
+      "data_hash": "2ab6c8a11b85f065b4d433021a9f70604de5d103c53238f4adc0600a4ecfbdd1",
+      "discovery": {
+        "converged": true,
+        "convergence_criterion": "normalized trace-exponential <= 1e-8",
+        "graph": {
+          "d": 5,
+          "edges": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              1
+            ]
+          ]
+        },
+        "h_normalized": 9.41054398937477e-09,
+        "h_raw": 4.805933553342356e-07,
+        "identity": {
+          "adapter_version": 2,
+          "config": {
+            "batch_size": 256,
+            "block_steps": 100,
+            "layers": 2,
+            "learning_rate": 0.001,
+            "max_indegree": 3,
+            "reg_coeff": 1.0,
+            "seed": 8821,
+            "steps": 40000,
+            "threshold": 0.5,
+            "width": 64
+          },
+          "data": "2ab6c8a11b85f065b4d433021a9f70604de5d103c53238f4adc0600a4ecfbdd1",
+          "roots": [],
+          "source": "594d328eae7795785e0d1a1138945e28a4fec037"
+        },
+        "implementation": "official DCDI-G network; CUDA training adapter",
+        "native_probabilities": [
+          [
+            0.0,
+            2.1405350707937032e-05,
+            1.6701776530680945e-06,
+            4.9840324209071696e-05,
+            0.0012180053163319826
+          ],
+          [
+            7.467631490953863e-08,
+            0.0,
+            7.533395773862139e-08,
+            4.230333860988367e-09,
+            0.9975056052207947
+          ],
+          [
+            3.1137267342273844e-07,
+            0.019640905782580376,
+            0.0,
+            0.8095130920410156,
+            3.5956465580966324e-05
+          ],
+          [
+            1.702626803989915e-07,
+            0.9995850920677185,
+            4.7499489141955564e-07,
+            0.0,
+            0.0019982403609901667
+          ],
+          [
+            1.793191302112973e-07,
+            1.935784510465055e-08,
+            1.990664699746958e-08,
+            7.483358643867177e-08,
+            0.0
+          ]
+        ],
+        "optimization_steps": 24900,
+        "peak_vram_bytes": 83595264,
+        "projection_removed_edges": [],
+        "seconds": 318.6783784478903
+      },
+      "family": "heteroscedastic",
+      "refit_seconds": 0.0,
+      "reg_coeff": 1.0,
+      "score": {
+        "edge_penalty": 0.012,
+        "environment_sw1": [
+          0.13160797953605652,
+          0.16600003838539124,
+          0.12901140749454498
+        ],
+        "nll": 1.2352008819580078,
+        "sw1": 0.14220647513866425,
+        "total": 1.389407357096672
+      },
+      "seed": 92003
+    }
+  ],
+  "selected_reg_coeff": 0.1
+}

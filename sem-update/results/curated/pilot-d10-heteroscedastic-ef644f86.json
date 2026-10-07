@@ -1,0 +1,78 @@
+{
+  "audit": {
+    "initial": {
+      "edge_penalty": 0.022,
+      "environment_sw1": [
+        0.19215962290763855,
+        0.2724783718585968,
+        0.22482173144817352,
+        0.22644826769828796,
+        0.20066283643245697,
+        0.22313687205314636
+      ],
+      "nll": 1.2490768432617188,
+      "sw1": 0.22328461706638336,
+      "total": 1.4943614603281021
+    },
+    "pass": true,
+    "selected": {
+      "edge_penalty": 0.024,
+      "environment_sw1": [
+        0.1798800826072693,
+        0.24994033575057983,
+        0.1763409972190857,
+        0.22236621379852295,
+        0.21074174344539642,
+        0.20750558376312256
+      ],
+      "nll": 1.210193157196045,
+      "sw1": 0.20779582609732947,
+      "total": 1.4419889832933743
+    }
+  },
+  "candidate_count": 12,
+  "config": {
+    "search": {
+      "audit_nll_slack": 0.05,
+      "audit_w_factor": 1.05,
+      "audit_w_slack": 0.001,
+      "beta": 1.0,
+      "candidate_budget": 12,
+      "diagnostic_cap": 256,
+      "edge_penalty": 0.02,
+      "improvement": 0.005,
+      "per_round": 3,
+      "permutations": 32,
+      "projections": 64,
+      "rounds": 4,
+      "samples": 512,
+      "seed": 491
+    },
+    "train": {
+      "batch_size": 256,
+      "bins": 8,
+      "check_every": 50,
+      "learning_rate": 0.001,
+      "patience": 5,
+      "seed": 707,
+      "steps": 1000,
+      "transforms": 2,
+      "weight_decay": 1e-05,
+      "width": 64
+    }
+  },
+  "d": 10,
+  "data_hash": "af9efbb9a3f03a10979be67ab42a36f48d00efcebc46f7852f78dcf87c87edcf",
+  "family": "heteroscedastic",
+  "new_parent_sets": 27,
+  "optimizer_updates": 15950,
+  "peak_vram_bytes": 113033728,
+  "run_id": "pilot-d10-heteroscedastic-ef644f86",
+  "source": {
+    "dirty_diff_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repository_commit": "ef2e0cac3fd2d572caf16c98f68cf45392882d28",
+    "source_hash": "5ef1a5f475a7bc8dd4813734a9b6bae1fe63d04346a832704ac0f7e749ece651"
+  },
+  "unique_parent_sets": 27,
+  "wall_seconds": 315.30955120548606
+}

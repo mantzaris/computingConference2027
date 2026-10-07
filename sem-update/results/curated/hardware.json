@@ -1,0 +1,38 @@
+{
+  "compiled_cuda_arches": [
+    "sm_70",
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "compute_capability": [
+    12,
+    0
+  ],
+  "cuda_available": true,
+  "cuda_runtime": "12.8",
+  "device": "NVIDIA RTX PRO 4500 Blackwell",
+  "dirty_diff_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "disk": "Filesystem       1B-blocks      Used   Available Use% Mounted on\noverlay        80530636800 660819968 79869816832   1% /",
+  "finite_loss": 511.9277648925781,
+  "gradient_device": "cuda:0",
+  "gradient_norm": 8.96080207824707,
+  "memory_free_bytes": 33229111296,
+  "memory_total_bytes": 33685569536,
+  "nvidia_smi": "NVIDIA RTX PRO 4500 Blackwell, GPU-5f246524-69ae-146c-38bf-e5e350b377f4, 580.159.04, 32623 MiB, 31690 MiB",
+  "packages": {
+    "networkx": "3.3",
+    "numpy": "2.1.2",
+    "torch": "2.8.0+cu128"
+  },
+  "peak_vram_bytes": 68158464,
+  "python": "3.12.3",
+  "repository_commit": "ef2e0cac3fd2d572caf16c98f68cf45392882d28",
+  "source_hash": "fe5865bb9bae83d085bcf2cdc1303504e9795a4916c1cb7da9f31be888f4888e",
+  "storage_mount": "/      overlay overlay",
+  "timestamp_utc": "2026-10-07T00:48:14Z",
+  "torch": "2.8.0+cu128"
+}

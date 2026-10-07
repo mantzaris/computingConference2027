@@ -1,0 +1,237 @@
+{
+  "cap_seconds": 230400,
+  "jobs": [
+    {
+      "attempts": 1,
+      "config_hash": "2430f1a2ad2982d0067885488a4c89e21ad1d7c83b115ba8f1b20acc88dfaea8",
+      "error": null,
+      "id": "cuda-doctor",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "53eab04d510c0226d3993a8d76110e17e0a08331b3eaec298183777b9f2f4b95",
+      "error": "pytest exit 1",
+      "id": "correctness-20261007T005125",
+      "status": "failed"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "edefa94da4f024e8075d64b3f2ebd0d5d7f86f4e1af393ea0d4798864cdda988",
+      "error": null,
+      "id": "correctness-20261007T005231",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "ef644f86124f3083179f37ec3482640ea5d02e4f5d36be2e73c4fe06d4e00786",
+      "error": null,
+      "id": "pilot-d5-linear-ef644f86",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "ef644f86124f3083179f37ec3482640ea5d02e4f5d36be2e73c4fe06d4e00786",
+      "error": null,
+      "id": "pilot-d5-heteroscedastic-ef644f86",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "ef644f86124f3083179f37ec3482640ea5d02e4f5d36be2e73c4fe06d4e00786",
+      "error": null,
+      "id": "pilot-d10-heteroscedastic-ef644f86",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "ec2f8b081c0aa7d75f5bf668c36f2333c6aab8742e08c48a70aad7d8a80c0f53",
+      "error": null,
+      "id": "development-dcdi-linear-90001-0.1-495b784d",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "29879de4ad4124ce3f72d509d452ce1086b0a188eb6b1c23cff3944e1957c03e",
+      "error": null,
+      "id": "development-dcdi-linear-90001-1.0-495b784d",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "8f2088d02f2f227698acff91308d3ea9021ec9ae4bf4610e9c3b6c35f623c15e",
+      "error": "Development adapter v1 stopped: empty graphs and unconverged constraint; preserve evidence, revise AL schedule before benchmarks.",
+      "id": "development-dcdi-linear-90002-0.1-495b784d",
+      "status": "failed"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "173f28e054f297c242a6e0fa54819c52a63ea0994d22e74b32cd6ce74d274f74",
+      "error": null,
+      "id": "llm-173f28e054f297c242a6",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "d5863c27f86afee2bdccc5b35082acbc18bb15ee13bb9e41fe938348f4c82375",
+      "error": null,
+      "id": "development-dcdi-linear-90001-0.1-431b3ccd",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "a4eef6865cef923097abd85ebfeb540aed997f4e26d4ee36337a9ab995c39c7f",
+      "error": "pytest exit 1",
+      "id": "correctness-20261007T013142",
+      "status": "failed"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "a4eef6865cef923097abd85ebfeb540aed997f4e26d4ee36337a9ab995c39c7f",
+      "error": null,
+      "id": "correctness-20261007T013305",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "0af9341ea33418a81910496745bed852489e79aa9d5ff79fcc64407c3c4a238b",
+      "error": null,
+      "id": "development-dcdi-linear-90001-0.1-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "e6f30d908324528e9e866a0586d8ef01b12cbef5c4665a2785f934caf1a52b9f",
+      "error": null,
+      "id": "development-dcdi-linear-90001-1.0-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "6176cb678f0ea2d9c79c0b529f666d95e06e4c1dd6e83679860d09bbd7e50f7c",
+      "error": null,
+      "id": "development-dcdi-heteroscedastic-92001-0.1-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "54646f6e46e4111ceebc4a7ca5829063d2565397da0001ca63e9e96e180d10de",
+      "error": null,
+      "id": "development-dcdi-nonlinear-91002-0.1-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "b1c3e6568ae2e794def769291377b1b87afabe7145dc5f233a41f92cd06eafbe",
+      "error": null,
+      "id": "development-dcdi-linear-90002-0.1-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "f8d0aad6f9d6a6215be83e5d5344a5eca553987be7cac80615eee3b1a2bf10c1",
+      "error": null,
+      "id": "development-dcdi-nonlinear-91002-1.0-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "1809dbdbd6997ac5031adebda2342d94369788efa44e15b423455468857d680a",
+      "error": null,
+      "id": "development-dcdi-heteroscedastic-92001-1.0-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "b952fe164c9bc94c796ac79e30390fffc279843daa3a428359557e91f587345d",
+      "error": null,
+      "id": "correctness-20261007T015250",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "3f260539d71b95c974d19dc2c68145bc6ca949c3092ab4dcea88b938481e9b2d",
+      "error": null,
+      "id": "development-dcdi-linear-90002-1.0-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "c60ae95ca77ca50542745a480d197d958e8ba6f0b3d51f919ac2d8489bffbcbb",
+      "error": null,
+      "id": "development-dcdi-nonlinear-91003-0.1-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "2cd4a7e3c3007c937eb59e8bc4e6e7be2d59919364c8f9698662d849c1039e7e",
+      "error": null,
+      "id": "development-dcdi-heteroscedastic-92002-0.1-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "9928c7c8ba25d068bf41707fc7bb6651e5585da45d1d11f173001ab3bc6f08ed",
+      "error": null,
+      "id": "development-dcdi-linear-90003-0.1-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "1bfe28c096843823bf8cd988eb138ebae8b9d1a0eeff72c81b5089ffb1f07b58",
+      "error": null,
+      "id": "development-dcdi-nonlinear-91003-1.0-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "e2631d06e8ce5e3bc6bb7514ab85142d80ac9d3ea0aa475b9a7e4c32fe31715a",
+      "error": null,
+      "id": "development-dcdi-heteroscedastic-92002-1.0-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "ddf16dd571c1a541fd4e1d73a71f612738124ed423acc41958175f31e9e35bf7",
+      "error": null,
+      "id": "development-dcdi-linear-90003-1.0-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "cefea0dfa8a41c074b5bb880a0be89054f618b7767ccb3adf114c6cb635dcd20",
+      "error": null,
+      "id": "development-dcdi-heteroscedastic-92003-0.1-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "0d6cd810b24e769a19fa2d398720ff7df78e4bbfe8c7d48074328a664d3e0e05",
+      "error": null,
+      "id": "development-dcdi-nonlinear-91001-0.1-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "67cc65c80992dc798e0b246734f8ccc5cb700780ae9b7f3a85b71373e62c7093",
+      "error": null,
+      "id": "development-dcdi-heteroscedastic-92003-1.0-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "53ab1845994fc3df27a5c6222e92431f1c773c76cf700d20d9f79c0f270c122f",
+      "error": null,
+      "id": "development-dcdi-nonlinear-91001-1.0-4f536ff3",
+      "status": "complete"
+    },
+    {
+      "attempts": 1,
+      "config_hash": "fd77d123f4d9b6f298fd05ef65973399a642013a7839f367cea4c5c6fa2cc822",
+      "error": null,
+      "id": "correctness-20261007T023523",
+      "status": "complete"
+    }
+  ],
+  "used_seconds": 5394.026733160019
+}

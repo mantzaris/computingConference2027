@@ -1,0 +1,9 @@
+Propose up to three distinct single-edge edits of the incumbent causal DAG.
+Each candidate must add, delete, or reverse exactly one edge. Use the current
+graph, metadata, and past search scores; avoid previously evaluated or rejected
+graphs. Scores are noisy validation evidence, not proof of causation. No external
+retrieval. Use only supplied IDs, no cycles, no self-loops, no duplicate edges,
+and at most three parents per node. Verified assigned roots cannot have parents.
+Return JSON only: {"graphs": [{"nodes": [all IDs in supplied order], "edges":
+[{"source": "V0", "target": "V1", "rationale": "brief explanation"}]}]}.
+Each graph must list its full edge set after its one edit.
