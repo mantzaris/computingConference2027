@@ -1,0 +1,22 @@
+{
+  "return_code": 0,
+  "figures": {
+    "F1_method.pdf": "62fc6d2c9262c4611d7018ab054e2884955d34f2d8d207baa62166a20ea8d77c",
+    "F2_adverse.pdf": "5a697ccd7c9fd34bef0625f43b61d80de81bfa187f15eecdf66ac0d1d55b5648",
+    "F2_graphs.pdf": "f2d8ab7cb8e7e976a01b4be7d38901bb209c9f82bf2fbbc784ef416142ac4f11",
+    "F3_intervention_responses.pdf": "9fb6ddff24cd1a27525b63777b42e5b8c23633880998055b9bdbe9c84f687d1b",
+    "F3_real_regime_points.pdf": "cba7a1bf5dba98f27dc3d48fb24ca827e6cb5f078ad77ca92a610e738806071a",
+    "F4_performance_d10.pdf": "0398ef73c31bbc8a043e3c994baadeb3ee5b6340eda71af5a70e90a08919b15a",
+    "F4_performance_d5.pdf": "00437b3c030aff02ba1f595955df3caf25ee302959d221bf7f8c8847f969f523",
+    "F5_harm_and_cost.pdf": "7629abe9a86c11445e3dd2817aee2a8bfd852dbc9c254ac2489f3abf9913c93b"
+  },
+  "tables": {
+    "paired_effects.tex": "6d62646976cb31f850a90771444dbb91b2166adb2e40c7d22c82f40c03bc1933",
+    "real_case.tex": "b9fc2297a19d9b3658502e348846e210d6ff764738e3d6c847279515ca12d633"
+  },
+  "template_sha256": "d5ed3f489b336450dd98e4f33844c44e842a6d022f84b0ef868dc19dcf84abc8",
+  "latex_version": "pdfTeX 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian)",
+  "layout_warnings": [],
+  "artifact_pdf": "paper_layout_check/layout.pdf",
+  "manuscript_or_submission": false
+}

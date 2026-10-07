@@ -1,0 +1,34 @@
+{
+  "url": "https://saiconference.com/Downloads/SAI_Paper_Format_Latex_Conference.zip",
+  "downloaded_at_utc": "2026-10-07",
+  "text_width_cm": 12.2,
+  "text_height_cm": 19.3,
+  "recommended_figure_font_pt": [
+    8,
+    10
+  ],
+  "minimum_line_pt": 0.5,
+  "files": {
+    "data/raw/venue/SAI_Paper_Format_Latex_Conference.zip": {
+      "sha256": "d5ed3f489b336450dd98e4f33844c44e842a6d022f84b0ef868dc19dcf84abc8",
+      "bytes": 1545710
+    },
+    "data/raw/venue/svproc.cls": {
+      "sha256": "ddfc1f23edfbb51f13bb6a6e427b63c41cc9a965f08a3bc65e83c81ee9ae9560",
+      "bytes": 44207
+    },
+    "data/raw/venue/template.tex": {
+      "sha256": "22746c94fbbccd09fd1da3e7323548bc47483682f8d472512d87c30b0ff785e8",
+      "bytes": 21805
+    },
+    "data/raw/venue/authinst.pdf": {
+      "sha256": "acf79dc348988e901ad49bafa423b81efb62d4363026c3f0e7b295f20d8e05b5",
+      "bytes": 460261
+    },
+    "data/raw/venue/authinst.txt": {
+      "sha256": "720e200c0df7c16a4e655af12890d2d2849d17e4c7f172d358d931730517b16b",
+      "bytes": 29725
+    }
+  },
+  "manuscript_compiled": false
+}

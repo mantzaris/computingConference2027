@@ -1,0 +1,42 @@
+{
+  "F4_baseline_shading": "observed range over five SCMs, not a confidence interval",
+  "files": {
+    "F1_method.pdf": "62fc6d2c9262c4611d7018ab054e2884955d34f2d8d207baa62166a20ea8d77c",
+    "F1_method.svg": "6d38d228908f486d7683a6a7461d840668a07f250d06dc109dfc772495f0414e",
+    "F2_adverse.pdf": "5a697ccd7c9fd34bef0625f43b61d80de81bfa187f15eecdf66ac0d1d55b5648",
+    "F2_adverse.svg": "94f8ea50d015f454e05423871576ea46080dbab9f925e9f010601cb81f08240d",
+    "F2_graphs.pdf": "f2d8ab7cb8e7e976a01b4be7d38901bb209c9f82bf2fbbc784ef416142ac4f11",
+    "F2_graphs.svg": "7fa1ea5585ea33504a80ab09bd171b6513bc6c688c6c453ab001cdcb80c226f7",
+    "F3_intervention_responses.pdf": "9fb6ddff24cd1a27525b63777b42e5b8c23633880998055b9bdbe9c84f687d1b",
+    "F3_intervention_responses.svg": "ebf5c015fd08bd4bbc5e805760344cb172caa18ed82c4f128723519db7e84b6c",
+    "F3_real_regime_points.pdf": "cba7a1bf5dba98f27dc3d48fb24ca827e6cb5f078ad77ca92a610e738806071a",
+    "F3_real_regime_points.svg": "59031f6b07fe839cd816f8af0820e1d6e7c6ea39dfc69ff707c5a3c71ebc72fd",
+    "F4_performance_d10.pdf": "0398ef73c31bbc8a043e3c994baadeb3ee5b6340eda71af5a70e90a08919b15a",
+    "F4_performance_d10.svg": "430b998ec8cc6d23f2a47c079c03927ecae1d99ebcbcd81fb6413e10f0392c16",
+    "F4_performance_d5.pdf": "00437b3c030aff02ba1f595955df3caf25ee302959d221bf7f8c8847f969f523",
+    "F4_performance_d5.svg": "14fa72490428833378f923a355df3c3f9376cb0c40e8990edd8735358ef634ac",
+    "F5_harm_and_cost.pdf": "7629abe9a86c11445e3dd2817aee2a8bfd852dbc9c254ac2489f3abf9913c93b",
+    "F5_harm_and_cost.svg": "484db128005c47fc4ef8044e59f91150e7b42367d6649860d71f0bd3f5e4f66d"
+  },
+  "font_size_pt": [
+    8,
+    9
+  ],
+  "intervals": "F3 predictive quantiles; F4 descriptive SCM bootstrap CIs; summary stratified paired cluster bootstrap",
+  "native_width_cm": 12.2,
+  "plotting_tables": {
+    "F4_points.csv": "cba021bf6a9c8803d86c1194e0421363efbb5d87f897b49ff33ce2e9ca5f85da",
+    "F4_summaries.csv": "a35fb2ccacaf5b20532aac89ca73cc3e58c2e3500fa1d3b66a5bd9752eba73f8",
+    "F5_cost_points.csv": "4b4cb4e001024922a1b740f64e4b789255c3cc4288e556953420d21631d7deca",
+    "F5_harm_counts.csv": "64b861264cf9572eb656a6e560d10b7a74d4ecadffeee3c7172459fdd6116542",
+    "F5_histogram.csv": "ac5eda170e75dfba18433bf1f247f606e6dca0064d3ebb0ee28ccb18955f61af",
+    "metrics.csv": "7cb97f0d03af5d186dcfd03001bc502af14b32ef960aaa28f32b8ecb43c322b3",
+    "paired_repairs.csv": "e57b7496a592c30224b7152a0259c882c820465185f9591e986f6fea8db8bdd5",
+    "real_response_points.csv": "91d499f5783fd90cc1979db73385cf0d3c21ec517e3e48bc5df2f970bfd94db1",
+    "response_curves.csv": "220b5ab36d187730172548c2de0bb929ffcf6d4b7932b17437d3e0c9943fe798"
+  },
+  "representative_run": "benchmark-linear-d5-s11005-B400-diagnostic-c0.5-none",
+  "response_table_sha256": "220b5ab36d187730172548c2de0bb929ffcf6d4b7932b17437d3e0c9943fe798",
+  "selection_rule": "median d5 B400 c0.5 T2 paired delta; adverse largest harmful delta",
+  "source_metrics_sha256": "7cb97f0d03af5d186dcfd03001bc502af14b32ef960aaa28f32b8ecb43c322b3"
+}

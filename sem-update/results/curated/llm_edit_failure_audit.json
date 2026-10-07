@@ -1,0 +1,158 @@
+{
+  "interpretation": "Full edited DAG required by the frozen prompt; one-edge outputs are not applied as edit commands. The numeric incumbent edge representation differs from requested V-prefixed output IDs. This interface and model instruction-following failure limits the CauScientist-inspired adaptation; no post-test prompt tuning or inferred replacement proposals were executed.",
+  "invalid_attempt_errors": {
+    "verified independently assigned root has incoming edge": 18
+  },
+  "rejected_graph_edge_counts": {
+    "1": 84
+  },
+  "rejection_reasons": {
+    "not a legal single edit": 84
+  },
+  "runs": [
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 4,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41001-B100-semantic-llm_edit-c-1-coherent",
+      "selection_sha256": "d07d0fc78ea274469570fb40a14e57d6888d8b5f8f605967610f6717821c6fc7"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 3,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41001-B100-semantic-llm_edit-c-1-anonymous",
+      "selection_sha256": "fc36166183853a3d6300d67daed2d8673f20da38c45b98e786b6ba229818ca9a"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 4,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41001-B100-semantic-llm_edit-c-1-shuffled",
+      "selection_sha256": "c202d0285895a734733a86c3de3332b4e7596fa28461d28faa1714e9e756ac64"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 6,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41002-B100-semantic-llm_edit-c-1-coherent",
+      "selection_sha256": "21c7d0c3f381d04a44a3314aacaec19308b94a9e589ebe83dc91e1fc708e3ba9"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 6,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41002-B100-semantic-llm_edit-c-1-anonymous",
+      "selection_sha256": "9e31ca90110a39e08a3c7a00a9caaecdc6b43e811aa36514cc6d32ccf62b4edc"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 6,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41002-B100-semantic-llm_edit-c-1-shuffled",
+      "selection_sha256": "2f6a1a303a6e8a1c961c2179b8c36e5ab48aee4e1dbd89126828fb5b76cdebf1"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 3,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41003-B100-semantic-llm_edit-c-1-coherent",
+      "selection_sha256": "fe07395df70f1586ba71d9b1377c1f5fa4e9476fb83754450c663a7c4ce5aae4"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 3,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41003-B100-semantic-llm_edit-c-1-anonymous",
+      "selection_sha256": "f6fdc85f63c242c678259dd14eb82d6ca64e60aa1ca053a3143ae2cc99aa03ce"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 3,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41003-B100-semantic-llm_edit-c-1-shuffled",
+      "selection_sha256": "cd8e141087422b93de795e8727d986b9c2a777479a3fca721f54877dffeaa82f"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 4,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41004-B100-semantic-llm_edit-c-1-coherent",
+      "selection_sha256": "84475c47745f128f23fc02245e57cee2d5683db32b7035667bfadf82f13949e8"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 4,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41004-B100-semantic-llm_edit-c-1-anonymous",
+      "selection_sha256": "122723f8b3b50f0673916bdeef904d4db76b9441f42d10f3eaaba245f4f431cf"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 4,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41004-B100-semantic-llm_edit-c-1-shuffled",
+      "selection_sha256": "4cb2bc1791548d663c6730fd4e6b9c7bb0d4957594b9e9e56556f47631bf1483"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 4,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41005-B100-semantic-llm_edit-c-1-coherent",
+      "selection_sha256": "12522243f7de0b99dbb94477b2710872d2a06a723999be495090401cffb74a63"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 3,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41005-B100-semantic-llm_edit-c-1-anonymous",
+      "selection_sha256": "e67cb41d8d51cfff247c8018dfc84fb3f8d74a7f939adca86fb664ea158136db"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 4,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "benchmark-heteroscedastic-d5-s41005-B100-semantic-llm_edit-c-1-shuffled",
+      "selection_sha256": "428dcc9edcca4f04ae650135b09d5a19db7e9a7f82424229a9c0eca550f626a4"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 4,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "chambers-B400-llm_edit-c-1-coherent",
+      "selection_sha256": "2e2e639d0fe4b8ca7992823bed4490674987ab0ca29c4193fe809af452dfbcab"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 5,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "chambers-B400-llm_edit-c-1-anonymous",
+      "selection_sha256": "9aaaefde0f4b8e758293fecf68051f69f11744eea99dbe70a5e47fc96c4f8a45"
+    },
+    {
+      "accepted_edits": 0,
+      "initial_edge_count": 4,
+      "newly_evaluated_candidates": 0,
+      "returned_initial_graph": true,
+      "run_id": "chambers-B400-llm_edit-c-1-shuffled",
+      "selection_sha256": "e382a91c03f6769b3fdf74093e619238f8e58976ebeee567302c5a3104ffb794"
+    }
+  ]
+}

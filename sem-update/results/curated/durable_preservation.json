@@ -1,0 +1,15 @@
+{
+  "verified_at_utc": "2026-10-07T12:11:54.139562+00:00",
+  "remote_manifest_sha256": "4d4d224179c322e85791d132d00ccdcfd1f92aa87a332bb39d417b1d37cce9d4",
+  "destination_policy": "SEM_UPDATE_ARTIFACT_ROOT or project-local .artifacts",
+  "files_checked": 22457,
+  "expected_bytes": 2982804998,
+  "all_files_verified": true,
+  "failures": [],
+  "reacquirable_exclusions": [
+    "model_cache",
+    "venv"
+  ],
+  "ledger_snapshot_sha256": "e66e1bc4cd88cddecdc1d03bd27128834440e6a8e9d714f2437e49499f9451ab",
+  "scope": "Every file in the final remote inventory; excludes mutable live SQLite files"
+}

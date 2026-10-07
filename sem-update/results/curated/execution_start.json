@@ -1,0 +1,12 @@
+{
+  "alignment_note": "Freeze recorded the original checkout plus exact working-source hashes; execution checkout was then fast-forwarded to the identical committed implementation. No experimental configuration, split or scientific source changed.",
+  "implementation_hash": "8772cd93dfb99d288bdf789a3ad0db963532214c2362cc51f86964d667b5d14f",
+  "pid": 49814,
+  "protocol_hash": "ed4cfac51f4709f28283f0271dc99cb690fb72f05c82eb0409832d802394ec5c",
+  "source": {
+    "dirty_diff_hash": "e6422537afa5a17813ce6fccae937e803d588cd71f30724b6d3671e79dd8cc21",
+    "repository_commit": "569797e640ea229e7b4ce2083606bca522c809d8",
+    "source_hash": "40fc100930e466fe08a8c02506aed22cc44033392fe2bf565c1c3306052c4c4f"
+  },
+  "timestamp_utc": "2026-10-07T03:00:19Z"
+}

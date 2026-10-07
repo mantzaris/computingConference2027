@@ -13,7 +13,10 @@ BLOCKED_SUFFIX = {'.pt', '.pth', '.ckpt', '.safetensors', '.npy', '.npz',
                   '.h5', '.hdf5', '.parquet', '.log'}
 
 def git(*args):
-    return subprocess.check_output(['git', *args])
+    # Git pathspecs are relative to the caller's working directory. Always use
+    # the repository root so README commands run from sem-update/ also audit
+    # intermediate committed blobs, rather than an empty nested path.
+    return subprocess.check_output(['git', *args], cwd=Path(__file__).resolve().parents[2])
 
 def check(base=None):
     args=['diff','--cached','--name-only','--diff-filter=ACMR','-z']
@@ -47,8 +50,28 @@ def check(base=None):
     total = sum(unique.values())
     if total > 25 * 1024**2:
         errors.append('aggregate staged project blobs exceed 25 MiB')
+    history={}
+    if base:
+        # Count intermediate committed versions too: deleting a large artifact
+        # from the final tree would not remove it from the user's eventual push.
+        for line in git('rev-list','--objects',base+'..HEAD','--','sem-update/').splitlines():
+            oid,_,name=line.partition(b' ')
+            if not name.startswith(b'sem-update/') or git('cat-file','-t',oid.decode()).strip()!=b'blob':
+                continue
+            size=int(git('cat-file','-s',oid.decode()))
+            history[oid.decode()]=size
+            path=Path(name.decode())
+            if size>5*1024**2:
+                errors.append('committed historical file exceeds 5 MiB: '+str(path))
+            if set(path.parts)&BLOCKED_PARTS or path.suffix in BLOCKED_SUFFIX:
+                errors.append('committed historical operational artifact: '+str(path))
+    combined={**history,**unique}
+    if sum(combined.values())>25*1024**2:
+        errors.append('committed history plus indexed project blobs exceed 25 MiB')
     return {'comparison_base':base or 'HEAD','files': blobs, 'total_unique_blob_bytes': total,
             'largest_blob_bytes': max(unique.values(), default=0), 'errors': errors,
+            'historical_new_blob_count':len(history),'historical_new_blob_bytes':sum(history.values()),
+            'history_and_index_unique_blob_bytes':sum(combined.values()),
             'limits': {'file_bytes': 5 * 1024**2, 'batch_bytes': 25 * 1024**2}}
 
 if __name__ == '__main__':

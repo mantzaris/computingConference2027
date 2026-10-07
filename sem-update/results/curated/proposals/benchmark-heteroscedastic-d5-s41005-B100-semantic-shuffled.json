@@ -1,0 +1,125 @@
+{
+  "actual_local_generation": true,
+  "invalid_attempts": 4,
+  "metadata": [
+    {
+      "description": "Independently assigned setting of a filter in an optical assembly.",
+      "id": "V0",
+      "name": "Optical filter setting"
+    },
+    {
+      "description": "Noisy intensity measurement at a second position in the assembly.",
+      "id": "V1",
+      "name": "Light sensor B"
+    },
+    {
+      "description": "Dimensionless independently assigned light-source control.",
+      "id": "V2",
+      "name": "Source brightness control B"
+    },
+    {
+      "description": "Dimensionless electronically assigned light-source control.",
+      "id": "V3",
+      "name": "Source brightness control A"
+    },
+    {
+      "description": "Noisy intensity measurement at one position in the assembly.",
+      "id": "V4",
+      "name": "Light sensor A"
+    }
+  ],
+  "model_load_seconds": 5.638255408033729,
+  "query_attempts": 4,
+  "records": [
+    {
+      "attempt": 0,
+      "error": "verified independently assigned root has incoming edge",
+      "prompt_sha256": "4c62a5c4fb8e1628179010ba17fd05c8454950c58cfc3dff23ccaac576802210",
+      "proposal": 0,
+      "raw_sha256": "ca7ca64dd3adc4c2963fca3d22933d1068e383e349ce1112b249ca484817fa2e",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 304,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 256,
+        "peak_vram_bytes": 16564860928,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 10.755804156884551,
+        "seed": 129505
+      },
+      "valid": false
+    },
+    {
+      "attempt": 1,
+      "error": "verified independently assigned root has incoming edge",
+      "prompt_sha256": "8061ee5f1258e0d043d5c40ccdafbbd6cd39920556575db47821f7703ce5167a",
+      "proposal": 0,
+      "raw_sha256": "d01e0fc6e6ee94a67f00164033e30060e647a5d76800796d2ad2ab5523cbb150",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 323,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 130,
+        "peak_vram_bytes": 16500312576,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 5.603292353451252,
+        "seed": 129506
+      },
+      "valid": false
+    },
+    {
+      "attempt": 0,
+      "error": "verified independently assigned root has incoming edge",
+      "prompt_sha256": "4c62a5c4fb8e1628179010ba17fd05c8454950c58cfc3dff23ccaac576802210",
+      "proposal": 1,
+      "raw_sha256": "942a4b38c0ea136975b66b25f16a88edbfcd5772b6a23ddd7a7f2f3145fe18c6",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 304,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 186,
+        "peak_vram_bytes": 16505767424,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 7.956413084641099,
+        "seed": 129515
+      },
+      "valid": false
+    },
+    {
+      "attempt": 1,
+      "error": "verified independently assigned root has incoming edge",
+      "prompt_sha256": "8061ee5f1258e0d043d5c40ccdafbbd6cd39920556575db47821f7703ce5167a",
+      "proposal": 1,
+      "raw_sha256": "cb7468000b17d42e74d5006e6707706955eb97999ae94bd82787dc0b2399b639",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 323,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 130,
+        "peak_vram_bytes": 16500312576,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 5.458304058760405,
+        "seed": 129516
+      },
+      "valid": false
+    }
+  ],
+  "request_hash": "c79270e8d2ec5b1df5de622b09a721d56d2944f3701f59c6fdbdab0e6247a281",
+  "request_identity_version": 2,
+  "revision": {
+    "device": "cuda",
+    "license": "apache-2.0",
+    "model": "Qwen/Qwen3-8B",
+    "precision": "bfloat16",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "stage_seconds": 35.4219157807529
+}

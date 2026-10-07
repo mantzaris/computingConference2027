@@ -1,0 +1,19 @@
+{
+  "comparison_base": "ef2e0cac3fd2d572caf16c98f68cf45392882d28",
+  "total_unique_blob_bytes": 12427599,
+  "largest_blob_bytes": 3921514,
+  "errors": [],
+  "historical_new_blob_count": 64,
+  "historical_new_blob_bytes": 478200,
+  "history_and_index_unique_blob_bytes": 12500164,
+  "limits": {
+    "file_bytes": 5242880,
+    "batch_bytes": 26214400
+  },
+  "status": "passed",
+  "indexed_project_files": 160,
+  "scope": "Actual indexed blobs relative to initial commit, plus unique intermediate committed blobs",
+  "full_audit_artifact": "logs/final-git-size-audit.json",
+  "raw_data_model_checkpoint_blobs": 0,
+  "source_history_is_included": true
+}

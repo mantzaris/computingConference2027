@@ -1,0 +1,7 @@
+comparison,scope,mean,low,high,independent_scms
+diagnostic - llm_edit (coherent),"semantic, 5 independent SCMs",0.02510865007837614,0.004130968948205324,0.048334736706068,5
+diagnostic - llm_edit (anonymous),"semantic, 5 independent SCMs",0.021826971819003418,-0.0009733786185582404,0.04649539540211357,5
+diagnostic - llm_edit (shuffled),"semantic, 5 independent SCMs",0.04477665995558102,0.015235987305641205,0.07513799071311947,5
+coherent diagnostic - anonymous diagnostic,"semantic, 5 independent SCMs",0.001112120350201945,-0.0016424074769019526,0.004978768527507787,5
+coherent diagnostic - shuffled diagnostic,"semantic, 5 independent SCMs",-0.0005474691589673175,-0.0016424074769019526,0.0,5
+coherent diagnostic - none data_only,"semantic, 5 independent SCMs",-0.0005474691589673175,-0.0016424074769019526,0.0,5

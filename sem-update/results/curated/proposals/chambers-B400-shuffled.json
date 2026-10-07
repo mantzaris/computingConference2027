@@ -1,0 +1,130 @@
+{
+  "actual_local_generation": true,
+  "invalid_attempts": 4,
+  "metadata": [
+    {
+      "description": "Assigned brightness setting for blue light.",
+      "id": "V0",
+      "name": "Blue source setting"
+    },
+    {
+      "description": "Assigned brightness setting for green light.",
+      "id": "V1",
+      "name": "Green source setting"
+    },
+    {
+      "description": "Assigned brightness setting for red light.",
+      "id": "V2",
+      "name": "Red source setting"
+    },
+    {
+      "description": "Assigned angular position of a rotating optical component.",
+      "id": "V3",
+      "name": "Polarizer motor setting"
+    },
+    {
+      "description": "Digitized electrical current measurement.",
+      "id": "V4",
+      "name": "Source current readout"
+    },
+    {
+      "description": "Digitized voltage from a rotary position sensor.",
+      "id": "V5",
+      "name": "Position readout"
+    }
+  ],
+  "model_load_seconds": 5.645927019417286,
+  "query_attempts": 4,
+  "records": [
+    {
+      "attempt": 0,
+      "error": "verified independently assigned root has incoming edge",
+      "prompt_sha256": "ed3c4cd52cb4caa1d8a5ef3850348b71f856f433f0970f579c840b023e725c6d",
+      "proposal": 0,
+      "raw_sha256": "21e32d063f0f4b537fede2fbb82699d73ed5307745a9a49cb698ecc6ec57e6bb",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 321,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 159,
+        "peak_vram_bytes": 16504293888,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 6.964228892698884,
+        "seed": 122501
+      },
+      "valid": false
+    },
+    {
+      "attempt": 1,
+      "error": "verified independently assigned root has incoming edge",
+      "prompt_sha256": "ffd195dfd706bedbdb52cfe9084c9d65e83a933c802f5886d40d69e6fbfada7a",
+      "proposal": 0,
+      "raw_sha256": "ae758739ef92e151f858e233fb8a21f77a608a5e2bc2e634ae4f0e3d14e1613f",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 340,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 100,
+        "peak_vram_bytes": 16502627840,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 4.385275192558765,
+        "seed": 122502
+      },
+      "valid": false
+    },
+    {
+      "attempt": 0,
+      "error": "verified independently assigned root has incoming edge",
+      "prompt_sha256": "ed3c4cd52cb4caa1d8a5ef3850348b71f856f433f0970f579c840b023e725c6d",
+      "proposal": 1,
+      "raw_sha256": "ba0b838b39dba93d03698f0a5d10a83f7241d6a3255bdb74ead74b77bee17d35",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 321,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 185,
+        "peak_vram_bytes": 16508127744,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 7.737626980990171,
+        "seed": 122511
+      },
+      "valid": false
+    },
+    {
+      "attempt": 1,
+      "error": "verified independently assigned root has incoming edge",
+      "prompt_sha256": "ffd195dfd706bedbdb52cfe9084c9d65e83a933c802f5886d40d69e6fbfada7a",
+      "proposal": 1,
+      "raw_sha256": "f51f1c5f4e5eb1163cb66d4ae85508700e3bb516e2213d49de8967207b30e279",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 340,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 100,
+        "peak_vram_bytes": 16502627840,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 4.192620629444718,
+        "seed": 122512
+      },
+      "valid": false
+    }
+  ],
+  "request_hash": "53bc0293e8a51fff3f1db77ebedb331993ffe17ae890a569522ad338fad91ecb",
+  "request_identity_version": 2,
+  "revision": {
+    "device": "cuda",
+    "license": "apache-2.0",
+    "model": "Qwen/Qwen3-8B",
+    "precision": "bfloat16",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "stage_seconds": 28.93579982034862
+}

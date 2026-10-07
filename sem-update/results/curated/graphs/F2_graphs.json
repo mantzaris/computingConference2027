@@ -1,0 +1,226 @@
+{
+  "accepted_moves": [
+    {
+      "affected": [
+        3
+      ],
+      "operation": "add",
+      "round": 0,
+      "score_change": -0.0827405806978545,
+      "source": 2,
+      "target": 3
+    }
+  ],
+  "audit_pass": true,
+  "before_audit": {
+    "d": 5,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ]
+  },
+  "d": 5,
+  "edits": [
+    {
+      "accepted": true,
+      "after": "6fb6496457c234d313c02e193f8ac1c1445cdcc617480e71c141d1009617d551",
+      "before": "969e6bf5307389d4d7aa783eea65ff77395b041e9390d899c0e565e822dfa406",
+      "evaluated": [
+        "c941bdce90e85bd81a4e66fe98da379da7567ae3c87bfdfc6c9830dd9c35215d",
+        "6fb6496457c234d313c02e193f8ac1c1445cdcc617480e71c141d1009617d551",
+        "b40fa0bc29acf0b3e0a8bc10772ca01cc521e7aec77b3ce44cbb7f7e648d0754"
+      ],
+      "proposal_rejections": [],
+      "round": 0,
+      "score_change": -0.0827405806978545
+    },
+    {
+      "accepted": false,
+      "after": "6fb6496457c234d313c02e193f8ac1c1445cdcc617480e71c141d1009617d551",
+      "before": "6fb6496457c234d313c02e193f8ac1c1445cdcc617480e71c141d1009617d551",
+      "evaluated": [
+        "873e3c59c1698b1f37fa471d70fefe66221fb58ac116814168c7568b11f1b443",
+        "5dab109cbf4e2223378856494b0d48ff26bb772ca61abda38ef95a34331d06bd",
+        "db4cb8b4361ca762698341740b38b2d4540808806bb7a9e0101261119e149715"
+      ],
+      "proposal_rejections": [],
+      "round": 1,
+      "score_change": 0.0
+    },
+    {
+      "accepted": false,
+      "after": "6fb6496457c234d313c02e193f8ac1c1445cdcc617480e71c141d1009617d551",
+      "before": "6fb6496457c234d313c02e193f8ac1c1445cdcc617480e71c141d1009617d551",
+      "evaluated": [
+        "b01efa866028bff8ed1bcce3b1f393c87d9211a19b276a34b2bc1bdb7ee48ed8",
+        "aad5ff7019f1aa782dc89af745e7714a27c49e35599c15717917266cfe70ccbd",
+        "ea6d9a129c801b97e0b2edb51bfc535bce183f1e8ed249aab07ad2bce58aebaa"
+      ],
+      "proposal_rejections": [],
+      "round": 2,
+      "score_change": 0.0
+    }
+  ],
+  "initial": {
+    "d": 5,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ]
+  },
+  "positions": {
+    "0": [
+      1.0,
+      0.0
+    ],
+    "1": [
+      0.3090169521873281,
+      0.9510565683560541
+    ],
+    "2": [
+      -0.8090170564954595,
+      0.587785261505403
+    ],
+    "3": [
+      -0.809016996890813,
+      -0.5877853211100496
+    ],
+    "4": [
+      0.3090171011989445,
+      -0.9510565087514076
+    ]
+  },
+  "reference": {
+    "d": 5,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ]
+  },
+  "run_id": "benchmark-linear-d5-s11005-B400-diagnostic-c0.5-none",
+  "selected": {
+    "d": 5,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ]
+  },
+  "selection_sha256": "6ade49f0858cd6f97cff0b1acffb098ff56e2a275d9218d1fb76b5bca4a6f7f4",
+  "study": "controlled"
+}

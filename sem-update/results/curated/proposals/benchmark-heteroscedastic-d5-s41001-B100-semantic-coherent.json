@@ -1,0 +1,231 @@
+{
+  "actual_local_generation": true,
+  "invalid_attempts": 0,
+  "metadata": [
+    {
+      "description": "Dimensionless electronically assigned light-source control.",
+      "id": "V0",
+      "name": "Source brightness control A"
+    },
+    {
+      "description": "Dimensionless independently assigned light-source control.",
+      "id": "V1",
+      "name": "Source brightness control B"
+    },
+    {
+      "description": "Independently assigned setting of a filter in an optical assembly.",
+      "id": "V2",
+      "name": "Optical filter setting"
+    },
+    {
+      "description": "Noisy intensity measurement at one position in the assembly.",
+      "id": "V3",
+      "name": "Light sensor A"
+    },
+    {
+      "description": "Noisy intensity measurement at a second position in the assembly.",
+      "id": "V4",
+      "name": "Light sensor B"
+    }
+  ],
+  "model_load_seconds": 11.742463503032923,
+  "query_attempts": 2,
+  "records": [
+    {
+      "attempt": 0,
+      "graphs": [
+        {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        }
+      ],
+      "prompt_sha256": "2e45ff632610e765b86540db22e6a5fa7d53eda155b26d107c4f2103fd77fca3",
+      "proposal": 0,
+      "proposals": [
+        {
+          "edges": [
+            {
+              "rationale": "Source brightness control A affects light sensor A",
+              "source": "V0",
+              "target": "V3"
+            },
+            {
+              "rationale": "Source brightness control A affects light sensor B",
+              "source": "V0",
+              "target": "V4"
+            },
+            {
+              "rationale": "Source brightness control B affects light sensor A",
+              "source": "V1",
+              "target": "V3"
+            },
+            {
+              "rationale": "Source brightness control B affects light sensor B",
+              "source": "V1",
+              "target": "V4"
+            },
+            {
+              "rationale": "Optical filter setting affects light sensor A",
+              "source": "V2",
+              "target": "V3"
+            },
+            {
+              "rationale": "Optical filter setting affects light sensor B",
+              "source": "V2",
+              "target": "V4"
+            }
+          ],
+          "nodes": [
+            "V0",
+            "V1",
+            "V2",
+            "V3",
+            "V4"
+          ]
+        }
+      ],
+      "raw_sha256": "07644c17b030efc5d442596d74c2dcf998f335632864ab370dd842fd12a31a3d",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 304,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 208,
+        "peak_vram_bytes": 16508964352,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 9.676463969051838,
+        "seed": 129501
+      },
+      "valid": true
+    },
+    {
+      "attempt": 0,
+      "graphs": [
+        {
+          "d": 5,
+          "edges": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        }
+      ],
+      "prompt_sha256": "2e45ff632610e765b86540db22e6a5fa7d53eda155b26d107c4f2103fd77fca3",
+      "proposal": 1,
+      "proposals": [
+        {
+          "edges": [
+            {
+              "rationale": "Source brightness control A affects light sensor A",
+              "source": "V0",
+              "target": "V3"
+            },
+            {
+              "rationale": "Source brightness control A affects light sensor B",
+              "source": "V0",
+              "target": "V4"
+            },
+            {
+              "rationale": "Source brightness control B affects light sensor A",
+              "source": "V1",
+              "target": "V3"
+            },
+            {
+              "rationale": "Source brightness control B affects light sensor B",
+              "source": "V1",
+              "target": "V4"
+            },
+            {
+              "rationale": "Optical filter setting affects light sensor A",
+              "source": "V2",
+              "target": "V3"
+            },
+            {
+              "rationale": "Optical filter setting affects light sensor B",
+              "source": "V2",
+              "target": "V4"
+            }
+          ],
+          "nodes": [
+            "V0",
+            "V1",
+            "V2",
+            "V3",
+            "V4"
+          ]
+        }
+      ],
+      "raw_sha256": "07644c17b030efc5d442596d74c2dcf998f335632864ab370dd842fd12a31a3d",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 304,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 208,
+        "peak_vram_bytes": 16508964352,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 9.100500993430614,
+        "seed": 129511
+      },
+      "valid": true
+    }
+  ],
+  "request_hash": "705b49129c42513c40f88759b769fb55a2eb8fcd4505a4d3313e82c9d87a256d",
+  "request_identity_version": 2,
+  "revision": {
+    "device": "cuda",
+    "license": "apache-2.0",
+    "model": "Qwen/Qwen3-8B",
+    "precision": "bfloat16",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "stage_seconds": 30.553155632689595
+}

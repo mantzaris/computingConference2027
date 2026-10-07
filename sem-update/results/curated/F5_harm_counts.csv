@@ -1,0 +1,7 @@
+stage,outcome,paired_conditions
+Before audit,beneficial,84
+Before audit,neutral,26
+Before audit,harmful,10
+After audit,beneficial,84
+After audit,neutral,26
+After audit,harmful,10

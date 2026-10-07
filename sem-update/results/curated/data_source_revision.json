@@ -1,0 +1,40 @@
+{
+  "checked_at_utc": "2026-10-07T03:31:32.610203+00:00",
+  "dataset_repository": "https://github.com/juangamella/causal-chamber",
+  "dataset_repository_revision": "0c8a77ea14bd4437b1fdd79adc1aa91ac2342569",
+  "paper_repository": "https://github.com/juangamella/causal-chamber-paper",
+  "paper_repository_revision": "e20e785ef4ffe797e9a2028b6b9d67f8498831cf",
+  "files": [
+    {
+      "filename": "README.md",
+      "source_url": "https://raw.githubusercontent.com/juangamella/causal-chamber/0c8a77ea14bd4437b1fdd79adc1aa91ac2342569/datasets/lt_interventions_standard_v1/README.md",
+      "stored_sha256": "b2440ead68c2c9d49cf3d690c1ef607e729616650439b0e6f38e92f6b183d3b3",
+      "pinned_sha256": "b2440ead68c2c9d49cf3d690c1ef607e729616650439b0e6f38e92f6b183d3b3",
+      "identical": true
+    },
+    {
+      "filename": "variables.csv",
+      "source_url": "https://raw.githubusercontent.com/juangamella/causal-chamber/0c8a77ea14bd4437b1fdd79adc1aa91ac2342569/datasets/lt_interventions_standard_v1/variables.csv",
+      "stored_sha256": "49dd226bc7318d390f2e76283d70f2d08fde58b1a831864080d3f5bc7376622d",
+      "pinned_sha256": "49dd226bc7318d390f2e76283d70f2d08fde58b1a831864080d3f5bc7376622d",
+      "identical": true
+    },
+    {
+      "filename": "uniform.py",
+      "source_url": "https://raw.githubusercontent.com/juangamella/causal-chamber/0c8a77ea14bd4437b1fdd79adc1aa91ac2342569/datasets/lt_interventions_standard_v1/generators/uniform.py",
+      "stored_sha256": "be9471c7e69fba8623f671912c03a615daeee51b07cdae7dccec566c3beb767a",
+      "pinned_sha256": "be9471c7e69fba8623f671912c03a615daeee51b07cdae7dccec566c3beb767a",
+      "identical": true
+    },
+    {
+      "filename": "causal_discovery_iid.ipynb",
+      "source_url": "https://raw.githubusercontent.com/juangamella/causal-chamber-paper/e20e785ef4ffe797e9a2028b6b9d67f8498831cf/case_studies/causal_discovery_iid.ipynb",
+      "stored_sha256": "f50da1fde389742387d2ef39aa3dd25a86aed4fdce455d8c92ef324e1189e16a",
+      "pinned_sha256": "f50da1fde389742387d2ef39aa3dd25a86aed4fdce455d8c92ef324e1189e16a",
+      "identical": true
+    }
+  ],
+  "all_existing_protocol_bytes_match_pinned_sources": true,
+  "dataset_version": "lt_interventions_standard_v1",
+  "package_version": "0.2.8"
+}

@@ -1,0 +1,104 @@
+{
+  "checked_at_utc": "2026-10-07T11:59:42.512606+00:00",
+  "exit_code": 0,
+  "cuda_visible_devices": "",
+  "torch_cuda_available": false,
+  "raw_data_or_models_copied": false,
+  "changed_numeric_or_graph_inputs": [],
+  "outputs": {
+    "paper/figures/F1_method.pdf": {
+      "expected_sha256": "62fc6d2c9262c4611d7018ab054e2884955d34f2d8d207baa62166a20ea8d77c",
+      "reproduced_sha256": "62fc6d2c9262c4611d7018ab054e2884955d34f2d8d207baa62166a20ea8d77c",
+      "identical": true
+    },
+    "paper/figures/F1_method.svg": {
+      "expected_sha256": "6d38d228908f486d7683a6a7461d840668a07f250d06dc109dfc772495f0414e",
+      "reproduced_sha256": "6d38d228908f486d7683a6a7461d840668a07f250d06dc109dfc772495f0414e",
+      "identical": true
+    },
+    "paper/figures/F2_adverse.pdf": {
+      "expected_sha256": "5a697ccd7c9fd34bef0625f43b61d80de81bfa187f15eecdf66ac0d1d55b5648",
+      "reproduced_sha256": "5a697ccd7c9fd34bef0625f43b61d80de81bfa187f15eecdf66ac0d1d55b5648",
+      "identical": true
+    },
+    "paper/figures/F2_adverse.svg": {
+      "expected_sha256": "94f8ea50d015f454e05423871576ea46080dbab9f925e9f010601cb81f08240d",
+      "reproduced_sha256": "94f8ea50d015f454e05423871576ea46080dbab9f925e9f010601cb81f08240d",
+      "identical": true
+    },
+    "paper/figures/F2_graphs.pdf": {
+      "expected_sha256": "f2d8ab7cb8e7e976a01b4be7d38901bb209c9f82bf2fbbc784ef416142ac4f11",
+      "reproduced_sha256": "f2d8ab7cb8e7e976a01b4be7d38901bb209c9f82bf2fbbc784ef416142ac4f11",
+      "identical": true
+    },
+    "paper/figures/F2_graphs.svg": {
+      "expected_sha256": "7fa1ea5585ea33504a80ab09bd171b6513bc6c688c6c453ab001cdcb80c226f7",
+      "reproduced_sha256": "7fa1ea5585ea33504a80ab09bd171b6513bc6c688c6c453ab001cdcb80c226f7",
+      "identical": true
+    },
+    "paper/figures/F3_intervention_responses.pdf": {
+      "expected_sha256": "9fb6ddff24cd1a27525b63777b42e5b8c23633880998055b9bdbe9c84f687d1b",
+      "reproduced_sha256": "9fb6ddff24cd1a27525b63777b42e5b8c23633880998055b9bdbe9c84f687d1b",
+      "identical": true
+    },
+    "paper/figures/F3_intervention_responses.svg": {
+      "expected_sha256": "ebf5c015fd08bd4bbc5e805760344cb172caa18ed82c4f128723519db7e84b6c",
+      "reproduced_sha256": "ebf5c015fd08bd4bbc5e805760344cb172caa18ed82c4f128723519db7e84b6c",
+      "identical": true
+    },
+    "paper/figures/F3_real_regime_points.pdf": {
+      "expected_sha256": "cba7a1bf5dba98f27dc3d48fb24ca827e6cb5f078ad77ca92a610e738806071a",
+      "reproduced_sha256": "cba7a1bf5dba98f27dc3d48fb24ca827e6cb5f078ad77ca92a610e738806071a",
+      "identical": true
+    },
+    "paper/figures/F3_real_regime_points.svg": {
+      "expected_sha256": "59031f6b07fe839cd816f8af0820e1d6e7c6ea39dfc69ff707c5a3c71ebc72fd",
+      "reproduced_sha256": "59031f6b07fe839cd816f8af0820e1d6e7c6ea39dfc69ff707c5a3c71ebc72fd",
+      "identical": true
+    },
+    "paper/figures/F4_performance_d10.pdf": {
+      "expected_sha256": "0398ef73c31bbc8a043e3c994baadeb3ee5b6340eda71af5a70e90a08919b15a",
+      "reproduced_sha256": "0398ef73c31bbc8a043e3c994baadeb3ee5b6340eda71af5a70e90a08919b15a",
+      "identical": true
+    },
+    "paper/figures/F4_performance_d10.svg": {
+      "expected_sha256": "430b998ec8cc6d23f2a47c079c03927ecae1d99ebcbcd81fb6413e10f0392c16",
+      "reproduced_sha256": "430b998ec8cc6d23f2a47c079c03927ecae1d99ebcbcd81fb6413e10f0392c16",
+      "identical": true
+    },
+    "paper/figures/F4_performance_d5.pdf": {
+      "expected_sha256": "00437b3c030aff02ba1f595955df3caf25ee302959d221bf7f8c8847f969f523",
+      "reproduced_sha256": "00437b3c030aff02ba1f595955df3caf25ee302959d221bf7f8c8847f969f523",
+      "identical": true
+    },
+    "paper/figures/F4_performance_d5.svg": {
+      "expected_sha256": "14fa72490428833378f923a355df3c3f9376cb0c40e8990edd8735358ef634ac",
+      "reproduced_sha256": "14fa72490428833378f923a355df3c3f9376cb0c40e8990edd8735358ef634ac",
+      "identical": true
+    },
+    "paper/figures/F5_harm_and_cost.pdf": {
+      "expected_sha256": "7629abe9a86c11445e3dd2817aee2a8bfd852dbc9c254ac2489f3abf9913c93b",
+      "reproduced_sha256": "7629abe9a86c11445e3dd2817aee2a8bfd852dbc9c254ac2489f3abf9913c93b",
+      "identical": true
+    },
+    "paper/figures/F5_harm_and_cost.svg": {
+      "expected_sha256": "484db128005c47fc4ef8044e59f91150e7b42367d6649860d71f0bd3f5e4f66d",
+      "reproduced_sha256": "484db128005c47fc4ef8044e59f91150e7b42367d6649860d71f0bd3f5e4f66d",
+      "identical": true
+    },
+    "paper/tables/paired_effects.tex": {
+      "expected_sha256": "6d62646976cb31f850a90771444dbb91b2166adb2e40c7d22c82f40c03bc1933",
+      "reproduced_sha256": "6d62646976cb31f850a90771444dbb91b2166adb2e40c7d22c82f40c03bc1933",
+      "identical": true
+    },
+    "paper/tables/real_case.tex": {
+      "expected_sha256": "b9fc2297a19d9b3658502e348846e210d6ff764738e3d6c847279515ca12d633",
+      "reproduced_sha256": "b9fc2297a19d9b3658502e348846e210d6ff764738e3d6c847279515ca12d633",
+      "identical": true
+    }
+  },
+  "all_outputs_identical": true,
+  "source_script_sha256": "d5b2dd8d9cad3ffa3d8bbed5318037c4673420f636512a74bcdd378f5a0e4c5e",
+  "archive": "archives/plot-reproduction-m642_47x/sem-update",
+  "log": "logs/plot-reproduction.log"
+}

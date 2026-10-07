@@ -1,0 +1,14 @@
+{
+  "timestamp_utc": "2026-10-07T12:12:47.684592+00:00",
+  "status": "final remote inventory fully checksum verified locally",
+  "verified_files": 22457,
+  "verified_bytes": 2982804998,
+  "remote_manifest_sha256": "4d4d224179c322e85791d132d00ccdcfd1f92aa87a332bb39d417b1d37cce9d4",
+  "local_free_bytes": 1903648768,
+  "evidence": "durable_preservation.json",
+  "excluded_reacquirable": [
+    "model_cache",
+    "venv"
+  ],
+  "pod_termination_authorized": false
+}

@@ -1,0 +1,15 @@
+{
+  "dcdi_torch_peak_allocated_bytes": 126121984,
+  "device_sample_count": 18756,
+  "device_samples_sha256": "68e57adfc6d9383c117095e4b1777073f159677e5ba7aa35650c1dd5d3d1afdf",
+  "device_sampling_note": "Approximately 10-second samples per active ledger interval; shared-device occupancy includes CUDA contexts",
+  "flow_torch_peak_allocated_bytes": 114569728,
+  "gpu_job_hours": 10.318524638083247,
+  "ledger_status_counts": {
+    "complete": 1775,
+    "failed": 3
+  },
+  "method_peak_definition": "Maximum PyTorch allocated CUDA bytes, not total device occupancy",
+  "sampled_whole_device_peak_mib": 16811.0,
+  "torch_peak_allocated_bytes": 16742893056
+}

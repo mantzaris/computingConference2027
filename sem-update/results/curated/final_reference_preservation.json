@@ -1,0 +1,536 @@
+{
+  "datasets": [
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d5-s11001-B100.npz",
+      "data_hash": "88bd3b2f3ea01d182530ef18b2c15b4f545a42e29f68855c561d1957eab76967",
+      "data_id": "benchmark-linear-d5-s11001-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "00bb97148784dfea290e8c00926d88acba0b00aa1d19442eab633f652380d73c"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d5-s11001-B400.npz",
+      "data_hash": "f3d4235eb9331bad41698ddb15d34624a929c91458a4d7ff8a8bfbb9a8cce4d4",
+      "data_id": "benchmark-linear-d5-s11001-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "00bb97148784dfea290e8c00926d88acba0b00aa1d19442eab633f652380d73c"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d5-s11002-B100.npz",
+      "data_hash": "0d272665543e78856f3195df66c0b5480bff9f6bd2137abdaa1acf5f7f987e50",
+      "data_id": "benchmark-linear-d5-s11002-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "67f21a695d994a1005bed9b6ba90ecd8499fc9584649d82b7b917359bacfeed1"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d5-s11002-B400.npz",
+      "data_hash": "e3131a1eef1e3157d1f839943e319cf1a358071eb5ef95410f835620256a9b07",
+      "data_id": "benchmark-linear-d5-s11002-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "67f21a695d994a1005bed9b6ba90ecd8499fc9584649d82b7b917359bacfeed1"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d5-s11003-B100.npz",
+      "data_hash": "3519c7786fabc7394158feee35fb176222782559941f3d87d7187aed3729cec6",
+      "data_id": "benchmark-linear-d5-s11003-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "7f5a28ed2e16f47edbaf2b5c45131e838bd426b43faf372e77d85c5a23729e51"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d5-s11003-B400.npz",
+      "data_hash": "990fc100fc2648c0cea911b410eeced8610a8146ac71703fbddbfeadbbd7d8b9",
+      "data_id": "benchmark-linear-d5-s11003-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "7f5a28ed2e16f47edbaf2b5c45131e838bd426b43faf372e77d85c5a23729e51"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d5-s11004-B100.npz",
+      "data_hash": "1d5ff9a8e4c249eb76cc9cc15c5031ad5672f0debc9dd4cc873f3365c7aa6dba",
+      "data_id": "benchmark-linear-d5-s11004-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "4715cf8e291e065517282b542ab47bbf59c96f001419471e525bfa44820f5d42"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d5-s11004-B400.npz",
+      "data_hash": "d256dc0c7699853fba7404a2c6e42857709db9802f1a73ae6704292b8984ff14",
+      "data_id": "benchmark-linear-d5-s11004-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "4715cf8e291e065517282b542ab47bbf59c96f001419471e525bfa44820f5d42"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d5-s11005-B100.npz",
+      "data_hash": "f652d68398bcb80a757c92a8442386a9d4f329c3caaca39d980ebcf1abbb3aaa",
+      "data_id": "benchmark-linear-d5-s11005-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "801093c153639892406219a3dfd60c0ed2fd494af03e54b5a4d397949684099b"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d5-s11005-B400.npz",
+      "data_hash": "d412562e3f360985141b4f5476d15962db2d2dbc8a178b4729652d1cf479359e",
+      "data_id": "benchmark-linear-d5-s11005-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "801093c153639892406219a3dfd60c0ed2fd494af03e54b5a4d397949684099b"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d5-s12001-B100.npz",
+      "data_hash": "1b6f03bd23cf140f6df97c5198747f2c8ff5575508049bb61c7112899c1ab545",
+      "data_id": "benchmark-nonlinear-d5-s12001-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "136efb6db50ddc83b0314250595ae41b5637ae635f07dc05c17d5000fe2f45de"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d5-s12001-B400.npz",
+      "data_hash": "fba01e44eac749e691bdac36f25f16e1c43e038e63f2e15b8668d24116823d57",
+      "data_id": "benchmark-nonlinear-d5-s12001-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "136efb6db50ddc83b0314250595ae41b5637ae635f07dc05c17d5000fe2f45de"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d5-s12002-B100.npz",
+      "data_hash": "93efe386fa17135b30ffba6ea55bce01dc4f8a0a964000336ac54e97249ea874",
+      "data_id": "benchmark-nonlinear-d5-s12002-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "4866f32141cc8f0930b4aff2b65b4c3c9695f1b4c3fe493ae82d9968371bbb8c"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d5-s12002-B400.npz",
+      "data_hash": "3348e614a8e4f2915641f937cecec86121039ac929f54762cee81db88f05693a",
+      "data_id": "benchmark-nonlinear-d5-s12002-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "4866f32141cc8f0930b4aff2b65b4c3c9695f1b4c3fe493ae82d9968371bbb8c"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d5-s12003-B100.npz",
+      "data_hash": "70120415c4c2d05bceaf8960d30e04fe955a8c21a9c6b61e6386e549f36ea094",
+      "data_id": "benchmark-nonlinear-d5-s12003-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "a26405bc53387398966444b0a07078c81a8e115cdc3afa2a9e27f87663ddb972"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d5-s12003-B400.npz",
+      "data_hash": "6639ee3038097e060bb57a28e8e2669c2e8d0941a9fa10c305a9ce8032b32e20",
+      "data_id": "benchmark-nonlinear-d5-s12003-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "a26405bc53387398966444b0a07078c81a8e115cdc3afa2a9e27f87663ddb972"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d5-s12004-B100.npz",
+      "data_hash": "ec8602b84409d316df93cede2fbc0be54108ec3b162e99a5704642758f6caa8a",
+      "data_id": "benchmark-nonlinear-d5-s12004-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "8b8c1f3c80259118939b53eec52f6ed2c5c078e0d7bcf81927acab1c83b1a11e"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d5-s12004-B400.npz",
+      "data_hash": "10f722a4727a4f7d2222611d30e3f455013da0fb217ee5b8edd9ae841462e96a",
+      "data_id": "benchmark-nonlinear-d5-s12004-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "8b8c1f3c80259118939b53eec52f6ed2c5c078e0d7bcf81927acab1c83b1a11e"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d5-s12005-B100.npz",
+      "data_hash": "9937c301a895bcd17d8dc284ef911f097bd7535f6cf8ce407acd637f9ed9247e",
+      "data_id": "benchmark-nonlinear-d5-s12005-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "db82eb95d013bdeb4f21631d5bdae7912eb04899f691330539d23d9f70b16520"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d5-s12005-B400.npz",
+      "data_hash": "d230da795d5cd8926797a7130ab897b665488b44bf2193d33732b941aac21dda",
+      "data_id": "benchmark-nonlinear-d5-s12005-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "db82eb95d013bdeb4f21631d5bdae7912eb04899f691330539d23d9f70b16520"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s13001-B100.npz",
+      "data_hash": "5cf8f44c17ae68be4876ef94d302e8449a2d3aa3efbe6147fd468db1aab1df4b",
+      "data_id": "benchmark-heteroscedastic-d5-s13001-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "a04be451fe6da3881013d5a2600c7a8590e5fc2a7063cc4a20a2da3afe294cb3"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s13001-B400.npz",
+      "data_hash": "19601a883670e274693e37c41098139453ec8b429737d4c527557f6f8147ec5c",
+      "data_id": "benchmark-heteroscedastic-d5-s13001-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "a04be451fe6da3881013d5a2600c7a8590e5fc2a7063cc4a20a2da3afe294cb3"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s13002-B100.npz",
+      "data_hash": "44d53a317a47886432b22457e7bcfe803ff76b8bc81c2a4b2c5e339d619f0b45",
+      "data_id": "benchmark-heteroscedastic-d5-s13002-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "b88ee292a23a40590ddcf7bc7a6858e918a4107689fa7d77d3e3f88f93132879"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s13002-B400.npz",
+      "data_hash": "c947895c3dade245ac9bce25ed42679176721ac53402fc10cfda0a3b9c7f3fad",
+      "data_id": "benchmark-heteroscedastic-d5-s13002-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "b88ee292a23a40590ddcf7bc7a6858e918a4107689fa7d77d3e3f88f93132879"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s13003-B100.npz",
+      "data_hash": "1797571beedb76b451381328da88957cbbe2b3ba02845dc0248599d951700751",
+      "data_id": "benchmark-heteroscedastic-d5-s13003-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "3ec02e2a0f9fcd782b2005127b851c0903de5a06cd49acc052dd09bbeb309c8d"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s13003-B400.npz",
+      "data_hash": "659c3861c2806edfa0538b0bba95322290d61f6dd71ad6d27c3c81304c985087",
+      "data_id": "benchmark-heteroscedastic-d5-s13003-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "3ec02e2a0f9fcd782b2005127b851c0903de5a06cd49acc052dd09bbeb309c8d"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s13004-B100.npz",
+      "data_hash": "10c7a9e820c7e5686517a238a1cc894e9fff750bfc18467048f46091b7700e1a",
+      "data_id": "benchmark-heteroscedastic-d5-s13004-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "6bfeb84c87c70ec662978677d324b3a2b51b4e4d12a857032bdf8b874f3e8027"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s13004-B400.npz",
+      "data_hash": "eb0f2c211751846413c85a950ea104e370311c22063c7c00c23ee29d2766c92a",
+      "data_id": "benchmark-heteroscedastic-d5-s13004-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "6bfeb84c87c70ec662978677d324b3a2b51b4e4d12a857032bdf8b874f3e8027"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s13005-B100.npz",
+      "data_hash": "f10135e4ff847013d8029f6922e75daeeb869c0b167d874c3b154f102f02eb4e",
+      "data_id": "benchmark-heteroscedastic-d5-s13005-B100",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "6cb38b17da49b113a3335031cb25bcbc287f9ee056f0de695ef82e21e1e90593"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s13005-B400.npz",
+      "data_hash": "2f4843c2f079c10e9e0bdf044146162fc707570d2dff2da7602488c7bd76d0dd",
+      "data_id": "benchmark-heteroscedastic-d5-s13005-B400",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "6cb38b17da49b113a3335031cb25bcbc287f9ee056f0de695ef82e21e1e90593"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d10-s11501-B100.npz",
+      "data_hash": "99b8765b6daaa3a3651bb34a36533e3b34e3fa0309b51ee2939126d17e04137a",
+      "data_id": "benchmark-linear-d10-s11501-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "b53344a9b2b3dfa95376b990ccd5f2ec6e992ba0f2c9c5b254cde9306598d2ae"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d10-s11501-B400.npz",
+      "data_hash": "2ebdb0f8b5320fa52b480f2b2020b8b3d55e99824bd615cb292313bd168f734f",
+      "data_id": "benchmark-linear-d10-s11501-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "b53344a9b2b3dfa95376b990ccd5f2ec6e992ba0f2c9c5b254cde9306598d2ae"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d10-s11502-B100.npz",
+      "data_hash": "63c335e9cf0d049b46d1d24845bb5980c2aa77eefaaebab71ff3b0654aa2163d",
+      "data_id": "benchmark-linear-d10-s11502-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "2e8e0384aac9f1622cbc98371b7911b0b3bc897e6d269085717ed73ae96f3bfb"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d10-s11502-B400.npz",
+      "data_hash": "63fb144012f5934cea6df1017bd8ba1bae01e8269dfe5574cb7b5b3ee1de038b",
+      "data_id": "benchmark-linear-d10-s11502-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "2e8e0384aac9f1622cbc98371b7911b0b3bc897e6d269085717ed73ae96f3bfb"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d10-s11503-B100.npz",
+      "data_hash": "7ae1db515f9cd7bf4b52c7c7a74974d7965c571b942c00206f566260c47473cc",
+      "data_id": "benchmark-linear-d10-s11503-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "5577d4d5bf35deb3b62ccb562ef0859aa1215189f58d4b0daf7c1abf3ab8ca6d"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d10-s11503-B400.npz",
+      "data_hash": "bba9d5cbbc14e39d1ee590e31a61c3dbb1090d8635a5f2b35a9e61b4ec48c740",
+      "data_id": "benchmark-linear-d10-s11503-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "5577d4d5bf35deb3b62ccb562ef0859aa1215189f58d4b0daf7c1abf3ab8ca6d"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d10-s11504-B100.npz",
+      "data_hash": "0b1a70fb035495661844039b0ee204ef7a885244b32fe45c3839769b2c8080dc",
+      "data_id": "benchmark-linear-d10-s11504-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "2e1ee2fbfec7a663d1fb5e234287281c45aa76b918d120ed1360eb465ca84619"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d10-s11504-B400.npz",
+      "data_hash": "1e14b0223cdb3c4f90c31f5bc874dfbf3da93bb60f9913f2fa6c694754364dd0",
+      "data_id": "benchmark-linear-d10-s11504-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "2e1ee2fbfec7a663d1fb5e234287281c45aa76b918d120ed1360eb465ca84619"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d10-s11505-B100.npz",
+      "data_hash": "7526c787a81c79be24023db25c85c945b54e0cce00966a4d6951d5a0622aba1c",
+      "data_id": "benchmark-linear-d10-s11505-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "2c0a676e6d600f3a1cd7250421b1f1fa416ca98a761a2109e06f6c968ca893f0"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-linear-d10-s11505-B400.npz",
+      "data_hash": "6d577ff7fbe7d45f88ced4590310a4ee840679785eb1d6f82c7ec5ff669707a7",
+      "data_id": "benchmark-linear-d10-s11505-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "2c0a676e6d600f3a1cd7250421b1f1fa416ca98a761a2109e06f6c968ca893f0"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d10-s12501-B100.npz",
+      "data_hash": "5379369deeec80f33c0c11c6c01080b9ef4ae9b9957cc1f202887d585463a2e6",
+      "data_id": "benchmark-nonlinear-d10-s12501-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "239554f779560ab530d521c04d5b88503b5a4cbfa5a0d0e683ea69a8d75a1a9a"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d10-s12501-B400.npz",
+      "data_hash": "9bca1f079dc85ec95c909d1266b2594ea54eecbbcdea58205176f5bc2a1a4e0c",
+      "data_id": "benchmark-nonlinear-d10-s12501-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "239554f779560ab530d521c04d5b88503b5a4cbfa5a0d0e683ea69a8d75a1a9a"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d10-s12502-B100.npz",
+      "data_hash": "ef724929f230f5daa45a9f7d0add03c34df70da24fa3b0a13dc1488fef21ce63",
+      "data_id": "benchmark-nonlinear-d10-s12502-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "f2bd0146d3cdadeb1152eb5f989f01420abd34cb2909edc0a30b400463780f11"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d10-s12502-B400.npz",
+      "data_hash": "c2604acbb7c669309d9e7fecb2ec24792e2e56c56e057d2a47096c59998a1418",
+      "data_id": "benchmark-nonlinear-d10-s12502-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "f2bd0146d3cdadeb1152eb5f989f01420abd34cb2909edc0a30b400463780f11"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d10-s12503-B100.npz",
+      "data_hash": "267f37f968b60e2682989c809c50786a4f89b9fd900daf471849d255743fe827",
+      "data_id": "benchmark-nonlinear-d10-s12503-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "f6875a5dad33f1632780708c33093777d7c796aea577ea55e0495d4aa2ac3adf"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d10-s12503-B400.npz",
+      "data_hash": "82f86b62e708e3a4d913de68533be0f430242c06074a55016f67a9ece8ea9681",
+      "data_id": "benchmark-nonlinear-d10-s12503-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "f6875a5dad33f1632780708c33093777d7c796aea577ea55e0495d4aa2ac3adf"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d10-s12504-B100.npz",
+      "data_hash": "cbe2addc9955d8ca52e8b841b3b18f7c5423e7c0b1b08f94073a37bea430be8c",
+      "data_id": "benchmark-nonlinear-d10-s12504-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "9d5588ba3d9d7d54a6a9cc3d6d3d1e36a35eb34d18b22b7fa239328216ae9cea"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d10-s12504-B400.npz",
+      "data_hash": "c9a540c6af48b2e2f4a29fba737d0adf20fff6c7dc2f4d9f5b3e727ab15b779a",
+      "data_id": "benchmark-nonlinear-d10-s12504-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "9d5588ba3d9d7d54a6a9cc3d6d3d1e36a35eb34d18b22b7fa239328216ae9cea"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d10-s12505-B100.npz",
+      "data_hash": "c7038f1c90a7728209984179fc8ebcbc5448ac9fccfd2a55aef730c4742d8293",
+      "data_id": "benchmark-nonlinear-d10-s12505-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "2ea75cafe6da5d9f5fd73b705ac33f2773489d7916ffb6b7f7896035ba2dc926"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-nonlinear-d10-s12505-B400.npz",
+      "data_hash": "42d6c46bab5a7c31e3315643b5e2937a12e70c80f4f981c6b54bf7d554691bfd",
+      "data_id": "benchmark-nonlinear-d10-s12505-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "2ea75cafe6da5d9f5fd73b705ac33f2773489d7916ffb6b7f7896035ba2dc926"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d10-s13501-B100.npz",
+      "data_hash": "93c0ab91a6a85980049935838f9efa6407b57565bf8f2ea2121d6f2d923f2380",
+      "data_id": "benchmark-heteroscedastic-d10-s13501-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "5fa3fcf28842f6fe71ca34632530536930f4005c8e8d68dc90f19f4cf46918f1"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d10-s13501-B400.npz",
+      "data_hash": "f4675adbd544db0b14fc2bbb307f90b0650df37cfd3cad3bcfa7cfa080b12675",
+      "data_id": "benchmark-heteroscedastic-d10-s13501-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "5fa3fcf28842f6fe71ca34632530536930f4005c8e8d68dc90f19f4cf46918f1"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d10-s13502-B100.npz",
+      "data_hash": "9945ba3740258444df43a289dedbfb202df984363e8c8fb80fcea18bf7eb8ba0",
+      "data_id": "benchmark-heteroscedastic-d10-s13502-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "9fccd49394e08bb7a7cbf7b111f0ca58b99a9164aacfbe75829e1925fd6b4b93"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d10-s13502-B400.npz",
+      "data_hash": "2012f948beb8295fc99571fd436124a5d572265274ffe534be93e0e2e48db02f",
+      "data_id": "benchmark-heteroscedastic-d10-s13502-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "9fccd49394e08bb7a7cbf7b111f0ca58b99a9164aacfbe75829e1925fd6b4b93"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d10-s13503-B100.npz",
+      "data_hash": "e56d96ff068553c5e81d1c092cc530d9b3e931422ad135b40a4c8c73cd81f8dd",
+      "data_id": "benchmark-heteroscedastic-d10-s13503-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "639c2c71db11fb31bec109a4822094cb5a663a1674fdff0cfb19b70c9f9c8ec5"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d10-s13503-B400.npz",
+      "data_hash": "8d7475544ef7333a508822cb47f5c7c2be6e6eb64bd2dd1f25fb07c382f442f5",
+      "data_id": "benchmark-heteroscedastic-d10-s13503-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "639c2c71db11fb31bec109a4822094cb5a663a1674fdff0cfb19b70c9f9c8ec5"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d10-s13504-B100.npz",
+      "data_hash": "21ad4e5b90738e88f713078c38f24145359cb11dc0287ca173c8064ddccaba52",
+      "data_id": "benchmark-heteroscedastic-d10-s13504-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "b04bf04c15425c8372913a99c91ce4ac015488240485cc23fa1267bb6f732252"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d10-s13504-B400.npz",
+      "data_hash": "e247fa6aa222c5bf7b32227fba2c1e0b9b2b1388dd78a9691fded650b58cdac3",
+      "data_id": "benchmark-heteroscedastic-d10-s13504-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "b04bf04c15425c8372913a99c91ce4ac015488240485cc23fa1267bb6f732252"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d10-s13505-B100.npz",
+      "data_hash": "f88067ab50ec12c111861a6397b0b434ccd92e731217a141601561d4847cb6ee",
+      "data_id": "benchmark-heteroscedastic-d10-s13505-B100",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "59172042dd15e6db29eb26ae82bd2e0fbeba87f0f9704d316e0f545dce0d5825"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d10-s13505-B400.npz",
+      "data_hash": "6a19514086ca55ff993afe1dd884b1ea54a95592d2f4bc2c9d35cab98af4c098",
+      "data_id": "benchmark-heteroscedastic-d10-s13505-B400",
+      "environment_count": 17,
+      "reported_reference_means_verified": true,
+      "sha256": "59172042dd15e6db29eb26ae82bd2e0fbeba87f0f9704d316e0f545dce0d5825"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s41001-B100-semantic.npz",
+      "data_hash": "607859ceeeaa868f6d0e039d6ce30c975c6307074a5b7e844d3cc9a2ca58b1a2",
+      "data_id": "benchmark-heteroscedastic-d5-s41001-B100-semantic",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "4840579ddb70dedcc7e58a8336b369238245dc63b3d2503546077882d8c2cf3d"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s41002-B100-semantic.npz",
+      "data_hash": "917816490e221309d5cd2d7cd438b1a9c1098a542e1a18c815759da73af7c8fa",
+      "data_id": "benchmark-heteroscedastic-d5-s41002-B100-semantic",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "6368d563be46ab7a5741a45e68ac7627bd6b8017703ef5633269bdb7b064476c"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s41003-B100-semantic.npz",
+      "data_hash": "3a9cc272fa60c9f6fdc3f18093fd00e54ed9a7cb5e55525bcf85811e4a91f7a0",
+      "data_id": "benchmark-heteroscedastic-d5-s41003-B100-semantic",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "e56b9cf08bfd3e132f2f3adaa202ba7191a7d0e755445b3c469e6a1620097b63"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s41004-B100-semantic.npz",
+      "data_hash": "5e82646d7e094530dac412db01b8db2e48153f4f2e7965f0c2b13845103f201b",
+      "data_id": "benchmark-heteroscedastic-d5-s41004-B100-semantic",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "eb35be0f68372d5e7d7ce65dd6e975f35edc8dded8c4dc808cc9e2444b784d4e"
+    },
+    {
+      "artifact": "generated_samples/final-reference-benchmark-heteroscedastic-d5-s41005-B100-semantic.npz",
+      "data_hash": "869ac1439bafaddaac92002debd60af24650f5e0ccb9cb7e2cd11ce90c482ef4",
+      "data_id": "benchmark-heteroscedastic-d5-s41005-B100-semantic",
+      "environment_count": 9,
+      "reported_reference_means_verified": true,
+      "sha256": "6444257ac3a933c58ecf1d42deda2e2322c678d2c428f691c5fac079011f6f9d"
+    },
+    {
+      "artifact": "generated_samples/final-reference-chambers-B400.npz",
+      "data_hash": "35e61ba26eeab3b85689ee3cdbbbc92c305424bae6d1eaaaa1386cdd3d501fe1",
+      "data_id": "chambers-B400",
+      "environment_count": 7,
+      "reported_reference_means_verified": true,
+      "sha256": "41efee24c8c6f8492bdad7dd55f129485fc05d61479cabcf9db08c9087c33953"
+    }
+  ],
+  "device": "cuda",
+  "no_new_fitting_or_selection": true,
+  "protocol_hash": "ed4cfac51f4709f28283f0271dc99cb690fb72f05c82eb0409832d802394ec5c",
+  "provenance": "reconstructed after evaluation using frozen loader, seeds and data; reported means and row counts verified"
+}

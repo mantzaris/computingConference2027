@@ -1,0 +1,23 @@
+claim,status,evidence,qualification
+diagnostic - fixed reduces T2 SW1 in controlled,supported,results/curated/summary.csv; metrics.csv; run_index.json,Measured scope only; modest cluster count; human interpretation pending
+diagnostic - random reduces T2 SW1 in controlled,supported,results/curated/summary.csv; metrics.csv; run_index.json,Measured scope only; modest cluster count; human interpretation pending
+diagnostic - llm_edit reduces T2 SW1 in semantic,unsupported,results/curated/summary.csv; metrics.csv; run_index.json,Measured scope only; modest cluster count; human interpretation pending
+diagnostic - llm_edit (coherent) is negative,unsupported,results/curated/metadata_comparisons.csv,Prespecified secondary comparison; descriptive interval; no multiplicity-adjusted significance claim
+diagnostic - llm_edit (anonymous) is negative,mixed,results/curated/metadata_comparisons.csv,Prespecified secondary comparison; descriptive interval; no multiplicity-adjusted significance claim
+diagnostic - llm_edit (shuffled) is negative,unsupported,results/curated/metadata_comparisons.csv,Prespecified secondary comparison; descriptive interval; no multiplicity-adjusted significance claim
+coherent diagnostic - anonymous diagnostic is negative,mixed,results/curated/metadata_comparisons.csv,Prespecified secondary comparison; descriptive interval; no multiplicity-adjusted significance claim
+coherent diagnostic - shuffled diagnostic is negative,mixed,results/curated/metadata_comparisons.csv,Prespecified secondary comparison; descriptive interval; no multiplicity-adjusted significance claim
+coherent diagnostic - none data_only is negative,mixed,results/curated/metadata_comparisons.csv,Prespecified secondary comparison; descriptive interval; no multiplicity-adjusted significance claim
+diagnostic - marginal is negative,mixed,results/curated/ablation_comparisons.csv,Prespecified secondary comparison; descriptive interval; no multiplicity-adjusted significance claim
+diagnostic - no_wasserstein is negative,mixed,results/curated/ablation_comparisons.csv,Prespecified secondary comparison; descriptive interval; no multiplicity-adjusted significance claim
+diagnostic - additive_repair is negative,supported,results/curated/ablation_comparisons.csv,Prespecified secondary comparison; descriptive interval; no multiplicity-adjusted significance claim
+fixed flow - fixed additive is negative,mixed,results/curated/flow_additive_comparison.csv,Prespecified secondary comparison; descriptive interval; no multiplicity-adjusted significance claim
+The one-time audit reduces harmful T2 repairs in the controlled matrix,unsupported,results/curated/F5_harm_counts.csv,10 harmful conditions both before and after audit; no safety guarantee
+Diagnostic repair improves the coherent real-case T2 endpoint over fixed graphs,unsupported,results/curated/real_block_comparisons.csv,Positive error difference; conditional one-apparatus interval
+This LLM-edit adaptation executes effective graph edits,unsupported,results/curated/llm_edit_failure_audit.json,No admissible new candidates; all returned initial graphs; not a faithful CauScientist reproduction
+Diagnostic repair is superior at equal achieved optimizer cost,untested,results/curated/achieved_cost_summary.csv,Equal maximum candidate counts only; achieved canonical updates differ
+"Correct SCM intervention, masks, inverse/Jacobian and canonical cache behavior",supported,results/curated/correctness.json; tests/,"Tested cases and actual CUDA smoke, not a universal proof"
+Generated DAGs establish physical causal truth,unsupported,docs/novelty.md; docs/dataset_audit.md,Not implied by the design or predictions
+Individual counterfactual accuracy on real data,untested,none,Only optional analytic software checks exist
+Graph edge stability across optimization seeds,untested,none,No stability thickness or posterior edge probability is plotted
+Human scientific approval or guaranteed acceptance/indexing,unsupported,docs/venue.md,Human review pending; no submission or guarantee

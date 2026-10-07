@@ -45,3 +45,9 @@ strong RGB settings extrapolate beyond fitting support. Treat this as predictive
 validation under documented actuator assignment, with conditional causal
 interpretation, not established causal sufficiency or a graph-identification
 benchmark. Human review of this scope is pending.
+
+Exact source verification: the previously used dataset protocol files match
+repository commit `0c8a77ea14bd4437b1fdd79adc1aa91ac2342569` byte for byte.
+The authors' IID notebook matches paper repository commit
+`e20e785ef4ffe797e9a2028b6b9d67f8498831cf`. URL and SHA-256 comparisons are in
+`results/curated/data_source_revision.json`; no data or protocol bytes changed.

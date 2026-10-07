@@ -93,3 +93,49 @@ LLM-edit stages execute sequentially after the controlled worker pool.
 The final 23-test suite, model preparation command and complete environment
 bootstrap executed successfully. Development tuning completed before benchmark
 freeze. No final benchmark outcomes were exposed when choosing this matrix.
+
+
+## Figure dimensions checked against the actual venue template
+
+The official package was retrieved successfully from the local connection after
+the Pod download received HTTP 403. Its 12.2 cm text width requires compact
+stacked panels with 8–9 pt text, rather than shrinking wider figures. Only figure
+layout and presentation code changed after protocol freeze; the frozen
+scientific implementation, split assignments and selected-model rules did not.
+Marker shapes and dash patterns supplement color. The downloaded package and
+checksums are retained; no final-manuscript compilation is claimed.
+
+## Post-evaluation reporting decisions and observed limitations
+
+- All 869 method runs completed before final-test access. The frozen scientific
+  implementation hash remains `8772cd93dfb99d288bdf789a3ad0db963532214c2362cc51f86964d667b5d14f`.
+  Subsequent source edits affect reporting, figure presentation and preservation
+  utilities only. No fitted mechanism, prompt, selection rule, split or final
+  metric was changed after exposure.
+- Auditing the actual LLM-edit outputs found 84 parsed graphs containing only
+  one edge, although the frozen contract required a complete graph after one
+  edit. Another 18 attempts violated assigned-root constraints. The input
+  incumbent uses numeric indices while outputs use V-prefixed IDs; this is an
+  avoidable interface burden. All 18 conditions returned their initial graph
+  without a new admissible candidate. Preserve and disclose this failed
+  adaptation; do not reinterpret its edges as commands or tune the prompt on
+  final outcomes. It is a limited CauScientist-inspired baseline, not a faithful
+  reproduction or a test of CauScientist's published efficacy. A new interface
+  needs a separately frozen future study.
+- The candidate budget is a common maximum of 12 evaluated DAGs with the same
+  stopping rule, as implemented before freeze. Achieved mean counts differ
+  (10.58 diagnostic, 9.52 random), as do canonical fitting updates (9,047.1
+  versus 7,525.4). Report this as a common candidate cap; equal achieved compute
+  and compute-efficiency superiority are untested.
+- The independent audit did not reduce the ten observed harmful T2 controlled
+  conditions. Report that failure, the harmful uncorrupted control, the semantic
+  loss and the real-case loss alongside the controlled mean improvements.
+- Final reference arrays were regenerated on CUDA after evaluation from the
+  unchanged frozen generators and recorded seeds, and checked against all
+  original row counts and non-target means (absolute tolerance 1e-7). They were
+  then preserved with generated model samples. This does not claim the original
+  in-memory reference arrays were saved at the first evaluation instant. See
+  final_reference_preservation.json and scripts/preserve_final_samples.py.
+- Final plotting reproduction hides CUDA and copies only source/configuration
+  and curated inputs. It is a presentation/reproducibility check, not an
+  additional GPU experiment or opportunity to select favorable results.

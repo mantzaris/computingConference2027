@@ -1,0 +1,43 @@
+{
+  "common_noises_across_settings_and_models": true,
+  "device": "cuda",
+  "grid": [
+    -2.0,
+    -1.8,
+    -1.6,
+    -1.4,
+    -1.2,
+    -1.0,
+    -0.7999999999999998,
+    -0.5999999999999999,
+    -0.3999999999999999,
+    -0.19999999999999996,
+    0.0,
+    0.20000000000000018,
+    0.40000000000000036,
+    0.6000000000000001,
+    0.8000000000000003,
+    1.0,
+    1.2000000000000002,
+    1.4000000000000004,
+    1.6,
+    1.8000000000000003,
+    2.0
+  ],
+  "noise_seed_formula": "SCM seed + 90811 + intervention target",
+  "pairs": [
+    [
+      2,
+      3
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "run_id": "benchmark-linear-d5-s11005-B400-diagnostic-c0.5-none",
+  "samples_artifact": "generated_samples/response-curves-benchmark-linear-d5-s11005-B400-diagnostic-c0.5-none.npz",
+  "samples_per_point": 2048,
+  "samples_sha256": "315c5d1589489b2e87f5e85df320cd87c74073c091e219120566e945939d35c7",
+  "table_sha256": "220b5ab36d187730172548c2de0bb929ffcf6d4b7932b17437d3e0c9943fe798"
+}

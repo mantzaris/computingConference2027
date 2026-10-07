@@ -1,0 +1,202 @@
+{
+  "actual_local_generation": true,
+  "invalid_attempts": 0,
+  "metadata": [
+    {
+      "description": "Assigned brightness setting for red light.",
+      "id": "V0",
+      "name": "Red source setting"
+    },
+    {
+      "description": "Assigned brightness setting for green light.",
+      "id": "V1",
+      "name": "Green source setting"
+    },
+    {
+      "description": "Assigned brightness setting for blue light.",
+      "id": "V2",
+      "name": "Blue source setting"
+    },
+    {
+      "description": "Digitized electrical current measurement.",
+      "id": "V3",
+      "name": "Source current readout"
+    },
+    {
+      "description": "Assigned angular position of a rotating optical component.",
+      "id": "V4",
+      "name": "Polarizer motor setting"
+    },
+    {
+      "description": "Digitized voltage from a rotary position sensor.",
+      "id": "V5",
+      "name": "Position readout"
+    }
+  ],
+  "model_load_seconds": 5.639736508950591,
+  "query_attempts": 2,
+  "records": [
+    {
+      "attempt": 0,
+      "graphs": [
+        {
+          "d": 6,
+          "edges": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        }
+      ],
+      "prompt_sha256": "498a92d2aae5a5f0318057023659edd4d17896562e727970867d9da249850b2f",
+      "proposal": 0,
+      "proposals": [
+        {
+          "edges": [
+            {
+              "rationale": "Red source setting influences source current readout",
+              "source": "V0",
+              "target": "V3"
+            },
+            {
+              "rationale": "Green source setting influences source current readout",
+              "source": "V1",
+              "target": "V3"
+            },
+            {
+              "rationale": "Blue source setting influences source current readout",
+              "source": "V2",
+              "target": "V3"
+            },
+            {
+              "rationale": "Polarizer motor setting influences position readout",
+              "source": "V4",
+              "target": "V5"
+            }
+          ],
+          "nodes": [
+            "V0",
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5"
+          ]
+        }
+      ],
+      "raw_sha256": "7abdfe63d448ced961f9e29f1700fc7c1b3073d91f134d93eb56135ab601c21a",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 321,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 155,
+        "peak_vram_bytes": 16503704064,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 6.604814738035202,
+        "seed": 122501
+      },
+      "valid": true
+    },
+    {
+      "attempt": 0,
+      "graphs": [
+        {
+          "d": 6,
+          "edges": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        }
+      ],
+      "prompt_sha256": "498a92d2aae5a5f0318057023659edd4d17896562e727970867d9da249850b2f",
+      "proposal": 1,
+      "proposals": [
+        {
+          "edges": [
+            {
+              "rationale": "Red source setting influences source current readout",
+              "source": "V0",
+              "target": "V3"
+            },
+            {
+              "rationale": "Green source setting influences source current readout",
+              "source": "V1",
+              "target": "V3"
+            },
+            {
+              "rationale": "Blue source setting influences source current readout",
+              "source": "V2",
+              "target": "V3"
+            },
+            {
+              "rationale": "Polarizer motor setting influences position readout",
+              "source": "V4",
+              "target": "V5"
+            }
+          ],
+          "nodes": [
+            "V0",
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5"
+          ]
+        }
+      ],
+      "raw_sha256": "7abdfe63d448ced961f9e29f1700fc7c1b3073d91f134d93eb56135ab601c21a",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 321,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 155,
+        "peak_vram_bytes": 16503704064,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 6.675598282366991,
+        "seed": 122511
+      },
+      "valid": true
+    }
+  ],
+  "request_hash": "1fe1b5ed053fd09a3b1e9cec6153d41dfe9ebe7886ee99d87bcfca612b82aae0",
+  "request_identity_version": 2,
+  "revision": {
+    "device": "cuda",
+    "license": "apache-2.0",
+    "model": "Qwen/Qwen3-8B",
+    "precision": "bfloat16",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "stage_seconds": 18.925400072708726
+}

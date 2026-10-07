@@ -1,0 +1,27 @@
+{
+  "timestamp_utc": "2026-10-07T06:09:33.814893+00:00",
+  "completed_first_d10_worker_intervals": [
+    {
+      "job": "execution-run-20261007T053610-109576",
+      "seconds": 1550.8027865886688
+    },
+    {
+      "job": "execution-run-20261007T053610-109577",
+      "seconds": 1654.5687634944916
+    },
+    {
+      "job": "execution-run-20261007T054123-111724",
+      "seconds": 1376.1860060691833
+    }
+  ],
+  "mean_completed_d10_worker_minutes": 25.453097534179687,
+  "unfinished_d10_dataset_blocks_at_checkpoint": 27,
+  "workers": 3,
+  "linear_extrapolation_remaining_d10_hours": 3.817964630126953,
+  "working_remaining_total_hours": [
+    7,
+    10
+  ],
+  "interpretation": "Operational estimate, not a confidence interval; allows slower nonlinear blocks, sequential semantic/real LLM stages, final evaluation and figure export. Original conservative forecast retained in runtime_plan.json.",
+  "scientific_protocol_changed": false
+}
