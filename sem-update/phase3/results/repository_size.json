@@ -1,0 +1,19 @@
+{
+  "audited_indexed_project_files": 430,
+  "comparison_base": "ef2e0cac3fd2d572caf16c98f68cf45392882d28",
+  "cumulative_MiB": 24.602955,
+  "cumulative_limit_bytes": 26214400,
+  "errors": [],
+  "full_local_audit": "sem-update/.artifacts/phase3/staged_audit.json",
+  "git_lfs_introduced": false,
+  "historical_boundary_commit": "8c452ac89e38ebc5e4d04ead60ac93a18ab71baf",
+  "historical_new_blob_bytes": 23296287,
+  "history_and_index_unique_blob_bytes": 25798068,
+  "individual_limit_bytes": 5242880,
+  "largest_phase3_blob_bytes": 865675,
+  "largest_project_blob_bytes": 4045448,
+  "operational_artifacts_in_git": false,
+  "phase3_new_blob_bytes": 2501781,
+  "remaining_bytes": 416332,
+  "scope": "Actual indexed blobs plus every intermediate committed sem-update blob since the base; no budget reset. This summary contains byte counts, not its own blob hash."
+}

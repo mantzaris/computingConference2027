@@ -1,0 +1,31 @@
+{
+  "artifact": "cache_memory_probe/densities.npz",
+  "artifact_sha256": "2f79b0d6389a42fa49e80cc6a92e4ceae9cbb2a63898e660a332c72f71e0f546",
+  "exact_density_equality": true,
+  "passed": true,
+  "pilot_only": true,
+  "records": [
+    {
+      "graphs": 48,
+      "masks_per_graph": 21,
+      "peak_allocated_bytes": 2985494016,
+      "reserved_bytes": 3017801728,
+      "retained_allocated_bytes": 2983387136,
+      "rows": 64,
+      "seconds_including_load": 29.928276589140296,
+      "version": "archived_pilot"
+    },
+    {
+      "graphs": 48,
+      "masks_per_graph": 21,
+      "peak_allocated_bytes": 181050368,
+      "reserved_bytes": 201326592,
+      "retained_allocated_bytes": 176083968,
+      "rows": 64,
+      "seconds_including_load": 30.211414955556393,
+      "version": "bounded_masks"
+    }
+  ],
+  "scope": "No fitting or hidden main outcomes; only parameter-cache lifetime changes",
+  "source_sha256": "dd26a345048771149c6a8186f997090c4b61246e2be99c19630aa0bdcd2ce486"
+}

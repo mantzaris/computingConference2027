@@ -1,0 +1,9 @@
+{
+  "human_source_docs_and_compact_data_whitespace_exit": 0,
+  "details": "",
+  "generated_svg_exception": "Matplotlib SVG path serialization contains trailing spaces. Preserved byte-identically to the verified executed outputs; no scientific or rendering change.",
+  "checked_paths": 120,
+  "source_snapshot_reconciliation": "source_reconciliation.json",
+  "figure_template_validation": "figure_template_check.json",
+  "plot_reproduction": "plot_reproduction_check.json"
+}

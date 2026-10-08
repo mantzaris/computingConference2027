@@ -1,0 +1,10 @@
+{
+  "checkpoints": "Adjusted-bank completed prefixes, paired on exact SCM/corruption/ceiling before averaging within each SCM; conditions and checkpoint_coverage.csv report coverage. Full identities remain in the full metric artifact.",
+  "curated_rows": 1512,
+  "curated_sha256": "9eee8ee3097349861047584dfa74fc7fcbe2c765e28c30902ac74d9553ca6b1f",
+  "full_metric_artifact": "analysis/metrics-full.csv",
+  "full_rows": 10872,
+  "full_sha256": "d6aba1ae42283a95577f2814e1fec89cd8ff3f4f5f1b37093326c73c496a71d2",
+  "precision": "7 significant decimal digits; full operational metrics retained",
+  "trace": "prediction_key maps to generated_samples/<key>/metrics.json and samples.npz in the verified artifact archive"
+}

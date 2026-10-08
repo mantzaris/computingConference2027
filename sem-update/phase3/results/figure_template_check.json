@@ -1,0 +1,27 @@
+{
+  "return_code": 0,
+  "figures": {
+    "F10_graphs_sparse_local.pdf": "4715244fa6d644c29c81040159cb4339ebcc1ff54780d967fbd96cae8a9744a0",
+    "F10_graphs_sparse_whole.pdf": "2c32f84d13840644d734302391a5360c2198e7e8b9772120ef09febaa30a5e67",
+    "F1_size_accuracy.pdf": "62c5774bd4b6ac2b6b0f75874f134b5f94e8b5356c1f6fccac72ca2fc141eec0",
+    "F2_time_memory.pdf": "42fa841e182e2f73bb8fa79fd6f008332f4539135e42aa2dd458dc875b6b5c8b",
+    "F3_error_cost.pdf": "6cb05aa29d2aad1e61e444bd259228d44b46f2833f1b137e2cbe126e01c76ea7",
+    "F4_complexity_descendants.pdf": "f89d468282a6a1341beaf46d4ad9c350fef375d8cea510df8ecd252068209935",
+    "F5_reliability.pdf": "3fd1c9916c4ee7741a16235c7eedcc1b93ef0736b2a34f6fa2580618c3aa1c87",
+    "F6_matched_compute.pdf": "71674ef83d474dd956ef7ab72b0002539d4c7a93d815f4915bb732922672f0ce",
+    "F7_responses.pdf": "ca38bafdbfe023f3a5df0dea5949e89e69882e9a1f85cf73972c1fb7c12788fc",
+    "F8_graphs_sparse_local.pdf": "4b4653ce68633b9b4b56a11c425494a2c45ed337b77464c7dd7677eb16001fbf",
+    "F8_graphs_sparse_whole.pdf": "58e67aee550bc40e6dbf72919c8c1de42c1ad1c4322ce347823307b19f7ccb25",
+    "F9_graphs_deep_local.pdf": "a57eabd30d4bfc680a111f15ef8ed85a3891bb536af23154a032ab8b412ff1f3",
+    "F9_graphs_deep_whole.pdf": "4b505d04bcbc87f48f0b5536535e0ca8b8df43fc9df0d65ccf3ebca372571d40"
+  },
+  "tables": {
+    "comparison.tex": "e21677b2b2bfdd9a1e8a696c44423cffaa68d52ccaa4bbf7e9bbeb808c7fd188",
+    "reliability.tex": "7c303c4d107f3338acd4111377ebc351e668a1cbd9e1e4fda2a9b3639a19eb06"
+  },
+  "template_sha256": "d5ed3f489b336450dd98e4f33844c44e842a6d022f84b0ef868dc19dcf84abc8",
+  "latex_version": "pdfTeX 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian)",
+  "layout_warnings": [],
+  "artifact_pdf": "paper_layout_check/layout.pdf",
+  "manuscript_or_submission": false
+}

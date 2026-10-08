@@ -1,0 +1,10 @@
+{
+  "artifact": "archives/frozen_source.tar.gz",
+  "bytes": 192801,
+  "created_utc": "2026-10-08T03:26:38.374163+00:00",
+  "dependency_lock_sha256": "7ab175510e213e0078c6e85361518125755b404ed34547331a29042e31ddf6a3",
+  "installed_packages_sha256": "01c03ac5a21f850f9422365683ed830f57315ce53eca156aec9226ec47fb051d",
+  "protocol_sha256": "86a0200fc7f3f51864362b47804f1e53c2f8273a6dc94f95911d2e2af8c47246",
+  "scientific_hash": "c20f2ac54186bcc6a385a5a4f81c1444814de4313ed99927e144208c01c8c3ee",
+  "sha256": "a4c1f8eab50ddf3347521179c2aec22877b9f867a9cb91e6ffcda51ea8d51cb7"
+}

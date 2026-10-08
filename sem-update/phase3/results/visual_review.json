@@ -1,0 +1,28 @@
+{
+  "change": "Shared circular local positions in the original declared node order; whole-graph positions unchanged",
+  "content_without_local_layout_sha256": "cbbc5572aeeffd12197091fc2b1a6073ce683bb19d857021fa516eff6f7d58c9",
+  "graph_input_after_sha256": "e8bdd476fe78b0041bf6578fcf625fc159d3f5c1e066d996d0ce13a89a0ead16",
+  "graph_input_before_sha256": "25c21a8581020ce58eaae589829ff5fcc3bb7e62e728104dbdc56c7b555c3800",
+  "harm_axis": "Final reporting sets a zero-based frequency range using the plotted confidence bounds; numeric inputs are unchanged",
+  "local_separation_checks": [
+    {
+      "minimum_separation": 0.41582338163551835,
+      "nodes": 15,
+      "scm": 321000
+    },
+    {
+      "minimum_separation": 0.6840402866513371,
+      "nodes": 9,
+      "scm": 352000
+    },
+    {
+      "minimum_separation": 0.5176380902050409,
+      "nodes": 12,
+      "scm": 310200
+    }
+  ],
+  "originals_preserved": "paper/pre_visual_review",
+  "reason": "Visual inspection found overlapping local node labels in the initial spring layout",
+  "source_sha256": "1f166031f80bf61a472a1d23f6bf485305a0384f6eda161e4dc7fc3b71f06689",
+  "unchanged": "All node subsets, target/outcome choices, graph edges, component weights, response values and scientific metrics"
+}

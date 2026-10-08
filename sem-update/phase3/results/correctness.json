@@ -1,0 +1,12 @@
+{
+  "error": 0,
+  "exit_code": 0,
+  "failure": 0,
+  "junit_artifact": "logs/correctness-v4.xml",
+  "junit_sha256": "d41de1e4e8e8f7587924f221de33ae18ba79aee33219d156c713c2e8167ff375",
+  "passed": 61,
+  "scientific_hash": "c20f2ac54186bcc6a385a5a4f81c1444814de4313ed99927e144208c01c8c3ee",
+  "scope": "Historical SCM tests, phase-two selection/baselines/protocol tests, and phase-three large-graph/grouped-flow/scaling checks",
+  "skipped": 0,
+  "tests": 61
+}

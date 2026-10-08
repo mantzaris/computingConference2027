@@ -1,0 +1,9 @@
+{
+  "additional_cap_seconds": 86400,
+  "cumulative_cap_seconds": 144336.4706876278,
+  "historical_commit": "8c452ac89e38ebc5e4d04ead60ac93a18ab71baf",
+  "historical_gpu_seconds": 57936.47068762779,
+  "historical_ledger_sha256": "f85bdfca5ad6c080c9946d98317adc9f588858d798edc72babae49a43c076304",
+  "initialized_utc": "2026-10-08T00:23:31.463837+00:00",
+  "policy": "Historical records copied intact; all new job IDs start phase3-; old ledger unchanged"
+}

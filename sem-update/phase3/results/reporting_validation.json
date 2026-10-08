@@ -1,0 +1,56 @@
+{
+  "cuda_available": false,
+  "development_scms": [
+    390020,
+    390050,
+    390100
+  ],
+  "exit_code": 0,
+  "inputs": [
+    {
+      "path": "runs/sparse-heteroscedastic-d20-s390020-B400-c0.5-fixed-pilot-metrics.json",
+      "sha256": "4e626f125765f492da22011e2997c14cd2d17ed1508841d1a3842bf52e6d7f4d"
+    },
+    {
+      "path": "runs/sparse-heteroscedastic-d20-s390020-B400-c0.5-adjusted-pilot-metrics.json",
+      "sha256": "cbc00cf74c7e3f4b611559a143b62fee0c56f653d5635ca5509bcee3376317d7"
+    },
+    {
+      "path": "runs/dense-heteroscedastic-d50-s390050-B400-c0.5-fixed-pilot-metrics.json",
+      "sha256": "d44d4c50b01d5a8789d04ca3d841fac063c7ba7b6d38f422a9ee5450a66473d7"
+    },
+    {
+      "path": "runs/dense-heteroscedastic-d50-s390050-B400-c0.5-adjusted-pilot-metrics.json",
+      "sha256": "d0597aaad1a211dbe0f83914e0e8f8410f7161c6f2a114254218cbe91fe23906"
+    },
+    {
+      "path": "runs/sparse-heteroscedastic-d100-s390100-B400-c0.5-fixed-pilot-metrics.json",
+      "sha256": "227543d36e179ec4658a7d08b50124ec5b2fd9399671a698e61853741aae1e7d"
+    },
+    {
+      "path": "runs/sparse-heteroscedastic-d100-s390100-B400-c0.5-adjusted-pilot-metrics.json",
+      "sha256": "8e123b4654780801a5a9360f17fad127db15cc1551f33f259123574f7a452cac"
+    }
+  ],
+  "log": "logs/development-report-check.log",
+  "main_outcomes_accessed": false,
+  "metric_rows": 162,
+  "outputs": [
+    "phase3/paper/comparison.tex",
+    "phase3/paper/figures/F1_size_accuracy.pdf",
+    "phase3/paper/figures/F1_size_accuracy.png",
+    "phase3/paper/figures/F1_size_accuracy.svg",
+    "phase3/paper/figures/F2_time_memory.pdf",
+    "phase3/paper/figures/F3_error_cost.pdf",
+    "phase3/paper/figures/F4_complexity_descendants.pdf",
+    "phase3/paper/figures/F4_complexity_descendants.svg",
+    "phase3/paper/figures/F5_reliability.pdf",
+    "phase3/paper/figures/F5_reliability.svg",
+    "phase3/paper/reliability.tex"
+  ],
+  "passed": true,
+  "reporting_sha256": "b80d48f02ebd43119ce0cccbc70270f07ffd6457f516c4499cbbcf61a3e0adcd",
+  "scientific_hash": "c20f2ac54186bcc6a385a5a4f81c1444814de4313ed99927e144208c01c8c3ee",
+  "scope": "Actual pilots, including intentionally absent additive/profile cells; no invented benchmark values",
+  "scratch": "archives/report-development-a1rqz2qd/sem-update"
+}

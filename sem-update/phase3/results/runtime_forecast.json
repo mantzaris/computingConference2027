@@ -1,0 +1,35 @@
+{
+  "already_consumed_phase3_device_hours": 2.0632875525951384,
+  "conservative_assumed_full_pipeline_throughput_gain": 2.5,
+  "full_primary_serial_fitting_hours": 44.488156424882405,
+  "optional_fitting_device_hours": 1.0679095671294878,
+  "optional_sensitivity_serial_hours": 2.6697739178237194,
+  "pilot_estimates": [
+    {
+      "candidate_multiplier_from_pilot": 1.0,
+      "common_solo_seconds": 1127.1215679515153,
+      "d": 20,
+      "pilot_profile": "sparse",
+      "two_corruption_solo_seconds": 1990.024055832997
+    },
+    {
+      "candidate_multiplier_from_pilot": 1.0,
+      "common_solo_seconds": 1236.9950264245272,
+      "d": 50,
+      "pilot_profile": "dense",
+      "two_corruption_solo_seconds": 3014.566917080432
+    },
+    {
+      "candidate_multiplier_from_pilot": 1.5,
+      "common_solo_seconds": 1468.541022118181,
+      "d": 100,
+      "pilot_profile": "sparse",
+      "two_corruption_solo_seconds": 6424.732193522155
+    }
+  ],
+  "primary_fitting_device_hours": 17.79526256995296,
+  "projected_phase3_total_hours": 23.92645968967759,
+  "reserved_final_device_hours": 3.0,
+  "scope": "Prospective device-wall forecast; no main final outcomes inspected",
+  "uncertainty": "Extrapolates single-task complete pilots. The parallel density probe is not a whole-pipeline speed guarantee. Primary replication precedes profiles and optional sensitivity; the runtime guard reserves final evaluation."
+}

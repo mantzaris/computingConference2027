@@ -1,0 +1,9 @@
+{
+  "datasets": 3,
+  "development_only": true,
+  "independent_scms": 3,
+  "passed": true,
+  "policy_conditions": 6,
+  "source_sha256": "82d6ed108c57bc6bf1d2d94ef3891a5ebafde583c637f7668f7fa9781722f3e5",
+  "verified_banks": 12
+}

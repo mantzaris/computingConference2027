@@ -1,0 +1,32 @@
+[
+  {
+    "d": 20,
+    "device": "cuda:0",
+    "max_covariance_absolute_error": 0.005059431561500717,
+    "max_mean_standard_errors": 1.5953271133418583,
+    "passed": true,
+    "rows": 100000,
+    "seed": 391020,
+    "target": 5
+  },
+  {
+    "d": 50,
+    "device": "cuda:0",
+    "max_covariance_absolute_error": 0.006091099950145923,
+    "max_mean_standard_errors": 2.371419535148404,
+    "passed": true,
+    "rows": 100000,
+    "seed": 391050,
+    "target": 16
+  },
+  {
+    "d": 100,
+    "device": "cuda:0",
+    "max_covariance_absolute_error": 0.007431077832252067,
+    "max_mean_standard_errors": 2.3014271608018837,
+    "passed": true,
+    "rows": 100000,
+    "seed": 391100,
+    "target": 20
+  }
+]

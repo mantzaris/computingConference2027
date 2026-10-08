@@ -1,0 +1,16 @@
+{
+  "executed_archive_sha256": "9944cd471e3a7009246610d0beb99c95d3001093844e6ec68ffaf54d3d765f6a",
+  "checked_files": 86,
+  "differences": [],
+  "passed": true,
+  "excluded_generated_install_metadata": [
+    "src/sem_update.egg-info/PKG-INFO",
+    "src/sem_update.egg-info/SOURCES.txt",
+    "src/sem_update.egg-info/dependency_links.txt",
+    "src/sem_update.egg-info/entry_points.txt",
+    "src/sem_update.egg-info/requires.txt",
+    "src/sem_update.egg-info/top_level.txt"
+  ],
+  "scope": "Byte comparison of local source, tests, tools, configs and dependency lock against executed snapshot; generated editable-install metadata and narrative edits are separate",
+  "checked_utc": "2026-10-08T21:29:30.280405+00:00"
+}

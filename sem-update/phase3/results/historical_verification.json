@@ -1,0 +1,75 @@
+{
+  "phase1_verified_record": {
+    "LLM_valid_new_edits": 0,
+    "canonical_fitting_updates": {
+      "diagnostic": 9047.083333333334,
+      "fixed": 3634.1666666666665,
+      "random": 7525.416666666667
+    },
+    "checks": {
+      "120_controlled_conditions": true,
+      "66_datasets": true,
+      "869_runs": true,
+      "GPU_usage": true,
+      "controlled_means": true,
+      "diagnostic_used_more_updates": true,
+      "historical_tracked_files_unchanged": true,
+      "no_admissible_LLM_edits": true,
+      "semantic_and_real_worsened": true,
+      "ten_harmful_before_and_after": true
+    },
+    "controlled_T2_means": {
+      "diagnostic": 0.09926660894416273,
+      "fixed": 0.17741756823120847,
+      "random": 0.14751925639704697
+    },
+    "controlled_conditions": 120,
+    "datasets": 66,
+    "diagnostic_repair_outcomes": {
+      "before_audit": {
+        "beneficial": 84,
+        "harmful": 10,
+        "neutral": 26
+      },
+      "selected": {
+        "beneficial": 84,
+        "harmful": 10,
+        "neutral": 26
+      }
+    },
+    "historical_commit": "ad21e604ef37f65e20ce32d78b0c2d04a0737cd7",
+    "historical_device_hours": 10.318524638083247,
+    "historical_tracked_changes": [],
+    "ledger_snapshot_sha256": "e66e1bc4cd88cddecdc1d03bd27128834440e6a8e9d714f2437e49499f9451ab",
+    "method_runs": 869,
+    "metric_rows": 5200,
+    "metrics_sha256": "7cb97f0d03af5d186dcfd03001bc502af14b32ef960aaa28f32b8ecb43c322b3",
+    "passed": true,
+    "real_coherent_diagnostic_minus_fixed": 0.004820210238297776,
+    "scope": "Read-only recomputation of recorded headline values; original uncertainty estimates and raw-file verification are retained separately",
+    "semantic_all_metadata_diagnostic_minus_llm": 0.03057076061765353,
+    "semantic_coherent_diagnostic_minus_llm": 0.025108650078376135
+  },
+  "phase2_metric_rows": 5642,
+  "phase2_controlled_scms": 15,
+  "phase2_controlled_settings": 60,
+  "phase2_T2_means": {
+    "M0": 0.3250065618666668,
+    "M1": 0.19396240090333328,
+    "M2": 0.2722484431433332,
+    "M3": 0.1061680898233333,
+    "M4": 0.11754792068,
+    "M5": 0.13018013033166667,
+    "fixed": 0.18182074598666667
+  },
+  "phase2_harmful_counts": {
+    "M3": 8,
+    "M4": 7,
+    "M5": 1
+  },
+  "historical_tracked_changes": [],
+  "phase2_archive_sha256": "be18ea94cdca45ec0c7d8cdeefb75e425e42982972b5d05cec1fcd82c8fe3884",
+  "phase2_archive_bytes": 503811430,
+  "history_blob_bytes": 23296287,
+  "remaining_blob_bytes": 2918113
+}

@@ -1,0 +1,78 @@
+{
+  "additional_gpu_hours": 24,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 261017,
+  "checkpoints": {},
+  "corruptions": [
+    0.2,
+    0.5
+  ],
+  "dcdi": {
+    "batch_size": 256,
+    "block_steps": 100,
+    "flow_layers": 2,
+    "flow_width": 8,
+    "layers": 2,
+    "learning_rate": 0.001,
+    "max_indegree": 3,
+    "reg_coeff": 0.1,
+    "seed": 8821,
+    "steps": 60000,
+    "threshold": 0.5,
+    "width": 64,
+    "seconds": 1800
+  },
+  "evaluation_projections": 256,
+  "evaluation_samples": 2048,
+  "parallel_workers": 1,
+  "rho": 0.5,
+  "ridge_alpha": 0.1,
+  "ridge_grid": [
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "ridge_variance_floor": 0.0001,
+  "search": {
+    "audit_nll_slack": 0.05,
+    "audit_w_factor": 1.05,
+    "audit_w_slack": 0.001,
+    "beta": 1.0,
+    "candidate_budget": 24,
+    "diagnostic_cap": 64,
+    "edge_penalty": 0.02,
+    "improvement": 0.005,
+    "per_round": 3,
+    "permutations": 16,
+    "projections": 64,
+    "rounds": 100,
+    "samples": 512,
+    "seed": 491,
+    "fixed_candidates": 12,
+    "pair_cap": 8,
+    "environment_cap": 4,
+    "max_indegree": 3
+  },
+  "tau": 0.01,
+  "train": {
+    "batch_size": 256,
+    "bins": 8,
+    "check_every": 50,
+    "learning_rate": 0.001,
+    "patience": 5,
+    "seed": 707,
+    "steps": 1000,
+    "transforms": 2,
+    "weight_decay": 1e-05,
+    "width": 64,
+    "group_size": 32
+  },
+  "version": 3,
+  "budget_per_target": 400,
+  "adjusted_candidates": {
+    "20": 24,
+    "50": 36,
+    "100": 48
+  }
+}

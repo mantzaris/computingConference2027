@@ -1,0 +1,142 @@
+[
+  {
+    "joint_updates_per_second": 42.43225881070918,
+    "results": [
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 24.827323853969574,
+        "steps": 1200,
+        "worker": 0
+      }
+    ],
+    "wall_seconds_including_startup": 28.280370492488146,
+    "workers": 1
+  },
+  {
+    "joint_updates_per_second": 103.55896052742479,
+    "results": [
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 30.62133507616818,
+        "steps": 1200,
+        "worker": 0
+      },
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 30.446131478995085,
+        "steps": 1200,
+        "worker": 1
+      },
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 30.547700971364975,
+        "steps": 1200,
+        "worker": 2
+      }
+    ],
+    "wall_seconds_including_startup": 34.76280547492206,
+    "workers": 3
+  },
+  {
+    "joint_updates_per_second": 120.25872311497687,
+    "results": [
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 35.400410471484065,
+        "steps": 1200,
+        "worker": 0
+      },
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 35.07053271308541,
+        "steps": 1200,
+        "worker": 1
+      },
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 35.172367230057716,
+        "steps": 1200,
+        "worker": 2
+      },
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 35.752200650051236,
+        "steps": 1200,
+        "worker": 3
+      }
+    ],
+    "wall_seconds_including_startup": 39.91394449956715,
+    "workers": 4
+  },
+  {
+    "joint_updates_per_second": 138.85598672577353,
+    "results": [
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 47.24647116474807,
+        "steps": 1200,
+        "worker": 0
+      },
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 47.35850936360657,
+        "steps": 1200,
+        "worker": 1
+      },
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 46.95959076657891,
+        "steps": 1200,
+        "worker": 2
+      },
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 46.99085967801511,
+        "steps": 1200,
+        "worker": 3
+      },
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 47.02554591745138,
+        "steps": 1200,
+        "worker": 4
+      },
+      {
+        "device": "cuda:0",
+        "finite_loss": true,
+        "peak_bytes": 168039936,
+        "seconds": 47.25191989168525,
+        "steps": 1200,
+        "worker": 5
+      }
+    ],
+    "wall_seconds_including_startup": 51.852283576503396,
+    "workers": 6
+  }
+]

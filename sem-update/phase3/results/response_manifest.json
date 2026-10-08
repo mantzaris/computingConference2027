@@ -1,0 +1,8 @@
+{
+  "artifact": "illustrations/response_outcome_samples.npz",
+  "intervals": "5th and 95th predictive quantiles, not confidence intervals",
+  "rows": 504,
+  "samples_per_curve_setting": 2048,
+  "sha256": "23dda5ac2ee5a0d4cda5f2d1f0a0c44a03eb9697ec035a3d2462a461edba6798",
+  "source_sha256": "a8e0237d3cd4b77303a0f96dd51ea0bde39a948e921cd62700e47b94cbd53bd6"
+}

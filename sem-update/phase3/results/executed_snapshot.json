@@ -1,0 +1,8 @@
+{
+  "path": "archives/executed_code_and_outputs.tar.gz",
+  "bytes": 991419,
+  "sha256": "9944cd471e3a7009246610d0beb99c95d3001093844e6ec68ffaf54d3d765f6a",
+  "files": 159,
+  "scope": "Executed code, locked dependency specification, configurations, tests and final curated numeric/figure outputs; final narrative and preservation records live in Git",
+  "scientific_source": "Frozen pre-evaluation source and pilot source are separately preserved"
+}

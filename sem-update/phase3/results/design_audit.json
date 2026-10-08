@@ -1,0 +1,1714 @@
+{
+  "cells": [
+    {
+      "d": 20,
+      "depth_range": [
+        7,
+        10
+      ],
+      "edges": [
+        37
+      ],
+      "family": "heteroscedastic",
+      "independent_scms": 5,
+      "maximum_outdegree_range": [
+        6,
+        9
+      ],
+      "mean_indegree_range": [
+        1.85,
+        1.85
+      ],
+      "profile": "sparse",
+      "top_decile_outgoing_fraction_range": [
+        0.2702702702702703,
+        0.3783783783783784
+      ]
+    },
+    {
+      "d": 20,
+      "depth_range": [
+        6,
+        11
+      ],
+      "edges": [
+        37
+      ],
+      "family": "nonlinear",
+      "independent_scms": 5,
+      "maximum_outdegree_range": [
+        5,
+        7
+      ],
+      "mean_indegree_range": [
+        1.85,
+        1.85
+      ],
+      "profile": "sparse",
+      "top_decile_outgoing_fraction_range": [
+        0.24324324324324326,
+        0.35135135135135137
+      ]
+    },
+    {
+      "d": 50,
+      "depth_range": [
+        49,
+        49
+      ],
+      "edges": [
+        97
+      ],
+      "family": "heteroscedastic",
+      "independent_scms": 5,
+      "maximum_outdegree_range": [
+        2,
+        2
+      ],
+      "mean_indegree_range": [
+        1.94,
+        1.94
+      ],
+      "profile": "deep",
+      "top_decile_outgoing_fraction_range": [
+        0.10309278350515463,
+        0.10309278350515463
+      ]
+    },
+    {
+      "d": 50,
+      "depth_range": [
+        21,
+        26
+      ],
+      "edges": [
+        322
+      ],
+      "family": "heteroscedastic",
+      "independent_scms": 5,
+      "maximum_outdegree_range": [
+        20,
+        26
+      ],
+      "mean_indegree_range": [
+        6.44,
+        6.44
+      ],
+      "profile": "dense",
+      "top_decile_outgoing_fraction_range": [
+        0.2857142857142857,
+        0.3198757763975155
+      ]
+    },
+    {
+      "d": 50,
+      "depth_range": [
+        3,
+        5
+      ],
+      "edges": [
+        97
+      ],
+      "family": "heteroscedastic",
+      "independent_scms": 5,
+      "maximum_outdegree_range": [
+        29,
+        44
+      ],
+      "mean_indegree_range": [
+        1.94,
+        1.94
+      ],
+      "profile": "hub",
+      "top_decile_outgoing_fraction_range": [
+        0.9175257731958762,
+        0.9484536082474226
+      ]
+    },
+    {
+      "d": 50,
+      "depth_range": [
+        9,
+        13
+      ],
+      "edges": [
+        97
+      ],
+      "family": "heteroscedastic",
+      "independent_scms": 5,
+      "maximum_outdegree_range": [
+        7,
+        12
+      ],
+      "mean_indegree_range": [
+        1.94,
+        1.94
+      ],
+      "profile": "sparse",
+      "top_decile_outgoing_fraction_range": [
+        0.31958762886597936,
+        0.4329896907216495
+      ]
+    },
+    {
+      "d": 50,
+      "depth_range": [
+        9,
+        16
+      ],
+      "edges": [
+        97
+      ],
+      "family": "nonlinear",
+      "independent_scms": 5,
+      "maximum_outdegree_range": [
+        10,
+        15
+      ],
+      "mean_indegree_range": [
+        1.94,
+        1.94
+      ],
+      "profile": "sparse",
+      "top_decile_outgoing_fraction_range": [
+        0.3402061855670103,
+        0.4536082474226804
+      ]
+    },
+    {
+      "d": 100,
+      "depth_range": [
+        11,
+        15
+      ],
+      "edges": [
+        197
+      ],
+      "family": "heteroscedastic",
+      "independent_scms": 5,
+      "maximum_outdegree_range": [
+        10,
+        12
+      ],
+      "mean_indegree_range": [
+        1.97,
+        1.97
+      ],
+      "profile": "sparse",
+      "top_decile_outgoing_fraction_range": [
+        0.34517766497461927,
+        0.40609137055837563
+      ]
+    },
+    {
+      "d": 100,
+      "depth_range": [
+        12,
+        16
+      ],
+      "edges": [
+        197
+      ],
+      "family": "nonlinear",
+      "independent_scms": 5,
+      "maximum_outdegree_range": [
+        10,
+        14
+      ],
+      "mean_indegree_range": [
+        1.97,
+        1.97
+      ],
+      "profile": "sparse",
+      "top_decile_outgoing_fraction_range": [
+        0.3553299492385787,
+        0.39593908629441626
+      ]
+    }
+  ],
+  "graphs": [
+    {
+      "d": 20,
+      "family": "nonlinear",
+      "graph_hash": "c2eb68a18e95eb9566495cac185ae92f90ef403a1827b3c48b3bcf80404c4ed1",
+      "profile": "sparse",
+      "scm": 310200,
+      "visible_targets": [
+        4,
+        6,
+        10,
+        19
+      ],
+      "withheld_targets": [
+        0,
+        1,
+        15,
+        16
+      ]
+    },
+    {
+      "d": 50,
+      "family": "nonlinear",
+      "graph_hash": "d41bcce8a7f6a3d5ac86206d1b624ec03a40fde7bc4b524a1f5ec1c7ebc99a4b",
+      "profile": "sparse",
+      "scm": 310500,
+      "visible_targets": [
+        0,
+        2,
+        4,
+        12,
+        14,
+        18,
+        27,
+        35,
+        42,
+        47
+      ],
+      "withheld_targets": [
+        10,
+        11,
+        15,
+        21,
+        28,
+        29,
+        36,
+        38,
+        41,
+        44
+      ]
+    },
+    {
+      "d": 100,
+      "family": "nonlinear",
+      "graph_hash": "b4570ea97d1a23571c06c00165460ba5f4e211e98ca448df3c3e0f44c6adae81",
+      "profile": "sparse",
+      "scm": 311000,
+      "visible_targets": [
+        0,
+        2,
+        4,
+        5,
+        8,
+        20,
+        28,
+        31,
+        34,
+        37,
+        44,
+        53,
+        56,
+        58,
+        63,
+        71,
+        82,
+        85,
+        89,
+        96
+      ],
+      "withheld_targets": [
+        1,
+        36,
+        38,
+        42,
+        47,
+        54,
+        57,
+        59,
+        60,
+        64,
+        66,
+        68,
+        69,
+        72,
+        74,
+        78,
+        84,
+        93,
+        95,
+        98
+      ]
+    },
+    {
+      "d": 20,
+      "family": "heteroscedastic",
+      "graph_hash": "045fa9429cfc9626f24589fd6d1dcac2207af3eefa9bc6a869107227664dbe17",
+      "profile": "sparse",
+      "scm": 320200,
+      "visible_targets": [
+        1,
+        2,
+        17,
+        18
+      ],
+      "withheld_targets": [
+        7,
+        11,
+        12,
+        19
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "ce7085f30f75a999ed84b424fdc248dcfda9be26ae63b1e35c152a123172ada4",
+      "profile": "sparse",
+      "scm": 320500,
+      "visible_targets": [
+        0,
+        7,
+        8,
+        10,
+        15,
+        17,
+        21,
+        34,
+        36,
+        39
+      ],
+      "withheld_targets": [
+        1,
+        4,
+        11,
+        14,
+        16,
+        24,
+        26,
+        38,
+        43,
+        49
+      ]
+    },
+    {
+      "d": 100,
+      "family": "heteroscedastic",
+      "graph_hash": "ef925ff51365093cad93b1557db52b3024099074478218201a35784583e6e9cb",
+      "profile": "sparse",
+      "scm": 321000,
+      "visible_targets": [
+        2,
+        3,
+        17,
+        24,
+        28,
+        33,
+        39,
+        41,
+        45,
+        49,
+        57,
+        61,
+        66,
+        70,
+        78,
+        81,
+        88,
+        90,
+        94,
+        96
+      ],
+      "withheld_targets": [
+        6,
+        7,
+        8,
+        10,
+        13,
+        19,
+        22,
+        27,
+        35,
+        36,
+        40,
+        42,
+        54,
+        55,
+        60,
+        68,
+        73,
+        83,
+        87,
+        91
+      ]
+    },
+    {
+      "d": 20,
+      "family": "nonlinear",
+      "graph_hash": "cb6c88d3bf142409ef5c9f5d10b298637c4e7529aa500c4a4387b3bb32ed7d16",
+      "profile": "sparse",
+      "scm": 310201,
+      "visible_targets": [
+        2,
+        4,
+        6,
+        12
+      ],
+      "withheld_targets": [
+        8,
+        10,
+        11,
+        14
+      ]
+    },
+    {
+      "d": 50,
+      "family": "nonlinear",
+      "graph_hash": "749318662cd31e6956095eb62922fc0fe942587d5a00c85a3806a1a2871ba832",
+      "profile": "sparse",
+      "scm": 310501,
+      "visible_targets": [
+        10,
+        13,
+        14,
+        15,
+        18,
+        21,
+        22,
+        39,
+        46,
+        49
+      ],
+      "withheld_targets": [
+        2,
+        3,
+        4,
+        8,
+        9,
+        19,
+        25,
+        35,
+        40,
+        44
+      ]
+    },
+    {
+      "d": 100,
+      "family": "nonlinear",
+      "graph_hash": "6d9ea8ab8a27225ecaa0f6230154a5acd87dd1d60674a816452e16fc497e4cca",
+      "profile": "sparse",
+      "scm": 311001,
+      "visible_targets": [
+        0,
+        9,
+        20,
+        21,
+        25,
+        26,
+        28,
+        29,
+        30,
+        37,
+        38,
+        42,
+        43,
+        50,
+        62,
+        70,
+        83,
+        86,
+        89,
+        97
+      ],
+      "withheld_targets": [
+        1,
+        5,
+        11,
+        12,
+        13,
+        24,
+        31,
+        34,
+        49,
+        53,
+        55,
+        59,
+        66,
+        67,
+        77,
+        82,
+        85,
+        88,
+        90,
+        96
+      ]
+    },
+    {
+      "d": 20,
+      "family": "heteroscedastic",
+      "graph_hash": "c06625867746e2f6d7a399d07ce1a42ce66b2efc9ee8e34dc682a51e4e8a442a",
+      "profile": "sparse",
+      "scm": 320201,
+      "visible_targets": [
+        0,
+        7,
+        11,
+        16
+      ],
+      "withheld_targets": [
+        10,
+        14,
+        15,
+        18
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "f559fcfe6dff7aaa0676b1184daddf726a1b3d01382d3c46d700288171c2980d",
+      "profile": "sparse",
+      "scm": 320501,
+      "visible_targets": [
+        0,
+        2,
+        5,
+        7,
+        17,
+        19,
+        29,
+        36,
+        37,
+        42
+      ],
+      "withheld_targets": [
+        6,
+        9,
+        16,
+        23,
+        35,
+        38,
+        39,
+        40,
+        44,
+        46
+      ]
+    },
+    {
+      "d": 100,
+      "family": "heteroscedastic",
+      "graph_hash": "3b46d1e113058df0848e638a130e5cf9e69ef1a467aa71053db25e5d6c15125a",
+      "profile": "sparse",
+      "scm": 321001,
+      "visible_targets": [
+        4,
+        15,
+        30,
+        37,
+        44,
+        45,
+        47,
+        49,
+        51,
+        57,
+        59,
+        66,
+        70,
+        79,
+        87,
+        89,
+        91,
+        97,
+        98,
+        99
+      ],
+      "withheld_targets": [
+        1,
+        10,
+        13,
+        14,
+        18,
+        23,
+        24,
+        25,
+        38,
+        42,
+        56,
+        61,
+        65,
+        68,
+        75,
+        76,
+        81,
+        85,
+        88,
+        94
+      ]
+    },
+    {
+      "d": 20,
+      "family": "nonlinear",
+      "graph_hash": "843ac2ffd44f9417c13dfe7f84b4bf54d81e72a0bc47ce23a02144705d1585e7",
+      "profile": "sparse",
+      "scm": 310202,
+      "visible_targets": [
+        5,
+        10,
+        11,
+        13
+      ],
+      "withheld_targets": [
+        6,
+        7,
+        16,
+        18
+      ]
+    },
+    {
+      "d": 50,
+      "family": "nonlinear",
+      "graph_hash": "88927716ea44374e0f54477e96dbd7ba07ac2566e014fd1dfc7734d3a553756e",
+      "profile": "sparse",
+      "scm": 310502,
+      "visible_targets": [
+        0,
+        3,
+        9,
+        11,
+        14,
+        16,
+        25,
+        29,
+        30,
+        31
+      ],
+      "withheld_targets": [
+        4,
+        6,
+        7,
+        12,
+        15,
+        18,
+        20,
+        23,
+        33,
+        34
+      ]
+    },
+    {
+      "d": 100,
+      "family": "nonlinear",
+      "graph_hash": "a502314bcb7fa214933875e7bbef3ce01e873371d604ab3dd4075c1674724966",
+      "profile": "sparse",
+      "scm": 311002,
+      "visible_targets": [
+        0,
+        1,
+        6,
+        8,
+        11,
+        12,
+        14,
+        17,
+        18,
+        24,
+        26,
+        34,
+        37,
+        38,
+        47,
+        51,
+        57,
+        60,
+        67,
+        92
+      ],
+      "withheld_targets": [
+        3,
+        10,
+        15,
+        21,
+        23,
+        29,
+        32,
+        33,
+        36,
+        44,
+        45,
+        58,
+        63,
+        64,
+        65,
+        66,
+        74,
+        75,
+        77,
+        87
+      ]
+    },
+    {
+      "d": 20,
+      "family": "heteroscedastic",
+      "graph_hash": "b91ae3df1d047b15371c705bb24be290bcbfccf1fa7bdd57a11a756b5a197ccc",
+      "profile": "sparse",
+      "scm": 320202,
+      "visible_targets": [
+        0,
+        10,
+        11,
+        18
+      ],
+      "withheld_targets": [
+        8,
+        16,
+        17,
+        19
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "5b178563b9c0356d9078277f83e126aedd1087f093b0495aade8616cd93814c6",
+      "profile": "sparse",
+      "scm": 320502,
+      "visible_targets": [
+        2,
+        6,
+        12,
+        15,
+        17,
+        19,
+        21,
+        34,
+        36,
+        41
+      ],
+      "withheld_targets": [
+        0,
+        8,
+        11,
+        14,
+        28,
+        33,
+        37,
+        44,
+        46,
+        47
+      ]
+    },
+    {
+      "d": 100,
+      "family": "heteroscedastic",
+      "graph_hash": "7728cafbb97bd2b7c15c150de5e5af48e68e2e23eb192616abf6e0919664f6a7",
+      "profile": "sparse",
+      "scm": 321002,
+      "visible_targets": [
+        2,
+        3,
+        16,
+        24,
+        27,
+        43,
+        45,
+        46,
+        54,
+        60,
+        63,
+        67,
+        76,
+        81,
+        83,
+        85,
+        86,
+        91,
+        96,
+        97
+      ],
+      "withheld_targets": [
+        1,
+        4,
+        9,
+        12,
+        15,
+        17,
+        22,
+        37,
+        39,
+        42,
+        47,
+        49,
+        50,
+        64,
+        66,
+        71,
+        78,
+        79,
+        80,
+        98
+      ]
+    },
+    {
+      "d": 20,
+      "family": "nonlinear",
+      "graph_hash": "a362734309a6e2312c56b7ae64a5028e6626297ab0801a983c7f86fdd585f368",
+      "profile": "sparse",
+      "scm": 310203,
+      "visible_targets": [
+        1,
+        5,
+        10,
+        14
+      ],
+      "withheld_targets": [
+        3,
+        7,
+        8,
+        11
+      ]
+    },
+    {
+      "d": 50,
+      "family": "nonlinear",
+      "graph_hash": "03e7349dcc2192604373444c6bbd95231a93cc13f28973bccb8a4be007a1a7a2",
+      "profile": "sparse",
+      "scm": 310503,
+      "visible_targets": [
+        9,
+        11,
+        12,
+        22,
+        25,
+        27,
+        36,
+        37,
+        46,
+        47
+      ],
+      "withheld_targets": [
+        4,
+        8,
+        15,
+        16,
+        21,
+        24,
+        29,
+        34,
+        35,
+        45
+      ]
+    },
+    {
+      "d": 100,
+      "family": "nonlinear",
+      "graph_hash": "3c734543f646d6ef838ab32d02d29119180f67f67404fb1bb6ac6193fa174f01",
+      "profile": "sparse",
+      "scm": 311003,
+      "visible_targets": [
+        7,
+        10,
+        12,
+        14,
+        34,
+        39,
+        43,
+        47,
+        48,
+        49,
+        56,
+        65,
+        69,
+        70,
+        74,
+        76,
+        81,
+        87,
+        92,
+        97
+      ],
+      "withheld_targets": [
+        0,
+        5,
+        9,
+        21,
+        25,
+        32,
+        35,
+        46,
+        54,
+        57,
+        58,
+        60,
+        63,
+        68,
+        73,
+        82,
+        88,
+        90,
+        91,
+        93
+      ]
+    },
+    {
+      "d": 20,
+      "family": "heteroscedastic",
+      "graph_hash": "a056cbe2320ee98d2971435a50bd653731d8497d1d1f5ad6e5dbfbb8de9d4f73",
+      "profile": "sparse",
+      "scm": 320203,
+      "visible_targets": [
+        3,
+        10,
+        15,
+        16
+      ],
+      "withheld_targets": [
+        4,
+        11,
+        14,
+        17
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "b367cb380307048d710e0f50d5441f16ab52794ba7e1c0c51956cc4f74b080fb",
+      "profile": "sparse",
+      "scm": 320503,
+      "visible_targets": [
+        4,
+        7,
+        17,
+        18,
+        25,
+        27,
+        31,
+        38,
+        40,
+        47
+      ],
+      "withheld_targets": [
+        3,
+        6,
+        8,
+        9,
+        10,
+        22,
+        24,
+        29,
+        30,
+        39
+      ]
+    },
+    {
+      "d": 100,
+      "family": "heteroscedastic",
+      "graph_hash": "f3c0aa8054c5c8acffd6a48a54257ca4e21fcf497cf2022624d50e21adacc133",
+      "profile": "sparse",
+      "scm": 321003,
+      "visible_targets": [
+        2,
+        4,
+        6,
+        10,
+        11,
+        16,
+        17,
+        20,
+        25,
+        32,
+        40,
+        55,
+        65,
+        75,
+        78,
+        88,
+        90,
+        91,
+        92,
+        96
+      ],
+      "withheld_targets": [
+        1,
+        12,
+        13,
+        15,
+        18,
+        19,
+        23,
+        34,
+        36,
+        50,
+        56,
+        59,
+        73,
+        74,
+        76,
+        83,
+        84,
+        86,
+        87,
+        97
+      ]
+    },
+    {
+      "d": 20,
+      "family": "nonlinear",
+      "graph_hash": "bc62914ec921a74be93b2bc60f37492124bdf4f1c4ffdd6653895109dcf7a8c2",
+      "profile": "sparse",
+      "scm": 310204,
+      "visible_targets": [
+        1,
+        7,
+        13,
+        17
+      ],
+      "withheld_targets": [
+        4,
+        5,
+        12,
+        18
+      ]
+    },
+    {
+      "d": 50,
+      "family": "nonlinear",
+      "graph_hash": "f7d2a28e07063d66eb29e5aa0f462ced45c8bb29a5e2eeb49e4dd056940a151f",
+      "profile": "sparse",
+      "scm": 310504,
+      "visible_targets": [
+        9,
+        11,
+        12,
+        20,
+        23,
+        31,
+        39,
+        41,
+        42,
+        44
+      ],
+      "withheld_targets": [
+        0,
+        2,
+        7,
+        15,
+        16,
+        25,
+        30,
+        35,
+        38,
+        45
+      ]
+    },
+    {
+      "d": 100,
+      "family": "nonlinear",
+      "graph_hash": "450970bdb104f26735732c7ee09cd4f4f91b0820a050c67e8f59a766cd45c870",
+      "profile": "sparse",
+      "scm": 311004,
+      "visible_targets": [
+        2,
+        4,
+        10,
+        11,
+        12,
+        13,
+        22,
+        23,
+        40,
+        47,
+        52,
+        55,
+        56,
+        57,
+        60,
+        67,
+        68,
+        83,
+        98,
+        99
+      ],
+      "withheld_targets": [
+        0,
+        16,
+        19,
+        20,
+        36,
+        37,
+        38,
+        48,
+        50,
+        51,
+        63,
+        65,
+        66,
+        70,
+        73,
+        79,
+        80,
+        91,
+        93,
+        95
+      ]
+    },
+    {
+      "d": 20,
+      "family": "heteroscedastic",
+      "graph_hash": "584f0350928f95c722f9f3bce8878913f4b7d1b1244186481ae037e324b657c9",
+      "profile": "sparse",
+      "scm": 320204,
+      "visible_targets": [
+        1,
+        3,
+        4,
+        17
+      ],
+      "withheld_targets": [
+        5,
+        6,
+        10,
+        13
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "906e23959df15cd53b25c52cd3daebbbd994402908013e1b28ea107a7b36fe4a",
+      "profile": "sparse",
+      "scm": 320504,
+      "visible_targets": [
+        7,
+        11,
+        21,
+        27,
+        29,
+        30,
+        34,
+        36,
+        41,
+        45
+      ],
+      "withheld_targets": [
+        1,
+        2,
+        5,
+        13,
+        15,
+        16,
+        20,
+        22,
+        32,
+        43
+      ]
+    },
+    {
+      "d": 100,
+      "family": "heteroscedastic",
+      "graph_hash": "c2e8e416f03c94d5f24652bebc505348eccea3c2f46bc1e5a4cdb0f0310cf276",
+      "profile": "sparse",
+      "scm": 321004,
+      "visible_targets": [
+        8,
+        9,
+        10,
+        13,
+        21,
+        32,
+        35,
+        38,
+        39,
+        49,
+        52,
+        65,
+        75,
+        80,
+        83,
+        86,
+        87,
+        89,
+        91,
+        97
+      ],
+      "withheld_targets": [
+        4,
+        19,
+        22,
+        24,
+        29,
+        37,
+        42,
+        53,
+        57,
+        61,
+        62,
+        63,
+        64,
+        66,
+        68,
+        70,
+        73,
+        78,
+        82,
+        94
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "48c4008c76f57de2c608b87f74e916741c6d4ad88f647203cd87630c3c4ec3a3",
+      "profile": "dense",
+      "scm": 350000,
+      "visible_targets": [
+        7,
+        8,
+        10,
+        11,
+        19,
+        27,
+        30,
+        34,
+        44,
+        45
+      ],
+      "withheld_targets": [
+        2,
+        13,
+        16,
+        17,
+        23,
+        26,
+        28,
+        38,
+        39,
+        43
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "29c37812a5dee7444ce8a7dd3c285980f155c633ff92aba9e0becbf3f7d5bf3b",
+      "profile": "hub",
+      "scm": 351000,
+      "visible_targets": [
+        6,
+        11,
+        14,
+        21,
+        32,
+        34,
+        35,
+        39,
+        42,
+        46
+      ],
+      "withheld_targets": [
+        3,
+        4,
+        10,
+        13,
+        23,
+        27,
+        33,
+        36,
+        41,
+        47
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "152b52ccfc8915ea2f3b7cd3ef7d891eb66b9e3a4792b0e78a5d099a9e5ce93e",
+      "profile": "deep",
+      "scm": 352000,
+      "visible_targets": [
+        11,
+        13,
+        20,
+        21,
+        25,
+        26,
+        37,
+        43,
+        46,
+        48
+      ],
+      "withheld_targets": [
+        2,
+        7,
+        14,
+        16,
+        22,
+        23,
+        31,
+        35,
+        41,
+        49
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "95330a9665746eb11c491b4ae44933f4e58e76a757097bbd34e0e603031ced1a",
+      "profile": "dense",
+      "scm": 350001,
+      "visible_targets": [
+        15,
+        17,
+        18,
+        21,
+        22,
+        35,
+        38,
+        42,
+        43,
+        44
+      ],
+      "withheld_targets": [
+        4,
+        5,
+        9,
+        12,
+        20,
+        24,
+        27,
+        33,
+        36,
+        41
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "ccc3120e978e5243b4d33e803804f768c08e67c8afd677f7f1d4a6619edd1d6f",
+      "profile": "hub",
+      "scm": 351001,
+      "visible_targets": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        14,
+        21,
+        24,
+        35,
+        49
+      ],
+      "withheld_targets": [
+        5,
+        10,
+        11,
+        18,
+        25,
+        27,
+        28,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "ca2f2a293c992cbe39a092d45d34747c15cb746cb6810c3d374906105df5ca31",
+      "profile": "deep",
+      "scm": 352001,
+      "visible_targets": [
+        6,
+        7,
+        16,
+        20,
+        24,
+        28,
+        33,
+        38,
+        43,
+        49
+      ],
+      "withheld_targets": [
+        2,
+        4,
+        8,
+        21,
+        23,
+        26,
+        27,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "84d91e7443f202832ce94ded3caf858b8423b9c841751965080ef04e2ea8b6d8",
+      "profile": "dense",
+      "scm": 350002,
+      "visible_targets": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        18,
+        20,
+        29,
+        37,
+        41
+      ],
+      "withheld_targets": [
+        0,
+        3,
+        9,
+        11,
+        15,
+        16,
+        22,
+        25,
+        48,
+        49
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "d4071edcfd07c61533d4779f460ff6aadd512df255074a1a384df50971ef0faa",
+      "profile": "hub",
+      "scm": 351002,
+      "visible_targets": [
+        1,
+        5,
+        6,
+        9,
+        19,
+        29,
+        31,
+        33,
+        41,
+        43
+      ],
+      "withheld_targets": [
+        3,
+        13,
+        16,
+        24,
+        25,
+        27,
+        34,
+        35,
+        40,
+        45
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "e718f4398ac38097755b75529786e33078dbc3d8f368f288fbd0519137537b3d",
+      "profile": "deep",
+      "scm": 352002,
+      "visible_targets": [
+        0,
+        3,
+        4,
+        17,
+        23,
+        24,
+        28,
+        29,
+        33,
+        42
+      ],
+      "withheld_targets": [
+        2,
+        5,
+        7,
+        9,
+        12,
+        19,
+        22,
+        30,
+        32,
+        44
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "b9dc5400f0115a49a24eab69254a64719f9c7c5657a1c5be4fa7d3c2529f0353",
+      "profile": "dense",
+      "scm": 350003,
+      "visible_targets": [
+        5,
+        10,
+        11,
+        12,
+        18,
+        32,
+        35,
+        36,
+        42,
+        45
+      ],
+      "withheld_targets": [
+        0,
+        9,
+        13,
+        14,
+        26,
+        31,
+        37,
+        40,
+        43,
+        47
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "24ae184d8d4b9a7414ae7b390f776163ef5f3d2cf6a84a989e8a3d81bd9d0ae3",
+      "profile": "hub",
+      "scm": 351003,
+      "visible_targets": [
+        5,
+        7,
+        10,
+        21,
+        30,
+        33,
+        36,
+        37,
+        44,
+        49
+      ],
+      "withheld_targets": [
+        2,
+        6,
+        13,
+        16,
+        18,
+        23,
+        26,
+        35,
+        39,
+        45
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "a095196e5392c00ded0d0e4f5cb80baeab77e0c0ea64f00840446f76c2ce6eed",
+      "profile": "deep",
+      "scm": 352003,
+      "visible_targets": [
+        1,
+        2,
+        3,
+        9,
+        13,
+        20,
+        24,
+        43,
+        45,
+        47
+      ],
+      "withheld_targets": [
+        5,
+        18,
+        19,
+        23,
+        31,
+        33,
+        34,
+        38,
+        46,
+        48
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "338062dd5f5b5b0787d6645c5547027ff6236bb6e4aca7113eee6ba16c5c9393",
+      "profile": "dense",
+      "scm": 350004,
+      "visible_targets": [
+        9,
+        10,
+        17,
+        19,
+        25,
+        28,
+        30,
+        40,
+        47,
+        49
+      ],
+      "withheld_targets": [
+        2,
+        4,
+        11,
+        24,
+        26,
+        27,
+        35,
+        37,
+        44,
+        46
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "039886adde2d4e5b6d2d1874e93413983fd0f9b284fbb96baa2472b2842b28bb",
+      "profile": "hub",
+      "scm": 351004,
+      "visible_targets": [
+        1,
+        4,
+        6,
+        14,
+        22,
+        23,
+        34,
+        40,
+        44,
+        47
+      ],
+      "withheld_targets": [
+        2,
+        19,
+        21,
+        25,
+        27,
+        28,
+        29,
+        32,
+        39,
+        46
+      ]
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "graph_hash": "e7a63f5bd7080adbfe31a0fb5a10e0839dc6daec5ec186bdc9c0cae263401e84",
+      "profile": "deep",
+      "scm": 352004,
+      "visible_targets": [
+        6,
+        7,
+        9,
+        10,
+        11,
+        21,
+        22,
+        26,
+        40,
+        49
+      ],
+      "withheld_targets": [
+        4,
+        17,
+        18,
+        23,
+        27,
+        31,
+        33,
+        41,
+        46,
+        47
+      ]
+    }
+  ],
+  "independent_scms": 45,
+  "passed": true,
+  "protocol_sha256": "86a0200fc7f3f51864362b47804f1e53c2f8273a6dc94f95911d2e2af8c47246",
+  "scope": "Frozen structural design and seed streams only; no observational/interventional outcomes sampled or inspected",
+  "source_sha256": "be6ed7b0444b5d6749942e9fdb246a4812b968e8bbe55271feef60e3ae16ffc9",
+  "stream_collisions": [],
+  "unique_graphs": 45,
+  "unique_streams": 4370
+}

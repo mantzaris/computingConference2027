@@ -1,0 +1,26 @@
+[
+  {
+    "avoided_full_DAG_constructions": 300,
+    "d": 20,
+    "descriptor_enumeration_seconds": 0.0007217619568109512,
+    "historical_enumeration_seconds": 0.08693515695631504,
+    "scope": "CPU graph bookkeeping only; not a claimed end-to-end GPU speedup",
+    "valid_edits": 300
+  },
+  {
+    "avoided_full_DAG_constructions": 2124,
+    "d": 50,
+    "descriptor_enumeration_seconds": 0.0013053957372903824,
+    "historical_enumeration_seconds": 0.9597993064671755,
+    "scope": "CPU graph bookkeeping only; not a claimed end-to-end GPU speedup",
+    "valid_edits": 2124
+  },
+  {
+    "avoided_full_DAG_constructions": 8740,
+    "d": 100,
+    "descriptor_enumeration_seconds": 0.0035630185157060623,
+    "historical_enumeration_seconds": 11.59823964163661,
+    "scope": "CPU graph bookkeeping only; not a claimed end-to-end GPU speedup",
+    "valid_edits": 8740
+  }
+]

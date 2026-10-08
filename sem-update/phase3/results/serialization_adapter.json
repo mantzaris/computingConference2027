@@ -1,0 +1,11 @@
+{
+  "adapter_sha256": "3d88e00b353ac3e535552c3acd3e0112965e3f2d9b1198d1904b67dbe882977d",
+  "failed_attempt_preserved": true,
+  "frozen_scientific_hash": "c20f2ac54186bcc6a385a5a4f81c1444814de4313ed99927e144208c01c8c3ee",
+  "frozen_selections_sha256": "e602a0d9673e920bea269ff6b98ad170c1e5fa2c15ae43b2ea53a3358550d323",
+  "missing_metric_representation": "blank CSV cell, never zero",
+  "numerical_evaluator_sha256": "9ed5d5fd9b8761f73b99dd6def0c54e82267b73235b44d7c9a6d218efdadc5f2",
+  "precision": "unchanged nine significant decimal digits",
+  "reason": "Original first-row schema omitted later sw1_64 and sw1_1024 fields",
+  "scope": "CSV serialization only; no change to predictions, metrics, fits, selections, seeds or protocol"
+}

@@ -1,0 +1,21 @@
+{
+  "return_code": 0,
+  "figures": {
+    "F1_size_accuracy.pdf": "cf50bc7c67582cbe40f0586055b06e65b53ec7e4f21653f3cbf382ea146e564c",
+    "F2_time_memory.pdf": "ca1d7e835a9609fa953d60634d701966a21426657358d2587c8ec3fd27130cb3",
+    "F3_error_cost.pdf": "1ba9375c1ef03585568034be57f2c52dd1fb7c43c99a7c83083efc5438bc6200",
+    "F4_complexity_descendants.pdf": "1d7eada38dfe22cccd5b0b2ea4ea90feed9dd595549b53aa671bfe0e25db3497",
+    "F5_reliability.pdf": "cbb2bd3aa2a3d67545c600f6119c3d834628495b8ccfb3b6fa87fafd05a3b30c"
+  },
+  "tables": {
+    "comparison.tex": "43ae9d97dd342c14460f99a0146d2245250828e3be0be4e978963931c1741a84",
+    "reliability.tex": "c1d09e918c495cc9dbe8e24da929d9449a99d8c23b0aa59d099546ec28660e4b"
+  },
+  "template_sha256": "d5ed3f489b336450dd98e4f33844c44e842a6d022f84b0ef868dc19dcf84abc8",
+  "latex_version": "pdfTeX 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian)",
+  "layout_warnings": [],
+  "artifact_pdf": "paper_layout_check/layout.pdf",
+  "manuscript_or_submission": false,
+  "scope": "Development pilots only; not final paper outcomes",
+  "source_check_sha256": "a1e422bfa3cdc1ec62696cdf0c58923406b400fd258fbcaa69126afa377638c8"
+}

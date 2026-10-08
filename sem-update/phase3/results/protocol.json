@@ -1,0 +1,494 @@
+{
+  "config": {
+    "additional_gpu_hours": 24,
+    "adjusted_candidates": {
+      "100": 72,
+      "20": 24,
+      "50": 36
+    },
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 37111,
+    "budget_per_target": 400,
+    "checkpoint_limits": {
+      "100": {
+        "fitting_updates": [
+          50000,
+          100000,
+          200000
+        ],
+        "gpu_job_seconds": [
+          750,
+          1500,
+          3000
+        ]
+      },
+      "20": {
+        "fitting_updates": [
+          10000,
+          20000,
+          40000
+        ],
+        "gpu_job_seconds": [
+          200,
+          500,
+          1000
+        ]
+      },
+      "50": {
+        "fitting_updates": [
+          25000,
+          50000,
+          100000
+        ],
+        "gpu_job_seconds": [
+          500,
+          1000,
+          2000
+        ]
+      }
+    },
+    "checkpoints": {},
+    "corruptions": [
+      0.2,
+      0.5
+    ],
+    "dcdi": {
+      "batch_size": 256,
+      "block_steps": 100,
+      "flow_layers": 2,
+      "flow_width": 8,
+      "layers": 2,
+      "learning_rate": 0.001,
+      "max_indegree": 3,
+      "reg_coeff": 0.1,
+      "seconds": 3600,
+      "seed": 8821,
+      "steps": 60000,
+      "threshold": 0.5,
+      "width": 64
+    },
+    "estimated_task_seconds": {
+      "100": 15500,
+      "20": 5000,
+      "50": 7500
+    },
+    "evaluation_projections": 256,
+    "evaluation_samples": 2048,
+    "final_reserve_seconds": 10800,
+    "fixed_total_sensitivity": true,
+    "parallel_workers": 6,
+    "rho": 0.5,
+    "ridge_alpha": 0.1,
+    "ridge_grid": [
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "ridge_variance_floor": 0.0001,
+    "search": {
+      "audit_nll_slack": 0.05,
+      "audit_w_factor": 1.05,
+      "audit_w_slack": 0.001,
+      "beta": 1.0,
+      "candidate_budget": 24,
+      "diagnostic_cap": 64,
+      "edge_penalty": 0.02,
+      "environment_cap": 4,
+      "fixed_candidates": 12,
+      "improvement": 0.005,
+      "max_indegree": 3,
+      "pair_cap": 8,
+      "per_round": 3,
+      "permutations": 16,
+      "projections": 64,
+      "rounds": 100,
+      "samples": 512,
+      "seconds": 3600,
+      "seed": 491
+    },
+    "tau": 0.01,
+    "train": {
+      "batch_size": 256,
+      "bins": 8,
+      "check_every": 50,
+      "group_size": 32,
+      "learning_rate": 0.001,
+      "patience": 5,
+      "seed": 707,
+      "steps": 1000,
+      "transforms": 2,
+      "weight_decay": 1e-05,
+      "width": 64
+    },
+    "version": 3
+  },
+  "created_utc": "2026-10-08T03:26:07.086999+00:00",
+  "dependency_lock_sha256": "7ab175510e213e0078c6e85361518125755b404ed34547331a29042e31ddf6a3",
+  "final_test_opened": false,
+  "harm_definition": "returned T2 > fixed + max(0.001, 0.05*fixed)",
+  "historical_commit": "8c452ac",
+  "pilot_sha256": "0a085ae4162e81b2d20d552b5766e44284427d5c6bff1a05724c73c5323a95b5",
+  "primary_contrasts": [
+    "M3-fixed",
+    "M3-random",
+    "M3-M4",
+    "M3-M5"
+  ],
+  "primary_endpoint": "T2 joint non-target SW1",
+  "scientific_hash": "c20f2ac54186bcc6a385a5a4f81c1444814de4313ed99927e144208c01c8c3ee",
+  "source_files": {
+    "phase3/tests/test_scaling.py": "9e8661cf80faf02984bad22ca29b67486caf8414a5ec576eb6331798226e73cd",
+    "phase3/tests/test_statistics.py": "87da1dc8736aa1e2963f07d7342d555d94aee602f407fbd41c2875e71deea60b",
+    "src/sem_update/phase3/__init__.py": "08ebc956342078b6eba8431774b46b46a56de7c6b3e8dcd5a912c5a632acbc2a",
+    "src/sem_update/phase3/bank.py": "52894fcdd0f136312c353a14046d4e2065408d62c28b9e4bb9db71e09f94a83b",
+    "src/sem_update/phase3/data.py": "594bdc7895d2e987fe50df005753b87522fe264cf796f083f1259d8fe12a8af0",
+    "src/sem_update/phase3/diagnostics.py": "c64cc3aea1e9a5bd47664264c1ede6b7f7c7fa772b347c2bf163b28bb2953a0e",
+    "src/sem_update/phase3/discovery.py": "e4eccb8e470016d68aeead3f71759f70369a193e27cb7713bd52ea1ab866223d",
+    "src/sem_update/phase3/evaluation.py": "9ed5d5fd9b8761f73b99dd6def0c54e82267b73235b44d7c9a6d218efdadc5f2",
+    "src/sem_update/phase3/flows.py": "dd26a345048771149c6a8186f997090c4b61246e2be99c19630aa0bdcd2ce486",
+    "src/sem_update/phase3/graphs.py": "2451ec07b58844f977cfca7bc9ee133cc3dbded4d38175f16de7e9184f0fc269",
+    "src/sem_update/phase3/illustrations.py": "a8e0237d3cd4b77303a0f96dd51ea0bde39a948e921cd62700e47b94cbd53bd6",
+    "src/sem_update/phase3/objectives.py": "a5049bf425149934c3824926233901d475ae828629dec5ad85f2e8ead0451591",
+    "src/sem_update/phase3/reporting.py": "9903bcd132852619fe59ab526fad7495f066c683e5e702a2ec3004083c312f97",
+    "src/sem_update/phase3/runner.py": "e0be3eab84c7a29e7f0d87aed7594778bd803fbb43b66f1d14ab050279d94d3d",
+    "src/sem_update/phase3/runtime.py": "9726e94bc94e7e644e52a72a4adf0edd344bc2ced5482e14eb272593d550f56c",
+    "src/sem_update/phase3/selection.py": "18a386e3e34231be180c75a33fcaa75e26a7e1c16d485634bf5bda03c25e74c1"
+  },
+  "tasks": [
+    {
+      "d": 20,
+      "family": "nonlinear",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 310200
+    },
+    {
+      "d": 50,
+      "family": "nonlinear",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 310500
+    },
+    {
+      "d": 100,
+      "family": "nonlinear",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 311000
+    },
+    {
+      "d": 20,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 320200
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 320500
+    },
+    {
+      "d": 100,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 321000
+    },
+    {
+      "d": 20,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 310201
+    },
+    {
+      "d": 50,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 310501
+    },
+    {
+      "d": 100,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 311001
+    },
+    {
+      "d": 20,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 320201
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 320501
+    },
+    {
+      "d": 100,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 321001
+    },
+    {
+      "d": 20,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 310202
+    },
+    {
+      "d": 50,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 310502
+    },
+    {
+      "d": 100,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 311002
+    },
+    {
+      "d": 20,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 320202
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 320502
+    },
+    {
+      "d": 100,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 321002
+    },
+    {
+      "d": 20,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 310203
+    },
+    {
+      "d": 50,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 310503
+    },
+    {
+      "d": 100,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 311003
+    },
+    {
+      "d": 20,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 320203
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 320503
+    },
+    {
+      "d": 100,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 321003
+    },
+    {
+      "d": 20,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 310204
+    },
+    {
+      "d": 50,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 310504
+    },
+    {
+      "d": 100,
+      "family": "nonlinear",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 311004
+    },
+    {
+      "d": 20,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 320204
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 320504
+    },
+    {
+      "d": 100,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "sparse",
+      "seed": 321004
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "dense",
+      "seed": 350000
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "hub",
+      "seed": 351000
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "deep",
+      "seed": 352000
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "dense",
+      "seed": 350001
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "hub",
+      "seed": 351001
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "deep",
+      "seed": 352001
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "dense",
+      "seed": 350002
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "hub",
+      "seed": 351002
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "deep",
+      "seed": 352002
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "dense",
+      "seed": 350003
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "hub",
+      "seed": 351003
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "deep",
+      "seed": 352003
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "dense",
+      "seed": 350004
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "hub",
+      "seed": 351004
+    },
+    {
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": false,
+      "profile": "deep",
+      "seed": 352004
+    },
+    {
+      "budget": 160,
+      "d": 50,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 320500,
+      "sensitivity": "fixed-total-1600"
+    },
+    {
+      "budget": 80,
+      "d": 100,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 321000,
+      "sensitivity": "fixed-total-1600"
+    }
+  ],
+  "uncertainty": "paired independent SCM cluster bootstrap, 2000; Holm across all declared primary contrasts and study strata"
+}

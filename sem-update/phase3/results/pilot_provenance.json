@@ -1,0 +1,344 @@
+{
+  "pilot_config_sha256": "165d3830d6327bfbef0098cd81564f1fddbe098e37906bf3dea70df24dd28237",
+  "pilot_source_archive": "archives/pilot_source.tar.gz",
+  "pilot_source_sha256": "ff47e205be858c536e98cab8e160df0ad4536f249536134ccfc62550a1606fca",
+  "pilots": [
+    {
+      "artifact_record": [
+        {
+          "adjusted": "runs/sparse-heteroscedastic-d20-s390020-B400-c0.5/adjusted-frozen.json",
+          "fixed": "runs/sparse-heteroscedastic-d20-s390020-B400-c0.5/fixed-frozen.json"
+        }
+      ],
+      "banks": {
+        "diagnostic": {
+          "accepted_search_moves": 1,
+          "candidates": 24,
+          "cost": {
+            "fit_seconds": 278.7131418541621,
+            "fitting_updates": 21250,
+            "input_weighted_updates": 56200,
+            "parent_sets": 56
+          },
+          "fixed_prefix_count": 10,
+          "peak_bytes": 165484032,
+          "stage_wall_seconds": 273.0850769095123
+        },
+        "random": {
+          "accepted_search_moves": 1,
+          "candidates": 24,
+          "cost": {
+            "fit_seconds": 207.89862826712744,
+            "fitting_updates": 16750,
+            "input_weighted_updates": 47500,
+            "parent_sets": 44
+          },
+          "fixed_prefix_count": 7,
+          "peak_bytes": 160776704,
+          "stage_wall_seconds": 138.89255602285266
+        }
+      },
+      "complete_wall_seconds": 1601.6159924324602,
+      "discovery": {
+        "h_per_node": 0.16592907705682408,
+        "legacy_converged": false,
+        "optimization_steps": 60000,
+        "seconds": 1095.2349220775068,
+        "status": "valid_capped_prediction"
+      },
+      "evaluation": {
+        "metric_rows": 54,
+        "records": 2,
+        "unique_predictions": 10
+      },
+      "six_main_methods": true,
+      "source_hash": "108905a4d4cedfe8584c3db6efc16cbba4269b5e908120d0d01b97de7f27594f",
+      "stages": {
+        "c0.5-diagnostic": {
+          "peak_bytes": 165484032,
+          "seconds": 273.0850769095123
+        },
+        "c0.5-diagnostic-adjusted-select": {
+          "peak_bytes": 166992896,
+          "seconds": 7.601910904049873
+        },
+        "c0.5-diagnostic-fixed-select": {
+          "peak_bytes": 112351232,
+          "seconds": 5.189792457967997
+        },
+        "c0.5-random": {
+          "peak_bytes": 160776704,
+          "seconds": 138.89255602285266
+        },
+        "c0.5-random-adjusted-select": {
+          "peak_bytes": 163485184,
+          "seconds": 5.052993783727288
+        },
+        "c0.5-random-fixed-select": {
+          "peak_bytes": 100210176,
+          "seconds": 1.5069353301078081
+        },
+        "c0.5-ridge": {
+          "peak_bytes": 72692224,
+          "seconds": 0.1219785325229168
+        },
+        "dcdi-refit": {
+          "peak_bytes": 91323904,
+          "seconds": 30.496305400505662
+        },
+        "discovery": {
+          "peak_bytes": 84546048,
+          "seconds": 1096.2278537526727
+        },
+        "marginal": {
+          "peak_bytes": 70599168,
+          "seconds": 0.023257944732904434
+        },
+        "oracle": {
+          "peak_bytes": 92410880,
+          "seconds": 33.04895379208028
+        },
+        "prepare": {
+          "peak_bytes": 753664,
+          "seconds": 0.3741508536040783
+        }
+      },
+      "task": {
+        "corruptions": [
+          0.5
+        ],
+        "d": 20,
+        "development": true,
+        "family": "heteroscedastic",
+        "oracle": true,
+        "profile": "sparse",
+        "seed": 390020
+      }
+    },
+    {
+      "artifact_record": [
+        {
+          "adjusted": "runs/dense-heteroscedastic-d50-s390050-B400-c0.5/adjusted-frozen.json",
+          "fixed": "runs/dense-heteroscedastic-d50-s390050-B400-c0.5/fixed-frozen.json"
+        }
+      ],
+      "banks": {
+        "diagnostic": {
+          "accepted_search_moves": 0,
+          "candidates": 36,
+          "cost": {
+            "fit_seconds": 495.0479006338032,
+            "fitting_updates": 42500,
+            "input_weighted_updates": 307000,
+            "parent_sets": 109
+          },
+          "fixed_prefix_count": 7,
+          "peak_bytes": 791474176,
+          "stage_wall_seconds": 555.9769399072975
+        },
+        "random": {
+          "accepted_search_moves": 0,
+          "candidates": 36,
+          "cost": {
+            "fit_seconds": 348.81989217462376,
+            "fitting_updates": 34000,
+            "input_weighted_updates": 252350,
+            "parent_sets": 88
+          },
+          "fixed_prefix_count": 7,
+          "peak_bytes": 791479296,
+          "stage_wall_seconds": 233.9675981849432
+        }
+      },
+      "complete_wall_seconds": 2248.9088309518993,
+      "discovery": {
+        "h_per_node": 1837513274168.7888,
+        "legacy_converged": false,
+        "optimization_steps": 60000,
+        "seconds": 1154.5325501728803,
+        "status": "valid_capped_prediction"
+      },
+      "evaluation": {
+        "metric_rows": 54,
+        "records": 2,
+        "unique_predictions": 7
+      },
+      "six_main_methods": true,
+      "source_hash": "108905a4d4cedfe8584c3db6efc16cbba4269b5e908120d0d01b97de7f27594f",
+      "stages": {
+        "c0.5-diagnostic": {
+          "peak_bytes": 791474176,
+          "seconds": 555.9769399072975
+        },
+        "c0.5-diagnostic-adjusted-select": {
+          "peak_bytes": 795884544,
+          "seconds": 43.16786989197135
+        },
+        "c0.5-diagnostic-fixed-select": {
+          "peak_bytes": 227497984,
+          "seconds": 21.637930184602737
+        },
+        "c0.5-random": {
+          "peak_bytes": 791479296,
+          "seconds": 233.9675981849432
+        },
+        "c0.5-random-adjusted-select": {
+          "peak_bytes": 793882624,
+          "seconds": 28.024498669430614
+        },
+        "c0.5-random-fixed-select": {
+          "peak_bytes": 222348800,
+          "seconds": 5.703210636973381
+        },
+        "c0.5-ridge": {
+          "peak_bytes": 81086464,
+          "seconds": 0.30789785273373127
+        },
+        "dcdi-refit": {
+          "peak_bytes": 119399936,
+          "seconds": 79.38724971562624
+        },
+        "discovery": {
+          "peak_bytes": 114378240,
+          "seconds": 1154.5663416218013
+        },
+        "marginal": {
+          "peak_bytes": 81262080,
+          "seconds": 0.00022909604012966156
+        },
+        "oracle": {
+          "peak_bytes": 122974208,
+          "seconds": 78.58527143485844
+        },
+        "prepare": {
+          "peak_bytes": 68845568,
+          "seconds": 3.0412059910595417
+        }
+      },
+      "task": {
+        "corruptions": [
+          0.5
+        ],
+        "d": 50,
+        "development": true,
+        "family": "heteroscedastic",
+        "oracle": true,
+        "profile": "dense",
+        "seed": 390050
+      }
+    },
+    {
+      "artifact_record": [
+        {
+          "adjusted": "runs/sparse-heteroscedastic-d100-s390100-B400-c0.5/adjusted-frozen.json",
+          "fixed": "runs/sparse-heteroscedastic-d100-s390100-B400-c0.5/fixed-frozen.json"
+        }
+      ],
+      "banks": {
+        "diagnostic": {
+          "accepted_search_moves": 0,
+          "candidates": 48,
+          "cost": {
+            "fit_seconds": 805.9522658560568,
+            "fitting_updates": 94750,
+            "input_weighted_updates": 283050,
+            "parent_sets": 180
+          },
+          "fixed_prefix_count": 7,
+          "peak_bytes": 3212599296,
+          "stage_wall_seconds": 964.1910074204206
+        },
+        "random": {
+          "accepted_search_moves": 0,
+          "candidates": 48,
+          "cost": {
+            "fit_seconds": 600.3702984936211,
+            "fitting_updates": 79650,
+            "input_weighted_updates": 249200,
+            "parent_sets": 149
+          },
+          "fixed_prefix_count": 7,
+          "peak_bytes": 3218317312,
+          "stage_wall_seconds": 533.6397926211357
+        }
+      },
+      "complete_wall_seconds": 3326.88875451684,
+      "discovery": {
+        "h_per_node": 1.292243170210528e+33,
+        "legacy_converged": false,
+        "optimization_steps": 60000,
+        "seconds": 1377.4973163679242,
+        "status": "valid_capped_prediction"
+      },
+      "evaluation": {
+        "metric_rows": 54,
+        "records": 2,
+        "unique_predictions": 7
+      },
+      "six_main_methods": true,
+      "source_hash": "108905a4d4cedfe8584c3db6efc16cbba4269b5e908120d0d01b97de7f27594f",
+      "stages": {
+        "c0.5-diagnostic": {
+          "peak_bytes": 3212599296,
+          "seconds": 964.1910074204206
+        },
+        "c0.5-diagnostic-adjusted-select": {
+          "peak_bytes": 3233668096,
+          "seconds": 77.99497538432479
+        },
+        "c0.5-diagnostic-fixed-select": {
+          "peak_bytes": 594491392,
+          "seconds": 37.83123416826129
+        },
+        "c0.5-random": {
+          "peak_bytes": 3218317312,
+          "seconds": 533.6397926211357
+        },
+        "c0.5-random-adjusted-select": {
+          "peak_bytes": 3226194944,
+          "seconds": 45.22794697806239
+        },
+        "c0.5-random-fixed-select": {
+          "peak_bytes": 586095104,
+          "seconds": 7.589200682938099
+        },
+        "c0.5-ridge": {
+          "peak_bytes": 79853056,
+          "seconds": 1.0945672448724508
+        },
+        "dcdi-refit": {
+          "peak_bytes": 139404288,
+          "seconds": 87.91526553034782
+        },
+        "discovery": {
+          "peak_bytes": 180693504,
+          "seconds": 1377.5623138453811
+        },
+        "marginal": {
+          "peak_bytes": 93299712,
+          "seconds": 0.0003996454179286957
+        },
+        "oracle": {
+          "peak_bytes": 143653376,
+          "seconds": 93.30172212794423
+        },
+        "prepare": {
+          "peak_bytes": 70483968,
+          "seconds": 3.0630430970340967
+        }
+      },
+      "task": {
+        "corruptions": [
+          0.5
+        ],
+        "d": 100,
+        "development": true,
+        "family": "heteroscedastic",
+        "oracle": true,
+        "profile": "sparse",
+        "seed": 390100
+      }
+    }
+  ],
+  "scope": "Development timing and validity, not main-study performance or tuning on final outcomes"
+}

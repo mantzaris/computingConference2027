@@ -1,0 +1,10 @@
+{
+  "CUDA_VISIBLE_DEVICES": "",
+  "adapter_sha256": "3d88e00b353ac3e535552c3acd3e0112965e3f2d9b1198d1904b67dbe882977d",
+  "exit_code": 0,
+  "failures": 0,
+  "frozen_scientific_hash": "c20f2ac54186bcc6a385a5a4f81c1444814de4313ed99927e144208c01c8c3ee",
+  "junit_sha256": "45483f72c18dfae1ac8e46d98774cf9ea270c2ef1d0ec3c4223f4b2799eda5dc",
+  "scope": "CPU-only CSV serialization regression and cluster-statistics tests; no model or metric calculation changed",
+  "tests": 4
+}

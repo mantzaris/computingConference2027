@@ -1,0 +1,77 @@
+[
+  {
+    "evaluation": {
+      "metric_rows": 54,
+      "records": 2,
+      "unique_predictions": 10
+    },
+    "records": [
+      {
+        "adjusted": "runs/sparse-heteroscedastic-d20-s390020-B400-c0.5/adjusted-frozen.json",
+        "fixed": "runs/sparse-heteroscedastic-d20-s390020-B400-c0.5/fixed-frozen.json"
+      }
+    ],
+    "task": {
+      "corruptions": [
+        0.5
+      ],
+      "d": 20,
+      "development": true,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 390020
+    },
+    "wall_seconds": 1601.6159924324602
+  },
+  {
+    "evaluation": {
+      "metric_rows": 54,
+      "records": 2,
+      "unique_predictions": 7
+    },
+    "records": [
+      {
+        "adjusted": "runs/dense-heteroscedastic-d50-s390050-B400-c0.5/adjusted-frozen.json",
+        "fixed": "runs/dense-heteroscedastic-d50-s390050-B400-c0.5/fixed-frozen.json"
+      }
+    ],
+    "task": {
+      "corruptions": [
+        0.5
+      ],
+      "d": 50,
+      "development": true,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "dense",
+      "seed": 390050
+    },
+    "wall_seconds": 2248.9088309518993
+  },
+  {
+    "evaluation": {
+      "metric_rows": 54,
+      "records": 2,
+      "unique_predictions": 7
+    },
+    "records": [
+      {
+        "adjusted": "runs/sparse-heteroscedastic-d100-s390100-B400-c0.5/adjusted-frozen.json",
+        "fixed": "runs/sparse-heteroscedastic-d100-s390100-B400-c0.5/fixed-frozen.json"
+      }
+    ],
+    "task": {
+      "corruptions": [
+        0.5
+      ],
+      "d": 100,
+      "development": true,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 390100
+    },
+    "wall_seconds": 3326.88875451684
+  }
+]

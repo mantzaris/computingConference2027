@@ -1,0 +1,58 @@
+{
+  "additional_cap_hours": 24.0,
+  "completed_jobs": 1488,
+  "concurrency": "Single physical device; overlapping intervals unioned. Per-job wall times can include contention.",
+  "cumulative_device_hours": 35.576099442574716,
+  "device_telemetry": {
+    "maximum_observed_used_mib": 7840.0,
+    "median_gpu_utilization_percent": 86.0,
+    "p95_gpu_utilization_percent": 88.0,
+    "period_seconds": 15,
+    "samples": 4202,
+    "scope": "Sampled device-wide usage including CUDA contexts and concurrent jobs; not an exact continuous peak"
+  },
+  "failures": [
+    {
+      "attempts": 1,
+      "config_hash": "2430f1a2ad2982d0067885488a4c89e21ad1d7c83b115ba8f1b20acc88dfaea8",
+      "error": "Traceback (most recent call last):\n  File \"/workspace/computingConference2027/sem-update/src/sem_update/phase3/runtime.py\", line 111, in job\n    yield True\n  File \"<stdin>\", line 5, in <module>\nSystemExit: 0\n",
+      "id": "phase3-correctness-v1",
+      "status": "failed"
+    }
+  ],
+  "grouped_fit_cost": "Measured group time apportioned by active optimizer updates, reused once per unique node/parent set; not hypothetical serial execution time.",
+  "historical_device_hours": 16.09346407989661,
+  "incomplete_tasks": [
+    {
+      "budget": 80,
+      "d": 100,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 321000,
+      "sensitivity": "fixed-total-1600"
+    }
+  ],
+  "logical_cost": "Each M3/M4/M5 includes its entire canonical bank plus own selection/audit; inference and metric time are separate columns.",
+  "main_training_failure_records": 0,
+  "peak_allocation_bytes": 1845830656,
+  "phase3_device_hours": 19.482635362678103,
+  "retained_failed_attempts": [
+    {
+      "artifact": "logs/failure-cbe4067d668374f1-1791489327520660152.json",
+      "error": "ValueError: dict contains fields not in fieldnames: 'sw1_64', 'sw1_1024'",
+      "job": "phase3-final-evaluation",
+      "sha256": "01b8287c1b484e1b0345559a8df3139b02302825514dc77333d94c65f44860ac",
+      "utc": "2026-10-08T19:55:27.520667+00:00"
+    }
+  ],
+  "retried_jobs": [
+    {
+      "attempts": 2,
+      "final_status": "complete",
+      "id": "phase3-final-evaluation"
+    }
+  ],
+  "summed_overlapping_interval_hours": 199.64256779717076,
+  "wall_span_hours_including_idle_gaps": 20.563674396938747
+}

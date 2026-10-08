@@ -1,0 +1,31 @@
+{
+  "checks": [
+    "split hashes and disjoint IDs",
+    "training-only standardization",
+    "all five non-test intervention counts",
+    "same immutable M3-M5 banks and full logical costs",
+    "canonical node/parent identities and indegree caps",
+    "mean/robust calibration arithmetic",
+    "search-only mixture shortlist",
+    "one-time audit and fallback",
+    "valid mixture simplex; predictive weights only"
+  ],
+  "datasets": 46,
+  "incomplete_tasks": [
+    {
+      "budget": 80,
+      "d": 100,
+      "family": "heteroscedastic",
+      "oracle": true,
+      "profile": "sparse",
+      "seed": 321000,
+      "sensitivity": "fixed-total-1600"
+    }
+  ],
+  "independent_scms": 45,
+  "passed": true,
+  "policy_conditions": 184,
+  "protocol_sha256": "86a0200fc7f3f51864362b47804f1e53c2f8273a6dc94f95911d2e2af8c47246",
+  "scope": "CPU integrity audit; no fitting, model selection changes or new generated outcomes",
+  "verified_banks": 368
+}

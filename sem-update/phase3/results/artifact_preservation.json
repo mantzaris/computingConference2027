@@ -1,0 +1,19 @@
+{
+  "archive_bytes": 13426087062,
+  "archive_filesystem": "/home/resort/Documents/repos/computingConference2027 /dev/nvme0n1p2[/home/resort/Documents/repos/computingConference2027] ext4",
+  "archive_path": "sem-update/.artifacts/phase3/archives/durable-evidence.tar.gz",
+  "archive_sha256": "45c85e03a551f8a4e8e682e222a1a6c40206a24570b196070d228b8b57cf825f",
+  "artifact_manifest_sha256": "c6650327a42bd9c5dd1af2f1cdaa60530e66c7e116467b15a38fd083958d91ab",
+  "checked_utc": "2026-10-08T21:52:02Z",
+  "copy_scope": "Full phase-three evidence; no experimental files deleted; earlier phase-two durable archive retained separately",
+  "errors": [],
+  "file_and_parent_fsync_completed_utc": "2026-10-08T21:50:06.987810+00:00",
+  "files": 39917,
+  "local_and_remote_identical": true,
+  "local_transfer_seconds": 1374,
+  "pod_termination_authorized": false,
+  "remote_archive_sha256": "45c85e03a551f8a4e8e682e222a1a6c40206a24570b196070d228b8b57cf825f",
+  "uncompressed_bytes": 15973997331,
+  "verification": "Every archived evidence file checked against its recorded SHA256 and byte size, without extraction",
+  "verified": true
+}

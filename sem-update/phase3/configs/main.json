@@ -1,0 +1,124 @@
+{
+  "additional_gpu_hours": 24,
+  "adjusted_candidates": {
+    "100": 72,
+    "20": 24,
+    "50": 36
+  },
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 37111,
+  "budget_per_target": 400,
+  "checkpoint_limits": {
+    "100": {
+      "fitting_updates": [
+        50000,
+        100000,
+        200000
+      ],
+      "gpu_job_seconds": [
+        750,
+        1500,
+        3000
+      ]
+    },
+    "20": {
+      "fitting_updates": [
+        10000,
+        20000,
+        40000
+      ],
+      "gpu_job_seconds": [
+        200,
+        500,
+        1000
+      ]
+    },
+    "50": {
+      "fitting_updates": [
+        25000,
+        50000,
+        100000
+      ],
+      "gpu_job_seconds": [
+        500,
+        1000,
+        2000
+      ]
+    }
+  },
+  "checkpoints": {},
+  "corruptions": [
+    0.2,
+    0.5
+  ],
+  "dcdi": {
+    "batch_size": 256,
+    "block_steps": 100,
+    "flow_layers": 2,
+    "flow_width": 8,
+    "layers": 2,
+    "learning_rate": 0.001,
+    "max_indegree": 3,
+    "reg_coeff": 0.1,
+    "seconds": 3600,
+    "seed": 8821,
+    "steps": 60000,
+    "threshold": 0.5,
+    "width": 64
+  },
+  "estimated_task_seconds": {
+    "100": 15500,
+    "20": 5000,
+    "50": 7500
+  },
+  "evaluation_projections": 256,
+  "evaluation_samples": 2048,
+  "final_reserve_seconds": 10800,
+  "fixed_total_sensitivity": true,
+  "parallel_workers": 6,
+  "rho": 0.5,
+  "ridge_alpha": 0.1,
+  "ridge_grid": [
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "ridge_variance_floor": 0.0001,
+  "search": {
+    "audit_nll_slack": 0.05,
+    "audit_w_factor": 1.05,
+    "audit_w_slack": 0.001,
+    "beta": 1.0,
+    "candidate_budget": 24,
+    "diagnostic_cap": 64,
+    "edge_penalty": 0.02,
+    "environment_cap": 4,
+    "fixed_candidates": 12,
+    "improvement": 0.005,
+    "max_indegree": 3,
+    "pair_cap": 8,
+    "per_round": 3,
+    "permutations": 16,
+    "projections": 64,
+    "rounds": 100,
+    "samples": 512,
+    "seconds": 3600,
+    "seed": 491
+  },
+  "tau": 0.01,
+  "train": {
+    "batch_size": 256,
+    "bins": 8,
+    "check_every": 50,
+    "group_size": 32,
+    "learning_rate": 0.001,
+    "patience": 5,
+    "seed": 707,
+    "steps": 1000,
+    "transforms": 2,
+    "weight_decay": 1e-05,
+    "width": 64
+  },
+  "version": 3
+}
