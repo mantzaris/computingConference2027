@@ -1,0 +1,11 @@
+{
+  "cuda": "12.8",
+  "device": "NVIDIA RTX PRO 4500 Blackwell",
+  "gradient_device": "cuda:0",
+  "gradient_norm": 9.033493041992188,
+  "memory_bytes": 33685569536,
+  "nvidia_smi": "NVIDIA RTX PRO 4500 Blackwell, 580.159.04, 32623 MiB",
+  "python": "3.12.3",
+  "storage": "/      overlay overlay",
+  "torch": "2.8.0+cu128"
+}

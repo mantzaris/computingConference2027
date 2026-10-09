@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "additional_gpu_hours": 12,
+  "ridge_alpha": 0.1,
+  "ridge_grid": [0.001, 0.01, 0.1, 1.0],
+  "rho": 0.5,
+  "tau": 0.01,
+  "grouped_refits": 5,
+  "evaluation_samples": 4096,
+  "evaluation_projections": 256,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 44471,
+  "train": {"steps": 800, "width": 64, "bins": 8, "transforms": 2, "batch_size": 256, "learning_rate": 0.001, "weight_decay": 0.00001, "check_every": 50, "patience": 5, "group_size": 32, "seed": 707},
+  "search": {"candidate_budget": 24, "fixed_candidates": 24, "rounds": 30, "per_round": 3, "update_limit": 48000, "seconds": 1800, "max_indegree": 3, "samples": 512, "projections": 64, "seed": 491, "improvement": 0.005, "edge_penalty": 0.02, "beta": 1.0, "audit_w_factor": 1.05, "audit_w_slack": 0.001, "audit_nll_slack": 0.05, "diagnostic_cap": 64, "permutations": 16, "pair_cap": 8, "environment_cap": 4},
+  "dcdi": {"steps": 40000, "seconds": 2400, "block_steps": 100, "width": 64, "layers": 2, "flow_width": 8, "flow_layers": 2, "batch_size": 256, "learning_rate": 0.001, "reg_coeff": 0.1, "threshold": 0.5, "max_indegree": 3, "seed": 44261},
+  "checkpoints": {"fitting_updates": [12000, 24000, 36000], "gpu_job_seconds": [120, 300, 600]}
+}

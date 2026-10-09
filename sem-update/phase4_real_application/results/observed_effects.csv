@@ -1,0 +1,65 @@
+run,target,panel,outcome,unit,low_mean,high_mean,effect,ci_low,ci_high,n_low,n_high,block_rows
+validate_load_in,load_in,primary,rpm_in,rpm,287.3623328,2898.758896,2611.396564,2609.330687,2613.13352,25,25,10
+validate_load_in,load_in,primary,rpm_out,rpm,292.6107703,1395.132837,1102.522067,1099.990225,1105.059673,25,25,10
+validate_load_in,load_in,primary,current_in,A,0.1685486804,0.2745786901,0.1060300098,0.1030093596,0.1088673784,25,25,10
+validate_load_in,load_in,primary,current_out,A,0.1653963832,0.1636699902,-0.001726392962,-0.002919145726,-0.000785475725,25,25,10
+validate_load_in,load_in,primary,pressure_upwind,Pa relative to ambient,12.3375,38.8434375,26.5059375,25.97288899,26.94295353,25,25,10
+validate_load_in,load_in,primary,pressure_downwind,Pa relative to ambient,2.4509375,18.2834375,15.8325,15.69364124,16.25689338,25,25,10
+validate_load_in,load_in,primary,pressure_intake,Pa relative to ambient,-0.1178125,-2.8909375,-2.773125,-3.178444602,-2.277200138,25,25,10
+validate_load_in,load_in,primary,pressure_ambient,Pa,96710.4275,96710.32312,-0.104375,-0.3676907206,0.4563083616,25,25,10
+validate_load_in_mic,load_in,primary,rpm_in,rpm,286.9749106,2901.620325,2614.645414,2610.057676,2619.084974,93,107,10
+validate_load_in_mic,load_in,primary,rpm_out,rpm,292.5802737,1397.934639,1105.354365,1102.646783,1107.911231,93,107,10
+validate_load_in_mic,load_in,primary,current_in,A,0.1681661043,0.2774480637,0.1092819594,0.1081957445,0.1103944351,93,107,10
+validate_load_in_mic,load_in,primary,current_out,A,0.1649662862,0.1638659888,-0.001100297371,-0.001815672097,-0.0003858416698,93,107,10
+validate_load_in_mic,load_in,primary,pressure_upwind,Pa relative to ambient,13.05670363,40.15829439,27.10159076,26.8954271,27.30705997,93,107,10
+validate_load_in_mic,load_in,primary,pressure_downwind,Pa relative to ambient,1.943632392,17.99839369,16.0547613,15.91836716,16.1992501,93,107,10
+validate_load_in_mic,load_in,primary,pressure_intake,Pa relative to ambient,0.3694556452,-1.770005841,-2.139461486,-2.310260178,-1.966372074,93,107,10
+validate_load_in_mic,load_in,primary,pressure_ambient,Pa,96697.22631,96696.41728,-0.809035367,-2.852961813,1.188044243,93,107,10
+validate_load_out,load_out,primary,rpm_in,rpm,287.7775733,1174.493967,886.7163936,879.2600314,894.0686288,23,26,10
+validate_load_out,load_out,primary,rpm_out,rpm,294.9254814,2831.230065,2536.304584,2534.668025,2538.390669,23,26,10
+validate_load_out,load_out,primary,current_in,A,0.1679464703,0.1671168885,-0.0008295818254,-0.001252464667,-0.0004108772052,23,26,10
+validate_load_out,load_out,primary,current_out,A,0.1659590293,0.2739043349,0.1079453056,0.1039075717,0.1127978576,23,26,10
+validate_load_out,load_out,primary,pressure_upwind,Pa relative to ambient,12.98641304,-4.946814904,-17.93322795,-18.28640825,-17.54540365,23,26,10
+validate_load_out,load_out,primary,pressure_downwind,Pa relative to ambient,0.1569293478,-25.9921875,-26.14911685,-26.49352865,-25.90938001,23,26,10
+validate_load_out,load_out,primary,pressure_intake,Pa relative to ambient,-0.04993206522,-1.639423077,-1.589491012,-1.84765625,-1.289534684,23,26,10
+validate_load_out,load_out,primary,pressure_ambient,Pa,96669.12636,96669.24669,0.1203360159,-0.5785542582,0.8908503606,23,26,10
+validate_load_out_mic,load_out,primary,rpm_in,rpm,286.5134913,1063.096319,776.582828,775.0454379,778.1840525,95,105,10
+validate_load_out_mic,load_out,primary,rpm_out,rpm,295.7725085,2810.589393,2514.816884,2511.750362,2517.587928,95,105,10
+validate_load_out_mic,load_out,primary,current_in,A,0.1673732829,0.1660969837,-0.001276299253,-0.00178551533,-0.0007927409591,95,105,10
+validate_load_out_mic,load_out,primary,current_out,A,0.1649681792,0.2705472001,0.1055790209,0.1041447577,0.1069727634,95,105,10
+validate_load_out_mic,load_out,primary,pressure_upwind,Pa relative to ambient,23.60970395,7.79672619,-15.81297776,-16.78934559,-14.90738591,95,105,10
+validate_load_out_mic,load_out,primary,pressure_downwind,Pa relative to ambient,12.82524671,-10.92366071,-23.74890742,-24.6200961,-22.94472265,95,105,10
+validate_load_out_mic,load_out,primary,pressure_intake,Pa relative to ambient,11.06875,9.76703869,-1.30171131,-2.342405613,-0.3728105928,95,105,10
+validate_load_out_mic,load_out,primary,pressure_ambient,Pa,94521.82599,94521.95,0.1240131579,-1.496709117,1.961229112,95,105,10
+validate_hatch_rpms,hatch,primary,rpm_in,rpm,2903.691102,2924.42311,20.73200881,16.08260685,25.24900799,117,83,10
+validate_hatch_rpms,hatch,primary,rpm_out,rpm,1410.958552,1061.441802,-349.5167506,-352.4156565,-346.8614213,117,83,10
+validate_hatch_rpms,hatch,primary,current_in,A,0.2750082713,0.2725702517,-0.002438019617,-0.005206309308,0.0004793099093,117,83,10
+validate_hatch_rpms,hatch,primary,current_out,A,0.1636024638,0.1639333875,0.0003309236646,-0.0001155040335,0.000744090221,117,83,10
+validate_hatch_rpms,hatch,primary,pressure_upwind,Pa relative to ambient,29.13989049,23.71432605,-5.425564437,-6.375904935,-4.521513848,117,83,10
+validate_hatch_rpms,hatch,primary,pressure_downwind,Pa relative to ambient,7.386551816,-0.2197853916,-7.606337208,-8.584153024,-6.713530858,117,83,10
+validate_hatch_rpms,hatch,primary,pressure_intake,Pa relative to ambient,-12.8571047,-14.57398343,-1.716878733,-2.638026303,-0.89703282,117,83,10
+validate_hatch_rpms,hatch,primary,pressure_ambient,Pa,96729.25454,96729.22195,-0.03259029709,-0.793114836,0.7299888562,117,83,10
+validate_load_in_current_out,load_in,shorter_wait,rpm_in,rpm,1182.523372,2952.053331,1769.529959,1754.263686,1784.31636,39,61,10
+validate_load_in_current_out,load_in,shorter_wait,rpm_out,rpm,2823.07271,3036.418905,213.3461952,210.4256236,216.5607616,39,61,10
+validate_load_in_current_out,load_in,shorter_wait,current_in,A,0.1667607214,0.2637839126,0.09702319127,0.09521104357,0.09876325327,39,61,10
+validate_load_in_current_out,load_in,shorter_wait,current_out,A,0.2695458305,0.2487397241,-0.02080610646,-0.02347913845,-0.01802637586,39,61,10
+validate_load_in_current_out,load_in,shorter_wait,pressure_upwind,Pa relative to ambient,-5.599959936,23.3486168,28.94857674,28.58803272,29.35327234,39,61,10
+validate_load_in_current_out,load_in,shorter_wait,pressure_downwind,Pa relative to ambient,-23.65024038,-6.639088115,17.01115227,16.56793472,17.37082962,39,61,10
+validate_load_in_current_out,load_in,shorter_wait,pressure_intake,Pa relative to ambient,-0.3918269231,-3.414830943,-3.02300402,-3.363393994,-2.651503092,39,61,10
+validate_load_in_current_out,load_in,shorter_wait,pressure_ambient,Pa,94667.84595,94666.99782,-0.8481307797,-1.756445978,0.216478203,39,61,10
+validate_load_out_current_in,load_out,shorter_wait,rpm_in,rpm,2909.993159,2966.085071,56.09191128,54.01054496,57.93114148,51,49,10
+validate_load_out_current_in,load_out,shorter_wait,rpm_out,rpm,1460.345543,3014.127397,1553.781854,1538.159487,1568.573267,51,49,10
+validate_load_out_current_in,load_out,shorter_wait,current_in,A,0.2779326472,0.2639010414,-0.0140316058,-0.01713762222,-0.01019536225,51,49,10
+validate_load_out_current_in,load_out,shorter_wait,current_out,A,0.1636179633,0.2457583239,0.08214036054,0.08120963718,0.08303268127,51,49,10
+validate_load_out_current_in,load_out,shorter_wait,pressure_upwind,Pa relative to ambient,33.4028799,18.99968112,-14.40319878,-14.80280004,-13.87708795,51,49,10
+validate_load_out_current_in,load_out,shorter_wait,pressure_downwind,Pa relative to ambient,13.05300245,-9.044483418,-22.09748587,-22.39785777,-21.75452334,51,49,10
+validate_load_out_current_in,load_out,shorter_wait,pressure_intake,Pa relative to ambient,-7.352328431,-9.809470663,-2.457142232,-2.842854879,-2.026748819,51,49,10
+validate_load_out_current_in,load_out,shorter_wait,pressure_ambient,Pa,94671.39599,94671.80102,0.4050338886,-1.525895472,2.456623566,51,49,10
+validate_load_out_pressure_intake,load_out,shorter_wait,rpm_in,rpm,298.9910582,1067.900521,768.9094629,767.8667263,769.8843901,1490,1510,10
+validate_load_out_pressure_intake,load_out,shorter_wait,rpm_out,rpm,296.6580281,2818.366759,2521.70873,2520.326874,2523.030243,1490,1510,10
+validate_load_out_pressure_intake,load_out,shorter_wait,current_in,A,0.1677096938,0.166620322,-0.001089371823,-0.00121217024,-0.0009621227044,1490,1510,10
+validate_load_out_pressure_intake,load_out,shorter_wait,current_out,A,0.165742029,0.2712684984,0.1055264694,0.1051356289,0.1059298484,1490,1510,10
+validate_load_out_pressure_intake,load_out,shorter_wait,pressure_upwind,Pa relative to ambient,0.9130033557,-17.00641039,-17.91941374,-18.11535204,-17.72197454,1490,1510,10
+validate_load_out_pressure_intake,load_out,shorter_wait,pressure_downwind,Pa relative to ambient,-6.393435403,-30.66239135,-24.26895595,-24.45112207,-24.08335213,1490,1510,10
+validate_load_out_pressure_intake,load_out,shorter_wait,pressure_intake,Pa relative to ambient,-2.637594379,-3.398825538,-0.7612311589,-0.9090086925,-0.6100670232,1490,1510,10
+validate_load_out_pressure_intake,load_out,shorter_wait,pressure_ambient,Pa,94529.31507,94527.18092,-2.134150337,-5.308043105,0.8098560382,1490,1510,10

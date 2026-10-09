@@ -1,0 +1,16 @@
+{
+  "checkpoints_manifest_sha256": "c8ec8c79d5d8c4e9008adec1b7d816d70e072bc2acb9c05b7a7f6628f9b75f1b",
+  "protocol_sha256": "db2a94ee5fac9b6e4a2deeb4e7203a85e613df24e9c47db132151b1854984430",
+  "records": {
+    "runs/group-refit-1/frozen.json": "8b7f0ebf3eb6c4265f1f93022dbe7cb05b485cb1902a2b79bddc8b7da4513fc2",
+    "runs/group-refit-2/frozen.json": "c928627ea913f1a9f7ddb070fe15ff56ed24202c65a58a35d5d6812c4f4ba043",
+    "runs/group-refit-3/frozen.json": "177e369495dc64feb0596e576294a73ffc81715aeeec549c7681cfd49a72ca2a",
+    "runs/group-refit-4/frozen.json": "3d61f7d3b51b52c16a3da562fe7d6461116b28b0d820ef75a32dc7d2534e70dd",
+    "runs/group-refit-5/frozen.json": "6aaebb309c3cb309761a04f2fa6308b2d4df0999f30924c026a33b59f62778d6",
+    "runs/main-semantic/frozen.json": "87013a844b720d77cb15f93e2938c9856cbe4025135190899f39c4e26a944289",
+    "runs/main/frozen.json": "52c07b30b4903dc9f942f096ec3fe08dc7ded4fc4290293b93b2cb1a94298b45"
+  },
+  "scientific_hash": "c021f528f9c4a78d80ab29edaa37daf228a536e4ad1e0fa5c894196a76a40fb7",
+  "sealed_unix": 1791517297.743276,
+  "test_outcomes_opened": false
+}

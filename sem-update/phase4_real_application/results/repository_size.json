@@ -1,0 +1,21 @@
+{
+  "accounting": "Uncompressed unique Git blob bytes; transport pack size can differ. Raw evidence archive is ignored. No push performed.",
+  "actual_staged_blobs_checked": true,
+  "branch": "main",
+  "comparison_base": "ef2e0cac3fd2d572caf16c98f68cf45392882d28",
+  "cumulative_unique_new_blob_bytes": 26206707,
+  "errors": [],
+  "forbidden_artifacts_or_credentials": false,
+  "full_check_artifact": "reports/staged_blob_check_final.json",
+  "historical_bytes_before_phase4": 25798068,
+  "includes_intermediate_historical_versions": true,
+  "largest_phase4_file_bytes": 41474,
+  "largest_project_file_bytes": 4045448,
+  "limits": {
+    "batch_bytes": 26214400,
+    "file_bytes": 5242880
+  },
+  "phase4_files": 74,
+  "phase4_unique_blob_bytes": 408639,
+  "remaining_bytes": 7693
+}

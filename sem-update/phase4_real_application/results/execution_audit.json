@@ -1,0 +1,18 @@
+{
+  "additional_preprocessing_only_rows": 1,
+  "all_main_non_test_rows": 3399,
+  "all_non_test_including_development": 17399,
+  "candidate_records": 216,
+  "development_rows_examined": 14000,
+  "frozen_records": 7,
+  "main_model_rows": 3398,
+  "passed": true,
+  "prediction_arrays": 512,
+  "prediction_samples": 2097152,
+  "protocol_sha256": "db2a94ee5fac9b6e4a2deeb4e7203a85e613df24e9c47db132151b1854984430",
+  "reporting_correction": "Frozen non_test_intervention_rows counts modeling rows. One additional fit-only row used in standardization is also charged; no fitting or selection changed.",
+  "scientific_hash": "c021f528f9c4a78d80ab29edaa37daf228a536e4ad1e0fa5c894196a76a40fb7",
+  "source_rows_in_main_acquisitions": 140000,
+  "verified_banks": 9,
+  "verified_selections": 98
+}

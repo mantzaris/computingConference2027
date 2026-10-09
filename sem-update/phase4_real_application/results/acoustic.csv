@@ -1,0 +1,7 @@
+run,target,wait_ms,effect_signal_volts,ci_low,ci_high,unit,generative_prediction
+validate_load_in,load_in,10000,0.5790811339,0.1598859903,1.197314956,microphone circuit amplitude V; not dB SPL,unavailable: incompatible training measurement configuration
+validate_load_in_mic,load_in,10000,0.8136234853,0.5983999313,1.012446761,microphone circuit amplitude V; not dB SPL,unavailable: incompatible training measurement configuration
+validate_load_out,load_out,10000,0.7460453875,0.1030062618,1.599933209,microphone circuit amplitude V; not dB SPL,unavailable: incompatible training measurement configuration
+validate_load_out_mic,load_out,10000,0.4611363453,0.2585020413,0.6568034286,microphone circuit amplitude V; not dB SPL,unavailable: incompatible training measurement configuration
+validate_hatch_rpms,hatch,10000,-0.4520048387,-0.7872002342,-0.1141431743,microphone circuit amplitude V; not dB SPL,unavailable: incompatible training measurement configuration
+validate_hatch_mic,hatch,0,0.2794529312,0.2058518294,0.3501656724,microphone circuit amplitude V; not dB SPL,unavailable: incompatible training measurement configuration

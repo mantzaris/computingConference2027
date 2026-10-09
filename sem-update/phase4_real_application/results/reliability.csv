@@ -1,0 +1,9 @@
+method,harmful_runs,evaluated_runs,max_sw_deterioration,mean_harm_severity,retained_initial,definition
+M3,0,5,-0.003813743591,0,False,"joint SW1 > fixed + max(0.001, 0.05*fixed); per-run descriptive, not primary effect endpoint"
+M4,0,5,0.0008444190025,0,False,"joint SW1 > fixed + max(0.001, 0.05*fixed); per-run descriptive, not primary effect endpoint"
+M5,0,5,0.001920759678,0,False,"joint SW1 > fixed + max(0.001, 0.05*fixed); per-run descriptive, not primary effect endpoint"
+random,0,5,-0.002855300903,0,False,"joint SW1 > fixed + max(0.001, 0.05*fixed); per-run descriptive, not primary effect endpoint"
+semantic_M3,0,5,0.007190465927,0,False,"joint SW1 > fixed + max(0.001, 0.05*fixed); per-run descriptive, not primary effect endpoint"
+semantic_M4,0,5,0.01271432638,0,False,"joint SW1 > fixed + max(0.001, 0.05*fixed); per-run descriptive, not primary effect endpoint"
+semantic_M5,0,5,0.00448679924,0,False,"joint SW1 > fixed + max(0.001, 0.05*fixed); per-run descriptive, not primary effect endpoint"
+semantic_random,0,5,0.004942178726,0,False,"joint SW1 > fixed + max(0.001, 0.05*fixed); per-run descriptive, not primary effect endpoint"

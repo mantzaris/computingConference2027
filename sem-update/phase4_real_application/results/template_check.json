@@ -1,0 +1,17 @@
+{
+  "return_code": 0,
+  "template_sha256": "d5ed3f489b336450dd98e4f33844c44e842a6d022f84b0ef868dc19dcf84abc8",
+  "template_source": "https://saiconference.com/Downloads/SAI_Paper_Format_Latex_Conference.zip",
+  "template_provenance": "Official package downloaded 6 October 2026; fresh 9 October urllib retrieval returned HTTP 403; cached official package used.",
+  "figures": {
+    "A_process_graph.pdf": "7e414d3302fa8d3105859f92395947c9feb05773ccc1916ac36562077d5de2cf",
+    "B_current_responses.pdf": "3ceb200efce91166ac0e045ef403678a67e3f06631ea5c447326adbf243e16ac",
+    "B_pressure_responses.pdf": "145c8719e9d06afa23ad26bde8c467ff1935af718714ac08cd76ed2a9952e7ce",
+    "C_effect_heatmap.pdf": "bf565be180814a0f6371c2076032c7dc3b539eed80adc9377020c9479b85f5c1",
+    "D_accuracy_cost.pdf": "cba12280b2c21dec614b1bf352e39a8eed706057baeb49cb27e2d05cbe79724b",
+    "E_recorded_tradeoff.pdf": "ea1ab6bf32e9548af47aa164c97a88d9ab64c3d81dddd7e1284bdf8388a06963"
+  },
+  "layout_warnings": [],
+  "artifact": "paper_layout_check/layout.pdf",
+  "submission": false
+}

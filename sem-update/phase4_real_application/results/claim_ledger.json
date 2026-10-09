@@ -1,0 +1,76 @@
+[
+  {
+    "claim": "Recorded randomized actuator effects and six-method predictions were evaluated on one wind tunnel",
+    "evidence": "execution_audit.json; observed_effects.csv; summary.csv",
+    "status": "supported"
+  },
+  {
+    "claim": "M2 has the lowest observed primary error among the six executed main methods",
+    "evidence": "summary.csv; contrasts.csv",
+    "limit": "descriptive tested-panel ranking, not broad superiority",
+    "status": "supported"
+  },
+  {
+    "claim": "The returned DAG or LLM graph establishes direct physical causality",
+    "evidence": "protocol.json; graphs.json",
+    "status": "unsupported"
+  },
+  {
+    "claim": "The DCDI run is a converged native implementation",
+    "evidence": "capped adaptation; discovery record",
+    "status": "unsupported"
+  },
+  {
+    "claim": "Block intervals represent independent-apparatus uncertainty",
+    "evidence": "one apparatus; acquisition/block resampling",
+    "status": "unsupported"
+  },
+  {
+    "claim": "The model provides validated optimal control, airflow, electrical power or dB SPL",
+    "evidence": "variables.md; finite binary decisions only",
+    "status": "unsupported"
+  },
+  {
+    "claim": "A semantic prior generally improves real engineering prediction",
+    "evidence": "semantic_comparison.csv",
+    "limit": "one actual prior and one public apparatus; measured within-case differences only",
+    "status": "untested"
+  },
+  {
+    "claim": "Repair reliability transfers uniformly from the synthetic studies",
+    "evidence": "reliability.csv; previous phase reports",
+    "status": "mixed"
+  },
+  {
+    "claim": "Human scientific review and manuscript approval are complete",
+    "evidence": "review remains pending",
+    "status": "unsupported"
+  },
+  {
+    "claim": "Fixed flows improve the observed primary error over ridge on the same initial graph",
+    "evidence": "summary.csv",
+    "limit": "one apparatus and test panel; no formal general superiority",
+    "status": "supported"
+  },
+  {
+    "claim": "The semantic LLM prior improves the primary endpoint in this application",
+    "evidence": "semantic_comparison.csv",
+    "status": "unsupported"
+  },
+  {
+    "claim": "The main M3 graph omits an experimentally supported hatch total effect",
+    "evidence": "graphs.json; observed_effects.csv",
+    "limit": "no direct causal edge identified; one randomized hatch acquisition",
+    "status": "supported"
+  },
+  {
+    "claim": "The offline decisions demonstrate a model advantage or verified current savings",
+    "evidence": "decision_summary.csv; identical choices; current uncertainty",
+    "status": "unsupported"
+  },
+  {
+    "claim": "Zero harm counts establish calibrated or generally safe intervention prediction",
+    "evidence": "reliability.csv; undercoverage in summary.csv; one apparatus",
+    "status": "unsupported"
+  }
+]

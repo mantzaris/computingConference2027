@@ -1,0 +1,412 @@
+{
+  "command_filter": {
+    "max_fan_span": 0.1,
+    "max_hatch_span_degrees": 5,
+    "minimum_spacing_seconds": 3,
+    "startup_seconds": 15,
+    "window_seconds": 10
+  },
+  "config": {
+    "additional_gpu_hours": 12,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 44471,
+    "checkpoints": {
+      "fitting_updates": [
+        12000,
+        24000,
+        36000
+      ],
+      "gpu_job_seconds": [
+        120,
+        300,
+        600
+      ]
+    },
+    "dcdi": {
+      "batch_size": 256,
+      "block_steps": 100,
+      "flow_layers": 2,
+      "flow_width": 8,
+      "layers": 2,
+      "learning_rate": 0.001,
+      "max_indegree": 3,
+      "reg_coeff": 0.1,
+      "seconds": 2400,
+      "seed": 44261,
+      "steps": 40000,
+      "threshold": 0.5,
+      "width": 64
+    },
+    "evaluation_projections": 256,
+    "evaluation_samples": 4096,
+    "grouped_refits": 5,
+    "rho": 0.5,
+    "ridge_alpha": 1.0,
+    "ridge_grid": [
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "search": {
+      "audit_nll_slack": 0.05,
+      "audit_w_factor": 1.05,
+      "audit_w_slack": 0.001,
+      "beta": 1.0,
+      "candidate_budget": 24,
+      "diagnostic_cap": 64,
+      "edge_penalty": 0.02,
+      "environment_cap": 4,
+      "fixed_candidates": 24,
+      "improvement": 0.005,
+      "max_indegree": 3,
+      "pair_cap": 8,
+      "per_round": 3,
+      "permutations": 16,
+      "projections": 64,
+      "rounds": 30,
+      "samples": 512,
+      "seconds": 1800,
+      "seed": 491,
+      "update_limit": 48000
+    },
+    "tau": 0.01,
+    "train": {
+      "batch_size": 256,
+      "bins": 8,
+      "check_every": 50,
+      "group_size": 32,
+      "learning_rate": 0.001,
+      "patience": 5,
+      "seed": 707,
+      "steps": 800,
+      "transforms": 2,
+      "weight_decay": 1e-05,
+      "width": 64
+    },
+    "version": 1
+  },
+  "created_unix": 1791514598.666718,
+  "data_hash": "34202d4f1827cfe479368a583686428e7fd3c3f35387e6b9027f5322be4ec1e6",
+  "decision": {
+    "objective": "minimize sum of calibrated fan currents among the two recorded arms satisfying predicted mean pressure; if none, maximize pressure, then minimize current, then low arm",
+    "outcome": "pressure_upwind minus pressure_ambient",
+    "scope": "five primary acquisitions only; no unrecorded operating point; measured feasible-set regret only",
+    "threshold_pa": 6.1875
+  },
+  "dependency_lock_sha256": "7ab175510e213e0078c6e85361518125755b404ed34547331a29042e31ddf6a3",
+  "figure_rule": "full 11-node main M3 graph; M5 components separate; responses current_in,current_out,upwind,downwind; mismatch example largest absolute M3 primary effect error with lexical ties",
+  "final_design": [
+    {
+      "arm_n": [
+        25,
+        25
+      ],
+      "high": 1.0,
+      "low": 0.01,
+      "n": 50,
+      "nuisance": {
+        "hatch": 0.0,
+        "load_out": 0.0099999997764825
+      },
+      "panel": "primary",
+      "protocol_n": 50,
+      "run": "validate_load_in",
+      "sha256": "ea0c19d18579b1f125f9be2d609ddf7f400a678f0210d8d10d6df7c0d7a6bf3e",
+      "target": "load_in",
+      "wait_ms": 10000.0
+    },
+    {
+      "arm_n": [
+        93,
+        107
+      ],
+      "high": 1.0,
+      "low": 0.01,
+      "n": 200,
+      "nuisance": {
+        "hatch": 0.0,
+        "load_out": 0.0099999997764825
+      },
+      "panel": "primary",
+      "protocol_n": 200,
+      "run": "validate_load_in_mic",
+      "sha256": "a48ee43b14b1db6359b70b293f8d9407349a13536f134236c39eea3e507c53cc",
+      "target": "load_in",
+      "wait_ms": 10000.0
+    },
+    {
+      "arm_n": [
+        23,
+        26
+      ],
+      "high": 1.0,
+      "low": 0.01,
+      "n": 49,
+      "nuisance": {
+        "hatch": 0.0,
+        "load_in": 0.0099999997764825
+      },
+      "panel": "primary",
+      "protocol_n": 50,
+      "run": "validate_load_out",
+      "sha256": "e22bb54f26e56f665498d9cb75fa83f843d20bf802ca5f7afbe1a2135f243dd7",
+      "target": "load_out",
+      "wait_ms": 10000.0
+    },
+    {
+      "arm_n": [
+        95,
+        105
+      ],
+      "high": 1.0,
+      "low": 0.01,
+      "n": 200,
+      "nuisance": {
+        "hatch": 0.0,
+        "load_in": 0.0099999997764825
+      },
+      "panel": "primary",
+      "protocol_n": 200,
+      "run": "validate_load_out_mic",
+      "sha256": "e7f46c874d1654bd4ec9c5dfbd6f3e69963e09eb6900f889072c3439d99c4037",
+      "target": "load_out",
+      "wait_ms": 10000.0
+    },
+    {
+      "arm_n": [
+        117,
+        83
+      ],
+      "high": 45.0,
+      "low": 0.0,
+      "n": 200,
+      "nuisance": {
+        "load_in": 1.0,
+        "load_out": 0.0099999997764825
+      },
+      "panel": "primary",
+      "protocol_n": 200,
+      "run": "validate_hatch_rpms",
+      "sha256": "62797d9e98540d6bc53f1113364e36fa2054ef2d71ceb27b523016bb765b5cca",
+      "target": "hatch",
+      "wait_ms": 10000.0
+    },
+    {
+      "arm_n": [
+        39,
+        61
+      ],
+      "high": 1.0,
+      "low": 0.01,
+      "n": 100,
+      "nuisance": {
+        "hatch": 0.0,
+        "load_out": 1.0
+      },
+      "panel": "shorter_wait",
+      "protocol_n": 100,
+      "run": "validate_load_in_current_out",
+      "sha256": "6c05b84b559de76affbc85fad42dcc194e0c7d9ab44f14499d92b08efb152f69",
+      "target": "load_in",
+      "wait_ms": 5000.0
+    },
+    {
+      "arm_n": [
+        51,
+        49
+      ],
+      "high": 1.0,
+      "low": 0.01,
+      "n": 100,
+      "nuisance": {
+        "hatch": 0.0,
+        "load_in": 1.0
+      },
+      "panel": "shorter_wait",
+      "protocol_n": 100,
+      "run": "validate_load_out_current_in",
+      "sha256": "31191011f68ac36b5f1e7565167399abf748bb18783975121c9d2563d7773da7",
+      "target": "load_out",
+      "wait_ms": 5000.0
+    },
+    {
+      "arm_n": [
+        1490,
+        1510
+      ],
+      "high": 1.0,
+      "low": 0.01,
+      "n": 3000,
+      "nuisance": {
+        "hatch": 0.0,
+        "load_in": 0.1000000014901161
+      },
+      "panel": "shorter_wait",
+      "protocol_n": 3000,
+      "run": "validate_load_out_pressure_intake",
+      "sha256": "b00e342324bb4ccd8a4ad9a5a33799157df07a41751ad4ed1881f401ae9a662a",
+      "target": "load_out",
+      "wait_ms": 8000.0
+    },
+    {
+      "arm_n": [
+        1990,
+        2010
+      ],
+      "high": 45.0,
+      "low": 0.0,
+      "n": 4000,
+      "nuisance": {
+        "load_in": 0.0099999997764825,
+        "load_out": 1.0
+      },
+      "panel": "immediate_acoustic",
+      "protocol_n": 4000,
+      "run": "validate_hatch_mic",
+      "sha256": "5e64b5e341be24464495c4a5ea3d90c4e982b16e4e56d3684720370877363fd1",
+      "target": "hatch",
+      "wait_ms": 0.0
+    },
+    {
+      "arm_n": [
+        21,
+        29
+      ],
+      "high": 45.0,
+      "low": 0.0,
+      "n": 50,
+      "nuisance": {
+        "load_in": 1.0,
+        "load_out": 0.0099999997764825
+      },
+      "panel": "immediate_acoustic",
+      "protocol_n": 50,
+      "run": "validate_hatch_pressures",
+      "sha256": "a0dcb684c23f16e9ccde530e54ff1fd80c62c619f17cf1ad6ebc37963682746a",
+      "target": "hatch",
+      "wait_ms": 0.0
+    }
+  ],
+  "fit_refits": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "formal_contrasts": [
+    "M3-fixed",
+    "M3-M1",
+    "M3-M5",
+    "M5-fixed"
+  ],
+  "formulation": "quasi-steady predictive surrogate on slowly changing command windows, not a proven instantaneous physical DAG",
+  "harm": "joint SW1 > fixed + max(0.001, 0.05*fixed); per-run descriptive, not primary effect endpoint",
+  "historical_commits": [
+    "ad21e60",
+    "8c452ac",
+    "a17a8f7"
+  ],
+  "llm_graph": {
+    "d": 11,
+    "edges": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        9,
+        7
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        10,
+        7
+      ],
+      [
+        10,
+        8
+      ],
+      [
+        10,
+        9
+      ]
+    ]
+  },
+  "llm_sha256": "b825b996f04d44de32ccdfe1b50d2fc5973dd1007f05dae2c242331f24bdb4e7",
+  "multiplicity": "Holm across four paired acquisition sign-flip tests; no general population claim",
+  "partition_hashes": {
+    "audit": "c69c09d9954ece973b7f6eefa49bfa1dc58aef7f4814396491c3c328c57ad04a",
+    "calibration": "461cdb09ae19cbf1e2f9922d213cfb8363067c61995c8daf6c90a248e78c6bfc",
+    "early": "aecd541c108dd8cda8ca0ad8d0096d3082c09a1c132d5572f96337db5f8602e7",
+    "fit": "122b924b42f277e9b69e2d4ebbaf03100d4b2a2c90e99b08ecb73f9b73a9b2a4",
+    "search": "dd28e304eb98661d63a7fc9e3d3861dc7ad55ab7365c16e7fa33ebf6105ae1c2"
+  },
+  "primary_endpoint": "mean absolute predicted randomized contrast error / fitting SD, equal outcome and actuator weighting; repeated acquisitions averaged within actuator",
+  "primary_outcomes": [
+    "current_in",
+    "current_out",
+    "pressure_upwind",
+    "pressure_downwind",
+    "pressure_intake"
+  ],
+  "roles": {
+    "audit": [
+      15
+    ],
+    "calibration": [
+      14
+    ],
+    "early": [
+      10,
+      11
+    ],
+    "fit": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "search": [
+      12,
+      13
+    ]
+  },
+  "scientific_hash": "c021f528f9c4a78d80ab29edaa37daf228a536e4ad1e0fa5c894196a76a40fb7",
+  "secondary_endpoint": "joint non-command SW1; marginal error; 90% predictive coverage; worst randomized regime",
+  "test_outcomes_opened": false,
+  "uncertainty": "2,000 paired hierarchical resamples: acquisitions within target, contiguous 10-row blocks within acquisition; conditional on one apparatus, fitted model and fixed Monte Carlo streams",
+  "version": 1
+}

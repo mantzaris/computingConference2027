@@ -1,0 +1,10 @@
+{
+  "additional_cap_seconds": 43200,
+  "cumulative_cap_seconds": 171273.95799326897,
+  "cumulative_gpu_seconds": 130932.24183249474,
+  "historical_commit": "a17a8f7",
+  "historical_gpu_seconds": 128073.95799326897,
+  "historical_ledger_sha256": "d5b2942bc51e38de032e4cc61fcc00e15deee85a00cc2ad7721c09d348cacb7f",
+  "initialized_unix": 1791514056.3075137,
+  "phase4_gpu_seconds": 2858.283839225769
+}

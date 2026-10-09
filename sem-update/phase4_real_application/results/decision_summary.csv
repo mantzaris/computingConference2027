@@ -1,0 +1,15 @@
+method,recorded_decisions,violations,decisions_with_measured_feasible_arm,valid_regret_comparisons,mean_feasible_regret_a
+M0,5,0,5,5,0.00042141919
+M1,5,0,5,5,0.00042141919
+M2,5,0,5,5,0.00042141919
+M3,5,0,5,5,0.00042141919
+M4,5,0,5,5,0.00042141919
+M5,5,0,5,5,0.00042141919
+fixed,5,0,5,5,0.00042141919
+random,5,0,5,5,0.00042141919
+semantic_M1,5,0,5,5,0.00042141919
+semantic_M3,5,0,5,5,0.00042141919
+semantic_M4,5,0,5,5,0.00042141919
+semantic_M5,5,0,5,5,0.00042141919
+semantic_fixed,5,0,5,5,0.00042141919
+semantic_random,5,0,5,5,0.00042141919

@@ -1,0 +1,41 @@
+method,outcome,unit,equal_target_mae,standardized_mae,direction_matches,contrasts_with_block_ci_excluding_zero
+M0,current_in,A,0.037048982,1.0517454,0,4
+M0,current_out,A,0.036168811,1.1524028,0,4
+M0,pressure_upwind,Pa relative to ambient,16.367477,1.3324082,0,5
+M0,pressure_downwind,Pa relative to ambient,16.166327,1.6126369,0,5
+M0,pressure_intake,Pa relative to ambient,1.8729244,0.30616365,0,5
+M1,current_in,A,0.020835528,0.59147835,4,4
+M1,current_out,A,0.021726687,0.69225095,4,4
+M1,pressure_upwind,Pa relative to ambient,11.614272,0.94546956,4,5
+M1,pressure_downwind,Pa relative to ambient,13.336608,1.3303645,4,5
+M1,pressure_intake,Pa relative to ambient,3.0955641,0.5060264,0,5
+M2,current_in,A,0.0018534321,0.052615175,4,4
+M2,current_out,A,0.0010225809,0.032581248,4,4
+M2,pressure_upwind,Pa relative to ambient,4.9707998,0.40465212,5,5
+M2,pressure_downwind,Pa relative to ambient,1.3854297,0.13820054,5,5
+M2,pressure_intake,Pa relative to ambient,2.8841087,0.47146017,2,5
+fixed,current_in,A,0.0033414547,0.094857115,4,4
+fixed,current_out,A,0.0014423876,0.045957041,4,4
+fixed,pressure_upwind,Pa relative to ambient,3.4371964,0.27980786,4,5
+fixed,pressure_downwind,Pa relative to ambient,5.3008988,0.52877968,4,5
+fixed,pressure_intake,Pa relative to ambient,5.2082672,0.85138626,0,5
+random,current_in,A,0.0034206037,0.097103994,4,4
+random,current_out,A,0.0010225809,0.032581248,4,4
+random,pressure_upwind,Pa relative to ambient,4.3000326,0.35004776,4,5
+random,pressure_downwind,Pa relative to ambient,5.7208982,0.5706758,4,5
+random,pressure_intake,Pa relative to ambient,3.7301887,0.60976738,0,5
+M3,current_in,A,0.0033836982,0.096056323,4,4
+M3,current_out,A,0.0014423876,0.045957041,4,4
+M3,pressure_upwind,Pa relative to ambient,4.2231169,0.34378637,4,5
+M3,pressure_downwind,Pa relative to ambient,5.6105812,0.55967137,4,5
+M3,pressure_intake,Pa relative to ambient,3.7301887,0.60976738,0,5
+M4,current_in,A,0.0034054456,0.096673686,4,4
+M4,current_out,A,0.0014423876,0.045957041,4,4
+M4,pressure_upwind,Pa relative to ambient,3.8940765,0.31700057,4,5
+M4,pressure_downwind,Pa relative to ambient,5.3008988,0.52877968,4,5
+M4,pressure_intake,Pa relative to ambient,5.2082672,0.85138626,0,5
+M5,current_in,A,0.0033380011,0.094759075,4,4
+M5,current_out,A,0.0014423877,0.045957044,4,4
+M5,pressure_upwind,Pa relative to ambient,3.4569863,0.28141887,4,5
+M5,pressure_downwind,Pa relative to ambient,5.265782,0.52527667,4,5
+M5,pressure_intake,Pa relative to ambient,4.9279712,0.80556677,0,5

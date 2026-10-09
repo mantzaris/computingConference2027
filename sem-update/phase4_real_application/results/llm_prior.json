@@ -1,0 +1,325 @@
+{
+  "actual_local_generation": true,
+  "fallback": null,
+  "graph": {
+    "d": 11,
+    "edges": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        9,
+        7
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        10,
+        7
+      ],
+      [
+        10,
+        8
+      ],
+      [
+        10,
+        9
+      ]
+    ]
+  },
+  "held_out_measurements_supplied": false,
+  "model_load_seconds": 9.227733997628093,
+  "possible_pretraining_knowledge": true,
+  "records": [
+    {
+      "attempt": 0,
+      "category": "invalid_nodes",
+      "error": "nodes must match the exact ordered ID list",
+      "proposal": null,
+      "raw_sha256": "80f17255ac6fada263b86579f47d29227d52147deb10e022dd7130623b361adc",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 514,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 748,
+        "peak_vram_bytes": 16624408576,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 31.538936123251915,
+        "seed": 44201
+      }
+    },
+    {
+      "attempt": 1,
+      "category": "invalid_nodes",
+      "error": "nodes must match the exact ordered ID list",
+      "proposal": null,
+      "raw_sha256": "43901afcfd4d7bfdc04f25ef63340650c4aa10ef728e5841f429edd7cbef79d9",
+      "stats": {
+        "device": "cuda",
+        "input_tokens": 537,
+        "license": "apache-2.0",
+        "model": "Qwen/Qwen3-8B",
+        "output_tokens": 670,
+        "peak_vram_bytes": 16611502080,
+        "precision": "bfloat16",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "seconds": 28.359501535072923,
+        "seed": 44202
+      }
+    }
+  ],
+  "recovered_proposals": [
+    {
+      "attempt": 0,
+      "edge_payload_sha256": "52ef02998c4f98264816e481b1b1064bb759561c7f86aad8ece7745e0c248126",
+      "graph": {
+        "d": 11,
+        "edges": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            10,
+            9
+          ]
+        ]
+      },
+      "rationales": [
+        {
+          "rationale": "PWM duty command influences inlet fan speed",
+          "source": "V0",
+          "target": "V3"
+        },
+        {
+          "rationale": "PWM duty command influences inlet fan current draw",
+          "source": "V0",
+          "target": "V5"
+        },
+        {
+          "rationale": "PWM duty command influences outlet fan speed",
+          "source": "V1",
+          "target": "V4"
+        },
+        {
+          "rationale": "PWM duty command influences outlet fan current draw",
+          "source": "V1",
+          "target": "V6"
+        },
+        {
+          "rationale": "Hatch opening affects intake pressure differential",
+          "source": "V2",
+          "target": "V9"
+        },
+        {
+          "rationale": "Inlet fan speed affects intake pressure",
+          "source": "V3",
+          "target": "V9"
+        },
+        {
+          "rationale": "Outlet fan speed affects downwind pressure",
+          "source": "V4",
+          "target": "V8"
+        },
+        {
+          "rationale": "Intake pressure differential affects upwind pressure",
+          "source": "V9",
+          "target": "V7"
+        },
+        {
+          "rationale": "Intake pressure differential affects downwind pressure",
+          "source": "V9",
+          "target": "V8"
+        },
+        {
+          "rationale": "Ambient pressure affects upwind pressure reading",
+          "source": "V10",
+          "target": "V7"
+        },
+        {
+          "rationale": "Ambient pressure affects downwind pressure reading",
+          "source": "V10",
+          "target": "V8"
+        },
+        {
+          "rationale": "Ambient pressure affects intake pressure reading",
+          "source": "V10",
+          "target": "V9"
+        }
+      ]
+    },
+    {
+      "attempt": 1,
+      "edge_payload_sha256": "3c8f9738363d9afe2146225c19aa4eb5ba1acb81f9f8dc889bc1f6a48514e462",
+      "graph": {
+        "d": 11,
+        "edges": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            9,
+            8
+          ]
+        ]
+      },
+      "rationales": [
+        {
+          "rationale": "PWM command influences motor speed, hence inlet RPM.",
+          "source": "V0",
+          "target": "V3"
+        },
+        {
+          "rationale": "PWM command affects motor current draw.",
+          "source": "V0",
+          "target": "V5"
+        },
+        {
+          "rationale": "PWM command influences motor speed, hence outlet RPM.",
+          "source": "V1",
+          "target": "V4"
+        },
+        {
+          "rationale": "PWM command affects motor current draw.",
+          "source": "V1",
+          "target": "V6"
+        },
+        {
+          "rationale": "Hatch position affects intake pressure differential.",
+          "source": "V2",
+          "target": "V9"
+        },
+        {
+          "rationale": "Inlet fan speed affects intake pressure differential.",
+          "source": "V3",
+          "target": "V9"
+        },
+        {
+          "rationale": "Outlet fan speed affects downwind pressure differential.",
+          "source": "V4",
+          "target": "V8"
+        },
+        {
+          "rationale": "Intake pressure differential influences upwind pressure.",
+          "source": "V9",
+          "target": "V7"
+        },
+        {
+          "rationale": "Intake pressure differential influences downwind pressure.",
+          "source": "V9",
+          "target": "V8"
+        }
+      ]
+    }
+  ],
+  "reference_adjacency_supplied": false,
+  "revision": {
+    "device": "cuda",
+    "license": "apache-2.0",
+    "model": "Qwen/Qwen3-8B",
+    "precision": "bfloat16",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "seconds": 69.14877635985613,
+  "selection_rule": "first valid original generation, before outcome access",
+  "serialization_recovery": "extract exact ordered IDs from returned node metadata objects; no edge changes; no new generations",
+  "strict_parser_original_sha256": "c0eef5b298fa9cd73385da0dab4868610c164397e86beccf74a9aa8cfd6283a1"
+}

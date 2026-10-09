@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/juangamella/causal-chamber",
+  "revision": "0c8a77ea14bd4437b1fdd79adc1aa91ac2342569",
+  "acquisition_manifest_sha256": "7a3ee77e11534f1c3dcbe0f99afe8d14134e0562ce3d9fd80e88fed3bea0cffa",
+  "datasets": {
+    "wt_validate_v1": {
+      "url": "https://causalchamber.s3.eu-central-1.amazonaws.com/downloadables/wt_validate_v1.zip",
+      "md5": "bde214eb50abc801307bf7d4aadcafc9",
+      "sha256": "7dcb885b1bf69ae0a15a3652fec9707234d5b06a57a37d924a3c9839bb745c72",
+      "bytes": 890221
+    },
+    "wt_walks_v1": {
+      "url": "https://causalchamber.s3.eu-central-1.amazonaws.com/downloadables/wt_walks_v1.zip",
+      "md5": "19bb4e92cbe0b8dff49299b9b509ac36",
+      "sha256": "1ef92d39fff7645a9e6e8cd41311e708362606491590a1534c6a5135d207736e",
+      "bytes": 46471335
+    }
+  },
+  "full_metadata_artifact": "dataset_audit_full.json",
+  "full_metadata_sha256": "3394e7494197f84bd2756040293e876f6822036d883fbe3830d99d0ffcd8129b",
+  "licenses": {
+    "measurements": "CC BY 4.0",
+    "protocol_software": "MIT"
+  }
+}

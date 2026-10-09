@@ -1,0 +1,17 @@
+source,target,status,selection_frequency,evidence
+load_in,rpm_in,retained,1,predictive model edge; randomized total effects do not establish directness
+load_in,current_in,retained,0.6,predictive model edge; randomized total effects do not establish directness
+load_in,current_out,retained,0.8,predictive model edge; randomized total effects do not establish directness
+load_in,pressure_upwind,retained,1,predictive model edge; randomized total effects do not establish directness
+load_out,rpm_out,retained,1,predictive model edge; randomized total effects do not establish directness
+load_out,current_out,retained,1,predictive model edge; randomized total effects do not establish directness
+load_out,pressure_intake,retained,0.8,predictive model edge; randomized total effects do not establish directness
+rpm_in,rpm_out,retained,0.8,predictive model edge; randomized total effects do not establish directness
+rpm_in,pressure_downwind,retained,0.2,predictive model edge; randomized total effects do not establish directness
+rpm_out,pressure_upwind,added,0,predictive model edge; randomized total effects do not establish directness
+current_out,rpm_in,retained,0.8,predictive model edge; randomized total effects do not establish directness
+current_out,pressure_downwind,retained,0.2,predictive model edge; randomized total effects do not establish directness
+pressure_upwind,current_in,retained,1,predictive model edge; randomized total effects do not establish directness
+pressure_downwind,pressure_upwind,retained,0.2,predictive model edge; randomized total effects do not establish directness
+pressure_downwind,pressure_intake,removed,0.4,predictive model edge; randomized total effects do not establish directness
+pressure_intake,pressure_downwind,added,0,predictive model edge; randomized total effects do not establish directness

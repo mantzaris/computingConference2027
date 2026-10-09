@@ -1,0 +1,7 @@
+axis,limit,paired_coverage,diagnostic_error,random_error,diagnostic_updates,random_updates,diagnostic_charged_seconds,random_charged_seconds
+fitting_updates,12000,True,0.3310477,0.33203524,11900,11450,157.47828,138.01357
+fitting_updates,24000,True,0.3310477,0.33203524,17900,17650,296.84062,276.74351
+fitting_updates,36000,True,0.3310477,0.33203524,17900,17650,296.84062,276.74351
+gpu_job_seconds,120,True,0.31655171,0.3310477,9600,10200,106.01092,118.7285
+gpu_job_seconds,300,True,0.3310477,0.33203524,17900,17650,296.84062,276.74351
+gpu_job_seconds,600,True,0.3310477,0.33203524,17900,17650,296.84062,276.74351

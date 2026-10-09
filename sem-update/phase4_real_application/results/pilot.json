@@ -1,0 +1,108 @@
+{
+  "decision_pressure_threshold_pa": 6.1875,
+  "development_acquisition": 16,
+  "eligible_rows": 194,
+  "estimated_full_study_seconds": 8684.37642045319,
+  "fitting_updates": 3550,
+  "flow_fit_seconds": 22.421882102265954,
+  "generation_and_score_seconds": 0.2781246639788151,
+  "graph": {
+    "d": 11,
+    "edges": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        9,
+        7
+      ]
+    ]
+  },
+  "peak_vram_bytes": 73099264,
+  "ridge_grid": [
+    {
+      "alpha": 0.001,
+      "early_conditional_nll": 1.6651215553283691
+    },
+    {
+      "alpha": 0.01,
+      "early_conditional_nll": 1.6645543575286865
+    },
+    {
+      "alpha": 0.1,
+      "early_conditional_nll": 1.6199450492858887
+    },
+    {
+      "alpha": 1.0,
+      "early_conditional_nll": 1.3381397724151611
+    }
+  ],
+  "search_score": {
+    "edge_penalty": 0.023636363636363636,
+    "environment_names": [
+      "search_r16_s0_b5",
+      "search_r16_s0_b6",
+      "search_r16_s0_b7"
+    ],
+    "environment_scores": [
+      1.7606673168052327,
+      1.416925184618343,
+      1.1629629360545766
+    ],
+    "environment_sw1": [
+      0.8126899600028992,
+      0.46062806248664856,
+      0.38748621940612793
+    ],
+    "nll": 0.8696140348911285,
+    "shared_observational_term": 0.0,
+    "sw1": 0.5536014139652252,
+    "total": 1.4468518124927174
+  },
+  "selected_alpha": 1.0
+}

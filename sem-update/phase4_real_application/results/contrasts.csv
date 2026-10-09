@@ -1,0 +1,5 @@
+contrast,mean_run_difference,p_raw,units,p_holm
+M3-fixed,-0.02910989537,0.5,five acquisition files on one apparatus,1
+M3-M1,-0.4820702464,0.125,five acquisition files on one apparatus,0.5
+M3-M5,-0.0195479895,0.75,five acquisition files on one apparatus,1
+M5-fixed,-0.009561905872,0.125,five acquisition files on one apparatus,0.5

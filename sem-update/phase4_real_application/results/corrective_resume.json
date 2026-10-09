@@ -1,0 +1,8 @@
+{
+  "predictions_identical": true,
+  "prediction_files": 32,
+  "tables_identical": true,
+  "csv_tables": 10,
+  "change": "standard-library json dependency for final logging only",
+  "additional_model_fits": 0
+}

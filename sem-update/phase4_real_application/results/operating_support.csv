@@ -1,0 +1,11 @@
+run,arm,fit_rows_near_joint_commands,fitting_rows,fan_tolerance,hatch_tolerance_degrees,scope
+validate_load_in,0,1,1786,0.1,5,descriptive support check; not a new eligibility or selection rule
+validate_load_in,1,7,1786,0.1,5,descriptive support check; not a new eligibility or selection rule
+validate_load_in_mic,0,1,1786,0.1,5,descriptive support check; not a new eligibility or selection rule
+validate_load_in_mic,1,7,1786,0.1,5,descriptive support check; not a new eligibility or selection rule
+validate_load_out,0,1,1786,0.1,5,descriptive support check; not a new eligibility or selection rule
+validate_load_out,1,3,1786,0.1,5,descriptive support check; not a new eligibility or selection rule
+validate_load_out_mic,0,1,1786,0.1,5,descriptive support check; not a new eligibility or selection rule
+validate_load_out_mic,1,3,1786,0.1,5,descriptive support check; not a new eligibility or selection rule
+validate_hatch_rpms,0,7,1786,0.1,5,descriptive support check; not a new eligibility or selection rule
+validate_hatch_rpms,1,2,1786,0.1,5,descriptive support check; not a new eligibility or selection rule
