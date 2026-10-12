@@ -108,3 +108,39 @@ def test_a_number_elsewhere_in_trace_does_not_validate_false_factual_claim():
             'query':{'target':'V07'},'outcome_label':'Station V07'}
     result=deterministic_check([{'id':'S01','text':'The factual outcome is 0 after V99 acts.'}],record)
     assert {e['type'] for e in result['errors']}=={'unknown_variable','outcome_value_mismatch'}
+
+
+def test_generated_categorical_table_compilation_and_review_encoding_are_lossless():
+    from got_war.v2.application import reduced_expression,behavior_view
+    from got_war.v2.mechanisms import table_expression
+    from got_war.structural_programs import evaluate
+    domains=[['low','middle','high'],[0,1]];outputs=[0,1,0,0,1,1]
+    expression=reduced_expression(table_expression(['A','B'],domains,outputs))
+    assert [evaluate(expression,dict(zip(['A','B'],x)),{}) for x in itertools.product(*domains)]==outputs
+    model=toy();model['nodes'][0].update(type='category',values=domains[0],observed='high',reference='low')
+    model['background']['UA']={'type':'category','values':domains[0],'observed':'high'}
+    model['nodes'][-1]['expr']=expression
+    behavior=inspect_mechanism(SCM(model),'W');encoded=behavior_view(behavior)['behavior_table']
+    decoded=[{'inputs':{n:d[c] for n,d,c in zip(encoded['input_order'],encoded['input_domains'],row)},
+              'output':encoded['output_domain'][code]} for row,code in zip(encoded['input_rows'],encoded['output_codes'])]
+    assert decoded==behavior['rows']
+
+
+def test_a_dependency_retraction_cannot_hide_active_behavior():
+    import pytest
+    from got_war.v2.application import certify_retractions
+    rows=list(itertools.product([0,1],repeat=2));outputs=[0,1,0,1]
+    certify_retractions(['A','B'],rows,outputs,['A'])
+    with pytest.raises(ValueError,match='still changes'):
+        certify_retractions(['A','B'],rows,outputs,['B'])
+def test_literal_operand_normalization_does_not_infer_category_predicates():
+    from got_war.v2.application import literal_operands
+    from got_war.structural_programs import evaluate
+    expression={'op':'eq','args':[{'ref':'C'},'enabled']}
+    normalized=literal_operands(expression,{'enabled','disabled'})
+    assert evaluate(normalized,{'C':'enabled'}, {})==1
+    assert evaluate(normalized,{'C':'disabled'}, {})==0
+    assert expression['args'][1]=='enabled'
+    assert literal_operands({'op':'and','args':[{'ref':'C'},1]}, {'enabled','disabled'})['args'][0]=={'ref':'C'}
+    assert literal_operands('undeclared category',{'enabled','disabled'})=='undeclared category'
+

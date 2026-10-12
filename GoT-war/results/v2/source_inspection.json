@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "inspected_at": "2026-10-12T18:50:28.986760+00:00",
+  "packet_sha256": "da69b334d189edacd919dc65e3db882606f3420046a61f2285eda3da0f7f108f",
+  "review_type": "Targeted AI-assistant inspection of retained passages, not independent human adjudication and not a sampled error-rate estimate.",
+  "model_policy": "No variable, dependency, equation, or evidence score is silently replaced by this inspection. Flags remain visible for researcher adjudication.",
+  "items": [
+    {
+      "id": "I01",
+      "node": "X01",
+      "claim": "Ned explicitly declines the Hand position, citing loyalty to the North.",
+      "source_ids": [
+        "screen_s01e01_s11_0",
+        "screen_s01e01_s15_0"
+      ],
+      "observation": "The first passage records a modest or reluctant response to the offer. The larger second passage records reluctance about going south, the arrival of the letter, and later dialogue explicitly acknowledging acceptance. The automatic event review treated the initial response as an explicit decline without discussing the later acceptance.",
+      "unresolved_question": "Does the operational variable denote transient reluctance, an explicit refusal event, or a final decision? Which of these is entailed at the modeled time, and is a downstream causal interpretation justified?",
+      "judgment": "Operational ambiguity and possible overstatement; researcher adjudication pending.",
+      "source_urls": [
+        "https://screenscripts.com/game-of-thrones/s01e01_winter_is_coming/#S11L1",
+        "https://screenscripts.com/game-of-thrones/s01e01_winter_is_coming/#S15L1"
+      ]
+    },
+    {
+      "id": "I02",
+      "node": "X02",
+      "claim": "The letter variable has states received and burned, with burned factual and received reference.",
+      "source_ids": [
+        "screen_s01e01_s15_0"
+      ],
+      "observation": "The supplied passage shows receipt, reading, burning, and a report of the letter content. The reference state received does not by itself specify whether the content was read or communicated. The generated reference explanation describes suspicion generally rather than defining the received-but-not-burned contrast.",
+      "unresolved_question": "What precisely remains fixed about receipt, knowledge and communication when this categorical variable is set to its reference? Does a mechanism description mistake that reference for absence of the letter?",
+      "judgment": "Reference and information-state ambiguity; researcher adjudication pending.",
+      "source_urls": [
+        "https://screenscripts.com/game-of-thrones/s01e01_winter_is_coming/#S15L1"
+      ]
+    }
+  ],
+  "construction_variant": "fresh",
+  "scope_note": "IDs refer only to the failed fresh construction, not the separately reinitialized conditional proposal."
+}

@@ -9,14 +9,21 @@ import random
 import time
 import networkx as nx
 from ..budget import atomic_json
-from ..structural_programs import SCM, InvalidModel, check_spec, valid_value
+from ..structural_programs import SCM, InvalidModel, check_spec, valid_value, domain
 from ..attribution import select_paths, evidence_priority
 from .runtime import paths, V2Generator
-from .mechanisms import fingerprint, inspect_mechanism, outcome_sets
+from .mechanisms import fingerprint, inspect_mechanism, outcome_sets, table_expression
 from .paths import edge_support, game_report, explain_query
 from .explanations import generate as explain, reviewer_controls
 
 PROTOCOL='v2-context-direction-function-1'
+
+
+class RepresentationIssue(ValueError):
+    def __init__(self,node,review):
+        self.node=node
+        self.review=review
+        super().__init__('No source-compatible local alternative retained for '+node+'. Contextual reviewer findings (fallible; recheck against passages): '+json.dumps(review))
 
 
 def node_view(node):
@@ -28,10 +35,69 @@ def node_view(node):
 
 
 def behavior_view(report):
-    keys=('equation','coverage','rows','necessary_for_one','sufficient_for_one','joint_enabling','substitution')
+    keys=('coverage','necessary_for_one','sufficient_for_one','joint_enabling','substitution')
     result={k:report[k] for k in keys}
+    rows=report['rows'];names=list(rows[0]['inputs']) if rows else []
+    domains=[list(dict.fromkeys(r['inputs'][n] for r in rows)) for n in names]
+    outputs=list(dict.fromkeys(r['output'] for r in rows))
+    result['behavior_table']={'input_order':names,'input_domains':domains,'output_domain':outputs,
+        'input_rows':[[d.index(r['inputs'][n]) for n,d in zip(names,domains)] for r in rows],
+        'output_codes':[outputs.index(r['output']) for r in rows],
+        'encoding':'Codes are zero-based indices into each supplied domain; this is lossless table serialization, not numeric causal influence.'}
+    result['equation']=report['equation'] if len(report['equation'])<900 else 'Expression retained in the model artifact; the supplied table reports its evaluated behavior with the stated coverage.'
     result['parent_polarities']={r['parent']:r['polarity'] for r in report['parent_changes']}
     return result
+
+
+def reduced_expression(expr):
+    """Lossless removal of identical branches in a generated finite table."""
+    if 'op' not in expr:return expr
+    args=[reduced_expression(a) for a in expr['args']]
+    if expr['op']=='if' and args[1]==args[2]:return args[1]
+    return dict(expr,args=args)
+
+
+def certify_retractions(parents,rows,outputs,retracted):
+    """Retraction is permitted only if the generated complete table is invariant."""
+    for parent in retracted:
+        j=parents.index(parent);groups={}
+        for row,value in zip(rows,outputs):
+            key=tuple(row[:j])+tuple(row[j+1:])
+            if key in groups and groups[key]!=value:raise ValueError('Retracted input '+parent+' still changes the proposed function')
+            groups[key]=value
+
+
+def inactive_inputs(parents,rows,outputs):
+    inactive=[]
+    for parent in parents:
+        try:certify_retractions(parents,rows,outputs,[parent]);inactive.append(parent)
+        except ValueError:pass
+    return inactive
+
+
+def literal_operands(expr, category_values):
+    """Normalize generated JSON operand literals; never infer a predicate/value."""
+    if type(expr) in (int,float,bool) or isinstance(expr,str) and expr in category_values:
+        return {'const':expr}
+    if isinstance(expr,dict) and 'op' in expr and isinstance(expr.get('args'),list):
+        return dict(expr,args=[literal_operands(a,category_values) for a in expr['args']])
+    return expr
+
+
+def variable_json_schema(ident,ids):
+    properties={k:{'type':'string','maxLength':350 if k=='definition' else 200} for k in ('id','label','definition','actor','reference_meaning','event_time','statement_time')}
+    properties['id']={'const':ident}
+    properties.update(type={'enum':['bool','category','int','float']},
+        values={'type':'array','items':{'type':'string'},'maxItems':12},bounds={'type':'array','items':{'type':'number'},'minItems':2,'maxItems':2},
+        observed={},reference={},proposition_kind={'enum':['narrative_fact','reported_claim','character_belief']},
+        segments={'type':'array','items':{'type':'string','enum':ids},'minItems':1,'maxItems':8})
+    variants=[]
+    for dtype,state in [('bool',{'type':'integer','enum':[0,1]}),('category',{'type':'string'}),('int',{'type':'integer'}),('float',{'type':'number'})]:
+        spec={'type':'object','properties':dict(properties,type={'const':dtype},observed=state,reference=state),
+            'required':['id','label','definition','actor','type','observed','reference','reference_meaning','event_time','statement_time','proposition_kind','segments']+(['values'] if dtype=='category' else ['bounds'] if dtype in ('int','float') else []),'additionalProperties':False}
+        variants.append(spec)
+    variable_schema={'type':'object','properties':{'node':{'anyOf':variants}},'required':['node'],'additionalProperties':False}
+    return variable_schema
 
 
 class Construction:
@@ -42,6 +108,7 @@ class Construction:
         self.segments={s['id']:s for s in self.packet['segments']}
         self.case=next(c for c in json.loads((self.root/'configs/application_v2.json').read_text())['cases'] if c['id']==case_id)
         self.folder=self.run/'application'/case_id;self.folder.mkdir(parents=True,exist_ok=True)
+        self.semantic_compile_fallback=False
 
     def artifact(self, name, prompt, validator=lambda x:x, tokens=2048, schema=None):
         specification={'protocol':PROTOCOL,'prompt':prompt,'tokens':tokens}
@@ -61,6 +128,7 @@ class Construction:
                 failure={'attempt':attempt,'response':response,'error':type(error).__name__+': '+str(error)}
                 failures.append(failure);atomic_json(self.folder/(name+'_'+contract[:12]+'_failed_'+str(attempt)+'.json'),failure)
                 prompt=base+'\nVALIDATION DIAGNOSTIC: '+str(error)+'\nCorrect only using the supplied evidence and schema. Do not invent a causal connection or residual to satisfy validation.'
+        self.last_failed_artifact=failures[-1]
         raise RuntimeError(name+' exhausted two targeted repairs: '+failures[-1]['error'])
 
     def context(self, ids=(), query='', limit=14500):
@@ -185,18 +253,7 @@ class Construction:
                 node['time']=int(match[1])*100+int(match[2]) if match else None
                 if node['time'] and node['time']>self.case['endpoint_code']:raise ValueError('A later event cannot cause this outcome')
                 node['source_facts']=concept['source_facts'];return node
-            properties={k:{'type':'string','maxLength':350 if k=='definition' else 200} for k in ('id','label','definition','actor','reference_meaning','event_time','statement_time')}
-            properties['id']={'const':concept['id']}
-            properties.update(type={'enum':['bool','category','int','float']},
-                values={'type':'array','items':{'type':'string'},'maxItems':12},bounds={'type':'array','items':{'type':'number'},'minItems':2,'maxItems':2},
-                observed={},reference={},proposition_kind={'enum':['narrative_fact','reported_claim','character_belief']},
-                segments={'type':'array','items':{'type':'string','enum':ids},'minItems':1,'maxItems':8})
-            variants=[]
-            for dtype,state in [('bool',{'type':'integer','enum':[0,1]}),('category',{'type':'string'}),('int',{'type':'integer'}),('float',{'type':'number'})]:
-                spec={'type':'object','properties':dict(properties,type={'const':dtype},observed=state,reference=state),
-                    'required':['id','label','definition','actor','type','observed','reference','reference_meaning','event_time','statement_time','proposition_kind','segments']+(['values'] if dtype=='category' else ['bounds'] if dtype in ('int','float') else []),'additionalProperties':False}
-                variants.append(spec)
-            variable_schema={'type':'object','properties':{'node':{'anyOf':variants}},'required':['node'],'additionalProperties':False}
+            variable_schema=variable_json_schema(concept['id'],ids)
             nodes.append(self.artifact('variable_'+concept['id'],prompt,check_node,1536,schema=variable_schema))
             atomic_json(self.folder/'variables_checkpoint.json',{'outcome':plan['outcome'],'nodes':nodes,'assumptions':plan.get('assumptions',[])})
         response={'outcome':plan['outcome'],'nodes':nodes,'assumptions':plan.get('assumptions',[])}
@@ -206,10 +263,11 @@ class Construction:
         nodes=copy.deepcopy(blueprint['nodes']);audits=[]
         for node in nodes:
             context,ids=self.context(node['segments'],node['definition'])
+            audit_input={k:v for k,v in node_view(node).items() if k not in ('event_status','function_identification','assumptions','expr','noise','parents','mechanism_hint')}
             prompt=('Assess this operational variable against the full passage context supplied. Separately check actor/action, factual state, reference semantics, event time, statement time and whether a reported claim/belief has been mistaken for narrative truth. '
                 'Return {"event_supported":true,"factual_state_supported":true,"status_matches_definition":true,"reference_meaning_clear":true,'
                 '"event_time":"consistent|unresolved|contradicted","information_time":"consistent|unresolved|contradicted","contradictions":[],"questions":[],"reason":"brief"}. '
-                'Be strict. A citation match is not entailment; unsupported stays unsupported. No independent human review is implied.\nVARIABLE:\n'+json.dumps(node)+'\nPASSAGES:\n'+context)
+                'Be strict. A citation match is not entailment; unsupported stays unsupported. No independent human review is implied.\nVARIABLE:\n'+json.dumps(audit_input)+'\nPASSAGES:\n'+context)
             audit=self.artifact('eventaudit_'+node['id'],prompt,tokens=1536)
             passed=all(audit.get(k) is True for k in ('event_supported','factual_state_supported','status_matches_definition')) and not audit.get('contradictions')
             status={'narrative_fact':'established','reported_claim':'reported_claim','character_belief':'character_belief'}.get(node.get('proposition_kind'),'unassessed')
@@ -376,32 +434,147 @@ class Construction:
                 'Each added background specification needs type/domain, observed, definition, source_segments and substantive_justification. '
                 'Do not claim an AND rule makes either input sufficient. If the story proceeded despite an event, do not silently make that event necessary. '
                 'You may explicitly flag an inadequate representation instead of inventing a rule.\nTARGET:\n'+json.dumps(node_view(node))+
-                '\nPARENTS:\n'+json.dumps([node_view(p) for p in parents])+'\nPASSAGES:\n'+context)
+                '\nPARENTS:\n'+json.dumps([node_view(p) for p in parents])+'\nPASSAGES:\n'+context+
+                '\nTYPED INTERFACE REMINDER: Target domain '+json.dumps({k:node[k] for k in ('type','values','bounds') if k in node})+
+                '; factual parent row '+json.dumps({p['id']:p['observed'] for p in parents})+' must produce '+json.dumps(node['observed'])+'. '+
+                'Parents are already declared: use ref leaves for them and DO NOT repeat their definitions inside background. '+
+                'Use background={} unless introducing a separately justified NEW external input, referenced by a noise leaf. '+
+                'No existing variable ID can be a background key. A category output must be an allowed category string, not a Boolean activity value. '+
+                'The output contains an executable expr, not a narrative description in its place.')
             def validate(response):
                 variants=response.get('variants',[]);accepted=[];rejections=[]
+                retracted=response.get('retracted_parents',[])
+                active_parents=[p for p in parents if p['id'] not in retracted]
                 for index,variant in enumerate(variants[:3]):
                     try:
                         bg=copy.deepcopy(variant.get('background',{}));local_nodes=[]
-                        for p in parents:
+                        collision=set(bg)&set(mapping)
+                        if collision:
+                            raise ValueError('Background repeats existing variable IDs '+json.dumps(sorted(collision))+
+                                '. These are declared parents, not extra background inputs: use ref leaves and remove their redundant background entries. '+
+                                'Target output domain: '+json.dumps({k:node[k] for k in ('type','values','bounds') if k in node}))
+                        for p in active_parents:
                             uid='CONTEXT_'+p['id'];bg[uid]={k:p[k] for k in ('type','values','bounds','observed') if k in p}
                             local_nodes.append(dict(p,parents=[],noise=[uid],expr={'noise':uid}))
-                        if not parents:
-                            uid='U_'+node['id'];bg[uid]={k:node[k] for k in ('type','values','bounds','observed') if k in node}
-                            noise=[uid]
-                        else:
-                            noise=[key for key in variant.get('background',{})]
-                            for key in noise:
-                                spec=bg[key]
-                                if not all(spec.get(k) for k in ('definition','source_segments','substantive_justification')) or set(spec['source_segments'])-set(self.segments):raise ValueError('Unjustified nonroot background '+key)
-                        target=dict(node,expr=variant['expr'],noise=noise);local_nodes.append(target)
+                        noise=[key for key in variant.get('background',{})]
+                        for key in noise:
+                            spec=bg[key]
+                            if not all(spec.get(k) for k in ('definition','source_segments','substantive_justification')) or set(spec['source_segments'])-set(self.segments):raise ValueError('Unjustified nonroot background '+key)
+                        target=dict(node,parents=[p['id'] for p in active_parents],expr=variant['expr'],noise=noise);local_nodes.append(target)
                         local=SCM({'nodes':local_nodes,'background':bg,'outcome':node['id']})
                         behavior=inspect_mechanism(local,node['id'])
                         if behavior['signature'] not in {a['behavior']['signature'] for a in accepted}:
                             accepted.append(dict(variant,noise=noise,behavior=behavior,original_index=index))
                     except Exception as error:rejections.append({'index':index,'error':str(error),'variant':variant})
                 if not accepted:raise ValueError('No admissible local function: '+json.dumps(rejections)[:1400]+'; representation questions: '+str(response.get('representation_questions')))
-                return {'variants':accepted,'rejections':rejections,'representation_questions':response.get('representation_questions',[])}
-            accepted=self.artifact('mechanism_'+node['id'],prompt,validate,3072)
+                return {'variants':accepted,'rejections':rejections,'representation_questions':response.get('representation_questions',[]),
+                    'retracted_parents':retracted,'retraction_reason':response.get('retraction_reason',''),
+                    'retraction_sources':response.get('retraction_sources',[])}
+            parent_domains=[domain(p) for p in parents]
+            row_count=__import__('math').prod(map(len,parent_domains))
+            finite=all(p['type'] in ('bool','category') for p in parents) and node['type'] in ('bool','category')
+            if finite and row_count<=64:
+                # The LLM chooses every output. Numeric codes are a lossless
+                # serialization of declared categories, never causal weights.
+                output_domain=domain(node)
+                coded_rows=list(itertools.product(*(range(len(d)) for d in parent_domains)))
+                factual_code=tuple(d.index(p['observed']) for p,d in zip(parents,parent_domains))
+                table_context,table_sources=self.context(node['segments']+[s for p in parents for s in p['segments']],node['definition'],10500)
+                table_prompt=('Synthesize one to THREE defensible finite structural functions from the contextual evidence. '
+                    'You choose the complete output of every supplied input row; software only converts your choices into a typed expression. '
+                    'Return {"variants":[{"output_codes":[integers in row order],"description":"precise proposed behavior",'
+                    '"short_mechanism":"at most eight words","assumptions":[],"function_identification":"identified|partially_constrained|unidentified"}],"requires_background":false,'
+                    '"retracted_parents":[],"retraction_reason":"","retraction_sources":[],"representation_questions":[]}. '
+                    'Codes index each declared domain below; they are category labels, not quantities or causal strengths. '
+                    'Return exactly one output code per row. Each RETAINED parent must change the child in some valid context. '
+                    'The graph parents are provisional hypotheses. If the generated behavior and source context show an input is irrelevant over its declared domain, you may explicitly retract that parent with a contextual reason and actual supplied source IDs. '
+                    'Software never chooses which parent to retract. A retracted parent must leave the entire generated output table invariant; all variants share the same retractions. '
+                    'If every parent is retracted, this variable remains a fixed observed scope boundary whose upstream causes are unexplained, not a newly invented residual. Retracting every outcome parent does not produce an explanatory outcome model. '
+                    'The recorded factual row is a constraint, not identification of unobserved rows. Alternative functions must differ in behavior and remain defensible; repeated or single alternatives are allowed. '
+                    'Unknown functional form remains an assumption. Do not manufacture unequal attribution or diversity. '
+                    'This finite candidate family uses the declared parents only, with no new residual. If a source-defined substantive background is necessary, set requires_background=true and explain it in representation_questions; variants may then be empty and a separate typed-expression stage will consider that request. Do not introduce an unrestricted factual patch. '
+                    'An AND-like function makes its enabling inputs necessary; a claim that the child occurred despite an input cannot justify making that input necessary. '
+                    'No variables, directions or additional facts may be supplied from model memory.\nTARGET:\n'+json.dumps(node_view(node))+
+                    '\nPARENTS:\n'+json.dumps([node_view(p) for p in parents])+'\nPASSAGES:\n'+table_context+
+                    '\nINPUT ORDER: '+json.dumps(node['parents'])+'\nINPUT DOMAINS (codes are list indices): '+json.dumps(parent_domains)+
+                    '\nOUTPUT DOMAIN (codes are list indices): '+json.dumps(output_domain)+
+                    '\nINPUT ROWS (codes in input order): '+json.dumps(coded_rows)+
+                    '\nFACTUAL CONSTRAINT: row '+str(coded_rows.index(factual_code))+' (zero-based) must output code '+str(output_domain.index(node['observed']))+'.')
+                variant_schema={'type':'object','properties':{'output_codes':{'type':'array','items':{'enum':list(range(len(output_domain)))},'minItems':row_count,'maxItems':row_count},
+                    'description':{'type':'string','maxLength':500},'short_mechanism':{'type':'string','maxLength':90},
+                    'assumptions':{'type':'array','items':{'type':'string','maxLength':350},'maxItems':5},
+                    'function_identification':{'enum':['identified','partially_constrained','unidentified']}},
+                    'required':['output_codes','description','short_mechanism','assumptions','function_identification'],'additionalProperties':False}
+                table_schema={'type':'object','properties':{'variants':{'type':'array','items':variant_schema,'minItems':0,'maxItems':3},'requires_background':{'type':'boolean'},
+                    'retracted_parents':{'type':'array','items':{'enum':node['parents']},'maxItems':len(parents)},
+                    'retraction_reason':{'type':'string','maxLength':600},'retraction_sources':{'type':'array','items':{'enum':table_sources},'maxItems':5},
+                    'representation_questions':{'type':'array','items':{'type':'string','maxLength':350},'maxItems':5}},
+                    'required':['variants','requires_background','retracted_parents','retraction_reason','retraction_sources','representation_questions'],'additionalProperties':False}
+                def check_tables(response):
+                    retracted=response.get('retracted_parents',[])
+                    if len(set(retracted))!=len(retracted) or set(retracted)-set(node['parents']):raise ValueError('Retractions must name distinct proposed parents')
+                    if retracted and (not response.get('retraction_reason') or not response.get('retraction_sources') or set(response['retraction_sources'])-set(table_sources)):
+                        raise ValueError('A dependency retraction requires an explicit reason and actual supplied passage references')
+                    if response.get('requires_background') is True:
+                        if retracted:raise ValueError('Background requests and parent retractions need separate proposals in this bounded interface')
+                        if not response.get('representation_questions'):raise ValueError('A substantive background request needs its source-grounded justification')
+                        return {'defer_to_ast':True,'representation_questions':response['representation_questions']}
+                    compiled=copy.deepcopy(response)
+                    for v in compiled['variants']:
+                        codes=v['output_codes']
+                        if len(codes)!=row_count or any(type(c) is not int or not 0<=c<len(output_domain) for c in codes):raise ValueError('Invalid finite output table')
+                        certify_retractions(node['parents'],coded_rows,codes,retracted)
+                        unacknowledged=set(inactive_inputs(node['parents'],coded_rows,codes))-set(retracted)
+                        if unacknowledged:
+                            raise ValueError('BEHAVIOR DIAGNOSTIC: Your complete output table '+json.dumps(codes)+
+                                ' is invariant to these still-declared parents: '+json.dumps(sorted(unacknowledged))+
+                                '. A description claiming their influence disagrees with this table. If this invariance reflects your source interpretation, explicitly name those parents in retracted_parents and provide the source-based retraction reason/references. Otherwise revise only source-justified output choices or flag the inadequate representation. Do not force an influence merely to pass validation.')
+                        v['expr']=reduced_expression(table_expression(node['parents'],parent_domains,[output_domain[c] for c in codes]))
+                        v['background']={}
+                        v['generation_representation']='LLM-generated complete finite output table; software compilation only'
+                        v['assumptions']+=['The finite-table candidate family conditions on these parents and has no additional background input.']
+                    return validate(compiled)
+                try:
+                    accepted=self.artifact('finite_mechanism_'+node['id'],table_prompt,check_tables,3072,schema=table_schema)
+                except RuntimeError:
+                    failed=getattr(self,'last_failed_artifact',{})
+                    if not self.semantic_compile_fallback or 'BEHAVIOR DIAGNOSTIC' not in failed.get('error',''):
+                        raise
+                    # One serialization diagnostic, not another source/graph search.
+                    statements=[{k:v[k] for k in ('description','short_mechanism','assumptions','function_identification') if k in v}
+                        for v in (failed.get('response') or {}).get('variants',[])]
+                    compile_prompt=(prompt+'\nSERIALIZATION DIAGNOSTIC: The previous generated finite table failed because its behavior did not express its own proposed description. '
+                        'Using the exact typed AST contract, compile ONLY the existing generated mechanism statements below. Do not invent another story interpretation, change the graph, add a residual, or change evidence support. '
+                        'If the statement does not specify a coherent admissible function, return no variants and explain the unresolved representation question. '
+                        'These statements are unverified model hypotheses, not source evidence. The usual contextual function audit will still apply.\nGENERATED STATEMENTS:\n'+json.dumps(statements)+
+                        '\nACTUAL FAILED BEHAVIOR:\n'+failed['error'])
+                    response=None
+                    try:
+                        prior=self.folder/('semantic_compile_'+node['id']+'_failure.json')
+                        response=json.loads(prior.read_text())['response'] if prior.exists() else self.gen.call('v2_app_semanticcompile',compile_prompt,2048,2801)
+                        normalized=copy.deepcopy(response)
+                        values={value for spec in [node]+parents for value in spec.get('values',[])}
+                        for variant in normalized.get('variants',[]):
+                            variant['expr']=literal_operands(variant['expr'],values)
+                        accepted=validate(normalized)
+                        for variant in accepted['variants']:
+                            variant.update(semantic_compilation=True,literal_normalization='Raw JSON numeric/Boolean operands and exact declared categorical literals become const leaves; no value, predicate, parent or operator is inferred.')
+                        atomic_json(self.folder/('semantic_compile_'+node['id']+'.json'),{'source_statements':statements,'response':response,'normalized':normalized,'accepted':accepted,'attempts_allowed':1,'replayed_existing_response':prior.exists()})
+                    except Exception as error:
+                        atomic_json(self.folder/('semantic_compile_'+node['id']+'_failure.json'),{'source_statements':statements,'response':response,'error':str(error),'attempts_allowed':1})
+                        raise
+                if accepted.get('defer_to_ast'):
+                    accepted=self.artifact('mechanism_background_'+node['id'],prompt+'\nGENERATED BACKGROUND REQUEST:\n'+json.dumps(accepted['representation_questions']),validate,3072)
+            else:
+                accepted=self.artifact('mechanism_'+node['id'],prompt,validate,3072)
+            if accepted.get('retracted_parents'):
+                node['mechanism_parent_retraction']={k:accepted[k] for k in ('retracted_parents','retraction_reason','retraction_sources')}
+                node['parents']=[p for p in node['parents'] if p not in accepted['retracted_parents']]
+                node.setdefault('assumptions',[]).append('The LLM retracted provisional dependencies before any outcome or allocation was computed: '+accepted['retraction_reason'])
+                for variant in accepted['variants']:
+                    variant.setdefault('assumptions',[]).append(node['assumptions'][-1])
+                    if not node['parents']:
+                        variant['assumptions'].append('This is a fixed observed scope boundary with unexplained upstream causes; no residual or new external factor has been added.')
             # Inspect descriptions against actual behavior, not just the factual row.
             compact=[{'index':i,'description':v.get('description'),'short_mechanism':v.get('short_mechanism'),
                 'assumptions':v.get('assumptions',[]),'background':v.get('background',{}),'behavior':behavior_view(v['behavior'])} for i,v in enumerate(accepted['variants'])]
@@ -413,13 +586,14 @@ class Construction:
                 '"background_is_factual_patch":false,"questions":[],"reason":"brief"}]}. '
                 'Compatible hypothesis does not mean identified. An AND requires all conjuncts for output 1; OR may provide substitutes. '
                 'Reject claims of sufficiency/necessity that the table contradicts. Unrestricted residuals are not admissible.\nTARGET:\n'+json.dumps(node_view(node))+
-                '\nMECHANISMS:\n'+json.dumps(compact)+'\nPASSAGES:\n'+audit_context)
+                '\nMECHANISMS:\n'+json.dumps(compact)+'\nPROPOSED DEPENDENCY RETRACTION:\n'+json.dumps(node.get('mechanism_parent_retraction',{}))+'\nPASSAGES:\n'+audit_context)
             review=self.artifact('functionaudit_'+node['id'],review_prompt,tokens=2048)
             by_index={r.get('index'):r for r in review.get('variants',[]) if isinstance(r,dict)}
             retained=[]
             for i,variant in enumerate(accepted['variants']):
                 audit=by_index.get(i,{'source_compatibility':'unresolved','questions':['Missing reviewer item']})
                 if audit.get('source_compatibility')=='contradicted' or audit.get('background_is_factual_patch') is True:continue
+                if variant.get('semantic_compilation') and audit.get('description_matches_behavior') is not True:continue
                 variant['semantic_review']=audit
                 variant['generated_function_identification']=variant.get('function_identification','unidentified')
                 variant['function_identification']=audit.get('exact_function_identification','unassessed')
@@ -430,7 +604,7 @@ class Construction:
                 variant['description']=variant['behavior']['derived_description']
                 if audit.get('short_label_matches_behavior') is not True:variant['short_mechanism']='Assumed rule; inspect behavior table'
                 retained.append(variant)
-            if not retained:raise ValueError('All local alternatives contradicted or use factual-patch backgrounds: '+node['id'])
+            if not retained:raise RepresentationIssue(node['id'],review)
             options[node['id']]=retained;audits.append({'node':node['id'],'source_ids':source_ids,'review_source_ids':audit_ids,'review':review,'formal_rejections':accepted['rejections']})
             atomic_json(self.folder/'local_options_checkpoint.json',{'options':options,'audits':audits})
         atomic_json(self.folder/'local_options.json',{'options':options,'audits':audits});return options
@@ -461,36 +635,62 @@ class Construction:
             node['influences']=self.artifact('direction_'+node['id'],prompt,validate,2048)
         return model
 
-    def build(self):
-        inventory=self.inventory();variables=self.audit_events(self.select_variables(inventory));last_error=None
-        for representation_attempt in range(2):
-            try:
-                blueprint=self.discover_graph(variables,str(last_error or ''))
-                options=self.local_models(blueprint)
-                break
-            except (RuntimeError,ValueError) as error:
-                last_error=error;atomic_json(self.folder/('representation_failure_%d.json'%representation_attempt),{'error':str(error),'variables':variables})
-                if representation_attempt:raise
-                context,context_ids=self.context([s for n in variables['nodes'] for s in n['segments']],self.case['outcome'],10000)
-                prompt=('Revise the inadequate parts of this variable representation using ONLY contextual evidence. You may alter definitions, domains or references, split a composite event, or drop an unsupported variable. Do not supply a desired outcome mechanism or residual merely to force agreement. '
-                    'Return {"replacements":[complete revised variable records for existing IDs, at most four],"new_nodes":[at most three new substantive records],"drop_ids":[],"assumptions":[]}. '
-                    'Keep all other variables unchanged. Use the shown variable schema; time must be a numeric episode code or null. No equations or parents yet. '
-                    'Keep the supplied outcome meaning/time fixed. Every factual state needs source references.\nOUTCOME: '+self.case['outcome']+'\nDIAGNOSTIC: '+str(error)+
-                    '\nCURRENT VARIABLES:\n'+json.dumps([node_view(n) for n in variables['nodes']])+'\nPASSAGES:\n'+context)
-                def check(response):
-                    replacements=response.get('replacements',[]);new=response.get('new_nodes',[]);drop=response.get('drop_ids',[])
-                    if len(replacements)>4 or len(new)>3 or variables['outcome'] in drop:raise ValueError('Invalid bounded representation revision')
-                    current={n['id']:n for n in variables['nodes']}
-                    if any(n['id'] not in current for n in replacements) or set(drop)-set(current):raise ValueError('Unknown replacement/drop ID')
-                    for n in replacements+new:
-                        check_spec(n)
-                        if not valid_value(n['observed'],n) or not valid_value(n['reference'],n) or not n.get('segments') or set(n['segments'])-set(context_ids):raise ValueError('Invalid revised variable')
-                        n.setdefault('time',None)
-                    updated={n['id']:n for n in replacements}
-                    nodes=[updated.get(n['id'],n) for n in variables['nodes'] if n['id'] not in drop]+new
-                    if len({n['id'] for n in nodes})!=len(nodes):raise ValueError('Repeated revised variable ID')
-                    return dict(variables,nodes=nodes,assumptions=variables.get('assumptions',[])+response.get('assumptions',[]))
-                variables=self.audit_events(self.artifact('representation_revision',prompt,check,4096))
+    def build(self, resume_graph=False):
+        if resume_graph:
+            graph_file=self.folder/'graph.json'
+            blueprint=json.loads(graph_file.read_text())
+            atomic_json(self.folder/'mechanism_resume.json',{'graph_sha256':__import__('hashlib').sha256(graph_file.read_bytes()).hexdigest(),'mode':'Fixed generated graph; typed-mechanism interface repair only; no fresh representation round'})
+            options=self.local_models(blueprint)
+        else:
+            inventory=self.inventory();variables=self.audit_events(self.select_variables(inventory));last_error=None
+            for representation_attempt in range(2):
+                try:
+                    blueprint=self.discover_graph(variables,str(last_error or ''))
+                    options=self.local_models(blueprint)
+                    break
+                except (RuntimeError,ValueError) as error:
+                    last_error=error;atomic_json(self.folder/('representation_failure_%d.json'%representation_attempt),{'error':str(error),'variables':variables})
+                    if representation_attempt:raise
+                    focus=getattr(error,'node',None)
+                    focused=[n for n in variables['nodes'] if n['id']==focus]
+                    if focus and 'blueprint' in locals():
+                        failed_node=next(n for n in blueprint['nodes'] if n['id']==focus)
+                        focused += [n for n in variables['nodes'] if n['id'] in failed_node['parents']]
+                    priority_nodes=focused+[n for n in variables['nodes'] if n['id']==variables['outcome']]+variables['nodes']
+                    context,context_ids=self.context([s for n in priority_nodes for s in n['segments']],self.case['outcome'],12000)
+                    prompt=('Revise the inadequate parts of this variable representation using ONLY contextual evidence. You may alter definitions, domains or references, split a composite event, or drop an unsupported variable. Do not supply a desired outcome mechanism or residual merely to force agreement. '
+                        'Return {"replacements":[{"id":"existing ID", "only changed fields":"new values"}],"new_nodes":[complete substantive variable records, at most three],"drop_ids":[],"assumptions":[]}. '
+                        'At most four existing variables may be changed; omitted fields are preserved. Keep all other variables unchanged. Use the shown variable schema; time must be a numeric episode code or null. No equations or parents yet. '
+                        'The contextual reviewer can be wrong: recheck its actual claim against the supplied source context. Later dependencies will be regenerated; you need not preserve a rejected parent relation. '
+                        'Keep the supplied outcome meaning/time fixed. Every factual state needs source references.\nOUTCOME: '+self.case['outcome']+'\nDIAGNOSTIC: '+str(error)+
+                        '\nCURRENT VARIABLES:\n'+json.dumps([node_view(n) for n in variables['nodes']])+'\nPASSAGES:\n'+context+
+                        '\nALLOWED PASSAGE REFERENCES FOR CHANGED/NEW VARIABLES: '+json.dumps(context_ids))
+                    def check(response):
+                        replacements=response.get('replacements',[]);new=response.get('new_nodes',[]);drop=response.get('drop_ids',[])
+                        if len(replacements)>4 or len(new)>3 or variables['outcome'] in drop:raise ValueError('Invalid bounded representation revision')
+                        current={n['id']:n for n in variables['nodes']}
+                        if any(n['id'] not in current for n in replacements) or set(drop)-set(current):raise ValueError('Unknown replacement/drop ID')
+                        replacements=[dict(current[n['id']],**n) for n in replacements]
+                        for n in replacements+new:
+                            check_spec(n)
+                            if not valid_value(n['observed'],n) or not valid_value(n['reference'],n):
+                                raise ValueError('Revised variable '+n['id']+' has states outside its domain: '+json.dumps({k:n.get(k) for k in ('type','values','bounds','observed','reference')}))
+                            if not n.get('segments') or set(n['segments'])-set(context_ids):
+                                raise ValueError('Revised variable '+n['id']+' must cite actual supplied passage IDs from '+json.dumps(context_ids))
+                            n.setdefault('time',None)
+                        updated={n['id']:n for n in replacements}
+                        nodes=[updated.get(n['id'],n) for n in variables['nodes'] if n['id'] not in drop]+new
+                        if len({n['id'] for n in nodes})!=len(nodes):raise ValueError('Repeated revised variable ID')
+                        return dict(variables,nodes=nodes,assumptions=variables.get('assumptions',[])+response.get('assumptions',[]))
+                    variables=self.audit_events(self.artifact('representation_revision',prompt,check,4096))
+        actual_graph=nx.DiGraph();actual_graph.add_nodes_from(n['id'] for n in blueprint['nodes'])
+        actual_graph.add_edges_from((p,n['id']) for n in blueprint['nodes'] for p in n['parents'])
+        ancestry=nx.ancestors(actual_graph,blueprint['outcome'])|{blueprint['outcome']}
+        if len(ancestry)<2:raise ValueError('The generated mechanism revisions leave no explanatory outcome ancestry')
+        blueprint['pruned_after_mechanism']=sorted(set(actual_graph)-ancestry)
+        blueprint['nodes']=[n for n in blueprint['nodes'] if n['id'] in ancestry]
+        options={n:v for n,v in options.items() if n in ancestry}
+        atomic_json(self.folder/'graph_after_mechanism.json',blueprint)
         identifiers=[n['id'] for n in blueprint['nodes']]
         choices=[dict.fromkeys(identifiers,0)]
         adjacency=nx.DiGraph();adjacency.add_nodes_from(identifiers)
@@ -520,9 +720,12 @@ class Construction:
                 node.update(assumptions=variant.get('assumptions',[]),function_identification=variant.get('function_identification','unidentified'),behavior=variant['behavior'])
                 node.update(generated_description=variant.get('generated_description',''),
                     generated_function_identification=variant.get('generated_function_identification','unassessed'),
-                    function_review=variant.get('semantic_review',{}))
+                    function_review=variant.get('semantic_review',{}),
+                    generation_representation=variant.get('generation_representation','typed expression or declared scope boundary'),
+                    serialization_diagnostic=bool(variant.get('semantic_compilation')),
+                    literal_normalization=variant.get('literal_normalization'))
                 background.update(variant.get('background',{}))
-                if not node['parents']:
+                if not node['parents'] and node['noise']:
                     background['U_'+node['id']]={k:node[k] for k in ('type','values','bounds','observed') if k in node}
                 nodes.append(node)
             model={'id':self.case['id']+'_v2_m%02d'%len(models),'outcome':blueprint['outcome'],'nodes':nodes,'background':background,
@@ -570,16 +773,17 @@ class Construction:
             'alternatives':{'retained_functionally_distinct':len(models),'distinct_query_vectors':len({tuple(q['modeled_outcome'] for q in r['queries']) for r in records}),
                 'local_options':{n:len(v) for n,v in options.items()},'cartesian_options':__import__('math').prod(len(v) for v in options.values()),
                 'coverage':'At most 12: baseline, up to eight round-robin single-function changes in reverse topological order, then bounded joint changes including the all-last-option choice and seeded combinations (seed 2801). Chosen before outcomes/allocations; not exhaustive across combined mechanisms or alternative graphs. No frequency interpretation.'},
+            'construction_context':blueprint.get('initialization',{'variant':'fresh','scope':'Fresh source extraction and generated representation, including retained development repairs.'}),
             'source_review':'Automated same-model contextual assessment; independent researcher adjudication pending.'}
         atomic_json(self.folder/'final.json',output);return output
 
 
 if __name__=='__main__':
     import argparse
-    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--case',default='five_kings');p.add_argument('--inventory-only',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--case',default='five_kings');p.add_argument('--inventory-only',action='store_true');p.add_argument('--resume-graph',action='store_true');a=p.parse_args()
     construction=Construction(a.root,a.case)
     try:
-        output=construction.inventory() if a.inventory_only else construction.build()
+        output=construction.inventory() if a.inventory_only else construction.build(a.resume_graph)
         print('V2_FLAGSHIP_DONE',len(output.get('facts',[])),len(output.get('records',[])),flush=True)
     except Exception as error:
         atomic_json(construction.folder/'failure.json',{'error':type(error).__name__+': '+str(error),'at':time.time(),'protocol':PROTOCOL})

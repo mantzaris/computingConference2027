@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from got_war.budget import atomic_json
 from got_war.structural_programs import SCM
-from got_war.v2.runtime import paths
+from got_war.v2.runtime import paths,application_record
 from got_war.v2.mechanisms import compatible_family,inspect_mechanism,outcome_sets
 from got_war.v2.paths import explain_query
 from got_war.v2.analysis import structural_scores
@@ -48,15 +48,20 @@ def gate():
         row['failed_synthesis_rejected_and_retained']=not model and bool(record.get('synthesis_attempts')) and bool(record['methods']['B2'].get('error'))
         row['technical_pass']=row['controlled_information_configuration_verified'] and (row['failed_synthesis_rejected_and_retained'] or all(row.get(k) for k in ('function_family_exhaustive','descriptions_match_all_tables','outcome_sets_reproduce','coalition_values_reproduce','actual_sentence_ids_reviewed')))
         checks.append(row);passed &= row['technical_pass']
-    app=json.loads((run/'application/five_kings/final.json').read_text())
+    app_path=application_record(root,run);app=json.loads(app_path.read_text())
     a=app['records'][0];model=a['model'];scm=SCM(model)
     from got_war.v2.paths import game_report
     application={'variables':len(model['nodes']),'edges':scm.graph.number_of_edges(),'models':len(app['records']),
+        'record':str(app_path.relative_to(root)), 'construction_context':app.get('construction_context',{'variant':'fresh'}),
+        'fresh_source_construction_succeeded':(run/'application/five_kings/final.json').exists(),
+        'conditional_initialization_used':app.get('construction_context',{}).get('variant')=='prior_refinement',
+        'ten_node_reporting_target_met':len(model['nodes'])>=10,
         'coalition_values_reproduce':game_report(scm,a['selection']['paths'])==a['attribution'],
+        'descriptions_match_all_tables':all(n['description']==inspect_mechanism(SCM(r['model']),n['id'])['derived_description'] for r in app['records'] for n in r['model']['nodes']),
         'actual_sentence_ids_reviewed':sorted(r['sentence_id'] for r in app['explanation'].get('review',{}).get('reviews',[]))==sorted(s['id'] for s in app['explanation'].get('sentences',[])) and bool(app['explanation'].get('sentences')),
         'explanation_displayable':app['explanation'].get('displayable',False),
         'source_validity':'Conditional on automated contextual review; independent researcher adjudication pending.'}
-    passed &= application['coalition_values_reproduce'] and application['actual_sentence_ids_reviewed']
+    passed &= application['coalition_values_reproduce'] and application['descriptions_match_all_tables'] and application['actual_sentence_ids_reviewed']
     supervision=json.loads((run/'supervision_probe.json').read_text())
     passed &= all(supervision.get(k) is True for k in ('registered_identity_nonnull','deadline_enforced','owned_stopped','unregistered_test_child_survived','artifact_preserved'))
     report=json.loads((result/'pilot_gate.json').read_text())
@@ -78,7 +83,14 @@ def freeze():
     if any(json.loads(p.read_text()).get('split')=='test' for p in (run/'benchmark').glob('*.json')):raise RuntimeError('Cannot claim pretest freeze after test inference')
     files=[p for p in (ROOT/'src/got_war/v2').glob('*.py') if p.name not in ('figures.py','reporting.py')]+[ROOT/'src/got_war'/name for name in
         ('structural_programs.py','attribution.py','budget.py','generation.py','experiments.py','benchmark.py')]
-    files += [ROOT/'prompts/ast_contract.txt',ROOT/'configs/models.json',ROOT/'configs/application_v2.json',ROOT/'configs/budget_v2.json']
+    selected=application_record(root,run)
+    atomic_json(ROOT/'configs/application_selection_v2.json',{'record':str(selected.relative_to(root)),
+        'construction_context':gate_report['application']['construction_context'],
+        'selection':'Fresh completion preferred; otherwise separately labeled conditional refinement. No selection by outcomes, attribution or source scores.',
+        'record_sha256_at_freeze':sha(selected)})
+    files += [ROOT/'prompts/ast_contract.txt',ROOT/'configs/models.json',ROOT/'configs/application_v2.json',ROOT/'configs/budget_v2.json',ROOT/'configs/application_selection_v2.json']
+    files += [ROOT/name for name in ('docs/V2_PROTOCOL.md','docs/V2_METHODOLOGY.md',
+        'scripts/v2_refine_prior.py','scripts/v2_sources.py','scripts/v2_launch_benchmark.py','scripts/v2_gate_refresh.py','scripts/v2_freeze.py')]
     manifest={'version':2,'frozen_at':datetime.now(timezone.utc).isoformat(),'campaign_id':budget['campaign_id'],
         'design':design,'budget':budget,'gate_sha256':sha(result/'pilot_gate.json'),
         'files':{str(p.relative_to(ROOT)):sha(p) for p in sorted(files)},
@@ -96,7 +108,8 @@ def freeze():
             'source_relevance':design['source_relevance'],'conditional_analysis':'Successful synthesis only is secondary.',
             'paired_comparisons':['B1-B0','B2-B0','ALT-B2','FULL-B0','FULL-CARRY','FULL rank versus B0/B1/UNIFORM'],
             'stopping':'Complete fixed design; no significance-seeking continuation. Optional second model and extra seeds deferred.'},
-        'application_status':'Exploratory source-derived flagship; aligned local alternatives are sensitivity cases, not posterior samples. No synthetic validation of literary claims.'}
+        'application_status':gate_report['application']['construction_context'],
+        'application_limits':'Aligned local alternatives are sensitivity cases, not posterior samples. No synthetic validation of literary claims.'}
     atomic_json(destination,manifest)
     return {'path':str(destination.relative_to(ROOT)),'sha256':sha(destination),'gate':gate_report['status']}
 

@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from ..budget import atomic_json
 from ..structural_programs import SCM,equation
-from .runtime import paths
+from .runtime import paths,application_record
 
 
 def ci(row):
@@ -32,12 +32,12 @@ def manuscript_tables(root):
     summary=json.loads((result/'test_summary.json').read_text())
     if summary['completed_records']!=summary['planned_scms']:
         raise ValueError('The manuscript must not describe a partial test as complete')
-    app=json.loads((run/'application/five_kings/final.json').read_text())
+    app=json.loads(application_record(root,run).read_text())
     principal=app['records'][0];paper=root/'paper/v2';paper.mkdir(exist_ok=True)
     rows={r['method']:r for r in summary['tables'] if r['condition']=='all'}
     macros=[]
     for name,method in [('Direct','B0'),('Graph','B1'),('Single','B2'),('Alt','ALT')]:
-        macros.append(r'\newcommand{\Acc'+name+'}{%.1f\\%%}'%(100*rows[method]['metrics']['identified_correct']['estimate']))
+        macros.append(r'\newcommand{\Acc'+name+'}{%.1f\%%}'%(100*rows[method]['metrics']['identified_correct']['estimate']))
     macros += [r'\newcommand{\AppNodes}{%d}'%len(principal['model']['nodes']),
                r'\newcommand{\AppModels}{%d}'%len(app['records'])]
     (paper/'measured_macros.tex').write_text('\n'.join(macros)+'\n')
@@ -75,6 +75,7 @@ def manuscript_tables(root):
     (paper/'measured_results.tex').write_text('\n\n'.join(lines)+'\n')
     game=principal['attribution'];supports=[p['evidence_support'] for p in principal['evidence_priority']['paths']]
     app_lines=[tex(app['case']['outcome'])+' We acquired ten first-season episode transcriptions from an accessible unofficial site. They are traceable documentary material, not authenticated official scripts; transcription fidelity and interpretation require researcher review.',
+        tex(app.get('construction_context',{}).get('scope','Fresh source-derived construction.')),
         'The LLM retained %d variables and %d directed influences. Its %d functionally distinct global hypotheses produced %d distinct intervention-outcome vectors over the specified queries. The bounded construction considered %d Cartesian combinations of retained local options, but did not exhaust them or alternative graph structures.'%(len(principal['model']['nodes']),SCM(principal['model']).graph.number_of_edges(),len(app['records']),app['alternatives']['distinct_query_vectors'],app['alternatives']['cartesian_options']),
         'The principal coalition outcome histogram was '+tex(json.dumps(game['coalition_histogram']))+'. All selected paths required: '+tex(game['all_paths_required'])+'. Substitute path sets: '+tex(game['substitute_path_sets'])+'. Negative coalition marginals: '+str(game['negative_marginals'])+'.',
         'The signed allocation vector was '+tex(str([round(x,4) for x in game['phi']]))+'; weakest directional support by aligned path was '+tex(str(supports))+'. Evidence-weighted source ranking was '+('available as a provisional automated priority' if principal['ranking_available'] else 'unavailable because all scores were zero')+'. No unsupported score was raised to create an ordering.',
@@ -136,7 +137,8 @@ def benchmark_reports(root):
 
 def application_reports(root,case='five_kings'):
     root,run,result=paths(root)
-    app=json.loads((run/'application'/case/'final.json').read_text());principal=app['records'][0]
+    record_path=application_record(root,run) if case=='five_kings' else run/'application'/case/'final.json'
+    app=json.loads(record_path.read_text());principal=app['records'][0]
     model=principal['model'];scm=SCM(model);packet=json.loads((root/('.private/v2/'+case+'_packet.json')).read_text())
     segments={s['id']:s for s in packet['segments']};nodes={n['id']:n for n in model['nodes']}
     rows=[]
@@ -152,7 +154,7 @@ def application_reports(root,case='five_kings'):
     with (result/(case+'_evidence_audit.csv')).open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
     audit=['# '+app['case']['name']+': evidence and mechanism audit','',
-        app['case']['outcome'],'',app['source_review'],'',
+        app['case']['outcome'],'',app['source_review'],'',app.get('construction_context',{}).get('scope','Fresh source-derived construction.'),'',
         '%d variables, %d edges, %d retained functionally distinct models, and %d distinct intervention-outcome vectors.'%(len(nodes),scm.graph.number_of_edges(),len(app['records']),app['alternatives']['distinct_query_vectors']),'',
         'Alternative coverage: '+app['alternatives']['coverage'],'',
         '| Variable | Operational definition | Factual state | Event status | Function status |','|---|---|---|---|---|']
@@ -163,9 +165,17 @@ def application_reports(root,case='five_kings'):
     for n in model['nodes']:
         b=n['behavior'];audit += ['- **'+n['id']+'**: `'+equation(n['expr'])+'`; '+b['coverage']+'. Necessary conditions for output one: `'+json.dumps(b['necessary_for_one'])+'`; individually sufficient: `'+json.dumps(b['sufficient_for_one'])+'`.']
     audit += ['', 'These necessity/sufficiency statements concern the assumed function over its declared domain. They do not assert what would historically have happened in the narrative. Truth tables and all candidate expressions are retained for reproduction and reviewer inspection.']
+    inspection=result/'source_inspection.json'
+    fresh=app.get('construction_context',{}).get('variant','fresh')=='fresh'
+    if inspection.exists() and fresh:
+        flagged=json.loads(inspection.read_text())
+        audit += ['', '## Targeted inspection flags', '', flagged['review_type'], '', flagged['model_policy'], '']
+        for item in flagged['items']:
+            if item['node'] in nodes:
+                audit += ['- **'+item['id']+' / '+item['node']+'**: '+item['observation']+' '+item['unresolved_question']]
     (result/(case+'_APPLICATION_AUDIT.md')).write_text('\n'.join(audit)+'\n')
     path=['# '+app['case']['name']+': path-coalition behavior','',
-        'Paths are shared-edge coalition players with explicit parent references. Edge union activates a shared edge once; allocations are neither independent event effects nor natural path-specific effects. All comparisons below align the same node meanings and path sequences.','',
+        'Paths are shared-edge coalition players with explicit parent references. Edge union activates a shared edge once; allocations are neither independent event effects nor natural path-specific effects. Cross-model comparisons align the same node meanings and path sequences. The separately labeled path-set sensitivity changes the player collection and therefore the estimand.','',
         '| Model | Coalition outcome histogram | All paths required | Substitute path sets | Negative marginals | Allocation vector |','|---|---|---|---|---:|---|']
     for record in app['records']:
         a=record['attribution'];path.append('| '+record['model']['id']+' | `'+json.dumps(a['coalition_histogram'])+'` | '+str(a['all_paths_required'])+' | '+str(a['substitute_path_sets'])+' | '+str(a['negative_marginals'])+' | `'+str([round(x,5) for x in a['phi']])+'` |')
@@ -188,6 +198,8 @@ def application_reports(root,case='five_kings'):
     packet_text=['# Independent review packet: '+app['case']['name'],'','Status: **pending; no human adjudication is claimed**.','',
         'Read the full contextual passages in the local private HTML packet or the source links. For each item assess separately (1) event/state establishment, (2) directional causal influence, and (3) constraints on the exact function. Check time, who knew what, contradiction, and whether a statement is fact, report or belief. A function may fit the observed row without being identified.', '',
         'The items below are selected by lowest directional weight then stable edge ID for a compact skeptical review, not as independent relevance gold labels. Full audits include all edges.']
+    if inspection.exists() and fresh:
+        packet_text += ['', 'Additional operational/reference flags and exact passage links appear in `source_inspection.json`; review I01 and I02 alongside the influence items below. These targeted assistant observations are not completed independent review.']
     page=['<!doctype html><meta charset="utf-8"><title>Independent source review</title><style>body{max-width:1000px;margin:2em auto;font:16px/1.5 sans-serif}pre{white-space:pre-wrap;background:#f5f5f5;padding:1em}section{border-top:2px solid #777;margin-top:2em}</style><h1>Independent source review — pending</h1>']
     annotations=[]
     for i,row in enumerate(selected,1):
@@ -215,7 +227,7 @@ def application_reports(root,case='five_kings'):
         'path_supports':[p['evidence_support'] for p in principal['evidence_priority']['paths']],
         'path_shares':principal['attribution']['phi'],'coalition_histogram':principal['attribution']['coalition_histogram'],
         'ranking_available':principal['ranking_available'],'explanation_displayable':app['explanation']['displayable'],
-        'source_review':app['source_review']})
+        'source_review':app['source_review'],'construction_context':app.get('construction_context',{})})
 
 
 if __name__=='__main__':

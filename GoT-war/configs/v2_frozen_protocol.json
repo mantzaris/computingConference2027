@@ -1,0 +1,423 @@
+{
+  "version": 2,
+  "frozen_at": "2026-10-12T20:08:42.965565+00:00",
+  "campaign_id": "campaign_v2_20261012T160349Z",
+  "design": {
+    "version": 2,
+    "independent_scms": 120,
+    "splits": {
+      "development": 24,
+      "calibration": 24,
+      "test": 72
+    },
+    "conditions": [
+      "complete",
+      "missing_intermediate",
+      "missing_outcome",
+      "multiple_missing"
+    ],
+    "sizes": [
+      8,
+      12
+    ],
+    "queries": "All non-outcome single flips, three seeded joint flips, three factual-value controls. No direct outcome overrides.",
+    "gold_family": "All active two-parent deterministic Boolean functions consistent with factual rows, jointly enumerated for all omitted rules; exact in every generated case.",
+    "source_relevance": "Query-specific gold causal slice: descendants of intervened nodes that are outcome ancestors, excluding intervened equations. Grade 2 for available rules, 1 for explicitly missing rules, 0 otherwise. Defined without generated paths or method outputs; evaluates structural information relevance, not human literary importance.",
+    "scm_ids_by_split": {
+      "development": [
+        "v2_scm_278000",
+        "v2_scm_278001",
+        "v2_scm_278002",
+        "v2_scm_282000",
+        "v2_scm_282001",
+        "v2_scm_282002",
+        "v2_scm_278100",
+        "v2_scm_278101",
+        "v2_scm_278102",
+        "v2_scm_282100",
+        "v2_scm_282101",
+        "v2_scm_282102",
+        "v2_scm_278200",
+        "v2_scm_278201",
+        "v2_scm_278202",
+        "v2_scm_282200",
+        "v2_scm_282201",
+        "v2_scm_282202",
+        "v2_scm_278300",
+        "v2_scm_278301",
+        "v2_scm_278302",
+        "v2_scm_282300",
+        "v2_scm_282301",
+        "v2_scm_282302"
+      ],
+      "calibration": [
+        "v2_scm_278003",
+        "v2_scm_278004",
+        "v2_scm_278005",
+        "v2_scm_282003",
+        "v2_scm_282004",
+        "v2_scm_282005",
+        "v2_scm_278103",
+        "v2_scm_278104",
+        "v2_scm_278105",
+        "v2_scm_282103",
+        "v2_scm_282104",
+        "v2_scm_282105",
+        "v2_scm_278203",
+        "v2_scm_278204",
+        "v2_scm_278205",
+        "v2_scm_282203",
+        "v2_scm_282204",
+        "v2_scm_282205",
+        "v2_scm_278303",
+        "v2_scm_278304",
+        "v2_scm_278305",
+        "v2_scm_282303",
+        "v2_scm_282304",
+        "v2_scm_282305"
+      ],
+      "test": [
+        "v2_scm_278006",
+        "v2_scm_278007",
+        "v2_scm_278008",
+        "v2_scm_278009",
+        "v2_scm_278010",
+        "v2_scm_278011",
+        "v2_scm_278012",
+        "v2_scm_278013",
+        "v2_scm_278014",
+        "v2_scm_282006",
+        "v2_scm_282007",
+        "v2_scm_282008",
+        "v2_scm_282009",
+        "v2_scm_282010",
+        "v2_scm_282011",
+        "v2_scm_282012",
+        "v2_scm_282013",
+        "v2_scm_282014",
+        "v2_scm_278106",
+        "v2_scm_278107",
+        "v2_scm_278108",
+        "v2_scm_278109",
+        "v2_scm_278110",
+        "v2_scm_278111",
+        "v2_scm_278112",
+        "v2_scm_278113",
+        "v2_scm_278114",
+        "v2_scm_282106",
+        "v2_scm_282107",
+        "v2_scm_282108",
+        "v2_scm_282109",
+        "v2_scm_282110",
+        "v2_scm_282111",
+        "v2_scm_282112",
+        "v2_scm_282113",
+        "v2_scm_282114",
+        "v2_scm_278206",
+        "v2_scm_278207",
+        "v2_scm_278208",
+        "v2_scm_278209",
+        "v2_scm_278210",
+        "v2_scm_278211",
+        "v2_scm_278212",
+        "v2_scm_278213",
+        "v2_scm_278214",
+        "v2_scm_282206",
+        "v2_scm_282207",
+        "v2_scm_282208",
+        "v2_scm_282209",
+        "v2_scm_282210",
+        "v2_scm_282211",
+        "v2_scm_282212",
+        "v2_scm_282213",
+        "v2_scm_282214",
+        "v2_scm_278306",
+        "v2_scm_278307",
+        "v2_scm_278308",
+        "v2_scm_278309",
+        "v2_scm_278310",
+        "v2_scm_278311",
+        "v2_scm_278312",
+        "v2_scm_278313",
+        "v2_scm_278314",
+        "v2_scm_282306",
+        "v2_scm_282307",
+        "v2_scm_282308",
+        "v2_scm_282309",
+        "v2_scm_282310",
+        "v2_scm_282311",
+        "v2_scm_282312",
+        "v2_scm_282313",
+        "v2_scm_282314"
+      ]
+    },
+    "distinct_programs": 120,
+    "sha256": "c3acd3d7a6ddb453803ee43a1df266339e259a627e340d3fd09e1c9fa502b4e0",
+    "strata": [
+      {
+        "split": "development",
+        "condition": "complete",
+        "scms": 6,
+        "factual_outcomes": {
+          "1": 5,
+          "0": 1
+        },
+        "identified_changed": 26,
+        "identified_unchanged": 64
+      },
+      {
+        "split": "development",
+        "condition": "missing_intermediate",
+        "scms": 6,
+        "factual_outcomes": {
+          "0": 4,
+          "1": 2
+        },
+        "underidentified": 13,
+        "identified_unchanged": 71,
+        "identified_changed": 6
+      },
+      {
+        "split": "development",
+        "condition": "missing_outcome",
+        "scms": 6,
+        "factual_outcomes": {
+          "0": 6
+        },
+        "underidentified": 32,
+        "identified_unchanged": 58
+      },
+      {
+        "split": "development",
+        "condition": "multiple_missing",
+        "scms": 6,
+        "factual_outcomes": {
+          "1": 5,
+          "0": 1
+        },
+        "underidentified": 25,
+        "identified_changed": 8,
+        "identified_unchanged": 57
+      },
+      {
+        "split": "calibration",
+        "condition": "complete",
+        "scms": 6,
+        "factual_outcomes": {
+          "0": 4,
+          "1": 2
+        },
+        "identified_changed": 20,
+        "identified_unchanged": 70
+      },
+      {
+        "split": "calibration",
+        "condition": "missing_intermediate",
+        "scms": 6,
+        "factual_outcomes": {
+          "0": 4,
+          "1": 2
+        },
+        "underidentified": 10,
+        "identified_unchanged": 62,
+        "identified_changed": 18
+      },
+      {
+        "split": "calibration",
+        "condition": "missing_outcome",
+        "scms": 6,
+        "factual_outcomes": {
+          "0": 3,
+          "1": 3
+        },
+        "underidentified": 36,
+        "identified_unchanged": 54
+      },
+      {
+        "split": "calibration",
+        "condition": "multiple_missing",
+        "scms": 6,
+        "factual_outcomes": {
+          "1": 2,
+          "0": 4
+        },
+        "underidentified": 27,
+        "identified_unchanged": 63
+      },
+      {
+        "split": "test",
+        "condition": "complete",
+        "scms": 18,
+        "factual_outcomes": {
+          "0": 8,
+          "1": 10
+        },
+        "identified_changed": 72,
+        "identified_unchanged": 198
+      },
+      {
+        "split": "test",
+        "condition": "missing_intermediate",
+        "scms": 18,
+        "factual_outcomes": {
+          "1": 8,
+          "0": 10
+        },
+        "identified_unchanged": 188,
+        "underidentified": 40,
+        "identified_changed": 42
+      },
+      {
+        "split": "test",
+        "condition": "missing_outcome",
+        "scms": 18,
+        "factual_outcomes": {
+          "0": 11,
+          "1": 7
+        },
+        "identified_unchanged": 177,
+        "underidentified": 93
+      },
+      {
+        "split": "test",
+        "condition": "multiple_missing",
+        "scms": 18,
+        "factual_outcomes": {
+          "0": 11,
+          "1": 7
+        },
+        "identified_unchanged": 166,
+        "underidentified": 89,
+        "identified_changed": 15
+      }
+    ],
+    "status": "Development design generated; freeze model/prompts/analysis after measured pilot and before test inference."
+  },
+  "budget": {
+    "campaign_id": "campaign_v2_20261012T160349Z",
+    "version": 2,
+    "started_at": "2026-10-12T16:03:49.877393+00:00",
+    "initialization_at": "2026-10-12T16:08:49.877393+00:00",
+    "start_note": "Conservative anchor five minutes before initialization includes the first inspection actions of this revision turn.",
+    "hard_deadline": "2026-10-13T16:03:49.877393+00:00",
+    "soft_deadline": "2026-10-13T14:03:49.877393+00:00",
+    "no_heavy_jobs_after": "2026-10-13T12:03:49.877393+00:00",
+    "analysis_reserve_hours": 4,
+    "output_token_ceiling": 1100000,
+    "token_ceiling_status": "Measured four-case pilot: 47.56 output tokens/s; budget derivation in results/v2/pilot_gate.json, frozen before test inference.",
+    "max_repair_attempts": 2,
+    "sync_interval_seconds": 1200,
+    "heartbeat_interval_seconds": 300,
+    "request_timeout_seconds": 300,
+    "application_request_timeout_seconds": 600
+  },
+  "gate_sha256": "25615638ab91afb2115c94698f402bb3669b51ca24c6e075433225a5e69ed116",
+  "files": {
+    "configs/application_selection_v2.json": "a7b1a015d581c804e8568b631ac90c442499972dfef0ebb98ab7055e6c3bcbe0",
+    "configs/application_v2.json": "44da5ac2a0f068fd24febefa9b35f0a61817575e1c81b37e753cf1048d6a2410",
+    "configs/budget_v2.json": "e36ef610fa5fb73bb6214d45dd99779b1641bf2214b8e2aad6537227f1b785e5",
+    "configs/models.json": "cf04e150b176f0d5566239d93fc3fae7438fb69459301e32022171c298871b63",
+    "docs/V2_METHODOLOGY.md": "895aaad3ad2e7915bb887745aa4740bc53019ff43b64faf38f52bf550c5c65bc",
+    "docs/V2_PROTOCOL.md": "b2f47d5770761a889f69a3a5a611cdbeac50f23b3daa63c874612c93c350372c",
+    "prompts/ast_contract.txt": "0b819b4af69b1db96f81a8e443d169f07ba336b1a65d0a77a4863f7febd3fd81",
+    "scripts/v2_freeze.py": "90369f86ea332833809562aa27d7aed81dc38b3f9ef1521ddd6ec9bc4737179c",
+    "scripts/v2_gate_refresh.py": "7a03b0737458c89f6944adb36a6085327f3e7b1f7cf5ab745bb368f0baeb29dd",
+    "scripts/v2_launch_benchmark.py": "b8b9cc7a7b8d46f169174c25affc26cd9df504f3e6d5dd9f772c7098d77eac87",
+    "scripts/v2_refine_prior.py": "d1d7ac23722ca2b55b0b2dcbca4aa49c87cc339753cb50eb21b7b95f2c988e16",
+    "scripts/v2_sources.py": "6122285aad7e361f952beac9e664d3b8dee324b577cfd1191854294ee7874747",
+    "src/got_war/attribution.py": "19e694018ea97e9522bc9b3f03f8bd40bd4a4478cdfb231ec4fe8c50b1e411ac",
+    "src/got_war/benchmark.py": "2e6ea9771372c0bb0ff29c14cdad24df005fb45df6cb07c9e53c3efa242c4294",
+    "src/got_war/budget.py": "c3fb7a1ff8e90f2e33e85c8f280d54f6aefbdfcc8ce5997f71085ee97b5673aa",
+    "src/got_war/experiments.py": "7f49d915b3babf5b88347a696ac96f41b30bfda9564187ad7efd69ed8a9a7d77",
+    "src/got_war/generation.py": "eb0dafc916e8d273cfd3ff10d2a25527b4e3d0da6530428afbaf40ae2cf08b87",
+    "src/got_war/structural_programs.py": "b0b4d32a6b362e2d964d498e49344ba4b734dc7ecbd65b47aee0eb0d572acaa2",
+    "src/got_war/v2/__init__.py": "7e7d4eb98af5404a8fb1b35f70c1e165f7cff56881eb56fae412133cfcc51e07",
+    "src/got_war/v2/analysis.py": "5cbeb1af516dc41858b9cbf2e15a31c7e5d0300e54933079e92ae0cfeb129e53",
+    "src/got_war/v2/application.py": "f1675c4d4745a59011d8209efaec053c226d507921f6596663e3be5906dc595c",
+    "src/got_war/v2/benchmark.py": "9145c7c67bfa0c9c3f6cd0f7359d6de2a4426db452ccc0761607d0c5c9340617",
+    "src/got_war/v2/experiments.py": "2af35bf08a766a22090b39d91e2f8a7437fcd1daae78ac9cc5111818c4c66c9e",
+    "src/got_war/v2/explanations.py": "5d07a0ad2e1c8c68cd53190161babfd19fa47f11f7d6d51ad0c005f1a100e945",
+    "src/got_war/v2/mechanisms.py": "dd5ac548d582ffe3d03fcb1657ff7efde0459ced87d6cdec03e01255407ec01f",
+    "src/got_war/v2/paths.py": "49cbd94dcc3f38280738c55a7dc2b07af227cf3134870d81796d997a10fac017",
+    "src/got_war/v2/runtime.py": "e9d18b1a825a9dcba714c4a388d973fb7b3bb4aa446aa2ea0b72787e6a626a94"
+  },
+  "model": {
+    "primary": "Qwen/Qwen3-14B-AWQ",
+    "revision": "31c69efc29464b6bb0aee1398b5a7b50a99340c3",
+    "quantization": "AWQ 4-bit",
+    "vllm": "0.10.2",
+    "max_model_len": 8192,
+    "gpu_memory_utilization": 0.88,
+    "max_num_seqs": 2,
+    "thinking": false,
+    "dtype": "half"
+  },
+  "inference": {
+    "seeds": [
+      2701
+    ],
+    "temperature": 0.2,
+    "top_p": 0.8,
+    "synthesis_max_tokens": 4096,
+    "baseline_max_tokens": 2048,
+    "max_repairs": 2,
+    "repair": "At most two repairs: one local LLM node-replacement repair, then one fresh reconstruction. Original record and candidate factual-row diagnostics only; no gold rules or answers.",
+    "graph_baseline": "Generated adjacency may remain usable when expression validation fails; no equations are exposed to B1.",
+    "family": "Joint finite function enumeration; max 512 global candidates, max 256 local tables; report exhaustive versus bounded coverage.",
+    "attribution": "Exact shared-edge coalitions, at most eight selected paths; explicit factual edge references for intervention traces.",
+    "explanation_query": "case generating seed modulo query count, chosen independently of method outputs"
+  },
+  "analysis": {
+    "unit": "Independent generating SCM",
+    "bootstrap_seed": 271828,
+    "bootstrap_replicates": 5000,
+    "primary_denominator": "All 72 test SCMs, including failed synthesis; questions remain repeated measurements.",
+    "strata": [
+      "complete",
+      "incomplete",
+      "missing_intermediate",
+      "missing_outcome",
+      "multiple_missing",
+      "identified_changed",
+      "identified_unchanged",
+      "underidentified"
+    ],
+    "metrics": [
+      "identified intervention accuracy",
+      "changed accuracy",
+      "unchanged accuracy",
+      "appropriate uncertainty",
+      "exact outcome set",
+      "unsupported confident answers",
+      "synthesis/repair success",
+      "known-function agreement",
+      "controlled evidence grounding",
+      "source nDCG@5",
+      "explanation numeric/ID checks",
+      "same-model review",
+      "reviewer controls",
+      "runtime/tokens/failures"
+    ],
+    "source_relevance": "Query-specific gold causal slice: descendants of intervened nodes that are outcome ancestors, excluding intervened equations. Grade 2 for available rules, 1 for explicitly missing rules, 0 otherwise. Defined without generated paths or method outputs; evaluates structural information relevance, not human literary importance.",
+    "conditional_analysis": "Successful synthesis only is secondary.",
+    "paired_comparisons": [
+      "B1-B0",
+      "B2-B0",
+      "ALT-B2",
+      "FULL-B0",
+      "FULL-CARRY",
+      "FULL rank versus B0/B1/UNIFORM"
+    ],
+    "stopping": "Complete fixed design; no significance-seeking continuation. Optional second model and extra seeds deferred."
+  },
+  "application_status": {
+    "variant": "prior_refinement",
+    "prior_record": "runs/campaign_20261012/application/five_kings/alternative_1.json",
+    "version2_input_copy": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/prior_record.json",
+    "prior_record_sha256": "7b9e9ff74bb91b431c9d0e26cd6f42b1624ae53b410575524d4cf89a84da858e",
+    "selection": "First canonical retained v1 LLM proposal; no v2 outcomes or allocations used.",
+    "scope": "Variables and dependencies initialize from an earlier LLM-generated proposal. Operational states/references are regenerated against the new transcript context, all nonroot mechanisms are newly proposed, and dependency retractions remain possible. This is conditional refinement, not successful fresh variable/dependency discovery.",
+    "evidence_policy": "The prior is an unverified proposal, never retrieved evidence. No old equation, source score, or mechanism description enters generation."
+  },
+  "application_limits": "Aligned local alternatives are sensitivity cases, not posterior samples. No synthetic validation of literary claims."
+}

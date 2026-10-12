@@ -8,7 +8,7 @@ import textwrap
 import numpy as np
 from ..budget import atomic_json
 from ..structural_programs import SCM,equation
-from .runtime import paths
+from .runtime import paths,application_record
 
 
 def settings():
@@ -29,22 +29,30 @@ def network(app,folder):
     trace=app['trace'];changed=set(trace['changed_nodes'])
     participation=collections.Counter(n for p in record['selection']['paths'] for n in p)
     source=set(record['selection']['source_boundary']);edges=record['edge_evidence']
+    inspection_file=folder.parent.parent/'results/v2/source_inspection.json'
+    inspection=json.loads(inspection_file.read_text()) if inspection_file.exists() else {'items':[]}
+    flagged={i['node']:i for i in inspection['items']} if app.get('construction_context',{}).get('variant','fresh')=='fresh' else {}
     lines=['digraph G {','graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.25", ranksep="0.38", splines=polyline, outputorder=edgesfirst];',
            'node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=16, color="#38515d", margin="0.10,0.07"];',
            'edge [fontname="DejaVu Sans", fontsize=15, arrowsize=.65, penwidth=1.2];']
     index=[]
     for i,ident in enumerate(scm.order):
-        n=scm.nodes[ident];title='<BR/>'.join(html.escape(x) for x in textwrap.wrap(n['label'],18))
+        n=scm.nodes[ident];title='<BR/>'.join(html.escape(x) for x in textwrap.wrap(n['label']+(' †' if ident in flagged else ''),18))
         rule='<BR/>'.join(html.escape(x) for x in textwrap.wrap(n.get('short_mechanism','Fixed boundary input'),20))
         factual=trace['factual_states'][ident];counter=trace['counterfactual_states'][ident]
-        state=str(factual)+' → '+str(counter) if ident in changed else str(factual)+' → '+str(counter)+' (same)'
+        if n['type']=='category':
+            state='state c%d → c%d'%(n['values'].index(factual),n['values'].index(counter))
+        else:state=str(factual)+' → '+str(counter)
+        if ident not in changed:state+=' (same)'
         bg='#e9f4f2' if n['parents'] else '#fff4db';color='#9b3150' if n.get('event_status')=='unsupported' else '#315467'
         if ident in changed:color='#6f42a8'
         if ident==model['outcome']:bg='#d4e8f0'
+        if ident in flagged:bg='#fbe2e5'
         label='<'+title+'<BR/><FONT POINT-SIZE="15">'+rule+'</FONT><BR/><FONT POINT-SIZE="15">'+html.escape('E%d · %s'%(i+1,n.get('event_time','time unresolved')))+'<BR/>'+html.escape(state)+'</FONT>>'
         lines.append('"%s" [label=%s, fillcolor="%s", color="%s", penwidth=%s, peripheries=%d];'%(ident,label,bg,color,2 if ident in changed else 1.2,2 if participation[ident]>1 else 1))
         index.append({'equation_id':'E%d'%(i+1),'node':ident,'label':n['label'],'definition':n['definition'],
-            'equation':equation(n['expr']),'factual':factual,'counterfactual':counter,'event_status':n.get('event_status'),'sources':n['segments']})
+            'equation':equation(n['expr']),'factual':factual,'counterfactual':counter,'event_status':n.get('event_status'),'sources':n['segments'],
+            'inspection_flag':flagged.get(ident),'category_codes':{'c%d'%j:value for j,value in enumerate(n.get('values',[]))}})
     for a,b in scm.graph.edges:
         e=edges[a+'>'+b];score=e['score'];style='solid' if score==1 else 'dashed' if score>0 else 'dotted'
         color='#286b69' if score>0 else '#9a7272'
@@ -57,7 +65,7 @@ def network(app,folder):
     for fmt in ('svg','pdf','png'):
         subprocess.run(['dot','-T'+fmt,str(dot),'-o',str(folder/('five_kings_network.'+fmt))],check=True)
     atomic_json(folder/'network_index.json',{'model':model['id'],'query':trace['query'],'nodes':index,
-        'legend':'State annotations are factual → selected intervention. Violet borders change; double borders mark nodes shared by selected paths. Solid/dashed/dotted edges mean explicit/contextual/unsupported directional evidence. Tee arrows inhibit; ± has context-dependent sign. These are reviewed hypotheses, not established story laws.'})
+        'legend':'State annotations are factual → selected intervention; category codes are defined in the node index. Violet borders change; double borders mark nodes shared by selected paths. Solid/dashed/dotted edges mean explicit/contextual/zero-weight directional evidence. Tee arrows inhibit; ± has context-dependent sign. A dagger and pink fill flag a targeted operational/source concern, pending researcher adjudication. These are automatically assessed hypotheses, not established story laws.'})
 
 
 def benchmark(summary,folder):
@@ -106,7 +114,7 @@ def application_plots(app,folder):
 
 def main(root):
     root,run,result=paths(root);folder=root/'figures/v2';folder.mkdir(exist_ok=True);settings()
-    application=run/'application/five_kings/final.json'
+    application=application_record(root,run)
     if application.exists():
         app=json.loads(application.read_text());network(app,folder);application_plots(app,folder)
     summary=result/'test_summary.json'

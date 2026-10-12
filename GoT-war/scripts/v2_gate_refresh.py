@@ -9,7 +9,7 @@ import time
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from got_war.budget import atomic_json
-from got_war.v2.runtime import paths,V2Generator
+from got_war.v2.runtime import paths,V2Generator,application_record
 from got_war.v2.mechanisms import compatible_family,outcome_sets
 from got_war.v2.paths import explain_query,game_report,edge_support
 from got_war.v2.explanations import generate,reviewer_controls
@@ -41,7 +41,7 @@ def main(include_app=False):
         atomic_json(f,record);changed.append(record['id'])
         print('REFRESHED',record['id'],'displayable',record['explanation']['displayable'],flush=True)
     if include_app:
-        folder=run/'application/five_kings';f=folder/'final.json';app=json.loads(f.read_text())
+        f=application_record(root,run);folder=f.parent;app=json.loads(f.read_text())
         backup=folder/'final_before_trace_review.json'
         if not backup.exists():atomic_json(backup,app)
         packet=json.loads((root/'.private/v2/five_kings_packet.json').read_text())

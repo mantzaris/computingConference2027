@@ -37,3 +37,15 @@ def paths(root):
     result = root / 'results/v2'
     result.mkdir(parents=True, exist_ok=True)
     return root, b.run, result
+
+
+def application_record(root, run):
+    """Predeclared completion-based selection, never select by model outcomes."""
+    selection = Path(root) / 'configs/application_selection_v2.json'
+    if selection.exists():
+        return Path(root) / json.loads(selection.read_text())['record']
+    for variant in ('five_kings', 'five_kings_refinement'):
+        candidate = Path(run) / 'application' / variant / 'final.json'
+        if candidate.exists():
+            return candidate
+    raise FileNotFoundError('Neither fresh construction nor conditional refinement completed')

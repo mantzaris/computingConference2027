@@ -1,5 +1,5 @@
 {
-  "status": "development_gate_in_progress",
+  "status": "technical_gate_passed_with_synthesis_failure",
   "throughput_and_budget": {
     "pilot_records": 4,
     "output_tokens": 18001,
@@ -19,5 +19,99 @@
   "corrections": [
     "Explicitly require assumed missing rules directly in expr, forbid internal noise and equation-only assumptions.",
     "Expose all eligible numeric keys, suppress internal segment allocation weights in prose records, distinguish zero influence from absent support."
-  ]
+  ],
+  "benchmark": [
+    {
+      "id": "v2_scm_278000",
+      "condition": "complete",
+      "valid_model": true,
+      "controlled_information_configuration_verified": true,
+      "function_family_exhaustive": true,
+      "family_size": 1,
+      "descriptions_match_all_tables": true,
+      "outcome_sets_reproduce": true,
+      "known_function_agreement": 1.0,
+      "coalition_values_reproduce": true,
+      "actual_sentence_ids_reviewed": true,
+      "explanation_displayable": true,
+      "failed_synthesis_rejected_and_retained": false,
+      "technical_pass": true
+    },
+    {
+      "id": "v2_scm_278100",
+      "condition": "missing_intermediate",
+      "valid_model": false,
+      "controlled_information_configuration_verified": true,
+      "failed_synthesis_rejected_and_retained": true,
+      "technical_pass": true
+    },
+    {
+      "id": "v2_scm_278200",
+      "condition": "missing_outcome",
+      "valid_model": true,
+      "controlled_information_configuration_verified": true,
+      "function_family_exhaustive": true,
+      "family_size": 5,
+      "descriptions_match_all_tables": true,
+      "outcome_sets_reproduce": true,
+      "known_function_agreement": 1.0,
+      "coalition_values_reproduce": true,
+      "actual_sentence_ids_reviewed": true,
+      "explanation_displayable": false,
+      "failed_synthesis_rejected_and_retained": false,
+      "technical_pass": true
+    },
+    {
+      "id": "v2_scm_278300",
+      "condition": "multiple_missing",
+      "valid_model": true,
+      "controlled_information_configuration_verified": true,
+      "function_family_exhaustive": true,
+      "family_size": 25,
+      "descriptions_match_all_tables": true,
+      "outcome_sets_reproduce": true,
+      "known_function_agreement": 1.0,
+      "coalition_values_reproduce": true,
+      "actual_sentence_ids_reviewed": true,
+      "explanation_displayable": true,
+      "failed_synthesis_rejected_and_retained": false,
+      "technical_pass": true
+    }
+  ],
+  "application": {
+    "variables": 6,
+    "edges": 7,
+    "models": 1,
+    "record": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/final.json",
+    "construction_context": {
+      "variant": "prior_refinement",
+      "prior_record": "runs/campaign_20261012/application/five_kings/alternative_1.json",
+      "version2_input_copy": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/prior_record.json",
+      "prior_record_sha256": "7b9e9ff74bb91b431c9d0e26cd6f42b1624ae53b410575524d4cf89a84da858e",
+      "selection": "First canonical retained v1 LLM proposal; no v2 outcomes or allocations used.",
+      "scope": "Variables and dependencies initialize from an earlier LLM-generated proposal. Operational states/references are regenerated against the new transcript context, all nonroot mechanisms are newly proposed, and dependency retractions remain possible. This is conditional refinement, not successful fresh variable/dependency discovery.",
+      "evidence_policy": "The prior is an unverified proposal, never retrieved evidence. No old equation, source score, or mechanism description enters generation."
+    },
+    "fresh_source_construction_succeeded": false,
+    "conditional_initialization_used": true,
+    "ten_node_reporting_target_met": false,
+    "coalition_values_reproduce": true,
+    "descriptions_match_all_tables": true,
+    "actual_sentence_ids_reviewed": true,
+    "explanation_displayable": false,
+    "source_validity": "Conditional on automated contextual review; independent researcher adjudication pending."
+  },
+  "all_benchmark_conditions_synthesized": false,
+  "supervision": {
+    "at": "2026-10-12T16:29:05.342460+00:00",
+    "host": "actual RunPod",
+    "identity_retry_calls": 3,
+    "registered_identity_nonnull": true,
+    "deadline_enforced": true,
+    "owned_stopped": true,
+    "unregistered_test_child_survived": true,
+    "artifact_preserved": true
+  },
+  "checked_at": "2026-10-12T20:08:42.962279+00:00",
+  "interpretation": "This gate checks the controlled information configurations using the declared oracle family, rejection/retention of invalid synthesis, numerical reproduction of accepted models and actual sentence review. Failed LLM synthesis is an experimental failure in the primary denominator, not a passing end-to-end example. It does not certify source entailment."
 }

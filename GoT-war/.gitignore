@@ -52,3 +52,8 @@ paper/**/*.bbl
 paper/**/*.blg
 paper/**/*.fls
 paper/**/*.fdb_latexmk
+# Auxiliary split tables regenerate from curated records; publish held-out tables.
+/results/v2/development_summary.json
+/results/v2/development_scm_scores.csv
+/results/v2/calibration_summary.json
+/results/v2/calibration_scm_scores.csv

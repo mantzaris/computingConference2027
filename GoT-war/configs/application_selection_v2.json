@@ -1,0 +1,14 @@
+{
+  "record": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/final.json",
+  "construction_context": {
+    "variant": "prior_refinement",
+    "prior_record": "runs/campaign_20261012/application/five_kings/alternative_1.json",
+    "version2_input_copy": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/prior_record.json",
+    "prior_record_sha256": "7b9e9ff74bb91b431c9d0e26cd6f42b1624ae53b410575524d4cf89a84da858e",
+    "selection": "First canonical retained v1 LLM proposal; no v2 outcomes or allocations used.",
+    "scope": "Variables and dependencies initialize from an earlier LLM-generated proposal. Operational states/references are regenerated against the new transcript context, all nonroot mechanisms are newly proposed, and dependency retractions remain possible. This is conditional refinement, not successful fresh variable/dependency discovery.",
+    "evidence_policy": "The prior is an unverified proposal, never retrieved evidence. No old equation, source score, or mechanism description enters generation."
+  },
+  "selection": "Fresh completion preferred; otherwise separately labeled conditional refinement. No selection by outcomes, attribution or source scores.",
+  "record_sha256_at_freeze": "bc9987d4a5ca2e5b176b43bba297e6df5c093cd9e45b02859d02a33b4bd8f0d0"
+}
