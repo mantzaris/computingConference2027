@@ -1,0 +1,42 @@
+.private/
+.venv/
+.cache/
+__pycache__/
+.pytest_cache/
+*.pyc
+data/raw/
+data/derived/segments.private.jsonl
+# Campaign logs, checkpoints and expanded reproduction inputs stay local.
+/runs/
+/benchmark/cases.jsonl
+# Publication vectors and the manuscript PDF are retained; previews regenerate.
+/figures/*.png
+/paper/template/*
+!/paper/template/SOURCE.json
+!/paper/template/svproc.cls
+!/paper/template/aliascnt.sty
+!/paper/template/remreset.sty
+
+# Downloads, history backups and model weights never belong in normal commits.
+*.tar.gz
+*.tar
+*.tgz
+*.zip
+*.gz
+*.bundle
+*.safetensors
+*.gguf
+*.bin
+*.pt
+*.pth
+*.onnx
+# Small, curated records needed to reproduce the published measurements.
+!/results/reproduction.tar.gz
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk

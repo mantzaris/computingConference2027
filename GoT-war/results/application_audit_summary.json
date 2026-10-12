@@ -1,0 +1,156 @@
+{
+  "cases": [
+    {
+      "case": "daenerys_conquest",
+      "principal_model": "daenerys_conquest_alt0",
+      "accepted_generations": 1,
+      "nodes": 3,
+      "edges": 2,
+      "principal_figure_size_target_met": false,
+      "initial_event_assessments": {
+        "supported": 2,
+        "partial": 1
+      },
+      "mechanism_assessments": {
+        "unsupported": 2
+      },
+      "unsupported_mechanism_fraction": 1.0,
+      "raw_positive_scores_on_unsupported_mechanisms": 0,
+      "positive_priority_segments": 0,
+      "positively_supported_paths": 0,
+      "final_source_critique_status": "completed",
+      "final_event_support": {
+        "supported": 2,
+        "partial": 1
+      },
+      "contradicted_story_times": [
+        "W"
+      ],
+      "reference_semantics_flags": [
+        "W"
+      ],
+      "duplicate_event_flags": [],
+      "parent_order_flags": [
+        {
+          "child": "W",
+          "parents": [
+            "e18_2",
+            "e06_3"
+          ]
+        }
+      ],
+      "unresolved_parent_order_fields": [],
+      "posthoc_unverified_alias_flags": [],
+      "explanations_audited": 1,
+      "explanations_passing_automatic_check": 0,
+      "no_independent_human_review": true,
+      "literary_counterfactual_gold_available": false
+    },
+    {
+      "case": "five_kings",
+      "principal_model": "five_kings_alt1",
+      "accepted_generations": 2,
+      "nodes": 10,
+      "edges": 13,
+      "principal_figure_size_target_met": true,
+      "initial_event_assessments": {
+        "supported": 9,
+        "partial": 1
+      },
+      "mechanism_assessments": {
+        "unsupported": 12,
+        "inferred": 1
+      },
+      "unsupported_mechanism_fraction": 0.9230769230769231,
+      "raw_positive_scores_on_unsupported_mechanisms": 0,
+      "positive_priority_segments": 0,
+      "positively_supported_paths": 0,
+      "final_source_critique_status": "completed",
+      "final_event_support": {
+        "supported": 9,
+        "partial": 1
+      },
+      "contradicted_story_times": [
+        "W"
+      ],
+      "reference_semantics_flags": [
+        "e12_5",
+        "W"
+      ],
+      "duplicate_event_flags": [],
+      "parent_order_flags": [],
+      "unresolved_parent_order_fields": [
+        "e06_0",
+        "e06_3"
+      ],
+      "posthoc_unverified_alias_flags": [],
+      "explanations_audited": 2,
+      "explanations_passing_automatic_check": 0,
+      "no_independent_human_review": true,
+      "literary_counterfactual_gold_available": false
+    },
+    {
+      "case": "northern_campaign",
+      "principal_model": "northern_campaign_alt0",
+      "accepted_generations": 1,
+      "nodes": 8,
+      "edges": 12,
+      "principal_figure_size_target_met": false,
+      "initial_event_assessments": {
+        "supported": 7,
+        "partial": 1
+      },
+      "mechanism_assessments": {
+        "unsupported": 7,
+        "inferred": 5
+      },
+      "unsupported_mechanism_fraction": 0.5833333333333334,
+      "raw_positive_scores_on_unsupported_mechanisms": 1,
+      "positive_priority_segments": 0,
+      "positively_supported_paths": 0,
+      "final_source_critique_status": "completed",
+      "final_event_support": {
+        "supported": 8
+      },
+      "contradicted_story_times": [],
+      "reference_semantics_flags": [],
+      "duplicate_event_flags": [],
+      "parent_order_flags": [
+        {
+          "child": "e06_3",
+          "parents": [
+            "e06_2"
+          ]
+        }
+      ],
+      "unresolved_parent_order_fields": [
+        "e06_2",
+        "W",
+        "c00",
+        "c03",
+        "c01"
+      ],
+      "posthoc_unverified_alias_flags": [
+        {
+          "case": "northern_campaign",
+          "node_id": "c01",
+          "generated_name": "Edmure Tully",
+          "parenthetical_alias": "the Blackfish",
+          "literal_name_present_in_frozen_packet": false,
+          "packet_sha256": "11e141c4175582f5acc884c098ba2466ea68bc76c44f7add7cd5d4f0de4f1c5d",
+          "model_event_assessment": "supported",
+          "source_ids": [
+            "s06e05_p04"
+          ],
+          "interpretation": "Post-hoc literal coverage flag only. An absent name is not a verified source identity; this does not establish the true alias or constitute human adjudication."
+        }
+      ],
+      "explanations_audited": 1,
+      "explanations_passing_automatic_check": 0,
+      "no_independent_human_review": true,
+      "literary_counterfactual_gold_available": false
+    }
+  ],
+  "baseline_rows": 54,
+  "interpretation": "Descriptive audits of generated hypotheses. Source critiques and explanation audits use the same primary model; they are neither independent human labels nor literary counterfactual validation."
+}

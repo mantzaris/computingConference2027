@@ -1,0 +1,21 @@
+{
+  "scientific_tests": {
+    "command": "PYTHONPATH=src python3 -m pytest -q tests --basetemp=.cache/pytest",
+    "completed_at": "2026-10-12T10:23:18+00:00",
+    "passed": 19,
+    "elapsed_seconds": 3.4
+  },
+  "python_compilation": "passed",
+  "git_diff_whitespace_check": "passed",
+  "checked_source_sha256": {
+    "tests/test_scientific_contract.py": "a8adfb4d4f312b9b073f497f2bf76126117d7e6c6f4124675c7030db563c3b2d",
+    "src/got_war/structural_programs.py": "b0b4d32a6b362e2d964d498e49344ba4b734dc7ecbd65b47aee0eb0d572acaa2",
+    "src/got_war/attribution.py": "19e694018ea97e9522bc9b3f03f8bd40bd4a4478cdfb231ec4fe8c50b1e411ac",
+    "src/got_war/budget.py": "321d57eb451430e0938425669d459ef316e8f01c302f716f2671d732adbfc20b",
+    "src/got_war/generation.py": "a520fa0b7c35b4e6fd34e32d5a01c408ccdf0ca8a7ba77953f44254e4eef4777",
+    "src/got_war/experiments.py": "7f49d915b3babf5b88347a696ac96f41b30bfda9564187ad7efd69ed8a9a7d77",
+    "src/got_war/evaluation.py": "ba5f3716aca0970624f4bd73f2f7efcc0acc6959806ec8fa4b43562dae6a07a4"
+  },
+  "application_reexecution": "results/artifact_verification.json",
+  "interpretation": "Software and retained-artifact consistency checks; not independent source validation or human review."
+}

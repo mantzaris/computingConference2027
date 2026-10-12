@@ -1,0 +1,11 @@
+{
+  "networks": [
+    "five_kings",
+    "northern_campaign",
+    "daenerys_conquest"
+  ],
+  "software": "Graphviz dot for principal layouts; matplotlib for numeric/paired figures",
+  "edge_width": "uniform, never sum of path shares",
+  "inspection_status": "Automated-assistant visual inspection completed at manuscript scale; see figure_inspection.json for limits.",
+  "main_models": "first accepted alternative by predeclared index"
+}

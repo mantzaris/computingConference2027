@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-12T10:46:41.715062+00:00",
+  "public_text_files_checked": 1860,
+  "findings": [],
+  "excluded_from_git": [
+    "private transport settings and identities",
+    "private source packets and prompt snapshots",
+    "model/cache files",
+    "SQLite request cache"
+  ],
+  "scope": "Pattern scan and Git ignore inspection of the intended release; not a general security audit."
+}

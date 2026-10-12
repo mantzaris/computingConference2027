@@ -1,0 +1,586 @@
+{
+  "method_comparison": [
+    {
+      "split": "development",
+      "condition": "complete",
+      "method": "B0",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.9166666666666666,
+      "ci_low": 0.875,
+      "ci_high": 0.9583333333333334
+    },
+    {
+      "split": "development",
+      "condition": "complete",
+      "method": "B1",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.875,
+      "ci_low": 0.7083333333333334,
+      "ci_high": 0.9791666666666666
+    },
+    {
+      "split": "development",
+      "condition": "complete",
+      "method": "B2",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0
+    },
+    {
+      "split": "development",
+      "condition": "complete",
+      "method": "P",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0
+    },
+    {
+      "split": "development",
+      "condition": "incomplete",
+      "method": "B0",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.6458333333333334,
+      "ci_low": 0.5208333333333334,
+      "ci_high": 0.7708333333333334
+    },
+    {
+      "split": "development",
+      "condition": "incomplete",
+      "method": "B1",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.5833333333333334,
+      "ci_low": 0.4375,
+      "ci_high": 0.7291666666666666
+    },
+    {
+      "split": "development",
+      "condition": "incomplete",
+      "method": "B2",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.4375,
+      "ci_low": 0.16666666666666666,
+      "ci_high": 0.7083333333333334
+    },
+    {
+      "split": "development",
+      "condition": "incomplete",
+      "method": "P",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.6666666666666666,
+      "ci_low": 0.3333333333333333,
+      "ci_high": 1.0
+    },
+    {
+      "split": "development",
+      "condition": "all",
+      "method": "B0",
+      "independent_scms": 12,
+      "narratives": 12,
+      "score": 0.78125,
+      "ci_low": 0.6770833333333334,
+      "ci_high": 0.875
+    },
+    {
+      "split": "development",
+      "condition": "all",
+      "method": "B1",
+      "independent_scms": 12,
+      "narratives": 12,
+      "score": 0.7291666666666666,
+      "ci_low": 0.59375,
+      "ci_high": 0.8541666666666666
+    },
+    {
+      "split": "development",
+      "condition": "all",
+      "method": "B2",
+      "independent_scms": 12,
+      "narratives": 12,
+      "score": 0.71875,
+      "ci_low": 0.5,
+      "ci_high": 0.90625
+    },
+    {
+      "split": "development",
+      "condition": "all",
+      "method": "P",
+      "independent_scms": 12,
+      "narratives": 12,
+      "score": 0.8333333333333334,
+      "ci_low": 0.5833333333333334,
+      "ci_high": 1.0
+    },
+    {
+      "split": "calibration",
+      "condition": "complete",
+      "method": "B0",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.75,
+      "ci_low": 0.6666666666666666,
+      "ci_high": 0.8541666666666666
+    },
+    {
+      "split": "calibration",
+      "condition": "complete",
+      "method": "B1",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.5,
+      "ci_low": 0.3958333333333333,
+      "ci_high": 0.625
+    },
+    {
+      "split": "calibration",
+      "condition": "complete",
+      "method": "B2",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0
+    },
+    {
+      "split": "calibration",
+      "condition": "complete",
+      "method": "P",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0
+    },
+    {
+      "split": "calibration",
+      "condition": "incomplete",
+      "method": "B0",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.6041666666666666,
+      "ci_low": 0.5416666666666666,
+      "ci_high": 0.6666666666666666
+    },
+    {
+      "split": "calibration",
+      "condition": "incomplete",
+      "method": "B1",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.5833333333333334,
+      "ci_low": 0.5416666666666666,
+      "ci_high": 0.625
+    },
+    {
+      "split": "calibration",
+      "condition": "incomplete",
+      "method": "B2",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.5416666666666666,
+      "ci_low": 0.3125,
+      "ci_high": 0.7083333333333334
+    },
+    {
+      "split": "calibration",
+      "condition": "incomplete",
+      "method": "P",
+      "independent_scms": 6,
+      "narratives": 6,
+      "score": 0.75,
+      "ci_low": 0.4166666666666667,
+      "ci_high": 0.9791666666666666
+    },
+    {
+      "split": "calibration",
+      "condition": "all",
+      "method": "B0",
+      "independent_scms": 12,
+      "narratives": 12,
+      "score": 0.6770833333333334,
+      "ci_low": 0.6041666666666666,
+      "ci_high": 0.75
+    },
+    {
+      "split": "calibration",
+      "condition": "all",
+      "method": "B1",
+      "independent_scms": 12,
+      "narratives": 12,
+      "score": 0.5416666666666666,
+      "ci_low": 0.4791666666666667,
+      "ci_high": 0.6041666666666666
+    },
+    {
+      "split": "calibration",
+      "condition": "all",
+      "method": "B2",
+      "independent_scms": 12,
+      "narratives": 12,
+      "score": 0.7708333333333334,
+      "ci_low": 0.59375,
+      "ci_high": 0.9166666666666666
+    },
+    {
+      "split": "calibration",
+      "condition": "all",
+      "method": "P",
+      "independent_scms": 12,
+      "narratives": 12,
+      "score": 0.875,
+      "ci_low": 0.6979166666666666,
+      "ci_high": 1.0
+    },
+    {
+      "split": "test",
+      "condition": "complete",
+      "method": "B0",
+      "independent_scms": 18,
+      "narratives": 36,
+      "score": 0.7430555555555556,
+      "ci_low": 0.6665798611111111,
+      "ci_high": 0.8159722222222222
+    },
+    {
+      "split": "test",
+      "condition": "complete",
+      "method": "B1",
+      "independent_scms": 18,
+      "narratives": 36,
+      "score": 0.5902777777777778,
+      "ci_low": 0.4965277777777778,
+      "ci_high": 0.6805555555555556
+    },
+    {
+      "split": "test",
+      "condition": "complete",
+      "method": "B2",
+      "independent_scms": 18,
+      "narratives": 36,
+      "score": 0.9722222222222222,
+      "ci_low": 0.9166666666666666,
+      "ci_high": 1.0
+    },
+    {
+      "split": "test",
+      "condition": "complete",
+      "method": "P",
+      "independent_scms": 18,
+      "narratives": 36,
+      "score": 0.9722222222222222,
+      "ci_low": 0.9166666666666666,
+      "ci_high": 1.0
+    },
+    {
+      "split": "test",
+      "condition": "incomplete",
+      "method": "B0",
+      "independent_scms": 18,
+      "narratives": 36,
+      "score": 0.6111111111111112,
+      "ci_low": 0.5381944444444444,
+      "ci_high": 0.6805555555555556
+    },
+    {
+      "split": "test",
+      "condition": "incomplete",
+      "method": "B1",
+      "independent_scms": 18,
+      "narratives": 36,
+      "score": 0.5902777777777778,
+      "ci_low": 0.5347222222222222,
+      "ci_high": 0.6388888888888888
+    },
+    {
+      "split": "test",
+      "condition": "incomplete",
+      "method": "B2",
+      "independent_scms": 18,
+      "narratives": 36,
+      "score": 0.4131944444444444,
+      "ci_low": 0.3020833333333333,
+      "ci_high": 0.5277777777777778
+    },
+    {
+      "split": "test",
+      "condition": "incomplete",
+      "method": "P",
+      "independent_scms": 18,
+      "narratives": 36,
+      "score": 0.6006944444444444,
+      "ci_low": 0.44088541666666664,
+      "ci_high": 0.7534722222222222
+    },
+    {
+      "split": "test",
+      "condition": "all",
+      "method": "B0",
+      "independent_scms": 36,
+      "narratives": 72,
+      "score": 0.6770833333333334,
+      "ci_low": 0.623220486111111,
+      "ci_high": 0.7309027777777778
+    },
+    {
+      "split": "test",
+      "condition": "all",
+      "method": "B1",
+      "independent_scms": 36,
+      "narratives": 72,
+      "score": 0.5902777777777778,
+      "ci_low": 0.5364583333333334,
+      "ci_high": 0.6458333333333334
+    },
+    {
+      "split": "test",
+      "condition": "all",
+      "method": "B2",
+      "independent_scms": 36,
+      "narratives": 72,
+      "score": 0.6927083333333334,
+      "ci_low": 0.5798177083333333,
+      "ci_high": 0.8055989583333332
+    },
+    {
+      "split": "test",
+      "condition": "all",
+      "method": "P",
+      "independent_scms": 36,
+      "narratives": 72,
+      "score": 0.7864583333333334,
+      "ci_low": 0.6753472222222222,
+      "ci_high": 0.8854166666666666
+    }
+  ],
+  "paired_test_differences": [
+    {
+      "condition": "complete",
+      "comparison": "B2-B0",
+      "n_scms": 18,
+      "difference": 0.22916666666666666,
+      "ci": [
+        0.11805555555555555,
+        0.3298611111111111
+      ]
+    },
+    {
+      "condition": "complete",
+      "comparison": "B2-B1",
+      "n_scms": 18,
+      "difference": 0.3819444444444444,
+      "ci": [
+        0.2777777777777778,
+        0.4826388888888889
+      ]
+    },
+    {
+      "condition": "complete",
+      "comparison": "P-B0",
+      "n_scms": 18,
+      "difference": 0.22916666666666666,
+      "ci": [
+        0.11805555555555555,
+        0.3298611111111111
+      ]
+    },
+    {
+      "condition": "complete",
+      "comparison": "P-B2",
+      "n_scms": 18,
+      "difference": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "condition": "incomplete",
+      "comparison": "B2-B0",
+      "n_scms": 18,
+      "difference": -0.19791666666666666,
+      "ci": [
+        -0.3333333333333333,
+        -0.06597222222222222
+      ]
+    },
+    {
+      "condition": "incomplete",
+      "comparison": "B2-B1",
+      "n_scms": 18,
+      "difference": -0.17708333333333334,
+      "ci": [
+        -0.3055555555555556,
+        -0.041666666666666664
+      ]
+    },
+    {
+      "condition": "incomplete",
+      "comparison": "P-B0",
+      "n_scms": 18,
+      "difference": -0.010416666666666666,
+      "ci": [
+        -0.2118923611111111,
+        0.1875
+      ]
+    },
+    {
+      "condition": "incomplete",
+      "comparison": "P-B2",
+      "n_scms": 18,
+      "difference": 0.1875,
+      "ci": [
+        0.1111111111111111,
+        0.2777777777777778
+      ]
+    },
+    {
+      "condition": "all",
+      "comparison": "B2-B0",
+      "n_scms": 36,
+      "difference": 0.015625,
+      "ci": [
+        -0.09895833333333333,
+        0.125
+      ]
+    },
+    {
+      "condition": "all",
+      "comparison": "B2-B1",
+      "n_scms": 36,
+      "difference": 0.10243055555555555,
+      "ci": [
+        -0.024305555555555556,
+        0.22226562499999974
+      ]
+    },
+    {
+      "condition": "all",
+      "comparison": "P-B0",
+      "n_scms": 36,
+      "difference": 0.109375,
+      "ci": [
+        -0.020833333333333332,
+        0.2292100694444442
+      ]
+    },
+    {
+      "condition": "all",
+      "comparison": "P-B2",
+      "n_scms": 36,
+      "difference": 0.09375,
+      "ci": [
+        0.04509548611111111,
+        0.14930555555555555
+      ]
+    }
+  ],
+  "records_completed": 120,
+  "unique_scms": 60,
+  "first_valid": 92,
+  "eventual_valid": 100,
+  "application": [
+    {
+      "case": "daenerys_conquest",
+      "alternative": 0,
+      "nodes": 3,
+      "principal_figure_size_target_met": false,
+      "edges": 2,
+      "node_types": {
+        "bool": 3
+      },
+      "paths": 2,
+      "path_edge_coverage": 1.0,
+      "baseline": 0.0,
+      "full": 1.0,
+      "sum_phi": 1.0,
+      "efficiency_residual": 0.0,
+      "naive_sum": 0.0,
+      "naive_residual": -1.0,
+      "unsupported_edges": 2,
+      "queries": 3,
+      "alternative_reference_phi_l1": 1.0
+    },
+    {
+      "case": "five_kings",
+      "alternative": 1,
+      "nodes": 10,
+      "principal_figure_size_target_met": true,
+      "edges": 13,
+      "node_types": {
+        "bool": 9,
+        "category": 1
+      },
+      "paths": 6,
+      "path_edge_coverage": 1.0,
+      "baseline": 0.0,
+      "full": 1.0,
+      "sum_phi": 0.9999999999999999,
+      "efficiency_residual": 1.1102230246251565e-16,
+      "naive_sum": 0.0,
+      "naive_residual": -1.0,
+      "unsupported_edges": 12,
+      "queries": 12,
+      "alternative_reference_phi_l1": 0.9999999999999999
+    },
+    {
+      "case": "five_kings",
+      "alternative": 2,
+      "nodes": 10,
+      "principal_figure_size_target_met": true,
+      "edges": 13,
+      "node_types": {
+        "bool": 9,
+        "category": 1
+      },
+      "paths": 6,
+      "path_edge_coverage": 1.0,
+      "baseline": 0.0,
+      "full": 1.0,
+      "sum_phi": 0.9999999999999999,
+      "efficiency_residual": 1.1102230246251565e-16,
+      "naive_sum": 0.0,
+      "naive_residual": -1.0,
+      "unsupported_edges": 12,
+      "queries": 12,
+      "alternative_reference_phi_l1": 0.9999999999999999
+    },
+    {
+      "case": "northern_campaign",
+      "alternative": 0,
+      "nodes": 8,
+      "principal_figure_size_target_met": false,
+      "edges": 12,
+      "node_types": {
+        "bool": 7,
+        "category": 1
+      },
+      "paths": 6,
+      "path_edge_coverage": 1.0,
+      "baseline": 0.0,
+      "full": 1.0,
+      "sum_phi": 0.9999999999999999,
+      "efficiency_residual": 1.1102230246251565e-16,
+      "naive_sum": 0.0,
+      "naive_residual": -1.0,
+      "unsupported_edges": 7,
+      "queries": 12,
+      "alternative_reference_phi_l1": 0.9999999999999999
+    }
+  ],
+  "bootstrap": "2000 percentile resamples of independent SCMs; both text variants averaged within SCM; seed=2027; primary inference seed only",
+  "limitations": [
+    "Synthetic intervention accuracy does not validate literary causality.",
+    "Incomplete-query compatible families assume deterministic binary local mechanisms and declared parents.",
+    "Evidence weights are heuristic and not causal probabilities.",
+    "No human validation or comprehension study."
+  ]
+}

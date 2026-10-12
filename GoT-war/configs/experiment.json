@@ -1,0 +1,22 @@
+{
+  "version": "frozen-before-main-inference-v1",
+  "continuity": "HBO television Game of Thrones",
+  "seed": 2027,
+  "path_count": 8,
+  "path_permutations": 64,
+  "exact_attribution_max_paths": 6,
+  "background_draws_if_distribution_justified": 128,
+  "max_repairs": 2,
+  "generation_temperature": 0.2,
+  "normal_output_tokens": 2048,
+  "synthesis_output_tokens": 4096,
+  "model_selection_weights": {"evidence":1.0,"development":1.0,"complexity":0.01,"assumptions":0.1},
+  "selection_policy": "Hard validity first; retain admissible alternatives, no fitted textual likelihood; objective weights recorded but not used for unvalidated numeric fit",
+  "calibration": "No probabilistic calibration claim; separate held-out calibration split for optional support calibration; no transfer to literary cases",
+  "benchmark": {"independent_scms":60,"development":12,"calibration":12,"test":36,"sizes":[12,18,24],"conditions":["complete","incomplete"],"queries_per_narrative":8},
+  "cases": [
+    {"id":"five_kings","name":"War of the Five Kings","outcome":"Armed conflict between the Stark-led northern/Riverlands coalition and the Lannister-controlled crown is active by the end of season 1, with wider competing royal claims documented through season 2 episode 4.","level":"war onset and early escalation","actor_scope":"Stark/Tully coalition and Lannister-controlled crown; other claimants only where the packet supports their role","horizon":"S1E1 through S2E4","source_episodes":["s01e01","s01e02","s01e03","s01e04","s01e05","s01e06","s01e07","s01e08","s01e09","s01e10","s02e01","s02e02","s02e03","s02e04"],"retrieval_query":"war conflict kings claim throne Stark Lannister Robert Joffrey Ned Robb Catelyn Stannis Renly Balon army succession"},
+    {"id":"northern_campaign","name":"Northern campaign against Bolton rule","outcome":"Jon Snow and Sansa Stark's coalition undertakes and sustains an armed campaign to remove Bolton rule of Winterfell through season 6 episode 9.","level":"regional campaign, not a single battle","actor_scope":"Stark-led northern/wildling coalition, Bolton forces and participating Vale forces","horizon":"S5E6 through S6E9","source_episodes":["s05e06","s05e10","s06e02","s06e04","s06e05","s06e07","s06e09"],"retrieval_query":"Sansa Jon Ramsay Bolton Winterfell army northern wildlings alliance campaign Rickon Vale Littlefinger"},
+    {"id":"daenerys_conquest","name":"Daenerys's conquest of Westeros","outcome":"Daenerys and her allies continue an armed campaign against Cersei's crown in Westeros through the assault on King's Landing in season 8 episode 5.","level":"war continuation and escalation","actor_scope":"Daenerys-led coalition and Lannister/Euron crown forces","horizon":"S6E10 through S8E5; retrospective information only as revealed by that horizon","source_episodes":["s06e10","s07e01","s07e02","s07e03","s07e04","s07e05","s07e07","s08e04","s08e05"],"retrieval_query":"Daenerys Cersei war conquest army coalition Tyrion Olenna Yara Euron dragon fleet Missandei King's Landing surrender"}
+  ]
+}

@@ -1,0 +1,1317 @@
+[
+  {
+    "case": "northern_campaign",
+    "alternative": 0,
+    "model": "northern_campaign_alt0",
+    "paths": [
+      [
+        "e00_3",
+        "e06_1",
+        "W"
+      ],
+      [
+        "e00_3",
+        "e06_1",
+        "c00",
+        "W"
+      ],
+      [
+        "e00_3",
+        "e06_1",
+        "c01",
+        "W"
+      ],
+      [
+        "e00_3",
+        "e06_1",
+        "c03",
+        "W"
+      ],
+      [
+        "e00_3",
+        "e06_1",
+        "e06_3",
+        "c00",
+        "W"
+      ],
+      [
+        "e00_3",
+        "e06_1",
+        "e06_2",
+        "e06_3",
+        "c00",
+        "W"
+      ]
+    ],
+    "phi": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "mc_se": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "reference_phi": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "coherent_boundary_reference": {
+      "boundary_intervention": {
+        "e00_3": 0
+      },
+      "reference_states": {
+        "e00_3": 0,
+        "e06_1": 0,
+        "e06_2": 0,
+        "c03": 0,
+        "c01": 0,
+        "e06_3": "not proposed",
+        "c00": 0,
+        "W": 0
+      },
+      "attribution": {
+        "baseline": 0.0,
+        "full": 1.0,
+        "contrast": 1.0,
+        "phi": [
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666
+        ],
+        "mc_se": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "efficiency_residual": 1.1102230246251565e-16,
+        "naive_standalone": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "naive_sum": 0.0,
+        "naive_residual": -1.0,
+        "unique_edge_masks": 64,
+        "players": 6,
+        "method": "exact",
+        "permutations": 0,
+        "background_count": 1,
+        "background_interpretation": "fixed factual background",
+        "recombined_routes": [],
+        "references": {
+          "c00>W": 0,
+          "c01>W": 0,
+          "c03>W": 0,
+          "e00_3>e06_1": 0,
+          "e06_1>W": 0,
+          "e06_1>c00": 0,
+          "e06_1>c01": 0,
+          "e06_1>c03": 0,
+          "e06_1>e06_2": 0,
+          "e06_1>e06_3": 0,
+          "e06_2>e06_3": 0,
+          "e06_3>c00": "not proposed"
+        }
+      },
+      "interpretation": "Inactive-edge reference inputs are taken from the model world obtained by jointly setting source-boundary events to their declared references. Coalition execution still uses the original factual background. This is a model-derived comparison policy, not an observed historical alternative."
+    },
+    "weakest_link_priority": [
+      {
+        "segment_id": "s06e04_p02",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s06e05_p04",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s06e09_p04",
+        "priority": 0.0
+      }
+    ],
+    "uniform_priority": [
+      {
+        "segment_id": "s06e09_p04",
+        "priority": 0.8333333333333333
+      },
+      {
+        "segment_id": "s06e04_p02",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s06e05_p04",
+        "priority": 0.08333333333333333
+      }
+    ],
+    "geometric_priority": [
+      {
+        "segment_id": "s06e04_p02",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s06e05_p04",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s06e09_p04",
+        "priority": 0.0
+      }
+    ],
+    "raw_score_priority": {
+      "segments": [
+        {
+          "segment_id": "s06e04_p02",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s06e05_p04",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s06e09_p04",
+          "priority": 0.0
+        }
+      ],
+      "paths": [
+        {
+          "path_id": "p1",
+          "nodes": [
+            "e00_3",
+            "e06_1",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s06e09_p04": 1.0
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p2",
+          "nodes": [
+            "e00_3",
+            "e06_1",
+            "c00",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s06e09_p04": 1.0
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p3",
+          "nodes": [
+            "e00_3",
+            "e06_1",
+            "c01",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s06e05_p04": 0.5,
+            "s06e09_p04": 0.5
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p4",
+          "nodes": [
+            "e00_3",
+            "e06_1",
+            "c03",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s06e04_p02": 0.5,
+            "s06e09_p04": 0.5
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p5",
+          "nodes": [
+            "e00_3",
+            "e06_1",
+            "e06_3",
+            "c00",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s06e09_p04": 1.0
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p6",
+          "nodes": [
+            "e00_3",
+            "e06_1",
+            "e06_2",
+            "e06_3",
+            "c00",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s06e09_p04": 1.0
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        }
+      ]
+    },
+    "disjoint_groups": {
+      "groups": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "attribution": {
+        "baseline": 0.0,
+        "full": 1.0,
+        "contrast": 1.0,
+        "phi": [
+          1.0
+        ],
+        "mc_se": [
+          0.0
+        ],
+        "efficiency_residual": 0.0,
+        "naive_standalone": [
+          1.0
+        ],
+        "naive_sum": 1.0,
+        "naive_residual": 0.0,
+        "unique_edge_masks": 2,
+        "players": 1,
+        "method": "exact",
+        "permutations": 0,
+        "background_count": 1,
+        "background_interpretation": "fixed factual background",
+        "recombined_routes": [],
+        "references": {
+          "c00>W": 0,
+          "c01>W": 0,
+          "c03>W": 0,
+          "e00_3>e06_1": 0,
+          "e06_1>W": 0,
+          "e06_1>c00": 0,
+          "e06_1>c01": 0,
+          "e06_1>c03": 0,
+          "e06_1>e06_2": 0,
+          "e06_1>e06_3": 0,
+          "e06_2>e06_3": 0,
+          "e06_3>c00": "not proposed"
+        }
+      }
+    },
+    "recombined_routes": []
+  },
+  {
+    "case": "five_kings",
+    "alternative": 1,
+    "model": "five_kings_alt1",
+    "paths": [
+      [
+        "e06_1",
+        "e06_0",
+        "W"
+      ],
+      [
+        "e06_2",
+        "e06_3",
+        "e12_0",
+        "e12_1",
+        "W"
+      ],
+      [
+        "e06_1",
+        "e06_0",
+        "e12_3",
+        "e12_5",
+        "W"
+      ],
+      [
+        "e06_2",
+        "e06_3",
+        "e12_0",
+        "e12_1",
+        "e12_4",
+        "W"
+      ],
+      [
+        "e06_2",
+        "e06_3",
+        "e12_0",
+        "e12_1",
+        "e12_5",
+        "W"
+      ],
+      [
+        "e06_2",
+        "e06_3",
+        "e12_0",
+        "e12_1",
+        "e12_4",
+        "e12_5",
+        "W"
+      ]
+    ],
+    "phi": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "mc_se": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "reference_phi": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "coherent_boundary_reference": {
+      "boundary_intervention": {
+        "e06_1": 0,
+        "e06_2": 0
+      },
+      "reference_states": {
+        "e06_1": 0,
+        "e06_2": 0,
+        "e06_0": 0,
+        "e06_3": 0,
+        "e12_3": 0,
+        "e12_0": 0,
+        "e12_1": 0,
+        "e12_4": "specific comparison state",
+        "e12_5": 0,
+        "W": 0
+      },
+      "attribution": {
+        "baseline": 0.0,
+        "full": 1.0,
+        "contrast": 1.0,
+        "phi": [
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666
+        ],
+        "mc_se": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "efficiency_residual": 1.1102230246251565e-16,
+        "naive_standalone": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "naive_sum": 0.0,
+        "naive_residual": -1.0,
+        "unique_edge_masks": 64,
+        "players": 6,
+        "method": "exact",
+        "permutations": 0,
+        "background_count": 1,
+        "background_interpretation": "fixed factual background",
+        "recombined_routes": [],
+        "references": {
+          "e06_0>W": 0,
+          "e06_0>e12_3": 0,
+          "e06_1>e06_0": 0,
+          "e06_2>e06_3": 0,
+          "e06_3>e12_0": 0,
+          "e12_0>e12_1": 0,
+          "e12_1>W": 0,
+          "e12_1>e12_4": 0,
+          "e12_1>e12_5": 0,
+          "e12_3>e12_5": 0,
+          "e12_4>W": "specific comparison state",
+          "e12_4>e12_5": "specific comparison state",
+          "e12_5>W": 0
+        }
+      },
+      "interpretation": "Inactive-edge reference inputs are taken from the model world obtained by jointly setting source-boundary events to their declared references. Coalition execution still uses the original factual background. This is a model-derived comparison policy, not an observed historical alternative."
+    },
+    "weakest_link_priority": [
+      {
+        "segment_id": "s01e08_p03",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s01e09_p06",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s01e10_p04",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e01_p00",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e01_p05",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e04_p07",
+        "priority": 0.0
+      }
+    ],
+    "uniform_priority": [
+      {
+        "segment_id": "s01e08_p03",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s01e09_p06",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s01e10_p04",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s02e01_p00",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s02e01_p05",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s02e04_p07",
+        "priority": 0.08333333333333333
+      }
+    ],
+    "geometric_priority": [
+      {
+        "segment_id": "s01e08_p03",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s01e09_p06",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s01e10_p04",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e01_p00",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e01_p05",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e04_p07",
+        "priority": 0.0
+      }
+    ],
+    "raw_score_priority": {
+      "segments": [
+        {
+          "segment_id": "s01e08_p03",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s01e09_p06",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s01e10_p04",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s02e01_p00",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s02e01_p05",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s02e04_p07",
+          "priority": 0.0
+        }
+      ],
+      "paths": [
+        {
+          "path_id": "p1",
+          "nodes": [
+            "e06_1",
+            "e06_0",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {},
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p2",
+          "nodes": [
+            "e06_2",
+            "e06_3",
+            "e12_0",
+            "e12_1",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {},
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p3",
+          "nodes": [
+            "e06_1",
+            "e06_0",
+            "e12_3",
+            "e12_5",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s01e08_p03": 0.16666666666666666,
+            "s01e09_p06": 0.16666666666666666,
+            "s01e10_p04": 0.16666666666666666,
+            "s02e01_p00": 0.16666666666666666,
+            "s02e01_p05": 0.16666666666666666,
+            "s02e04_p07": 0.16666666666666666
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p4",
+          "nodes": [
+            "e06_2",
+            "e06_3",
+            "e12_0",
+            "e12_1",
+            "e12_4",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {},
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p5",
+          "nodes": [
+            "e06_2",
+            "e06_3",
+            "e12_0",
+            "e12_1",
+            "e12_5",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s01e08_p03": 0.16666666666666666,
+            "s01e09_p06": 0.16666666666666666,
+            "s01e10_p04": 0.16666666666666666,
+            "s02e01_p00": 0.16666666666666666,
+            "s02e01_p05": 0.16666666666666666,
+            "s02e04_p07": 0.16666666666666666
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p6",
+          "nodes": [
+            "e06_2",
+            "e06_3",
+            "e12_0",
+            "e12_1",
+            "e12_4",
+            "e12_5",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s01e08_p03": 0.16666666666666666,
+            "s01e09_p06": 0.16666666666666666,
+            "s01e10_p04": 0.16666666666666666,
+            "s02e01_p00": 0.16666666666666666,
+            "s02e01_p05": 0.16666666666666666,
+            "s02e04_p07": 0.16666666666666666
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        }
+      ]
+    },
+    "disjoint_groups": {
+      "groups": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "attribution": {
+        "baseline": 0.0,
+        "full": 1.0,
+        "contrast": 1.0,
+        "phi": [
+          1.0
+        ],
+        "mc_se": [
+          0.0
+        ],
+        "efficiency_residual": 0.0,
+        "naive_standalone": [
+          1.0
+        ],
+        "naive_sum": 1.0,
+        "naive_residual": 0.0,
+        "unique_edge_masks": 2,
+        "players": 1,
+        "method": "exact",
+        "permutations": 0,
+        "background_count": 1,
+        "background_interpretation": "fixed factual background",
+        "recombined_routes": [],
+        "references": {
+          "e06_0>W": 0,
+          "e06_0>e12_3": 0,
+          "e06_1>e06_0": 0,
+          "e06_2>e06_3": 0,
+          "e06_3>e12_0": 0,
+          "e12_0>e12_1": 0,
+          "e12_1>W": 0,
+          "e12_1>e12_4": 0,
+          "e12_1>e12_5": 0,
+          "e12_3>e12_5": 0,
+          "e12_4>W": "specific comparison state",
+          "e12_4>e12_5": "specific comparison state",
+          "e12_5>W": 0
+        }
+      }
+    },
+    "recombined_routes": []
+  },
+  {
+    "case": "five_kings",
+    "alternative": 2,
+    "model": "five_kings_alt2",
+    "paths": [
+      [
+        "e06_1",
+        "e06_0",
+        "W"
+      ],
+      [
+        "e06_2",
+        "e06_3",
+        "e12_0",
+        "e12_1",
+        "W"
+      ],
+      [
+        "e06_1",
+        "e06_0",
+        "e12_3",
+        "e12_5",
+        "W"
+      ],
+      [
+        "e06_2",
+        "e06_3",
+        "e12_0",
+        "e12_1",
+        "e12_4",
+        "W"
+      ],
+      [
+        "e06_2",
+        "e06_3",
+        "e12_0",
+        "e12_1",
+        "e12_5",
+        "W"
+      ],
+      [
+        "e06_2",
+        "e06_3",
+        "e12_0",
+        "e12_1",
+        "e12_4",
+        "e12_5",
+        "W"
+      ]
+    ],
+    "phi": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "mc_se": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "reference_phi": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "coherent_boundary_reference": {
+      "boundary_intervention": {
+        "e06_1": 0,
+        "e06_2": 0
+      },
+      "reference_states": {
+        "e06_1": 0,
+        "e06_2": 0,
+        "e06_0": 0,
+        "e06_3": 0,
+        "e12_3": 0,
+        "e12_0": 0,
+        "e12_1": 0,
+        "e12_4": "specific comparison state",
+        "e12_5": 0,
+        "W": 0
+      },
+      "attribution": {
+        "baseline": 0.0,
+        "full": 1.0,
+        "contrast": 1.0,
+        "phi": [
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666,
+          0.16666666666666666
+        ],
+        "mc_se": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "efficiency_residual": 1.1102230246251565e-16,
+        "naive_standalone": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "naive_sum": 0.0,
+        "naive_residual": -1.0,
+        "unique_edge_masks": 64,
+        "players": 6,
+        "method": "exact",
+        "permutations": 0,
+        "background_count": 1,
+        "background_interpretation": "fixed factual background",
+        "recombined_routes": [],
+        "references": {
+          "e06_0>W": 0,
+          "e06_0>e12_3": 0,
+          "e06_1>e06_0": 0,
+          "e06_2>e06_3": 0,
+          "e06_3>e12_0": 0,
+          "e12_0>e12_1": 0,
+          "e12_1>W": 0,
+          "e12_1>e12_4": 0,
+          "e12_1>e12_5": 0,
+          "e12_3>e12_5": 0,
+          "e12_4>W": "specific comparison state",
+          "e12_4>e12_5": "specific comparison state",
+          "e12_5>W": 0
+        }
+      },
+      "interpretation": "Inactive-edge reference inputs are taken from the model world obtained by jointly setting source-boundary events to their declared references. Coalition execution still uses the original factual background. This is a model-derived comparison policy, not an observed historical alternative."
+    },
+    "weakest_link_priority": [
+      {
+        "segment_id": "s01e08_p03",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s01e09_p06",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s01e10_p04",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e01_p00",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e01_p05",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e04_p07",
+        "priority": 0.0
+      }
+    ],
+    "uniform_priority": [
+      {
+        "segment_id": "s01e08_p03",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s01e09_p06",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s01e10_p04",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s02e01_p00",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s02e01_p05",
+        "priority": 0.08333333333333333
+      },
+      {
+        "segment_id": "s02e04_p07",
+        "priority": 0.08333333333333333
+      }
+    ],
+    "geometric_priority": [
+      {
+        "segment_id": "s01e08_p03",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s01e09_p06",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s01e10_p04",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e01_p00",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e01_p05",
+        "priority": 0.0
+      },
+      {
+        "segment_id": "s02e04_p07",
+        "priority": 0.0
+      }
+    ],
+    "raw_score_priority": {
+      "segments": [
+        {
+          "segment_id": "s01e08_p03",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s01e09_p06",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s01e10_p04",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s02e01_p00",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s02e01_p05",
+          "priority": 0.0
+        },
+        {
+          "segment_id": "s02e04_p07",
+          "priority": 0.0
+        }
+      ],
+      "paths": [
+        {
+          "path_id": "p1",
+          "nodes": [
+            "e06_1",
+            "e06_0",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {},
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p2",
+          "nodes": [
+            "e06_2",
+            "e06_3",
+            "e12_0",
+            "e12_1",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {},
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p3",
+          "nodes": [
+            "e06_1",
+            "e06_0",
+            "e12_3",
+            "e12_5",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s01e08_p03": 0.16666666666666666,
+            "s01e09_p06": 0.16666666666666666,
+            "s01e10_p04": 0.16666666666666666,
+            "s02e01_p00": 0.16666666666666666,
+            "s02e01_p05": 0.16666666666666666,
+            "s02e04_p07": 0.16666666666666666
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p4",
+          "nodes": [
+            "e06_2",
+            "e06_3",
+            "e12_0",
+            "e12_1",
+            "e12_4",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {},
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p5",
+          "nodes": [
+            "e06_2",
+            "e06_3",
+            "e12_0",
+            "e12_1",
+            "e12_5",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s01e08_p03": 0.16666666666666666,
+            "s01e09_p06": 0.16666666666666666,
+            "s01e10_p04": 0.16666666666666666,
+            "s02e01_p00": 0.16666666666666666,
+            "s02e01_p05": 0.16666666666666666,
+            "s02e04_p07": 0.16666666666666666
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p6",
+          "nodes": [
+            "e06_2",
+            "e06_3",
+            "e12_0",
+            "e12_1",
+            "e12_4",
+            "e12_5",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.16666666666666666,
+          "segment_allocation": {
+            "s01e08_p03": 0.16666666666666666,
+            "s01e09_p06": 0.16666666666666666,
+            "s01e10_p04": 0.16666666666666666,
+            "s02e01_p00": 0.16666666666666666,
+            "s02e01_p05": 0.16666666666666666,
+            "s02e04_p07": 0.16666666666666666
+          },
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        }
+      ]
+    },
+    "disjoint_groups": {
+      "groups": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "attribution": {
+        "baseline": 0.0,
+        "full": 1.0,
+        "contrast": 1.0,
+        "phi": [
+          1.0
+        ],
+        "mc_se": [
+          0.0
+        ],
+        "efficiency_residual": 0.0,
+        "naive_standalone": [
+          1.0
+        ],
+        "naive_sum": 1.0,
+        "naive_residual": 0.0,
+        "unique_edge_masks": 2,
+        "players": 1,
+        "method": "exact",
+        "permutations": 0,
+        "background_count": 1,
+        "background_interpretation": "fixed factual background",
+        "recombined_routes": [],
+        "references": {
+          "e06_0>W": 0,
+          "e06_0>e12_3": 0,
+          "e06_1>e06_0": 0,
+          "e06_2>e06_3": 0,
+          "e06_3>e12_0": 0,
+          "e12_0>e12_1": 0,
+          "e12_1>W": 0,
+          "e12_1>e12_4": 0,
+          "e12_1>e12_5": 0,
+          "e12_3>e12_5": 0,
+          "e12_4>W": "specific comparison state",
+          "e12_4>e12_5": "specific comparison state",
+          "e12_5>W": 0
+        }
+      }
+    },
+    "recombined_routes": []
+  },
+  {
+    "case": "daenerys_conquest",
+    "alternative": 0,
+    "model": "daenerys_conquest_alt0",
+    "paths": [
+      [
+        "e06_3",
+        "W"
+      ],
+      [
+        "e18_2",
+        "W"
+      ]
+    ],
+    "phi": [
+      0.5,
+      0.5
+    ],
+    "mc_se": [
+      0.0,
+      0.0
+    ],
+    "reference_phi": [
+      0.0,
+      0.0
+    ],
+    "coherent_boundary_reference": {
+      "boundary_intervention": {
+        "e06_3": 0,
+        "e18_2": 0
+      },
+      "reference_states": {
+        "e06_3": 0,
+        "e18_2": 0,
+        "W": 0
+      },
+      "attribution": {
+        "baseline": 0.0,
+        "full": 1.0,
+        "contrast": 1.0,
+        "phi": [
+          0.5,
+          0.5
+        ],
+        "mc_se": [
+          0.0,
+          0.0
+        ],
+        "efficiency_residual": 0.0,
+        "naive_standalone": [
+          0.0,
+          0.0
+        ],
+        "naive_sum": 0.0,
+        "naive_residual": -1.0,
+        "unique_edge_masks": 4,
+        "players": 2,
+        "method": "exact",
+        "permutations": 0,
+        "background_count": 1,
+        "background_interpretation": "fixed factual background",
+        "recombined_routes": [],
+        "references": {
+          "e06_3>W": 0,
+          "e18_2>W": 0
+        }
+      },
+      "interpretation": "Inactive-edge reference inputs are taken from the model world obtained by jointly setting source-boundary events to their declared references. Coalition execution still uses the original factual background. This is a model-derived comparison policy, not an observed historical alternative."
+    },
+    "weakest_link_priority": [],
+    "uniform_priority": [],
+    "geometric_priority": [],
+    "raw_score_priority": {
+      "segments": [],
+      "paths": [
+        {
+          "path_id": "p1",
+          "nodes": [
+            "e06_3",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.5,
+          "segment_allocation": {},
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        },
+        {
+          "path_id": "p2",
+          "nodes": [
+            "e18_2",
+            "W"
+          ],
+          "evidence_support": 0.0,
+          "signed_contribution": 0.5,
+          "segment_allocation": {},
+          "allocation_rationale": "Equal allocation over distinct supporting clusters, split within cluster; unsupported paths receive no fabricated segment."
+        }
+      ]
+    },
+    "disjoint_groups": {
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "attribution": {
+        "baseline": 0.0,
+        "full": 1.0,
+        "contrast": 1.0,
+        "phi": [
+          0.5,
+          0.5
+        ],
+        "mc_se": [
+          0.0,
+          0.0
+        ],
+        "efficiency_residual": 0.0,
+        "naive_standalone": [
+          0.0,
+          0.0
+        ],
+        "naive_sum": 0.0,
+        "naive_residual": -1.0,
+        "unique_edge_masks": 4,
+        "players": 2,
+        "method": "exact",
+        "permutations": 0,
+        "background_count": 1,
+        "background_interpretation": "fixed factual background",
+        "recombined_routes": [],
+        "references": {
+          "e06_3>W": 0,
+          "e18_2>W": 0
+        }
+      }
+    },
+    "recombined_routes": []
+  }
+]

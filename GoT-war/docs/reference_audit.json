@@ -1,0 +1,462 @@
+[
+  {
+    "id": "conference",
+    "url": "https://saiconference.com/Computing/CallforPapers",
+    "accessed": "2026-10-12T04:57:32.955319+00:00",
+    "sha256": "361eda324e47a8f132bb52073ed6634edbb3331fc1f401d413c66821f7cee87a",
+    "title": "Call for Papers - 15th Computing Conference 2027 | AI, HPC, Quantum, Cloud, Edge, and Sustainable Computing",
+    "metadata": {},
+    "status": 200,
+    "abstract_preview": ""
+  },
+  {
+    "id": "bynum",
+    "url": "https://aclanthology.org/2025.emnlp-main.107/",
+    "accessed": "2026-10-12T04:57:33.222555+00:00",
+    "sha256": "61aea7193c793f75efa3138933782579ef4585724d64d02afa4df316528473a5",
+    "title": "Language Models as Causal Effect Generators - ACL Anthology",
+    "metadata": {
+      "citation_title": [
+        "Language Models as Causal Effect Generators"
+      ],
+      "citation_author": [
+        "Lucius E.J. Bynum",
+        "Kyunghyun Cho"
+      ],
+      "citation_conference_title": [
+        "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing"
+      ],
+      "citation_publication_date": [
+        "2025/11"
+      ],
+      "citation_pdf_url": [
+        "https://aclanthology.org/2025.emnlp-main.107.pdf"
+      ],
+      "citation_firstpage": [
+        "2096"
+      ],
+      "citation_lastpage": [
+        "2115"
+      ],
+      "citation_doi": [
+        "10.18653/v1/2025.emnlp-main.107"
+      ]
+    },
+    "status": 200,
+    "abstract_preview": "Abstract Correct abstract if needed. Retain XML formatting tags such as <tex-math>. You may use <b>...</b> for bold , <i>...</i> for italic , <u>...</u> for underline , <sc>...</sc> for small-caps , <tt>...<tt> for typewriter text , <url>...</url> for URLs, <a href=...> for hyperlinks, and <par/> for paragraph breaks. Verification against PDF Ensure that the new title/authors match the snapshot below. (If there\nis no snapshot or it is too small, consult the PDF .) Authors concatenated from the text boxes above: ALL author names match the snapshot above\u2014including\nmiddle initials, hyphens, and accents. Create GitHub issue for\u00a0staff review Abstract In this work, we present sequence-driven structural causal models (SD-SCMs), a framework for specifying causal models with user-defined structure and language-model-defined mechanisms. We characterize how an SD-SCM enables sampling from observational, interventional, and counterfactual distributions according to the desired causal structure. We then leverage this procedure to propose a new type of benchmark for causal inference methods, generating individual-level counterfactual data to test treatment effect estimation. We create an example benchmark consisting of thousands of datasets, and test a suite of popular estimation methods for average, conditional average, and individual treatment effect estimation. We find under this benchmark that (1) causal methods outperform non-causal methods and that (2) even state-of-the-art methods struggle with individualized effect estimation, suggesting this benchmark captures some inherent diff",
+    "bibtex_source": "https://aclanthology.org/2025.emnlp-main.107.bib"
+  },
+  {
+    "id": "shojaee",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/28df8e730c054c5331855fd4d5403ba9-Abstract-Conference.html",
+    "accessed": "2026-10-12T04:57:33.816599+00:00",
+    "sha256": "716fe9f474da727a5dc5bf06b73f1b3bb252e52a3ce1c1b71146323c7abd7e18",
+    "title": "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+    "metadata": {
+      "citation_title": [
+        "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models"
+      ],
+      "citation_author": [
+        "Shojaee, Parshin",
+        "Meidani, Kazem",
+        "Gupta, Shashank",
+        "Barati Farimani, Amir",
+        "Reddy, Chandan"
+      ],
+      "citation_journal_title": [
+        "International Conference on Learning Representations"
+      ],
+      "citation_volume": [
+        "2025"
+      ],
+      "citation_firstpage": [
+        "16054"
+      ],
+      "citation_lastpage": [
+        "16085"
+      ],
+      "citation_pdf_url": [
+        "https://proceedings.iclr.cc/paper_files/paper/2025/file/28df8e730c054c5331855fd4d5403ba9-Paper-Conference.pdf"
+      ],
+      "citation_publication_date": [
+        "2025-05-01"
+      ]
+    },
+    "status": 200,
+    "abstract_preview": "Abstract Mathematical equations have been unreasonably effective in describing complex natural phenomena across various scientific disciplines. However, discovering such insightful equations from data presents significant challenges due to the necessity of navigating extremely large combinatorial hypothesis spaces. Current methods of equation discovery, commonly known as symbolic regression techniques, largely focus on extracting equations from data alone, often neglecting the domain-specific prior knowledge that scientists typically depend on. They also employ limited representations such as expression trees, constraining the search space and expressiveness of equations. To bridge this gap, we introduce LLM-SR, a novel approach that leverages the extensive scientific knowledge and robust code generation capabilities of Large Language Models (LLMs) to discover scientific equations from data. Specifically, LLM-SR treats equations as programs with mathematical operators and combines LLMs' scientific priors with evolutionary search over equation programs. The LLM iteratively proposes new equation skeleton hypotheses, drawing from its domain knowledge, which are then optimized against data to estimate parameters. We evaluate LLM-SR on four benchmark problems across diverse scientific domains (e.g., physics, biology), which we carefully designed to simulate the discovery process and prevent LLM recitation. Our results demonstrate that LLM-SR discovers physically accurate equations that significantly outperform state-of-the-art symbolic regression baselines, particularly in out-o"
+  },
+  {
+    "id": "li",
+    "url": "https://aclanthology.org/2025.wnu-1.10/",
+    "accessed": "2026-10-12T04:57:34.578477+00:00",
+    "sha256": "e30214a7fb114dbd0898a7f82c0a508ab3a64c02ddc03f59aa51e7c7bd2c45ca",
+    "title": "Beyond LLMs A Linguistic Approach to Causal Graph Generation from Narrative Texts - ACL Anthology",
+    "metadata": {
+      "citation_title": [
+        "Beyond LLMs A Linguistic Approach to Causal Graph Generation from Narrative Texts"
+      ],
+      "citation_author": [
+        "Zehan Li",
+        "Ruhua Pan",
+        "Xinyu Pi"
+      ],
+      "citation_conference_title": [
+        "Proceedings of the 7th Workshop on Narrative Understanding"
+      ],
+      "citation_publication_date": [
+        "2025/5"
+      ],
+      "citation_pdf_url": [
+        "https://aclanthology.org/2025.wnu-1.10.pdf"
+      ],
+      "citation_firstpage": [
+        "36"
+      ],
+      "citation_lastpage": [
+        "51"
+      ],
+      "citation_doi": [
+        "10.18653/v1/2025.wnu-1.10"
+      ]
+    },
+    "status": 200,
+    "abstract_preview": "Abstract Correct abstract if needed. Retain XML formatting tags such as <tex-math>. You may use <b>...</b> for bold , <i>...</i> for italic , <u>...</u> for underline , <sc>...</sc> for small-caps , <tt>...<tt> for typewriter text , <url>...</url> for URLs, <a href=...> for hyperlinks, and <par/> for paragraph breaks. Verification against PDF Ensure that the new title/authors match the snapshot below. (If there\nis no snapshot or it is too small, consult the PDF .) Authors concatenated from the text boxes above: ALL author names match the snapshot above\u2014including\nmiddle initials, hyphens, and accents. Create GitHub issue for\u00a0staff review Anthology ID: 2025.wnu-1.10 Original: 2025.wnu-1.10v1 Version 2: 2025.wnu-1.10v2 Volume: Proceedings of the 7th Workshop on Narrative Understanding Month: May Year: 2025 Address: Albuquerque, New Mexico Editors: Elizabeth Clark , Yash Kumar Lal , Snigdha Chaturvedi , Mohit Iyyer , Anneliese Brei , Ashutosh Modi , Khyathi Raghavi Chandu Venues: WNU | WS SIG: Publisher: Association for Computational Linguistics Note: Pages: 36\u201351 Language: URL: https://aclanthology.org/2025.wnu-1.10/ DOI: 10.18653/v1/2025.wnu-1.10 Bibkey: li-etal-2025-beyond-llms Cite (ACL): Zehan Li, Ruhua Pan, and Xinyu Pi. 2025. Beyond LLMs A Linguistic Approach to Causal Graph Generation from Narrative Texts . In Proceedings of the 7th Workshop on Narrative Understanding , pages 36\u201351, Albuquerque, New Mexico. Association for Computational Linguistics. Cite (Informal): Beyond LLMs A Linguistic Approach to Causal Graph Generation from Narrative Texts (Li et al., WNU 2025) C",
+    "bibtex_source": "https://aclanthology.org/2025.wnu-1.10.bib"
+  },
+  {
+    "id": "koupaee",
+    "url": "https://aclanthology.org/2025.acl-long.1269/",
+    "accessed": "2026-10-12T04:57:34.710165+00:00",
+    "sha256": "51589031a2796fe085288fec189ea4e55440c6825485ea83a403ab3fe78d090e",
+    "title": "Causal Graph based Event Reasoning using Semantic Relation Experts - ACL Anthology",
+    "metadata": {
+      "citation_title": [
+        "Causal Graph based Event Reasoning using Semantic Relation Experts"
+      ],
+      "citation_author": [
+        "Mahnaz Koupaee",
+        "Xueying Bai",
+        "Mudan Chen",
+        "Greg Durrett",
+        "Nathanael Chambers",
+        "Niranjan Balasubramanian"
+      ],
+      "citation_conference_title": [
+        "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
+      ],
+      "citation_publication_date": [
+        "2025/7"
+      ],
+      "citation_pdf_url": [
+        "https://aclanthology.org/2025.acl-long.1269.pdf"
+      ],
+      "citation_firstpage": [
+        "26169"
+      ],
+      "citation_lastpage": [
+        "26199"
+      ],
+      "citation_doi": [
+        "10.18653/v1/2025.acl-long.1269"
+      ]
+    },
+    "status": 200,
+    "abstract_preview": "Abstract Correct abstract if needed. Retain XML formatting tags such as <tex-math>. You may use <b>...</b> for bold , <i>...</i> for italic , <u>...</u> for underline , <sc>...</sc> for small-caps , <tt>...<tt> for typewriter text , <url>...</url> for URLs, <a href=...> for hyperlinks, and <par/> for paragraph breaks. Verification against PDF Ensure that the new title/authors match the snapshot below. (If there\nis no snapshot or it is too small, consult the PDF .) Authors concatenated from the text boxes above: ALL author names match the snapshot above\u2014including\nmiddle initials, hyphens, and accents. Create GitHub issue for\u00a0staff review Abstract Understanding how events in a scenario causally connect with each other is important for effectively modeling and reasoning about events. But event reasoning remains a difficult challenge, and despite recent advances, Large Language Models (LLMs) still struggle to accurately identify causal connections between events. This struggle leads to poor performance on deeper reasoning tasks like event forecasting and timeline understanding. To address this challenge, we investigate the generation of causal event graphs (e.g., A enables B) as a parallel mechanism to help LLMs explicitly represent causality during inference. This paper evaluates both how to generate correct graphs as well as how graphs can assist reasoning. We propose a collaborative approach to causal graph generation where we use LLMs to simulate experts that focus on specific semantic relations. The experts engage in multiple rounds of discussions which are then consolidat",
+    "bibtex_source": "https://aclanthology.org/2025.acl-long.1269.bib"
+  },
+  {
+    "id": "yamin",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/98741856b327ec2f9503179398da662f-Abstract-Conference.html",
+    "accessed": "2026-10-12T04:57:34.971761+00:00",
+    "sha256": "b0fe079fb56429213335fbeb14bfdbcff903c47d4abee31768142c44db6b966b",
+    "title": "LLMs Struggle to Balance Reasoning and World Knowledge in Causal Narrative Understanding",
+    "metadata": {
+      "citation_title": [
+        "LLMs Struggle to Balance Reasoning and World Knowledge in Causal Narrative Understanding"
+      ],
+      "citation_author": [
+        "Yamin, Khurram",
+        "Gupta, Shantanu",
+        "Ghosal, Gaurav",
+        "Lipton, Zachary",
+        "Wilder, Bryan"
+      ],
+      "citation_journal_title": [
+        "International Conference on Learning Representations"
+      ],
+      "citation_volume": [
+        "2026"
+      ],
+      "citation_firstpage": [
+        "94579"
+      ],
+      "citation_lastpage": [
+        "94606"
+      ],
+      "citation_pdf_url": [
+        "https://proceedings.iclr.cc/paper_files/paper/2026/file/98741856b327ec2f9503179398da662f-Paper-Conference.pdf"
+      ],
+      "citation_publication_date": [
+        "2026-04-20"
+      ]
+    },
+    "status": 200,
+    "abstract_preview": "Abstract The ability to robustly identify causal relationships is essential for autonomous decision-making and adaptation to novel scenarios. However, accurately inferring causal structure requires integrating both world knowledge and abstract logical reasoning. In this work, we investigate the interaction between these two capabilities through the representative task of causal reasoning over narratives. Through controlled synthetic, semi-synthetic and real-world experiments, we find that state-of-the-art large language models (LLMs) often rely on superficial heuristics\u2014for example, inferring causality from event order or recalling memorized world knowledge without attending to context. Furthermore, we show that simple reformulations of the task can elicit more robust reasoning behavior. Our evaluation spans a range of causal structures, from linear chains to complex graphs involving colliders and forks. These findings uncover systematic patterns in how LLMs perform causal reasoning and lay the groundwork for developing methods that better align LLM behavior with principled causal inference. $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {\n        if (!$(this).next().hasClass('show')) {\n            $(this).parents('.dropdown-menu').first().find('.show').removeClass(\"show\");\n        }\n        var $subMenu = $(this).next(\".dropdown-menu\");\n        $subMenu.toggleClass('show');\n\n\n        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {\n            $('.dropdown-submenu .show').removeClass(\"show\");\n        });\n\n\n        return "
+  },
+  {
+    "id": "wilmot",
+    "url": "https://arxiv.org/abs/2605.02475",
+    "accessed": "2026-10-12T04:57:35.168573+00:00",
+    "sha256": "77d8e365dd411c63aab3879d70dbe83bd2bbf6859401c00b7d870cd428c5e982",
+    "title": "[2605.02475] Shadow-Loom: Causal Reasoning over Graphical World Models of Narratives",
+    "metadata": {
+      "citation_title": [
+        "Shadow-Loom: Causal Reasoning over Graphical World Models of Narratives"
+      ],
+      "citation_author": [
+        "Wilmot, David"
+      ],
+      "citation_date": [
+        "2026/05/04"
+      ],
+      "citation_online_date": [
+        "2026/05/06"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2605.02475"
+      ],
+      "citation_arxiv_id": [
+        "2605.02475"
+      ],
+      "citation_abstract": [
+        "Stories hold a reader's attention because they have causes, secrets, and consequences. Shadow-Loom is an experimental open-source framework that turns a narrative into a versioned graphical world model and lets two engines act on it: a causal physics grounded in Pearl's ladder of causation and a recently proposed counterfactual calculus over Ancestral Multi-World Networks; and a narrative physics that scores the same graph against four structural reader-states -- mystery, dramatic irony, suspense, and surprise -- in the tradition of Sternberg's curiosity/suspense/surprise triad, with suspense formalised in the structural-affect line of work on story comprehension and computational suspense. Large language models are used only at the boundary: extraction, rendering, and audit; identification, intervention, and counterfactual reasoning are carried out in typed code over the graph. The system is offered as a research artefact rather than as a benchmarked NLP model; code, fixtures, and pipeline are released open source."
+      ]
+    },
+    "status": 200,
+    "abstract_preview": "Abstract: Stories hold a reader's attention because they have causes, secrets, and consequences. Shadow-Loom is an experimental open-source framework that turns a narrative into a versioned graphical world model and lets two engines act on it: a causal physics grounded in Pearl's ladder of causation and a recently proposed counterfactual calculus over Ancestral Multi-World Networks; and a narrative physics that scores the same graph against four structural reader-states -- mystery, dramatic irony, suspense, and surprise -- in the tradition of Sternberg's curiosity/suspense/surprise triad, with suspense formalised in the structural-affect line of work on story comprehension and computational suspense. Large language models are used only at the boundary: extraction, rendering, and audit; identification, intervention, and counterfactual reasoning are carried out in typed code over the graph. The system is offered as a research artefact rather than as a benchmarked NLP model; code, fixtures, and pipeline are released open source. Comments: 7 pages, 28 pages total Subjects: Artificial Intelligence (cs.AI) ; Computation and Language (cs.CL) Cite as: arXiv:2605.02475 [cs.AI] (or arXiv:2605.02475v2 [cs.AI] for this version) https://doi.org/10.48550/arXiv.2605.02475 Focus to learn more arXiv-issued DOI via DataCite Submission history From: David Wilmot [ view email ] [v1] Mon, 4 May 2026 11:18:14 UTC (71 KB) [v2] Wed, 6 May 2026 17:03:54 UTC (86 KB) Full-text links: Access Paper: View a PDF of the paper titled Shadow-Loom: Causal Reasoning over Graphical World Models of Narratives, "
+  },
+  {
+    "id": "wang",
+    "url": "https://proceedings.mlr.press/v130/wang21b.html",
+    "accessed": "2026-10-12T04:57:35.444009+00:00",
+    "sha256": "bbb349ac9fee2e3fd87964f89b35bd87467b69a7d190943e7d2e89f1904d1446",
+    "title": "Shapley Flow: A Graph-based Approach to Interpreting Model Predictions",
+    "metadata": {
+      "citation_publisher": [
+        "PMLR"
+      ],
+      "citation_title": [
+        " Shapley Flow: A Graph-based Approach to Interpreting Model Predictions "
+      ],
+      "citation_language": [
+        "en"
+      ],
+      "citation_abstract_html_url": [
+        "https://proceedings.mlr.press/v130/wang21b.html"
+      ],
+      "citation_pdf_url": [
+        "http://proceedings.mlr.press/v130/wang21b/wang21b.pdf"
+      ],
+      "citation_firstpage": [
+        "721"
+      ],
+      "citation_lastpage": [
+        "729"
+      ],
+      "citation_author": [
+        "Jiaxuan Wang",
+        "Jenna Wiens",
+        "Scott Lundberg"
+      ],
+      "citation_publication_date": [
+        "2021/03/18"
+      ],
+      "citation_inbook_title": [
+        "International Conference on Artificial Intelligence and Statistics"
+      ],
+      "citation_conference_title": [
+        "International Conference on Artificial Intelligence and Statistics"
+      ],
+      "citation_issn": [
+        "2640-3498"
+      ]
+    },
+    "status": 200,
+    "abstract_preview": "Abstract Many existing approaches for estimating feature importance are problematic because they ignore or hide dependencies among features. A causal graph, which encodes the relationships among input variables, can aid in assigning feature importance. However, current approaches that assign credit to nodes in the causal graph fail to explain the entire graph. In light of these limitations, we propose Shapley Flow, a novel approach to interpreting machine learning models. It considers the entire causal graph, and assigns credit to edges instead of treating nodes as the fundamental unit of credit assignment. Shapley Flow is the unique solution to a generalization of the Shapley value axioms for directed acyclic graphs. We demonstrate the benefit of using Shapley Flow to reason about the impact of a model\u2019s input on its output. In addition to maintaining insights from existing approaches, Shapley Flow extends the flat, set-based, view prevalent in game theory based explanation methods to a deeper, graph-based, view. This graph-based view enables users to understand the flow of importance through a system, and reason about potential interventions. Cite this Paper BibTeX @InProceedings{pmlr-v130-wang21b,\n  title = \t { Shapley Flow: A Graph-based Approach to Interpreting Model Predictions },\n  author =       {Wang, Jiaxuan and Wiens, Jenna and Lundberg, Scott},\n  booktitle = \t {Proceedings of The 24th International Conference on Artificial Intelligence and Statistics},\n  pages = \t {721--729},\n  year = \t {2021},\n  editor = \t {Banerjee, Arindam and Fukumizu, Kenji},\n  volume = \t {",
+    "bibtex_source": "embedded"
+  },
+  {
+    "id": "jung",
+    "url": "https://proceedings.mlr.press/v162/jung22a.html",
+    "accessed": "2026-10-12T04:57:35.530128+00:00",
+    "sha256": "1e734a3d289a032a3d81e5bef575c454053df3ee1a43918a0a1bc4d2481206a9",
+    "title": "On Measuring Causal Contributions via do-interventions",
+    "metadata": {
+      "citation_publisher": [
+        "PMLR"
+      ],
+      "citation_title": [
+        "On Measuring Causal Contributions via do-interventions"
+      ],
+      "citation_language": [
+        "en"
+      ],
+      "citation_abstract_html_url": [
+        "https://proceedings.mlr.press/v162/jung22a.html"
+      ],
+      "citation_pdf_url": [
+        "https://proceedings.mlr.press/v162/jung22a/jung22a.pdf"
+      ],
+      "citation_firstpage": [
+        "10476"
+      ],
+      "citation_lastpage": [
+        "10501"
+      ],
+      "citation_author": [
+        "Yonghan Jung",
+        "Shiva Kasiviswanathan",
+        "Jin Tian",
+        "Dominik Janzing",
+        "Patrick Bloebaum",
+        "Elias Bareinboim"
+      ],
+      "citation_publication_date": [
+        "2022/06/28"
+      ],
+      "citation_inbook_title": [
+        "International Conference on Machine Learning"
+      ],
+      "citation_conference_title": [
+        "International Conference on Machine Learning"
+      ],
+      "citation_issn": [
+        "2640-3498"
+      ]
+    },
+    "status": 200,
+    "abstract_preview": "Abstract Causal contributions measure the strengths of different causes to a target quantity. Understanding causal contributions is important in empirical sciences and data-driven disciplines since it allows to answer practical queries like \u201cwhat are the contributions of each cause to the effect?\u201d In this paper, we develop a principled method for quantifying causal contributions. First, we provide desiderata of properties axioms that causal contribution measures should satisfy and propose the do-Shapley values (inspired by do-interventions [Pearl, 2000]) as a unique method satisfying these properties. Next, we develop a criterion under which the do-Shapley values can be efficiently inferred from non-experimental data. Finally, we provide do-Shapley estimators exhibiting consistency, computational feasibility, and statistical robustness. Simulation results corroborate with the theory. Cite this Paper BibTeX @InProceedings{pmlr-v162-jung22a,\n  title = \t {On Measuring Causal Contributions via do-interventions},\n  author =       {Jung, Yonghan and Kasiviswanathan, Shiva and Tian, Jin and Janzing, Dominik and Bloebaum, Patrick and Bareinboim, Elias},\n  booktitle = \t {Proceedings of the 39th International Conference on Machine Learning},\n  pages = \t {10476--10501},\n  year = \t {2022},\n  editor = \t {Chaudhuri, Kamalika and Jegelka, Stefanie and Song, Le and Szepesvari, Csaba and Niu, Gang and Sabato, Sivan},\n  volume = \t {162},\n  series = \t {Proceedings of Machine Learning Research},\n  month = \t {17--23 Jul},\n  publisher =    {PMLR},\n  pdf = \t {https://proceedings.mlr.press/v162/ju",
+    "bibtex_source": "embedded"
+  },
+  {
+    "id": "terminassian",
+    "url": "https://proceedings.mlr.press/v202/ter-minassian23a.html",
+    "accessed": "2026-10-12T04:57:35.615677+00:00",
+    "sha256": "05d02801f72c0d31f2c3d9e5424c9ac2ec094d32e0a3708a17632c38f40d514f",
+    "title": "PWSHAP: A Path-Wise Explanation Model for Targeted Variables",
+    "metadata": {
+      "citation_publisher": [
+        "PMLR"
+      ],
+      "citation_title": [
+        "PWSHAP: A Path-Wise Explanation Model for Targeted Variables"
+      ],
+      "citation_language": [
+        "en"
+      ],
+      "citation_abstract_html_url": [
+        "https://proceedings.mlr.press/v202/ter-minassian23a.html"
+      ],
+      "citation_pdf_url": [
+        "https://proceedings.mlr.press/v202/ter-minassian23a/ter-minassian23a.pdf"
+      ],
+      "citation_firstpage": [
+        "34054"
+      ],
+      "citation_lastpage": [
+        "34089"
+      ],
+      "citation_author": [
+        "Lucile Ter-Minassian",
+        "Oscar Clivio",
+        "Karla Diazordaz",
+        "Robin J. Evans",
+        "Christopher C. Holmes"
+      ],
+      "citation_publication_date": [
+        "2023/07/03"
+      ],
+      "citation_inbook_title": [
+        "International Conference on Machine Learning"
+      ],
+      "citation_conference_title": [
+        "International Conference on Machine Learning"
+      ],
+      "citation_issn": [
+        "2640-3498"
+      ]
+    },
+    "status": 200,
+    "abstract_preview": "Abstract Predictive black-box models can exhibit high-accuracy but their opaque nature hinders their uptake in safety-critical deployment environments. Explanation methods (XAI) can provide confidence for decision-making through increased transparency. However, existing XAI methods are not tailored towards models in sensitive domains where one predictor is of special interest, such as a treatment effect in a clinical model, or ethnicity in policy models. We introduce Path-Wise Shapley effects (PWSHAP), a framework for assessing the targeted effect of a binary (e.g. treatment) variable from a complex outcome model. Our approach augments the predictive model with a user-defined directed acyclic graph (DAG). The method then uses the graph alongside on-manifold Shapley values to identify effects along causal pathways whilst maintaining robustness to adversarial attacks. We establish error bounds for the identified path-wise Shapley effects and for Shapley values. We show PWSHAP can perform local bias and mediation analyses with faithfulness to the model. Further, if the targeted variable is randomised we can quantify local effect modification. We demonstrate the resolution, interpretability and true locality of our approach on examples and a real-world experiment. Cite this Paper BibTeX @InProceedings{pmlr-v202-ter-minassian23a,\n  title = \t {{PWSHAP}: A Path-Wise Explanation Model for Targeted Variables},\n  author =       {Ter-Minassian, Lucile and Clivio, Oscar and Diazordaz, Karla and Evans, Robin J. and Holmes, Christopher C.},\n  booktitle = \t {Proceedings of the 40th Intern",
+    "bibtex_source": "embedded"
+  },
+  {
+    "id": "witter",
+    "url": "https://proceedings.mlr.press/v306/witter26a.html",
+    "accessed": "2026-10-12T04:57:35.691365+00:00",
+    "sha256": "82d1e37935e3a690749404dc1a8af6e61a0a6b6d7e74636dd915242c71c26b9d",
+    "title": "Exactly Computing do-Shapley Values",
+    "metadata": {
+      "citation_publisher": [
+        "PMLR"
+      ],
+      "citation_title": [
+        "Exactly Computing do-Shapley Values"
+      ],
+      "citation_language": [
+        "en"
+      ],
+      "citation_abstract_html_url": [
+        "https://proceedings.mlr.press/v306/witter26a.html"
+      ],
+      "citation_pdf_url": [
+        "https://raw.githubusercontent.com/mlresearch/v306/main/assets/witter26a/witter26a.pdf"
+      ],
+      "citation_firstpage": [
+        "135200"
+      ],
+      "citation_lastpage": [
+        "135231"
+      ],
+      "citation_author": [
+        "R. Teal Witter",
+        "\u00c1lvaro Parafita",
+        "Tomas Garriga",
+        "Maximilian Muschalik",
+        "Fabian Fumagalli",
+        "Axel Brando",
+        "Lucas Rosenblatt"
+      ],
+      "citation_publication_date": [
+        "2026/09/29"
+      ],
+      "citation_inbook_title": [
+        "International Conference on Machine Learning"
+      ],
+      "citation_conference_title": [
+        "International Conference on Machine Learning"
+      ],
+      "citation_issn": [
+        "2640-3498"
+      ]
+    },
+    "status": 200,
+    "abstract_preview": "Abstract Structural Causal Models (SCM) are a powerful framework for describing complicated dynamics across the natural sciences. A particularly elegant way of interpreting SCMs is via do-Shapley values, a game-theoretic method of quantifying the average effect of $d$ variables across exponentially many interventions. Like Shapley values, computing do-Shapley values generally requires evaluating exponentially many terms. The foundation of our work is a reformulation of do-Shapley values in terms of the irreducible sets of the underlying SCM. Leveraging this insight, we can exactly compute do-Shapley values in time linear in the number of irreducible sets $r$, which itself can range from $d$ to $2^d$ depending on the graph structure of the SCM. Since $r$ is unknown a priori, we complement the exact algorithm with an estimator that, like general Shapley value estimators, can be run with any query budget. As the query budget approaches $r$, our estimators can produce more accurate estimates than prior methods by several orders of magnitude, and, when the budget reaches $r$, return the Shapley values up to machine precision. Beyond computational speed, we also reduce the identification burden: we prove that non-parametric identifiability of do-Shapley values requires only the identification of interventional effects for the $d$ singleton coalitions, rather than all classes. Cite this Paper BibTeX @InProceedings{pmlr-v306-witter26a,\n  title = \t {Exactly Computing do-Shapley Values},\n  author =       {Witter, R. Teal and Parafita, \\'{A}lvaro and Garriga, Tomas and Muschalik, Maxi",
+    "bibtex_source": "embedded"
+  },
+  {
+    "id": "pearl",
+    "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.12065",
+    "error": "403 Client Error: Forbidden for url: https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.12065"
+  },
+  {
+    "id": "graphviz",
+    "url": "https://graphviz.org/docs/layouts/dot/",
+    "accessed": "2026-10-12T04:57:36.178840+00:00",
+    "sha256": "2fb27949a278756ecf104ee2a484ed1745af276e0690d96543249a630abb2a05",
+    "title": "dot | Graphviz",
+    "metadata": {},
+    "status": 200,
+    "abstract_preview": ""
+  }
+]

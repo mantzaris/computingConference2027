@@ -1,0 +1,11 @@
+{
+  "primary": "Qwen/Qwen3-14B-AWQ",
+  "revision": "31c69efc29464b6bb0aee1398b5a7b50a99340c3",
+  "quantization": "AWQ 4-bit",
+  "vllm": "0.10.2",
+  "max_model_len": 8192,
+  "gpu_memory_utilization": 0.88,
+  "max_num_seqs": 2,
+  "thinking": false,
+  "dtype": "half"
+}

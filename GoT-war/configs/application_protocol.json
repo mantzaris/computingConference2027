@@ -1,0 +1,17 @@
+{
+  "status": "exploratory application development; controlled protocol unchanged",
+  "final_protocol": "source-inventory-incremental-v7-complete-outcome-packet",
+  "facts": "Generate atomic claims from six-paragraph chunks; validate typed states and source spans; same-model full-paragraph entailment audit.",
+  "coverage_review": "At most four generated missing claims per undersized schema, one bounded review; reject untraceable candidates; apply the usual semantic gate.",
+  "graph": "Generated chronological relevance ordering, then generated direct parents among eligible earlier states; maximum four parents; outcome sees the complete frozen packet.",
+  "temporal_scope": "Researcher-supplied outcome endpoints in outcome_endpoints.json; no researcher-supplied explanatory variables or edges.",
+  "retention": "Keep outcome ancestry. Report fewer than ten nodes as a size-target shortfall; never connect context to fill a quota.",
+  "equations": "Per-node typed ASTs over formal parent slots; root identity from explicit background; no internal residual; prior accepted local rules shown for conditional alternative synthesis.",
+  "validation": "Typing, bounded evaluation, active parents, factual compatibility, DAG and recorded episode order; independent semantic truth is not established.",
+  "repairs": "At most two per artifact per recorded protocol. Multiple exploratory revisions are preserved and do not constitute a held-out literary test.",
+  "alternative_budget_gate": "Complete one admissible model for every case before additional alternatives; defer extra alternatives once the server has generated 850000 tokens.",
+  "attribution_refinement": "Exact enumeration for final application collections of at most eight paths; preserve original permutation estimates.",
+  "evidence_policy": "Unsupported/unassessed status has effective score zero; preserve raw scores and ranking sensitivity. Evidence scores do not change equations.",
+  "final_reviews": "Same-model source critique and full-text explanation-to-trace audit; neither is independent human review. Failed explanations are withheld from display.",
+  "selection": "Corrected complete-outcome evidence protocol, independent of node count or numerical result; first accepted alternative by index is principal. Earlier candidates remain archived."
+}

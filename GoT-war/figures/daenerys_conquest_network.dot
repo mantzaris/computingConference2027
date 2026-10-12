@@ -1,0 +1,15 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", margin=0, pad="0.10", nodesep="0.16", ranksep="0.22", splines=polyline, outputorder=edgesfirst, fontname="DejaVu Sans"];
+node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=12, margin="0.07,0.05", penwidth=1.1];
+edge [fontname="DejaVu Sans", fontsize=12, arrowsize=0.65, penwidth=1.1, color="#708092"];
+"e06_3" [label=<<B>Iron Fleet<BR/>destruction of<BR/>Daenerys&#x27; ships</B><BR/><FONT POINT-SIZE="12"><B>E01</B> · B1 · S7E3</FONT>>, shape=box, fillcolor="#F5F0E5", fontcolor="#243449", peripheries=1, tooltip="Euron's Iron Fleet destroys Daenerys' ships, stranding the Unsullied in King's Landing. | Equation: U_e06_3 | Reference: event occurrence | Final source critique: Passage s07e03_p08 explicitly describes the Iron Fleet destroying Daenerys' ships, matching the event definition. Time code 703 (season 7, episode 3) aligns with the event occurrence.", color="#8A9AAA"];
+"e18_2" [label=<<B>Cersei&#x27;s forces<BR/>execute Missandei</B><BR/><FONT POINT-SIZE="12"><B>E02</B> · B1 · S8E4</FONT>>, shape=box, fillcolor="#F5F0E5", fontcolor="#243449", peripheries=1, tooltip="Cersei has Gregor Clegane behead Missandei, escalating tensions before the assault. | Equation: U_e18_2 | Reference: specific comparison state | Final source critique: Passage s08e04_p06 explicitly describes Cersei ordering Missandei's execution, matching the event definition. Time code 805 (season 8, episode 5) aligns with the event occurrence.", color="#8A9AAA"];
+"W" [label=<<B>Campaign outcome</B><BR/><FONT POINT-SIZE="12"><B>E03 !</B> · B1 · S8E5</FONT>>, shape=box, fillcolor="#25384E", fontcolor="white", peripheries=2, tooltip="Daenerys and her allies continue an armed campaign against Cersei's crown in Westeros through the assault on King's Landing in season 8 episode 5. | Equation: and(e18_2, e06_3) | Reference: The specified campaign is not active through the stated horizon | Final source critique: The passage s08e05_p02 describes the assault on King's Landing but shows the campaign ending with Daenerys burning the city, contradicting the definition's claim of 'continuing an armed campaign.' The time code 805 (season 8, episode 5) matches the event, but the outcome described in the passage does not align with the 'campaign continuation' claim. The reference meaning explicitly states the campaign is not active through the stated horizon.", color="#B45135"];
+{ rank=same; "e06_3"; }
+{ rank=same; "e18_2"; }
+{ rank=same; "W"; }
+"e06_3" -> "e18_2" [style=invis,weight=100];
+"e18_2" -> "W" [style=invis,weight=100];
+"e06_3" -> "W" [label="and", tooltip="e01: e06_3 -> W | unsupported | evidence score 0", style="dotted", color="#176D89"];
+"e18_2" -> "W" [label="and", tooltip="e02: e18_2 -> W | unsupported | evidence score 0", style="dotted", color="#708092"];
+}

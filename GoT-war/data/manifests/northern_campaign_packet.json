@@ -1,0 +1,46 @@
+{
+  "case": {
+    "id": "northern_campaign",
+    "name": "Northern campaign against Bolton rule",
+    "outcome": "Jon Snow and Sansa Stark's coalition undertakes and sustains an armed campaign to remove Bolton rule of Winterfell through season 6 episode 9.",
+    "level": "regional campaign, not a single battle",
+    "actor_scope": "Stark-led northern/wildling coalition, Bolton forces and participating Vale forces",
+    "horizon": "S5E6 through S6E9",
+    "source_episodes": [
+      "s05e06",
+      "s05e10",
+      "s06e02",
+      "s06e04",
+      "s06e05",
+      "s06e07",
+      "s06e09"
+    ],
+    "retrieval_query": "Sansa Jon Ramsay Bolton Winterfell army northern wildlings alliance campaign Rickon Vale Littlefinger"
+  },
+  "packet_sha256": "11e141c4175582f5acc884c098ba2466ea68bc76c44f7add7cd5d4f0de4f1c5d",
+  "retrieval": "BM25-style lexical ranking within frozen television episode pool; same packet for every method/alternative",
+  "max_chars": 10000,
+  "segment_ids": [
+    "s05e06_p02",
+    "s05e06_p04",
+    "s05e10_p01",
+    "s05e10_p06",
+    "s06e02_p00",
+    "s06e02_p01",
+    "s06e02_p02",
+    "s06e02_p07",
+    "s06e04_p00",
+    "s06e04_p02",
+    "s06e04_p03",
+    "s06e04_p05",
+    "s06e04_p06",
+    "s06e05_p04",
+    "s06e07_p00",
+    "s06e07_p03",
+    "s06e09_p02",
+    "s06e09_p03",
+    "s06e09_p04",
+    "s06e09_p05",
+    "s06e09_p06"
+  ]
+}

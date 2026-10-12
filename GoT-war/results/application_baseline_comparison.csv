@@ -1,0 +1,55 @@
+case,method,question,intervention,baseline_possible_outcomes,retained_model_outcomes,baseline_explicit_uncertainty,baseline_model_set_agreement,baseline_response_available,interpretation
+daenerys_conquest,B0,q0,"{""e06_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+daenerys_conquest,B0,q1,"{""e18_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+daenerys_conquest,B0,q2,"{""e06_3"": 0, ""e18_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+daenerys_conquest,B1,q0,"{""e06_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+daenerys_conquest,B1,q1,"{""e18_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+daenerys_conquest,B1,q2,"{""e06_3"": 0, ""e18_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q0,"{""e06_1"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q1,"{""e06_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q2,"{""e06_0"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q3,"{""e06_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q4,"{""e12_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q5,"{""e12_0"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q6,"{""e12_1"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q7,"{""e12_4"": ""specific comparison state""}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q8,"{""e12_5"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q9,"{""e06_1"": 0, ""e06_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q10,"{""e06_0"": 0, ""e06_1"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B0,q11,"{""e06_1"": 0, ""e06_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q0,"{""e06_1"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q1,"{""e06_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q2,"{""e06_0"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q3,"{""e06_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q4,"{""e12_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q5,"{""e12_0"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q6,"{""e12_1"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q7,"{""e12_4"": ""specific comparison state""}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q8,"{""e12_5"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q9,"{""e06_1"": 0, ""e06_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q10,"{""e06_0"": 0, ""e06_1"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+five_kings,B1,q11,"{""e06_1"": 0, ""e06_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q0,"{""e00_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q1,"{""e06_1"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q2,"{""e06_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q3,"{""c03"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q4,"{""c01"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q5,"{""e06_3"": ""not proposed""}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q6,"{""c00"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q7,"{""e00_3"": 0, ""e06_1"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q8,"{""e00_3"": 0, ""e06_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q9,"{""c03"": 0, ""e00_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q10,"{""c01"": 0, ""e00_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B0,q11,"{""e00_3"": 0, ""e06_3"": ""not proposed""}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q0,"{""e00_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q1,"{""e06_1"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q2,"{""e06_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q3,"{""c03"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q4,"{""c01"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q5,"{""e06_3"": ""not proposed""}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q6,"{""c00"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q7,"{""e00_3"": 0, ""e06_1"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q8,"{""e00_3"": 0, ""e06_2"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q9,"{""c03"": 0, ""e00_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q10,"{""c01"": 0, ""e00_3"": 0}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.
+northern_campaign,B1,q11,"{""e00_3"": 0, ""e06_3"": ""not proposed""}","[0, 1]",[0],True,False,True,Descriptive set agreement only; neither side is literary gold.

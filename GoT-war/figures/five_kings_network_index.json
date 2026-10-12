@@ -1,0 +1,589 @@
+{
+  "node_ids": {
+    "e06_1": "E01",
+    "e06_2": "E02",
+    "e06_0": "E03",
+    "e06_3": "E04",
+    "e12_3": "E05",
+    "e12_0": "E06",
+    "e12_1": "E07",
+    "e12_4": "E08",
+    "e12_5": "E09",
+    "W": "E10"
+  },
+  "nodes": {
+    "E01": {
+      "id": "e06_1",
+      "definition": "Ned Stark orders Lord Beric Dondarrion to arrest Gregor Clegane and summons Tywin Lannister to answer for Gregor's actions.",
+      "actor": "Ned Stark",
+      "type": "bool",
+      "time": 106,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "Declared comparison assumption: absence of the Boolean event \"Ned Stark orders Lord Beric Dondarrion to arrest Gregor Clegane and summons Tywin Lannister to answer for Gregor's actions.\"",
+      "equation": "U_e06_1",
+      "citations": [
+        {
+          "node_id": "e06_1",
+          "segment_id": "s01e06_p02",
+          "quote": "Ned orders Lord Beric Dondarrion to arrest the Mountain and",
+          "reference_valid": true,
+          "source_id": "s01e06",
+          "start": 560,
+          "end": 619,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "Specific actor (Ned Stark), action (ordering arrest and summoning Tywin), and time (s01e06) match the passage.",
+          "story_relative_time": 106,
+          "statement_time": "s01e06",
+          "audience_revelation_time": "s01e06",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "Ned orders Lord Beric Dondarrion to arrest the Mountain and summons his overlord Tywin Lannister to answer for Gregor's actions.",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized"
+        }
+      ]
+    },
+    "E02": {
+      "id": "e06_2",
+      "definition": "Ned Stark realizes Joffrey is not Robert's son after analyzing Arryn's research and Sansa's remarks.",
+      "actor": "Ned Stark",
+      "type": "bool",
+      "time": 106,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "Declared comparison assumption: absence of the Boolean event \"Ned Stark realizes Joffrey is not Robert's son after analyzing Arryn's research and Sansa's remarks.\"",
+      "equation": "U_e06_2",
+      "citations": [
+        {
+          "node_id": "e06_2",
+          "segment_id": "s01e06_p02",
+          "quote": "Ned realizes that Joffrey is not truly Robert's son.",
+          "reference_valid": true,
+          "source_id": "s01e06",
+          "start": 983,
+          "end": 1035,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "Ned Stark's realization about Joffrey's parentage is explicitly described in the passage, citing Sansa's remarks and Arryn's research.",
+          "story_relative_time": 106,
+          "statement_time": "s01e06",
+          "audience_revelation_time": "s01e06",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    },
+    "E03": {
+      "id": "e06_0",
+      "definition": "Tywin Lannister gives half his forces to Jaime to attack Riverrun, believing war with Starks will allow Lannisters to rule.",
+      "actor": "Tywin Lannister",
+      "type": "bool",
+      "time": 107,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "Declared comparison assumption: absence of the Boolean event \"Tywin Lannister gives half his forces to Jaime to attack Riverrun, believing war with Starks will allow Lannisters to rule.\"",
+      "equation": "e06_1",
+      "citations": [
+        {
+          "node_id": "e06_0",
+          "segment_id": "s01e07_p00",
+          "quote": "Tywin Lannister gives half his forces to Jaime , his son",
+          "reference_valid": true,
+          "source_id": "s01e07",
+          "start": 0,
+          "end": 56,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "Specific actor (Tywin Lannister), action (sending forces to attack Riverrun), and time (s01e07) match the passage.",
+          "story_relative_time": 107,
+          "statement_time": "s01e07",
+          "audience_revelation_time": "s01e07",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "Tywin Lannister gives half his forces to Jaime, his son, to attack Riverrun, the seat of House Tully and Catelyn Stark's childhood home, believing war with the Starks will allow the Lannisters to rule the Seven Kingdoms.",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized"
+        }
+      ]
+    },
+    "E04": {
+      "id": "e06_3",
+      "definition": "Ned Stark writes 'my rightful heir' instead of 'Joffrey' in Robert Baratheon's will, rejecting the Lannister-arranged succession.",
+      "actor": "Ned Stark",
+      "type": "bool",
+      "time": 107,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "Declared comparison assumption: absence of the Boolean event \"Ned Stark writes 'my rightful heir' instead of 'Joffrey' in Robert Baratheon's will, rejecting the Lannister-arranged succession.\"",
+      "equation": "if(e06_2, 1, 0)",
+      "citations": [
+        {
+          "node_id": "e06_3",
+          "segment_id": "s01e07_p05",
+          "quote": "instead of \"Joffrey\", Ned writes \"my rightful heir",
+          "reference_valid": true,
+          "source_id": "s01e07",
+          "start": 1371,
+          "end": 1421,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "The passage explicitly states Ned writes 'my rightful heir' instead of 'Joffrey' in Robert's will.",
+          "story_relative_time": 107,
+          "statement_time": "s01e07",
+          "audience_revelation_time": "s01e07",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "instead of 'Joffrey', Ned writes 'my rightful heir'.",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized"
+        }
+      ]
+    },
+    "E05": {
+      "id": "e12_3",
+      "definition": "Robb sends a captured Lannister scout to falsely claim 20,000 men against Tywin",
+      "actor": "Robb Stark",
+      "type": "bool",
+      "time": 108,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "specific comparison state",
+      "equation": "if(e06_0, 1, 0)",
+      "citations": [
+        {
+          "node_id": "e12_3",
+          "segment_id": "s01e08_p03",
+          "quote": "Robb sends a captured Lannister scout with a message to Tywin",
+          "reference_valid": true,
+          "source_id": "s01e08",
+          "start": 1091,
+          "end": 1152,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "specific actor/action/time check: Robb sends a captured Lannister scout with a message to Tywin, deceiving him into believing Robb is sending 20,000 men against Tywin (passage explicitly states 'deceiving the scout into believing that Robb is sending all 20,000 men against Tywin')",
+          "story_relative_time": 108,
+          "statement_time": "s01e08",
+          "audience_revelation_time": "s01e08",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    },
+    "E06": {
+      "id": "e12_0",
+      "definition": "City Watch kills Stark allies as Ned is held at knifepoint by Littlefinger.",
+      "actor": "City Watch",
+      "type": "bool",
+      "time": 107,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "specific comparison state",
+      "equation": "if(e06_3, 1, 0)",
+      "citations": [
+        {
+          "node_id": "e12_0",
+          "segment_id": "s01e07_p07",
+          "quote": "the City Watch slaughters the Stark men",
+          "reference_valid": true,
+          "source_id": "s01e07",
+          "start": 2243,
+          "end": 2282,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "The passage explicitly states the City Watch slaughters the Stark men during Ned's arrest.",
+          "story_relative_time": 107,
+          "statement_time": "s01e07",
+          "audience_revelation_time": "s01e07",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    },
+    "E07": {
+      "id": "e12_1",
+      "definition": "Robb gains Greatjon Umber's respect and mobilizes Northern forces.",
+      "actor": "Robb Stark",
+      "type": "bool",
+      "time": 108,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "specific comparison state",
+      "equation": "if(e12_0, 1, 0)",
+      "citations": [
+        {
+          "node_id": "e12_1",
+          "segment_id": "s01e08_p00",
+          "quote": "Robb Stark gains the respect of Lord Greatjon Umber and",
+          "reference_valid": true,
+          "source_id": "s01e08",
+          "start": 112,
+          "end": 167,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "The passage explicitly states Robb gains Greatjon Umber's respect and calls the Stark bannermen to war.",
+          "story_relative_time": 108,
+          "statement_time": "s01e08",
+          "audience_revelation_time": "s01e08",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "Robb Stark gains the respect of Lord Greatjon Umber and calls the Stark bannermen to war",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized"
+        }
+      ]
+    },
+    "E08": {
+      "id": "e12_4",
+      "definition": "Walder Frey allows Stark army passage in exchange for Robb/Arya marriages",
+      "actor": "Walder Frey",
+      "type": "category",
+      "time": 109,
+      "observed": "agrees to allow the army to cross... in return for Robb and Arya marrying",
+      "reference": "specific comparison state",
+      "reference_meaning": "a hypothetical scenario where Walder Frey does not agree to allow the army to cross in exchange for marriages",
+      "equation": "if(e12_1, 'agrees to allow the army to cross... in return for Robb and Arya marrying', 'specific comparison state')",
+      "citations": [
+        {
+          "node_id": "e12_4",
+          "segment_id": "s01e09_p03",
+          "quote": "agrees to allow the army to cross",
+          "reference_valid": true,
+          "source_id": "s01e09",
+          "start": 1010,
+          "end": 1043,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "specific actor/action/time check: Walder Frey agrees to allow the army to cross in return for Robb and Arya marrying his children (passage explicitly states 'agrees to allow the army to cross... in return for Robb and Arya marrying two of his children')",
+          "story_relative_time": 109,
+          "statement_time": "s01e09",
+          "audience_revelation_time": "s01e09",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "agrees to allow the army to cross... in return for Robb and Arya marrying",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized; single fragment selected from explicit ellipsis"
+        }
+      ]
+    },
+    "E09": {
+      "id": "e12_5",
+      "definition": "Robb defeats Jaime's forces with 18,000 men and takes Jaime prisoner",
+      "actor": "Robb Stark",
+      "type": "bool",
+      "time": 109,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "specific comparison state",
+      "equation": "and(e12_1, e12_3, eq(e12_4, 'agrees to allow the army to cross... in return for Robb and Arya marrying'))",
+      "citations": [
+        {
+          "node_id": "e12_5",
+          "segment_id": "s01e09_p06",
+          "quote": "defeats Jaime Lannister 's army",
+          "reference_valid": true,
+          "source_id": "s01e09",
+          "start": 1658,
+          "end": 1689,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "specific actor/action/time check: Robb defeats Jaime's forces with 18,000 men and captures Jaime (passage explicitly states 'defeats Jaime Lannister's army with his remaining 18,000 men and captures Jaime')",
+          "story_relative_time": 109,
+          "statement_time": "s01e09",
+          "audience_revelation_time": "s01e09",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "Robb... defeats Jaime Lannister's army... captures Jaime",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized; single fragment selected from explicit ellipsis"
+        }
+      ]
+    },
+    "E10": {
+      "id": "W",
+      "definition": "Armed conflict between the Stark-led northern/Riverlands coalition and the Lannister-controlled crown is active by the end of season 1, with wider competing royal claims documented through season 2 episode 4.",
+      "actor": "Stark/Tully coalition and Lannister-controlled crown; other claimants only where the packet supports their role",
+      "type": "bool",
+      "time": 110,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "The specified campaign is not active through the stated horizon",
+      "equation": "and(e12_1, e06_0, e12_5, eq(e12_4, 'agrees to allow the army to cross... in return for Robb and Arya marrying'))",
+      "citations": [
+        {
+          "node_id": "W",
+          "segment_id": "s01e08_p00",
+          "quote": "Robb Stark gains the respect of Lord Greatjon Umber and",
+          "reference_valid": true,
+          "source_id": "s01e08",
+          "start": 112,
+          "end": 167,
+          "proposition_status": "established_event",
+          "event_assessment": "partial",
+          "event_assessment_reason": "Composite campaign outcome; selected passages document occurrence, not its causal identification.",
+          "story_relative_time": 110,
+          "statement_time": "s01e08",
+          "audience_revelation_time": "s01e08",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "Robb Stark gains the respect of Lord Greatjon Umber and calls the Stark bannermen to war",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized"
+        },
+        {
+          "node_id": "W",
+          "segment_id": "s01e09_p06",
+          "quote": "Robb, having divided his forces, defeats Jaime Lannister 's army",
+          "reference_valid": true,
+          "source_id": "s01e09",
+          "start": 1625,
+          "end": 1689,
+          "proposition_status": "established_event",
+          "event_assessment": "partial",
+          "event_assessment_reason": "Composite campaign outcome; selected passages document occurrence, not its causal identification.",
+          "story_relative_time": 110,
+          "statement_time": "s01e09",
+          "audience_revelation_time": "s01e09",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "Robb, having divided his forces, defeats Jaime Lannister's army",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized"
+        }
+      ]
+    }
+  },
+  "edges": {
+    "e01": {
+      "parent": "e06_1",
+      "child": "e06_0",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "copy"
+    },
+    "e02": {
+      "parent": "e06_2",
+      "child": "e06_3",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "if"
+    },
+    "e03": {
+      "parent": "e06_0",
+      "child": "e12_3",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "if"
+    },
+    "e04": {
+      "parent": "e06_0",
+      "child": "W",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    },
+    "e05": {
+      "parent": "e06_3",
+      "child": "e12_0",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "if"
+    },
+    "e06": {
+      "parent": "e12_0",
+      "child": "e12_1",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "if"
+    },
+    "e07": {
+      "parent": "e12_1",
+      "child": "e12_4",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "if"
+    },
+    "e08": {
+      "parent": "e12_1",
+      "child": "e12_5",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    },
+    "e09": {
+      "parent": "e12_1",
+      "child": "W",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    },
+    "e10": {
+      "parent": "e12_3",
+      "child": "e12_5",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    },
+    "e11": {
+      "parent": "e12_4",
+      "child": "e12_5",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    },
+    "e12": {
+      "parent": "e12_4",
+      "child": "W",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    },
+    "e13": {
+      "parent": "e12_5",
+      "child": "W",
+      "support": 0.6,
+      "status": "inferred",
+      "operator": "and"
+    }
+  },
+  "highlighted_path": "p1",
+  "final_source_critique": {
+    "e06_1": {
+      "id": "e06_1",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage s01e06_p02 explicitly states Ned orders Beric to arrest Gregor and summons Tywin. Time code 106 matches episode 6.",
+      "parent_order_audit_complete": true
+    },
+    "e06_2": {
+      "id": "e06_2",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage s01e06_p02 explicitly states Ned realizes Joffrey is not Robert's son via Sansa's remarks and Arryn's research. Time code 106 matches episode 6.",
+      "parent_order_audit_complete": true
+    },
+    "e06_0": {
+      "id": "e06_0",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage s01e07_p00 explicitly states Tywin gives half his forces to Jaime to attack Riverrun. Time code 107 matches episode 7. Parent e06_1 (time 106) precedes this event.",
+      "parent_order_audit_complete": false
+    },
+    "e06_3": {
+      "id": "e06_3",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage s01e07_p05 explicitly states Ned writes 'my rightful heir' in Robert's will. Time code 107 matches episode 7. Parent e06_2 (time 106) precedes this event.",
+      "parent_order_audit_complete": false
+    },
+    "e12_0": {
+      "id": "e12_0",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage explicitly states City Watch kills Stark allies while Ned is held at knifepoint by Littlefinger (s01e07_p07). Time (107) matches episode 7. No conflicting claims.",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": true
+    },
+    "e12_1": {
+      "id": "e12_1",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage explicitly states Robb gains Greatjon Umber's respect and mobilizes Northern forces (s01e08_p00). Time (108) matches episode 8. No conflicting claims.",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": true
+    },
+    "e12_3": {
+      "id": "e12_3",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage explicitly states Robb sends a captured Lannister scout to falsely claim 20,000 men (s01e08_p03). Time (108) matches episode 8. No conflicting claims.",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": true
+    },
+    "e12_4": {
+      "id": "e12_4",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage explicitly states Walder Frey agrees to allow Stark army passage in exchange for Robb/Arya marriages (s01e09_p03). Time (109) matches episode 9. No conflicting claims.",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": true
+    },
+    "e12_5": {
+      "id": "e12_5",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "inconsistent",
+      "duplicates": [],
+      "reason": "Passage s01e09_p06 explicitly states Robb defeats Jaime's forces with 18,000 men and captures Jaime. However, the 'reference_meaning' field claims a 'specific comparison state' which is not addressed in the passage.",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": true
+    },
+    "W": {
+      "id": "W",
+      "event_support": "partial",
+      "story_time": "contradicted",
+      "reference_semantics": "inconsistent",
+      "duplicates": [],
+      "reason": "The passage confirms active conflict by season 1 end (s01e09_p06), but the 'documented through season 2 episode 4' claim lacks textual support. The story_time code (110) implies a post-season 1 state, but the passage only references events up to s01e09 (season 1, episode 9).",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": true
+    }
+  },
+  "posthoc_literal_alias_flags": {},
+  "layout": {
+    "row_capacity": 2,
+    "rows": [
+      [
+        "e06_1",
+        "e06_2"
+      ],
+      [
+        "e06_0",
+        "e06_3"
+      ],
+      [
+        "e12_0"
+      ],
+      [
+        "e12_1",
+        "e12_3"
+      ],
+      [
+        "e12_4"
+      ],
+      [
+        "e12_5"
+      ],
+      [
+        "W"
+      ]
+    ],
+    "basis": "recorded episode then within-episode dependency layers",
+    "invisible_constraints": "Layout only; excluded from structural graph and all attribution.",
+    "minimum_font_at_manuscript_scale_pt": 9.810689361702128
+  },
+  "legend": "Dark: outcome. Cream: external/background boundary. B0/B1: Boolean state; C0, C1, ...: categorical state codes in the index. ! and orange border: unresolved automated source, temporal-order, reference, duplicate, or literal-alias-coverage flag. These are review flags, not independent adjudication. Actor/faction context appears in labels; full context and state meanings are in this index. Teal edges: path with largest absolute allocated share (ID breaks ties), not edge effects. Double border: junction shared by retained paths. Edge style: solid explicit support, dashed inferred, dotted unsupported/unassessed. E numbers link nodes to equations and sources here; edge labels are generated equation operators; edge audit IDs are in SVG tooltips and this index. All widths are uniform."
+}

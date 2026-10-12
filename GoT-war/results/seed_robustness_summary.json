@@ -1,0 +1,163 @@
+{
+  "selection": "First two test SCM identifiers in each size/evidence stratum; original text only; no outcome-based selection.",
+  "planned_scms": 12,
+  "seeds": [
+    2027,
+    2028,
+    2029
+  ],
+  "planned_records": 36,
+  "completed_records": 36,
+  "missing": [],
+  "fully_repeated_scms": 12,
+  "by_seed": [
+    {
+      "seed": 2027,
+      "method": "B0",
+      "scms": 12,
+      "mean_score": 0.65625
+    },
+    {
+      "seed": 2027,
+      "method": "B1",
+      "scms": 12,
+      "mean_score": 0.625
+    },
+    {
+      "seed": 2027,
+      "method": "B2",
+      "scms": 12,
+      "mean_score": 0.7395833333333334
+    },
+    {
+      "seed": 2027,
+      "method": "P",
+      "scms": 12,
+      "mean_score": 0.9166666666666666
+    },
+    {
+      "seed": 2028,
+      "method": "B0",
+      "scms": 12,
+      "mean_score": 0.65625
+    },
+    {
+      "seed": 2028,
+      "method": "B1",
+      "scms": 12,
+      "mean_score": 0.65625
+    },
+    {
+      "seed": 2028,
+      "method": "B2",
+      "scms": 12,
+      "mean_score": 0.6979166666666666
+    },
+    {
+      "seed": 2028,
+      "method": "P",
+      "scms": 12,
+      "mean_score": 0.8333333333333334
+    },
+    {
+      "seed": 2029,
+      "method": "B0",
+      "scms": 12,
+      "mean_score": 0.65625
+    },
+    {
+      "seed": 2029,
+      "method": "B1",
+      "scms": 12,
+      "mean_score": 0.6458333333333334
+    },
+    {
+      "seed": 2029,
+      "method": "B2",
+      "scms": 12,
+      "mean_score": 0.6979166666666666
+    },
+    {
+      "seed": 2029,
+      "method": "P",
+      "scms": 12,
+      "mean_score": 0.8333333333333334
+    }
+  ],
+  "within_scm_variation": [
+    {
+      "method": "B0",
+      "scms_with_all_seeds": 12,
+      "mean_within_scm_score_range": 0.0,
+      "changed_scms": 0
+    },
+    {
+      "method": "B1",
+      "scms_with_all_seeds": 12,
+      "mean_within_scm_score_range": 0.11458333333333333,
+      "changed_scms": 3
+    },
+    {
+      "method": "B2",
+      "scms_with_all_seeds": 12,
+      "mean_within_scm_score_range": 0.041666666666666664,
+      "changed_scms": 1
+    },
+    {
+      "method": "P",
+      "scms_with_all_seeds": 12,
+      "mean_within_scm_score_range": 0.08333333333333333,
+      "changed_scms": 1
+    }
+  ],
+  "paired_seed_averages": [
+    {
+      "comparison": "P-B0",
+      "independent_scms": 12,
+      "seed_averaged_difference": 0.20486111111111113,
+      "scm_bootstrap_ci": [
+        -0.048697916666666674,
+        0.4270833333333333
+      ]
+    },
+    {
+      "comparison": "B2-B0",
+      "independent_scms": 12,
+      "seed_averaged_difference": 0.05555555555555555,
+      "scm_bootstrap_ci": [
+        -0.17361111111111113,
+        0.25
+      ]
+    },
+    {
+      "comparison": "P-B2",
+      "independent_scms": 12,
+      "seed_averaged_difference": 0.14930555555555555,
+      "scm_bootstrap_ci": [
+        0.03472222222222222,
+        0.2951388888888889
+      ]
+    }
+  ],
+  "validity_by_seed": [
+    {
+      "seed": 2027,
+      "records": 12,
+      "initial_valid": 11,
+      "eventual_valid": 11
+    },
+    {
+      "seed": 2028,
+      "records": 12,
+      "initial_valid": 10,
+      "eventual_valid": 10
+    },
+    {
+      "seed": 2029,
+      "records": 12,
+      "initial_valid": 10,
+      "eventual_valid": 10
+    }
+  ],
+  "interpretation": "Predeclared balanced original-text subset. Repeated seeds remain observations of the same SCM; primary held-out comparisons use seed 2027 and both text variants only. Subset estimates are sensitivity analyses, not additional independent validation."
+}

@@ -1,0 +1,67 @@
+{
+  "inspected_at": "2026-10-12T10:44:17.102948+00:00",
+  "reviewer": "automated assistant visual inspection, not human review",
+  "principal_networks": [
+    {
+      "figure": "daenerys_conquest_network.pdf",
+      "nodes": 3,
+      "approximately_minimum_label_font_at_manuscript_scale_pt": 13.459205189189188,
+      "status": "Visually inspected; target size shortfalls remain disclosed."
+    },
+    {
+      "figure": "five_kings_network.pdf",
+      "nodes": 10,
+      "approximately_minimum_label_font_at_manuscript_scale_pt": 9.810689361702128,
+      "status": "Visually inspected; target size shortfalls remain disclosed."
+    },
+    {
+      "figure": "northern_campaign_network.pdf",
+      "nodes": 8,
+      "approximately_minimum_label_font_at_manuscript_scale_pt": 8.848446908315564,
+      "status": "Visually inspected; target size shortfalls remain disclosed."
+    }
+  ],
+  "quantitative_figures": [
+    "benchmark_performance",
+    "path_contributions",
+    "reference_sensitivity",
+    "paired_counterfactual"
+  ],
+  "checks": [
+    "Three network SVG/PDF layouts inspected at manuscript scale",
+    "All quantitative plots inspected",
+    "Paired node positions and edge routes identical across worlds",
+    "Source flags, edge support styles and structural contributions kept distinct",
+    "Graphviz PDF margins removed to match SVG dimensions",
+    "No clipped figure text or oversized floats in final manuscript"
+  ],
+  "limitations": [
+    "Northern labels approximately 8.85 pt, near the approximately 9 pt target",
+    "Two networks below ten nodes",
+    "Independent reader comprehension was not measured",
+    "Semantic/source quality remains unverified"
+  ],
+  "sha256": {
+    "path_contributions.png": "816385ddee5bae5dedfa627d585574907f29664798f270f4f853818e1e080300",
+    "paired_counterfactual.pdf": "3b76adf69b8709c715face6ea8482aff03910fe3a8f61340a2132bc93b90040a",
+    "daenerys_conquest_network.pdf": "a413ffdce8910cf225f29193772e0aef6655eb040c6c7841bf6d53eb4e9dcf4a",
+    "daenerys_conquest_network.png": "1f149b8e78e1313b06cb125ebb7f337d78108aa89740839ce7e94279435498db",
+    "daenerys_conquest_network.svg": "8fbf240c65b169a40f9fc235c5d4afb8712fcfa11953abb8b88663de1643c6a0",
+    "reference_sensitivity.pdf": "ea912e88703a725212bb3cab366ffd420f9cece72e402ebffcc1b6b26ca7b3ab",
+    "reference_sensitivity.svg": "c7d819e1cbc11c4a7b72146216ae24006c9bc7c4a63caa08105f2452ef8e0289",
+    "reference_sensitivity.png": "b3eb290e279b10aa7adbbd86b7c3dd73c0f450b11fc97e2c9ee14264a73a334a",
+    "northern_campaign_network.svg": "cacc7688f7699405ae3d8c835d7db52e932d52a46e4cb8fc193834ed2d9ef0fe",
+    "northern_campaign_network.pdf": "704d131cba169fe2b535985d0a2208a337ad4c27614b2197c3e1805d074d8b27",
+    "benchmark_performance.pdf": "5f81429594a1cbfb2209c149c0553c0469813f45e0a650471370ab0e6aaf2569",
+    "paired_counterfactual.svg": "9c3bccc113a07986cfa3784365dfc1b06d3673c00c84079671c79b214b5f4a99",
+    "five_kings_network.pdf": "415b0cb6daff6bb88dd6caf91e0642748228a8c2d3d5c6c7f20fb39a14bbfee6",
+    "five_kings_network.svg": "b93aca859450072aadc4c7f6699e3d4f5059b89a2abe3b996844adb1199e497d",
+    "benchmark_performance.png": "bdc31aa3dbe0e7ba2e4e0c36e7135fda4405bf1665835371bd7fda04c2bef707",
+    "paired_counterfactual.png": "7358ecc4865188cdbc139e974042431f5e8fc6d9f45bc72921051270cb4d4dfc",
+    "path_contributions.pdf": "b482cd70d73bfbd4c9b076a9763f947c53afc63ca37bf938a742873ef9d5ea14",
+    "benchmark_performance.svg": "6858e0320931ae5e7665e8d100d7d76122244c11173e97b0415475e3a86d7659",
+    "five_kings_network.png": "d1ce6efe67fa298f852ef5869df6991830771d076c9ed0a03bda5e429ca87e2b",
+    "path_contributions.svg": "b8c08fbf5f94f712376b2d89d383c3f4310f2db9d1a9a77894237d3bde249806",
+    "northern_campaign_network.png": "8b041e6ed9fb8372e82cd3d172257d7864fe16cd489273c6dc9e2726578b3f07"
+  }
+}

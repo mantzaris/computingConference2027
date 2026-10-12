@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-12T10:44:17.102948+00:00",
+  "pages": 17,
+  "main_text_and_figures_pages": 16,
+  "reference_pages": 1,
+  "abstract_words": 208,
+  "compile_passes": 2,
+  "fatal_errors": false,
+  "overflow_or_undefined_reference_warnings": [],
+  "anonymous_pdf_author_metadata": true,
+  "pdf_sha256": "d6091280634dcb0a1edf9cf4f8c69c7ce13ac6879afcd175b90f29689bfff320",
+  "visual_inspection": "Automated assistant inspected page contact sheet and principal/quantitative figures at manuscript scale. No human review claimed.",
+  "submitted": false,
+  "policy_audit": "docs/FORMAT_AUDIT.md"
+}

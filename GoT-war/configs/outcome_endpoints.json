@@ -1,0 +1,18 @@
+{
+  "purpose": "Make the endpoint already stated in each frozen research question explicit; no causes, edges or equations are supplied.",
+  "recorded_before_accepted_application_scm": true,
+  "cases": {
+    "five_kings": {
+      "episode_id": "s01e10",
+      "reason": "The frozen primary armed-conflict outcome is active by the end of season 1. Documents through season 2 episode 4 provide broader context; those later events cannot cause the earlier primary outcome."
+    },
+    "northern_campaign": {
+      "episode_id": "s06e09",
+      "reason": "The frozen question assesses undertaking and sustaining the regional campaign through season 6 episode 9, not victory alone."
+    },
+    "daenerys_conquest": {
+      "episode_id": "s08e05",
+      "reason": "The frozen question assesses campaign continuation through the assault in season 8 episode 5."
+    }
+  }
+}

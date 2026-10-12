@@ -1,0 +1,197 @@
+{
+  "node_ids": {
+    "e06_3": "E01",
+    "e18_2": "E02",
+    "W": "E03"
+  },
+  "nodes": {
+    "E01": {
+      "id": "e06_3",
+      "definition": "Euron's Iron Fleet destroys Daenerys' ships, stranding the Unsullied in King's Landing.",
+      "actor": "Euron's fleet",
+      "type": "bool",
+      "time": 703,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "event occurrence",
+      "equation": "U_e06_3",
+      "citations": [
+        {
+          "node_id": "e06_3",
+          "segment_id": "s07e03_p08",
+          "quote": "the Iron Fleet arrives and destroys Daenerys' ships",
+          "reference_valid": true,
+          "source_id": "s07e03",
+          "start": 2570,
+          "end": 2621,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "specific actor/action/time check",
+          "story_relative_time": 703,
+          "statement_time": "s07e03",
+          "audience_revelation_time": "s07e03",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    },
+    "E02": {
+      "id": "e18_2",
+      "definition": "Cersei has Gregor Clegane behead Missandei, escalating tensions before the assault.",
+      "actor": "Cersei",
+      "type": "bool",
+      "time": 805,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "specific comparison state",
+      "equation": "U_e18_2",
+      "citations": [
+        {
+          "node_id": "e18_2",
+          "segment_id": "s08e04_p06",
+          "quote": "Cersei refuses and has Gregor Clegane behead Missandei",
+          "reference_valid": true,
+          "source_id": "s08e04",
+          "start": 2492,
+          "end": 2546,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "Cersei orders Gregor Clegane to behead Missandei (passage: 'Cersei refuses and has Gregor Clegane behead Missandei')",
+          "story_relative_time": 805,
+          "statement_time": "s08e04",
+          "audience_revelation_time": "s08e04",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "Cersei refuses and has Gregor Clegane behead Missandei.",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized"
+        }
+      ]
+    },
+    "E03": {
+      "id": "W",
+      "definition": "Daenerys and her allies continue an armed campaign against Cersei's crown in Westeros through the assault on King's Landing in season 8 episode 5.",
+      "actor": "Daenerys-led coalition and Lannister/Euron crown forces",
+      "type": "bool",
+      "time": 805,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "The specified campaign is not active through the stated horizon",
+      "equation": "and(e18_2, e06_3)",
+      "citations": [
+        {
+          "node_id": "W",
+          "segment_id": "s08e05_p02",
+          "quote": "Daenerys and Drogon burn the Iron Fleet and the Golden",
+          "reference_valid": true,
+          "source_id": "s08e05",
+          "start": 1114,
+          "end": 1168,
+          "proposition_status": "established_event",
+          "event_assessment": "partial",
+          "event_assessment_reason": "Composite campaign outcome; selected passages document occurrence, not its causal identification.",
+          "story_relative_time": 805,
+          "statement_time": "s08e05",
+          "audience_revelation_time": "s08e05",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "Daenerys and Drogon burn the Iron Fleet and the Golden Company, and destroy the city's defenses",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized"
+        },
+        {
+          "node_id": "W",
+          "segment_id": "s08e05_p02",
+          "quote": "Daenerys' army storms King's Landing",
+          "reference_valid": true,
+          "source_id": "s08e05",
+          "start": 1249,
+          "end": 1285,
+          "proposition_status": "established_event",
+          "event_assessment": "partial",
+          "event_assessment_reason": "Composite campaign outcome; selected passages document occurrence, not its causal identification.",
+          "story_relative_time": 805,
+          "statement_time": "s08e05",
+          "audience_revelation_time": "s08e05",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    }
+  },
+  "edges": {
+    "e01": {
+      "parent": "e06_3",
+      "child": "W",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    },
+    "e02": {
+      "parent": "e18_2",
+      "child": "W",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    }
+  },
+  "highlighted_path": "p1",
+  "final_source_critique": {
+    "e06_3": {
+      "id": "e06_3",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage s07e03_p08 explicitly describes the Iron Fleet destroying Daenerys' ships, matching the event definition. Time code 703 (season 7, episode 3) aligns with the event occurrence.",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": true
+    },
+    "e18_2": {
+      "id": "e18_2",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage s08e04_p06 explicitly describes Cersei ordering Missandei's execution, matching the event definition. Time code 805 (season 8, episode 5) aligns with the event occurrence.",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": true
+    },
+    "W": {
+      "id": "W",
+      "event_support": "partial",
+      "story_time": "contradicted",
+      "reference_semantics": "inconsistent",
+      "duplicates": [],
+      "reason": "The passage s08e05_p02 describes the assault on King's Landing but shows the campaign ending with Daenerys burning the city, contradicting the definition's claim of 'continuing an armed campaign.' The time code 805 (season 8, episode 5) matches the event, but the outcome described in the passage does not align with the 'campaign continuation' claim. The reference meaning explicitly states the campaign is not active through the stated horizon.",
+      "parent_order_flags": [
+        "e18_2",
+        "e06_3"
+      ],
+      "parent_order_audit_complete": true
+    }
+  },
+  "posthoc_literal_alias_flags": {},
+  "layout": {
+    "row_capacity": 2,
+    "rows": [
+      [
+        "e06_3"
+      ],
+      [
+        "e18_2"
+      ],
+      [
+        "W"
+      ]
+    ],
+    "basis": "recorded episode then within-episode dependency layers",
+    "invisible_constraints": "Layout only; excluded from structural graph and all attribution.",
+    "minimum_font_at_manuscript_scale_pt": 22.432008648648647
+  },
+  "legend": "Dark: outcome. Cream: external/background boundary. B0/B1: Boolean state; C0, C1, ...: categorical state codes in the index. ! and orange border: unresolved automated source, temporal-order, reference, duplicate, or literal-alias-coverage flag. These are review flags, not independent adjudication. Actor/faction context appears in labels; full context and state meanings are in this index. Teal edges: path with largest absolute allocated share (ID breaks ties), not edge effects. Double border: junction shared by retained paths. Edge style: solid explicit support, dashed inferred, dotted unsupported/unassessed. E numbers link nodes to equations and sources here; edge labels are generated equation operators; edge audit IDs are in SVG tooltips and this index. All widths are uniform."
+}

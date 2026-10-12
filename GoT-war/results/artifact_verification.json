@@ -1,0 +1,50 @@
+{
+  "models": [
+    {
+      "case": "daenerys_conquest",
+      "model": "daenerys_conquest_alt0",
+      "structural_validation": true,
+      "maximum_attribution_recompute_difference": 0.0,
+      "efficiency_residual": 0.0,
+      "query_recompute_matches": true,
+      "exact_source_offset_checks": 4,
+      "exact_source_offset_valid": 4,
+      "semantic_entailment": "not independently verified"
+    },
+    {
+      "case": "five_kings",
+      "model": "five_kings_alt1",
+      "structural_validation": true,
+      "maximum_attribution_recompute_difference": 0.0,
+      "efficiency_residual": 1.1102230246251565e-16,
+      "query_recompute_matches": true,
+      "exact_source_offset_checks": 11,
+      "exact_source_offset_valid": 11,
+      "semantic_entailment": "not independently verified"
+    },
+    {
+      "case": "five_kings",
+      "model": "five_kings_alt2",
+      "structural_validation": true,
+      "maximum_attribution_recompute_difference": 0.0,
+      "efficiency_residual": 1.1102230246251565e-16,
+      "query_recompute_matches": true,
+      "exact_source_offset_checks": 11,
+      "exact_source_offset_valid": 11,
+      "semantic_entailment": "not independently verified"
+    },
+    {
+      "case": "northern_campaign",
+      "model": "northern_campaign_alt0",
+      "structural_validation": true,
+      "maximum_attribution_recompute_difference": 0.0,
+      "efficiency_residual": 1.1102230246251565e-16,
+      "query_recompute_matches": true,
+      "exact_source_offset_checks": 9,
+      "exact_source_offset_valid": 9,
+      "semantic_entailment": "not independently verified"
+    }
+  ],
+  "all_recomputed": true,
+  "interpretation": "Re-execution and byte-offset checks, not independent validation of literary causal claims."
+}

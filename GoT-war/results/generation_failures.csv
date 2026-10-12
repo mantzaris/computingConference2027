@@ -1,0 +1,40 @@
+case_id,method,error
+scm_11224_v1,B2,No admissible SCM after two repairs
+scm_11224_v1,P,No admissible SCM after two repairs
+scm_11224_v1,B2/P,Factual mismatch ['V11'] | Factual mismatch ['V11'] | Factual mismatch ['V11']
+scm_11228_v0,B2,No admissible SCM after two repairs
+scm_11228_v0,P,No admissible SCM after two repairs
+scm_11228_v0,B2/P,Unknown AST operator/field | Unknown AST operator/field | Unknown AST operator/field
+scm_11228_v1,B2,No admissible SCM after two repairs
+scm_11228_v1,P,No admissible SCM after two repairs
+scm_11228_v1,B2/P,Unknown AST operator/field | Unknown AST operator/field | Unknown AST operator/field
+scm_11229_v0,B2,No admissible SCM after two repairs
+scm_11229_v0,P,No admissible SCM after two repairs
+scm_11229_v0,B2/P,Factual mismatch ['V11'] | Factual mismatch ['V11'] | Factual mismatch ['V11']
+scm_11229_v1,B2,No admissible SCM after two repairs
+scm_11229_v1,P,No admissible SCM after two repairs
+scm_11229_v1,B2/P,Unknown AST operator/field | Unknown AST operator/field | Unknown AST operator/field
+scm_11824_v0,B2,No admissible SCM after two repairs
+scm_11824_v0,P,No admissible SCM after two repairs
+scm_11824_v0,B2/P,Unknown AST operator/field | Unknown AST operator/field | Unknown AST operator/field
+scm_11824_v1,B2,No admissible SCM after two repairs
+scm_11824_v1,P,No admissible SCM after two repairs
+scm_11824_v1,B2/P,Unknown AST operator/field | Unknown AST operator/field | Unknown AST operator/field
+scm_11825_v1,B2,No admissible SCM after two repairs
+scm_11825_v1,P,No admissible SCM after two repairs
+scm_11825_v1,B2/P,Unknown AST operator/field | Unknown AST operator/field | Unknown AST operator/field
+scm_11826_v0,B2,No admissible SCM after two repairs
+scm_11826_v0,P,No admissible SCM after two repairs
+scm_11826_v0,B2/P,Unknown/self parent V10 | Unknown AST operator/field | Unknown AST operator/field
+scm_11827_v0,B2,No admissible SCM after two repairs
+scm_11827_v0,P,No admissible SCM after two repairs
+scm_11827_v0,B2/P,Unknown AST operator/field | Unknown AST operator/field | Unknown AST operator/field
+scm_11828_v0,B2,No admissible SCM after two repairs
+scm_11828_v0,P,No admissible SCM after two repairs
+scm_11828_v0,B2/P,Unknown AST operator/field | Unknown AST operator/field | Unknown AST operator/field
+scm_12406_v0,B2,No admissible SCM after two repairs
+scm_12406_v0,P,No admissible SCM after two repairs
+scm_12406_v0,B2/P,Factual mismatch ['V15'] | Factual mismatch ['V15'] | Factual mismatch ['V15']
+scm_12427_v1,B2,No admissible SCM after two repairs
+scm_12427_v1,P,No admissible SCM after two repairs
+scm_12427_v1,B2/P,Unknown AST operator/field | Unknown AST operator/field | Unknown AST operator/field

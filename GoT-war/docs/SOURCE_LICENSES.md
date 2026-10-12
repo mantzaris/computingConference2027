@@ -1,0 +1,7 @@
+# Source release policy
+
+The narrative corpus is drawn from Wikipedia contributors' Plot summaries of named HBO television episodes. Each source is attributed by title, public URL, episode identifier, access date and content hash in `data/manifests/sources.json`. Wikipedia text is distributed under its Creative Commons Attribution-ShareAlike 4.0 International terms; consult each source page and https://en.wikipedia.org/wiki/Wikipedia:Copyrights for the current terms and any third-party exceptions.
+
+Raw HTML, normalized passage text and full retrieval packets are kept locally in ignored directories and are not part of the Git release. Derived event/edge annotations, stable identifiers, exact short supporting spans, offsets, generated-model hypotheses, and acquisition code are released for traceability. Quoted source spans remain attributed to their original contributors and retain the source license; the code's license does not relicense them. Failed model completions can contain source-derived wording and should be checked before public artifact distribution.
+
+The official Computing Conference template was downloaded from the conference's own link. Its source URL and hash are recorded in `paper/template/SOURCE.json`; the upstream template and style-file notices apply. No claim of ownership is made over the template or source material. The manuscript contains analytical descriptions rather than a published full-text corpus.

@@ -1,0 +1,46 @@
+[
+  {
+    "case": "northern_campaign",
+    "accepted_generations": 1,
+    "distinct_function_signatures": 1,
+    "models": [
+      {
+        "alternative": 0,
+        "signature_sha256": "181e81db9a7d7f3233d749f9f57e1db76b40ec1ec63856e3b9e83eca01b4ce98",
+        "exhaustive_local_domains": true
+      }
+    ],
+    "interpretation": "Repeated identical mechanisms are not independent models or independent evidence."
+  },
+  {
+    "case": "five_kings",
+    "accepted_generations": 2,
+    "distinct_function_signatures": 1,
+    "models": [
+      {
+        "alternative": 1,
+        "signature_sha256": "f3525feba03446cb1c56754317874ec07eeb20caadf91efe7aeff8f82f83a065",
+        "exhaustive_local_domains": true
+      },
+      {
+        "alternative": 2,
+        "signature_sha256": "f3525feba03446cb1c56754317874ec07eeb20caadf91efe7aeff8f82f83a065",
+        "exhaustive_local_domains": true
+      }
+    ],
+    "interpretation": "Repeated identical mechanisms are not independent models or independent evidence."
+  },
+  {
+    "case": "daenerys_conquest",
+    "accepted_generations": 1,
+    "distinct_function_signatures": 1,
+    "models": [
+      {
+        "alternative": 0,
+        "signature_sha256": "8c15f457f7389136eb60bbd1462ae9ca1e46ea4bdafcbf010935ba039454d301",
+        "exhaustive_local_domains": true
+      }
+    ],
+    "interpretation": "Repeated identical mechanisms are not independent models or independent evidence."
+  }
+]

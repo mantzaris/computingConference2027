@@ -1,0 +1,50 @@
+# Reproducibility and audit contract
+
+The source code, controlled generator, public source manifests, model revision, prompt templates, decoding settings, retained model outputs, numerical results and plotting scripts are kept together. `results/artifact_manifest.json` hashes published files; `results/reproduction_manifest.json` hashes the compact archive and each expanded input. No credentials, private endpoint details, model weights or copyrighted full-text source corpus belong in the release. See [the storage policy](REPOSITORY_STORAGE.md) for the public/local boundary.
+
+1. From GoT-war, run `python3 scripts/reproduction.py`. It verifies hashes and restores the frozen benchmark and selected campaign records into ignored local paths, refusing to overwrite differing files. Then inspect `configs/budget.json`, `configs/models.json`, `configs/experiment.json`, the restored run environment and source manifests. The absolute deadline is immutable for this campaign.
+2. Install the analysis requirements from `pyproject.toml`, or use the logged versions. Graphviz `dot`, a LaTeX engine, and the supplied official `svproc` template are required for figure/PDF regeneration.
+3. `PYTHONPATH=src python3 -m got_war.cli evaluate` regenerates per-query/per-case CSVs from retained generations and the benchmark metadata. It makes no inference requests.
+4. `PYTHONPATH=src python3 -m got_war.cli figures` regenerates SVG/PDF graphics and ignored PNG previews. The first accepted alternative under the final source-semantic protocol is the principal case model. Earlier formally admissible and failed development candidates remain in the original local archive, with protocol changes documented in DECISIONS.md.
+5. `PYTHONPATH=src python3 -m got_war.cli corpus` reacquires permitted source pages during an authorized active budget. It extracts only Plot sections. Compare content hashes before treating it as the original corpus. Retain private raw files for exact within-campaign replication.
+6. Generation needs the frozen Qwen checkpoint and the logged isolated inference stack. Requests go to a local server; they are keyed by revision, prompt/evidence hash, seed, decoding parameters and response schema. Temperature is 0.2 and top-p is 0.8. Thinking is disabled for the frozen controlled protocol and enabled for the later application source/mechanism audit; raw reasoning tokens and the tokenizer-measured output cap are logged. Serving nondeterminism can remain despite a fixed seed.
+7. `scripts/remote.py` transports tar payloads over the existing authenticated shell-only SSH route. `.private/transport.json` is deliberately absent from Git. `scripts/autosync.py` pulls every 20 minutes; `runs/last_sync.json` records completion.
+8. The remote watchdog checks the absolute deadline independently of SSH and verifies process birth identities before signaling project-created process groups. It cannot terminate the pod, alter billing, or restart unrelated services. A simulated test checks that unrelated processes and completed artifacts survive project cancellation.
+
+## Statistical units and scoring
+
+There are 60 generating SCMs. The 36 test SCMs each have two deterministic paraphrase/reordering variants, giving 72 test texts but only 36 independent test units. Confidence intervals resample SCMs after averaging their text variants. Repeated questions, paths, variants and seeds are not counted as extra independent samples.
+
+For complete evidence, the score requires an exact supported outcome set. For an underidentified incomplete query, an explicit abstention or the full binary set is accepted. The incomplete family enumerates every deterministic two-parent Boolean function compatible with the factual observation and active-parent constraints. This is exhaustive within that declared family, not across arbitrary hidden confounding or continuous noise.
+
+B0 sees text; B1 sees the same text plus the extracted adjacency list; B2 executes the first admissible model; P uses that same candidate and generic compatible-rule enumeration for its flagged missing mechanism. B0 and B1 share the same 2,048-token answer cap. Model extraction is shared and charged once. B1 includes graph text, so its input-token count is larger; actual counts and extraction/repair costs are reported.
+
+A1 changes only evidence-priority weights. Its ranking metric uses known controlled support labels conditioned on generated influential paths; it is not causal accuracy or an independent gold ranking of historical importance. A2 sums single-path effects and is solely an overcounting/interaction diagnostic. No calibration map or synthetic calibration guarantee is transferred to the literary cases.
+
+## What the automatic audits do not establish
+
+Exact offsets demonstrate that a short span occurs in an acquired passage. They do not prove that the whole generated event claim follows from that span, that a character report is true, or that a structural law is identified. Edge support scores are model judgments from dependent secondary summaries. The optional CSV review form is unfilled; no independent human review is claimed.
+
+Application predictions are conditional on explicit modeled mechanisms and factual backgrounds. They are not observed literary counterfactuals. A scenario contrast is not a probability, a natural path-specific effect, or a share of moral responsibility. Free-text explanations require semantic review even when their structured numbers and path IDs pass trace checks.
+
+## Application development provenance
+
+The controlled inference protocol remains frozen. Application construction underwent disclosed exploratory revisions; see DECISIONS.md and the archived per-protocol artifacts. The current construction audits source facts, orders relevant states and generates parents incrementally from earlier eligible events. The outcome endpoint comes from the supplied research question and is recorded in `configs/outcome_endpoints.json`; a later source horizon cannot shift an earlier target forward. All explanatory variables, dependencies and equations remain model-generated. Missing Boolean references may use the explicitly labeled complement-of-observation comparison; this does not supply a causal mechanism.
+
+Offline diagnostics report 60 distinct structural-program hashes and no cross-split SCM identifier. They also characterize unchanged versus outcome-changing queries and admitted-only selection effects. These audits do not change test prompts or provide new independent observations.
+
+## Regenerate the final analysis without inference
+
+From GoT-war, first run `python3 scripts/reproduction.py`, then `PYTHONPATH=src python3 scripts/finalize.py`, `PYTHONPATH=src python3 -m got_war.cli attribute` and `PYTHONPATH=src python3 -m got_war.cli figures`. Finalization regenerates controlled diagnostics, descriptive application audits, model diversity, sensitivity, usage accounting and a local run manifest. The compact request ledger preserves all timing/count fields used by usage accounting while omitting raw responses. The attribute command re-executes stored application queries and allocations. Source-offset checks require the original private packets or an exact-hash reacquisition; their absence is reported rather than treated as a pass. The public failure inventory is preserved, but fully rebuilding it requires the original local development archive.
+
+Run `python3 scripts/build_manuscript.py`, then compile `paper/manuscript.tex` twice with `TEXINPUTS=.:template:` from the `paper` directory. Re-rendering figures sets their inspection status to pending; manuscript-size visual inspection is a separate recorded action, not an automatic proof of readability. To publish updates, stage the intended files, run `python3 scripts/check_release.py --write-manifest`, stage `results/artifact_manifest.json`, and run `python3 scripts/check_release.py` before committing.
+
+`configs/application_protocol.json` records the final exploratory protocol, including the complete-packet outcome input, cache contract hashes, bounded coverage review, conditional alternative generation and final audit allowance. `scripts/final_inference_sequence.py` records the dependency order used in this campaign. A completed campaign rejects further heavy inference work without a separately authorized new budget; offline analysis remains available.
+
+## Final protocol and checkpoint integrity
+
+The public `controlled_contract_audit.json` verifies an identical AST contract in all 96 primary synthesis prompt snapshots. The exact prompt specifications are preserved locally in the ignored `.private/prompts/` directory, including source text needed for within-campaign replay. The balanced repeated-seed subset is analyzed separately in `results/seed_robustness_summary.json`; primary estimates remain at seed 2027. `configs/analysis_environment.json` records the local CPU/plotting stack.
+
+`results/verification_checks.json` records the scientific test run and source hashes. `results/artifact_verification.json` recomputes frozen queries, exact path allocations and literal source offsets. `results/source_alias_checks.json` is a selected post-hoc literal diagnostic, not comprehensive entailment ground truth. `results/failures.jsonl` points to failures at several overlapping levels; its row count must not be called a number of independent failed generations.
+
+The final application records in the reproduction archive are authoritative for this release. Local directories named `application_v*`, `application_before_*`, and `local_snapshots` preserve development and synchronization history, not additional accepted test models; they are excluded from Git. A fresh final pull avoids interpreting merge-only synchronization leftovers as retained alternatives. Figure and manuscript inspection checks are automated-assistant inspections, not human reviews or reader-study measurements. The historical inspection record also lists hashes of local PNG previews; the corresponding SVG/PDF files remain published.

@@ -1,0 +1,35 @@
+{
+  "protocol": "Post-hoc generic parenthetical-name coverage scan prompted by an observed alias discrepancy; no inference or model edits.",
+  "checked": [
+    {
+      "case": "northern_campaign",
+      "node_id": "c01",
+      "generated_name": "Edmure Tully",
+      "parenthetical_alias": "the Blackfish",
+      "literal_name_present_in_frozen_packet": false,
+      "packet_sha256": "11e141c4175582f5acc884c098ba2466ea68bc76c44f7add7cd5d4f0de4f1c5d",
+      "model_event_assessment": "supported",
+      "source_ids": [
+        "s06e05_p04"
+      ],
+      "interpretation": "Post-hoc literal coverage flag only. An absent name is not a verified source identity; this does not establish the true alias or constitute human adjudication."
+    }
+  ],
+  "findings": [
+    {
+      "case": "northern_campaign",
+      "node_id": "c01",
+      "generated_name": "Edmure Tully",
+      "parenthetical_alias": "the Blackfish",
+      "literal_name_present_in_frozen_packet": false,
+      "packet_sha256": "11e141c4175582f5acc884c098ba2466ea68bc76c44f7add7cd5d4f0de4f1c5d",
+      "model_event_assessment": "supported",
+      "source_ids": [
+        "s06e05_p04"
+      ],
+      "interpretation": "Post-hoc literal coverage flag only. An absent name is not a verified source identity; this does not establish the true alias or constitute human adjudication."
+    }
+  ],
+  "independent_human_review": false,
+  "scope": "The scan is not a comprehensive semantic audit and its selected names are not an independent evaluation sample."
+}

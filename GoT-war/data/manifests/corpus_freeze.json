@@ -1,0 +1,9 @@
+{
+  "version": "tv-plot-v1",
+  "sources": 32,
+  "segments": 241,
+  "manifest_sha256": "52d7483266e6d9aa4850791b9c52634bf63d47082b2f0ca5ce99d3a0cecdbcf2",
+  "segments_sha256": "5538878507d827cb4707c6a25727fa1cb5ceb746ee5b386b9c0940e2f55124dd",
+  "continuity": "HBO television only",
+  "primary_material_status": "HBO synopsis and Fandom access attempts failed; episode summaries explicitly secondary."
+}

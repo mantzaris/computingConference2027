@@ -1,0 +1,20 @@
+{
+  "independent_scms": 60,
+  "sizes": [
+    12,
+    18,
+    24
+  ],
+  "splits": {
+    "development": 12,
+    "calibration": 12,
+    "test": 36
+  },
+  "narratives": 96,
+  "queries_per_narrative": 8,
+  "test_variants": "deterministic connective paraphrase and paragraph reordering",
+  "split_unit": "generating SCM, both variants kept together",
+  "gold_hidden_from_inference": true,
+  "ambiguity_family": "all deterministic binary truth tables over the declared two parents, restricted to active dependence and factual compatibility",
+  "parameters_frozen_before_test": true
+}

@@ -1,0 +1,17 @@
+{
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.29",
+  "packages": {
+    "numpy": "1.22.1",
+    "networkx": "3.0",
+    "requests": "2.32.3",
+    "beautifulsoup4": "4.8.2",
+    "matplotlib": "3.1.2",
+    "pytest": "8.3.5",
+    "pexpect": "4.6.0",
+    "Pillow": "9.4.0"
+  },
+  "graphviz": "dot - graphviz version 2.43.0 (0)",
+  "latex": "pdfTeX 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian)",
+  "scope": "Local CPU analysis and figure/manuscript generation; remote inference environment is recorded separately."
+}

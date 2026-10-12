@@ -1,0 +1,38 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", margin=0, pad="0.10", nodesep="0.16", ranksep="0.22", splines=polyline, outputorder=edgesfirst, fontname="DejaVu Sans"];
+node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=12, margin="0.07,0.05", penwidth=1.1];
+edge [fontname="DejaVu Sans", fontsize=12, arrowsize=0.65, penwidth=1.1, color="#708092"];
+"e00_3" [label=<<B>Ramsay&#x27;s threat to<BR/>Castle Black</B><BR/><FONT POINT-SIZE="12"><B>E01</B> · B1 · S6E2</FONT>>, shape=box, fillcolor="#F5F0E5", fontcolor="#243449", peripheries=1, tooltip="Ramsay Bolton proposes to storm Castle Black after deducing Sansa would seek Jon Snow's protection. | Equation: U_e00_3 | Reference: specific comparison state | Final source critique: Passage s06e02_p01 explicitly states Ramsay deduces Sansa would seek Jon's protection and proposes to storm Castle Black, matching the definition. Time code 602 aligns with season 6 episode 2.", color="#8A9AAA"];
+"e06_1" [label=<<B>Sansa&#x27;s unilateral<BR/>declaration</B><BR/><FONT POINT-SIZE="12"><B>E02</B> · B1 · S6E4</FONT>>, shape=box, fillcolor="#EDF5F8", fontcolor="#243449", peripheries=1, tooltip="Sansa Stark declares she will retake Winterfell with or without Jon Snow after he refuses to help her. | Equation: if(e00_3, 1, 0) | Reference: specific comparison state | Final source critique: Passage s06e04_p00 explicitly states Sansa declares she will take Winterfell with or without Jon after Jon refuses to help. Time code 604 aligns with season 6 episode 4. Parent e00_3 (episode 2) precedes this event, so no reversal.", color="#8A9AAA"];
+"e06_2" [label=<<B>Ramsay&#x27;s threat<BR/>letter</B><BR/><FONT POINT-SIZE="12"><B>E03</B> · B1 · S6E4</FONT>>, shape=box, fillcolor="#EDF5F8", fontcolor="#243449", peripheries=1, tooltip="Ramsay Bolton threatens Rickon and Sansa in a letter to Jon Snow. | Equation: e06_1 | Reference: specific comparison state | Final source critique: Passage s06e04_p02 explicitly describes Ramsay's letter threatening Rickon and Sansa. Time code 604 aligns with season 6 episode 4. Parent e06_3 (s06e04_p02) shares the same passage as e06_2, but the exact temporal precedence between e06_3 and e06_2 is ambiguous due to shared passage context.", color="#8A9AAA"];
+"c03" [label=<<B>Ramsay&#x27;s explicit<BR/>threat to Rickon</B><BR/><FONT POINT-SIZE="12"><B>E04</B> · B1 · S6E4</FONT>>, shape=box, fillcolor="#EDF5F8", fontcolor="#243449", peripheries=1, tooltip="Ramsay's letter explicitly threatens to kill Rickon and gang-rape Sansa, compelling Jon to join the campaign. | Equation: if(e06_1, 1, 0) | Reference: Ramsay's tactical psychological warfare | Final source critique: Passages in s06e04_p02 explicitly describe Ramsay's letter threatening Rickon and Sansa, which compelled Jon to join the campaign. The time (604) matches the episode.", color="#8A9AAA"];
+"c01" [label=<<B>Blackfish<BR/>recruitment</B><BR/><FONT POINT-SIZE="12"><B>E05 !</B> · B1 · S6E5</FONT>>, shape=box, fillcolor="#EDF5F8", fontcolor="#243449", peripheries=1, tooltip="Sansa orders Brienne to recruit Edmure Tully (the Blackfish) to join the Stark coalition against the Boltons. | Equation: if(e06_1, 1, 0) | Reference: Edmure Tully's allegiance to the Starks | Final source critique: Passages in s06e05_p04 confirm Sansa ordering Brienne to recruit Edmure Tully (the Blackfish). The time (605) matches the episode.", color="#B45135"];
+"e06_3" [label=<<B>Stark unification<BR/>strategy</B><BR/><FONT POINT-SIZE="12"><B>E06 !</B> · C0 · S6E4</FONT>>, shape=box, fillcolor="#EDF5F8", fontcolor="#243449", peripheries=2, tooltip="Sansa proposes leveraging Jon's Stark heritage to unite the North. | Equation: if(and(e06_2, e06_1), 'proposed', 'not proposed') | Reference: specific comparison state | Final source critique: Passage s06e04_p02 explicitly states Sansa suggests Jon can leverage his Stark heritage to unite the North. Time code 604 aligns with season 6 episode 4. Parent e06_2 (Ramsay's letter) is in the same passage (s06e04_p02), but its exact temporal precedence relative to e06_3 is unclear due to shared passage context.", color="#B45135"];
+"c00" [label=<<B>Littlefinger&#x27;s<BR/>manipulation of<BR/>Robin Arryn</B><BR/><FONT POINT-SIZE="12"><B>E07</B> · B1 · S6E4</FONT>>, shape=box, fillcolor="#EDF5F8", fontcolor="#243449", peripheries=2, tooltip="Petyr Baelish manipulates Robin Arryn to command the Knights of the Vale to protect Sansa, ensuring their deployment against the Boltons. | Equation: and(e06_1, eq(e06_3, 'proposed')) | Reference: Robin Arryn's loyalty to Littlefinger | Final source critique: Passages in s06e04_p06 confirm Littlefinger's manipulation of Robin Arryn to command the Knights of the Vale, aligning with the definition. The time (604) matches the episode.", color="#8A9AAA"];
+"W" [label=<<B>Campaign outcome</B><BR/><FONT POINT-SIZE="12"><B>E08</B> · B1 · S6E9</FONT>>, shape=box, fillcolor="#25384E", fontcolor="white", peripheries=2, tooltip="Jon Snow and Sansa Stark's coalition undertakes and sustains an armed campaign to remove Bolton rule of Winterfell through season 6 episode 9. | Equation: and(e06_1, c03, c01, c00) | Reference: The specified campaign is not active through the stated horizon | Final source critique: Passages in s06e09_p04 explicitly describe the Stark-led coalition's campaign against Bolton forces, including the arrival of the Knights of the Vale and the battle outcome. The event is directly tied to season 6 episode 9 (story_time 609).", color="#8A9AAA"];
+{ rank=same; "e00_3"; }
+{ rank=same; "e06_1"; }
+{ rank=same; "c03"; "e06_2"; }
+{ rank=same; "e06_3"; }
+{ rank=same; "c00"; }
+{ rank=same; "c01"; }
+{ rank=same; "W"; }
+"e00_3" -> "e06_1" [style=invis,weight=100];
+"e06_1" -> "c03" [style=invis,weight=100];
+"c03" -> "e06_3" [style=invis,weight=100];
+"e06_3" -> "c00" [style=invis,weight=100];
+"c00" -> "c01" [style=invis,weight=100];
+"c01" -> "W" [style=invis,weight=100];
+"e00_3" -> "e06_1" [label="if", tooltip="e01: e00_3 -> e06_1 | unsupported | evidence score 0", style="dotted", color="#176D89"];
+"e06_1" -> "e06_2" [label="copy", tooltip="e02: e06_1 -> e06_2 | unsupported | evidence score 0", style="dotted", color="#708092"];
+"e06_1" -> "e06_3" [label="if", tooltip="e03: e06_1 -> e06_3 | unsupported | evidence score 0", style="dotted", color="#708092"];
+"e06_1" -> "c00" [label="and", tooltip="e04: e06_1 -> c00 | unsupported | evidence score 0", style="dotted", color="#708092"];
+"e06_1" -> "c03" [label="if", tooltip="e05: e06_1 -> c03 | inferred | evidence score 0.8", style="dashed", color="#708092"];
+"e06_1" -> "c01" [label="if", tooltip="e06: e06_1 -> c01 | inferred | evidence score 0.7", style="dashed", color="#708092"];
+"e06_1" -> "W" [label="and", tooltip="e07: e06_1 -> W | inferred | evidence score 0.6", style="dashed", color="#176D89"];
+"e06_2" -> "e06_3" [label="if", tooltip="e08: e06_2 -> e06_3 | unsupported | evidence score 0", style="dotted", color="#708092"];
+"e06_3" -> "c00" [label="and", tooltip="e09: e06_3 -> c00 | unsupported | evidence score 0", style="dotted", color="#708092"];
+"c00" -> "W" [label="and", tooltip="e10: c00 -> W | unsupported | evidence score 0", style="dotted", color="#708092"];
+"c03" -> "W" [label="and", tooltip="e11: c03 -> W | inferred | evidence score 0.7", style="dashed", color="#708092"];
+"c01" -> "W" [label="and", tooltip="e12: c01 -> W | inferred | evidence score 0.6", style="dashed", color="#708092"];
+}

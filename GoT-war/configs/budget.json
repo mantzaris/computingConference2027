@@ -1,0 +1,25 @@
+{
+  "campaign_id": "campaign_20261012",
+  "started_at": "2026-10-12T04:39:58+00:00",
+  "soft_deadline": "2026-10-13T02:39:58+00:00",
+  "hard_deadline": "2026-10-13T04:39:58+00:00",
+  "no_heavy_jobs_after": "2026-10-13T00:39:58+00:00",
+  "initial_local_monotonic": 30272.121710693,
+  "initial_local_boot_id": "bc4d0353-6b62-4431-aee3-4c00aa084056",
+  "output_token_ceiling": 1000000,
+  "request_timeout_seconds": 240,
+  "max_repair_attempts": 2,
+  "sync_interval_seconds": 1800,
+  "heartbeat_interval_seconds": 300,
+  "stage_budgets_hours": {
+    "environment": 1,
+    "corpus_pilot": 2,
+    "implementation": 3,
+    "inference": 10,
+    "analysis": 3,
+    "writing": 3,
+    "recovery": 2
+  },
+  "project_processes": [],
+  "application_request_timeout_seconds": 600
+}

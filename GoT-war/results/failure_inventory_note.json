@@ -1,0 +1,7 @@
+{
+  "entries": 316,
+  "interpretation": "Diagnostic pointers overlap across request, repair and stage levels. This is not a count of independent failed generations. Request failures and failure-inclusive benchmark rates are reported separately.",
+  "original_failure_log": "runs/campaign_20261012/observed_failure_log.jsonl",
+  "partial_streams": "Retained under partial_*.jsonl or interrupted_*.jsonl; early timeouts before token-level checkpointing lack complete text, as documented in RUN_LOG.md.",
+  "release_scope": "Earlier development artifacts, raw requests and partial streams remain in the ignored local campaign archive. The public failure inventory retains their paths. Controlled attempts and final application records/audits are included in results/reproduction.tar.gz."
+}

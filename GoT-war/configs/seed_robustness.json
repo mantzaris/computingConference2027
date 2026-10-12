@@ -1,0 +1,24 @@
+{
+  "scm_ids": [
+    "scm_11204",
+    "scm_11205",
+    "scm_11224",
+    "scm_11225",
+    "scm_11804",
+    "scm_11805",
+    "scm_11824",
+    "scm_11825",
+    "scm_12404",
+    "scm_12405",
+    "scm_12424",
+    "scm_12425"
+  ],
+  "seeds": [
+    2027,
+    2028,
+    2029
+  ],
+  "selection": "First two test SCM identifiers in each size/evidence stratum; original text only; no outcome-based selection.",
+  "inference_prompts": "Unchanged primary controlled prompts; only decoding seeds vary.",
+  "experimental_unit": "Generating SCM; seed and text variants are repeated observations."
+}

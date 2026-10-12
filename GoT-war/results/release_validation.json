@@ -1,0 +1,88 @@
+{
+  "checked_at": "2026-10-12T15:34:21.616952+00:00",
+  "scope": "Offline validation from an export of the compact staged release; no access to original runs or private source packets.",
+  "archive": {
+    "archive_sha256": "a6753d211d00304efa0f984c7a74f04bc0b9cb291391fb91313f21e8bf70355d",
+    "archive_bytes": 546536,
+    "expanded_bytes": 10853533,
+    "file_count": 147
+  },
+  "tests": {
+    "passed": 19,
+    "seconds": 3.39,
+    "command": "mkdir -p .cache; PYTHONPATH=src python3 -m pytest -q tests --basetemp=.cache/pytest",
+    "setup_note": "Initial fresh-export test run lacked .cache; documented setup now creates it before using --basetemp."
+  },
+  "analysis": {
+    "finalization_result_files_matching": [
+      "summary.json",
+      "diagnostic_summary.json",
+      "query_strata.csv",
+      "path_diagnostics.csv",
+      "final_source_critique.csv",
+      "causal_paths.csv",
+      "evidence_ranking.csv",
+      "artifact_verification.json",
+      "usage.json",
+      "reproduction_manifest.json",
+      "generation_failures.csv",
+      "verification_checks.json",
+      "privacy_scan.json",
+      "metrics.csv",
+      "source_alias_checks.json",
+      "sensitivity.json",
+      "application_baseline_comparison.csv",
+      "seed_robustness.csv",
+      "seed_robustness_summary.json",
+      "failure_inventory_note.json",
+      "segment_priorities.csv",
+      "method_comparison.csv",
+      "influential_weak_support.csv",
+      "application_audit_summary.json",
+      "application_summary.csv",
+      "variable_equation_catalog.csv",
+      "artifact_manifest.json",
+      "source_audit.csv",
+      "model_diversity.json",
+      "stability.json",
+      "extraction.csv"
+    ],
+    "comparison": "JSON objects and top-level record sets; CSV row sets; ignores record ordering, not numeric differences",
+    "differences": [],
+    "models_reexecuted": 4,
+    "query_and_attribution_matches": true,
+    "source_offset_checks": 0,
+    "source_offset_note": "Private source packets intentionally excluded; original source checks remain historical campaign results."
+  },
+  "figures": {
+    "svg": 7,
+    "pdf": 7,
+    "principal_graphviz_sources_unchanged": true,
+    "scope": "Regeneration smoke check; published inspected vector artifacts were preserved."
+  },
+  "manuscript": {
+    "source_regenerated_byte_identically": true,
+    "compile_passes": 2,
+    "pages": 17,
+    "template_examples_required": false
+  },
+  "archive_checks": [
+    "147 member hashes verified",
+    "Repeat restore writes no files",
+    "Changed existing record rejected before any writes",
+    "Path traversal rejected",
+    "Corrupt archive hash rejected"
+  ],
+  "release_guard_checks": [
+    "Ignored staged raw log rejected",
+    "Oversized staged file rejected",
+    "Validation used a separate temporary index"
+  ],
+  "preservation": {
+    "original_tracked_files_present": 1882,
+    "excluded_original_files_unchanged": 1724,
+    "unpushed_history_backup": ".private/release_slimming/unpushed-history.bundle",
+    "remote_base": "bfbe4889bfebe38f508c01a8d2350c50933b86fb"
+  },
+  "gpu_inference_for_packaging": false
+}

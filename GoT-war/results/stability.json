@@ -1,0 +1,219 @@
+[
+  {
+    "case": "northern_campaign",
+    "accepted_generations": 1,
+    "distinct_function_signatures": 1,
+    "aligned_model_count": 1,
+    "aligned_path_envelopes": [
+      {
+        "path": [
+          "e00_3",
+          "e06_1",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 1
+      },
+      {
+        "path": [
+          "e00_3",
+          "e06_1",
+          "c00",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 1
+      },
+      {
+        "path": [
+          "e00_3",
+          "e06_1",
+          "c01",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 1
+      },
+      {
+        "path": [
+          "e00_3",
+          "e06_1",
+          "c03",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 1
+      },
+      {
+        "path": [
+          "e00_3",
+          "e06_1",
+          "e06_3",
+          "c00",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 1
+      },
+      {
+        "path": [
+          "e00_3",
+          "e06_1",
+          "e06_2",
+          "e06_3",
+          "c00",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 1
+      }
+    ],
+    "ranking_sensitivity": [
+      {
+        "alternative": 0,
+        "weighted_ranking_informative": false,
+        "uniform_top5_jaccard": null,
+        "geometric_top5_jaccard": null
+      }
+    ],
+    "interpretation": "Envelopes over retained generated mechanisms, not confidence intervals or probabilities. Identical functions do not supply independent model diversity."
+  },
+  {
+    "case": "five_kings",
+    "accepted_generations": 2,
+    "distinct_function_signatures": 1,
+    "aligned_model_count": 2,
+    "aligned_path_envelopes": [
+      {
+        "path": [
+          "e06_1",
+          "e06_0",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 2
+      },
+      {
+        "path": [
+          "e06_2",
+          "e06_3",
+          "e12_0",
+          "e12_1",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 2
+      },
+      {
+        "path": [
+          "e06_1",
+          "e06_0",
+          "e12_3",
+          "e12_5",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 2
+      },
+      {
+        "path": [
+          "e06_2",
+          "e06_3",
+          "e12_0",
+          "e12_1",
+          "e12_4",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 2
+      },
+      {
+        "path": [
+          "e06_2",
+          "e06_3",
+          "e12_0",
+          "e12_1",
+          "e12_5",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 2
+      },
+      {
+        "path": [
+          "e06_2",
+          "e06_3",
+          "e12_0",
+          "e12_1",
+          "e12_4",
+          "e12_5",
+          "W"
+        ],
+        "min": 0.16666666666666666,
+        "max": 0.16666666666666666,
+        "models": 2
+      }
+    ],
+    "ranking_sensitivity": [
+      {
+        "alternative": 1,
+        "weighted_ranking_informative": false,
+        "uniform_top5_jaccard": null,
+        "geometric_top5_jaccard": null
+      },
+      {
+        "alternative": 2,
+        "weighted_ranking_informative": false,
+        "uniform_top5_jaccard": null,
+        "geometric_top5_jaccard": null
+      }
+    ],
+    "interpretation": "Envelopes over retained generated mechanisms, not confidence intervals or probabilities. Identical functions do not supply independent model diversity."
+  },
+  {
+    "case": "daenerys_conquest",
+    "accepted_generations": 1,
+    "distinct_function_signatures": 1,
+    "aligned_model_count": 1,
+    "aligned_path_envelopes": [
+      {
+        "path": [
+          "e06_3",
+          "W"
+        ],
+        "min": 0.5,
+        "max": 0.5,
+        "models": 1
+      },
+      {
+        "path": [
+          "e18_2",
+          "W"
+        ],
+        "min": 0.5,
+        "max": 0.5,
+        "models": 1
+      }
+    ],
+    "ranking_sensitivity": [
+      {
+        "alternative": 0,
+        "weighted_ranking_informative": false,
+        "uniform_top5_jaccard": null,
+        "geometric_top5_jaccard": null
+      }
+    ],
+    "interpretation": "Envelopes over retained generated mechanisms, not confidence intervals or probabilities. Identical functions do not supply independent model diversity."
+  }
+]

@@ -1,0 +1,507 @@
+{
+  "node_ids": {
+    "e00_3": "E01",
+    "e06_1": "E02",
+    "e06_2": "E03",
+    "c03": "E04",
+    "c01": "E05",
+    "e06_3": "E06",
+    "c00": "E07",
+    "W": "E08"
+  },
+  "nodes": {
+    "E01": {
+      "id": "e00_3",
+      "definition": "Ramsay Bolton proposes to storm Castle Black after deducing Sansa would seek Jon Snow's protection.",
+      "actor": "Ramsay Bolton",
+      "type": "bool",
+      "time": 602,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "specific comparison state",
+      "equation": "U_e00_3",
+      "citations": [
+        {
+          "node_id": "e00_3",
+          "segment_id": "s06e02_p01",
+          "quote": "proposes to storm Castle Black",
+          "reference_valid": true,
+          "source_id": "s06e02",
+          "start": 403,
+          "end": 433,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "specific actor/action/time check",
+          "story_relative_time": 602,
+          "statement_time": "s06e02",
+          "audience_revelation_time": "s06e02",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    },
+    "E02": {
+      "id": "e06_1",
+      "definition": "Sansa Stark declares she will retake Winterfell with or without Jon Snow after he refuses to help her.",
+      "actor": "Sansa Stark",
+      "type": "bool",
+      "time": 604,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "specific comparison state",
+      "equation": "if(e00_3, 1, 0)",
+      "citations": [
+        {
+          "node_id": "e06_1",
+          "segment_id": "s06e04_p00",
+          "quote": "Sansa declares she will take Winterfell with or without Jon",
+          "reference_valid": true,
+          "source_id": "s06e04",
+          "start": 410,
+          "end": 469,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "specific actor/action/time check",
+          "story_relative_time": 604,
+          "statement_time": "s06e04",
+          "audience_revelation_time": "s06e04",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    },
+    "E03": {
+      "id": "e06_2",
+      "definition": "Ramsay Bolton threatens Rickon and Sansa in a letter to Jon Snow.",
+      "actor": "Ramsay Bolton",
+      "type": "bool",
+      "time": 604,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "specific comparison state",
+      "equation": "e06_1",
+      "citations": [
+        {
+          "node_id": "e06_2",
+          "segment_id": "s06e04_p02",
+          "quote": "Ramsay boasts he has Rickon and demands Sansa's return",
+          "reference_valid": true,
+          "source_id": "s06e04",
+          "start": 747,
+          "end": 801,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "specific actor/action/time check",
+          "story_relative_time": 604,
+          "statement_time": "s06e04",
+          "audience_revelation_time": "s06e04",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    },
+    "E04": {
+      "id": "c03",
+      "definition": "Ramsay's letter explicitly threatens to kill Rickon and gang-rape Sansa, compelling Jon to join the campaign.",
+      "actor": "Ramsay Bolton",
+      "type": "bool",
+      "time": 604,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "Ramsay's tactical psychological warfare",
+      "equation": "if(e06_1, 1, 0)",
+      "citations": [
+        {
+          "node_id": "c03",
+          "segment_id": "s06e04_p02",
+          "quote": "Ramsay boasts he has Rickon and demands Sansa's return",
+          "reference_valid": true,
+          "source_id": "s06e04",
+          "start": 747,
+          "end": 801,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "Passage explicitly states Ramsay's letter threatens to kill Rickon and gang-rape Sansa, compelling Jon to join the campaign, matching the claim's definition.",
+          "story_relative_time": 604,
+          "statement_time": "s06e04",
+          "audience_revelation_time": "s06e04",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "Ramsay boasts he has Rickon and demands Sansa's return, threatening to exterminate the wildlings, kill Rickon, and gang-rape Sansa.",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized"
+        }
+      ]
+    },
+    "E05": {
+      "id": "c01",
+      "definition": "Sansa orders Brienne to recruit Edmure Tully (the Blackfish) to join the Stark coalition against the Boltons.",
+      "actor": "Sansa Stark",
+      "type": "bool",
+      "time": 605,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "Edmure Tully's allegiance to the Starks",
+      "equation": "if(e06_1, 1, 0)",
+      "citations": [
+        {
+          "node_id": "c01",
+          "segment_id": "s06e05_p04",
+          "quote": "Sansa orders Brienne to go and recruit the Blackfish for their cause.",
+          "reference_valid": true,
+          "source_id": "s06e05",
+          "start": 1136,
+          "end": 1205,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "Passage explicitly states Sansa orders Brienne to recruit the Blackfish for their cause, matching the claim's definition.",
+          "story_relative_time": 605,
+          "statement_time": "s06e05",
+          "audience_revelation_time": "s06e05",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    },
+    "E06": {
+      "id": "e06_3",
+      "definition": "Sansa proposes leveraging Jon's Stark heritage to unite the North.",
+      "actor": "Sansa Stark",
+      "type": "category",
+      "time": 604,
+      "observed": "proposed",
+      "reference": "not proposed",
+      "reference_meaning": "specific comparison state",
+      "equation": "if(and(e06_2, e06_1), 'proposed', 'not proposed')",
+      "citations": [
+        {
+          "node_id": "e06_3",
+          "segment_id": "s06e04_p02",
+          "quote": "Sansa says Jon can leverage his status as a son of Eddard Stark",
+          "reference_valid": true,
+          "source_id": "s06e04",
+          "start": 1049,
+          "end": 1112,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "specific actor/action/time check",
+          "story_relative_time": 604,
+          "statement_time": "s06e04",
+          "audience_revelation_time": "s06e04",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    },
+    "E07": {
+      "id": "c00",
+      "definition": "Petyr Baelish manipulates Robin Arryn to command the Knights of the Vale to protect Sansa, ensuring their deployment against the Boltons.",
+      "actor": "Petyr Baelish",
+      "type": "bool",
+      "time": 604,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "Robin Arryn's loyalty to Littlefinger",
+      "equation": "and(e06_1, eq(e06_3, 'proposed'))",
+      "citations": [
+        {
+          "node_id": "c00",
+          "segment_id": "s06e04_p06",
+          "quote": "Robin agrees to command Royce to lead the Knights of",
+          "reference_valid": true,
+          "source_id": "s06e04",
+          "start": 2904,
+          "end": 2956,
+          "proposition_status": "established_event",
+          "event_assessment": "supported",
+          "event_assessment_reason": "Passage explicitly states Littlefinger manipulates Robin Arryn to command the Knights of the Vale to protect Sansa, aligning with the claim's definition.",
+          "story_relative_time": 604,
+          "statement_time": "s06e04",
+          "audience_revelation_time": "s06e04",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": false,
+          "original_generated_quote": "Robin agrees to command Royce to lead the Knights of the Vale to protect her.",
+          "span_method": "Contiguous lexical sequence copied from source; punctuation/length normalized"
+        }
+      ]
+    },
+    "E08": {
+      "id": "W",
+      "definition": "Jon Snow and Sansa Stark's coalition undertakes and sustains an armed campaign to remove Bolton rule of Winterfell through season 6 episode 9.",
+      "actor": "Stark-led northern/wildling coalition, Bolton forces and participating Vale forces",
+      "type": "bool",
+      "time": 609,
+      "observed": 1,
+      "reference": 0,
+      "reference_meaning": "The specified campaign is not active through the stated horizon",
+      "equation": "and(e06_1, c03, c01, c00)",
+      "citations": [
+        {
+          "node_id": "W",
+          "segment_id": "s06e09_p04",
+          "quote": "The armies gather outside Winterfell the next morning.",
+          "reference_valid": true,
+          "source_id": "s06e09",
+          "start": 1342,
+          "end": 1396,
+          "proposition_status": "established_event",
+          "event_assessment": "partial",
+          "event_assessment_reason": "Composite campaign outcome; selected passages document occurrence, not its causal identification.",
+          "story_relative_time": 609,
+          "statement_time": "s06e09",
+          "audience_revelation_time": "s06e09",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        },
+        {
+          "node_id": "W",
+          "segment_id": "s06e09_p04",
+          "quote": "They smash the Bolton army, bringing victory to the Starks",
+          "reference_valid": true,
+          "source_id": "s06e09",
+          "start": 1870,
+          "end": 1928,
+          "proposition_status": "established_event",
+          "event_assessment": "partial",
+          "event_assessment_reason": "Composite campaign outcome; selected passages document occurrence, not its causal identification.",
+          "story_relative_time": 609,
+          "statement_time": "s06e09",
+          "audience_revelation_time": "s06e09",
+          "event_support": "cited passage; entailment not independently verified",
+          "mechanism_support": "separate edge assessment required",
+          "raw_quote_exact": true,
+          "span_method": "verbatim model span"
+        }
+      ]
+    }
+  },
+  "edges": {
+    "e01": {
+      "parent": "e00_3",
+      "child": "e06_1",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "if"
+    },
+    "e02": {
+      "parent": "e06_1",
+      "child": "e06_2",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "copy"
+    },
+    "e03": {
+      "parent": "e06_1",
+      "child": "e06_3",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "if"
+    },
+    "e04": {
+      "parent": "e06_1",
+      "child": "c00",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    },
+    "e05": {
+      "parent": "e06_1",
+      "child": "c03",
+      "support": 0.8,
+      "status": "inferred",
+      "operator": "if"
+    },
+    "e06": {
+      "parent": "e06_1",
+      "child": "c01",
+      "support": 0.7,
+      "status": "inferred",
+      "operator": "if"
+    },
+    "e07": {
+      "parent": "e06_1",
+      "child": "W",
+      "support": 0.6,
+      "status": "inferred",
+      "operator": "and"
+    },
+    "e08": {
+      "parent": "e06_2",
+      "child": "e06_3",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "if"
+    },
+    "e09": {
+      "parent": "e06_3",
+      "child": "c00",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    },
+    "e10": {
+      "parent": "c00",
+      "child": "W",
+      "support": 0,
+      "status": "unsupported",
+      "operator": "and"
+    },
+    "e11": {
+      "parent": "c03",
+      "child": "W",
+      "support": 0.7,
+      "status": "inferred",
+      "operator": "and"
+    },
+    "e12": {
+      "parent": "c01",
+      "child": "W",
+      "support": 0.6,
+      "status": "inferred",
+      "operator": "and"
+    }
+  },
+  "highlighted_path": "p1",
+  "final_source_critique": {
+    "e00_3": {
+      "id": "e00_3",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage s06e02_p01 explicitly states Ramsay deduces Sansa would seek Jon's protection and proposes to storm Castle Black, matching the definition. Time code 602 aligns with season 6 episode 2.",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": true
+    },
+    "e06_1": {
+      "id": "e06_1",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage s06e04_p00 explicitly states Sansa declares she will take Winterfell with or without Jon after Jon refuses to help. Time code 604 aligns with season 6 episode 4. Parent e00_3 (episode 2) precedes this event, so no reversal.",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": true
+    },
+    "e06_2": {
+      "id": "e06_2",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage s06e04_p02 explicitly describes Ramsay's letter threatening Rickon and Sansa. Time code 604 aligns with season 6 episode 4. Parent e06_3 (s06e04_p02) shares the same passage as e06_2, but the exact temporal precedence between e06_3 and e06_2 is ambiguous due to shared passage context.",
+      "parent_order_flags": [],
+      "parent_order_audit_complete": false,
+      "invalid_parent_order_flags": [
+        "e06_3"
+      ]
+    },
+    "e06_3": {
+      "id": "e06_3",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passage s06e04_p02 explicitly states Sansa suggests Jon can leverage his Stark heritage to unite the North. Time code 604 aligns with season 6 episode 4. Parent e06_2 (Ramsay's letter) is in the same passage (s06e04_p02), but its exact temporal precedence relative to e06_3 is unclear due to shared passage context.",
+      "parent_order_flags": [
+        "e06_2"
+      ],
+      "parent_order_audit_complete": true
+    },
+    "W": {
+      "id": "W",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passages in s06e09_p04 explicitly describe the Stark-led coalition's campaign against Bolton forces, including the arrival of the Knights of the Vale and the battle outcome. The event is directly tied to season 6 episode 9 (story_time 609).",
+      "parent_order_audit_complete": false
+    },
+    "c00": {
+      "id": "c00",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passages in s06e04_p06 confirm Littlefinger's manipulation of Robin Arryn to command the Knights of the Vale, aligning with the definition. The time (604) matches the episode.",
+      "parent_order_audit_complete": false
+    },
+    "c03": {
+      "id": "c03",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passages in s06e04_p02 explicitly describe Ramsay's letter threatening Rickon and Sansa, which compelled Jon to join the campaign. The time (604) matches the episode.",
+      "parent_order_audit_complete": false
+    },
+    "c01": {
+      "id": "c01",
+      "event_support": "supported",
+      "story_time": "supported",
+      "reference_semantics": "consistent",
+      "duplicates": [],
+      "reason": "Passages in s06e05_p04 confirm Sansa ordering Brienne to recruit Edmure Tully (the Blackfish). The time (605) matches the episode.",
+      "parent_order_audit_complete": false
+    }
+  },
+  "posthoc_literal_alias_flags": {
+    "c01": {
+      "case": "northern_campaign",
+      "node_id": "c01",
+      "generated_name": "Edmure Tully",
+      "parenthetical_alias": "the Blackfish",
+      "literal_name_present_in_frozen_packet": false,
+      "packet_sha256": "11e141c4175582f5acc884c098ba2466ea68bc76c44f7add7cd5d4f0de4f1c5d",
+      "model_event_assessment": "supported",
+      "source_ids": [
+        "s06e05_p04"
+      ],
+      "interpretation": "Post-hoc literal coverage flag only. An absent name is not a verified source identity; this does not establish the true alias or constitute human adjudication."
+    }
+  },
+  "layout": {
+    "row_capacity": 2,
+    "rows": [
+      [
+        "e00_3"
+      ],
+      [
+        "e06_1"
+      ],
+      [
+        "c03",
+        "e06_2"
+      ],
+      [
+        "e06_3"
+      ],
+      [
+        "c00"
+      ],
+      [
+        "c01"
+      ],
+      [
+        "W"
+      ]
+    ],
+    "basis": "recorded episode then within-episode dependency layers",
+    "invisible_constraints": "Layout only; excluded from structural graph and all attribution.",
+    "minimum_font_at_manuscript_scale_pt": 8.848446908315564
+  },
+  "legend": "Dark: outcome. Cream: external/background boundary. B0/B1: Boolean state; C0, C1, ...: categorical state codes in the index. ! and orange border: unresolved automated source, temporal-order, reference, duplicate, or literal-alias-coverage flag. These are review flags, not independent adjudication. Actor/faction context appears in labels; full context and state meanings are in this index. Teal edges: path with largest absolute allocated share (ID breaks ties), not edge effects. Double border: junction shared by retained paths. Edge style: solid explicit support, dashed inferred, dotted unsupported/unassessed. E numbers link nodes to equations and sources here; edge labels are generated equation operators; edge audit IDs are in SVG tooltips and this index. All widths are uniform."
+}

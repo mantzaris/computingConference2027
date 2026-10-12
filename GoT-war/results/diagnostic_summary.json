@@ -1,0 +1,93 @@
+{
+  "dataset_integrity": {
+    "independent_scm_ids": 60,
+    "distinct_structural_programs": 60,
+    "cross_split_scm_ids": [],
+    "duplicate_program_ids": [],
+    "automated_only": true
+  },
+  "query_profile": [
+    {
+      "condition": "complete",
+      "test_scms": 18,
+      "structural_queries_per_scm": 5,
+      "identified_queries": 90,
+      "ambiguous_queries": 0,
+      "identified_zero_outcomes": 58,
+      "identified_one_outcomes": 32,
+      "identified_queries_equal_to_factual_outcome": 63,
+      "factual_carry_forward_accuracy_on_identified_structural_queries": 0.7,
+      "interpretation": "Post-hoc dataset diagnostic, not a predeclared inference baseline; each SCM counted once."
+    },
+    {
+      "condition": "incomplete",
+      "test_scms": 18,
+      "structural_queries_per_scm": 5,
+      "identified_queries": 43,
+      "ambiguous_queries": 47,
+      "identified_zero_outcomes": 22,
+      "identified_one_outcomes": 21,
+      "identified_queries_equal_to_factual_outcome": 43,
+      "factual_carry_forward_accuracy_on_identified_structural_queries": 1.0,
+      "interpretation": "Post-hoc dataset diagnostic, not a predeclared inference baseline; each SCM counted once."
+    }
+  ],
+  "extraction": {
+    "test_texts": 72,
+    "test_scms": 36,
+    "initial_valid": 53,
+    "admissible": 59,
+    "admitted_mean_edge_precision": 1.0,
+    "admitted_mean_edge_recall": 1.0,
+    "admitted_mean_event_id_recall": 1.0,
+    "admitted_mean_source_reference_validity": 1.0,
+    "admitted_mean_specified_nonroot_function_agreement": 0.9987893462469734,
+    "admitted_mean_unexplained_internal_backgrounds": 0.0
+  },
+  "A1": {
+    "eligible_test_texts": 38,
+    "eligible_scms": 22,
+    "paired_ndcg5_difference": -0.0005852682879299954,
+    "ci": [
+      -0.11118125489027418,
+      0.0866430662420786
+    ],
+    "interpretation": "Known source-support labels conditional on generated influential paths; availability proxy, not independent causal-importance labels."
+  },
+  "A2": {
+    "admitted_test_texts": 59,
+    "nonzero_naive_residual": 26,
+    "positive_naive_residual": 20,
+    "negative_naive_residual": 6,
+    "max_absolute_naive_residual": 3.0,
+    "max_efficiency_residual": 0.0
+  },
+  "paraphrase_sensitivity": [
+    {
+      "method": "B0",
+      "scms": 36,
+      "mean_absolute_score_change": 0.10416666666666667,
+      "changed_scms": 18
+    },
+    {
+      "method": "B1",
+      "scms": 36,
+      "mean_absolute_score_change": 0.16666666666666666,
+      "changed_scms": 23
+    },
+    {
+      "method": "B2",
+      "scms": 36,
+      "mean_absolute_score_change": 0.14930555555555555,
+      "changed_scms": 9
+    },
+    {
+      "method": "P",
+      "scms": 36,
+      "mean_absolute_score_change": 0.21180555555555555,
+      "changed_scms": 9
+    }
+  ],
+  "primary_seed": 2027,
+  "selection_warning": "Admitted-only diagnostics condition on successful synthesis. Failure-inclusive query scores remain primary."
+}
