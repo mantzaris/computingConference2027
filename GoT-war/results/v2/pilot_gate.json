@@ -1,0 +1,23 @@
+{
+  "status": "development_gate_in_progress",
+  "throughput_and_budget": {
+    "pilot_records": 4,
+    "output_tokens": 18001,
+    "request_seconds": 378.49409173685126,
+    "tokens_per_second": 47.55952706526058,
+    "benchmark_projection": 756042,
+    "application_allowance": 220000,
+    "targeted_repair_and_transfer_allowance": 100000,
+    "ceiling": 1100000,
+    "projection_seconds_at_half_measured_rate": 46257.81911122009,
+    "basis": "Four size-eight development SCMs; 1.4 multiplier covers larger cases and variation. Separate application and targeted repair allowances. Ceiling is a safety bound, not a target. Four hours reserved for analysis and delivery. No test outputs inspected."
+  },
+  "round1_failures": [
+    "One multiple-missing model used forbidden internal backgrounds after repairs.",
+    "All three generated explanations failed structured numeric-field validation; reviewer IDs were valid."
+  ],
+  "corrections": [
+    "Explicitly require assumed missing rules directly in expr, forbid internal noise and equation-only assumptions.",
+    "Expose all eligible numeric keys, suppress internal segment allocation weights in prose records, distinguish zero influence from absent support."
+  ]
+}

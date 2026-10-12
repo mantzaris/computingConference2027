@@ -42,7 +42,7 @@ class Remote:
         payload=base64.b64encode(out.getvalue()).decode()
         code='import base64,io,tarfile,pathlib\nr=pathlib.Path('+repr(self.root)+');r.mkdir(parents=True,exist_ok=True)\np=base64.b64decode('+repr(payload)+')\nwith tarfile.open(fileobj=io.BytesIO(p),mode="r:gz") as t:\n for m in t.getmembers():\n  assert not m.issym() and not m.islnk() and not m.name.startswith("/") and ".." not in pathlib.PurePosixPath(m.name).parts\n t.extractall(r,filter="data")\nprint("Uploaded",len(p),"bytes")'
         return self.python(code)
-    def pull(self, paths):
+    def pull(self, paths, sync_record='runs/last_sync.json'):
         code='import io,tarfile,pathlib,base64\nr=pathlib.Path('+repr(self.root)+')\nb=io.BytesIO()\nwith tarfile.open(fileobj=b,mode="w:gz") as t:\n for name in '+repr(paths)+':\n  p=r/name\n  if not p.exists(): continue\n  files=[p] if p.is_file() else p.rglob("*")\n  for f in files:\n   if f.is_file() and not f.is_symlink() and "__pycache__" not in f.parts:\n    t.add(f,arcname=str(f.relative_to(r)))\nprint("GOT_PAYLOAD:"+base64.b64encode(b.getvalue()).decode())'
         response=self.python(code,300)
         payload=response.split('GOT_PAYLOAD:',1)[1].strip()
@@ -54,7 +54,7 @@ class Remote:
                 assert ROOT in dest.resolve().parents
                 dest.parent.mkdir(parents=True,exist_ok=True)
                 dest.write_bytes(t.extractfile(m).read())
-        (ROOT/'runs/last_sync.json').write_text(json.dumps({'utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'bytes':len(binary),'paths':paths},indent=2)+'\n')
+        (ROOT/sync_record).write_text(json.dumps({'utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'bytes':len(binary),'paths':paths},indent=2)+'\n')
         return 'Synchronized %d compressed bytes'%len(binary)
     def close(self):
         self.s.sendline('exit');self.s.close()

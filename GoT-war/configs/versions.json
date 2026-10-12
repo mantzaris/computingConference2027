@@ -1,0 +1,12 @@
+{
+  "version1_commit": "b8721e5f4c24915605b3192239d9cc1e1e4801d4",
+  "version1_campaign": "campaign_20261012",
+  "version1_budget_sha256": "1ce19f10ead56b83d01eb9b7be02673840bd5df1bd4f601f7aa5d8cbf21a28e8",
+  "snapshot": "runs/campaign_v2_20261012T160349Z/version1_snapshot.tar.gz",
+  "snapshot_sha256": "2b7884e00cc5516d7e66755536f238ff8023ef363697cb1e5b9cb1a94fda6341",
+  "preservation": "Version 1 published results/figures/manuscript stay at their original paths and are not regenerated under version 2. Full original release additionally backed up locally; git commit preserves source state.",
+  "version2_campaign": "campaign_v2_20261012T160349Z",
+  "version2_results": "results/v2",
+  "version2_figures": "figures/v2",
+  "version2_manuscript": "paper/v2"
+}

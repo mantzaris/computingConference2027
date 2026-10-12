@@ -1,0 +1,67 @@
+import copy
+import itertools
+from got_war.structural_programs import SCM
+from got_war.v2.benchmark import generate
+from got_war.v2.mechanisms import compatible_family, inspect_mechanism, outcome_sets
+from got_war.v2.explanations import deterministic_check, review
+from got_war.v2.paths import game_report
+
+
+def toy(kind='and'):
+    return {'outcome':'W','background':{'UA':{'type':'bool','observed':1},'UB':{'type':'bool','observed':1}},
+        'nodes':[{'id':x,'label':x,'type':'bool','parents':[],'noise':['U'+x],'expr':{'noise':'U'+x},'observed':1,'reference':0,'time':0} for x in ('A','B')]+[
+        {'id':'W','label':'outcome','type':'bool','parents':['A','B'],'noise':[],'expr':{'op':kind,'args':[{'ref':'A'},{'ref':'B'}]},'observed':1,'reference':0,'time':1}]}
+
+
+def test_behavior_distinguishes_necessity_from_redundancy():
+    conjunction=inspect_mechanism(SCM(toy()),'W')
+    redundancy=inspect_mechanism(SCM(toy('or')),'W')
+    assert conjunction['necessary_for_one']==[{'A':1},{'B':1}]
+    assert conjunction['sufficient_for_one']==[]
+    assert redundancy['necessary_for_one']==[]
+    assert redundancy['sufficient_for_one']==[{'A':1},{'B':1}]
+    assert conjunction['joint_enabling'] and redundancy['substitution']
+
+
+def test_multiple_unknown_rules_jointly_include_true_interventions():
+    model,hidden,family,_=generate(12,282306,'multiple_missing')
+    assert len(hidden)==2 and family['summary']['exhaustive']
+    assert family['summary']['retained_functionally_distinct']>1
+    true=SCM(model)
+    for node in model['nodes'][:-1]:
+        intervention={node['id']:1-node['observed']}
+        query={'id':'q','do':intervention,'target':model['outcome']}
+        values=outcome_sets(family['models'],[query])[0]['values']
+        assert true.solve(interventions=intervention)[model['outcome']] in values
+
+
+def test_incomplete_intermediate_and_outcome_are_different_families():
+    a,ha,_,_=generate(8,278100,'missing_intermediate')
+    b,hb,_,_=generate(8,278200,'missing_outcome')
+    assert a['outcome'] not in ha and hb==[b['outcome']]
+
+
+def test_coalition_diagnostic_exposes_unanimity_and_substitution():
+    paths=[['A','W'],['B','W']]
+    conjunction=game_report(SCM(toy()),paths)
+    redundancy=game_report(SCM(toy('or')),paths)
+    assert conjunction['coalition_values']==[0,0,0,1]
+    assert conjunction['all_paths_required']
+    assert redundancy['coalition_values']==[0,1,1,1]
+    assert redundancy['substitute_path_sets'] and not redundancy['all_paths_required']
+    assert conjunction['phi']==redundancy['phi']==[.5,.5]  # Equal shares alone do not identify the game.
+
+
+def test_reviewer_cannot_pass_by_reviewing_instructions():
+    class Fake:
+        def call(self,*args,**kwargs):
+            return {'reviews':[{'sentence_id':'INSTRUCTION','verdict':'supported','reason':'not an explanation sentence'}]}
+    result=review(Fake(),[{'id':'S01','text':'An actual explanation sentence.'}],{})
+    assert not result['reviewer_valid'] and len(result['failed_attempts'])==2
+
+
+def test_deterministic_explanation_rejects_wrong_number_and_unique_tie():
+    record={'numbers':{'factual_outcome':1,'path_p1':.5,'path_p2':.5},'possible_outcomes':[0,1],
+            'factual_states':{'A':1,'W':1},'paths':[{'path_id':'p1'},{'path_id':'p2'}],'largest_absolute_ties':['p1','p2']}
+    result=deterministic_check([{'id':'S01','text':'The strongest path p1 contributes 0.9.'}],record)
+    assert {e['type'] for e in result['errors']}=={'number_not_in_record','unqualified_largest_among_ties'}

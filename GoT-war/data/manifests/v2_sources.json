@@ -1,0 +1,239 @@
+{
+  "version": 2,
+  "scope": "Ten first-season aired episodes for the Five Kings flagship; no manually selected story causes.",
+  "acquisition_limits": {
+    "max_episode_pages": 10,
+    "max_wall_seconds": 3600,
+    "per_request_timeout_seconds": 30
+  },
+  "sources": [
+    {
+      "id": "screen_s01e01",
+      "url": "https://screenscripts.com/game-of-thrones/s01e01_winter_is_coming/",
+      "title": "Winter Is Coming | S01E01",
+      "episode": "s01e01",
+      "continuity": "HBO aired television; transcription fidelity not independently verified",
+      "source_type": "unofficial attributed dialogue and stage-direction transcription",
+      "publisher_family": "ScreenScripts",
+      "dependence_cluster": "aired_s01e01",
+      "accessed_at": "2026-10-12T16:28:58.526289+00:00",
+      "http_status": 200,
+      "html_sha256": "d79aeb3941b7783922bfc19cfca242fb1ef2e4aec81e00571f3a2b8e45a0ad11",
+      "normalized_sha256": "79f3814b9310587b2986e9cb2f173a06622c0f297b7beb3758c1d742eacbdb9e",
+      "characters": 26822,
+      "segments": 16,
+      "license_note": "Publicly accessible; no full-text redistribution permission inferred. Raw HTML and parsed text excluded from Git.",
+      "limitations": [
+        "Speaker/scene annotations are supplied by the transcription site, not independently authenticated.",
+        "Dialogue may report beliefs, deception or retrospective claims; its content is not automatically an established event.",
+        "Other summaries/transcriptions of this episode are dependent evidence."
+      ]
+    },
+    {
+      "id": "screen_s01e02",
+      "url": "https://screenscripts.com/game-of-thrones/s01e02_the_kingsroad/",
+      "title": "The Kingsroad | S01E02",
+      "episode": "s01e02",
+      "continuity": "HBO aired television; transcription fidelity not independently verified",
+      "source_type": "unofficial attributed dialogue and stage-direction transcription",
+      "publisher_family": "ScreenScripts",
+      "dependence_cluster": "aired_s01e02",
+      "accessed_at": "2026-10-12T16:29:00.327992+00:00",
+      "http_status": 200,
+      "html_sha256": "3c9a61f5fe2b51a0b82f77d932ee94f4be478bbafbf188e8c223852c4dd8120c",
+      "normalized_sha256": "0176ab16150f9e721707ac7e47df84d05e702ddb37362daf9f1d75a39c9fb990",
+      "characters": 25700,
+      "segments": 19,
+      "license_note": "Publicly accessible; no full-text redistribution permission inferred. Raw HTML and parsed text excluded from Git.",
+      "limitations": [
+        "Speaker/scene annotations are supplied by the transcription site, not independently authenticated.",
+        "Dialogue may report beliefs, deception or retrospective claims; its content is not automatically an established event.",
+        "Other summaries/transcriptions of this episode are dependent evidence."
+      ]
+    },
+    {
+      "id": "screen_s01e03",
+      "url": "https://screenscripts.com/game-of-thrones/s01e03_lord_snow/",
+      "title": "Lord Snow | S01E03",
+      "episode": "s01e03",
+      "continuity": "HBO aired television; transcription fidelity not independently verified",
+      "source_type": "unofficial attributed dialogue and stage-direction transcription",
+      "publisher_family": "ScreenScripts",
+      "dependence_cluster": "aired_s01e03",
+      "accessed_at": "2026-10-12T16:29:02.421992+00:00",
+      "http_status": 200,
+      "html_sha256": "1a532affb5dfdc4316b3cc767c52113ce36bf7c8f36f6446437fcc5b79b33a2e",
+      "normalized_sha256": "4d6f5667435c89a26abea8fe7e6e7e4d6f70abdabbdbf1e13a60eab166ec78c3",
+      "characters": 35300,
+      "segments": 21,
+      "license_note": "Publicly accessible; no full-text redistribution permission inferred. Raw HTML and parsed text excluded from Git.",
+      "limitations": [
+        "Speaker/scene annotations are supplied by the transcription site, not independently authenticated.",
+        "Dialogue may report beliefs, deception or retrospective claims; its content is not automatically an established event.",
+        "Other summaries/transcriptions of this episode are dependent evidence."
+      ]
+    },
+    {
+      "id": "screen_s01e04",
+      "url": "https://screenscripts.com/game-of-thrones/s01e04_cripples_bastards_and_broken_things/",
+      "title": "Cripples, Bastards and Broken Things | S01E04",
+      "episode": "s01e04",
+      "continuity": "HBO aired television; transcription fidelity not independently verified",
+      "source_type": "unofficial attributed dialogue and stage-direction transcription",
+      "publisher_family": "ScreenScripts",
+      "dependence_cluster": "aired_s01e04",
+      "accessed_at": "2026-10-12T16:29:04.919885+00:00",
+      "http_status": 200,
+      "html_sha256": "8fceb633f1001ca0ba7a3207c57d9d4ef6d23ca49d1d59581bfa957c5f666272",
+      "normalized_sha256": "81d4d9c8e8a7d0d75c052bca876872ae3327f99168e78e20e348dddef365a4ec",
+      "characters": 36269,
+      "segments": 19,
+      "license_note": "Publicly accessible; no full-text redistribution permission inferred. Raw HTML and parsed text excluded from Git.",
+      "limitations": [
+        "Speaker/scene annotations are supplied by the transcription site, not independently authenticated.",
+        "Dialogue may report beliefs, deception or retrospective claims; its content is not automatically an established event.",
+        "Other summaries/transcriptions of this episode are dependent evidence."
+      ]
+    },
+    {
+      "id": "screen_s01e05",
+      "url": "https://screenscripts.com/game-of-thrones/s01e05_the_wolf_and_the_lion/",
+      "title": "The Wolf and the Lion | S01E05",
+      "episode": "s01e05",
+      "continuity": "HBO aired television; transcription fidelity not independently verified",
+      "source_type": "unofficial attributed dialogue and stage-direction transcription",
+      "publisher_family": "ScreenScripts",
+      "dependence_cluster": "aired_s01e05",
+      "accessed_at": "2026-10-12T16:29:07.952619+00:00",
+      "http_status": 200,
+      "html_sha256": "c6e157984397ece9c5582c6ef4f6e93e4d42bf13f5f4cd9174a54cbe209db467",
+      "normalized_sha256": "6c87aff720db652cd54ea4fd852edeeea107482240bee7294f05d29ae450d153",
+      "characters": 39239,
+      "segments": 16,
+      "license_note": "Publicly accessible; no full-text redistribution permission inferred. Raw HTML and parsed text excluded from Git.",
+      "limitations": [
+        "Speaker/scene annotations are supplied by the transcription site, not independently authenticated.",
+        "Dialogue may report beliefs, deception or retrospective claims; its content is not automatically an established event.",
+        "Other summaries/transcriptions of this episode are dependent evidence."
+      ]
+    },
+    {
+      "id": "screen_s01e06",
+      "url": "https://screenscripts.com/game-of-thrones/s01e06_a_golden_crown/",
+      "title": "A Golden Crown | S01E06",
+      "episode": "s01e06",
+      "continuity": "HBO aired television; transcription fidelity not independently verified",
+      "source_type": "unofficial attributed dialogue and stage-direction transcription",
+      "publisher_family": "ScreenScripts",
+      "dependence_cluster": "aired_s01e06",
+      "accessed_at": "2026-10-12T16:29:10.830100+00:00",
+      "http_status": 200,
+      "html_sha256": "d0097a6a1ff30ea35311ea4887772bb036fc9cffb801823b46725c60915ca2dc",
+      "normalized_sha256": "774356339a231acdbbf314d0d5a7b8c3f48b5f0e892d39124f54ea373a0b69e0",
+      "characters": 34861,
+      "segments": 14,
+      "license_note": "Publicly accessible; no full-text redistribution permission inferred. Raw HTML and parsed text excluded from Git.",
+      "limitations": [
+        "Speaker/scene annotations are supplied by the transcription site, not independently authenticated.",
+        "Dialogue may report beliefs, deception or retrospective claims; its content is not automatically an established event.",
+        "Other summaries/transcriptions of this episode are dependent evidence."
+      ]
+    },
+    {
+      "id": "screen_s01e07",
+      "url": "https://screenscripts.com/game-of-thrones/s01e07_you_win_or_you_die/",
+      "title": "You Win or You Die | S01E07",
+      "episode": "s01e07",
+      "continuity": "HBO aired television; transcription fidelity not independently verified",
+      "source_type": "unofficial attributed dialogue and stage-direction transcription",
+      "publisher_family": "ScreenScripts",
+      "dependence_cluster": "aired_s01e07",
+      "accessed_at": "2026-10-12T16:29:13.094408+00:00",
+      "http_status": 200,
+      "html_sha256": "562cb819fba881e755421a1c6b47b941743eae9e38152a6524eb10f789938610",
+      "normalized_sha256": "a4850946e2dfa6700c5fff013ea59b05ba11658a16872b1e5a8091d3aa2c3335",
+      "characters": 34714,
+      "segments": 9,
+      "license_note": "Publicly accessible; no full-text redistribution permission inferred. Raw HTML and parsed text excluded from Git.",
+      "limitations": [
+        "Speaker/scene annotations are supplied by the transcription site, not independently authenticated.",
+        "Dialogue may report beliefs, deception or retrospective claims; its content is not automatically an established event.",
+        "Other summaries/transcriptions of this episode are dependent evidence."
+      ]
+    },
+    {
+      "id": "screen_s01e08",
+      "url": "https://screenscripts.com/game-of-thrones/s01e08_the_pointy_end/",
+      "title": "The Pointy End | S01E08",
+      "episode": "s01e08",
+      "continuity": "HBO aired television; transcription fidelity not independently verified",
+      "source_type": "unofficial attributed dialogue and stage-direction transcription",
+      "publisher_family": "ScreenScripts",
+      "dependence_cluster": "aired_s01e08",
+      "accessed_at": "2026-10-12T16:29:15.711698+00:00",
+      "http_status": 200,
+      "html_sha256": "ef07f924325f1adb3f67669f905a7421b108f78db1f70ba4c125b57993d3d68e",
+      "normalized_sha256": "c80864bbf79c4eddf293ebbfc9e79fd7cda8ca99ea7b1a28268f5ab2f0b5763f",
+      "characters": 37055,
+      "segments": 11,
+      "license_note": "Publicly accessible; no full-text redistribution permission inferred. Raw HTML and parsed text excluded from Git.",
+      "limitations": [
+        "Speaker/scene annotations are supplied by the transcription site, not independently authenticated.",
+        "Dialogue may report beliefs, deception or retrospective claims; its content is not automatically an established event.",
+        "Other summaries/transcriptions of this episode are dependent evidence."
+      ]
+    },
+    {
+      "id": "screen_s01e09",
+      "url": "https://screenscripts.com/game-of-thrones/s01e09_baelor/",
+      "title": "Baelor | S01E09",
+      "episode": "s01e09",
+      "continuity": "HBO aired television; transcription fidelity not independently verified",
+      "source_type": "unofficial attributed dialogue and stage-direction transcription",
+      "publisher_family": "ScreenScripts",
+      "dependence_cluster": "aired_s01e09",
+      "accessed_at": "2026-10-12T16:29:18.509793+00:00",
+      "http_status": 200,
+      "html_sha256": "4208781748761dd2bc3b7f0a0286283027fc7eeb3da1c10f34eb5367792417cf",
+      "normalized_sha256": "85a838d8509cf5438948c04d2db58d93fc572d584c8eb88bce7a9bd48731d338",
+      "characters": 34305,
+      "segments": 13,
+      "license_note": "Publicly accessible; no full-text redistribution permission inferred. Raw HTML and parsed text excluded from Git.",
+      "limitations": [
+        "Speaker/scene annotations are supplied by the transcription site, not independently authenticated.",
+        "Dialogue may report beliefs, deception or retrospective claims; its content is not automatically an established event.",
+        "Other summaries/transcriptions of this episode are dependent evidence."
+      ]
+    },
+    {
+      "id": "screen_s01e10",
+      "url": "https://screenscripts.com/game-of-thrones/s01e10_fire_and_blood/",
+      "title": "Fire and Blood | S01E10",
+      "episode": "s01e10",
+      "continuity": "HBO aired television; transcription fidelity not independently verified",
+      "source_type": "unofficial attributed dialogue and stage-direction transcription",
+      "publisher_family": "ScreenScripts",
+      "dependence_cluster": "aired_s01e10",
+      "accessed_at": "2026-10-12T16:29:20.879530+00:00",
+      "http_status": 200,
+      "html_sha256": "bba55f08bef82fcc1b3d1b77e9f1fb0c2f8a990efed84f543905a7b2f39eac1f",
+      "normalized_sha256": "026e2672bf97f9d83503eab4ffda5941d96d0f4fa7ae0cb8ef7d95444e5070b6",
+      "characters": 30738,
+      "segments": 15,
+      "license_note": "Publicly accessible; no full-text redistribution permission inferred. Raw HTML and parsed text excluded from Git.",
+      "limitations": [
+        "Speaker/scene annotations are supplied by the transcription site, not independently authenticated.",
+        "Dialogue may report beliefs, deception or retrospective claims; its content is not automatically an established event.",
+        "Other summaries/transcriptions of this episode are dependent evidence."
+      ]
+    }
+  ],
+  "failures": [],
+  "candidate_exclusions": [
+    {
+      "url": "https://www.tv-calling.com/scripts/TV_Dramas/Game_Of_Thrones_1x01.pdf",
+      "reason": "Pilot draft requires aired-version concordance; excluded rather than mixing draft and aired continuity."
+    }
+  ],
+  "independent_corroboration_claimed": false
+}

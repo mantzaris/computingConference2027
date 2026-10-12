@@ -10,6 +10,7 @@ data/derived/segments.private.jsonl
 /runs/
 /benchmark/cases.jsonl
 # Publication vectors and the manuscript PDF are retained; previews regenerate.
+/figures/**/*.png
 /figures/*.png
 /paper/template/*
 !/paper/template/SOURCE.json
@@ -32,6 +33,7 @@ data/derived/segments.private.jsonl
 *.onnx
 # Small, curated records needed to reproduce the published measurements.
 !/results/reproduction.tar.gz
+!/results/v2/reproduction.tar.gz
 paper/*.aux
 paper/*.log
 paper/*.out
@@ -40,3 +42,13 @@ paper/*.bbl
 paper/*.blg
 paper/*.fls
 paper/*.fdb_latexmk
+
+# Versioned manuscript build products remain local.
+paper/**/*.aux
+paper/**/*.log
+paper/**/*.out
+paper/**/*.toc
+paper/**/*.bbl
+paper/**/*.blg
+paper/**/*.fls
+paper/**/*.fdb_latexmk

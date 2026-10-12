@@ -31,11 +31,12 @@ def process_birth(pid):
 
 
 class Budget:
-    def __init__(self, root):
+    def __init__(self, root, config_name='budget.json'):
         self.root = Path(root).resolve()
-        self.config = json.loads((self.root / 'configs/budget.json').read_text())
+        self.config = json.loads((self.root / 'configs' / config_name).read_text())
         self.run = self.root / 'runs' / self.config['campaign_id']
         self.run.mkdir(parents=True, exist_ok=True)
+        self.stop_marker = self.root / 'runs/STOP' if config_name == 'budget.json' else self.run / 'STOP'
 
     def remaining(self):
         return (datetime.fromisoformat(self.config['hard_deadline']) - utcnow()).total_seconds()
@@ -43,7 +44,7 @@ class Budget:
     def check(self, heavy=False, estimated_seconds=0, reserve_seconds=0):
         if heavy and (self.run / 'COMPLETE').exists():
             raise RuntimeError('Campaign complete; a new inference campaign needs a separately authorized budget')
-        if (self.root / 'runs/STOP').exists():
+        if self.stop_marker.exists():
             raise RuntimeError('Project stop marker present')
         if self.remaining() <= estimated_seconds + reserve_seconds:
             raise RuntimeError('Persisted deadline/reserve would be exceeded')
@@ -55,9 +56,33 @@ class Budget:
         log = open(self.run / (label + '.log'), 'ab', buffering=0)
         proc = subprocess.Popen(command, cwd=str(self.root), stdout=log, stderr=subprocess.STDOUT,
                                 stdin=subprocess.DEVNULL, start_new_session=True)
-        item = {'label': label, 'pid': proc.pid, 'pgid': os.getpgid(proc.pid),
-                'birth': process_birth(proc.pid), 'started_at': utcnow().isoformat(),
-                'command': command}
+        # Never register an unidentifiable process as controllable. A short-lived
+        # process or a transient /proc read failure needs an explicit outcome.
+        birth = None
+        limit = time.monotonic() + 1.0
+        while time.monotonic() < limit and proc.poll() is None:
+            birth = process_birth(proc.pid)
+            try:
+                pgid = os.getpgid(proc.pid)
+            except ProcessLookupError:
+                birth = None
+                break
+            if birth is not None and pgid == proc.pid:
+                break
+            birth = None
+            time.sleep(.01)
+        if birth is None:
+            # This Popen instance is our direct child. Do not signal an
+            # unverified process group or leave a null identity in the registry.
+            if proc.poll() is None:
+                proc.terminate()
+                try: proc.wait(timeout=2)
+                except subprocess.TimeoutExpired:
+                    proc.kill(); proc.wait(timeout=2)
+            log.close()
+            raise RuntimeError('Launch failed: process identity could not be verified for ' + label)
+        item = {'label': label, 'pid': proc.pid, 'pgid': pgid,
+                'birth': birth, 'started_at': utcnow().isoformat(), 'command': command}
         registry = self.run / 'processes.json'
         with open(self.run / 'processes.lock', 'a') as lock:
             fcntl.flock(lock, fcntl.LOCK_EX)
@@ -67,10 +92,12 @@ class Budget:
         log.close()
         return item
 
-    def stop_owned(self, sig=signal.SIGTERM):
+    def stop_owned(self, sig=signal.SIGTERM, labels=None):
         registry = self.run / 'processes.json'
         stopped = []
         for entry in json.loads(registry.read_text()) if registry.exists() else []:
+            if labels is not None and entry['label'] not in labels:
+                continue
             pid = entry['pid']
             # Never kill an unverified/reused pid or another session's group.
             if entry['birth'] is not None and process_birth(pid) == entry['birth']:
@@ -100,7 +127,7 @@ class Budget:
                 atomic_json(self.run / 'watchdog_final.json', {'state':'hard_deadline', 'stopped':stopped, 'at':utcnow().isoformat()})
                 return
             if not softened and utcnow() >= datetime.fromisoformat(self.config['soft_deadline']):
-                (self.root / 'runs/STOP').touch()
+                self.stop_marker.touch()
                 stopped = self.stop_owned()
                 atomic_json(self.run / 'soft_stop.json', {'at':utcnow().isoformat(),'stopped':stopped})
                 softened = True
@@ -118,11 +145,12 @@ class Budget:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', default='.')
+    parser.add_argument('--config', default='budget.json')
     parser.add_argument('action', choices=['watchdog','launch','status','stop'])
     parser.add_argument('--label', default='job')
     parser.add_argument('command', nargs=argparse.REMAINDER)
     args = parser.parse_args()
-    b = Budget(args.root)
+    b = Budget(args.root, args.config)
     if args.action == 'watchdog': b.watchdog()
     elif args.action == 'status': print(json.dumps({'remaining_seconds':b.remaining(), **b.config},indent=2))
     elif args.action == 'stop': print(b.stop_owned())

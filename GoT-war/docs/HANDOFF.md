@@ -1,5 +1,7 @@
 # Research handoff
 
+**Version 2 campaign in progress:** `campaign_v2_20261012T160349Z`, immutable deadline 2026-10-13 16:03:49 UTC. See `V2_METHODOLOGY.md`, `V2_DIAGNOSIS.md`, `configs/budget_v2.json`, and the ignored run directory. The sections below describe the preserved version 1 delivery; new results live in `results/v2/`.
+
 The executable prototype, measured comparisons, source audits, figures and anonymous manuscript scaffold are delivered. The application does **not** yet establish source-valid explanations of the three conflicts. Work is committed directly to `main`; nothing has been pushed or submitted.
 
 ## Findings

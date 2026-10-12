@@ -1,0 +1,18 @@
+{
+  "campaign_id": "campaign_v2_20261012T160349Z",
+  "version": 2,
+  "started_at": "2026-10-12T16:03:49.877393+00:00",
+  "initialization_at": "2026-10-12T16:08:49.877393+00:00",
+  "start_note": "Conservative anchor five minutes before initialization includes the first inspection actions of this revision turn.",
+  "hard_deadline": "2026-10-13T16:03:49.877393+00:00",
+  "soft_deadline": "2026-10-13T14:03:49.877393+00:00",
+  "no_heavy_jobs_after": "2026-10-13T12:03:49.877393+00:00",
+  "analysis_reserve_hours": 4,
+  "output_token_ceiling": 1100000,
+  "token_ceiling_status": "Measured four-case pilot: 47.56 output tokens/s; budget derivation in results/v2/pilot_gate.json, frozen before test inference.",
+  "max_repair_attempts": 2,
+  "sync_interval_seconds": 1200,
+  "heartbeat_interval_seconds": 300,
+  "request_timeout_seconds": 300,
+  "application_request_timeout_seconds": 600
+}

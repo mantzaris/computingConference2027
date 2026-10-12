@@ -1,0 +1,702 @@
+{
+  "version1_commit": "b8721e5f4c24915605b3192239d9cc1e1e4801d4",
+  "scms": 60,
+  "incomplete_scms": 30,
+  "missing_final_only": 30,
+  "incomplete_test_structural_queries": {
+    "underidentified": 47,
+    "identified_unchanged": 43
+  },
+  "queries": [
+    {
+      "scm_id": "scm_11224",
+      "query": "q1",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11224",
+      "query": "q2",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11224",
+      "query": "q3",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11224",
+      "query": "q4",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11224",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11225",
+      "query": "q1",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11225",
+      "query": "q2",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11225",
+      "query": "q3",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11225",
+      "query": "q4",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11225",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11226",
+      "query": "q1",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11226",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11226",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11226",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11226",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11227",
+      "query": "q1",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11227",
+      "query": "q2",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11227",
+      "query": "q3",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11227",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11227",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11228",
+      "query": "q1",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11228",
+      "query": "q2",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11228",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11228",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11228",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11229",
+      "query": "q1",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11229",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11229",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11229",
+      "query": "q4",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11229",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11824",
+      "query": "q1",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11824",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11824",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11824",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11824",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11825",
+      "query": "q1",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11825",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11825",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11825",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11825",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11826",
+      "query": "q1",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11826",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11826",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11826",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11826",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11827",
+      "query": "q1",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11827",
+      "query": "q2",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11827",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11827",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11827",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11828",
+      "query": "q1",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11828",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11828",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11828",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11828",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11829",
+      "query": "q1",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11829",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11829",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_11829",
+      "query": "q4",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_11829",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12424",
+      "query": "q1",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12424",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12424",
+      "query": "q3",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12424",
+      "query": "q4",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12424",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12425",
+      "query": "q1",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12425",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12425",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12425",
+      "query": "q4",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12425",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12426",
+      "query": "q1",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12426",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12426",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12426",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12426",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12427",
+      "query": "q1",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12427",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12427",
+      "query": "q3",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12427",
+      "query": "q4",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12427",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12428",
+      "query": "q1",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12428",
+      "query": "q2",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12428",
+      "query": "q3",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12428",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12428",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12429",
+      "query": "q1",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12429",
+      "query": "q2",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12429",
+      "query": "q3",
+      "identified": false,
+      "changed": null
+    },
+    {
+      "scm_id": "scm_12429",
+      "query": "q4",
+      "identified": true,
+      "changed": false
+    },
+    {
+      "scm_id": "scm_12429",
+      "query": "q5",
+      "identified": false,
+      "changed": null
+    }
+  ],
+  "applications": [
+    {
+      "case": "daenerys_conquest",
+      "alternative": 0,
+      "paths": 2,
+      "coalition_outcomes": {
+        "0": 3,
+        "1": 1
+      },
+      "only_full_coalition_has_outcome_one": true,
+      "path_shares": [
+        0.5,
+        0.5
+      ],
+      "all_path_evidence_zero": true,
+      "explanation_audit_passed": false,
+      "audit_nonverbatim_quotes": [
+        "A path allocation is NOT an individual event or edge contribution.",
+        "Tied largest contributions do not establish a unique strongest path.",
+        "Causal claims must describe frozen model consequences, and an assumed literary counterfactual must never be asserted as "
+      ]
+    },
+    {
+      "case": "five_kings",
+      "alternative": 1,
+      "paths": 6,
+      "coalition_outcomes": {
+        "0": 63,
+        "1": 1
+      },
+      "only_full_coalition_has_outcome_one": true,
+      "path_shares": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "all_path_evidence_zero": true,
+      "explanation_audit_passed": false,
+      "audit_nonverbatim_quotes": [
+        "The path allocation is NOT an individual event or edge contribution.",
+        "Tied largest contributions do not establish a unique strongest path."
+      ]
+    },
+    {
+      "case": "five_kings",
+      "alternative": 2,
+      "paths": 6,
+      "coalition_outcomes": {
+        "0": 63,
+        "1": 1
+      },
+      "only_full_coalition_has_outcome_one": true,
+      "path_shares": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "all_path_evidence_zero": true,
+      "explanation_audit_passed": false,
+      "audit_nonverbatim_quotes": [
+        "The path allocation is NOT an individual event or edge contribution.",
+        "Tied largest contributions do not establish a unique strongest path."
+      ]
+    },
+    {
+      "case": "northern_campaign",
+      "alternative": 0,
+      "paths": 6,
+      "coalition_outcomes": {
+        "0": 63,
+        "1": 1
+      },
+      "only_full_coalition_has_outcome_one": true,
+      "path_shares": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "all_path_evidence_zero": true,
+      "explanation_audit_passed": false,
+      "audit_nonverbatim_quotes": [
+        "Numerical values must match the trace.",
+        "A path allocation is NOT an individual event or edge contribution.",
+        "Tied largest contributions do not establish a unique strongest path."
+      ]
+    }
+  ],
+  "distinct_functions": [
+    {
+      "case": "northern_campaign",
+      "accepted_generations": 1,
+      "distinct_function_signatures": 1,
+      "models": [
+        {
+          "alternative": 0,
+          "signature_sha256": "181e81db9a7d7f3233d749f9f57e1db76b40ec1ec63856e3b9e83eca01b4ce98",
+          "exhaustive_local_domains": true
+        }
+      ],
+      "interpretation": "Repeated identical mechanisms are not independent models or independent evidence."
+    },
+    {
+      "case": "five_kings",
+      "accepted_generations": 2,
+      "distinct_function_signatures": 1,
+      "models": [
+        {
+          "alternative": 1,
+          "signature_sha256": "f3525feba03446cb1c56754317874ec07eeb20caadf91efe7aeff8f82f83a065",
+          "exhaustive_local_domains": true
+        },
+        {
+          "alternative": 2,
+          "signature_sha256": "f3525feba03446cb1c56754317874ec07eeb20caadf91efe7aeff8f82f83a065",
+          "exhaustive_local_domains": true
+        }
+      ],
+      "interpretation": "Repeated identical mechanisms are not independent models or independent evidence."
+    },
+    {
+      "case": "daenerys_conquest",
+      "accepted_generations": 1,
+      "distinct_function_signatures": 1,
+      "models": [
+        {
+          "alternative": 0,
+          "signature_sha256": "8c15f457f7389136eb60bbd1462ae9ca1e46ea4bdafcbf010935ba039454d301",
+          "exhaustive_local_domains": true
+        }
+      ],
+      "interpretation": "Repeated identical mechanisms are not independent models or independent evidence."
+    }
+  ],
+  "null_birth_in_retained_registry": 0,
+  "process_identity_note": "The code admits null identities, which stop_owned correctly refuses to signal. Historical occurrence and injected failure are distinguished.",
+  "preserved_version1_summary_sha256": "06f104e61fd65b15f76e001cb5657fae3b741b96d7b6371fd737442159156e0c",
+  "isolated_reproduction": {
+    "primary_summary_equal": true,
+    "local_path": ".cache/v1-reproduction",
+    "original_tables_modified": false
+  }
+}

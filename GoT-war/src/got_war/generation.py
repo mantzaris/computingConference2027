@@ -19,9 +19,10 @@ def parse_json(text):
 
 
 class Generator:
-    def __init__(self,root):
-        self.root=Path(root);self.budget=Budget(root);self.run=self.budget.run
-        (self.root/'results').mkdir(parents=True,exist_ok=True)
+    def __init__(self,root,budget=None,results_dir='results',prompt_dir='.private/prompts'):
+        self.root=Path(root);self.budget=budget or Budget(root);self.run=self.budget.run
+        self.results=self.root/results_dir;self.results.mkdir(parents=True,exist_ok=True)
+        self.prompt_dir=self.root/prompt_dir
         self.config=json.loads((self.root/'configs/models.json').read_text())
         self.db=sqlite3.connect(str(self.run/'queue.sqlite'),timeout=60)
         self.db.execute('PRAGMA journal_mode=WAL')
@@ -62,11 +63,11 @@ class Generator:
             if counter_file.exists():used=max(used,json.loads(counter_file.read_text())['values'].get('vllm:generation_tokens_total',0))+2*8192
         ceiling=self.budget.config['output_token_ceiling']-int(os.environ.get('GOT_WAR_RESERVE_OUTPUT_TOKENS','0'))
         if used+max_tokens>ceiling:raise RuntimeError('Output token ceiling or reserved final-analysis allocation')
-        self.budget.check(heavy=True,estimated_seconds=timeout,reserve_seconds=5*3600)
+        self.budget.check(heavy=True,estimated_seconds=timeout,reserve_seconds=self.budget.config.get('analysis_reserve_hours',5)*3600)
         now=datetime.now(timezone.utc).isoformat()
         self.db.execute('INSERT OR REPLACE INTO jobs(key,role,status,prompt_hash,created) VALUES(?,?,?,?,?)',(key,role,'running',digest(prompt),now));self.db.commit()
         # Prompt snapshots include source text; private cache excluded from release.
-        private=self.root/'.private/prompts';private.mkdir(parents=True,exist_ok=True)
+        private=self.prompt_dir;private.mkdir(parents=True,exist_ok=True)
         (private/(key+'.json')).write_text(json.dumps(specification,ensure_ascii=False))
         body={'model':self.config['primary'],'messages':[{'role':'system','content':system},{'role':'user','content':prompt}],
               'temperature':temperature,'top_p':.8,'seed':seed,'max_tokens':max_tokens,
@@ -119,7 +120,7 @@ class Generator:
                         ('failed' if error else 'done',datetime.now(timezone.utc).isoformat(),json.dumps(output),elapsed,record['input_tokens'],record['output_tokens'],error,key));self.db.commit()
         if not error and 'partial' in locals():partial.unlink(missing_ok=True)
         if error:
-            with open(self.root/'results/failures.jsonl','a') as f:f.write(json.dumps({k:v for k,v in record.items() if k!='response'})+'\n')
+            with open(self.results/'failures.jsonl','a') as f:f.write(json.dumps({k:v for k,v in record.items() if k!='response'})+'\n')
             raise RuntimeError(error)
         return output
 
