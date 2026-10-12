@@ -3,5 +3,14 @@
   "passed": 39,
   "seconds": 4.95,
   "scope": "Local scientific/software suite after lossless operand parser recovery. This does not establish narrative validity.",
-  "remote_process_probe": "Actual-host supervision is separately recorded in the campaign supervision_probe.json."
+  "remote_process_probe": "Actual-host supervision is separately recorded in the campaign supervision_probe.json.",
+  "analysis_environment": {
+    "python": "3.8.10",
+    "numpy": "1.22.1",
+    "networkx": "3.0",
+    "matplotlib": "3.1.2",
+    "graphviz": "dot - graphviz version 2.43.0 (0)",
+    "ghostscript": "9.50"
+  },
+  "pdf_policy": "Vector plots retain text and vectors; Ghostscript subsets fonts when that reduces PDF size."
 }

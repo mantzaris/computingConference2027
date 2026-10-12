@@ -1,0 +1,527 @@
+{
+  "version": 2,
+  "scope": "Development and source-construction provenance; repeated/cached repairs and snapshots are not independent experiments.",
+  "variants": {
+    "five_kings": {
+      "completed": false,
+      "failure_records": [
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/boundary_serialization_representation_failure_0.json",
+          "sha256": "2af43f6d565562ef0c6869834288b997b3a14512cbd9b38b2e81a6a16f34d380",
+          "error": "mechanism_X01 exhausted two targeted repairs: ValueError: No admissible local function: [{\"index\": 0, \"error\": \"Graph/AST input mismatch X01\", \"variant\": {\"expr\": {\"const\": 1}, \"background\": {}, \"description\": \"Ned's refusal of the Hand position is a fixed narrative fact, directly observed in the text and not dependent on any other variable.\", \"short_mechanism\": \"Ned's loyalty to the North and distrust of the Lannister-led crown caused his refusal.\", \"assumptions\": [], \"function_identification\": \"identified\"}}]; representation questions: []"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure.json",
+          "sha256": "1a4838b66f740d1557ccca955cac7f2bcc17fd4c308fd7ef15cee4caca26391b",
+          "error": "RuntimeError: finite_mechanism_X07 exhausted two targeted repairs: ValueError: No admissible local function: [{\"index\": 0, \"error\": \"Factual mismatch ['X07']\", \"variant\": {\"output_codes\": [0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3], \"description\": \"Ned's execution is a direct consequence of his treason charge, which is the only observed value in the output domain, and is not influenced by the input variables within the observed context.\", \"short_mechanism\": \"Treason charge leads to execution\", \"assumptions\": [\"The finite-table candidate family conditions on these parents and has no additional background input.\", \"The finite-table candidate family conditions on these parents and has no additional background input.\"], \"function_identification\": \"partially_constrained\", \"expr\": {\"op\": \"if\", \"args\": [{\"op\": \"eq\", \"args\": [{\"ref\": \"X06\"}, {\"const\": 0}]}, {\"op\": \"if\", \"args\": [{\"op\": \"eq\", \"args\": [{\"ref\": \"X04\"}, {\"const\": 0}]}, {\"op\": \"if\", \"args\": [{\"op\": \"eq\", \"args\": [{\"ref\": \"X05\""
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_boundary_serialization.json",
+          "sha256": "34b6b4ed61d6080e83c1d2d5f8b15edff0c5b3f7135f5745732b85d4aa7ef7fb",
+          "error": "RuntimeError: representation_revision exhausted two targeted repairs: ValueError: Invalid revised variable"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_categorical_ast_after_revision.json",
+          "sha256": "c7f5f081ce3240e1c4fb63a0f2d0dc2ce9bc0aa7fb359e1ef3f2ca80d042c8be",
+          "error": "RuntimeError: mechanism_X04 exhausted two targeted repairs: ValueError: No admissible local function: [{\"index\": 0, \"error\": \"Numeric/logical operator on category\", \"variant\": {\"expr\": {\"op\": \"and\", \"args\": [{\"ref\": \"X03\"}, {\"ref\": \"X06\"}, {\"ref\": \"X09\"}]}, \"background\": {}, \"description\": \"Robb's willingness to confront Lannisters is a conjunction of Catelyn's suspicion of Lannister involvement, Ned's resignation as Hand of the King, and Catelyn's decision to travel to King's Landing.\", \"short_mechanism\": \"Conjunction of suspicion, resignation, and travel\", \"assumptions\": [\"The conjunction of these three factors is sufficient for Robb's decision to confront Lannisters.\"], \"function_identification\": \"partially_constrained\"}}, {\"index\": 1, \"error\": \"Numeric/logical operator on category\", \"variant\": {\"expr\": {\"op\": \"if\", \"args\": [{\"ref\": \"X03\"}, {\"op\": \"and\", \"args\": [{\"ref\": \"X06\"}, {\"ref\": \"X09\"}]}, {\"op\": \"not\", \"args\": [{\"ref\": \"X02\"}]}]}, \"background\": {}, \"description\": \"Robb's wil"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_concept_round1.json",
+          "sha256": "e82d64d27f5c009738e1d7aab476add1bca87a807f52d0d63d58357fdc457999",
+          "error": "RuntimeError: concept_plan exhausted two targeted repairs: ValueError: Need 3-18 distinct substantive concept IDs"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_context_round1.json",
+          "sha256": "1fb446c08120a4e47c49fc417cfbebc137b0cb977e1582192e0c80e139a49735",
+          "error": "RuntimeError: variables exhausted two targeted repairs: RuntimeError: Version 2 prompt exceeds the frozen context budget; split the artifact"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_context_round2.json",
+          "sha256": "e0c1848b1eaaaab695d45af9bb980b2dd9721a3e9cb85d284bd7e71c7e80cd08",
+          "error": "RuntimeError: variables exhausted two targeted repairs: RuntimeError: JSONDecodeError: Unterminated string starting at: line 1 column 9541 (char 9540)"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_graph_schema_round1.json",
+          "sha256": "b6c9877e8209f10a726ca462c38f78dcce1bb343e865c79d4a600d741cf06265",
+          "error": "RuntimeError: representation_revision exhausted two targeted repairs: RuntimeError: JSONDecodeError: Unterminated string starting at: line 58 column 19 (char 2415)"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_inactive_proposed_dependency.json",
+          "sha256": "97394a8706fa4a9014d4d958e682af6112b85806f62941161f956086ac7ad5b5",
+          "error": "RuntimeError: finite_mechanism_X03 exhausted two targeted repairs: ValueError: No admissible local function: [{\"index\": 0, \"error\": \"Graph/AST input mismatch X03\", \"variant\": {\"output_codes\": [0, 0], \"description\": \"Catelyn's suspicion of Lannister involvement in Bran's attempted murder is reinforced by her belief that Bran was thrown from the tower, independent of whether she burned the letter.\", \"short_mechanism\": \"observation of Bran's injury increases suspicion\", \"assumptions\": [\"The finite-table candidate family conditions on these parents and has no additional background input.\", \"The finite-table candidate family conditions on these parents and has no additional background input.\"], \"function_identification\": \"partially_constrained\", \"expr\": {\"const\": \"suspects Lannisters\"}, \"background\": {}, \"generation_representation\": \"LLM-generated complete finite output table; software compilation only\"}}, {\"index\": 1, \"error\": \"Graph/AST input mismatch X03\", \"variant\": {\"output_codes\": [0,"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_joint_graph_round2.json",
+          "sha256": "cfc4561a714f365d320f2153420fe461e23964da1a39de4bb56262a7976c076a",
+          "error": "RuntimeError: representation_revision exhausted two targeted repairs: ValueError: Invalid revised variable"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_parent_background_alias.json",
+          "sha256": "518cc51bdaebee0cc64a3177b68f6e7cf3ed0a925025cef0655f3113b4241692",
+          "error": "RuntimeError: representation_revision exhausted two targeted repairs: ValueError: Invalid revised variable"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_parent_reference_round1.json",
+          "sha256": "43530f1d3666be25863b6e76c50561f84d9dbbd8117e7de7ea749c6bae9bda1d",
+          "error": "RuntimeError: representation_revision exhausted two targeted repairs: ValueError: Invalid revised variable"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_semantic_repair_context.json",
+          "sha256": "cd65fe57822448e6cc12f4b63480ac8368712e101749714ae153103872033ede",
+          "error": "RuntimeError: representation_revision exhausted two targeted repairs: ValueError: Invalid revised variable"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_unacknowledged_retraction.json",
+          "sha256": "900c41428bbec2b4d07a57c7dfaf9547728be25ea4a11bfcb446fb8f905d8c69",
+          "error": "RuntimeError: finite_mechanism_X03 exhausted two targeted repairs: ValueError: No admissible local function: [{\"index\": 0, \"error\": \"Graph/AST input mismatch X03\", \"variant\": {\"output_codes\": [0, 0], \"description\": \"Catelyn suspects Lannisters of Bran's attempted murder based on her belief that Bran was thrown from the tower and her prior belief from Lysa's letter about Lannister involvement in Jon Arryn's murder.\", \"short_mechanism\": \"Prior belief + new evidence confirms suspicion\", \"assumptions\": [\"The finite-table candidate family conditions on these parents and has no additional background input.\", \"The finite-table candidate family conditions on these parents and has no additional background input.\"], \"function_identification\": \"partially_constrained\", \"expr\": {\"const\": \"suspects Lannisters\"}, \"background\": {}, \"generation_representation\": \"LLM-generated complete finite output table; software compilation only\"}}]; representation questions: []"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/failure_variable_domain_round1.json",
+          "sha256": "f5c501ece06c4cc61449627fe1f6ab3c63fa450109749034f4bb362f76c4a47e",
+          "error": "RuntimeError: variable_X05 exhausted two targeted repairs: ValueError: Invalid factual/reference domain"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/joint_graph_round2_representation_failure_0.json",
+          "sha256": "06ee77c68c9790d530424dc9fb43cd3077ed732b5d8edac16a860f695fb0cf13",
+          "error": "graph exhausted two targeted repairs: ValueError: Dependencies contain this directed cycle: [[\"X03\", \"X04\"], [\"X04\", \"X07\"], [\"X07\", \"X03\"]]. Reconsider those influences or the variable representation using evidence."
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/parent_background_alias_representation_failure_0.json",
+          "sha256": "113528aaeeb955e24301c623faba016a47dcb15c7d1646a1122b3ee23feb879d",
+          "error": "mechanism_X02 exhausted two targeted repairs: ValueError: No admissible local function: [{\"index\": 0, \"error\": \"Graph/AST input mismatch X02\", \"variant\": {\"expr\": {\"op\": \"if\", \"args\": [{\"ref\": \"X01\"}, {\"op\": \"and\", \"args\": [{\"ref\": \"X01\"}, {\"const\": 1}]}, {\"const\": 0}]}, \"background\": {\"X01\": {\"type\": \"bool\", \"observed\": 1, \"definition\": \"Ned Stark's refusal of the Hand position, indicating distrust in the Lannister-led crown.\", \"source_segments\": [\"screen_s01e01_s11_0\", \"screen_s01e01_s15_0\"], \"substantive_justification\": \"Ned's refusal is explicitly stated in the narrative and is linked to his distrust of the Lannister-led crown.\"}}, \"description\": \"Catelyn receives and burns Lysa's letter only if Ned refused the Hand position and the letter's content is not false.\", \"short_mechanism\": \"Ned's refusal triggers Lysa's warning.\", \"assumptions\": [\"The letter's content is not false.\", \"Ned's refusal is a sufficient condition for Lysa's warning.\"], \"function_identification\": \"partially_con"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/parent_reference_round1_representation_failure_0.json",
+          "sha256": "2bb417345f066ba6c8c650c961a0090663a8ff4472061a10d1bb14890973bd66",
+          "error": "parents_X05 exhausted two targeted repairs: ValueError: Directional references must use a chosen parent and supplied passages"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/representation_failure_0.json",
+          "sha256": "691d4ec41b1a97de1b7a8e448932bce46c471efa1da9ef36b975c332bca81edb",
+          "error": "No source-compatible local alternative retained for X03. Contextual reviewer findings (fallible; recheck against passages): {\"variants\": [{\"index\": 0, \"description_matches_behavior\": false, \"short_label_matches_behavior\": false, \"source_compatibility\": \"contradicted\", \"exact_function_identification\": \"unidentified\", \"background_is_factual_patch\": false, \"questions\": [], \"reason\": \"The mechanism assumes that Catelyn's suspicion of Lannister involvement is directly determined by whether she burned Lysa's letter. However, the passage shows that Catelyn's suspicion is based on her belief that Bran was thrown from the tower and that the Lannisters are involved in the murder, not solely on whether she burned the letter. The letter burning is a precaution to protect Lysa, not a determinant of her suspicion. The mechanism incorrectly identifies the function of the letter burning as a direct cause of suspicion, when the passage only supports a directional link (letter burning may be a consequen"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/representation_failure_1.json",
+          "sha256": "0a75e26765abc1a212a1975a8066aab77a31a9d0ccdf8392e1798066d73802e9",
+          "error": "mechanism_X04 exhausted two targeted repairs: ValueError: No admissible local function: [{\"index\": 0, \"error\": \"Numeric/logical operator on category\", \"variant\": {\"expr\": {\"op\": \"and\", \"args\": [{\"ref\": \"X03\"}, {\"ref\": \"X06\"}, {\"ref\": \"X09\"}]}, \"background\": {}, \"description\": \"Robb's willingness to confront Lannisters is a conjunction of Catelyn's suspicion of Lannister involvement, Ned's resignation as Hand of the King, and Catelyn's decision to travel to King's Landing.\", \"short_mechanism\": \"Conjunction of suspicion, resignation, and travel\", \"assumptions\": [\"The conjunction of these three factors is sufficient for Robb's decision to confront Lannisters.\"], \"function_identification\": \"partially_constrained\"}}, {\"index\": 1, \"error\": \"Numeric/logical operator on category\", \"variant\": {\"expr\": {\"op\": \"if\", \"args\": [{\"ref\": \"X03\"}, {\"op\": \"and\", \"args\": [{\"ref\": \"X06\"}, {\"ref\": \"X09\"}]}, {\"op\": \"not\", \"args\": [{\"ref\": \"X02\"}]}]}, \"background\": {}, \"description\": \"Robb's willingness to co"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/representation_failure_before_graph_schema.json",
+          "sha256": "75e75ed4478d308b77b1114255cd1392b499dc83e7094d5af8e4235b58dbf643",
+          "error": "graph exhausted two targeted repairs: ValueError: Dependencies contain a cycle; reconsider the representation using evidence"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings/semantic_repair_context_representation_failure_0.json",
+          "sha256": "017525cb5d70a8731d607072ac78c9e5708e19e695cb615ba09a0a78d54a1cee",
+          "error": "All local alternatives contradicted or use factual-patch backgrounds: X03"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "X01",
+          "label": "Ned's refusal of the Hand position",
+          "definition": "Ned Stark explicitly declines the offer to become the Hand of the King, citing his loyalty to the North.",
+          "type": "bool",
+          "time": 101,
+          "parents": [],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "Ned's decision to decline the Hand position may have signaled distrust in the Lannister-led crown."
+        },
+        {
+          "id": "X02",
+          "label": "Lysa's letter about Jon Arryn's murder",
+          "definition": "Catelyn receives and burns a letter from Lysa stating that Jon Arryn was murdered by Lannisters and the king is in danger.",
+          "type": "category",
+          "time": 101,
+          "parents": [
+            "X01"
+          ],
+          "event_status": "established",
+          "reference": "received",
+          "reference_meaning": "The letter's content and its destruction indicate heightened suspicion and tension between the Starks and Lannisters."
+        },
+        {
+          "id": "X03",
+          "label": "Catelyn's suspicion of Lannister involvement in Bran's attempted murder",
+          "definition": "Catelyn believes the Lannisters are involved in Bran's attempted murder based on her belief that Bran was thrown from the tower and that the Lannisters are involved in the murder, not solely on whether she burned the letter.",
+          "type": "category",
+          "time": 102,
+          "parents": [
+            "X02"
+          ],
+          "event_status": "reported_claim",
+          "reference": "does not suspect Lannisters",
+          "reference_meaning": "Catelyn's belief in Lannister involvement may have motivated her to act independently, increasing the risk of conflict."
+        },
+        {
+          "id": "X04",
+          "label": "Robb's willingness to confront Lannisters",
+          "definition": "Robb Stark's decision to take direct military action against the Lannisters, as demonstrated by his decision to march south to rescue his father and raise banners for war.",
+          "type": "bool",
+          "time": 108,
+          "parents": [
+            "X02",
+            "X03",
+            "X06",
+            "X09"
+          ],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "The decision to raise banners and march south represents a clear escalation toward armed conflict."
+        },
+        {
+          "id": "X05",
+          "label": "Tyrion's presence and accusations",
+          "definition": "Tyrion Lannister is present in the North and is accused of involvement in an attempt on Eddard Stark's life, which increases the potential for direct confrontation.",
+          "type": "category",
+          "time": 104,
+          "parents": [
+            "X02",
+            "X09",
+            "X03"
+          ],
+          "event_status": "established",
+          "reference": "not present and not accused",
+          "reference_meaning": "presence and accusations of Tyrion Lannister"
+        },
+        {
+          "id": "X06",
+          "label": "Ned's resignation as Hand of the King",
+          "definition": "Ned removes his badge and resigns as Hand of the King after refusing to carry out Robert's order to kill Daenerys and her child.",
+          "type": "bool",
+          "time": 105,
+          "parents": [
+            "X01",
+            "X02",
+            "X09",
+            "X05"
+          ],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "Ned's resignation may have weakened the Lannister position and emboldened the Starks."
+        },
+        {
+          "id": "X07",
+          "label": "Ned's capture and execution",
+          "definition": "Ned Stark is captured, imprisoned, charged with treason, and executed by Joffrey Baratheon.",
+          "type": "category",
+          "time": null,
+          "parents": [
+            "X06",
+            "X04",
+            "X05",
+            "X09"
+          ],
+          "event_status": "established",
+          "reference": "capture",
+          "reference_meaning": "The sequence of events leading to the active armed conflict between the Stark-led coalition and the Lannister-controlled crown"
+        },
+        {
+          "id": "W",
+          "label": "Armed conflict between Stark-led northern/Riverlands coalition and Lannister-controlled crown",
+          "definition": "The active conflict is directly tied to Robb Stark's military actions and the Lannister response, including the capture of Jaime Lannister and Robb's declaration of independence.",
+          "type": "bool",
+          "time": 109,
+          "parents": [
+            "X04",
+            "X07",
+            "X06",
+            "X05"
+          ],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "The conflict is active by the end of season 1, as confirmed by the capture of Jaime Lannister and Robb's declaration of independence."
+        },
+        {
+          "id": "X09",
+          "label": "Catelyn's decision to travel to King's Landing",
+          "definition": "Catelyn decides to travel to King's Landing to investigate the murder of Jon Arryn and the potential Lannister involvement, despite Robb's concerns.",
+          "type": "bool",
+          "time": 102,
+          "parents": [
+            "X02"
+          ],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "Catelyn's decision to travel to King's Landing may have increased the risk of conflict with the Lannisters."
+        }
+      ],
+      "graph_sha256": "500ba1f7c2498112f7d9b3592e5f6d949cc9bfba8a3477b50ec502ef5751f67a",
+      "event_times": {
+        "101": 2,
+        "102": 2,
+        "108": 1,
+        "104": 1,
+        "105": 1,
+        "None": 1,
+        "109": 1
+      },
+      "proposition_kinds": {
+        "narrative_fact": 8,
+        "reported_claim": 1
+      }
+    },
+    "five_kings_refinement": {
+      "completed": true,
+      "failure_records": [
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/failure.json",
+          "sha256": "b576c4063caa35ac1627b9807f75ffb988ad2b5b45aabe9ff8536326fb917b43",
+          "error": "RuntimeError: finite_mechanism_W exhausted two targeted repairs: ValueError: BEHAVIOR DIAGNOSTIC: Your complete output table [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] is invariant to these still-declared parents: [\"X03\", \"X06\", \"X08\", \"X09\"]. A description claiming their influence disagrees with this table. If this invariance reflects your source interpretation, explicitly name those parents in retracted_parents and provide the source-based retraction reason/references. Otherwise revise only source-justified output choices or flag the inadequate representation. Do not force an influence merely to pass validation."
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/failure_before_literal_parser.json",
+          "sha256": "9c7f7d4df5121bdf1fece4cd06b54522f023bbff0162ef8f282155e8db8ea48c",
+          "error": "ValueError: No admissible local function: [{\"index\": 0, \"error\": \"Numeric/logical operator on category\", \"variant\": {\"expr\": {\"op\": \"and\", \"args\": [{\"ref\": \"X06\"}, {\"ref\": \"X03\"}, {\"ref\": \"X08\"}, {\"ref\": \"X09\"}]}, \"background\": {}, \"description\": \"Conflict outcome is active by the end of season 1 if Robb calls Northern banners to war, Tywin's forces attack Riverrun, Frey alliance is conditional on marriage, and Robb captures Jaime Lannister.\", \"short_mechanism\": \"Convergence of military and political actions triggers active conflict.\", \"assumptions\": [\"The LLM retracted provisional dependencies before any outcome or allocation was computed: The event 'Stark men slaughtered by City Watch' (X05) does not appear to directly influence or cause the event 'Robb calls Northern banners to war' (X06), as the latter is shown to be a deliberate political decision made by Robb Stark in response to broader regional tensions and not a direct consequence of the prior event.\", \"The LLM retracted provi"
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/failure_before_semantic_compile.json",
+          "sha256": "b576c4063caa35ac1627b9807f75ffb988ad2b5b45aabe9ff8536326fb917b43",
+          "error": "RuntimeError: finite_mechanism_W exhausted two targeted repairs: ValueError: BEHAVIOR DIAGNOSTIC: Your complete output table [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] is invariant to these still-declared parents: [\"X03\", \"X06\", \"X08\", \"X09\"]. A description claiming their influence disagrees with this table. If this invariance reflects your source interpretation, explicitly name those parents in retracted_parents and provide the source-based retraction reason/references. Otherwise revise only source-justified output choices or flag the inadequate representation. Do not force an influence merely to pass validation."
+        },
+        {
+          "path": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/semantic_compile_W_failure.json",
+          "sha256": "a6025c90ad0d3b4e2229a6e0cd400b704c70cdcdd743f0338766ccd3062f8f9f",
+          "error": "No admissible local function: [{\"index\": 0, \"error\": \"Numeric/logical operator on category\", \"variant\": {\"expr\": {\"op\": \"and\", \"args\": [{\"ref\": \"X06\"}, {\"ref\": \"X03\"}, {\"ref\": \"X08\"}, {\"ref\": \"X09\"}]}, \"background\": {}, \"description\": \"Conflict outcome is active by the end of season 1 if Robb calls Northern banners to war, Tywin's forces attack Riverrun, Frey alliance is conditional on marriage, and Robb captures Jaime Lannister.\", \"short_mechanism\": \"Convergence of military and political actions triggers active conflict.\", \"assumptions\": [\"The LLM retracted provisional dependencies before any outcome or allocation was computed: The event 'Stark men slaughtered by City Watch' (X05) does not appear to directly influence or cause the event 'Robb calls Northern banners to war' (X06), as the latter is shown to be a deliberate political decision made by Robb Stark in response to broader regional tensions and not a direct consequence of the prior event.\", \"The LLM retracted provisional depen"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "X01",
+          "label": "Ned orders Gregor's arrest and summons Tywin",
+          "definition": "Eddard Stark formally charges Ser Gregor Clegane with crimes and issues a summons for Tywin Lannister to answer for Gregor's actions.",
+          "type": "bool",
+          "time": 106,
+          "parents": [],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "The act of formally charging a criminal and summoning a noble to court is a legal and political action within the Seven Kingdoms."
+        },
+        {
+          "id": "X02",
+          "label": "Joffrey's parentage revelation",
+          "definition": "Ned Stark becomes aware that Joffrey is not Robert Baratheon's biological son, based on information from Lady Lysa Arryn and Sansa Stark's remarks about Joffrey's behavior and relationships.",
+          "type": "bool",
+          "time": 101,
+          "parents": [],
+          "event_status": "unsupported",
+          "reference": 0,
+          "reference_meaning": "Ned Stark's belief about Joffrey's parentage prior to the revelation"
+        },
+        {
+          "id": "X03",
+          "label": "Tywin's forces attack Riverrun",
+          "definition": "Tywin Lannister assigns half of his forces to Jaime Lannister to attack Riverrun, Catelyn Stark's homeland, as part of a strategy to assert Lannister dominance and pressure the Stark-led coalition.",
+          "type": "bool",
+          "time": 107,
+          "parents": [
+            "X01"
+          ],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "The assignment of forces to attack Riverrun is a strategic move to assert Lannister power and pressure the Stark-led coalition."
+        },
+        {
+          "id": "X04",
+          "label": "Ned Stark's decision to name Stannis as heir",
+          "definition": "Ned Stark formally declares Stannis Baratheon as the rightful heir to the Iron Throne in Robert Baratheon's will, rejecting the Lannister-arranged succession of Joffrey.",
+          "type": "bool",
+          "time": 107,
+          "parents": [
+            "X02"
+          ],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "The rightful heir to the Iron Throne is Stannis Baratheon, not Joffrey."
+        },
+        {
+          "id": "X05",
+          "label": "Stark men slaughtered by City Watch",
+          "definition": "City Watch kills Stark allies as Ned is held at knifepoint by Littlefinger.",
+          "type": "bool",
+          "time": null,
+          "parents": [
+            "X04"
+          ],
+          "event_status": "unsupported",
+          "reference": 0,
+          "reference_meaning": "The City Watch's actions are reported as a direct consequence of political tensions and decisions made by Littlefinger and others."
+        },
+        {
+          "id": "X06",
+          "label": "Robb calls Northern banners to war",
+          "definition": "Robb Stark formally declares war and mobilizes Northern forces under his command.",
+          "type": "bool",
+          "time": 110,
+          "parents": [
+            "X05"
+          ],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "The formal declaration of war by Robb Stark, leading to the mobilization of Northern forces."
+        },
+        {
+          "id": "X07",
+          "label": "Robb deceives Lannister scout",
+          "definition": "Robb sends a captured Lannister scout to falsely claim 20,000 men against Tywin",
+          "type": "bool",
+          "time": null,
+          "parents": [
+            "X03"
+          ],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "A false claim about the size of Robb Stark's forces made by a captured Lannister scout"
+        },
+        {
+          "id": "X08",
+          "label": "Frey alliance conditional on marriage",
+          "definition": "Walder Frey allows Stark army passage in exchange for Robb Stark marrying one of his daughters and Arya Stark marrying one of his sons",
+          "type": "category",
+          "time": 109,
+          "parents": [
+            "X06"
+          ],
+          "event_status": "established",
+          "reference": "refuses to allow the army to cross without marriage agreement",
+          "reference_meaning": "agreement where Stark forces cross the Trident in exchange for future marriages"
+        },
+        {
+          "id": "X09",
+          "label": "Robb captures Jaime Lannister",
+          "definition": "Robb Stark takes Jaime Lannister prisoner during the events of season 1",
+          "type": "bool",
+          "time": null,
+          "parents": [
+            "X06",
+            "X07",
+            "X08"
+          ],
+          "event_status": "unsupported",
+          "reference": 0,
+          "reference_meaning": "Jaime Lannister is taken prisoner by Robb Stark"
+        },
+        {
+          "id": "W",
+          "label": "Conflict outcome",
+          "definition": "Armed conflict between the Stark-led northern/Riverlands coalition and the Lannister-controlled crown is active by the end of season 1.",
+          "type": "bool",
+          "time": null,
+          "parents": [
+            "X06",
+            "X03",
+            "X08",
+            "X09"
+          ],
+          "event_status": "established",
+          "reference": 0,
+          "reference_meaning": "Explicitly defined as the presence of active armed conflict between the two factions by the end of season 1."
+        }
+      ],
+      "graph_sha256": "8d350fc7c94a60eac4594e8580c65d5c52d4bcb5ed19c50446e89c0bb1d97767",
+      "event_times": {
+        "106": 1,
+        "101": 1,
+        "107": 2,
+        "None": 4,
+        "110": 1,
+        "109": 1
+      },
+      "proposition_kinds": {
+        "narrative_fact": 9,
+        "reported_claim": 1
+      }
+    }
+  },
+  "requests_by_role": {
+    "v2_B0": 56,
+    "v2_synthesis": 59,
+    "v2_B1": 56,
+    "v2_explanation": 59,
+    "v2_explanation_repair": 26,
+    "v2_explanation_review": 58,
+    "v2_reviewer_controls": 55,
+    "v2_synthesis_repair": 15,
+    "v2_app_inventory": 64,
+    "v2_synthesis_patch": 27,
+    "v2_app_shortlist": 15,
+    "v2_app_variables": 1,
+    "v2_app_variables_repair": 2,
+    "v2_app_concept": 2,
+    "v2_app_concept_repair": 2,
+    "v2_app_variable": 14,
+    "v2_app_variable_repair": 2,
+    "v2_app_eventaudit": 31,
+    "v2_app_graph": 2,
+    "v2_app_graph_repair": 4,
+    "v2_app_representation": 7,
+    "v2_app_representation_repair": 12,
+    "v2_app_causal": 2,
+    "v2_app_causal_repair": 1,
+    "v2_app_parents": 20,
+    "v2_app_parents_repair": 2,
+    "v2_app_mechanism": 7,
+    "v2_app_mechanism_repair": 10,
+    "v2_app_functionaudit": 18,
+    "v2_app_finite": 16,
+    "v2_app_finite_repair": 18,
+    "v2_app_prior": 10,
+    "v2_app_semanticcompile": 1,
+    "v2_app_direction": 2
+  },
+  "controlled_design_audit": {
+    "development": {
+      "scms": 24,
+      "scms_with_shared_causes": 24,
+      "generating_rule_occurrences": {
+        "and": 32,
+        "nand": 26,
+        "xor": 29,
+        "or": 32,
+        "reverse_inhibit": 21,
+        "inhibit": 28
+      },
+      "topology_redraws": 4,
+      "interpretation": "Rule occurrences and questions are not independent samples; SCMs are the independent units. Topology redraws enforce the predeclared omission feasibility criterion, not method scores."
+    },
+    "calibration": {
+      "scms": 24,
+      "scms_with_shared_causes": 24,
+      "generating_rule_occurrences": {
+        "or": 29,
+        "xor": 27,
+        "and": 28,
+        "inhibit": 26,
+        "reverse_inhibit": 24,
+        "nand": 34
+      },
+      "topology_redraws": 7,
+      "interpretation": "Rule occurrences and questions are not independent samples; SCMs are the independent units. Topology redraws enforce the predeclared omission feasibility criterion, not method scores."
+    },
+    "test": {
+      "scms": 72,
+      "scms_with_shared_causes": 72,
+      "generating_rule_occurrences": {
+        "inhibit": 93,
+        "and": 84,
+        "reverse_inhibit": 98,
+        "nand": 72,
+        "or": 77,
+        "xor": 80
+      },
+      "topology_redraws": 4,
+      "interpretation": "Rule occurrences and questions are not independent samples; SCMs are the independent units. Topology redraws enforce the predeclared omission feasibility criterion, not method scores."
+    }
+  },
+  "source_inspection": "Targeted assistant flags remain in results/v2/source_inspection.json, separately scoped to fresh and conditional-refinement variants. No human adjudication or error-rate sample.",
+  "methodological_consequences": [
+    "Fresh concept selection can concentrate on early events and composite states despite later outcome evidence. More corpus volume alone did not produce an adequate operational model.",
+    "Acyclic ordering prevents formally cyclic dependencies but does not establish the temporal or informational truth of an edge. Unknown/composite timing remains unresolved.",
+    "Categorical domains exposed failures masked by all-Boolean prototypes. Finite tables make the actual function inspectable but do not make its inputs or causal claim correct.",
+    "Factual-row compatibility and active-input diagnostics expose model inconsistency. Retractions are generated and invariance-certified; manually forcing a proposed dependency to matter would manufacture a mechanism.",
+    "An inherited LLM graph can diagnose downstream refinement only. It cannot rescue or establish fresh source-based concept discovery.",
+    "Automated contextual acceptance can overlook operational ambiguity; event, direction and exact-function judgments still require separate independent adjudication."
+  ],
+  "unrun_scope": "No second model, extra application seeds or reader study. Northern and Daenerys v1 failure cases are preserved; no v2 transfer claim is made."
+}

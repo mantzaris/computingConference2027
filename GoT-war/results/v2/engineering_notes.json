@@ -1,0 +1,16 @@
+{
+  "pretest_launch_failures": [
+    {
+      "stage": "frozen deployment verification",
+      "error": "A frozen source-acquisition script was absent remotely. The hash check prevented any worker launch; the exact file was deployed."
+    },
+    {
+      "stage": "worker startup",
+      "error": "All three Python module workers exited with ModuleNotFoundError before inference because PYTHONPATH was absent. Restart uses the same hashed code and PYTHONPATH=src. Prior registry/logs are retained."
+    }
+  ],
+  "rendering_repairs": [
+    "Local Matplotlib 3.1 requires constrained_layout=True instead of layout=constrained and full six-digit hexadecimal colors. Figure-only changes leave model calculations unchanged."
+  ],
+  "protocol_changes_after_freeze": []
+}

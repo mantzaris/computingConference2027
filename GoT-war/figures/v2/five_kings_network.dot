@@ -1,0 +1,18 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.16", ranksep="0.38", splines=polyline, outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=16, color="#38515d", margin="0.10,0.07"];
+edge [fontname="DejaVu Sans", fontsize=15, arrowsize=.65, penwidth=1.2];
+"X03" [label=<Tywin&#x27;s forces<BR/>attack Riverrun †<BR/><FONT POINT-SIZE="15">Fixed input;<BR/>unexplained<BR/>upstream causes</FONT><BR/><FONT POINT-SIZE="15">E1 · s01e07<BR/>1 → 1 (same)</FONT>>, fillcolor="#fbe2e5", color="#315467", penwidth=1.2, peripheries=1];
+"X06" [label=<Robb calls<BR/>Northern banners<BR/>to war †<BR/><FONT POINT-SIZE="15">Fixed input;<BR/>unexplained<BR/>upstream causes</FONT><BR/><FONT POINT-SIZE="15">E2 · s01e10<BR/>1 → 1 (same)</FONT>>, fillcolor="#fbe2e5", color="#315467", penwidth=1.2, peripheries=2];
+"X07" [label=<Robb deceives<BR/>Lannister scout<BR/><FONT POINT-SIZE="15">Fixed input;<BR/>unexplained<BR/>upstream causes</FONT><BR/><FONT POINT-SIZE="15">E3 · unknown<BR/>1 → 1 (same)</FONT>>, fillcolor="#fff4db", color="#315467", penwidth=1.2, peripheries=1];
+"X08" [label=<Frey alliance<BR/>conditional on<BR/>marriage †<BR/><FONT POINT-SIZE="15">Fixed input;<BR/>unexplained<BR/>upstream causes</FONT><BR/><FONT POINT-SIZE="15">E4 · s01e09<BR/>state c0 → c1</FONT>>, fillcolor="#fbe2e5", color="#6f42a8", penwidth=2, peripheries=2];
+"X09" [label=<Robb captures<BR/>Jaime Lannister<BR/><FONT POINT-SIZE="15">Context-<BR/>dependent<BR/>enabling and<BR/>inhibition</FONT><BR/><FONT POINT-SIZE="15">E5 · unknown<BR/>1 → 1 (same)</FONT>>, fillcolor="#e9f4f2", color="#9b3150", penwidth=1.2, peripheries=2];
+"W" [label=<Conflict outcome †<BR/><FONT POINT-SIZE="15">Every input<BR/>condition is<BR/>required</FONT><BR/><FONT POINT-SIZE="15">E6 · unknown<BR/>1 → 0</FONT>>, fillcolor="#fbe2e5", color="#6f42a8", penwidth=2, peripheries=2];
+"X03" -> "W" [style=dotted,color="#9a7272",arrowhead=normal,label=""];
+"X06" -> "X09" [style=dotted,color="#9a7272",arrowhead=normal,label=""];
+"X06" -> "W" [style=dotted,color="#9a7272",arrowhead=normal,label=""];
+"X07" -> "X09" [style=dotted,color="#9a7272",arrowhead=tee,label="−"];
+"X08" -> "X09" [style=dotted,color="#9a7272",arrowhead=normal,label=""];
+"X08" -> "W" [style=dotted,color="#9a7272",arrowhead=normal,label=""];
+"X09" -> "W" [style=dotted,color="#9a7272",arrowhead=normal,label=""];
+}

@@ -1,0 +1,72 @@
+{
+  "case": {
+    "id": "five_kings",
+    "name": "War of the Five Kings: first-season armed conflict",
+    "outcome": "Armed conflict between the Stark-led northern/Riverlands coalition and the Lannister-controlled crown is active by the end of season 1.",
+    "horizon": "S1E1 through S1E10",
+    "level": "war onset and early escalation",
+    "scope_revision": "Retains version 1's armed-conflict outcome but removes its subsidiary clause about wider royal claims documented through S2E4. The richer acquired transcript corpus ends at S1E10. This endpoint clarification was made during development, before model construction or test inference, and supplies no causal variable or mechanism.",
+    "endpoint_code": 110
+  },
+  "nodes": 6,
+  "edges": 7,
+  "alternatives": {
+    "retained_functionally_distinct": 1,
+    "distinct_query_vectors": 1,
+    "local_options": {
+      "X03": 1,
+      "X06": 1,
+      "X07": 1,
+      "X08": 1,
+      "X09": 1,
+      "W": 1
+    },
+    "cartesian_options": 1,
+    "coverage": "At most 12: baseline, up to eight round-robin single-function changes in reverse topological order, then bounded joint changes including the all-last-option choice and seeded combinations (seed 2801). Chosen before outcomes/allocations; not exhaustive across combined mechanisms or alternative graphs. No frequency interpretation."
+  },
+  "event_statuses": {
+    "established": 5,
+    "unsupported": 1
+  },
+  "direction_statuses": {
+    "unsupported": 7
+  },
+  "path_supports": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "path_shares": [
+    0.26666666666666666,
+    0.26666666666666666,
+    -0.03333333333333333,
+    0.26666666666666666,
+    0.21666666666666667,
+    0.016666666666666666
+  ],
+  "coalition_histogram": {
+    "0": 59,
+    "1": 5
+  },
+  "ranking_available": false,
+  "explanation_displayable": false,
+  "source_review": "Automated same-model contextual assessment; independent researcher adjudication pending.",
+  "construction_context": {
+    "variant": "prior_refinement",
+    "prior_record": "runs/campaign_20261012/application/five_kings/alternative_1.json",
+    "version2_input_copy": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/prior_record.json",
+    "prior_record_sha256": "7b9e9ff74bb91b431c9d0e26cd6f42b1624ae53b410575524d4cf89a84da858e",
+    "selection": "First canonical retained v1 LLM proposal; no v2 outcomes or allocations used.",
+    "scope": "Variables and dependencies initialize from an earlier LLM-generated proposal. Operational states/references are regenerated against the new transcript context, all nonroot mechanisms are newly proposed, and dependency retractions remain possible. This is conditional refinement, not successful fresh variable/dependency discovery.",
+    "evidence_policy": "The prior is an unverified proposal, never retrieved evidence. No old equation, source score, or mechanism description enters generation."
+  },
+  "scope_boundaries": 4,
+  "substantive_connected_functions": 2,
+  "multiple_interpretations_available": false,
+  "source_robustness_established": false,
+  "explanation_failure": true,
+  "reviewer_failure": false
+}

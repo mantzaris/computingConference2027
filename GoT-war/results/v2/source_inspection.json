@@ -19,7 +19,8 @@
       "source_urls": [
         "https://screenscripts.com/game-of-thrones/s01e01_winter_is_coming/#S11L1",
         "https://screenscripts.com/game-of-thrones/s01e01_winter_is_coming/#S15L1"
-      ]
+      ],
+      "variant": "fresh"
     },
     {
       "id": "I02",
@@ -33,9 +34,74 @@
       "judgment": "Reference and information-state ambiguity; researcher adjudication pending.",
       "source_urls": [
         "https://screenscripts.com/game-of-thrones/s01e01_winter_is_coming/#S15L1"
-      ]
+      ],
+      "variant": "fresh"
+    },
+    {
+      "id": "I03",
+      "node": "X03",
+      "variant": "prior_refinement",
+      "claim": "Tywin Lannister assigns half of his forces to Jaime Lannister to attack Riverrun, Catelyn Stark's homeland, as part of a strategy to assert Lannister dominance and pressure the Stark-led coalition.",
+      "source_ids": [
+        "screen_s01e07_s1_0"
+      ],
+      "source_urls": [
+        "https://screenscripts.com/game-of-thrones/s01e07_you_win_or_you_die/#S1L1"
+      ],
+      "observation": "The event label describes an attack while the operational definition describes assignment of forces. The generated short mechanism describes retaliation, but the retained equation is a parentless constant after dependency retraction.",
+      "unresolved_question": "Does the variable denote a military order or a realized attack? What directional evidence remains after retraction, and should its generated short mechanism be withheld?",
+      "judgment": "Targeted operational/behavior or audit-consistency concern; researcher adjudication pending."
+    },
+    {
+      "id": "I04",
+      "node": "X06",
+      "variant": "prior_refinement",
+      "claim": "Robb Stark formally declares war and mobilizes Northern forces under his command.",
+      "source_ids": [
+        "screen_s01e10_s5_0"
+      ],
+      "source_urls": [
+        "https://screenscripts.com/game-of-thrones/s01e10_fire_and_blood/#S5L1"
+      ],
+      "observation": "The source audit treats a late declaration of kingship and allegiance as formal war declaration and mobilization. The generated time is episode 10; the earlier proposed dependency on the episode-9 crossing agreement was retracted.",
+      "unresolved_question": "Does the operational state distinguish mobilization, declaration and recognition of kingship, or conflate events at different times?",
+      "judgment": "Targeted operational/behavior or audit-consistency concern; researcher adjudication pending."
+    },
+    {
+      "id": "I05",
+      "node": "W",
+      "variant": "prior_refinement",
+      "claim": "Armed conflict between the Stark-led northern/Riverlands coalition and the Lannister-controlled crown is active by the end of season 1.",
+      "source_ids": [
+        "screen_s01e02_s15_0",
+        "screen_s01e06_s1_0",
+        "screen_s01e06_s9_0"
+      ],
+      "source_urls": [
+        "https://screenscripts.com/game-of-thrones/s01e02_the_kingsroad/#S15L1",
+        "https://screenscripts.com/game-of-thrones/s01e06_a_golden_crown/#S1L1",
+        "https://screenscripts.com/game-of-thrones/s01e06_a_golden_crown/#S9L1"
+      ],
+      "observation": "The event audit labels the factual outcome supported while its reason says the supplied context does not explicitly confirm active armed conflict by the endpoint. Its time and information assessments remain unresolved; every incoming directional score is zero.",
+      "unresolved_question": "Does the supplied context establish the specified armed-conflict state at the endpoint? Which evidence supports any exact necessary conditions rather than co-occurring events?",
+      "judgment": "Targeted operational/behavior or audit-consistency concern; researcher adjudication pending."
+    },
+    {
+      "id": "I06",
+      "node": "X08",
+      "variant": "prior_refinement",
+      "claim": "agreement where Stark forces cross the Trident in exchange for future marriages",
+      "source_ids": [
+        "screen_s01e09_s4_0"
+      ],
+      "source_urls": [
+        "https://screenscripts.com/game-of-thrones/s01e09_baelor/#S4L1"
+      ],
+      "observation": "The categorical states describe allowing passage in return for a marriage agreement versus refusing passage without an agreement. Those phrases can describe the same conditional policy under different unstated circumstances. The model treats them as distinct intervention values.",
+      "unresolved_question": "Does the reference mean refusal despite an existing agreement, absence of an agreement, or the same conditional policy? What context remains fixed in the intervention?",
+      "judgment": "Reference/input-context ambiguity; researcher adjudication pending."
     }
   ],
   "construction_variant": "fresh",
-  "scope_note": "IDs refer only to the failed fresh construction, not the separately reinitialized conditional proposal."
+  "scope_note": "Each item is scoped by construction variant; IDs do not denote the same meanings across fresh and prior-refinement graphs."
 }

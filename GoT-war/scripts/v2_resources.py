@@ -5,11 +5,35 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 import statistics
+import platform
+import subprocess
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from got_war.budget import atomic_json
+
+
+def environment(root=ROOT):
+    """Record reproducibility metadata without exporting credentials or weights."""
+    from importlib import metadata
+    packages={}
+    for name in ('torch','vllm','transformers','numpy','networkx','requests','tokenizers'):
+        try:packages[name]=metadata.version(name)
+        except metadata.PackageNotFoundError:packages[name]=None
+    def command(args):
+        value=subprocess.run(args,capture_output=True,text=True,timeout=20)
+        return {'returncode':value.returncode,'stdout':value.stdout.strip(),'stderr':value.stderr.strip()}
+    config=json.loads((root/'configs/budget_v2.json').read_text())
+    model=json.loads((root/'configs/models.json').read_text())
+    cache=root/'.cache/huggingface/hub'/('models--'+model['primary'].replace('/','--'))/'snapshots'/model['revision']
+    report={'at':datetime.now(timezone.utc).isoformat(),'scope':'Current campaign environment snapshot, not a reconstructed preflight.',
+        'python':platform.python_version(),'platform':platform.platform(),'packages':packages,
+        'model':model,'cached_revision_present':cache.exists(),
+        'gpu':command(['nvidia-smi','--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu','--format=csv,noheader']),
+        'workspace_free':command(['df','-h',str(root)]),'credentials_or_weights_exported':False}
+    atomic_json(root/'runs'/config['campaign_id']/'environment.json',report)
+    return report
 
 
 def capture(run):
@@ -87,8 +111,10 @@ def summarize(root=ROOT):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--capture-server',action='store_true')
+    parser.add_argument('--capture-environment',action='store_true')
     args=parser.parse_args();config=json.loads((ROOT/'configs/budget_v2.json').read_text())
     if args.capture_server:capture(ROOT/'runs'/config['campaign_id'])
+    if args.capture_environment:environment()
     result=summarize()
     print(json.dumps({k:result[k] for k in ('final','elapsed_hours','requests','output_tokens_from_response_usage',
           'output_tokens_from_server','sampled_utilization_weighted_gpu_hours','peak_sampled_vram_mib')},indent=2))

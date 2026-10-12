@@ -1,0 +1,180 @@
+{
+  "model": "five_kings_v2_m00",
+  "query": {
+    "id": "q03",
+    "do": {
+      "X08": "refuses to allow the army to cross without marriage agreement"
+    },
+    "target": "W"
+  },
+  "nodes": [
+    {
+      "equation_id": "E1",
+      "node": "X03",
+      "label": "Tywin's forces attack Riverrun",
+      "definition": "Tywin Lannister assigns half of his forces to Jaime Lannister to attack Riverrun, Catelyn Stark's homeland, as part of a strategy to assert Lannister dominance and pressure the Stark-led coalition.",
+      "equation": "1",
+      "factual": 1,
+      "counterfactual": 1,
+      "event_status": "established",
+      "sources": [
+        "screen_s01e07_s1_0"
+      ],
+      "inspection_flag": {
+        "id": "I03",
+        "node": "X03",
+        "variant": "prior_refinement",
+        "claim": "Tywin Lannister assigns half of his forces to Jaime Lannister to attack Riverrun, Catelyn Stark's homeland, as part of a strategy to assert Lannister dominance and pressure the Stark-led coalition.",
+        "source_ids": [
+          "screen_s01e07_s1_0"
+        ],
+        "source_urls": [
+          "https://screenscripts.com/game-of-thrones/s01e07_you_win_or_you_die/#S1L1"
+        ],
+        "observation": "The event label describes an attack while the operational definition describes assignment of forces. The generated short mechanism describes retaliation, but the retained equation is a parentless constant after dependency retraction.",
+        "unresolved_question": "Does the variable denote a military order or a realized attack? What directional evidence remains after retraction, and should its generated short mechanism be withheld?",
+        "judgment": "Targeted operational/behavior or audit-consistency concern; researcher adjudication pending."
+      },
+      "generated_short_mechanism": "Strategic retaliation against legal challenge",
+      "displayed_behavior_summary": "Fixed input; unexplained upstream causes",
+      "category_codes": {}
+    },
+    {
+      "equation_id": "E2",
+      "node": "X06",
+      "label": "Robb calls Northern banners to war",
+      "definition": "Robb Stark formally declares war and mobilizes Northern forces under his command.",
+      "equation": "1",
+      "factual": 1,
+      "counterfactual": 1,
+      "event_status": "established",
+      "sources": [
+        "screen_s01e10_s5_0"
+      ],
+      "inspection_flag": {
+        "id": "I04",
+        "node": "X06",
+        "variant": "prior_refinement",
+        "claim": "Robb Stark formally declares war and mobilizes Northern forces under his command.",
+        "source_ids": [
+          "screen_s01e10_s5_0"
+        ],
+        "source_urls": [
+          "https://screenscripts.com/game-of-thrones/s01e10_fire_and_blood/#S5L1"
+        ],
+        "observation": "The source audit treats a late declaration of kingship and allegiance as formal war declaration and mobilization. The generated time is episode 10; the earlier proposed dependency on the episode-9 crossing agreement was retracted.",
+        "unresolved_question": "Does the operational state distinguish mobilization, declaration and recognition of kingship, or conflate events at different times?",
+        "judgment": "Targeted operational/behavior or audit-consistency concern; researcher adjudication pending."
+      },
+      "generated_short_mechanism": "Independent political decision-making",
+      "displayed_behavior_summary": "Fixed input; unexplained upstream causes",
+      "category_codes": {}
+    },
+    {
+      "equation_id": "E3",
+      "node": "X07",
+      "label": "Robb deceives Lannister scout",
+      "definition": "Robb sends a captured Lannister scout to falsely claim 20,000 men against Tywin",
+      "equation": "1",
+      "factual": 1,
+      "counterfactual": 1,
+      "event_status": "established",
+      "sources": [
+        "screen_s01e08_s9_0"
+      ],
+      "inspection_flag": null,
+      "generated_short_mechanism": "Strategic deception independent of enemy actions",
+      "displayed_behavior_summary": "Fixed input; unexplained upstream causes",
+      "category_codes": {}
+    },
+    {
+      "equation_id": "E4",
+      "node": "X08",
+      "label": "Frey alliance conditional on marriage",
+      "definition": "Walder Frey allows Stark army passage in exchange for Robb Stark marrying one of his daughters and Arya Stark marrying one of his sons",
+      "equation": "'agrees to allow the army to cross... in return for Robb and Arya marrying'",
+      "factual": "agrees to allow the army to cross... in return for Robb and Arya marrying",
+      "counterfactual": "refuses to allow the army to cross without marriage agreement",
+      "event_status": "established",
+      "sources": [
+        "screen_s01e09_s4_0"
+      ],
+      "inspection_flag": {
+        "id": "I06",
+        "node": "X08",
+        "variant": "prior_refinement",
+        "claim": "agreement where Stark forces cross the Trident in exchange for future marriages",
+        "source_ids": [
+          "screen_s01e09_s4_0"
+        ],
+        "source_urls": [
+          "https://screenscripts.com/game-of-thrones/s01e09_baelor/#S4L1"
+        ],
+        "observation": "The categorical states describe allowing passage in return for a marriage agreement versus refusing passage without an agreement. Those phrases can describe the same conditional policy under different unstated circumstances. The model treats them as distinct intervention values.",
+        "unresolved_question": "Does the reference mean refusal despite an existing agreement, absence of an agreement, or the same conditional policy? What context remains fixed in the intervention?",
+        "judgment": "Reference/input-context ambiguity; researcher adjudication pending."
+      },
+      "generated_short_mechanism": "Conditional agreement on marriage for passage",
+      "displayed_behavior_summary": "Fixed input; unexplained upstream causes",
+      "category_codes": {
+        "c0": "agrees to allow the army to cross... in return for Robb and Arya marrying",
+        "c1": "refuses to allow the army to cross without marriage agreement"
+      }
+    },
+    {
+      "equation_id": "E5",
+      "node": "X09",
+      "label": "Robb captures Jaime Lannister",
+      "definition": "Robb Stark takes Jaime Lannister prisoner during the events of season 1",
+      "equation": "if(eq(X06, 0), if(eq(X07, 0), if(eq(X08, 'agrees to allow the army to cross... in return for Robb and Arya marrying'), 1, 0), 0), 1)",
+      "factual": 1,
+      "counterfactual": 1,
+      "event_status": "unsupported",
+      "sources": [
+        "screen_s01e10_s5_0"
+      ],
+      "inspection_flag": null,
+      "generated_short_mechanism": "Assumed rule; inspect behavior table",
+      "displayed_behavior_summary": "Context-dependent enabling and inhibition",
+      "category_codes": {}
+    },
+    {
+      "equation_id": "E6",
+      "node": "W",
+      "label": "Conflict outcome",
+      "definition": "Armed conflict between the Stark-led northern/Riverlands coalition and the Lannister-controlled crown is active by the end of season 1.",
+      "equation": "and(X06, X03, eq(X08, 'agrees to allow the army to cross... in return for Robb and Arya marrying'), X09)",
+      "factual": 1,
+      "counterfactual": 0,
+      "event_status": "established",
+      "sources": [
+        "screen_s01e02_s15_0",
+        "screen_s01e06_s1_0",
+        "screen_s01e06_s9_0"
+      ],
+      "inspection_flag": {
+        "id": "I05",
+        "node": "W",
+        "variant": "prior_refinement",
+        "claim": "Armed conflict between the Stark-led northern/Riverlands coalition and the Lannister-controlled crown is active by the end of season 1.",
+        "source_ids": [
+          "screen_s01e02_s15_0",
+          "screen_s01e06_s1_0",
+          "screen_s01e06_s9_0"
+        ],
+        "source_urls": [
+          "https://screenscripts.com/game-of-thrones/s01e02_the_kingsroad/#S15L1",
+          "https://screenscripts.com/game-of-thrones/s01e06_a_golden_crown/#S1L1",
+          "https://screenscripts.com/game-of-thrones/s01e06_a_golden_crown/#S9L1"
+        ],
+        "observation": "The event audit labels the factual outcome supported while its reason says the supplied context does not explicitly confirm active armed conflict by the endpoint. Its time and information assessments remain unresolved; every incoming directional score is zero.",
+        "unresolved_question": "Does the supplied context establish the specified armed-conflict state at the endpoint? Which evidence supports any exact necessary conditions rather than co-occurring events?",
+        "judgment": "Targeted operational/behavior or audit-consistency concern; researcher adjudication pending."
+      },
+      "generated_short_mechanism": "Convergence of military and political actions triggers active conflict.",
+      "displayed_behavior_summary": "Every input condition is required",
+      "category_codes": {}
+    }
+  ],
+  "legend": "State annotations are factual → selected intervention; category codes are defined in the node index. Violet borders change; double borders mark nodes shared by selected paths. Solid/dashed/dotted edges mean explicit/contextual/zero-weight directional evidence. Tee arrows inhibit; ± has context-dependent sign. A dagger and pink fill flag a targeted operational/source concern, pending researcher adjudication. These are automatically assessed hypotheses, not established story laws."
+}

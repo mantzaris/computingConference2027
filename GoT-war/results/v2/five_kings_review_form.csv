@@ -1,0 +1,7 @@
+item,edge,event_judgment,direction_judgment,function_constraints,temporal_information_issues,reviewer_notes,reviewed_at
+R01,X03>W,,,,,,
+R02,X06>W,,,,,,
+R03,X06>X09,,,,,,
+R04,X07>X09,,,,,,
+R05,X08>W,,,,,,
+R06,X08>X09,,,,,,

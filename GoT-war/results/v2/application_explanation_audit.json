@@ -1,0 +1,111 @@
+{
+  "variant": "prior_refinement",
+  "displayable": false,
+  "explanation_failure": true,
+  "reviewer_failure": false,
+  "sentence_count": 6,
+  "requested_maximum": 4,
+  "actual_sentence_ids": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06"
+  ],
+  "reviewed_ids": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06"
+  ],
+  "deterministic_errors": [
+    {
+      "sentence": "S03",
+      "type": "invalid_structured_number",
+      "claim": {
+        "field": "evidence_support_p1",
+        "value": 0.0
+      }
+    },
+    {
+      "sentence": "S03",
+      "type": "invalid_structured_number",
+      "claim": {
+        "field": "evidence_support_p2",
+        "value": 0.0
+      }
+    }
+  ],
+  "generation_attempt_errors": [
+    "At most four actual sentences after software splitting"
+  ],
+  "semantic_verdicts": [
+    {
+      "sentence_id": "S01",
+      "verdict": "supported",
+      "reason": "The factual outcome (W) is 1 and the counterfactual outcome (W) is 0, as stated in the computed record.",
+      "record_fields": [
+        "factual_outcome",
+        "counterfactual_W"
+      ]
+    },
+    {
+      "sentence_id": "S02",
+      "verdict": "supported",
+      "reason": "The single-model counterfactual outcome is 0, the coalition reference is 1.0, and the coalition contrast is -1.0, as stated in the computed record.",
+      "record_fields": [
+        "single_model_counterfactual_outcome",
+        "coalition_reference",
+        "coalition_contrast"
+      ]
+    },
+    {
+      "sentence_id": "S03",
+      "verdict": "supported",
+      "reason": "Path p1 has an influence of -1.0 and path p2 has an influence of 0.0, as stated in the computed record.",
+      "record_fields": [
+        "path_p1",
+        "path_p2",
+        "evidence_support_p1",
+        "evidence_support_p2"
+      ]
+    },
+    {
+      "sentence_id": "S04",
+      "verdict": "supported",
+      "reason": "Both paths have zero evidence support, as stated in the computed record.",
+      "record_fields": [
+        "path_p1",
+        "path_p2",
+        "evidence_support_p1",
+        "evidence_support_p2"
+      ]
+    },
+    {
+      "sentence_id": "S05",
+      "verdict": "supported",
+      "reason": "The evidence status is unavailable, as all evidence-weighted priorities are zero, as stated in the computed record.",
+      "record_fields": [
+        "largest_absolute_tie_count",
+        "possible_outcome_count"
+      ]
+    },
+    {
+      "sentence_id": "S06",
+      "verdict": "supported",
+      "reason": "The largest absolute tie count is 1, and the possible outcome set contains only 0, as stated in the computed record.",
+      "record_fields": [
+        "largest_absolute_tie_count",
+        "possible_outcome_count"
+      ]
+    }
+  ],
+  "reviewer_controls_correct": 3,
+  "reviewer_controls_total": 4,
+  "reviewer_control_false_acceptances": 0,
+  "interpretation": "The actual prose was reviewed, including all six software-assigned IDs. Rejection is an explanation-format/trace-field failure, not an invented-ID reviewer failure. Same-model support does not establish narrative entailment. The invalid probability control was marked unverifiable instead of the expected unsupported, reducing strict control accuracy without falsely accepting it.",
+  "independent_review": "pending"
+}

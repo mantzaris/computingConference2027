@@ -23,9 +23,9 @@ def pack(root):
     files+=sorted((run/'benchmark').glob('*.json'))
     files+=sorted(run.glob('pilot_round[1-5]/*.json'))
     files+=sorted((run/'application').glob('*/final.json'))
-    for name in ('supervision_probe.json','pilot_round1_summary.json','completion.json','inference_usage.json',
+    for name in ('supervision_probe.json','pilot_round1_summary.json','completion.json','inference_usage.json','inference_finished.json',
                  'environment.json','service_counters.json','gpu_samples.jsonl','processes.json','shutdown_verification.json',
-                 'watchdog_final.json','COMPLETE'):
+                 'fixed_benchmark_launch.json','fixed_benchmark_failed_import_launch.json','watchdog_final.json','COMPLETE'):
         if (run/name).exists():files.append(run/name)
     payload={p.relative_to(root).as_posix():p.read_bytes() for p in sorted(set(files))}
     if len(payload)>common.MAX_FILES or sum(map(len,payload.values()))>common.MAX_BYTES:raise ValueError('Curated v2 inputs exceed declared archive bounds')

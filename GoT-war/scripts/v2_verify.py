@@ -1,5 +1,6 @@
 """Offline numerical verification of version-2 records, never inference."""
 import argparse
+import copy
 import hashlib
 import json
 from pathlib import Path
@@ -21,8 +22,17 @@ def verify(root):
     if changed:failures.append({'frozen_files_changed':changed})
     casefile=run/'benchmark_cases.jsonl'
     if hashlib.sha256(casefile.read_bytes()).hexdigest()!=frozen['design']['sha256']:failures.append('Frozen benchmark manifest changed')
-    cases=[json.loads(line) for line in casefile.read_text().splitlines()];counts={};numerical=0;accepted=0;rejected=0
+    cases=[json.loads(line) for line in casefile.read_text().splitlines()];counts={};numerical=0;accepted=0;rejected=0;oracle_queries=0
     for case in cases:
+        supplied=copy.deepcopy(case['gold'])
+        for node in supplied['nodes']:node['unknown']=node['id'] in case['hidden_nodes']
+        oracle=compatible_family(supplied);answers=outcome_sets(oracle['models'],case['queries'])
+        if not oracle['summary']['exhaustive'] or any(a['values']!=q['gold_possible'] for a,q in zip(answers,case['queries'])):
+            failures.append({'oracle_family_execution':case['id']})
+        true=SCM(case['gold'])
+        if any(true.solve(interventions=q['do'])[q['target']]!=q['generating_outcome'] for q in case['queries']):
+            failures.append({'oracle_generating_execution':case['id']})
+        oracle_queries+=len(case['queries'])
         record_path=run/'benchmark'/(case['id']+'.json')
         if not record_path.exists():failures.append({'missing_record':case['id']});continue
         record=json.loads(record_path.read_text());counts[case['split']]=counts.get(case['split'],0)+bool(record.get('completed'))
@@ -50,6 +60,7 @@ def verify(root):
     if outcome_sets([r['model'] for r in app['records']],app['queries'])!=app['outcome_sets']:failures.append('Application outcome sets differ')
     report={'version':2,'offline_only':True,'completed_by_split':counts,'accepted_syntheses':accepted,
         'rejected_syntheses_retained':rejected,'controlled_coalition_records_reproduced':numerical,
+        'oracle_family_and_generating_queries_reexecuted':oracle_queries,
         'application_record':str(apppath.relative_to(root)),'application':appchecks,
         'frozen_hashes_match':not changed,'failures':failures,'passed':not failures,
         'limits':'Numerical and provenance consistency only. No independent source entailment, historical counterfactual truth, reader benefit or human review is established.'}

@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import sys
+import networkx as nx
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
@@ -30,9 +31,21 @@ def main():
         variants[name]=info
     ledger=[json.loads(line) for line in (run/'requests.jsonl').read_text().splitlines()]
     roles=collections.Counter(r['role'] for r in ledger)
+    cases=[json.loads(line) for line in (run/'benchmark_cases.jsonl').read_text().splitlines()]
+    design={}
+    for split in ('development','calibration','test'):
+        selected=[c for c in cases if c['split']==split]
+        shared=0
+        for c in selected:
+            graph=nx.DiGraph((p,n['id']) for n in c['gold']['nodes'] for p in n['parents'])
+            shared+=any(degree>1 for _,degree in graph.out_degree())
+        design[split]={'scms':len(selected),'scms_with_shared_causes':shared,
+            'generating_rule_occurrences':dict(collections.Counter(n['generated_family'] for c in selected for n in c['gold']['nodes'] if n['parents'])),
+            'topology_redraws':sum(c['topology_retries'] for c in selected),
+            'interpretation':'Rule occurrences and questions are not independent samples; SCMs are the independent units. Topology redraws enforce the predeclared omission feasibility criterion, not method scores.'}
     report={'version':2,'scope':'Development and source-construction provenance; repeated/cached repairs and snapshots are not independent experiments.',
-        'variants':variants,'requests_by_role':dict(roles),
-        'source_inspection':'Targeted assistant flags remain in results/v2/source_inspection.json, scoped to the failed fresh construction. No human adjudication or error-rate sample.',
+        'variants':variants,'requests_by_role':dict(roles),'controlled_design_audit':design,
+        'source_inspection':'Targeted assistant flags remain in results/v2/source_inspection.json, separately scoped to fresh and conditional-refinement variants. No human adjudication or error-rate sample.',
         'methodological_consequences':[
             'Fresh concept selection can concentrate on early events and composite states despite later outcome evidence. More corpus volume alone did not produce an adequate operational model.',
             'Acyclic ordering prevents formally cyclic dependencies but does not establish the temporal or informational truth of an edge. Unknown/composite timing remains unresolved.',
