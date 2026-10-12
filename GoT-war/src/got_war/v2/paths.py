@@ -18,6 +18,12 @@ def edge_support(model):
             score={'explicit':1.,'contextually_supported':.5}.get(directional,0.)
             endpoints=all(nodes[x].get('event_status') in ('established','reported_claim','character_belief') for x in (parent,node['id']))
             endpoint_times={x:{k:nodes[x].get('event_audit',{'event_time':'consistent','information_time':'consistent'}).get(k,'unresolved') for k in ('event_time','information_time')} for x in (parent,node['id'])}
+            # An application audit cannot silently resolve a missing operational
+            # event time. Composite/range events need a representation revision
+            # or remain temporally unresolved; controlled nodes have no audit.
+            for x in endpoint_times:
+                if 'event_audit' in nodes[x] and nodes[x].get('time') is None:
+                    endpoint_times[x]['event_time']='unresolved'
             times_resolved=all(v=='consistent' for audit in endpoint_times.values() for v in audit.values())
             if not endpoints or not times_resolved or not record.get('segments') or record.get('contradictions') or record.get('temporal_status','unresolved')!='consistent' or record.get('information_status','unresolved')!='consistent':score=0.
             record.update(parent=parent,child=node['id'],score=score,status=directional,

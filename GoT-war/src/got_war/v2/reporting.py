@@ -14,16 +14,86 @@ def ci(row):
     return '%.3f [%.3f, %.3f]'%(row['estimate'],row['lower'],row['upper'])
 
 
+def tex(text):
+    """Escape generated prose/labels, never silently insert them as TeX code."""
+    mapping={'\\':r'\textbackslash{}','&':r'\&','%':r'\%','$':r'\$','#':r'\#',
+             '_':r'\_','{':r'\{','}':r'\}','~':r'\textasciitilde{}','^':r'\textasciicircum{}'}
+    return ''.join(mapping.get(c,c) for c in str(text))
+
+
+def table_ci(row):
+    if row['estimate'] is None:return r'---'
+    return r'\shortstack{%.3f\\{[%.3f, %.3f]}}'%(row['estimate'],row['lower'],row['upper'])
+
+
+def manuscript_tables(root):
+    """Populate measured manuscript sections only after the fixed test completes."""
+    root,run,result=paths(root)
+    summary=json.loads((result/'test_summary.json').read_text())
+    if summary['completed_records']!=summary['planned_scms']:
+        raise ValueError('The manuscript must not describe a partial test as complete')
+    app=json.loads((run/'application/five_kings/final.json').read_text())
+    principal=app['records'][0];paper=root/'paper/v2';paper.mkdir(exist_ok=True)
+    rows={r['method']:r for r in summary['tables'] if r['condition']=='all'}
+    macros=[]
+    for name,method in [('Direct','B0'),('Graph','B1'),('Single','B2'),('Alt','ALT')]:
+        macros.append(r'\newcommand{\Acc'+name+'}{%.1f\\%%}'%(100*rows[method]['metrics']['identified_correct']['estimate']))
+    macros += [r'\newcommand{\AppNodes}{%d}'%len(principal['model']['nodes']),
+               r'\newcommand{\AppModels}{%d}'%len(app['records'])]
+    (paper/'measured_macros.tex').write_text('\n'.join(macros)+'\n')
+    lines=[r'All 72 planned held-out SCM records completed. Table~\ref{tab:primary} reports SCM means with descriptive 95\% bootstrap intervals. Failed synthesis remains in each relevant primary denominator. FULL and ALT have identical outcome answers by construction; the additional FULL components are assessed separately.',
+        r'\begin{table}[t]\centering\small\setlength{\tabcolsep}{3pt}',
+        r'\caption{Identified and underidentified questions; estimates and 95\% intervals.}\label{tab:primary}',
+        r'\begin{tabular}{lrrrr}\toprule Method & Identified & Changes & Preserves & Uncertainty\\\midrule']
+    for method in ('B0','B1','B2','ALT','CARRY','ORACLE_FAMILY'):
+        values=[table_ci(rows[method]['metrics'][m]) for m in ('identified_correct','changed_correct','unchanged_correct','uncertainty_appropriate')]
+        lines.append(tex(method)+' & '+' & '.join(values)+r'\\')
+    lines += [r'\bottomrule\end{tabular}\end{table}',
+        r'\begin{table}[t]\centering\small\setlength{\tabcolsep}{3pt}',
+        r'\caption{Complete versus incomplete mechanisms. Changed and preserved strata are scored separately.}\label{tab:missing}',
+        r'\begin{tabular}{llrrr}\toprule Condition & Method & Changes & Preserves & Uncertainty\\\midrule']
+    for condition in ('complete','missing_intermediate','missing_outcome','multiple_missing'):
+        for method in ('B0','B2','ALT'):
+            row=next(r for r in summary['tables'] if r['condition']==condition and r['method']==method)
+            values=[table_ci(row['metrics'][m]) for m in ('changed_correct','unchanged_correct','uncertainty_appropriate')]
+            lines.append(tex(condition.replace('missing_','omit ').replace('_',' '))+' & '+method+' & '+' & '.join(values)+r'\\')
+    lines += [r'\bottomrule\end{tabular}\end{table}',r'\paragraph{Paired comparisons.}']
+    for pair in summary['paired_differences']:
+        lines.append(tex(pair['left']+' minus '+pair['right'])+': identified accuracy '+tex(ci(pair['metrics']['identified_correct']))+
+            '; outcome-changing accuracy '+tex(ci(pair['metrics']['changed_correct']))+'; appropriate uncertainty '+tex(ci(pair['metrics']['uncertainty_appropriate']))+'.')
+    lines += [r'\paragraph{Separate synthesis, grounding, and explanation components.}',
+        r'\begin{table}[t]\centering\small\begin{tabular}{lr}\toprule Component & Estimate [95\% interval]\\\midrule']
+    for key,value in summary['components'].items():
+        lines.append(tex(key.replace('_',' '))+' & '+tex(ci(value))+r'\\')
+    lines += [r'\bottomrule\end{tabular}\caption{Components use all planned test SCMs. Same-model semantic review is dependent.}\label{tab:components}\end{table}',
+        r'\paragraph{Source prioritization.}']
+    for method,score in summary['source_priority'].items():
+        lines.append(tex(method)+' nDCG@5: '+tex(ci(score))+'.')
+    for method,score in summary['source_priority_paired'].items():
+        lines.append('Paired FULL minus '+tex(method)+': '+tex(ci(score))+'.')
+    lines.append('The independently fixed relevance labels describe the affected-mechanism slice, not human reading value. A zero modeled contrast can yield no ranking even when passages help explain invariance. The uniform-support ablation shares the same paths and allocations. Full results, conditional successful-synthesis estimates, error records, and all completeness strata accompany the release.')
+    (paper/'measured_results.tex').write_text('\n\n'.join(lines)+'\n')
+    game=principal['attribution'];supports=[p['evidence_support'] for p in principal['evidence_priority']['paths']]
+    app_lines=[tex(app['case']['outcome'])+' We acquired ten first-season episode transcriptions from an accessible unofficial site. They are traceable documentary material, not authenticated official scripts; transcription fidelity and interpretation require researcher review.',
+        'The LLM retained %d variables and %d directed influences. Its %d functionally distinct global hypotheses produced %d distinct intervention-outcome vectors over the specified queries. The bounded construction considered %d Cartesian combinations of retained local options, but did not exhaust them or alternative graph structures.'%(len(principal['model']['nodes']),SCM(principal['model']).graph.number_of_edges(),len(app['records']),app['alternatives']['distinct_query_vectors'],app['alternatives']['cartesian_options']),
+        'The principal coalition outcome histogram was '+tex(json.dumps(game['coalition_histogram']))+'. All selected paths required: '+tex(game['all_paths_required'])+'. Substitute path sets: '+tex(game['substitute_path_sets'])+'. Negative coalition marginals: '+str(game['negative_marginals'])+'.',
+        'The signed allocation vector was '+tex(str([round(x,4) for x in game['phi']]))+'; weakest directional support by aligned path was '+tex(str(supports))+'. Evidence-weighted source ranking was '+('available as a provisional automated priority' if principal['ranking_available'] else 'unavailable because all scores were zero')+'. No unsupported score was raised to create an ordering.',
+        'The application explanation '+('passed the deterministic and same-model semantic checks' if app['explanation']['displayable'] else 'failed the displayability checks')+'. The source/equation audit, full-context private review packet, and blank independent review form remain available. These artifacts do not imply completed human adjudication.',
+        'References, selected path sets, local function behavior, and shared outcome queries are reported separately. The alternative models preserve aligned variables and node sequences; their frequencies are not posterior probabilities. Any unresolved source-compatibility judgment remains a hypothesis.']
+    (paper/'application_results.tex').write_text('\n\n'.join(app_lines)+'\n')
+
+
 def benchmark_reports(root):
     root,run,result=paths(root);summary=json.loads((result/'test_summary.json').read_text())
     rows=summary['tables'];all_rows=[r for r in rows if r['condition']=='all']
     text=['# Version 2 measured results','',
         'Completed %d of %d planned held-out SCM records. All planned test SCMs remain in the primary denominator. Questions are repeated measurements within SCMs. Intervals are 95%% SCM bootstrap intervals.'%(summary['completed_records'],summary['planned_scms']),'',
-        '| Method | Identified accuracy | Outcome changes | Outcome preserved | Appropriate uncertainty | Unsupported confident answers |',
-        '|---|---:|---:|---:|---:|---:|']
+        '| Method | Valid answers | Identified accuracy | Outcome changes | Outcome preserved | Appropriate uncertainty | Unsupported confident answers |',
+        '|---|---:|---:|---:|---:|---:|---:|']
     metrics=('identified_correct','changed_correct','unchanged_correct','uncertainty_appropriate','unsupported_confident')
-    for row in all_rows:text.append('| '+row['method']+' | '+' | '.join(ci(row['metrics'][m]) for m in metrics)+' |')
+    for row in all_rows:text.append('| '+row['method']+' | '+' | '.join(ci(row['metrics'][m]) for m in ('valid_answer',)+metrics)+' |')
     text += ['', 'B0: direct LLM; B1: same text plus generated graph; B2: one synthesized model; ALT: compatible mechanisms; FULL: ALT answers plus separately assessed path/evidence/explanation outputs. CARRY retains the factual outcome. ORACLE_FAMILY receives the declared compatible family. ORACLE_TRUE receives the hidden generating model and is a point-prediction diagnostic, not an uncertainty oracle.', '',
+        'Unsupported confident answers are nonabstaining singleton responses that are wrong or not identified by the record, divided by all questions within each SCM. Missing answers cannot be confident, so this rate must be read together with valid-answer coverage and synthesis failures; low coverage must not be mistaken for safe reasoning.', '',
         '## Mechanism completeness','', '| Condition | Method | Identified accuracy | Changed | Preserved | Appropriate uncertainty |','|---|---|---:|---:|---:|---:|']
     for row in rows:
         if row['condition']=='all' or row['method'] not in ('B0','B1','B2','ALT'):continue

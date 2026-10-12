@@ -17,7 +17,9 @@ def utcnow():
 def atomic_json(path, obj):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(path.suffix + '.tmp')
+    # Multiple independent experiment workers may update aggregate provenance.
+    # Unique temporary names preserve atomic replacement without collisions.
+    tmp = path.with_name(path.name + '.tmp.%d.%d' % (os.getpid(), time.monotonic_ns()))
     tmp.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + '\n')
     tmp.replace(path)
 

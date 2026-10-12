@@ -4,7 +4,7 @@ from got_war.structural_programs import SCM
 from got_war.v2.benchmark import generate
 from got_war.v2.mechanisms import compatible_family, inspect_mechanism, outcome_sets
 from got_war.v2.explanations import deterministic_check, review, assign_sentence_ids
-from got_war.v2.paths import game_report
+from got_war.v2.paths import game_report, edge_support
 
 
 def toy(kind='and'):
@@ -55,6 +55,21 @@ def test_coalition_diagnostic_exposes_unanimity_and_substitution():
     assert conjunction['phi']==redundancy['phi']==[.5,.5]  # Equal shares alone do not identify the game.
 
 
+def test_supported_direction_survives_unknown_function_but_not_missing_time():
+    model=toy()
+    for node in model['nodes']:
+        node.update(event_status='established',function_identification='unidentified',
+                    event_audit={'event_time':'consistent','information_time':'consistent'})
+    model['nodes'][-1]['influences']=[{'parent':p,'direction_status':'explicit','segments':['passage'],
+        'temporal_status':'consistent','information_status':'consistent','contradictions':[]} for p in ('A','B')]
+    assert edge_support(model)['A>W']['score']==1
+    model['nodes'][0]['time']=None
+    assert edge_support(model)['A>W']['score']==0
+    assert edge_support(model)['B>W']['score']==1
+    model['nodes'][-1]['influences'][1]['direction_status']='unsupported'
+    assert edge_support(model)['B>W']['score']==0
+
+
 def test_reviewer_cannot_pass_by_reviewing_instructions():
     class Fake:
         def call(self,*args,**kwargs):
@@ -85,3 +100,11 @@ def test_deterministic_explanation_rejects_wrong_number_and_unique_tie():
             'factual_states':{'A':1,'W':1},'paths':[{'path_id':'p1'},{'path_id':'p2'}],'largest_absolute_ties':['p1','p2']}
     result=deterministic_check([{'id':'S01','text':'The strongest path p1 contributes 0.9.'}],record)
     assert {e['type'] for e in result['errors']}=={'number_not_in_record','unqualified_largest_among_ties'}
+
+
+def test_a_number_elsewhere_in_trace_does_not_validate_false_factual_claim():
+    record={'numbers':{'factual_outcome':1,'single_model_counterfactual_outcome':0},'possible_outcomes':[0,1],
+            'factual_states':{'V00':1,'V07':1},'paths':[],'largest_absolute_ties':[],
+            'query':{'target':'V07'},'outcome_label':'Station V07'}
+    result=deterministic_check([{'id':'S01','text':'The factual outcome is 0 after V99 acts.'}],record)
+    assert {e['type'] for e in result['errors']}=={'unknown_variable','outcome_value_mismatch'}

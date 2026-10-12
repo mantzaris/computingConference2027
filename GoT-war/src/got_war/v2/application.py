@@ -5,6 +5,7 @@ import itertools
 import json
 from pathlib import Path
 import re
+import random
 import time
 import networkx as nx
 from ..budget import atomic_json
@@ -210,17 +211,92 @@ class Construction:
                 '"event_time":"consistent|unresolved|contradicted","information_time":"consistent|unresolved|contradicted","contradictions":[],"questions":[],"reason":"brief"}. '
                 'Be strict. A citation match is not entailment; unsupported stays unsupported. No independent human review is implied.\nVARIABLE:\n'+json.dumps(node)+'\nPASSAGES:\n'+context)
             audit=self.artifact('eventaudit_'+node['id'],prompt,tokens=1536)
-            passed=all(audit.get(k) is True for k in ('event_supported','factual_state_supported','status_matches_definition','reference_meaning_clear')) and not audit.get('contradictions')
+            passed=all(audit.get(k) is True for k in ('event_supported','factual_state_supported','status_matches_definition')) and not audit.get('contradictions')
             status={'narrative_fact':'established','reported_claim':'reported_claim','character_belief':'character_belief'}.get(node.get('proposition_kind'),'unassessed')
             node['event_status']=status if passed else 'unsupported'
+            node['reference_status']='clear' if audit.get('reference_meaning_clear') is True else 'unresolved'
             node['event_audit']=audit;audits.append({'node':node['id'],'passages':ids,**audit})
         result=dict(blueprint,nodes=nodes,event_audits=audits)
         atomic_json(self.folder/'event_audit.json',result)
         return result
 
     def discover_graph(self, blueprint, revision_note=''):
+        """Separate a generated admissible order from contextual parent choice.
+
+        Ordering excludes cycles; it never supplies a causal edge. Its unresolved
+        within-episode and composite-event positions remain model assumptions.
+        """
+        nodes=blueprint['nodes'];mapping={n['id']:n for n in nodes};ids=set(mapping)
+        compact=[node_view(n) for n in nodes]
+        prompt=('Propose a permissible temporal/topological order for these source-derived variables. '
+            'Return {"order":["each ID exactly once"],"ordering_assumptions":[],"representation_questions":[]}. '
+            'Respect all known episode times in nondecreasing order. Position unresolved/composite events only with an explicit scope assumption. '
+            'An order does not establish causality: it only rules out cycles in a later dependency proposal. '
+            'Do not invent parents or change the specified outcome. Within-episode order is uncertain unless documented.\nVARIABLES:\n'+json.dumps(compact)+
+            '\nPRIOR DIAGNOSTIC: '+revision_note)
+        def check_order(response):
+            order=response.get('order',[])
+            if len(order)!=len(ids) or set(order)!=ids:raise ValueError('The order must contain every supplied ID exactly once')
+            times=[mapping[n]['time'] for n in order if mapping[n]['time'] is not None]
+            if times!=sorted(times):raise ValueError('Known episode times cannot run backwards in the proposed order')
+            return response
+        ordering=self.artifact('causal_order',prompt,check_order,1536)
+        parents={};hints={};proposals={};questions=list(ordering.get('representation_questions',[]))
+        for index,ident in enumerate(ordering['order']):
+            node=mapping[ident];eligible=ordering['order'][:index]
+            if not eligible:
+                parents[ident]=[];hints[ident]='Scope boundary in the generated order.';continue
+            context,source_ids=self.context(node['segments'],node['definition']+' '+self.case['outcome'],14500)
+            prompt=('Propose the direct parents of ONE target from the supplied admissible earlier variables and passage context. '
+                'Return {"parents":[],"mechanism_hint":"source-supported direction versus assumed function",'
+                '"direction_evidence":[{"parent":"ID","segments":["supplied passage ID"],"reason":"contextual directional reason or precise gap"}],'
+                '"assumptions":[],"representation_questions":[]}. '
+                'Choose at most four parents; zero is valid. Do not connect every available earlier event. '
+                'Chronology, co-occurrence, narrative importance, and shared names do not establish a causal direction. '
+                'A proposition about a belief/report must remain a belief/report. Later events are excluded; the admissible order supplies no positive causal evidence. '
+                'Prefer the few direct influences actually justified by the context. Any proposed but unsupported influence remains a hypothesis with zero support at audit. '
+                'Do not make manifestations of conflict necessary causes by definition, or invent missing causes from model memory.\nOUTCOME: '+self.case['outcome']+
+                '\nTARGET:\n'+json.dumps(node_view(node))+'\nADMISSIBLE PARENTS:\n'+json.dumps([node_view(mapping[n]) for n in eligible])+
+                '\nPASSAGES:\n'+context+'\nALLOWED PASSAGE REFERENCES: '+json.dumps(source_ids)+
+                '\nReferences listed inside variable metadata are not admissible directional evidence unless their actual passages appear above.'+
+                '\nREPRESENTATION DIAGNOSTIC: '+revision_note)
+            def check_parents(response):
+                chosen=response.get('parents',[])
+                if not isinstance(chosen,list) or len(chosen)>4 or len(set(chosen))!=len(chosen) or set(chosen)-set(eligible):
+                    raise ValueError('Select zero to four distinct parents from the admissible IDs only')
+                for edge in response.get('direction_evidence',[]):
+                    if edge.get('parent') not in chosen or set(edge.get('segments',[]))-set(source_ids):
+                        raise ValueError('Directional references must use a chosen parent and actual supplied passages. Invalid item: '+json.dumps(edge)+'. Allowed passage IDs: '+json.dumps(source_ids))
+                return response
+            edge_schema={'type':'object','properties':{'parent':{'enum':eligible},'segments':{'type':'array','items':{'enum':source_ids},'maxItems':4},'reason':{'type':'string','maxLength':400}},'required':['parent','segments','reason'],'additionalProperties':False}
+            schema={'type':'object','properties':{'parents':{'type':'array','items':{'enum':eligible},'maxItems':min(4,len(eligible))},
+                'mechanism_hint':{'type':'string','maxLength':400},'direction_evidence':{'type':'array','items':edge_schema,'maxItems':4},
+                **{k:{'type':'array','items':{'type':'string','maxLength':300},'maxItems':4} for k in ('assumptions','representation_questions')}},
+                'required':['parents','mechanism_hint','direction_evidence','assumptions','representation_questions'],'additionalProperties':False}
+            row=self.artifact('parents_'+ident,prompt,check_parents,1536,schema=schema)
+            parents[ident]=row['parents'];hints[ident]=row.get('mechanism_hint','Unresolved mechanism')
+            proposals[ident]=dict(row,context_source_ids=source_ids)
+            questions.extend(row.get('representation_questions',[]))
+        graph=nx.DiGraph();graph.add_nodes_from(ids);graph.add_edges_from((p,c) for c,ps in parents.items() for p in ps)
+        if not nx.is_directed_acyclic_graph(graph):raise ValueError('Ordered parent construction violated the DAG contract')
+        for child in graph:
+            for ancestor in nx.ancestors(graph,child):
+                if mapping[ancestor]['time'] is not None and mapping[child]['time'] is not None and mapping[ancestor]['time']>mapping[child]['time']:
+                    raise ValueError('Future-to-past path through unresolved-time variables')
+        ancestry=nx.ancestors(graph,blueprint['outcome'])|{blueprint['outcome']}
+        retained=[dict(n,parents=parents[n['id']],mechanism_hint=hints[n['id']]) for n in nodes if n['id'] in ancestry]
+        if len(retained)<2:raise ValueError('No explanatory outcome ancestry; preserve this source construction failure')
+        assumptions=ordering.get('ordering_assumptions',[])+[a for r in proposals.values() for a in r.get('assumptions',[])]
+        proposal={'parents':parents,'mechanism_hints':hints,'ordering':ordering,'local_proposals':proposals,
+            'assumptions':assumptions,'representation_questions':questions}
+        result=dict(blueprint,nodes=retained,graph_proposal=proposal,pruned_unrelated=sorted(ids-ancestry))
+        atomic_json(self.folder/'graph.json',result);return result
+
+    def discover_graph_joint(self, blueprint, revision_note=''):
+        """Retained development implementation; failed cyclic records are preserved."""
         nodes=blueprint['nodes'];ids={n['id'] for n in nodes}
-        source_ids=[s for n in nodes for s in n['segments']]
+        endpoint=next(n for n in nodes if n['id']==blueprint['outcome'])
+        source_ids=endpoint['segments']+[s for n in nodes for s in n['segments']]
         context,_=self.context(source_ids,self.case['outcome'],12000)
         schema=[{k:n.get(k) for k in ('id','label','definition','actor','type','observed','reference','event_time','statement_time','event_status','segments')} for n in nodes]
         prompt=('Discover direct directional influences for these variables from the evidence, not their mere chronology. '
@@ -238,12 +314,24 @@ class Construction:
             for child,ps in parents.items():
                 if not isinstance(ps,list) or len(ps)>4 or len(set(ps))!=len(ps) or set(ps)-ids or child in ps:raise ValueError('Invalid parent set for '+child)
                 graph.add_edges_from((p,child) for p in ps)
-            if not nx.is_directed_acyclic_graph(graph):raise ValueError('Dependencies contain a cycle; reconsider the representation using evidence')
+            if not nx.is_directed_acyclic_graph(graph):raise ValueError('Dependencies contain this directed cycle: '+json.dumps(nx.find_cycle(graph))+'. Reconsider those influences or the variable representation using evidence.')
             mapping={n['id']:n for n in nodes}
             for a,b in graph.edges:
                 if mapping[a]['time'] is not None and mapping[b]['time'] is not None and mapping[a]['time']>mapping[b]['time']:raise ValueError('Future event cannot cause earlier event: '+a+'>'+b)
+            for child in graph:
+                for ancestor in nx.ancestors(graph,child):
+                    if mapping[ancestor]['time'] is not None and mapping[child]['time'] is not None and mapping[ancestor]['time']>mapping[child]['time']:
+                        raise ValueError('Future-to-past path through unresolved-time variables: '+json.dumps(nx.shortest_path(graph,ancestor,child)))
             return response
-        graph=self.artifact('graph',prompt,validate,3072)
+        mapping={n['id']:n for n in nodes};parent_schema={}
+        for child in sorted(ids):
+            eligible=[p for p in sorted(ids) if p!=child and not (mapping[p]['time'] is not None and mapping[child]['time'] is not None and mapping[p]['time']>mapping[child]['time'])]
+            parent_schema[child]={'type':'array','items':{'type':'string','enum':eligible},'maxItems':min(4,len(eligible))} if eligible else {'type':'array','maxItems':0}
+        graph_schema={'type':'object','properties':{'parents':{'type':'object','properties':parent_schema,'required':sorted(ids),'additionalProperties':False},
+            'mechanism_hints':{'type':'object','properties':{n:{'type':'string','maxLength':350} for n in sorted(ids)},'required':sorted(ids),'additionalProperties':False},
+            **{key:{'type':'array','items':{'type':'string'},'maxItems':8} for key in ('unresolved_backgrounds','assumptions','representation_questions')}},
+            'required':['parents','mechanism_hints','unresolved_backgrounds','assumptions','representation_questions'],'additionalProperties':False}
+        graph=self.artifact('graph',prompt,validate,3072,schema=graph_schema)
         relation=nx.DiGraph();relation.add_nodes_from(ids);relation.add_edges_from((p,c) for c,ps in graph['parents'].items() for p in ps)
         ancestors=nx.ancestors(relation,blueprint['outcome'])|{blueprint['outcome']}
         retained=[dict(n,parents=graph['parents'][n['id']],mechanism_hint=graph.get('mechanism_hints',{}).get(n['id'],'')) for n in nodes if n['id'] in ancestors]
@@ -256,6 +344,26 @@ class Construction:
         contract=(self.root/'prompts/ast_contract.txt').read_text()
         for node in blueprint['nodes']:
             parents=[mapping[p] for p in node['parents']]
+            if not parents:
+                # The LLM chose this variable as an external scope boundary.
+                # Serialize that declaration directly: it is not an inferred
+                # story mechanism or a residual added to an endogenous rule.
+                uid='U_'+node['id'];expr={'noise':uid}
+                background={uid:{k:node[k] for k in ('type','values','bounds','observed') if k in node}}
+                local=SCM({'nodes':[dict(node,noise=[uid],expr=expr)],'background':background,'outcome':node['id']})
+                behavior=inspect_mechanism(local,node['id'])
+                variant={'expr':expr,'noise':[uid],'background':{},'behavior':behavior,
+                    'description':behavior['derived_description'],'generated_description':'',
+                    'short_mechanism':'Declared external scope boundary',
+                    'function_identification':'not_applicable_scope_boundary',
+                    'generated_function_identification':'not_applicable_scope_boundary',
+                    'assumptions':['No upstream mechanism is inferred for '+node['id']+'; its source-derived factual state and declared reference define this scope boundary.'],
+                    'semantic_review':{'origin':'deterministic serialization of LLM boundary declaration',
+                        'description_matches_behavior':True,'short_label_matches_behavior':True,
+                        'source_compatibility':'not_a_causal_mechanism','exact_function_identification':'not_applicable_scope_boundary'}}
+                options[node['id']]=[variant];audits.append({'node':node['id'],'review':variant['semantic_review'],'formal_rejections':[]})
+                atomic_json(self.folder/'local_options_checkpoint.json',{'options':options,'audits':audits})
+                continue
             context,source_ids=self.context(node['segments']+[s for p in parents for s in p['segments']],node['definition']+' '+node.get('mechanism_hint',''))
             prompt=(contract+'\nGenerate one to THREE defensible fixed mechanisms for this target using exactly the declared parent inputs. '
                 'Alternatives must differ in behavior, not wording; one is valid if the representation/evidence permits no defensible alternative. '
@@ -301,7 +409,8 @@ class Construction:
             review_prompt=('Audit these generated local mechanisms using their actual truth tables/probes and the passage context. '
                 'Separate source support for direction from identification of the exact function. '
                 'Return {"variants":[{"index":0,"description_matches_behavior":true,"short_label_matches_behavior":true,'
-                '"source_compatibility":"compatible_hypothesis|contradicted|unresolved","background_is_factual_patch":false,"questions":[],"reason":"brief"}]}. '
+                '"source_compatibility":"compatible_hypothesis|contradicted|unresolved","exact_function_identification":"identified|partially_constrained|unidentified|unassessed",'
+                '"background_is_factual_patch":false,"questions":[],"reason":"brief"}]}. '
                 'Compatible hypothesis does not mean identified. An AND requires all conjuncts for output 1; OR may provide substitutes. '
                 'Reject claims of sufficiency/necessity that the table contradicts. Unrestricted residuals are not admissible.\nTARGET:\n'+json.dumps(node_view(node))+
                 '\nMECHANISMS:\n'+json.dumps(compact)+'\nPASSAGES:\n'+audit_context)
@@ -312,6 +421,10 @@ class Construction:
                 audit=by_index.get(i,{'source_compatibility':'unresolved','questions':['Missing reviewer item']})
                 if audit.get('source_compatibility')=='contradicted' or audit.get('background_is_factual_patch') is True:continue
                 variant['semantic_review']=audit
+                variant['generated_function_identification']=variant.get('function_identification','unidentified')
+                variant['function_identification']=audit.get('exact_function_identification','unassessed')
+                if variant['function_identification'] not in ('identified','partially_constrained','unidentified','unassessed'):variant['function_identification']='unassessed'
+                if audit.get('source_compatibility')=='unresolved' and variant['function_identification']=='identified':variant['function_identification']='unassessed'
                 variant.setdefault('short_mechanism','Assumed rule; inspect behavior table')
                 variant['generated_description']=variant.get('description','')
                 variant['description']=variant['behavior']['derived_description']
@@ -358,23 +471,46 @@ class Construction:
             except (RuntimeError,ValueError) as error:
                 last_error=error;atomic_json(self.folder/('representation_failure_%d.json'%representation_attempt),{'error':str(error),'variables':variables})
                 if representation_attempt:raise
-                context,_=self.context([s for n in variables['nodes'] for s in n['segments']],self.case['outcome'],16000)
-                prompt=('Revise this inadequate variable representation using ONLY the contextual evidence. You may alter definitions, domains, references or replace/drop unsupported variables; do not supply a desired outcome mechanism or residual merely to force agreement. '
-                    'Return {"outcome":"ID","nodes":[same variable schema, with time numeric episode code or null],"assumptions":[]}. '
+                context,context_ids=self.context([s for n in variables['nodes'] for s in n['segments']],self.case['outcome'],10000)
+                prompt=('Revise the inadequate parts of this variable representation using ONLY contextual evidence. You may alter definitions, domains or references, split a composite event, or drop an unsupported variable. Do not supply a desired outcome mechanism or residual merely to force agreement. '
+                    'Return {"replacements":[complete revised variable records for existing IDs, at most four],"new_nodes":[at most three new substantive records],"drop_ids":[],"assumptions":[]}. '
+                    'Keep all other variables unchanged. Use the shown variable schema; time must be a numeric episode code or null. No equations or parents yet. '
                     'Keep the supplied outcome meaning/time fixed. Every factual state needs source references.\nOUTCOME: '+self.case['outcome']+'\nDIAGNOSTIC: '+str(error)+
-                    '\nCURRENT VARIABLES:\n'+json.dumps(variables['nodes'])+'\nPASSAGES:\n'+context)
+                    '\nCURRENT VARIABLES:\n'+json.dumps([node_view(n) for n in variables['nodes']])+'\nPASSAGES:\n'+context)
                 def check(response):
-                    for n in response['nodes']:
+                    replacements=response.get('replacements',[]);new=response.get('new_nodes',[]);drop=response.get('drop_ids',[])
+                    if len(replacements)>4 or len(new)>3 or variables['outcome'] in drop:raise ValueError('Invalid bounded representation revision')
+                    current={n['id']:n for n in variables['nodes']}
+                    if any(n['id'] not in current for n in replacements) or set(drop)-set(current):raise ValueError('Unknown replacement/drop ID')
+                    for n in replacements+new:
                         check_spec(n)
-                        if not valid_value(n['observed'],n) or not valid_value(n['reference'],n) or not n.get('segments') or set(n['segments'])-set(self.segments):raise ValueError('Invalid revised variable')
-                    return response
+                        if not valid_value(n['observed'],n) or not valid_value(n['reference'],n) or not n.get('segments') or set(n['segments'])-set(context_ids):raise ValueError('Invalid revised variable')
+                        n.setdefault('time',None)
+                    updated={n['id']:n for n in replacements}
+                    nodes=[updated.get(n['id'],n) for n in variables['nodes'] if n['id'] not in drop]+new
+                    if len({n['id'] for n in nodes})!=len(nodes):raise ValueError('Repeated revised variable ID')
+                    return dict(variables,nodes=nodes,assumptions=variables.get('assumptions',[])+response.get('assumptions',[]))
                 variables=self.audit_events(self.artifact('representation_revision',prompt,check,4096))
         identifiers=[n['id'] for n in blueprint['nodes']]
         choices=[dict.fromkeys(identifiers,0)]
-        for ident in identifiers:
-            for index in range(1,len(options[ident])):
-                choice=dict.fromkeys(identifiers,0);choice[ident]=index;choices.append(choice)
-        choices=choices[:12]  # deterministic local perturbations, not selected by allocation values
+        adjacency=nx.DiGraph();adjacency.add_nodes_from(identifiers)
+        adjacency.add_edges_from((p,n['id']) for n in blueprint['nodes'] for p in n['parents'])
+        ordered=list(reversed(list(nx.lexicographical_topological_sort(adjacency))))
+        # Cover downstream and upstream alternatives before a second local
+        # variant, then reserve bounded joint choices for interacting uncertainty.
+        for index in range(1,max(map(len,options.values()))):
+            for ident in ordered:
+                if index<len(options[ident]):
+                    choice=dict.fromkeys(identifiers,0);choice[ident]=index
+                    if choice not in choices:choices.append(choice)
+        choices=choices[:9]
+        joint={n:len(options[n])-1 for n in identifiers}
+        if joint not in choices:choices.append(joint)
+        rng=random.Random(2801)
+        for _ in range(48):
+            joint={n:rng.randrange(len(options[n])) for n in identifiers}
+            if joint not in choices:choices.append(joint)
+            if len(choices)>=12:break
         models=[];seen=set()
         for choice in choices:
             nodes=[];background={}
@@ -382,6 +518,9 @@ class Construction:
                 variant=options[original['id']][choice[original['id']]]
                 node=dict(original,**{k:variant[k] for k in ('expr','noise','description','short_mechanism')})
                 node.update(assumptions=variant.get('assumptions',[]),function_identification=variant.get('function_identification','unidentified'),behavior=variant['behavior'])
+                node.update(generated_description=variant.get('generated_description',''),
+                    generated_function_identification=variant.get('generated_function_identification','unassessed'),
+                    function_review=variant.get('semantic_review',{}))
                 background.update(variant.get('background',{}))
                 if not node['parents']:
                     background['U_'+node['id']]={k:node[k] for k in ('type','values','bounds','observed') if k in node}
@@ -389,6 +528,8 @@ class Construction:
             model={'id':self.case['id']+'_v2_m%02d'%len(models),'outcome':blueprint['outcome'],'nodes':nodes,'background':background,
                 'assumptions':blueprint.get('assumptions',[])+blueprint.get('graph_proposal',{}).get('assumptions',[]),
                 'outcome_definition':self.case['outcome'],'protocol':PROTOCOL,'local_choice':choice}
+            model['assumptions'] += ['Reference interpretation remains unresolved for '+n['id']+': '+n.get('reference_meaning','') for n in nodes if n.get('reference_status')=='unresolved']
+            model['assumptions'] += ['Exact function '+n['id']+' is '+n['function_identification']+'; its executable form is a retained hypothesis.' for n in nodes if n['parents'] and n['function_identification']!='identified']
             scm=SCM(model);signature=fingerprint([inspect_mechanism(scm,n)['signature'] for n in scm.order])
             if signature not in seen:models.append(model);seen.add(signature)
         principal=self.evidence(models[0])
@@ -428,7 +569,7 @@ class Construction:
             'explanation':explanation,'reviewer_controls':control,'trace':trace,'prose_review_source_ids':prose_sources,
             'alternatives':{'retained_functionally_distinct':len(models),'distinct_query_vectors':len({tuple(q['modeled_outcome'] for q in r['queries']) for r in records}),
                 'local_options':{n:len(v) for n,v in options.items()},'cartesian_options':__import__('math').prod(len(v) for v in options.values()),
-                'coverage':'Baseline plus single-local-function changes, at most 12, deterministic order; not exhaustive across combined changes or alternative graphs. No frequency interpretation.'},
+                'coverage':'At most 12: baseline, up to eight round-robin single-function changes in reverse topological order, then bounded joint changes including the all-last-option choice and seeded combinations (seed 2801). Chosen before outcomes/allocations; not exhaustive across combined mechanisms or alternative graphs. No frequency interpretation.'},
             'source_review':'Automated same-model contextual assessment; independent researcher adjudication pending.'}
         atomic_json(self.folder/'final.json',output);return output
 

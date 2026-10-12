@@ -36,3 +36,15 @@ def test_unverifiable_launch_is_not_registered(tmp_path, monkeypatch):
     with pytest.raises(RuntimeError, match='identity could not be verified'):
         b.launch([sys.executable, '-c', 'import time; time.sleep(30)'], 'unverified')
     assert not (b.run/'processes.json').exists()
+def test_concurrent_checkpoint_writers_keep_complete_json(tmp_path):
+    from concurrent.futures import ThreadPoolExecutor
+    import json
+    from got_war.budget import atomic_json
+    destination=tmp_path/'shared_summary.json'
+    def write(worker):
+        for i in range(20):atomic_json(destination,{'worker':worker,'iteration':i,'payload':'x'*4096})
+    with ThreadPoolExecutor(max_workers=4) as pool:list(pool.map(write,range(4)))
+    result=json.loads(destination.read_text())
+    assert result['worker'] in range(4) and result['iteration']==19 and result['payload']=='x'*4096
+    assert list(tmp_path.glob('*.tmp.*'))==[]
+

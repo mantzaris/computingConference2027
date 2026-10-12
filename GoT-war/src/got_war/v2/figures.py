@@ -30,18 +30,18 @@ def network(app,folder):
     participation=collections.Counter(n for p in record['selection']['paths'] for n in p)
     source=set(record['selection']['source_boundary']);edges=record['edge_evidence']
     lines=['digraph G {','graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.25", ranksep="0.38", splines=polyline, outputorder=edgesfirst];',
-           'node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=13, color="#38515d", margin="0.12,0.09"];',
-           'edge [fontname="DejaVu Sans", fontsize=10, arrowsize=.65, penwidth=1.2];']
+           'node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=16, color="#38515d", margin="0.10,0.07"];',
+           'edge [fontname="DejaVu Sans", fontsize=15, arrowsize=.65, penwidth=1.2];']
     index=[]
     for i,ident in enumerate(scm.order):
-        n=scm.nodes[ident];title='<BR/>'.join(html.escape(x) for x in textwrap.wrap(n['label'],24))
-        rule='<BR/>'.join(html.escape(x) for x in textwrap.wrap(n.get('short_mechanism','Fixed boundary input'),29))
+        n=scm.nodes[ident];title='<BR/>'.join(html.escape(x) for x in textwrap.wrap(n['label'],18))
+        rule='<BR/>'.join(html.escape(x) for x in textwrap.wrap(n.get('short_mechanism','Fixed boundary input'),20))
         factual=trace['factual_states'][ident];counter=trace['counterfactual_states'][ident]
         state=str(factual)+' → '+str(counter) if ident in changed else str(factual)+' → '+str(counter)+' (same)'
         bg='#e9f4f2' if n['parents'] else '#fff4db';color='#9b3150' if n.get('event_status')=='unsupported' else '#315467'
         if ident in changed:color='#6f42a8'
         if ident==model['outcome']:bg='#d4e8f0'
-        label='<'+title+'<BR/><FONT POINT-SIZE="11">'+rule+'</FONT><BR/><FONT POINT-SIZE="10">'+html.escape('E%d · %s · %s'%(i+1,n.get('event_time','time unresolved'),state))+'</FONT>>'
+        label='<'+title+'<BR/><FONT POINT-SIZE="15">'+rule+'</FONT><BR/><FONT POINT-SIZE="15">'+html.escape('E%d · %s'%(i+1,n.get('event_time','time unresolved')))+'<BR/>'+html.escape(state)+'</FONT>>'
         lines.append('"%s" [label=%s, fillcolor="%s", color="%s", penwidth=%s, peripheries=%d];'%(ident,label,bg,color,2 if ident in changed else 1.2,2 if participation[ident]>1 else 1))
         index.append({'equation_id':'E%d'%(i+1),'node':ident,'label':n['label'],'definition':n['definition'],
             'equation':equation(n['expr']),'factual':factual,'counterfactual':counter,'event_status':n.get('event_status'),'sources':n['segments']})
@@ -62,17 +62,17 @@ def network(app,folder):
 
 def benchmark(summary,folder):
     import matplotlib.pyplot as plt
-    methods=['B0','B1','B2','ALT','CARRY'];labels=['Direct LLM','Graph + LLM','One model','Alternatives','Carry forward']
+    methods=['B0','B1','B2','ALT','CARRY'];labels=['B0','B1','B2','ALT','Carry']
     colors=['#8b8e96','#7593ac','#b57952','#227d78','#bbbbbb']
     rows={r['method']:r['metrics'] for r in summary['tables'] if r['condition']=='all'}
     metrics=[('identified_correct','Identified interventions'),('changed_correct','Outcome changes'),('unchanged_correct','Outcome preserved'),('uncertainty_appropriate','Underidentified questions')]
-    fig,axes=plt.subplots(2,2,figsize=(7,5.4),sharex=True,layout='constrained')
+    fig,axes=plt.subplots(2,2,figsize=(5,5),sharex=True,layout='constrained')
     for ax,(metric,title) in zip(axes.flat,metrics):
         for i,method in enumerate(methods):
             r=rows[method][metric];x=r['estimate']
             if x is None:continue
             ax.errorbar(x,i,xerr=[[max(0,x-r['lower'])],[max(0,r['upper']-x)]],fmt='o',color=colors[i],capsize=3,ms=6)
-        ax.set(yticks=range(5),yticklabels=labels,xlim=(-.025,1.025),title=title,xlabel='SCM mean with 95% interval')
+        ax.set(yticks=range(5),yticklabels=labels,xlim=(-.025,1.025),title=title,xlabel='SCM mean (95% interval)')
         ax.invert_yaxis();ax.grid(axis='x',alpha=.2)
     save(fig,folder,'benchmark_components');plt.close(fig)
 
@@ -82,7 +82,7 @@ def application_plots(app,folder):
     records=app['records'];principal=records[0];paths=principal['selection']['paths'];n=len(paths)
     labels=['p%d'%(i+1) for i in range(n)]
     shares=np.asarray([r['attribution']['phi'] for r in records]);support=[p['evidence_support'] for p in principal['evidence_priority']['paths']]
-    fig,axes=plt.subplots(1,2,figsize=(7,3.4),layout='constrained')
+    fig,axes=plt.subplots(2,1,figsize=(5,4.6),layout='constrained')
     ax=axes[0]
     for i in range(n):
         ax.plot([i]*len(records),shares[:,i],'o',color='#387f86',alpha=.5,ms=4)
@@ -91,7 +91,7 @@ def application_plots(app,folder):
     axes[1].bar(range(n),support,color=['#a56868' if v==0 else '#408c87' for v in support])
     axes[1].set(xticks=range(n),xticklabels=labels,ylim=(0,1.05),ylabel='Weakest directional support',title='Evidence is separate from influence')
     save(fig,folder,'path_influence_evidence');plt.close(fig)
-    fig,axes=plt.subplots(1,2,figsize=(7,3.2),layout='constrained')
+    fig,axes=plt.subplots(2,1,figsize=(5,4.8),layout='constrained')
     values=principal['attribution']['coalition_values'];counts=collections.Counter(values)
     axes[0].bar([str(k) for k in sorted(counts)],[counts[k] for k in sorted(counts)],color='#477e9c')
     axes[0].set(xlabel='Computed coalition outcome',ylabel='Number of coalitions',title='All selected-path coalitions')

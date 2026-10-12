@@ -22,7 +22,8 @@ def structured_record(trace):
         'paths':[dict(path_id='p%d'%(i+1),nodes=path) for i,path in enumerate(trace['paths']['paths'])],
         'largest_absolute_ties':attr['largest_absolute_ties'],'all_paths_required':attr['all_paths_required'],
         'evidence_status':trace['ranking_status'],'evidence_paths':[
-            {k:v for k,v in row.items() if k in ('path_id','nodes','evidence_support','signed_contribution')}
+            dict({k:v for k,v in row.items() if k in ('path_id','nodes','evidence_support','signed_contribution')},
+                 segment_ids=sorted(row.get('segment_allocation',{})))
             for row in trace['evidence_priority']['paths']],
         'mechanisms':trace.get('mechanisms',[]),'assumptions':trace['assumptions'],'interpretation':trace['interpretation'],
         'source_context':trace.get('source_context','Source passages not supplied to this trace-only review.'),
@@ -60,10 +61,24 @@ def deterministic_check(sentences, record):
                 errors.append({'sentence':item['id'],'type':'invalid_structured_number','claim':claim})
         for ident in re.findall(r'\bp\d+\b',text):
             if ident not in {p['path_id'] for p in record['paths']}:errors.append({'sentence':item['id'],'type':'unknown_path','value':ident})
+        for ident in re.findall(r'\b(?:V\d{2,}|X\d{2,}|W)\b',text):
+            if ident not in record['factual_states']:errors.append({'sentence':item['id'],'type':'unknown_variable','value':ident})
+        # Check explicit numeric outcome assertions against their actual field,
+        # not merely whether the number occurs somewhere in the record. More
+        # complex prose/negation still requires the separate semantic review.
+        for phrase,field in [('factual outcome','factual_outcome'),('single-model counterfactual outcome','single_model_counterfactual_outcome')]:
+            for value in re.findall(r'\b'+phrase+r'\s+(?:is|equals|=)\s+(-?\d+(?:\.\d+)?)',text,re.I):
+                if field in record['numbers'] and abs(float(value)-record['numbers'][field])>1e-6:
+                    errors.append({'sentence':item['id'],'type':'outcome_value_mismatch','field':field,'value':value})
         if len(record['largest_absolute_ties'])>1 and re.search(r'\b(unique|uniquely|strongest|largest)\b',text,re.I) and not re.search(r'\b(tie|tied|equal|among)\b',text,re.I):
             errors.append({'sentence':item['id'],'type':'unqualified_largest_among_ties'})
         if re.search(r'\b(probability|probabilities|likelihood)\b',text,re.I) and not re.search(r'\b(not|neither|no|cannot|aren.t|isn.t)\b',text,re.I):
             errors.append({'sentence':item['id'],'type':'unsupported_probability_interpretation'})
+    if record.get('query') and sentences:
+        joined=' '.join(s['text'] for s in sentences)
+        terms=('outcome',record['query']['target'],record.get('outcome_label',''))
+        if not any(t and re.search(r'\b'+re.escape(t)+r'\b',joined,re.I) for t in terms):
+            errors.append({'type':'outcome_not_identified'})
     return {'passed':bool(sentences) and not errors,'errors':errors,
         'scope':'Numbers, identifiers, tie qualifications and probability terminology; semantic correctness still requires review.'}
 
@@ -101,7 +116,7 @@ def generate(gen, trace, seed=2701):
         'numeric_claims may cite ONLY a key in the numbers object, with its exact supplied value. For statements without such a number use numeric_claims: []. '
         'Never create numeric claims for assumptions, evidence_status, possible_outcomes as a whole, or a segment ID. Use the individual possible_outcome_N keys. '
         'A zero influence-weighted priority does not mean the underlying passage has no directional support. '
-        'State the actual intervention and distinguish the computed outcome set from an observed fact. '
+        'State the actual intervention and identify the outcome using its target ID, full label, or the word outcome. Distinguish the computed outcome set from an observed fact. '
         'No headings and no source facts outside the record.\nCOMPUTED RECORD:\n'+json.dumps(record))
     attempts=[];sentences=[];check={'passed':False,'errors':[]}
     for attempt in range(2):
