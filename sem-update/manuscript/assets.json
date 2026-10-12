@@ -1,0 +1,72 @@
+{
+  "template_url": "https://saiconference.com/Computing/CallforPapers",
+  "template_archive_sha256": "d5ed3f489b336450dd98e4f33844c44e842a6d022f84b0ef868dc19dcf84abc8",
+  "assets": {
+    "figures/overview.pdf": {
+      "source": ".artifacts/manuscript_draft/figures/overview.pdf",
+      "sha256": "2f459128fab0fe1ce20794828e8d95f8abe7d345871d838c2c67b16bb0bfd8ed",
+      "bytes": 710888,
+      "kind": "figure"
+    },
+    "figures/controlled.pdf": {
+      "source": ".artifacts/manuscript_draft/figures/controlled.pdf",
+      "sha256": "483f177d6e8362b8398cda843631f461b85c1d4af7e0fe8938e5bd93fde31a55",
+      "bytes": 713440,
+      "kind": "figure"
+    },
+    "figures/scaling.pdf": {
+      "source": ".artifacts/manuscript_draft/figures/scaling.pdf",
+      "sha256": "f25603ac78f161e7d75d530c434abf1d96fdad5010858e579842e6d3b9d3d456",
+      "bytes": 398408,
+      "kind": "figure"
+    },
+    "figures/physical_cost.pdf": {
+      "source": ".artifacts/manuscript_draft/figures/physical_cost.pdf",
+      "sha256": "3baea101a74e8a2ff6a5818d1ef842f119acdca41c252bbd72876c415674f9b8",
+      "bytes": 388425,
+      "kind": "figure"
+    },
+    "figures/responses.pdf": {
+      "source": ".artifacts/manuscript_draft/figures/responses.pdf",
+      "sha256": "49195830c955cf068fc7fe21a6ceb911a97a8bff00e949a06b5bdedbf0d2d8a9",
+      "bytes": 398090,
+      "kind": "figure"
+    },
+    "figures/A_process_graph.pdf": {
+      "source": "phase4_real_application/figures/A_process_graph.pdf",
+      "sha256": "7e414d3302fa8d3105859f92395947c9feb05773ccc1916ac36562077d5de2cf",
+      "bytes": 31758,
+      "kind": "figure"
+    },
+    "figures/S_M5_component_1.pdf": {
+      "source": ".artifacts/phase4_real_application/figures/S_M5_component_1.pdf",
+      "sha256": "5c42003084c55247c257c69a26cf12b9ad30e5cde3b4769c3dbc844421896108",
+      "bytes": 26250,
+      "kind": "figure"
+    },
+    "figures/S_M5_component_2.pdf": {
+      "source": ".artifacts/phase4_real_application/figures/S_M5_component_2.pdf",
+      "sha256": "5903d7d13b80fb4b1f354b2de4dc3acae43317f8b12f0d446f83abeaad0d6ba0",
+      "bytes": 26570,
+      "kind": "figure"
+    },
+    "svproc.cls": {
+      "source": ".artifacts/data/raw/venue/SAI_Paper_Format_Latex_Conference.zip#Latex/template/svproc.cls",
+      "sha256": "ddfc1f23edfbb51f13bb6a6e427b63c41cc9a965f08a3bc65e83c81ee9ae9560",
+      "bytes": 44207,
+      "kind": "template"
+    },
+    "aliascnt.sty": {
+      "source": ".artifacts/data/raw/venue/SAI_Paper_Format_Latex_Conference.zip#Latex/template/aliascnt.sty",
+      "sha256": "8d17979fd3ca18f4ac7a379d039f47bf63ffe0409d19c5399d6f3611ed50f9d5",
+      "bytes": 2598,
+      "kind": "template"
+    },
+    "remreset.sty": {
+      "source": ".artifacts/data/raw/venue/SAI_Paper_Format_Latex_Conference.zip#Latex/template/remreset.sty",
+      "sha256": "d8b2679ec5c20723a4766690cd46b6bc0ffd20a6555205cefc1521ecb65794a4",
+      "bytes": 1096,
+      "kind": "template"
+    }
+  }
+}

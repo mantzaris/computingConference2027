@@ -1,0 +1,11 @@
+# Local compiler output and caches.
+/build/
+/draft.pdf
+# Output from direct compilation of the portable source folder.
+/main.aux
+/main.log
+/main.out
+/main.pdf
+/main.fls
+/main.fdb_latexmk
+/main.synctex.gz

@@ -1,0 +1,1188 @@
+\documentclass{svproc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+% Preserve the existing NewTX mathematical fonts and alphabets.
+\renewcommand{\rmdefault}{ntxtlf}
+\renewcommand{\sfdefault}{qhv}
+\renewcommand{\ttdefault}{ntxtt}
+\makeatletter
+\def\qhv@scale{0.9}
+\makeatother
+\usepackage{newtxmath}
+\usepackage[no-math]{fontspec}
+\setmainfont{Times New Roman}[
+  UprightFont={Times New Roman},
+  BoldFont={Times New Roman Bold},
+  ItalicFont={Times New Roman Italic},
+  BoldItalicFont={Times New Roman Bold Italic},
+  Ligatures=TeX,
+  % Retain the previous newtxtext interword and sentence spacing.
+  FontAdjustment={\fontdimen2\font=.25em
+                  \fontdimen3\font=.2em
+                  \fontdimen4\font=.1em
+                  \fontdimen7\font=.111em}
+]
+% Keep the previous sans-serif math and monospaced code typography.
+\SetMathAlphabet{\mathsf}{normal}{T1}{qhv}{m}{n}
+\SetMathAlphabet{\mathsf}{bold}{T1}{qhv}{b}{n}
+\SetMathAlphabet{\mathtt}{normal}{T1}{ntxtt}{m}{n}
+\SetMathAlphabet{\mathtt}{bold}{T1}{ntxtt}{b}{n}
+\makeatletter
+\DeclareRobustCommand{\ttfamily}{%
+  \not@math@alphabet\ttfamily\mathtt
+  \fontencoding{T1}\fontfamily{ntxtt}\selectfont}
+\makeatother
+\usepackage{graphicx,booktabs,array}
+\usepackage{xurl}
+\emergencystretch=1em
+\def\UrlFont{\rmfamily}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Graph Repair and Intervention Prediction with Generative Structural Equation Models},pdfauthor={},pdfsubject={},pdfkeywords={}}
+\ifdefined\pdfsuppressptexinfo\pdfsuppressptexinfo=15\fi
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\pa}{\operatorname{pa}}
+\newcommand{\SW}{\operatorname{SW}_{1}}
+\newcommand{\NLL}{\mathcal{L}}
+\newcommand{\artfig}[1]{figures/#1.pdf}
+\begin{document}
+\mainmatter
+\title{Graph Repair and Intervention Prediction with Generative Structural Equation Models}
+\titlerunning{Graph Repair and Intervention Prediction}
+\author{Anonymous}
+\authorrunning{Anonymous}
+\institute{}
+\maketitle
+\begin{abstract}
+Generative structural equation models can predict distributions under intervention,
+but their predictions depend on  graphs that are often uncertain. Editing that graph
+can improve an  average accuracy while introducing harmful changes or consuming
+computation without good repair. We study a disturbance-guided graph repair with
+conditional normalizing flows and compare two procedures that reuse the same fitted
+candidate models. Robust selection balances average and worst environment scores.
+An anchored ensemble combines complete intervention distributions while penalizing
+departure from the initial model. In a six method comparison on 15 independent
+five variable systems, disturbance guided repair achieves the lowest mean
+sliced Wasserstein error, with 0.106, while ensembles reduce observed harmful
+conditions from eight to one out of 60 at an error of 0.130. Tests on 45 additional
+systems reveal a weaker advantage as graph size increases. At 100 variables,
+single graph repair retains the initial model and the ensemble improves prediction
+only slightly. Two physical applications change the ranking. Ridge performs best
+on a light tunnel polarizer task, whereas flexible mechanisms improve wind tunnel
+intervention contrast prediction. Randomized wind tunnel measurements also expose
+a missing hatch pathway and under covering predictive intervals. These findings
+separate predictive usefulness from graph interpretation and show why repairs
+should be evaluated against an inexpensive initial model, explicit harm criteria
+and measured intervention effects.
+\keywords{Structural causal models, intervention prediction, graph repair, normalizing flows, predictive ensembles}
+\end{abstract}
+
+
+\section{Introduction}
+Predicting a fan's response at familiar settings is different from predicting
+what an external command change will do to pressure, current and noise.
+Structural causal models (SCMs) address this distinction through mechanisms that remain
+intact when other mechanisms are replaced \cite{pearl2009}. The practical value
+depends on both the mechanisms and their produced graph. Flexible conditional densities
+cannot compensate for every missing pathway produced, and a plausible graph need not
+predict interventions accurately.
+Given an imperfect directed acyclic graph (DAG) and the limited intervention data, which
+changes deserved fittings, and question 'should they replace the initial model'?
+Search can introduce harmful changes under new interventions. Average gain,
+deterioration and computation therefore require separate assessment.
+
+Our first contribution is disturbance guided repair evaluated on independent
+intervention predictions and matched fitting budgets. Inverse flows reveal
+variation unexplained by modeled parents. Dependence and distribution changes
+in these disturbances prioritize edits, while a prediction score selects the moves.
+The diagnostics are good efforts for avoiding mismatch signals, but not a proof of causal arrows.
+
+Our second contribution compares two procedures on the same fitted candidates.
+Robust selection balances average and a worst environment score changes. Anchored
+ensembling combines intervention distributions with a penalty for departing from
+the initial model. Neither procedure requires additional mechanism fitting.
+Our third contribution connects controlled comparisons to larger graphs,
+contrasting topologies and two physical applications. Diagnostic repair leads
+on small systems, while ensembling trades accuracy for fewer harms. At 100
+nodes, active single graph repair disappears. In a wind tunnel, randomized
+pressure responses expose a missing hatch pathway. The findings distinguish
+predictive benefit from structural interpretation.
+
+
+
+
+
+
+\section{Background and Related Work}
+\subsection{Mechanisms and structural information}
+In the Pearl framework, each structural equation generates a variable from its
+parents and an exogenous disturbance. An intervention replaces the assigned
+mechanism while other mechanisms remain shared \cite{pearl2009}. We use structural
+equation models in this generative sense, not as covariance exclusive 'latent factor'
+models. Causal interpretation requires assumptions about omitted causes,
+intervention targets and mechanism stability.
+
+Normalizing flows provide invertible density transformations with tractable
+Jacobians \cite{papamakarios2021}. Spline flows offer flexible scalar maps with
+analytic inversion \cite{durkan2019}. Deep structural causal models use such
+mechanisms for exogenous noise inference and causal queries \cite{pawlowski2020},
+while causal normalizing flows study their architectural and causal consistency
+\cite{javaloy2023}. We adopt these components with exact parent masks and examine
+the consequences of uncertainty in the masks.
+
+Interventions can refine the structural distinctions available from observational
+data \cite{hauser2012}. Continuous structure learning introduces differentiable
+acyclicity constraints \cite{zheng2018}. Differentiable Causal Discovery from Interventional Data (DCDI) shares intact
+neural mechanisms and includes a flow variant
+\cite{brouillard2020}. Our bounded discovery adaptation is followed by common flow
+refitting. Unlike repair, it receives no imperfect prior graph. Residual
+independence and environmental invariance also have established roles in causal
+inference \cite{peters2014,peters2016}. Our adaptive diagnostic priorities do not
+inherit those methods' identification or confidence guarantees.
+
+\subsection{Priors and predictive reliability}
+Causal Modelling Agents combine language model graph proposals, deep structural
+models and iterative amendment \cite{abdulaal2024}. ABAPC-LLM integrates fallible
+semantic constraints with available statistical evidence and studies memorization controls
+\cite{li2026}. CauScientist, a preprint, already combines hybrid initialization,
+proposed edits and intervention aware verification \cite{peng2026}. Combining
+language models with generative mechanisms and graph verification is therefore
+not our novelty claim. We evaluate a continuous data adaptation and a semantic
+prior as supplementary comparisons.
+
+Worst case risk criteria motivates the protection beyond average performance
+\cite{hashimoto2018}. Our mean/max rule uses a finite calibration set, rather than
+a distributional uncertainty set. Predictive stacking motivates combining entire
+distributions \cite{yao2018}. We fit a small mixture with the energy score
+\cite{gneiting2007} and an explicit initial model penalty. This is neither
+the Bayesian 'leave one out' stacking nor a posterior over causal graphs. The penalty
+also changes the strictly proper score's optimization target.
+
+The gap is the practical consequence of repair under finite data and compute.
+Recorded interventions from Causal Chambers \cite{gamella2025} allow us to test
+prediction, harm and graph interpretation on equipment as well as synthetic
+systems. We develop and compare repair procedures without claiming a new
+identification theorem or invention of their established components.
+\section{Methods}
+\subsection{Generative mechanisms and interventions}
+Let $G$ be a directed acyclic graph on $d$ observed variables, with parent set
+$\pa_G(j)$ for variable $j$. We represent each mechanism by a conditional
+invertible map $T_{\theta_j}$ with parameters $\theta_j$,
+\begin{equation}
+ X_j=T_{\theta_j}\bigl(U_j;X_{\pa_G(j)}\bigr),
+ \qquad U_j\sim\mathcal{N}(0,1),\qquad U_1,\ldots,U_d\ \text{independent}.
+ \label{eq:scm}
+\end{equation}
+Exact parent masks and topological evaluation define generation. Acyclicity,
+causal sufficiency and stable intact mechanisms hold in controlled systems. On
+equipment, they are predictive modeling approximations.
+
+Each scalar map consists of two rational quadratic splines followed by a conditional
+shift and positive scale. Conditional log density is the 'standard normal' log
+density of the inverse disturbance plus the inverse log Jacobian. An intervention
+on target set $I_e$ replaces those mechanisms with externally assigned values
+$a_{I_e}$. It does not condition the original target mechanism on some unusual
+observation. For environment $e$, let $x_{ei}$ be the recorded row $i$ and $n_e$ its
+sample size. The prediction density and node-balanced fitting criterion are:
+\begin{equation}
+\begin{aligned}
+ p_G^e(x_{\bar I_e}\mid a_{I_e})
+   &=\prod_{j\notin I_e}p_{\theta_j}(x_j\mid x_{\pa_G(j)}),
+       \qquad x_{I_e}=a_{I_e},\\
+ \ell_{ej}(G)&=-\frac{1}{n_e}\sum_{i=1}^{n_e}
+       \log p_{\theta_j}(x_{eij}\mid x_{ei,\pa_G(j)}),\\
+ \NLL_G(\mathcal E)&=\frac{1}{d}\sum_{j:m_j>0}\frac{1}{m_j}
+       \sum_{e\in\mathcal E:j\notin I_e}\ell_{ej}(G),
+ \quad m_j=\sum_{e\in\mathcal E}\mathbf{1}\{j\notin I_e\}.
+\end{aligned}
+\label{eq:fit}
+\end{equation}
+Here $\bar I_e$ denotes nontarget variables and $\mathcal E$ the partition's
+environments. Stochastic assignments follow the specified joint law they have.
+Uniform sampling of eligible environments and their rows estimates each node's
+loss. Fits use Adam weight decay $10^{-5}$ and separate early stop observations.
+Diagnostics do not modify this loss.
+Canonical parent set caching makes each fit independent of the search route.
+An edit refits only mechanisms with changed parents. All others remain intact.
+Grouped GPU execution keeps separate parameters and stopping states.
+
+\subsection{Disturbance priorities and the candidate bank}
+We infer disturbances on search observations and ask where the fitted mechanisms
+appear inconsistent with their assumptions. The priority of node $j$ combines
+three descriptive quantities,
+\begin{equation}
+\begin{aligned}
+ \widehat U_j&=T_{\theta_j}^{-1}(X_j;X_{\pa_G(j)}),\\
+ D_j&=\overline{z\{\operatorname{MMD}^2(\widehat U_j^e,\widehat U_j^0)\}}
+ +\overline{z\{\operatorname{HSIC}(\widehat U_j^e,X_{\pa_G(j)}^e)\}}\\
+ &\quad+\overline{z\{\operatorname{HSIC}(\widehat U_j^e,\widehat U_k^e)\}}.
+\end{aligned}
+\label{eq:diagnostics}
+\end{equation}
+Maximum mean discrepancy (MMD) compares a disturbance's distribution with a
+reference environment. The Hilbert-Schmidt independence criterion (HSIC) measures
+dependence on parents or other intact disturbances \cite{gretton2012,gretton2007}.
+Bars denote averages over available environments and, for the last term, eligible
+peers $k\ne j$. Each statistic is centered and scaled by its row permutation
+reference distribution, then truncated at zero. The scaling denominator adds
+$10^{-6}$ to the permutation standard deviation. These scores are neither
+$p$ values nor probabilities that an edge is correct. Serial dependence further
+limits their inferential interpretation on physical data.
+Legal additions, deletions and reversals are ranked by summed priorities of
+affected mechanisms, with shuffled ties and every fourth proposal random.
+Rounds evaluate up to three unseen graphs under common acyclicity, root and
+indegree constraints. A move requires score improvement $\epsilon=0.005$.
+
+The common score combines the balanced negative log likelihood, intervention
+distribution error and edge count. To support robust selection, we retain an
+exact environment decomposition. With $K$ intervention environments and shared
+noninterventional contribution $O_G$, it is
+\begin{equation}
+\begin{aligned}
+ S(G)&=\NLL_G(\mathcal E)+\frac{\beta}{K}\sum_{e=1}^K W_e(G)
+                      +\lambda\frac{|E(G)|}{d},\\
+ S_e(G)&=O_G+\frac{K}{d}\sum_{j\notin I_e}\frac{\ell_{ej}(G)}{m_j}
+                +\beta W_e(G)+\lambda\frac{|E(G)|}{d},
+ \qquad S(G)=\frac{1}{K}\sum_{e=1}^K S_e(G).
+\end{aligned}
+\label{eq:score}
+\end{equation}
+$E(G)$ is the edge set, $\beta=1$, $\lambda=0.02$, and $W_e$ is sliced-Wasserstein
+error on standardized nontarget outcomes, defined below. Search and calibration
+use 512 generated observations and 64 projections per environment. The shared
+term is the contribution of all noninterventional environments to
+Eq.~\ref{eq:fit}, not their unweighted average. In the wind tunnel there is no
+unmanipulated environment, $O_G=0$, and all command densities are omitted while
+the denominator remains the full $d=11$.
+
+The bank contains $G_0$ and every fitted candidate, including rejected search
+moves. It is frozen before calibration, audit or test access
+(Fig.~\ref{fig:overview}). Random repair builds its own bank with the same
+operations and limits, changing only proposal priority.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\textwidth]{\artfig{overview}}
+\caption{Shared mechanisms isolate selection from additional fitting. Each procedure has one audit and may return the initial model.}
+\label{fig:overview}
+\end{figure}
+
+\subsection{Average and robust selection}
+This average score repair selects from the bank using the mean calibration score,
+requiring an improvement of $\epsilon$ relative to $G_0$. It does not simply return
+the search incumbent. Robust selection compares each calibration environment
+with the same environment under $G_0$,
+\begin{equation}
+\begin{aligned}
+ \Delta_e(G)&=S_e(G)-S_e(G_0),\\
+ R_\rho(G)&=(1-\rho)\frac{1}{K}\sum_{e=1}^K\Delta_e(G)
+                    +\rho\max_e\Delta_e(G),\qquad \rho=0.5.
+\end{aligned}
+\label{eq:robust}
+\end{equation}
+The minimum-scoring candidate replaces $G_0$ only if $R_\rho\le-\epsilon$.
+Otherwise it retains $G_0$. A $\rho=0$ control reproduces average selection.
+Equation~\ref{eq:score} preserves the original objective weights. The worst
+calibration score does not bound error under unseen interventions.
+
+\subsection{Anchored predictive ensembling}
+We shortlist $G_0$ and at most two other distinct graphs with the best search
+scores. Calibration does not determine the shortlist. For components
+$G_0,\ldots,G_{L-1}$, one task-specific weight vector is then learned and frozen
+for every final setting and target,
+\begin{equation}
+\begin{aligned}
+ P_w^e&=\sum_{k=0}^{L-1}w_k P_{G_k}^e,
+           \qquad w_k\ge0,\quad \sum_k w_k=1,\quad L\le3,\\
+ \widehat w&=\arg\min_w\left\{
+       \frac{1}{K}\sum_e\widehat{\operatorname{ES}}_e(P_w)
+                   +\tau(1-w_0)^2\right\},\quad \tau=0.01,\\
+ \operatorname{ES}_e(P,y)&=\frac{\E\|Z-y\|_2-\tfrac12\E\|Z-Z'\|_2}
+                                      {\sqrt{d-|I_e|}},
+       \qquad Z,Z'\overset{\mathrm{iid}}{\sim}P,\\
+ J(w)&=w^{\mathsf T}a-\tfrac12 w^{\mathsf T}Bw+\tau(1-w_0)^2.
+\end{aligned}
+\label{eq:mixture}
+\end{equation}
+Distances use training standardized nontarget outcomes. Vector $a$ and matrix
+$B$ contain a component to observation and a component to component mean distances,
+equally weighted across environments. Fixed 512-sample component draws permit
+deterministic optimization, checked against a development simplex grid of step
+$0.005$. Unpenalized and uniform mixtures are supplementary controls.
+
+The generation draws one component per-complete observation and samples its
+intervened SCM. Graphs are not selected separately by node or averaged into an
+adjacency matrix, and weights combine predictions but not causal posterior beliefs.
+
+\subsection{A common audit}
+After calibration, each of the procedure will receive one comparison with fixed-$G_0$ flows
+on a separate audit partition. It passes only if its mean intervention distance
+is at most $1.05W_0+0.001$ and its normalized negative log likelihood is at most
+the initial value plus $0.05$. Rejection returns $G_0$ without trying another
+candidate. Audit likelihood averages the truncated joint negative log density
+divided by the number of intact variables within each environment, then averages
+environments equally. This differs deliberately from the node balanced search
+normalization. For a mixture, component joint densities are combined with
+\texttt{logsumexp} before this normalization. Averaging these nodewise mixture densities
+would describe a different model.
+
+\subsection{Prediction and harmful changes}
+The synthetic primary endpoint is a joint non-target sliced-Wasserstein error at
+new intervention settings. For empirical distributions $P,Q$ on $q$ standardized
+outcomes, unit projection directions $v_r$ and quantile functions $F^{-1}$, the
+executed approximation and harm indicator are
+\begin{equation}
+\begin{aligned}
+ W(P,Q)&=\frac{1}{RN_q}\sum_{r=1}^{R}\sum_{b=1}^{N_q}
+   \left|F^{-1}_{v_r^{\mathsf T}P}(t_b)-F^{-1}_{v_r^{\mathsf T}Q}(t_b)\right|,
+       \quad t_b=\frac{b-\tfrac12}{N_q},\\
+ R&=256,\qquad N_q=512,\qquad
+ E_2(G)=\frac{1}{K_2}\sum_{e\in\mathrm{T2}}W_e(G),\\
+ H(G)&=\mathbf{1}\left\{E_2(G)-E_2(G_0)>
+                              \max\bigl(0.001,0.05E_2(G_0)\bigr)\right\}.
+\end{aligned}
+\label{eq:evaluation}
+\end{equation}
+Here $K_2$ counts final T2 environments. The projections are normalized Gaussian
+directions with frozen seeds. Harm refers to a returned repair relative to the
+same fitted initial model. Its severity is the positive error increase, reported
+among the 'harmful conditions' as well as across all conditions. It is not assigned
+to methods that do not repair a graph. We also report marginal error, effect
+error, worst regime error, predictive coverage and, in synthetic systems,
+descendant specific errors. None is interchangeable with graph recovery.
+
+The wind tunnel primary endpoint instead targets measured actuator effects. For
+target $t$, acquisition $r$ and engineering outcome $j$, let $\widehat\delta_{trj}$
+be the generated high from -low mean and $\delta_{trj}$ the recorded contrast.
+With fitting standard deviation $s_j$, it is
+\begin{equation}
+ C=\frac{1}{3}\sum_{t=1}^{3}\frac{1}{|\mathcal R_t|}
+       \sum_{r\in\mathcal R_t}\frac{1}{5}\sum_{j\in\mathcal O}
+       \frac{|\widehat\delta_{trj}-\delta_{trj}|}{s_j},
+ \qquad \delta_{trj}=\overline Y_{trj,\mathrm{high}}-
+                         \overline Y_{trj,\mathrm{low}}.
+\label{eq:contrast}
+\end{equation}
+$\mathcal R_t$ contains the reserved acquisitions for that target, and $\mathcal O$
+contains two current and three pressure outcomes. Nuisance commands are fixed
+within each randomized contrast. This error is not numerically comparable to
+the synthetic sliced Wasserstein error. Wind tunnel harm remains a secondary
+distributional check using the threshold in Eq.~\ref{eq:evaluation}, applied per
+reserved acquisition relative to fixed flows.
+
+
+\section{Experimental Design}
+\subsection{Methods and information available}
+Independent empirical marginals (M0) use an empty graph and predict no downstream
+effects. Their continuous density likelihood is unavailable. Ridge (M1) fits
+linear Gaussian mechanisms on the same initial graph $G_0$ supplied to repair,
+with an unpenalized intercept and residual variance floor $10^{-4}$. Separate
+development data select regularization from $\{0.001,0.01,0.1,1\}$, giving $0.1$
+for synthetic systems and $1$ for the wind tunnel.
+
+DCDI-DSF plus common flows (M2) discovers a graph without $G_0$, then refits the common
+spline mechanisms. Its official deep sigmoidal flow density is used with a bounded
+CUDA optimization adaptation. Thresholding and removal of the weakest offending
+edges enforce acyclicity and the common indegree limit. We distinguish valid
+projected predictions from optimizer convergence and from native DCDI.
+
+Diagnostic repair (M3), robust selection (M4) and the anchored ensemble (M5) share
+one fitted bank. Fixed-$G_0$ flows isolate mechanism flexibility. Random priority
+repair changes the scheduling policy while retaining legal edits and limits.
+Oracle flows use the true graph only on a prespecified subset. Synthetic truth
+is restricted to generation, controlled prior corruption, oracle fitting and
+isolated evaluation, never ordinary selection or language-model prompts.
+
+
+\subsection{Controlled systems and structural complexity}
+The principal comparison contains fifteen independent five-node SCMs, five each
+with linear, nonlinear additive and nonlinear heteroscedastic mechanisms. Two
+intervention budgets and two priors give sixty matched conditions. Nonlinear
+mechanisms include bounded parent effects and interactions. Corruption levels
+$c=0.2,0.5$ request $\max(1,\operatorname{round}(c|E|))$ legal edits, cycling through
+addition, deletion and reversal in randomized order. These are edit counts,
+not guaranteed fractions of incorrect edges. Actual structural Hamming distance (SHD) is recorded. Ridge, fixed flows and
+repair receive this imperfect prior.
+
+Scaling uses thirty independent SCMs across 20, 50 and 100 nodes, five additive
+and five heteroscedastic systems per size. Two priors give sixty conditions.
+Weakly connected sparse graphs have $2d-3$ edges. Mechanisms combine signed smooth
+parent functions, bounded interactions and positive parent dependent noise
+scales. Degree normalization prevents numerical explosion. A frozen numerical
+rejection rule set excluded no primary system aspect.
+Fifteen additional 50 node heteroscedastic SCMs examine dense, hub and deep
+profiles. Each has five systems and two priors. Hub and deep graphs have 97
+edges. Deep graphs have 49 edge longest paths but limited unlabeled topological
+diversity. Dense graphs have 322 edges and mean indegree 6.44. Common indegree
+limits of three for sparse/deep, six for hubs and eight for dense graphs admit
+the truth. Randomized labels conceal generating topological order.
+
+Fitting, early stopping, search, calibration and audit have observational counts
+4,096, 1,024, 1,024, 512 and 512. Only fitting observations define standardization.
+Five node systems have three visible intervention targets, each with $B=100$ or
+$400$ nontest observations allocated 50\%, 10\%, 20\%, 10\% and 10\% across
+these roles. All roles count toward $3B$. Scaling holds visible target coverage
+at 20\% with $B=400$, giving 1,600, 4,000 and 8,000 intervention observations.
+This controls coverage, not total experimental data. Targets are selected
+independently of graph and method outcomes.
+Familiar assignments are normal with standardized mean $+1$ and standard
+deviation $0.25$. T1 uses fresh observations at those settings. Primary T2 changes
+the mean to $-1$. T3 uses unseen targets at mean $+1$, two targets in five node
+systems and another 20\% of nodes in scaling. Each final environment uses 2,048
+observations and the same number of generated predictions per method. Repeated
+budgets, priors and targets do not increase independent-SCM counts. Development
+systems and final systems have separate seeds.
+
+
+
+\subsection{Two physical applications}
+Both applications use Causal Chambers measurements \cite{gamella2025}. The
+light tunnel task models the color  red, green and blue commands, current, a polarizer
+command and its angle readout from \nolinkurl{lt_interventions_standard_v1}.
+It tests a reserved stronger polarizer regime with firmware quantized setpoints,
+not transmitted light intensity. Sensor setting interventions are excluded here.
+Separated within acquisition segments with guard gaps supply the non-test roles,
+using 6,472 reference policy and 1,600 targeted rows. Each final regime is one
+acquisition. This is an exploratory application on a familiar apparatus, not
+independent physical replication.
+
+The wind tunnel study asks how fan duty and hatch opening affect pressure,
+speed and current. We audited \nolinkurl{wt_walks_v1} and
+\nolinkurl{wt_validate_v1}, using actual measurements and protocols. The model
+contains eleven quantities: two fan duty fractions, hatch angle, two speeds in
+rpm, two currents in amperes, three pressures relative to ambient in pascals,
+and ambient pressure. Pressure is not airflow. Sensor reference voltages are not
+motor supply voltages, so current is not converted to power. Microphone
+oversampling differs between training and validation, precluding a compatible
+joint acoustic model. Separate microphone circuit voltages are not calibrated
+decibels.
+
+Development used 14,000 recorded rows. Speed-settling estimates ranged from
+2.8 to 10.3 seconds. A frozen history filter, startup exclusion and three-second
+spacing select quasi-steady observations. Residual pressure autocorrelations of
+0.80 to 0.88 make the static SCM a predictive surrogate, not an identified
+instantaneous DAG. Eight trajectory files supply fitting data, with disjoint
+files for other roles. Their 3,399 non-test observations include one
+preprocessing-only row. Files share an acquisition sequence, not independent
+days. Joint command assignments and sensor settings are preserved. Commands and
+ambient pressure are declared roots. Gaussian model selection by the Bayesian information criterion initializes
+$G_0$ from fitting rows, without the reference graph. All command mechanisms are replaced at prediction.
+
+The primary wind test has 699 measurements in five randomized acquisitions,
+with ten-second waits. Each fan changes from duty $0.01$ to $1$ with the other
+fan at $0.01$ and hatch closed. Hatch opening changes from $0^\circ$ to $45^\circ$
+with inlet/outlet duties $1/0.01$. Each fan has two acquisitions, the hatch one.
+Assignments are verified against protocols and actual commands. This tests new
+runs, settings and assignment distributions on one apparatus, with all targets
+already visible in training. Generation uses 4,096 observations per arm. Three
+shorter wait acquisitions are secondary.
+
+Five separate optical SCMs test coherent, anonymous and shuffled semantic
+metadata. A frozen Qwen3-8B \cite{yang2025} supplies actual graph proposals and
+legal-edit choices with the common verifier. A separate wind experiment compares
+semantic and fitting  only starts. Prompts exclude final measurements and reference
+graphs. Public benchmark knowledge during pretraining remains possible.
+
+\subsection{Resources and statistical analysis}
+Neural fitting, discovery and generation use one RTX PRO 4500 Blackwell with
+32,623 MiB memory. Language and flow stages run separately. The Appendix gives
+software, architecture and optimization details.
+
+Five node search permits twelve candidates with two stalled rounds. Scaling
+compares this prefix with caps of 24, 36 and 72 that continue after stalls.
+Each large discovery fit and bank has a 3,600-second ceiling. Wind banks permit
+24 graphs, 48,000 updates and 1,800 seconds. Each repair method pays the full
+bank cost plus selection, audit and prediction, despite shared execution.
+Discovery and refitting costs are separate. Matched repair comparisons use
+completed prefixes, reporting achieved work.
+
+Synthetic 95\% intervals use 2,000 family stratified SCM cluster resamples,
+retaining all paired conditions. Paired sign randomization tests use Holm
+correction \cite{holm1979} over fifteen main method pairs for five-node systems
+and 24 declared contrasts for scaling. They assume exchangeability of paired
+signs under the null. Zero observed harms do not imply zero population risk.
+
+Light tunnel intervals use 200 resamples of contiguous ten row reporting blocks.
+Wind intervals use 2,000 hierarchical resamples of acquisitions within actuator
+and ten-row blocks within acquisition. They condition on one apparatus, fitted
+models and fixed Monte Carlo samples. File exchangeability is approximate and
+there is only one hatch acquisition. Five grouped fitting file refits separately
+describe selection sensitivity. Four wind tunnel acquisition sign flip comparisons
+use Holm correction. These empirical intervals differ from predictive intervals
+for individual outcomes and do not capture all causal or calibration uncertainty.
+
+
+\section{Results}
+\subsection{Small systems favor diagnostic repair on average}
+Diagnostic repair achieves the lowest mean T2 error, 0.106
+(Table~\ref{tab:controlled}), with a gain of 0.0757 over fixed flows. It differs
+from each other main method after correction over fifteen pairs. Its paired
+difference from the robust selection is $-0.0114$, with SCM-cluster interval
+$[-0.0220,-0.0027]$ and adjusted $p=0.0469$. The difference from the ensemble is
+$-0.0240$, with interval $[-0.0379,-0.0116]$ and adjusted $p=0.0082$. This supports
+the average advantage within the tested matrix. Figure~\ref{fig:controlled}
+separates mechanism families and the repair-risk tradeoff.
+
+\begin{table}[!htb]
+\setlength{\tabcolsep}{4pt}
+\caption{Five-node T2 error, SCM-cluster 95\% intervals and charged fit/selection time. Fifteen independent systems yield 60 conditions.}
+\label{tab:controlled}
+\centering
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+ID & Method & Error [95\% CI] & Harm & Seconds\\
+\midrule
+M0 & Marginals & 0.325 [0.290, 0.359] & N/A & 0.03 \\
+M1 & Ridge & 0.194 [0.158, 0.228] & N/A & 0.04 \\
+M2 & DCDI-DSF + flows & 0.272 [0.230, 0.322] & N/A & 846.45 \\
+M3 & Diagnostic & 0.106 [0.092, 0.122] & 8/60 & 177.69 \\
+M4 & Robust selection & 0.118 [0.102, 0.135] & 7/60 & 177.66 \\
+M5 & Anchored ensemble & 0.130 [0.110, 0.151] & 1/60 & 174.97 \\
+-- & Fixed flows & 0.182 [0.147, 0.214] & N/A & 53.92 \\
+-- & Random repair & 0.142 [0.111, 0.173] & 5/60 & 161.01 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Discovery plus flows scores 0.272, with mean discovery/refitting costs of
+793/54 seconds. Twenty-nine of thirty dataset fits meet the optimizer's
+normalization specific stopping rule, but none meets the stronger per node raw
+criterion used for scaling. Five outputs require edge projection. This evaluates
+the executed adaptation and information budget, not all converged native DCDI
+implementations.
+Matched-update and time-limited comparisons also favor diagnostic repair over
+random priorities (Appendix).
+
+\subsection{Ensembling changes the accuracy and harm tradeoff}
+The ensemble has one harmful condition among sixty, versus eight for diagnostic,
+seven for robust and five for random repair. Its maximum deterioration is 0.0104 versus 0.0770 for diagnostic and robust selection. The ensemble-minus-
+diagnostic harm-frequency difference is $-0.1167$, with descriptive interval
+$[-0.2000,-0.0500]$. Removing the anchor yields error 0.1113 and eight harms.
+Uniform weights yield 0.1222 and six harms. Anchoring trades average accuracy
+for fewer observed deteriorations. 
+
+Robust selection retains $G_0$ in 38.3\% of conditions versus 25.0\% for average
+selection, yet avoids only one additional harm. Its mean worst-regime error is
+0.1702 versus 0.1484. Protecting calibration's worst score does not improve this
+held-out endpoint. Ensemble retention is 1.7\%, where any nonzero alternative
+weight counts as a mixture.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\textwidth]{\artfig{controlled}}
+\caption{Controlled prediction and repair tradeoffs. Family means use five SCMs each. Tradeoff bars are descriptive SCM-cluster 95\% intervals.}
+\label{fig:controlled}
+\end{figure}
+
+\subsection{Repair weakens with graph size and complexity}
+All six methods produce valid predictions through 100 nodes. Diagnostic repair
+has the best observed mean at 20/50 nodes, 0.0976/0.0803, versus fixed flows at
+0.1062/0.0821. At 100 nodes, diagnostic, robust and random repair always return
+$G_0$, with error 0.070146. The ensemble scores 0.070065, improving only 0.000081
+or 0.12\%, with mean initial weight 0.980. This difference is the only one below
+0.05 among 24 corrected scaling contrasts, with interval $[0.000039,0.000124]$
+and adjusted $p=0.0469$. It is practically small and conditional on fixed Monte
+Carlo streams, without uncertainty over alternative generation seeds.
+
+\begin{table}[!htb]
+\setlength{\tabcolsep}{4pt}
+\caption{Sparse scaling with adjusted search and 20 conditions per size. SHD shows initial and returned graph error. Retention differs from mixture weight.}
+\label{tab:scaling}
+\centering
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+Nodes & M3 harms & M5 harms & M3 retention & M3 SHD & M5 $w_0$\\
+\midrule
+20 & 2/20 & 0/20 & 25\% & $10.6\to10.5$ & 0.877\\
+50 & 0/20 & 0/20 & 80\% & $29.1\to28.8$ & 0.961\\
+100 & 0/20 & 0/20 & 100\% & $57.3\to57.3$ & 0.980\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Joint error falls with size even for independent marginals. Meanwhile descendant
+fractions fall from 0.301 to 0.170 to 0.137. This dilution prevents interpreting
+lower joint error as better causal prediction. At 100 nodes, ridge slightly
+outperforms fixed flows on joint error, 0.070105 versus 0.070146, but has larger
+descendant marginal error, 0.1471 versus 0.1151 (Fig.~\ref{fig:scaling}). On the
+same two prespecified 100-node SCMs, oracle flows score 0.0475 and diagnostic
+repair 0.0678. Correct structure therefore leaves predictive headroom, without
+establishing it as the only bottleneck. Structural recovery remains weak
+(Table~\ref{tab:scaling}).
+
+Structural profiles also change the outcome. Diagnostic repair scores 0.0824
+on hubs and 0.0732 on deep graphs, compared with fixed-flow errors 0.0892 and
+0.0753. On dense graphs it always retains $G_0$, scoring 0.07736. The ensemble
+scores 0.07725 there. No profile contrast survives the prespecified correction.
+Hub, deep and dense systems differ in descendant counts and response magnitudes
+as well as topology, so they do not form a simple ordered difficulty scale.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\textwidth]{\artfig{scaling}}
+\caption{Size and topology change repair benefit. Shading shows M3/M5 SCM-cluster 95\% intervals and small points M3 system means. Panel d omits M0.}
+\label{fig:scaling}
+\end{figure}
+
+Across ninety adjusted-resource conditions, the ensemble has zero harms,
+diagnostic repair two, and robust/random repair one each. At 50/100 nodes, absence of harm often reflects abstention. Zero events do
+not imply zero population risk.
+
+Diagnostic banks average 24/36/70.2 candidates and 21,515/49,090/111,713 updates
+at 20/50/100 nodes. Charged time grows to 773/1,531/3,784 seconds. At 100 nodes,
+fixed flows give identical predictions for 359 seconds. The fixed twelve-candidate
+policy scores 0.0977/0.0814/0.070146, so increased search does not rescue the
+100-node result. Diagnostic and random predictions also coincide at every
+available matched checkpoint there.
+
+All 45 large-graph discovery fits require projection and none meets raw
+acyclicity divided by $d$ below $10^{-8}$. Forty-four reach the 60,000-step cap,
+and one meets the weaker stopping rule. There is complete prediction coverage
+but no converged-only comparison. No primary training run fails numerically.
+
+\subsection{The physical applications favor different models}
+Ridge leads on the light-tunnel polarizer task, scoring 0.0856 with conditional
+interval $[0.0737,0.1141]$. Diagnostic/robust repair score 0.1349, the ensemble
+0.1460, fixed flows 0.1461 and discovery plus flows 0.1723.
+Figure~\ref{fig:physical} compares accuracy and cost within each application.
+Their different endpoints are not pooled.
+
+On the wind tunnel, fixed flows reduce standardized contrast error from ridge's
+0.8131 to 0.3602 on the same initial graph (Table~\ref{tab:wind}). Diagnostic
+repair improves it to 0.3310, nearly tied with random repair at 0.3320. Robust
+selection scores 0.3680 and the ensemble 0.3506. Thus most of the gain over
+ridge is already available through flexible mechanisms without repair.
+
+The capped and projected DCDI-DSF adaptation with common flows has the best
+observed aggregate contrast error, 0.2199. It reaches the 40,000-step cap with
+raw acyclicity divided by $d$ of $1.86\times10^{-6}$ and removes thirteen edges
+during projection. Discovery takes 671 seconds and common-flow refitting 28
+seconds. This aggregate result does not imply superiority for every outcome.
+Its upwind-pressure contrast error is 4.97 Pa versus 3.44 Pa for fixed flows,
+while its downwind-pressure error is 1.39 Pa versus 5.30 Pa. No prespecified
+formal test compares its overall lead with all competitors.
+
+\begin{table}[!htb]
+\setlength{\tabcolsep}{4pt}
+\caption{Wind-tunnel contrast error, conditional 95\% intervals, nominal 90\% marginal coverage and charged fit/selection cost.}
+\label{tab:wind}
+\centering
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Method & Contrast error [95\% CI] & Coverage (\%) & Seconds\\
+\midrule
+Marginals & 1.091 [1.051, 1.126] & 61.7 & 0.02 \\
+Ridge & 0.813 [0.773, 0.849] & 67.9 & 0.50 \\
+DCDI-DSF + flows & 0.220 [0.199, 0.246] & 73.0 & 699.31 \\
+Diagnostic & 0.331 [0.292, 0.366] & 72.2 & 296.84 \\
+Robust selection & 0.368 [0.330, 0.403] & 66.8 & 296.78 \\
+Anchored ensemble & 0.351 [0.320, 0.381] & 68.7 & 290.02 \\
+Fixed flows & 0.360 [0.330, 0.390] & 65.7 & 29.44 \\
+Random repair & 0.332 [0.293, 0.367] & 71.7 & 276.74 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+None of the four prespecified wind comparisons is significant after Holm
+correction. Nominal 90\% coverage is only 65.7\% for fixed flows, 72.2\% for
+diagnostic repair and 73.0\% for discovery plus flows. No main repair crosses
+the secondary distributional harm threshold in the five acquisitions. This
+neither resolves undercoverage nor establishes protection on the primary
+contrast endpoint. The acquisitions test one fitted repair, not five independent
+repair experiments.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\textwidth]{\artfig{physical_cost}}
+\caption{Application-specific accuracy and charged computation. Axes are logarithmic. Light-tunnel distribution error and wind-tunnel contrast error are distinct endpoints.}
+\label{fig:physical}
+\end{figure}
+
+\subsection{A process graph checked against measured effects}
+Diagnostic repair adds two edges and removes one from the fourteen-edge initial
+graph (Fig.~\ref{fig:process}). Five of fifteen selected edges occur in fewer
+than three of five grouped refits. Neither added edge recurs. This is conditional
+selection sensitivity, not a causal probability.
+
+Randomized contrasts provide a different form of evidence. With outlet duty
+$0.01$ and hatch closed, raising inlet duty from $0.01$ to $1$ increases upwind
+relative pressure by 26.51 Pa, with block interval $[25.97,26.94]$, and inlet
+current by 0.1060 A, with interval $[0.1030,0.1089]$, in the prespecified inlet
+acquisition. In the prespecified outlet acquisition, raising outlet duty with inlet duty
+$0.01$ and hatch closed reduces
+downwind relative pressure by 26.15 Pa, with interval $[25.91,26.49]$, and
+increases outlet current by 0.1079 A, with interval $[0.1039,0.1128]$. These
+measurements support actuator total effects at the stated settings. They do
+not distinguish all direct from mediated pathways in the fitted DAG.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\textwidth]{figures/A_process_graph.pdf}
+\caption{Wind-tunnel edges and randomized total effects, averaging acquisitions within actuator. Dashed selected edges occur in fewer than three of five grouped refits.}
+\label{fig:process}
+\end{figure}
+
+The most informative discrepancy is the hatch. At inlet duty $1$ and outlet
+duty $0.01$, opening it reduces upwind relative pressure by 5.43 Pa, with
+interval $[4.52,6.38]$, and downwind relative pressure by 7.61 Pa, with interval
+$[6.71,8.58]$. Yet the initial and selected diagnostic graphs leave the hatch
+disconnected. Their missing response is visible in Fig.~\ref{fig:responses}.
+An engineer relying only on this graph could overlook a measured means of
+changing pressure. The randomized result supports a total hatch effect, without
+identifying which direct arrow should be inserted.
+
+Inlet current changes by $-0.00244$ A. Its interval includes zero
+($-0.00521$ to $0.00048$ A), providing no evidence of a saving. The ensemble also
+offers no single repaired explanation: its initial component carries weight
+0.915 and the other retained component 0.085.  A separate compatible acoustic acquisition gives
+an outlet-command microphone-circuit change of 0.461 V, with interval
+$[0.259,0.657]$. Because training sensor settings differ, this is a measured
+response rather than validation of a generative acoustic model.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\textwidth]{\artfig{responses}}
+\caption{Measured and predicted means in three prespecified wind-tunnel acquisitions. Black bars show empirical 95\% intervals, not predictive intervals.}
+\label{fig:responses}
+\end{figure}
+
+The offline decision exercise also separates capabilities. A development-fixed
+upwind-pressure threshold of 6.1875 Pa defines feasibility. Each method chooses
+between the two recorded arms, minimizing predicted summed current when feasible.
+All methods choose the same low arms in all five acquisitions. Their observed
+mean-pressure violation count is zero and mean current regret is 0.000421 A.
+The hatch comparison drives this regret, but its summed-current contrast interval
+includes zero. This exercise establishes no method advantage, verified optimal
+control or energy saving. More densely recorded alternatives would be needed
+to support such decisions.
+
+\subsection{Semantic information does not establish an advantage}
+The functioning language-model comparator generates 122 valid edits, with 97
+score rejections and 25 accepted search moves. A complete-graph versus single-edit
+contract that admitted no edits is excluded as interface-failure evidence,
+rather than interpreted as failure of language-model refinement.
+
+On the wind tunnel, semantic initialization worsens every matched primary
+comparison, increasing diagnostic error from 0.3310 to 0.5020. Five semantic
+SCMs and anonymous/shuffled controls also fail to demonstrate a predictive
+benefit (Appendix). This bounds the tested prior and interface, not engineering
+knowledge in general.
+
+
+\section{Discussion}
+This study advances a practical approach to improving intervention prediction
+when the starting causal graph is uncertain. Its methodological contribution
+connects disturbance-guided search, robust selection and anchored predictive
+ensembling within a shared set of fitted candidate models. This separates
+the task of proposing structural changes from the decision to trust their
+predictions. The resulting evidence shows when graph repair provides useful
+gains, when conservative combination limits deterioration and when retaining
+the initial model offers better computational value.
+
+Disturbance-guided repair achieves the strongest average prediction in the
+principal small-system comparison. Its benefit under limited fitting budgets
+supports using inferred disturbances to direct computation toward promising
+structural changes. Anchored ensembling extends predictive combination
+\cite{gneiting2007,yao2018} by explicitly penalizing departure from the initial
+model. It reduces observed harmful conditions from eight to one out of 60,
+at some cost in average accuracy. This provides an empirical basis for treating
+resistance to deterioration as a separate design objective. Robust selection's
+weaker performance further shows that protecting the worst calibration score
+does not necessarily protect predictions under new interventions.
+
+The physical applications demonstrate why these distinctions matter beyond
+controlled benchmarks. Fixed-graph flows reduce wind-tunnel intervention-contrast
+error by approximately 56\% relative to ridge on the same starting graph,
+supporting the practical value of flexible generative mechanisms. Yet ridge
+performs best on the light-tunnel polarizer task, and diagnostic repair provides
+little advantage over random repair in the wind tunnel. These findings identify
+a useful deployment principle. The value of mechanism flexibility and the value
+of structural search should be established separately for the application.
+
+The wind-tunnel graph also illustrates how experimental evidence can make a
+predictive model more informative. Randomized measurements reveal a substantial
+hatch-induced pressure response that the fitted graph fails to represent.
+This discrepancy identifies a specific pathway requiring further investigation,
+even though the model predicts other actuator responses usefully. Experimental
+total effects therefore provide a practical check on graph interpretation.
+Undercoverage and identical operating choices further show that accurate
+average responses alone do not establish dependable uncertainty estimates or
+improved decisions.
+
+The scaling results identify a concrete challenge for further methodological
+development. At 100 nodes, single-graph repair retains the initial graph,
+while fixed flows provide identical predictions at about one tenth of the
+charged cost. A fixed acceptance tolerance applied to an increasingly averaged
+score may obscure local improvements. Subsampled diagnostics and limited
+candidate exploration may also restrict repair. These explanations remain
+untested, but motivate scale-adjusted acceptance rules, richer diagnostics
+and more effective structural moves. Ensemble generation also carries a cost,
+taking 19.96 seconds compared with 0.62 seconds for diagnostic repair at
+identical sample counts. These shared-device timings include worker contention
+and should be interpreted as workflow costs rather than isolated hardware
+benchmarks.
+
+The scope of the evidence remains bounded by five systems per mechanism or
+topology cell and physical measurements from individual apparatuses with serial
+dependence. Shared ambient measurement error, omitted temperature and fluid
+pathways challenge independent-disturbance assumptions. Sparse operating support
+limits extrapolation, and semantic priors may contain benchmark knowledge.
+The results establish predictive and computational tradeoffs under the tested
+conditions, without establishing causal identification or universal protection
+from harmful changes.
+
+The next physical experiments should directly address the gaps exposed by the
+models. Randomized fan and hatch grids repeated across separate days would
+strengthen estimates of actuator effects and their stability. Longer response
+traces would support temporal mechanisms, while calibrated motor voltage and
+acoustics would enable power and sound-pressure analysis. Denser recorded
+operating alternatives would allow a stronger test of whether improved
+intervention predictions translate into better engineering decisions.
+
+\section{Conclusion}
+This work develops and evaluates a framework for improving intervention
+prediction through disturbance-guided graph repair and conservative use of
+candidate models. Diagnostic repair delivers the lowest average error in the
+principal small-system comparison, while anchored ensembling substantially
+reduces observed harmful changes. Together, these results establish a practical
+accuracy and deterioration tradeoff when updating an uncertain causal model.
+
+Evaluation across larger graphs and two physical applications clarifies where
+these benefits hold and where further development is needed. Flexible
+generative mechanisms improve wind-tunnel effect prediction, while randomized
+measurements expose an important pathway missing from the fitted graph.
+At larger scales, retaining the initial model can offer better computational
+value than continued search. The central contribution is an approach that
+connects predictive improvement with explicit checks on deterioration, cost
+and experimental interpretation, providing a foundation for more dependable
+generative causal models.
+
+\section*{Declaration on Generative AI}
+Generative AI assisted code development, and the workflow execution with remote the GPU.
+It supported the language editing of the paper's draft.
+Human authors retain responsibility for
+the methods, interpretation and final manuscript.
+\label{maintext-end}
+\clearpage
+
+
+
+
+\section*{Appendix}\label{appendix-start}
+
+\subsection*{Implementation and resource details}
+Spline mechanisms use eight bins, linear tails beyond magnitude five and two
+width-64 SiLU hidden layers. The positive final scale is $0.05$ plus a softplus
+output. Adam uses learning rate $0.001$, batch size 256 and coupled weight decay
+$10^{-5}$. The latter adds the gradient of
+$\tfrac12 10^{-5}\|\theta_j\|_2^2$ during fitting, but is not added to the graph
+score. Early likelihood is checked every fifty updates, with patience five and
+improvement tolerance $10^{-5}$. Maximum updates are 1,000 per mechanism in
+synthetic comparisons and 800 in the wind tunnel. The best early-stop checkpoint
+is reused. Parent-set keys include data roles, preprocessing, ordered parents,
+architecture, optimizer and implementation identity.
+
+Diagnostics use Gaussian kernels averaged across bandwidths $0.5,1,2$ for
+disturbances. The parent kernel bandwidth is the square root of the number of
+parents. The five-node comparison uses at most 256 rows and 32 permutations.
+Scaling and wind-tunnel diagnostics use 64 rows, 16 permutations, up to eight
+peers and four additional intervention environments. All environments still
+enter search and selection scores. The wind-tunnel reference is the first
+fixed-order search environment because there is no observational environment.
+Command densities are excluded from diagnostics, scores and audits. M0 uses
+observational fitting marginals in synthetic tasks and eligible acquisition-policy
+marginals in the wind tunnel. Auxiliary command-root fits reuse fitting rows
+with all physical-node losses masked, and are always replaced at generation.
+
+DCDI-DSF uses two width-64 leaky-ReLU hidden layers and two sigmoidal-flow
+layers of width eight. The adapted augmented-Lagrangian optimizer uses RMSprop
+at learning rate $0.001$, batch size 256 and adjacency threshold $0.5$.
+The controlled and scaling step cap is 60,000, versus 40,000 for the wind tunnel.
+Known perfect-intervention targets mask their density terms. No convergence
+claim follows merely from obtaining an acyclic projected graph.
+
+DCDI regularization is $0.1\sum A_{ij}/d^2$ for weighted adjacency $A$.
+Let $h(A)=\operatorname{tr}(\exp A)-d$. Its optimization tolerance uses
+$h(A)/N\le10^{-8}$ and a thresholded acyclic graph. Here $N=\max(1,h(A_{\mathrm{allow}}))$,
+where $A_{\mathrm{allow}}$ is the binary matrix of permitted edges. The scaling and wind-tunnel convergence audit additionally requires
+$h(A)/d\le10^{-8}$. These criteria are different. In the five-node controlled
+records, the 29 normalized-stopping successes have raw $h(A)$ approximately
+$4.5\times10^{-7}$ to $5.1\times10^{-7}$, so they do not meet the raw-per-node
+criterion. Projection remains explicit even when the optimizer stops.
+
+The principal small-system comparison consumed 5.77 device-job hours, scaling
+and topology experiments 19.48 hours, and the wind-tunnel application 0.79 hours,
+including development, pilots and unsuccessful attempts. The independent
+search-selection evaluation consumed 10.32 hours. These device totals account
+for overlapping work on one GPU and differ from summed standalone logical costs.
+Three workers shared the GPU for the small comparison and six for scaling.
+The largest recorded process allocation during scaling was 1.72 GiB. Device-wide
+sampling every fifteen seconds observed a 7,840 MiB peak, which is not a continuous
+peak measurement. Wind-tunnel language-model inference used 15.48 GiB allocated
+memory and about 69 seconds including loading and generation.
+
+Five-node matched-time analysis counts canonical fitting. Scaling additionally
+counts search and diagnostics. Light-tunnel charges include the initial graph's
+scoring cost, while wind-tunnel charges exclude untimed common initialization
+and preprocessing. Cross-application time ratios therefore have no direct
+interpretation. CUDA arithmetic and gradients were verified with driver
+580.159.04 and PyTorch 2.8.0 using CUDA 12.8.
+
+At a 6,000-update ceiling, diagnostic/random errors are 0.1191/0.1529 with
+5,574/5,383 achieved updates. At a 120-second fitting ceiling, errors are
+0.1430/0.1577 and both achieve about 111.4 seconds. These completed prefixes
+support a scheduling benefit at tested ceilings, without equating total search
+overhead. Ridge takes only about 0.04 seconds to fit.
+
+A separate search-selection evaluation on thirty five- or ten-node SCMs found
+diagnostic/fixed errors of 0.0993/0.1774, but ten of 120 conditions remained harmful.
+Diagnostic repair worsened its semantic and physical predictions and used more
+updates than random repair. Those results are preserved separately because the
+selection protocol lacks the calibration refinement used in the principal
+comparison.
+
+\subsection*{Application and sensitivity details}
+Table~\ref{tab:secondary} reports familiar-setting and unseen-target predictions
+for the principal comparison. Harm counts remain defined on T2, not these
+additional endpoints.
+
+\begin{table}[!htb]
+\setlength{\tabcolsep}{4pt}
+\caption{Five-node secondary endpoints with SCM-cluster 95\% intervals. Coverage concerns T2 observations under nominal 90\% marginal predictive intervals.}
+\label{tab:secondary}
+\centering
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Method & T1 error [95\% CI] & T3 error [95\% CI] & Coverage (\%)\\
+\midrule
+M0 & 0.323 [0.289, 0.358] & 0.342 [0.279, 0.406] & 89.9 \\
+M1 & 0.147 [0.123, 0.172] & 0.200 [0.166, 0.239] & 88.5 \\
+M2 & 0.188 [0.160, 0.221] & 0.291 [0.238, 0.353] & 87.9 \\
+M3 & 0.088 [0.080, 0.098] & 0.157 [0.122, 0.200] & 89.6 \\
+M4 & 0.093 [0.085, 0.103] & 0.165 [0.132, 0.206] & 89.5 \\
+M5 & 0.101 [0.092, 0.111] & 0.156 [0.125, 0.193] & 89.6 \\
+Fixed flows & 0.138 [0.115, 0.163] & 0.179 [0.151, 0.211] & 89.0 \\
+Random repair & 0.107 [0.091, 0.123] & 0.180 [0.143, 0.221] & 89.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The wind-tunnel trajectory files numbered 2 through 9 supply 1,786 fitting rows.
+Files 10 and 11, 12 and 13, 14 and 15 supply 538 early-stop, 613 search, 297 calibration
+and 164 audit rows. Eligibility requires fan-command range at most 0.1 and hatch
+range at most five degrees over ten seconds, omits the first fifteen seconds
+and spaces retained rows by three seconds. The downloaded records contain
+28 trajectory files and 28 validation files. They are acquisition units, not
+independent apparatuses or days.
+
+Wind-tunnel current values are converted by multiplying the raw analog-to-digital converter reading by
+$1.16/(1023\times2)$ at nominal reference setting $1.1$. All modeled pressure and
+current oversampling rates are eight and tachometer resolution is one. Microphone
+conversion for the separate acoustic panel is raw value times $5/1023$ volts.
+Uncertainty in these published calibration constants is not included in empirical
+intervals. Simultaneous ambient pressure is retained when forming pressure
+differences, but its shared measurement error remains a limitation.
+
+For the light tunnel, reference-file row ranges are fitting $[0,3400)$, early
+stopping $[4200,5224)$, search $[5330,6354)$, calibration $[3500,4012)$ and audit
+$[6460,6972)$. Each intermediate intervention uses $[0,200)$, $[304,344)$,
+$[408,488)$, $[656,696)$ and $[552,592)$ for those roles. The stronger polarizer
+test uses $[0,1000)$ in its separate file. Gaps reduce adjacency across roles
+without creating independent acquisitions. Fixed sensor configurations and
+recorded target setpoints are preserved.
+
+In scaling, 64, 256 and 1,024 projection checks on the prespecified first system
+per cell preserve the small 100-node ensemble ordering on that subset. A
+50-node fixed-total sensitivity reduces intervention data from 4,000 to 1,600
+on one SCM. Diagnostic error increases from 0.0723 to 0.0800. This single-system
+result cannot establish a population data-budget effect. Other coverage fractions,
+200-node systems and assumption violations such as latent confounding or feedback
+were not evaluated. The large-graph results do not separately isolate the
+anchor penalty from ensembling.
+
+The evaluated wind-tunnel ensemble has two retained components
+(Fig.~\ref{fig:components}). Its highest-weight component is the initial graph.
+Grouped training-file refits place diagnostic contrast error between 0.264 and
+0.483, separately from the conditional observation intervals in the main text.
+Near the final command corners, only one to seven of the 1,786 fitting rows meet
+the declared proximity criterion. This post-evaluation support description did
+not select models or cases. It indicates why additional randomized operating
+grids would improve the application evidence.
+
+The frozen Qwen3-8B model uses bfloat16 precision. Two wind-tunnel responses returned node metadata objects instead of the requested ID strings.
+A serialization adapter extracted their unchanged IDs and edges. The first
+graph was fixed before outcome access, without regenerating or selecting by
+prediction. Prompts contained verified variable definitions and engineering
+context, excluding measured held-out outcomes and the reference graph.
+
+With coherent metadata on five semantic SCMs, the anchored ensemble has mean
+error 0.0925, discovery plus flows 0.0947, diagnostic repair 0.1117 and the
+language-model editing adaptation 0.1181. Corrected comparisons do not establish
+superiority with only five systems. Anonymous and shuffled ensemble errors are
+0.0906 and 0.0830, so these controls do not demonstrate a benefit from coherent
+semantics. 
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=.94\textwidth]{figures/S_M5_component_1.pdf}\\
+\includegraphics[width=.94\textwidth]{figures/S_M5_component_2.pdf}
+\caption{Complete wind-tunnel ensemble components with common positions. Weights combine predictions. Orange and dotted edges mark additions and removals relative to the initial graph.}
+\label{fig:components}
+\end{figure}
+\clearpage
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{abdulaal2024}
+Abdulaal, A., Hadjivasiliou, A., Monta{\~n}a-Brown, N., He, T., Ijishakin, A.,
+  Drobnjak, I., et~al.: Causal modelling agents: Causal graph discovery through
+  synergising metadata- and data-driven reasoning.
+\newblock In: International Conference on Learning Representations (2024).
+\newblock
+  \urlprefix\url{https://proceedings.iclr.cc/paper_files/paper/2024/hash/fe90657b12193c7b52a3418bdc351807-Abstract-Conference.html}
+
+\bibitem{brouillard2020}
+Brouillard, P., Lachapelle, S., Lacoste, A., Lacoste-Julien, S., Drouin, A.:
+  Differentiable causal discovery from interventional data.
+\newblock In: Advances in Neural Information Processing Systems, vol.~33, pp.
+  21,865--21,877 (2020).
+\newblock
+  \urlprefix\url{https://proceedings.neurips.cc/paper/2020/hash/f8b7aa3a0d349d9562b424160ad18612-Abstract.html}
+
+\bibitem{durkan2019}
+Durkan, C., Bekasov, A., Murray, I., Papamakarios, G.: Neural spline flows.
+\newblock In: Advances in Neural Information Processing Systems, vol.~32
+  (2019).
+\newblock
+  \urlprefix\url{https://proceedings.neurips.cc/paper/2019/hash/7ac71d433f282034e088473244df8c02-Abstract.html}
+
+\bibitem{gamella2025}
+Gamella, J.L., Peters, J., B{\"u}hlmann, P.: Causal chambers as a real-world
+  physical testbed for {AI} methodology.
+\newblock Nature Machine Intelligence \textbf{7}, 107--118 (2025).
+\newblock \doi{10.1038/s42256-024-00964-x}
+
+\bibitem{gneiting2007}
+Gneiting, T., Raftery, A.E.: Strictly proper scoring rules, prediction, and
+  estimation.
+\newblock Journal of the American Statistical Association \textbf{102}(477),
+  359--378 (2007).
+\newblock \doi{10.1198/016214506000001437}
+
+\bibitem{gretton2012}
+Gretton, A., Borgwardt, K.M., Rasch, M.J., Sch{\"o}lkopf, B., Smola, A.: A
+  kernel two-sample test.
+\newblock Journal of Machine Learning Research \textbf{13}(25), 723--773
+  (2012).
+\newblock \urlprefix\url{https://jmlr.org/papers/v13/gretton12a.html}
+
+\bibitem{gretton2007}
+Gretton, A., Fukumizu, K., Teo, C.H., Song, L., Sch{\"o}lkopf, B., Smola, A.J.:
+  A kernel statistical test of independence.
+\newblock In: Advances in Neural Information Processing Systems, vol.~20
+  (2007).
+\newblock
+  \urlprefix\url{https://proceedings.neurips.cc/paper_files/paper/2007/hash/d5cfead94f5350c12c322b5b664544c1-Abstract.html}
+
+\bibitem{hashimoto2018}
+Hashimoto, T., Srivastava, M., Namkoong, H., Liang, P.: Fairness without
+  demographics in repeated loss minimization.
+\newblock In: Proceedings of the 35th International Conference on Machine
+  Learning, \emph{Proceedings of Machine Learning Research}, vol.~80, pp.
+  1929--1938 (2018).
+\newblock \urlprefix\url{https://proceedings.mlr.press/v80/hashimoto18a.html}
+
+\bibitem{hauser2012}
+Hauser, A., B{\"u}hlmann, P.: Characterization and greedy learning of
+  interventional {Markov} equivalence classes of directed acyclic graphs.
+\newblock Journal of Machine Learning Research \textbf{13}(79), 2409--2464
+  (2012).
+\newblock \urlprefix\url{https://jmlr.org/papers/v13/hauser12a.html}
+
+\bibitem{holm1979}
+Holm, S.: A simple sequentially rejective multiple test procedure.
+\newblock Scandinavian Journal of Statistics \textbf{6}(2), 65--70 (1979).
+\newblock \urlprefix\url{https://www.jstor.org/stable/4615733}
+
+\bibitem{javaloy2023}
+Javaloy, A., S{\'a}nchez-Mart{\'i}n, P., Valera, I.: Causal normalizing flows:
+  From theory to practice.
+\newblock In: Advances in Neural Information Processing Systems, vol.~36
+  (2023).
+\newblock
+  \urlprefix\url{https://proceedings.neurips.cc/paper_files/paper/2023/hash/b8402301e7f06bdc97a31bfaa653dc32-Abstract-Conference.html}
+
+\bibitem{li2026}
+Li, Z., Russo, F.: Leveraging large language models for causal discovery: A
+  constraint-based, argumentation-driven approach.
+\newblock In: Proceedings of the 42nd Conference on Uncertainty in Artificial
+  Intelligence, \emph{Proceedings of Machine Learning Research}, vol. 337, pp.
+  3631--3667 (2026).
+\newblock \urlprefix\url{https://proceedings.mlr.press/v337/li26e.html}
+
+\bibitem{papamakarios2021}
+Papamakarios, G., Nalisnick, E., Rezende, D.J., Mohamed, S., Lakshminarayanan,
+  B.: Normalizing flows for probabilistic modeling and inference.
+\newblock Journal of Machine Learning Research \textbf{22}(57), 1--64 (2021).
+\newblock \urlprefix\url{https://jmlr.org/papers/v22/19-1028.html}
+
+\bibitem{pawlowski2020}
+Pawlowski, N., Castro, D.C., Glocker, B.: Deep structural causal models for
+  tractable counterfactual inference.
+\newblock In: Advances in Neural Information Processing Systems, vol.~33, pp.
+  857--869 (2020).
+\newblock
+  \urlprefix\url{https://proceedings.neurips.cc/paper/2020/hash/0987b8b338d6c90bbedd8631bc499221-Abstract.html}
+
+\bibitem{pearl2009}
+Pearl, J.: Causal inference in statistics: An overview.
+\newblock Statistics Surveys \textbf{3}, 96--146 (2009).
+\newblock \doi{10.1214/09-SS057}
+
+\bibitem{peng2026}
+Peng, B., Chen, S., Xu, L., Lu, C.: {CauScientist}: Teaching {LLMs} to respect
+  data for causal discovery.
+\newblock Preprint, arXiv:2601.13614 (2026).
+\newblock \doi{10.48550/arXiv.2601.13614}
+
+\bibitem{peters2016}
+Peters, J., B{\"u}hlmann, P., Meinshausen, N.: Causal inference by using
+  invariant prediction: Identification and confidence intervals.
+\newblock Journal of the Royal Statistical Society, Series B \textbf{78}(5),
+  947--1012 (2016).
+\newblock \doi{10.1111/rssb.12167}
+
+\bibitem{peters2014}
+Peters, J., Mooij, J.M., Janzing, D., Sch{\"o}lkopf, B.: Causal discovery with
+  continuous additive noise models.
+\newblock Journal of Machine Learning Research \textbf{15}(58), 2009--2053
+  (2014).
+\newblock \urlprefix\url{https://jmlr.org/papers/v15/peters14a.html}
+
+\bibitem{yang2025}
+Yang, A., Li, A., Yang, B., Zhang, B., Hui, B., Zheng, B., et~al.: {Qwen3}
+  technical report.
+\newblock Preprint, arXiv:2505.09388 (2025).
+\newblock \doi{10.48550/arXiv.2505.09388}
+
+\bibitem{yao2018}
+Yao, Y., Vehtari, A., Simpson, D., Gelman, A.: Using stacking to average
+  {Bayesian} predictive distributions (with discussion).
+\newblock Bayesian Analysis \textbf{13}(3), 917--1007 (2018).
+\newblock \doi{10.1214/17-BA1091}
+
+\bibitem{zheng2018}
+Zheng, X., Aragam, B., Ravikumar, P.K., Xing, E.P.: {DAGs} with {NO TEARS}:
+  Continuous optimization for structure learning.
+\newblock In: Advances in Neural Information Processing Systems, vol.~31
+  (2018).
+\newblock
+  \urlprefix\url{https://proceedings.neurips.cc/paper/2018/hash/e347c51419ffb23ca3fd5050202f9c3d-Abstract.html}
+
+\end{thebibliography}
+\label{paper-end}
+\end{document}
