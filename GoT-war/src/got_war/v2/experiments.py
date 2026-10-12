@@ -3,11 +3,12 @@ import copy
 import json
 from pathlib import Path
 import time
+import networkx as nx
 from ..budget import atomic_json
 from ..experiments import normalize_benchmark
-from ..structural_programs import SCM, InvalidModel
+from ..structural_programs import SCM, InvalidModel, evaluate
 from .runtime import paths, V2Generator
-from .mechanisms import compatible_family, inspect_mechanism, outcome_sets, fingerprint
+from .mechanisms import compatible_family, inspect_mechanism, outcome_sets, fingerprint, table_expression
 from .paths import explain_query
 from .explanations import generate as explain, reviewer_controls
 
@@ -53,6 +54,21 @@ def validate(response, case):
     return model
 
 
+def factual_diagnostics(candidate):
+    """Evaluate the candidate's own declared factual rows, never hidden gold rules."""
+    try:
+        rows=candidate['nodes'];states={n['id']:n['observed'] for n in rows};checks=[]
+        for node in rows:
+            if not node.get('parents'):continue
+            try:value=evaluate(node['expr'],states,{})
+            except Exception as error:value=type(error).__name__+': '+str(error)
+            if value!=node['observed']:
+                checks.append({'node':node['id'],'supplied_factual_inputs':{p:states.get(p) for p in node['parents']},
+                    'candidate_expression_output':value,'declared_factual_output':node['observed']})
+        return checks
+    except (KeyError,TypeError):return []
+
+
 def run_case(root, case, seed=2701, controls=True):
     root,run,result=paths(root);gen=V2Generator(root)
     destination=run/'benchmark'/(case['id']+'.json')
@@ -75,19 +91,53 @@ def run_case(root, case, seed=2701, controls=True):
             record['methods'][method]={'error':str(error)};record['stage_failures'].append({'stage':method,'error':str(error)})
         checkpoint()
     call_baseline('B0',common)
-    prompt=synthesis_prompt(root,case);model=None
+    prompt=synthesis_prompt(root,case);model=None;candidate=None;patch_mode=False
     for attempt in range(3):
         response=None
         try:
-            response=gen.call('v2_synthesis' if not attempt else 'v2_synthesis_repair',prompt,4096,seed+attempt)
-            model=validate(response,case)
-            record['synthesis_attempts'].append({'attempt':attempt,'valid':True,'response':response})
+            response=gen.call('v2_synthesis' if not attempt else 'v2_synthesis_patch' if patch_mode else 'v2_synthesis_repair',prompt,4096,seed+attempt)
+            if patch_mode:
+                replacements=response.get('replacements',[])
+                existing={n['id'] for n in candidate['nodes']}
+                if not isinstance(replacements,list) or not replacements or any(n.get('id') not in existing for n in replacements):raise ValueError('Return complete replacement node records for existing IDs')
+                by_id={}
+                for replacement in replacements:
+                    old=next(n for n in candidate['nodes'] if n['id']==replacement['id'])
+                    new=dict(old,**replacement)
+                    if 'truth_table' in replacement:
+                        import itertools
+                        parents=new['parents'];rows=replacement['truth_table']
+                        contexts=list(itertools.product((0,1),repeat=len(parents)))
+                        table={tuple(r['inputs'][p] for p in parents):r['output'] for r in rows}
+                        if len(rows)!=len(contexts) or set(table)!=set(contexts) or any(type(v) not in (int,bool) or v not in (0,1) for v in table.values()):
+                            raise ValueError('The generated truth table must cover every Boolean parent-input combination exactly once')
+                        new['expr']=table_expression(parents,[[0,1] for _ in parents],[table[c] for c in contexts])
+                    by_id[new['id']]=new
+                candidate=dict(candidate,nodes=[by_id.get(n['id'],n) for n in candidate['nodes']])
+            else:candidate=response
+            model=validate(candidate,case)
+            record['synthesis_attempts'].append({'attempt':attempt,'valid':True,'response':response,'patch':patch_mode})
             break
         except Exception as error:
-            record['synthesis_attempts'].append({'attempt':attempt,'valid':False,'response':response,'error':str(error)})
-            prompt=synthesis_prompt(root,case)+'\nFORMAL/RECORD DIAGNOSTIC: '+str(error)+'\nRegenerate a complete compact candidate using only the supplied text. No gold function or counterfactual answer is provided.'
+            record['synthesis_attempts'].append({'attempt':attempt,'valid':False,'response':response,'patch':patch_mode,'error':str(error)})
+            # One local repair, then one fresh reconstruction avoids repeatedly
+            # anchoring on an invalid placeholder or miscomputed expression.
+            patch_mode=attempt==0 and isinstance(candidate,dict) and isinstance(candidate.get('nodes'),list) and all(isinstance(n,dict) and 'id' in n for n in candidate['nodes'])
+            prompt=synthesis_prompt(root,case)+'\nFORMAL/RECORD DIAGNOSTIC: '+str(error)
+            if patch_mode:
+                prompt+='\nINVALID CANDIDATE:\n'+json.dumps(candidate,separators=(',',':'))+'\nEVALUATED CANDIDATE FACTUAL ROWS:\n'+json.dumps(factual_diagnostics(candidate))+'\nTARGETED REPAIR FORMAT OVERRIDE: Return {"replacements":[complete corrected node records]}. Replace only nodes needing correction; unchanged nodes are retained automatically. Each expression must use exactly its declared parents, no omitted input and no internal background. Check all absent-rule nodes. A chosen assumed function stays unknown=true and unidentified when the record omits its rule. Do not use an inactive constant placeholder. Use only the supplied text. No gold function or counterfactual answer is provided.'
+            else:prompt+='\nCANDIDATE FACTUAL-ROW DIAGNOSTICS: '+json.dumps(factual_diagnostics(candidate))+'\nFresh reconstruction: return a complete compact candidate using only the original supplied record. Do not copy an earlier faulty expression. No gold function or counterfactual answer is provided.'
         finally:checkpoint()
-    graph=[{'id':n['id'],'parents':n['parents']} for n in model['nodes']] if model else []
+    graph=[]
+    graph_candidate=model or candidate
+    if isinstance(graph_candidate,dict):
+        proposed=graph_candidate.get('nodes',[])
+        ids={n.get('id') for n in proposed if isinstance(n,dict)}
+        expected={s['node_id'] for s in case['segments']}
+        if ids==expected and len(proposed)==len(expected) and all(isinstance(n.get('parents'),list) and set(n['parents'])<=ids for n in proposed):
+            graph=[{'id':n['id'],'parents':n['parents']} for n in proposed]
+            if not nx.is_directed_acyclic_graph(nx.DiGraph((p,n['id']) for n in graph for p in n['parents'])):graph=[]
+    record['extracted_graph']=graph
     call_baseline('B1',common+'\nEXTRACTED GRAPH (may be imperfect; contains no equations):\n'+json.dumps(graph))
     record['explanation_query']=selected['id']
     if model:
@@ -98,6 +148,8 @@ def run_case(root, case, seed=2701, controls=True):
             record['family']=family['summary']
             record['methods']['ALT']={'answers':outcome_sets(family['models'],case['queries'])}
             trace=explain_query(model,selected,family['models'])
+            trace['source_context']=case['narrative']
+            trace['source_review_scope']='Complete explicit controlled rule record; no hidden generating equation or gold query answer.'
             record['trace']=trace
             # Same structural answers; additional outputs are scored separately.
             record['methods']['FULL']={'answers':record['methods']['ALT']['answers'],
@@ -123,6 +175,13 @@ def run(root, split='development', pilot=False):
     cases=[json.loads(line) for line in (folder/'benchmark_cases.jsonl').read_text().splitlines()]
     if split=='test' and not (root/'configs/v2_frozen_protocol.json').exists():
         raise RuntimeError('Test inference requires the pilot gate and frozen protocol')
+    if split=='test':
+        import hashlib
+        frozen=json.loads((root/'configs/v2_frozen_protocol.json').read_text())
+        changed=[name for name,sha in frozen['files'].items() if hashlib.sha256((root/name).read_bytes()).hexdigest()!=sha]
+        if changed:raise RuntimeError('Frozen protocol file changed before test inference: '+', '.join(changed))
+        if hashlib.sha256((folder/'benchmark_cases.jsonl').read_bytes()).hexdigest()!=frozen['design']['sha256']:
+            raise RuntimeError('Frozen benchmark content changed')
     selected=[c for c in cases if c['split']==split]
     if pilot:
         selected=[next(c for c in selected if c['condition']==condition and c['size']==8) for condition in ('complete','missing_intermediate','missing_outcome','multiple_missing')]

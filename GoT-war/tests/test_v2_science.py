@@ -3,7 +3,7 @@ import itertools
 from got_war.structural_programs import SCM
 from got_war.v2.benchmark import generate
 from got_war.v2.mechanisms import compatible_family, inspect_mechanism, outcome_sets
-from got_war.v2.explanations import deterministic_check, review
+from got_war.v2.explanations import deterministic_check, review, assign_sentence_ids
 from got_war.v2.paths import game_report
 
 
@@ -27,6 +27,9 @@ def test_multiple_unknown_rules_jointly_include_true_interventions():
     model,hidden,family,_=generate(12,282306,'multiple_missing')
     assert len(hidden)==2 and family['summary']['exhaustive']
     assert family['summary']['retained_functionally_distinct']>1
+    for alternative in family['models']:
+        compiled=SCM(alternative)
+        assert all(n['description']==inspect_mechanism(compiled,n['id'])['derived_description'] for n in alternative['nodes'])
     true=SCM(model)
     for node in model['nodes'][:-1]:
         intervention={node['id']:1-node['observed']}
@@ -58,6 +61,23 @@ def test_reviewer_cannot_pass_by_reviewing_instructions():
             return {'reviews':[{'sentence_id':'INSTRUCTION','verdict':'supported','reason':'not an explanation sentence'}]}
     result=review(Fake(),[{'id':'S01','text':'An actual explanation sentence.'}],{})
     assert not result['reviewer_valid'] and len(result['failed_attempts'])==2
+
+
+def test_sentence_ids_follow_actual_prose_not_model_supplied_chunks():
+    sentences=assign_sentence_ids([{'text':'Path p1 contributes 0.5. The shares are tied.','numeric_claims':[]}])
+    assert [s['id'] for s in sentences]==['S01','S02']
+    assert sentences[0]['text']=='Path p1 contributes 0.5.'
+
+
+def test_nonmonotone_game_minimal_coalitions_check_all_strict_subsets():
+    model=toy('xor')
+    model['background']['UC']={'type':'bool','observed':1}
+    model['nodes'].insert(2,{'id':'C','label':'C','type':'bool','parents':[],'noise':['UC'],'expr':{'noise':'UC'},'observed':1,'reference':0,'time':0})
+    target=model['nodes'][-1];target['parents'].append('C')
+    target['expr']={'op':'xor','args':[{'op':'xor','args':[{'ref':'A'},{'ref':'B'}]},{'ref':'C'}]}
+    report=game_report(SCM(model),[['A','W'],['B','W'],['C','W']])
+    assert report['minimal_full_outcome_coalitions']==[[1],[2],[3]]
+    assert report['negative_marginals']>0
 
 
 def test_deterministic_explanation_rejects_wrong_number_and_unique_tie():

@@ -17,9 +17,12 @@ def edge_support(model):
             directional=record.get('direction_status','unassessed')
             score={'explicit':1.,'contextually_supported':.5}.get(directional,0.)
             endpoints=all(nodes[x].get('event_status') in ('established','reported_claim','character_belief') for x in (parent,node['id']))
-            if not endpoints or not record.get('segments') or record.get('contradictions') or record.get('temporal_status','consistent')!='consistent' or record.get('information_status','consistent')!='consistent':score=0.
+            endpoint_times={x:{k:nodes[x].get('event_audit',{'event_time':'consistent','information_time':'consistent'}).get(k,'unresolved') for k in ('event_time','information_time')} for x in (parent,node['id'])}
+            times_resolved=all(v=='consistent' for audit in endpoint_times.values() for v in audit.values())
+            if not endpoints or not times_resolved or not record.get('segments') or record.get('contradictions') or record.get('temporal_status','unresolved')!='consistent' or record.get('information_status','unresolved')!='consistent':score=0.
             record.update(parent=parent,child=node['id'],score=score,status=directional,
                 parent_event_status=nodes[parent].get('event_status','unassessed'),child_event_status=node.get('event_status','unassessed'),
+                endpoint_time_assessments=endpoint_times,
                 function_identification=node.get('function_identification','unidentified'),
                 rubric='Directional support only: explicit=1, contextually supported=.5, otherwise 0; unsupported endpoints, absent references, contradictions or unresolved temporal/information constraints force 0. Exact-function identification is separate.')
             result[parent+'>'+node['id']]=record
@@ -36,8 +39,15 @@ def game_report(scm, paths, references=None):
         values.append(scm.solve(inactive_edges=focus-active,references=references)[scm.model['outcome']])
     marginal=[];interaction=[];minimal_full=[]
     for mask,value in enumerate(values):
-        if value==values[-1] and value!=values[0] and all(values[mask^(1<<i)]!=value for i in range(len(paths)) if mask>>i&1):
-            minimal_full.append([i+1 for i in range(len(paths)) if mask>>i&1])
+        if value==values[-1] and value!=values[0]:
+            # Check every strict subset: immediate deletions alone are unsound
+            # for inhibitory/nonmonotone games such as three-way parity.
+            sub=(mask-1)&mask if mask else 0;proper_match=False
+            while mask:
+                if values[sub]==value:proper_match=True;break
+                if sub==0:break
+                sub=(sub-1)&mask
+            if not proper_match:minimal_full.append([i+1 for i in range(len(paths)) if mask>>i&1])
         for i in range(len(paths)):
             if not mask>>i&1:
                 marginal.append(values[mask|1<<i]-value)

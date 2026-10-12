@@ -84,7 +84,9 @@ def ndcg(ranking, relevance, k=5):
 
 def structural_scores(record,case):
     model=record.get('model');gold=case['gold'];gold_nodes={n['id']:n for n in gold['nodes']}
-    known=[n for n in gold['nodes'] if n['id'] not in case['hidden_nodes']]
+    # Root identity/background assignments are scored as factual grounding;
+    # functional agreement concerns the substantive known endogenous rules.
+    known=[n for n in gold['nodes'] if n['parents'] and n['id'] not in case['hidden_nodes']]
     scores={'synthesis_first':int(bool(record.get('synthesis_attempts')) and record['synthesis_attempts'][0].get('valid',False)),
         'synthesis_after_repair':int(bool(model)),'known_function_agreement':0.,'unknown_flag_accuracy':0.,
         'direction_precision':0.,'direction_recall':0.,'direction_grounding':0.,'event_state_agreement':0.}

@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-12",
+  "source": "https://saiconference.com/Computing/CallforPapers",
+  "format": "Existing official svproc template, anonymous PDF",
+  "main_text_page_limit": 18,
+  "reference_appendix_allowance": 7,
+  "abstract_words": [
+    150,
+    250
+  ],
+  "genai_disclosure_required": true,
+  "human_review_and_responsibility_required": true,
+  "submitted": false,
+  "failed_lookup": "https://saiconference.com/Computing/SubmissionGuidelines (web tool inaccessible); current rules read on the Call for Papers page."
+}

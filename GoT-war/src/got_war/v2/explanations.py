@@ -1,6 +1,7 @@
 """Computed explanation records, fixed sentence IDs and separate reviewer failures."""
 import json
 import re
+import hashlib
 
 
 def structured_record(trace):
@@ -13,6 +14,8 @@ def structured_record(trace):
     facts.update({'factual_'+key:value for key,value in trace['factual_states'].items() if isinstance(value,(int,float))})
     facts.update({'counterfactual_'+key:value for key,value in trace['counterfactual_states'].items() if isinstance(value,(int,float))})
     facts['selected_path_count']=len(trace['paths']['paths'])
+    facts['possible_outcome_count']=len(trace['possible_outcomes'])
+    facts['largest_absolute_tie_count']=len(attr['largest_absolute_ties'])
     facts.update({'directional_support_p%d'%(i+1):row['evidence_support'] for i,row in enumerate(trace['evidence_priority']['paths'])})
     return {'query':trace['query'],'outcome_label':trace['outcome_label'],'numbers':facts,
         'possible_outcomes':trace['possible_outcomes'],'factual_states':trace['factual_states'],'counterfactual_states':trace['counterfactual_states'],
@@ -21,11 +24,23 @@ def structured_record(trace):
         'evidence_status':trace['ranking_status'],'evidence_paths':[
             {k:v for k,v in row.items() if k in ('path_id','nodes','evidence_support','signed_contribution')}
             for row in trace['evidence_priority']['paths']],
-        'mechanisms':trace.get('mechanisms',[]),'assumptions':trace['assumptions'],'interpretation':trace['interpretation']}
+        'mechanisms':trace.get('mechanisms',[]),'assumptions':trace['assumptions'],'interpretation':trace['interpretation'],
+        'source_context':trace.get('source_context','Source passages not supplied to this trace-only review.'),
+        'source_review_scope':trace.get('source_review_scope','Trace fidelity only; no independent source-entailment claim.')}
 
 
 def number_strings(value):
     return {str(value),str(float(value)),format(float(value),'.8g'),format(float(value),'.4f').rstrip('0').rstrip('.')}
+
+
+def assign_sentence_ids(raw):
+    """Split actual generated text before review; decimal points do not split."""
+    sentences=[]
+    for original in raw:
+        parts=re.split(r'(?<=[.!?])\s+(?=[A-Z"“])',original['text'].strip())
+        for part in parts:
+            if part:sentences.append(dict(original,text=part,id='S%02d'%(len(sentences)+1)))
+    return sentences
 
 
 def deterministic_check(sentences, record):
@@ -58,6 +73,7 @@ def review(gen, sentences, record, role='v2_explanation_review', seed=2701):
         'Do not quote or split instructions. Return {"reviews":[{"sentence_id":"S01","verdict":"supported|unsupported|unverifiable","reason":"brief","record_fields":["field"]}]}. '
         'Return every supplied ID exactly once and no other ID. Path shares are not event effects or probabilities. '
         'Assumed model consequences are not established story counterfactuals; ties do not identify a unique strongest path. '
+        'When source_context is supplied, check factual and source-entailment claims against that actual passage context as well. Missing contextual support is unverifiable, not automatically supported. '
         'Judge the text that is actually present, not what a better explanation might have said.\nSENTENCES:\n'+json.dumps(sentences)+
         '\nCOMPUTED RECORD:\n'+json.dumps(record))
     failures=[]
@@ -95,7 +111,8 @@ def generate(gen, trace, seed=2701):
             raw=response.get('sentences',[])
             if not 1<=len(raw)<=4 or any(not isinstance(s.get('text'),str) or not s['text'].strip() for s in raw):
                 raise ValueError('Need one to four nonempty sentence records')
-            sentences=[dict(s,id='S%02d'%(i+1)) for i,s in enumerate(raw)]
+            sentences=assign_sentence_ids(raw)
+            if len(sentences)>4:raise ValueError('At most four actual sentences after software splitting')
             check=deterministic_check(sentences,record)
             attempts.append({'attempt':attempt,'response':response,'check':check})
             if check['passed']:break
@@ -104,7 +121,11 @@ def generate(gen, trace, seed=2701):
             attempts.append({'attempt':attempt,'response':response,'error':str(error)})
             prompt+='\nFORMAT DIAGNOSTIC: '+str(error)
     audit=review(gen,sentences,record,seed=seed) if sentences else {'reviewer_valid':False,'all_supported':False,'reviews':[],'not_run':'No explanation sentences'}
-    return {'record':record,'sentences':sentences,'generation_attempts':attempts,'deterministic_check':check,'review':audit,
+    public_record=dict(record)
+    if trace.get('source_context_private'):
+        public_record['source_context_sha256']=hashlib.sha256(public_record.pop('source_context').encode()).hexdigest()
+        public_record['source_context_location']='Private prompt and contextual-source archive; not redistributed in the publication bundle.'
+    return {'record':public_record,'sentences':sentences,'generation_attempts':attempts,'deterministic_check':check,'review':audit,
         'displayable':check['passed'] and audit['reviewer_valid'] and audit['all_supported'],
         'reviewer_failure':not audit['reviewer_valid'],'explanation_failure':not check['passed'] or (audit['reviewer_valid'] and not audit['all_supported'])}
 

@@ -18,24 +18,41 @@ from .explanations import generate as explain, reviewer_controls
 PROTOCOL='v2-context-direction-function-1'
 
 
+def node_view(node):
+    """Operational interface without nested previous reviews or full probe logs."""
+    keys=('id','label','definition','actor','type','values','bounds','observed','reference','reference_meaning',
+          'event_time','statement_time','time','proposition_kind','event_status','segments','parents','mechanism_hint',
+          'expr','noise','function_identification','assumptions')
+    return {k:node[k] for k in keys if k in node}
+
+
+def behavior_view(report):
+    keys=('equation','coverage','rows','necessary_for_one','sufficient_for_one','joint_enabling','substitution')
+    result={k:report[k] for k in keys}
+    result['parent_polarities']={r['parent']:r['polarity'] for r in report['parent_changes']}
+    return result
+
+
 class Construction:
-    def __init__(self, root):
+    def __init__(self, root, case_id='five_kings'):
         self.root,self.run,self.results=paths(root)
         self.gen=V2Generator(root)
-        self.packet=json.loads((self.root/'.private/v2/five_kings_packet.json').read_text())
+        self.packet=json.loads((self.root/('.private/v2/'+case_id+'_packet.json')).read_text())
         self.segments={s['id']:s for s in self.packet['segments']}
-        self.case=next(c for c in json.loads((self.root/'configs/application_v2.json').read_text())['cases'] if c['id']=='five_kings')
-        self.folder=self.run/'application/five_kings';self.folder.mkdir(parents=True,exist_ok=True)
+        self.case=next(c for c in json.loads((self.root/'configs/application_v2.json').read_text())['cases'] if c['id']==case_id)
+        self.folder=self.run/'application'/case_id;self.folder.mkdir(parents=True,exist_ok=True)
 
-    def artifact(self, name, prompt, validator=lambda x:x, tokens=2048):
-        contract=fingerprint({'protocol':PROTOCOL,'prompt':prompt,'tokens':tokens})
+    def artifact(self, name, prompt, validator=lambda x:x, tokens=2048, schema=None):
+        specification={'protocol':PROTOCOL,'prompt':prompt,'tokens':tokens}
+        if schema is not None:specification['schema']=schema
+        contract=fingerprint(specification)
         destination=self.folder/(name+'_'+contract[:12]+'.json')
         if destination.exists():return json.loads(destination.read_text())['accepted']
         failures=[];base=prompt
         for attempt in range(3):
             response=None
             try:
-                response=self.gen.call('v2_app_'+name.split('_')[0]+('_repair' if attempt else ''),prompt,tokens,2801+attempt)
+                response=self.gen.call('v2_app_'+name.split('_')[0]+('_repair' if attempt else ''),prompt,tokens,2801+attempt,schema=schema)
                 accepted=validator(response)
                 atomic_json(destination,{'contract':contract,'accepted':accepted,'response':response,'failed_attempts':failures})
                 return accepted
@@ -108,30 +125,81 @@ class Construction:
                 return list(dict.fromkeys(ids))[:10]
             chosen=self.artifact('shortlist_%03d'%start,prompt,check,1536)
             shortlist.extend(known[i] for i in chosen)
+        # Hierarchical selection keeps long inventories within the cached model's
+        # context window; the LLM, not an analyst-specified cause list, selects.
+        if len(shortlist)>45:
+            reduced=[]
+            for start in range(0,len(shortlist),30):
+                batch=shortlist[start:start+30];known={r['id']:r for r in batch}
+                prompt=('Select up to TEN distinct documented claims most useful for constructing an explanatory variable schema for the stated outcome. '
+                    'Preserve enabling, inhibiting and contextual possibilities; do not fabricate missing mechanisms. Return {"selected_ids":["fact ID"]}. '
+                    'Only supplied IDs are allowed.\nOUTCOME: '+self.case['outcome']+'\nINVENTORY:\n'+json.dumps(batch))
+                def check(response):
+                    ids=response.get('selected_ids',[])
+                    if not isinstance(ids,list) or set(ids)-set(known):raise ValueError('Use only supplied fact IDs')
+                    return list(dict.fromkeys(ids))[:10]
+                reduced.extend(known[i] for i in self.artifact('shortlist_reduce_%03d'%start,prompt,check,1536))
+            shortlist=reduced
         compact=[{k:r[k] for k in ('id','label','definition','actor','event_time','proposition_kind','segments','influence_clue') if k in r} for r in shortlist]
-        prompt=('Discover a compact operational variable schema for the supplied outcome from this source-derived inventory. '
-            'Aim for 8-16 substantive explanatory variables if the evidence permits; fewer is valid. Do not add filler, manually inferred causes, or later manifestations as necessary prerequisites of an earlier outcome. '
-            'Use Boolean, categorical or bounded numeric states as appropriate. A report/belief variable denotes the report/belief, not unverified truth of its content. '
-            'Meaningful reference states must be explicit; no placeholder comparison states. Return {"outcome":"W","nodes":[{"id":"short_ID","label":"readable event label",'
-            '"definition":"operational state definition","actor":"actor","type":"bool|category|int|float","values":["if categorical"],"bounds":[0,1],'
-            '"observed":1,"reference":0,"reference_meaning":"explicit scenario comparison","event_time":"s01e08 or unknown",'
-            '"statement_time":"episode or unknown","proposition_kind":"narrative_fact|reported_claim|character_belief","segments":["source ID"],"source_facts":["fact ID"]}],'
-            '"assumptions":["what the schema leaves unresolved"]}. W must mean exactly the supplied outcome assessed by season 1 episode 10. No parents or equations yet. '
-            'The source horizon does not move the target event later.\nOUTCOME: '+self.case['outcome']+'\nINVENTORY:\n'+json.dumps(compact))
-        def validate(response):
-            nodes=response.get('nodes',[])
-            if not 3<=len(nodes)<=18 or len({n['id'] for n in nodes})!=len(nodes):raise ValueError('Need 3-18 distinct substantive variable IDs')
-            if response.get('outcome') not in {n['id'] for n in nodes}:raise ValueError('Missing designated outcome')
-            for node in nodes:
-                check_spec(node)
-                if not valid_value(node['observed'],node) or not valid_value(node['reference'],node):raise ValueError('Invalid factual/reference domain for '+node['id'])
-                if not node.get('definition') or not node.get('reference_meaning'):raise ValueError('Every variable requires a definition and meaningful reference')
-                if not node.get('segments') or set(node['segments'])-set(self.segments):raise ValueError('Every factual variable needs existing source references')
+        known_facts={r['id']:r for r in shortlist}
+        prompt=('Select and synthesize a compact set of 8-16 substantive explanatory concepts if supported; fewer is valid. Do not copy the entire inventory. '
+            'Return {"concepts":[{"label":"short readable event label","source_facts":["supplied fact ID"],"scope_note":"brief operational distinction"}],'
+            '"outcome":{"label":"short label for the specified conflict outcome","source_facts":["evidence fact IDs"],"scope_note":"operational distinction"},"assumptions":[]}. '
+            'The outcome is separately specified by the research question; choose its supporting factual evidence rather than searching for a preexisting W identifier. '
+            'Software assigns identifiers after your content is generated. Do not invent causes, equations or edges. Preserve fact/report/belief distinctions. '
+            'Do not select only a chronological prefix; consider the full supplied horizon. Every concept and the outcome need supplied fact references.\nOUTCOME: '+self.case['outcome']+'\nINVENTORY:\n'+json.dumps(compact))
+        concept_schema={'type':'object','properties':{'label':{'type':'string','maxLength':100},'source_facts':{'type':'array','items':{'type':'string','enum':list(known_facts)},'minItems':1,'maxItems':5},'scope_note':{'type':'string','maxLength':240}},'required':['label','source_facts','scope_note'],'additionalProperties':False}
+        schema={'type':'object','properties':{'concepts':{'type':'array','items':concept_schema,'minItems':2,'maxItems':16},'outcome':concept_schema,'assumptions':{'type':'array','items':{'type':'string'},'maxItems':6}},'required':['concepts','outcome','assumptions'],'additionalProperties':False}
+        def check_plan(response):
+            concepts=response.get('concepts',[])
+            if not 2<=len(concepts)<=16:raise ValueError('Need 2-16 explanatory concepts plus the specified outcome')
+            concepts=[dict(n,id='X%02d'%(i+1)) for i,n in enumerate(concepts)]+[dict(response['outcome'],id='W')]
+            if any(not n.get('source_facts') or set(n['source_facts'])-set(known_facts) for n in concepts):raise ValueError('Concepts must cite supplied fact IDs')
+            return {'outcome':'W','concepts':concepts,'assumptions':response.get('assumptions',[])}
+        plan=self.artifact('concept_plan',prompt,check_plan,3072,schema=schema);nodes=[]
+        for concept in plan['concepts']:
+            facts=[known_facts[i] for i in concept['source_facts']]
+            context,ids=self.context([s for r in facts for s in r['segments']],concept['label']+' '+concept.get('scope_note',''),11000)
+            prompt=('Operationalize ONE source-derived concept, using the actual passage context. Do not invent its factual state. '
+                'A report/belief denotes the report/belief, not unverified truth of its content. '
+                'Return {"node":{"id":"'+concept['id']+'","label":"readable event label","definition":"precise operational state",'
+                '"actor":"actor","type":"bool|category|int|float","values":["only if categorical"],"bounds":[0,1],'
+                '"observed":1,"reference":0,"reference_meaning":"explicit meaningful comparison",'
+                '"event_time":"episode code or unknown","statement_time":"episode code or unknown",'
+                '"proposition_kind":"narrative_fact|reported_claim|character_belief","segments":["supplied source ID"]}}. '
+                'No parents or equation yet. The designated outcome '+plan['outcome']+' must be Boolean and mean exactly the specified conflict outcome. '
+                'Other domains are free when justified. Categorical states must be mutually exclusive, and observed/reference must be members of values. '
+                'Boolean states use integer 0/1. Select exactly ONE proposition_kind value, never the literal pipe-separated list. '
+                'The segments field uses scene IDs from PASSAGES, never inventory fact IDs. Do not conflate distinct concepts or move the target event later.\nOUTCOME: '+self.case['outcome']+
+                '\nCONCEPT:\n'+json.dumps(concept)+'\nEXTRACTED FACTS:\n'+json.dumps(facts)+
+                '\nOTHER CONCEPTS:\n'+json.dumps([{'id':c['id'],'label':c['label']} for c in plan['concepts']])+'\nPASSAGES:\n'+context)
+            def check_node(response):
+                node=response['node'];check_spec(node)
+                if node['id']!=concept['id']:raise ValueError('Keep the specified concept ID')
+                if not valid_value(node['observed'],node) or not valid_value(node['reference'],node):raise ValueError('Invalid factual/reference domain: '+json.dumps({k:node.get(k) for k in ('type','values','bounds','observed','reference')})+'. Generate a coherent domain and states using only the passage evidence.')
+                if not node.get('definition') or not node.get('reference_meaning'):raise ValueError('Definition and meaningful reference required')
+                if not node.get('segments') or set(node['segments'])-set(ids):raise ValueError('Cite only supplied passage IDs')
+                if node['id']==plan['outcome'] and node['type']!='bool':raise ValueError('The active-conflict outcome requires a Boolean indicator')
                 match=re.fullmatch(r's(\d+)e(\d+)',node.get('event_time','').lower())
                 node['time']=int(match[1])*100+int(match[2]) if match else None
-                if node['time'] and node['time']>110:raise ValueError('An event after the outcome endpoint cannot be its cause')
-            return response
-        return self.artifact('variables',prompt,validate,4096)
+                if node['time'] and node['time']>self.case['endpoint_code']:raise ValueError('A later event cannot cause this outcome')
+                node['source_facts']=concept['source_facts'];return node
+            properties={k:{'type':'string','maxLength':350 if k=='definition' else 200} for k in ('id','label','definition','actor','reference_meaning','event_time','statement_time')}
+            properties['id']={'const':concept['id']}
+            properties.update(type={'enum':['bool','category','int','float']},
+                values={'type':'array','items':{'type':'string'},'maxItems':12},bounds={'type':'array','items':{'type':'number'},'minItems':2,'maxItems':2},
+                observed={},reference={},proposition_kind={'enum':['narrative_fact','reported_claim','character_belief']},
+                segments={'type':'array','items':{'type':'string','enum':ids},'minItems':1,'maxItems':8})
+            variants=[]
+            for dtype,state in [('bool',{'type':'integer','enum':[0,1]}),('category',{'type':'string'}),('int',{'type':'integer'}),('float',{'type':'number'})]:
+                spec={'type':'object','properties':dict(properties,type={'const':dtype},observed=state,reference=state),
+                    'required':['id','label','definition','actor','type','observed','reference','reference_meaning','event_time','statement_time','proposition_kind','segments']+(['values'] if dtype=='category' else ['bounds'] if dtype in ('int','float') else []),'additionalProperties':False}
+                variants.append(spec)
+            variable_schema={'type':'object','properties':{'node':{'anyOf':variants}},'required':['node'],'additionalProperties':False}
+            nodes.append(self.artifact('variable_'+concept['id'],prompt,check_node,1536,schema=variable_schema))
+            atomic_json(self.folder/'variables_checkpoint.json',{'outcome':plan['outcome'],'nodes':nodes,'assumptions':plan.get('assumptions',[])})
+        response={'outcome':plan['outcome'],'nodes':nodes,'assumptions':plan.get('assumptions',[])}
+        atomic_json(self.folder/'variables.json',response);return response
 
     def audit_events(self, blueprint):
         nodes=copy.deepcopy(blueprint['nodes']);audits=[]
@@ -153,7 +221,7 @@ class Construction:
     def discover_graph(self, blueprint, revision_note=''):
         nodes=blueprint['nodes'];ids={n['id'] for n in nodes}
         source_ids=[s for n in nodes for s in n['segments']]
-        context,_=self.context(source_ids,self.case['outcome'],16500)
+        context,_=self.context(source_ids,self.case['outcome'],12000)
         schema=[{k:n.get(k) for k in ('id','label','definition','actor','type','observed','reference','event_time','statement_time','event_status','segments')} for n in nodes]
         prompt=('Discover direct directional influences for these variables from the evidence, not their mere chronology. '
             'Return {"parents":{"node_ID":["parent_ID"]},"mechanism_hints":{"node_ID":"brief source/assumption distinction"},'
@@ -199,8 +267,8 @@ class Construction:
                 '"assumptions":[],"function_identification":"identified|partially_constrained|unidentified"}],"representation_questions":[]}. '
                 'Each added background specification needs type/domain, observed, definition, source_segments and substantive_justification. '
                 'Do not claim an AND rule makes either input sufficient. If the story proceeded despite an event, do not silently make that event necessary. '
-                'You may explicitly flag an inadequate representation instead of inventing a rule.\nTARGET:\n'+json.dumps(node)+
-                '\nPARENTS:\n'+json.dumps(parents)+'\nPASSAGES:\n'+context)
+                'You may explicitly flag an inadequate representation instead of inventing a rule.\nTARGET:\n'+json.dumps(node_view(node))+
+                '\nPARENTS:\n'+json.dumps([node_view(p) for p in parents])+'\nPASSAGES:\n'+context)
             def validate(response):
                 variants=response.get('variants',[]);accepted=[];rejections=[]
                 for index,variant in enumerate(variants[:3]):
@@ -228,14 +296,15 @@ class Construction:
             accepted=self.artifact('mechanism_'+node['id'],prompt,validate,3072)
             # Inspect descriptions against actual behavior, not just the factual row.
             compact=[{'index':i,'description':v.get('description'),'short_mechanism':v.get('short_mechanism'),
-                'assumptions':v.get('assumptions',[]),'background':v.get('background',{}),'behavior':v['behavior']} for i,v in enumerate(accepted['variants'])]
+                'assumptions':v.get('assumptions',[]),'background':v.get('background',{}),'behavior':behavior_view(v['behavior'])} for i,v in enumerate(accepted['variants'])]
+            audit_context,audit_ids=self.context(source_ids,node['definition'],10500)
             review_prompt=('Audit these generated local mechanisms using their actual truth tables/probes and the passage context. '
                 'Separate source support for direction from identification of the exact function. '
                 'Return {"variants":[{"index":0,"description_matches_behavior":true,"short_label_matches_behavior":true,'
                 '"source_compatibility":"compatible_hypothesis|contradicted|unresolved","background_is_factual_patch":false,"questions":[],"reason":"brief"}]}. '
                 'Compatible hypothesis does not mean identified. An AND requires all conjuncts for output 1; OR may provide substitutes. '
-                'Reject claims of sufficiency/necessity that the table contradicts. Unrestricted residuals are not admissible.\nTARGET:\n'+json.dumps(node)+
-                '\nMECHANISMS:\n'+json.dumps(compact)+'\nPASSAGES:\n'+context)
+                'Reject claims of sufficiency/necessity that the table contradicts. Unrestricted residuals are not admissible.\nTARGET:\n'+json.dumps(node_view(node))+
+                '\nMECHANISMS:\n'+json.dumps(compact)+'\nPASSAGES:\n'+audit_context)
             review=self.artifact('functionaudit_'+node['id'],review_prompt,tokens=2048)
             by_index={r.get('index'):r for r in review.get('variants',[]) if isinstance(r,dict)}
             retained=[]
@@ -249,7 +318,7 @@ class Construction:
                 if audit.get('short_label_matches_behavior') is not True:variant['short_mechanism']='Assumed rule; inspect behavior table'
                 retained.append(variant)
             if not retained:raise ValueError('All local alternatives contradicted or use factual-patch backgrounds: '+node['id'])
-            options[node['id']]=retained;audits.append({'node':node['id'],'source_ids':source_ids,'review':review,'formal_rejections':accepted['rejections']})
+            options[node['id']]=retained;audits.append({'node':node['id'],'source_ids':source_ids,'review_source_ids':audit_ids,'review':review,'formal_rejections':accepted['rejections']})
             atomic_json(self.folder/'local_options_checkpoint.json',{'options':options,'audits':audits})
         atomic_json(self.folder/'local_options.json',{'options':options,'audits':audits});return options
 
@@ -267,8 +336,8 @@ class Construction:
                 '"contradictions":[],"temporal_status":"consistent|unresolved|contradicted","information_status":"consistent|unresolved|contradicted",'
                 '"exact_function_identification":"identified|partially_constrained|unidentified","function_assumptions":[],"review_questions":[]}]}. '
                 'A reported claim or belief can be causally relevant as such, but not automatically as a true external event. '
-                'Source dependence precludes treating multiple accounts of one episode as independent corroboration.\nCHILD:\n'+json.dumps(node)+
-                '\nPARENTS:\n'+json.dumps(parents)+'\nPASSAGES:\n'+context)
+                'Source dependence precludes treating multiple accounts of one episode as independent corroboration.\nCHILD:\n'+json.dumps(node_view(node))+
+                '\nPARENTS:\n'+json.dumps([node_view(p) for p in parents])+'\nPASSAGES:\n'+context)
             def validate(response):
                 edges=response.get('influences',[])
                 if sorted(e.get('parent') for e in edges)!=sorted(node['parents']):raise ValueError('Assess each supplied parent exactly once')
@@ -317,7 +386,7 @@ class Construction:
                 if not node['parents']:
                     background['U_'+node['id']]={k:node[k] for k in ('type','values','bounds','observed') if k in node}
                 nodes.append(node)
-            model={'id':'five_kings_v2_m%02d'%len(models),'outcome':blueprint['outcome'],'nodes':nodes,'background':background,
+            model={'id':self.case['id']+'_v2_m%02d'%len(models),'outcome':blueprint['outcome'],'nodes':nodes,'background':background,
                 'assumptions':blueprint.get('assumptions',[])+blueprint.get('graph_proposal',{}).get('assumptions',[]),
                 'outcome_definition':self.case['outcome'],'protocol':PROTOCOL,'local_choice':choice}
             scm=SCM(model);signature=fingerprint([inspect_mechanism(scm,n)['signature'] for n in scm.order])
@@ -344,11 +413,19 @@ class Construction:
             records.append(record)
         principal_root=max(boundary,key=lambda n:(scm.graph.out_degree(n),n)) if boundary else principal['nodes'][0]['id']
         query=next((q for q in questions if list(q['do'])==[principal_root]),questions[0])
-        trace=explain_query(principal,query,models);explanation=explain(self.gen,trace,2801)
+        trace=explain_query(principal,query,models)
+        prose_ids=[s for path in trace['paths']['paths'] for ident in path for s in scm.nodes[ident]['segments']]
+        prose_context,prose_sources=self.context(prose_ids,self.case['outcome'],8000)
+        trace['source_context']=prose_context
+        trace['source_context_private']=True
+        trace['source_review_scope']='Bounded actual passage context for selected paths; missing support remains unverifiable. Same-model review; researcher adjudication pending.'
+        explanation=explain(self.gen,trace,2801)
         control=reviewer_controls(self.gen,trace,2801)
+        atomic_json(self.folder/'explanation_context.private.json',{'source_context':prose_context,'source_ids':prose_sources})
+        trace['source_context_sha256']=__import__('hashlib').sha256(trace.pop('source_context').encode()).hexdigest()
         output={'case':self.case,'protocol':PROTOCOL,'packet_sha256':self.packet['packet_sha256'],'records':records,'queries':questions,'outcome_sets':answers,
             'explanation_query_policy':'Largest out-degree source boundary node; lexical tie, before observing intervention results.',
-            'explanation':explanation,'reviewer_controls':control,'trace':trace,
+            'explanation':explanation,'reviewer_controls':control,'trace':trace,'prose_review_source_ids':prose_sources,
             'alternatives':{'retained_functionally_distinct':len(models),'distinct_query_vectors':len({tuple(q['modeled_outcome'] for q in r['queries']) for r in records}),
                 'local_options':{n:len(v) for n,v in options.items()},'cartesian_options':__import__('math').prod(len(v) for v in options.values()),
                 'coverage':'Baseline plus single-local-function changes, at most 12, deterministic order; not exhaustive across combined changes or alternative graphs. No frequency interpretation.'},
@@ -358,8 +435,8 @@ class Construction:
 
 if __name__=='__main__':
     import argparse
-    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--inventory-only',action='store_true');a=p.parse_args()
-    construction=Construction(a.root)
+    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--case',default='five_kings');p.add_argument('--inventory-only',action='store_true');a=p.parse_args()
+    construction=Construction(a.root,a.case)
     try:
         output=construction.inventory() if a.inventory_only else construction.build()
         print('V2_FLAGSHIP_DONE',len(output.get('facts',[])),len(output.get('records',[])),flush=True)

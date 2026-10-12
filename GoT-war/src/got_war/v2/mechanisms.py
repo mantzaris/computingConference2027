@@ -147,7 +147,11 @@ def compatible_family(model, max_models=512, max_local_tables=256, seed=311):
             next(n for n in candidate['nodes'] if n['id']==ident)['expr']=options[ident][index]
         try: scm=SCM(candidate)
         except InvalidModel:continue
-        signature=fingerprint([inspect_mechanism(scm,n)['signature'] for n in scm.order])
+        reports={n:inspect_mechanism(scm,n) for n in scm.order}
+        for node in candidate['nodes']:
+            node['description']=reports[node['id']]['derived_description']
+            node['behavior_signature']=reports[node['id']]['signature']
+        signature=fingerprint([reports[n]['signature'] for n in scm.order])
         if signature not in signatures:models.append(candidate);signatures.add(signature)
     exhaustive=total<=max_models and all(c['coverage']=='exhaustive' for c in coverage)
     return {'models':models,'summary':{'unknown_nodes':identifiers,'local_coverage':coverage,
