@@ -12,5 +12,7 @@
   "rendering_repairs": [
     "Local Matplotlib 3.1 requires constrained_layout=True instead of layout=constrained and full six-digit hexadecimal colors. Figure-only changes leave model calculations unchanged."
   ],
-  "protocol_changes_after_freeze": []
+  "protocol_changes_after_freeze": [],
+  "release_validation_repair": "The first clean export passed all numerical/figure checks and 39 tests, but exposed a stale generated RESULTS.md missing the newly added bootstrap-interval caveat. The report was regenerated; no scores or frozen analysis changed.",
+  "final_sync_repair": "The last scheduled local sync at 23:00 UTC copied older publication reports/archive after a manual completion pull, then exited on COMPLETE. It was verified absent. Final reports and the archive were refreshed, and the non-frozen sync helper now checks local COMPLETE before its next pull to prevent that overwrite. No experiment, score or frozen protocol changed."
 }

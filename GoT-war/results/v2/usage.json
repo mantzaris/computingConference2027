@@ -1,91 +1,91 @@
 {
   "campaign_id": "campaign_v2_20261012T160349Z",
   "started_at": "2026-10-12T16:03:49.877393+00:00",
-  "measured_through": "2026-10-12T20:54:52.925953+00:00",
-  "final": false,
-  "elapsed_hours": 4.850846822222222,
+  "measured_through": "2026-10-12T22:58:18.165095+00:00",
+  "final": true,
+  "elapsed_hours": 6.907857695000001,
   "deadline": "2026-10-13T16:03:49.877393+00:00",
   "within_deadline": true,
   "output_token_ceiling": 1100000,
-  "requests": 645,
-  "input_tokens": 1645964,
-  "output_tokens_from_response_usage": 383502,
-  "output_tokens_from_server": 385051.0,
-  "sum_request_hours": 3.8464986183559815,
+  "requests": 1091,
+  "input_tokens": 2414491,
+  "output_tokens_from_response_usage": 741471,
+  "output_tokens_from_server": 742199.0,
+  "sum_request_hours": 6.460601038047963,
   "request_errors": 6,
   "request_time_caveat": "Concurrent request durations overlap; their sum is not elapsed GPU time. Response usage can omit interrupted streams; the dedicated server counter is preferred when present.",
-  "gpu_samples": 281,
-  "sampled_seconds_covered": 16813.91384291649,
-  "sampled_resident_hours_above_1gib": 4.245175141791503,
-  "sampled_utilization_weighted_gpu_hours": 0.9652359672619238,
-  "peak_sampled_vram_mib": 21954.0,
+  "gpu_samples": 405,
+  "sampled_seconds_covered": 24260.273015975952,
+  "sampled_resident_hours_above_1gib": 6.121798430416314,
+  "sampled_utilization_weighted_gpu_hours": 1.9394970097008688,
+  "peak_sampled_vram_mib": 22345.0,
   "sampling_caveat": "Approximate trapezoidal integration of minute-scale nvidia-smi samples, with gaps capped at 120 seconds. This is neither billed GPU time nor exact kernel timing.",
   "billing_cost": null,
   "billing_note": "No price or billing modification is inferred or performed.",
   "roles": {
     "v2_B0": {
-      "requests": 51,
-      "request_seconds": 896.791409540805,
-      "input_tokens": 67659,
-      "output_tokens": 23363,
+      "requests": 120,
+      "request_seconds": 1777.8863526184577,
+      "input_tokens": 162377,
+      "output_tokens": 55799,
       "request_errors": 0,
-      "median_decode_tokens_per_second": 42.84172160643932
+      "median_decode_tokens_per_second": 42.90323262977265
     },
     "v2_synthesis": {
-      "requests": 54,
-      "request_seconds": 3093.780638459255,
-      "input_tokens": 59652,
-      "output_tokens": 114740,
+      "requests": 124,
+      "request_seconds": 6966.178992324858,
+      "input_tokens": 140147,
+      "output_tokens": 274440,
       "request_errors": 0,
-      "median_decode_tokens_per_second": 42.65302580447651
+      "median_decode_tokens_per_second": 42.85918671655323
     },
     "v2_B1": {
-      "requests": 51,
-      "request_seconds": 869.399381921161,
-      "input_tokens": 77388,
-      "output_tokens": 21884,
+      "requests": 121,
+      "request_seconds": 1754.2718299790286,
+      "input_tokens": 188413,
+      "output_tokens": 54508,
       "request_errors": 0,
-      "median_decode_tokens_per_second": 43.16985608626709
+      "median_decode_tokens_per_second": 43.48796577822695
     },
     "v2_explanation": {
-      "requests": 54,
-      "request_seconds": 785.1665023134556,
-      "input_tokens": 93189,
-      "output_tokens": 14444,
+      "requests": 100,
+      "request_seconds": 1149.5341502927477,
+      "input_tokens": 177793,
+      "output_tokens": 25638,
       "request_errors": 0,
-      "median_decode_tokens_per_second": 43.129835192786004
+      "median_decode_tokens_per_second": 43.40035179265252
     },
     "v2_explanation_repair": {
-      "requests": 24,
-      "request_seconds": 372.67827086598845,
-      "input_tokens": 47213,
-      "output_tokens": 8287,
+      "requests": 39,
+      "request_seconds": 488.7922198001179,
+      "input_tokens": 78351,
+      "output_tokens": 12615,
       "request_errors": 0,
-      "median_decode_tokens_per_second": 43.153894461515364
+      "median_decode_tokens_per_second": 43.38099307277868
     },
     "v2_explanation_review": {
-      "requests": 54,
-      "request_seconds": 723.2088489162852,
-      "input_tokens": 109645,
-      "output_tokens": 16749,
+      "requests": 100,
+      "request_seconds": 1241.5954480510554,
+      "input_tokens": 205282,
+      "output_tokens": 29537,
       "request_errors": 0,
-      "median_decode_tokens_per_second": 42.851271368206156
+      "median_decode_tokens_per_second": 42.886331081967676
     },
     "v2_reviewer_controls": {
-      "requests": 52,
-      "request_seconds": 583.2617382081808,
-      "input_tokens": 92952,
-      "output_tokens": 12054,
+      "requests": 98,
+      "request_seconds": 995.7502951276838,
+      "input_tokens": 179580,
+      "output_tokens": 23077,
       "request_errors": 0,
-      "median_decode_tokens_per_second": 43.02792524746994
+      "median_decode_tokens_per_second": 43.33559266542907
     },
     "v2_synthesis_repair": {
-      "requests": 15,
-      "request_seconds": 813.8031538779032,
-      "input_tokens": 17219,
-      "output_tokens": 29873,
+      "requests": 47,
+      "request_seconds": 2533.358312051918,
+      "input_tokens": 56615,
+      "output_tokens": 100835,
       "request_errors": 0,
-      "median_decode_tokens_per_second": 42.801541893009755
+      "median_decode_tokens_per_second": 42.843357455842046
     },
     "v2_app_inventory": {
       "requests": 64,
@@ -96,12 +96,12 @@
       "median_decode_tokens_per_second": 47.56625769495494
     },
     "v2_synthesis_patch": {
-      "requests": 25,
-      "request_seconds": 411.74026549910195,
-      "input_tokens": 63614,
-      "output_tokens": 10130,
+      "requests": 77,
+      "request_seconds": 1053.2313202474033,
+      "input_tokens": 208500,
+      "output_tokens": 33044,
       "request_errors": 0,
-      "median_decode_tokens_per_second": 43.532692696254664
+      "median_decode_tokens_per_second": 43.6965733228729
     },
     "v2_app_shortlist": {
       "requests": 15,
@@ -297,20 +297,252 @@
     }
   },
   "server_counters": {
-    "collected_at": "2026-10-12T20:54:52.826062+00:00",
+    "collected_at": "2026-10-12T22:47:00.148349+00:00",
     "values": {
-      "vllm:num_requests_running": 2.0,
-      "vllm:num_requests_waiting": 1.0,
-      "vllm:prompt_tokens_total": 1651352.0,
-      "vllm:generation_tokens_total": 385051.0,
-      "vllm:request_success_total": 645.0,
-      "vllm:time_to_first_token_seconds_count": 648.0,
-      "vllm:time_to_first_token_seconds_sum": 2623.120810508728,
-      "vllm:request_prefill_time_seconds_count": 645.0,
-      "vllm:request_prefill_time_seconds_sum": 206.31060908868676,
-      "vllm:request_decode_time_seconds_count": 645.0,
-      "vllm:request_decode_time_seconds_sum": 11217.740107863909
+      "vllm:num_requests_running": 0.0,
+      "vllm:num_requests_waiting": 0.0,
+      "vllm:prompt_tokens_total": 2416819.0,
+      "vllm:generation_tokens_total": 742199.0,
+      "vllm:request_success_total": 1091.0,
+      "vllm:time_to_first_token_seconds_count": 1092.0,
+      "vllm:time_to_first_token_seconds_sum": 3905.1448130607605,
+      "vllm:request_prefill_time_seconds_count": 1091.0,
+      "vllm:request_prefill_time_seconds_sum": 290.4916379372007,
+      "vllm:request_decode_time_seconds_count": 1091.0,
+      "vllm:request_decode_time_seconds_sum": 19333.52394928562
     },
     "scope": "Only the version-2 project-created server; cumulative counters include aborted generation where exported."
-  }
+  },
+  "controlled_component_costs": {
+    "development": {
+      "v2_B0": {
+        "requests": 24,
+        "scms": 24,
+        "input_tokens": 32399,
+        "output_tokens": 11370,
+        "request_seconds": 419.61081997398287,
+        "errors": 0
+      },
+      "v2_B1": {
+        "requests": 25,
+        "scms": 24,
+        "input_tokens": 38563,
+        "output_tokens": 11021,
+        "request_seconds": 376.0350710018538,
+        "errors": 0
+      },
+      "v2_explanation": {
+        "requests": 20,
+        "scms": 17,
+        "input_tokens": 36833,
+        "output_tokens": 5463,
+        "request_seconds": 382.40074096334865,
+        "errors": 0
+      },
+      "v2_explanation_repair": {
+        "requests": 6,
+        "scms": 6,
+        "input_tokens": 12020,
+        "output_tokens": 2062,
+        "request_seconds": 147.7908102289657,
+        "errors": 0
+      },
+      "v2_explanation_review": {
+        "requests": 20,
+        "scms": 17,
+        "input_tokens": 43709,
+        "output_tokens": 6623,
+        "request_seconds": 362.0709394850419,
+        "errors": 0
+      },
+      "v2_reviewer_controls": {
+        "requests": 18,
+        "scms": 17,
+        "input_tokens": 34944,
+        "output_tokens": 4336,
+        "request_seconds": 297.3565686841612,
+        "errors": 0
+      },
+      "v2_synthesis": {
+        "requests": 28,
+        "scms": 24,
+        "input_tokens": 31097,
+        "output_tokens": 60257,
+        "request_seconds": 1691.8595097551588,
+        "errors": 0
+      },
+      "v2_synthesis_patch": {
+        "requests": 23,
+        "scms": 13,
+        "input_tokens": 59193,
+        "output_tokens": 10878,
+        "request_seconds": 392.7273128660745,
+        "errors": 0
+      },
+      "v2_synthesis_repair": {
+        "requests": 13,
+        "scms": 8,
+        "input_tokens": 15142,
+        "output_tokens": 26352,
+        "request_seconds": 672.5126951728016,
+        "errors": 0
+      }
+    },
+    "calibration": {
+      "v2_B0": {
+        "requests": 24,
+        "scms": 24,
+        "input_tokens": 32483,
+        "output_tokens": 11296,
+        "request_seconds": 453.9522582961945,
+        "errors": 0
+      },
+      "v2_B1": {
+        "requests": 24,
+        "scms": 24,
+        "input_tokens": 37451,
+        "output_tokens": 10281,
+        "request_seconds": 403.5670622959733,
+        "errors": 0
+      },
+      "v2_explanation": {
+        "requests": 16,
+        "scms": 16,
+        "input_tokens": 28248,
+        "output_tokens": 4382,
+        "request_seconds": 201.11044219514588,
+        "errors": 0
+      },
+      "v2_explanation_repair": {
+        "requests": 6,
+        "scms": 6,
+        "input_tokens": 12578,
+        "output_tokens": 1905,
+        "request_seconds": 94.85420948406681,
+        "errors": 0
+      },
+      "v2_explanation_review": {
+        "requests": 16,
+        "scms": 16,
+        "input_tokens": 32303,
+        "output_tokens": 4720,
+        "request_seconds": 235.1937863199273,
+        "errors": 0
+      },
+      "v2_reviewer_controls": {
+        "requests": 16,
+        "scms": 16,
+        "input_tokens": 28952,
+        "output_tokens": 3775,
+        "request_seconds": 223.3387929390883,
+        "errors": 0
+      },
+      "v2_synthesis": {
+        "requests": 24,
+        "scms": 24,
+        "input_tokens": 27251,
+        "output_tokens": 53338,
+        "request_seconds": 1423.555297366751,
+        "errors": 0
+      },
+      "v2_synthesis_patch": {
+        "requests": 14,
+        "scms": 14,
+        "input_tokens": 40240,
+        "output_tokens": 5038,
+        "request_seconds": 242.64066073304275,
+        "errors": 0
+      },
+      "v2_synthesis_repair": {
+        "requests": 10,
+        "scms": 10,
+        "input_tokens": 12249,
+        "output_tokens": 22421,
+        "request_seconds": 670.2976198630058,
+        "errors": 0
+      }
+    },
+    "test": {
+      "v2_B0": {
+        "requests": 72,
+        "scms": 72,
+        "input_tokens": 97495,
+        "output_tokens": 33133,
+        "request_seconds": 904.3232743482804,
+        "errors": 0
+      },
+      "v2_B1": {
+        "requests": 72,
+        "scms": 72,
+        "input_tokens": 112399,
+        "output_tokens": 33206,
+        "request_seconds": 974.6696966812015,
+        "errors": 0
+      },
+      "v2_explanation": {
+        "requests": 56,
+        "scms": 56,
+        "input_tokens": 101548,
+        "output_tokens": 13895,
+        "request_seconds": 522.9655121132382,
+        "errors": 0
+      },
+      "v2_explanation_repair": {
+        "requests": 21,
+        "scms": 21,
+        "input_tokens": 44133,
+        "output_tokens": 6626,
+        "request_seconds": 202.137270590174,
+        "errors": 0
+      },
+      "v2_explanation_review": {
+        "requests": 56,
+        "scms": 56,
+        "input_tokens": 115811,
+        "output_tokens": 16061,
+        "request_seconds": 594.891782702005,
+        "errors": 0
+      },
+      "v2_reviewer_controls": {
+        "requests": 56,
+        "scms": 56,
+        "input_tokens": 104012,
+        "output_tokens": 13377,
+        "request_seconds": 438.40359292336507,
+        "errors": 0
+      },
+      "v2_synthesis": {
+        "requests": 72,
+        "scms": 72,
+        "input_tokens": 81799,
+        "output_tokens": 160845,
+        "request_seconds": 3850.7641852029483,
+        "errors": 0
+      },
+      "v2_synthesis_patch": {
+        "requests": 40,
+        "scms": 40,
+        "input_tokens": 109067,
+        "output_tokens": 17128,
+        "request_seconds": 417.8633466482861,
+        "errors": 0
+      },
+      "v2_synthesis_repair": {
+        "requests": 24,
+        "scms": 24,
+        "input_tokens": 29224,
+        "output_tokens": 52062,
+        "request_seconds": 1190.5479970161105,
+        "errors": 0
+      }
+    }
+  },
+  "controlled_cost_interpretation": "Post-hoc descriptive request costs, joined by exact raw/JSON-escaped narrative occurrence in retained prompts. Synthesis is shared by B1/B2/ALT/FULL and must not be counted as independent work for each method. Request durations overlap across workers; CPU execution cost is included in case duration but not isolated here. Development/calibration include retained development attempts, not only the final cached records.",
+  "prompt_scope_audit": {
+    "exact_narrative_match": 796,
+    "no_controlled_narrative": 295
+  },
+  "heldout_first_request_at": "2026-10-12T20:14:09.215321+00:00",
+  "protocol_frozen_at": "2026-10-12T20:08:42.965565+00:00",
+  "heldout_requests_after_freeze": true
 }

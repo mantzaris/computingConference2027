@@ -14,6 +14,10 @@ def main():
     cfg = json.loads((ROOT / 'configs/budget_v2.json').read_text())
     run = 'runs/' + cfg['campaign_id']
     while True:
+        # A manual final pull may have closed the campaign while this worker
+        # slept. Do not overwrite newer local publication artifacts afterward.
+        if args.action == 'sync' and (ROOT/run/'COMPLETE').exists():
+            return
         if args.action == 'sync' and datetime.now(timezone.utc) >= datetime.fromisoformat(cfg['hard_deadline']):
             return
         remote = None

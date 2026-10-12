@@ -12,6 +12,7 @@
       "equation_id": "E1",
       "node": "X03",
       "label": "Tywin's forces attack Riverrun",
+      "displayed_label": "Tywin's forces attack Riverrun",
       "definition": "Tywin Lannister assigns half of his forces to Jaime Lannister to attack Riverrun, Catelyn Stark's homeland, as part of a strategy to assert Lannister dominance and pressure the Stark-led coalition.",
       "equation": "1",
       "factual": 1,
@@ -43,6 +44,7 @@
       "equation_id": "E2",
       "node": "X06",
       "label": "Robb calls Northern banners to war",
+      "displayed_label": "Robb calls Northern banners to war",
       "definition": "Robb Stark formally declares war and mobilizes Northern forces under his command.",
       "equation": "1",
       "factual": 1,
@@ -74,6 +76,7 @@
       "equation_id": "E3",
       "node": "X07",
       "label": "Robb deceives Lannister scout",
+      "displayed_label": "Robb deceives Lannister scout",
       "definition": "Robb sends a captured Lannister scout to falsely claim 20,000 men against Tywin",
       "equation": "1",
       "factual": 1,
@@ -91,6 +94,7 @@
       "equation_id": "E4",
       "node": "X08",
       "label": "Frey alliance conditional on marriage",
+      "displayed_label": "Frey alliance conditional on marriage",
       "definition": "Walder Frey allows Stark army passage in exchange for Robb Stark marrying one of his daughters and Arya Stark marrying one of his sons",
       "equation": "'agrees to allow the army to cross... in return for Robb and Arya marrying'",
       "factual": "agrees to allow the army to cross... in return for Robb and Arya marrying",
@@ -125,6 +129,7 @@
       "equation_id": "E5",
       "node": "X09",
       "label": "Robb captures Jaime Lannister",
+      "displayed_label": "Robb captures Jaime Lannister",
       "definition": "Robb Stark takes Jaime Lannister prisoner during the events of season 1",
       "equation": "if(eq(X06, 0), if(eq(X07, 0), if(eq(X08, 'agrees to allow the army to cross... in return for Robb and Arya marrying'), 1, 0), 0), 1)",
       "factual": 1,
@@ -142,6 +147,7 @@
       "equation_id": "E6",
       "node": "W",
       "label": "Conflict outcome",
+      "displayed_label": "Stark–Lannister conflict active",
       "definition": "Armed conflict between the Stark-led northern/Riverlands coalition and the Lannister-controlled crown is active by the end of season 1.",
       "equation": "and(X06, X03, eq(X08, 'agrees to allow the army to cross... in return for Robb and Arya marrying'), X09)",
       "factual": 1,
@@ -176,5 +182,5 @@
       "category_codes": {}
     }
   ],
-  "legend": "State annotations are factual → selected intervention; category codes are defined in the node index. Violet borders change; double borders mark nodes shared by selected paths. Solid/dashed/dotted edges mean explicit/contextual/zero-weight directional evidence. Tee arrows inhibit; ± has context-dependent sign. A dagger and pink fill flag a targeted operational/source concern, pending researcher adjudication. These are automatically assessed hypotheses, not established story laws."
+  "legend": "State annotations are factual → selected intervention; category codes are defined in the node index. Violet borders change; otherwise red borders mark an unsupported event audit. Double borders mark nodes shared by selected paths. Solid/dashed/dotted edges mean explicit/contextual/zero-weight directional evidence. Tee arrows inhibit; ± has context-dependent sign. A dagger and pink fill flag a targeted operational/source concern, pending researcher adjudication. These are automatically assessed hypotheses, not established story laws."
 }

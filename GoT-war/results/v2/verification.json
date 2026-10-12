@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "offline_only": true,
+  "completed_by_split": {
+    "development": 24,
+    "calibration": 24,
+    "test": 72
+  },
+  "accepted_syntheses": 89,
+  "rejected_syntheses_retained": 31,
+  "controlled_coalition_records_reproduced": 89,
+  "oracle_family_and_generating_queries_reexecuted": 1800,
+  "application_record": "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/final.json",
+  "application": [
+    {
+      "model": "five_kings_v2_m00",
+      "coalitions_reproduce": true,
+      "descriptions_match": true
+    }
+  ],
+  "frozen_hashes_match": true,
+  "failures": [],
+  "passed": true,
+  "limits": "Numerical and provenance consistency only. No independent source entailment, historical counterfactual truth, reader benefit or human review is established."
+}

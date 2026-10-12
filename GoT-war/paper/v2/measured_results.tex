@@ -1,0 +1,127 @@
+All 72 planned held-out SCM records completed. Table~\ref{tab:primary} reports SCM means with descriptive 95\% bootstrap intervals. Failed synthesis remains in each relevant primary denominator. FULL and ALT have identical outcome answers by construction; the additional FULL components are assessed separately.
+
+Eligible independent SCM counts are 72 for identified questions, 40 for outcome changes, 72 for preserved outcomes and 51 for underidentified questions. Eligibility follows the fixed questions, never method success.
+
+\begin{table}[t]\centering\small\setlength{\tabcolsep}{3pt}
+
+\caption{Identified and underidentified questions; estimates and 95\% intervals.}\label{tab:primary}
+
+\begin{tabular}{lrrrr}\toprule Method & Identified & Changes & Preserves & Uncertainty\\\midrule
+
+B0 & \shortstack{0.567\\{[0.478, 0.658]}} & \shortstack{0.546\\{[0.410, 0.678]}} & \shortstack{0.569\\{[0.473, 0.668]}} & \shortstack{0.431\\{[0.304, 0.569]}}\\
+
+B1 & \shortstack{0.561\\{[0.474, 0.647]}} & \shortstack{0.567\\{[0.436, 0.695]}} & \shortstack{0.569\\{[0.478, 0.661]}} & \shortstack{0.377\\{[0.245, 0.510]}}\\
+
+B2 & \shortstack{0.778\\{[0.681, 0.875]}} & \shortstack{0.800\\{[0.675, 0.925]}} & \shortstack{0.778\\{[0.681, 0.875]}} & \shortstack{0.000\\{[0.000, 0.000]}}\\
+
+ALT & \shortstack{0.778\\{[0.681, 0.875]}} & \shortstack{0.800\\{[0.675, 0.925]}} & \shortstack{0.778\\{[0.681, 0.875]}} & \shortstack{0.529\\{[0.392, 0.667]}}\\
+
+CARRY & \shortstack{0.862\\{[0.820, 0.902]}} & \shortstack{0.000\\{[0.000, 0.000]}} & \shortstack{1.000\\{[1.000, 1.000]}} & \shortstack{0.000\\{[0.000, 0.000]}}\\
+
+ORACLE\_FAMILY & \shortstack{1.000\\{[1.000, 1.000]}} & \shortstack{1.000\\{[1.000, 1.000]}} & \shortstack{1.000\\{[1.000, 1.000]}} & \shortstack{1.000\\{[1.000, 1.000]}}\\
+
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[t]\centering\small\setlength{\tabcolsep}{3pt}
+
+\caption{Complete versus incomplete mechanisms. Changed and preserved strata are scored separately.}\label{tab:missing}
+
+\begin{tabular}{llrrr}\toprule Condition & Method & Changes & Preserves & Uncertainty\\\midrule
+
+complete & B0 & \shortstack{0.666\\{[0.489, 0.831]}} & \shortstack{0.724\\{[0.574, 0.862]}} & ---\\
+
+complete & B2 & \shortstack{1.000\\{[1.000, 1.000]}} & \shortstack{1.000\\{[1.000, 1.000]}} & ---\\
+
+complete & ALT & \shortstack{1.000\\{[1.000, 1.000]}} & \shortstack{1.000\\{[1.000, 1.000]}} & ---\\
+
+omit intermediate & B0 & \shortstack{0.567\\{[0.327, 0.793]}} & \shortstack{0.696\\{[0.542, 0.830]}} & \shortstack{0.133\\{[0.000, 0.300]}}\\
+
+omit intermediate & B2 & \shortstack{0.600\\{[0.333, 0.867]}} & \shortstack{0.667\\{[0.444, 0.889]}} & \shortstack{0.000\\{[0.000, 0.000]}}\\
+
+omit intermediate & ALT & \shortstack{0.600\\{[0.333, 0.867]}} & \shortstack{0.667\\{[0.444, 0.889]}} & \shortstack{0.467\\{[0.200, 0.733]}}\\
+
+omit outcome & B0 & --- & \shortstack{0.456\\{[0.235, 0.678]}} & \shortstack{0.556\\{[0.333, 0.778]}}\\
+
+omit outcome & B2 & --- & \shortstack{1.000\\{[1.000, 1.000]}} & \shortstack{0.000\\{[0.000, 0.000]}}\\
+
+omit outcome & ALT & --- & \shortstack{1.000\\{[1.000, 1.000]}} & \shortstack{0.722\\{[0.500, 0.889]}}\\
+
+multiple missing & B0 & \shortstack{0.190\\{[0.000, 0.476]}} & \shortstack{0.397\\{[0.207, 0.604]}} & \shortstack{0.556\\{[0.333, 0.778]}}\\
+
+multiple missing & B2 & \shortstack{0.714\\{[0.429, 1.000]}} & \shortstack{0.444\\{[0.222, 0.667]}} & \shortstack{0.000\\{[0.000, 0.000]}}\\
+
+multiple missing & ALT & \shortstack{0.714\\{[0.429, 1.000]}} & \shortstack{0.444\\{[0.222, 0.667]}} & \shortstack{0.389\\{[0.167, 0.611]}}\\
+
+\bottomrule\end{tabular}\end{table}
+
+\paragraph{Paired comparisons.}
+
+B1 minus B0: identified accuracy -0.007 [-0.055, 0.046]; outcome-changing accuracy 0.021 [-0.085, 0.135]; appropriate uncertainty -0.054 [-0.147, 0.034].
+
+B2 minus B0: identified accuracy 0.210 [0.096, 0.328]; outcome-changing accuracy 0.254 [0.088, 0.420]; appropriate uncertainty -0.431 [-0.569, -0.304].
+
+ALT minus B2: identified accuracy 0.000 [0.000, 0.000]; outcome-changing accuracy 0.000 [0.000, 0.000]; appropriate uncertainty 0.529 [0.392, 0.667].
+
+FULL minus B0: identified accuracy 0.210 [0.096, 0.328]; outcome-changing accuracy 0.254 [0.088, 0.420]; appropriate uncertainty 0.098 [-0.108, 0.294].
+
+FULL minus CARRY: identified accuracy -0.085 [-0.191, 0.016]; outcome-changing accuracy 0.800 [0.675, 0.925]; appropriate uncertainty 0.529 [0.392, 0.667].
+
+\paragraph{Separate synthesis, grounding, and explanation components.}
+
+\begin{table}[t]\centering\small\begin{tabular}{lr}\toprule Component & Estimate [95\% interval]\\\midrule
+
+synthesis first & 0.444 [0.333, 0.556]\\
+
+synthesis after repair & 0.778 [0.681, 0.875]\\
+
+known function agreement & 0.778 [0.681, 0.875]\\
+
+unknown flag accuracy & 0.764 [0.667, 0.856]\\
+
+direction precision & 0.778 [0.681, 0.875]\\
+
+direction recall & 0.778 [0.681, 0.875]\\
+
+direction grounding & 0.778 [0.681, 0.875]\\
+
+event state agreement & 0.778 [0.681, 0.875]\\
+
+explanation generated & 0.778 [0.681, 0.875]\\
+
+explanation deterministic pass & 0.569 [0.458, 0.681]\\
+
+reviewer valid ids & 0.778 [0.681, 0.875]\\
+
+explanation same model supported & 0.681 [0.569, 0.778]\\
+
+explanation displayable & 0.556 [0.444, 0.667]\\
+
+reviewer control accuracy & 0.698 [0.608, 0.788]\\
+
+reviewer control false acceptance & 0.021 [0.000, 0.049]\\
+
+reviewer control missing & 0.222 [0.125, 0.319]\\
+
+\bottomrule\end{tabular}\caption{Components use all planned test SCMs. Same-model semantic review is dependent.}\label{tab:components}\end{table}
+
+\paragraph{Source prioritization.}
+
+B0 nDCG@5: 0.658 [0.538, 0.771].
+
+B1 nDCG@5: 0.722 [0.610, 0.825].
+
+FULL nDCG@5: 0.417 [0.260, 0.568].
+
+UNIFORM nDCG@5: 0.417 [0.260, 0.568].
+
+Paired FULL minus B0: -0.241 [-0.433, -0.050].
+
+Paired FULL minus B1: -0.305 [-0.485, -0.119].
+
+Paired FULL minus UNIFORM: 0.000 [0.000, 0.000].
+
+The independently fixed relevance labels describe the affected-mechanism slice, not human reading value. A zero modeled contrast can yield no ranking even when passages help explain invariance. The uniform-support ablation shares the same paths and allocations. Full results, conditional successful-synthesis estimates, error records, and all completeness strata accompany the release.
+
+\paragraph{Held-out computation.}
+
+The 469 held-out requests used 346,333 response-reported output tokens, identified by exact narrative matching. Summed request durations are 2.53 hours and overlap across workers; they are not elapsed GPU time. Synthesis requests are shared by B1, B2, ALT and FULL. The release separates incremental costs by request role, including prose generation, review and controls.

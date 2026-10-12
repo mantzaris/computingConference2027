@@ -1,6 +1,16 @@
 # Research handoff
 
-**Version 2 campaign in progress:** `campaign_v2_20261012T160349Z`, immutable deadline 2026-10-13 16:03:49 UTC. See `V2_METHODOLOGY.md`, `V2_DIAGNOSIS.md`, `configs/budget_v2.json`, and the ignored run directory. The sections below describe the preserved version 1 delivery; new results live in `results/v2/`.
+**Version 2 delivery:** `campaign_v2_20261012T160349Z` completed all 120 fixed controlled records (24 development, 24 calibration, 72 test). Its original hard deadline remains 2026-10-13 16:03:49 UTC. The project model service stopped after inference at 22:47 UTC on 2026-10-12; the GPU was clear and Jupyter remained available. Final accounting and staged-export checks are separate artifacts. No push or submission is authorized.
+
+Read [the complete version 2 delivery report](../results/v2/DELIVERY.md), [results](../results/v2/RESULTS.md), [error analysis](../results/v2/ERROR_ANALYSIS.md), [manuscript](../paper/v2/manuscript.pdf), and [reproduction guide](V2_REPRODUCIBILITY.md). Primary execution accuracy is 77.8% versus direct 56.7%, with a paired gain of 21.0 points [9.6, 32.8]. Source ranking is worse than direct ranking. Sixteen held-out syntheses fail; 40/72 explanations pass the frozen checks. All failures remain in their primary denominators.
+
+Fresh Five Kings discovery fails. Conditional refinement retains one six-node hypothesis with seven unsupported directional judgments and zero path weights. It demonstrates mathematical coalition distinctions, not a grounded war explanation. The endpoint and factual-null references coincide. The source-review form is unfilled, and the researcher explicitly asked to keep independent review pending. Other application expansion and a second model were not run. The appropriate contribution is a controlled methods evaluation and failure analysis.
+
+The source, inference and analysis protocol is frozen in `configs/v2_frozen_protocol.json`. Do not rewrite version 1 tables, silently repair version 2 scores, or launch further inference under a completed campaign. Full source context and failed candidates remain in ignored project folders; the compact release excludes weights and raw transcripts. Continue to use `main`, preserve the 250-file/8-MiB/2-MiB-per-file release limits, and leave pushing to the researcher.
+
+---
+
+**Preserved version 1 handoff follows.**
 
 The executable prototype, measured comparisons, source audits, figures and anonymous manuscript scaffold are delivered. The application does **not** yet establish source-valid explanations of the three conflicts. Work is committed directly to `main`; nothing has been pushed or submitted.
 

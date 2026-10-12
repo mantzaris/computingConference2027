@@ -15,11 +15,14 @@ def settings():
     import matplotlib
     matplotlib.use('Agg')
     matplotlib.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.spines.top':False,
-        'axes.spines.right':False,'svg.fonttype':'none','pdf.fonttype':42,'savefig.bbox':'tight'})
+        'axes.spines.right':False,'svg.fonttype':'none','svg.hashsalt':'GoT-war-v2',
+        'pdf.fonttype':42,'savefig.bbox':'tight'})
 
 
 def save(fig,folder,name):
     fig.savefig(folder/(name+'.svg'))
+    svg=folder/(name+'.svg')
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     fig.savefig(folder/(name+'.pdf'),metadata={'Creator':'GoT-war reproducible v2 analysis','Author':''})
     fig.savefig(folder/(name+'.png'),dpi=150)
     # This environment's older Matplotlib embeds whole TrueType fonts. Preserve
@@ -48,7 +51,11 @@ def network(app,folder):
            'edge [fontname="DejaVu Sans", fontsize=15, arrowsize=.65, penwidth=1.2];']
     index=[]
     for i,ident in enumerate(scm.order):
-        n=scm.nodes[ident];title_lines=textwrap.wrap(n['label'],16)
+        n=scm.nodes[ident]
+        # Shorten the explicitly specified target for figure readability only.
+        # The operational definition, graph, equations and scores are unchanged.
+        display_label='Stark–Lannister conflict active' if ident==model['outcome'] and app['case']['id']=='five_kings' else n['label']
+        title_lines=textwrap.wrap(display_label,16)
         if ident in flagged:title_lines[-1]+=' †'
         title='<BR/>'.join(html.escape(x) for x in title_lines)
         behavior=n.get('behavior',{})
@@ -68,9 +75,9 @@ def network(app,folder):
         if ident in changed:color='#6f42a8'
         if ident==model['outcome']:bg='#d4e8f0'
         if ident in flagged:bg='#fbe2e5'
-        label='<'+title+'<BR/><FONT POINT-SIZE="15">'+rule+'</FONT><BR/><FONT POINT-SIZE="15">'+html.escape('E%d · %s'%(i+1,n.get('event_time','time unresolved')))+'<BR/>'+html.escape(state)+'</FONT>>'
+        label='<'+title+'<BR/><FONT POINT-SIZE="15">'+rule+'</FONT><BR/><FONT POINT-SIZE="15">'+html.escape('%s · %s'%(ident,n.get('event_time','time unresolved')))+'<BR/>'+html.escape(state)+'</FONT>>'
         lines.append('"%s" [label=%s, fillcolor="%s", color="%s", penwidth=%s, peripheries=%d];'%(ident,label,bg,color,2 if ident in changed else 1.2,2 if participation[ident]>1 else 1))
-        index.append({'equation_id':'E%d'%(i+1),'node':ident,'label':n['label'],'definition':n['definition'],
+        index.append({'equation_id':'E%d'%(i+1),'node':ident,'label':n['label'],'displayed_label':display_label,'definition':n['definition'],
             'equation':equation(n['expr']),'factual':factual,'counterfactual':counter,'event_status':n.get('event_status'),'sources':n['segments'],
             'inspection_flag':flagged.get(ident),'generated_short_mechanism':n.get('short_mechanism'),'displayed_behavior_summary':rule_text,'category_codes':{'c%d'%j:value for j,value in enumerate(n.get('values',[]))}})
     for a,b in scm.graph.edges:
@@ -85,7 +92,7 @@ def network(app,folder):
     for fmt in ('svg','pdf','png'):
         subprocess.run(['dot','-T'+fmt,str(dot),'-o',str(folder/('five_kings_network.'+fmt))],check=True)
     atomic_json(folder/'network_index.json',{'model':model['id'],'query':trace['query'],'nodes':index,
-        'legend':'State annotations are factual → selected intervention; category codes are defined in the node index. Violet borders change; double borders mark nodes shared by selected paths. Solid/dashed/dotted edges mean explicit/contextual/zero-weight directional evidence. Tee arrows inhibit; ± has context-dependent sign. A dagger and pink fill flag a targeted operational/source concern, pending researcher adjudication. These are automatically assessed hypotheses, not established story laws.'})
+        'legend':'State annotations are factual → selected intervention; category codes are defined in the node index. Violet borders change; otherwise red borders mark an unsupported event audit. Double borders mark nodes shared by selected paths. Solid/dashed/dotted edges mean explicit/contextual/zero-weight directional evidence. Tee arrows inhibit; ± has context-dependent sign. A dagger and pink fill flag a targeted operational/source concern, pending researcher adjudication. These are automatically assessed hypotheses, not established story laws.'})
 
 
 def benchmark(summary,folder):
@@ -125,8 +132,9 @@ def application_plots(app,folder):
     values=principal['attribution']['coalition_values'];counts=collections.Counter(values)
     axes[0].bar([str(k) for k in sorted(counts)],[counts[k] for k in sorted(counts)],color='#477e9c')
     axes[0].set(xlabel='Computed coalition outcome',ylabel='Number of coalitions',title='All selected-path coalitions')
+    endpoint_label='Endpoint (=null)' if principal['reference_sensitivity']['factual_null']['references']==principal['reference_sensitivity']['domain_endpoint_stress']['references'] else 'Endpoint stress'
     refs={'Declared':principal['attribution'],'Factual null':principal['reference_sensitivity']['factual_null'],
-          'Endpoint stress':principal['reference_sensitivity']['domain_endpoint_stress'],'Four paths':principal['path_selection_sensitivity']['four_paths']}
+          endpoint_label:principal['reference_sensitivity']['domain_endpoint_stress'],'Four paths':principal['path_selection_sensitivity']['four_paths']}
     for i,(label,record) in enumerate(refs.items()):
         y=np.asarray(record['phi']);offset=np.linspace(-.12,.12,len(y))
         axes[1].scatter(i+offset,y,color='#387f86',alpha=.75,s=25)

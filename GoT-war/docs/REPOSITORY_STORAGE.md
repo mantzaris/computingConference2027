@@ -8,6 +8,8 @@ Earlier application candidates, interrupted responses, transport/server logs, ch
 
 Expanded benchmark JSONL, PNG previews, template examples/manuals, TeX build products, downloads, model weights and Git backup bundles are ignored. The template source URL/hash and the class/style files needed for compilation are retained. SVG/PDF figures and the compiled manuscript are intentionally published; their bytes are included in the release budget.
 
+Version 2 uses separate `results/v2/`, `figures/v2/`, and `paper/v2/` paths. Its curated archive and member manifest follow the same policy: all fixed controlled records, retained pilot records, accepted application records, and compact usage/process provenance. It does not duplicate full prompts or source passages. The larger version-2 run and private context remain local, and the original version-1 archive/results are preserved. The same repository-wide project limits below cover both releases together. See `V2_REPRODUCIBILITY.md` for the separate offline restore and staged-export validation.
+
 Before committing from the repository root:
 
 ```sh

@@ -1,0 +1,40 @@
+# Version 2 delivery and scientific decision
+
+The fixed controlled study is complete: **120 independent generating SCMs, including 72 held-out test SCMs and 1,080 test questions**. The application grounding objective is not established. Version 1 remains preserved at its original paths and commit `b8721e5f4c24915605b3192239d9cc1e1e4801d4`. Work stays on `main`; nothing is pushed or submitted.
+
+## Measured findings
+
+- **Executing synthesized programs helps on this explicit-rule benchmark.** Identified-intervention accuracy is 56.7% for direct answers, 56.1% for graph-conditioned answers, and 77.8% for both single-model and alternative execution. The paired execution-minus-direct difference is **+21.0 percentage points [9.6, 32.8]**. Outcome-changing accuracy is 80.0% versus 54.6%, a paired gain of **25.4 points [8.8, 42.0]**. Intervals resample independent SCMs; questions are repeated measurements.
+- **Synthesis remains a bottleneck.** Initial admission is 32/72; bounded repairs raise it to 56/72. All 56 admitted models match the known functions, directions and factual states, but all 16 failures remain in primary denominators. Intermediate and multiple omissions admit 12/18 and 8/18 models; complete and outcome-only omissions each admit 18/18.
+- **Alternatives improve uncertainty over a single point model, with limits.** Appropriate uncertainty is 52.9% versus zero for B2 and 43.1% for direct answers. The ALT/direct difference, +9.8 points [−10.8, 29.4], is inconclusive. Nine admitted models miss ten unknown-rule declarations, making their retained families too narrow. Exhaustiveness is conditional on the declared graph, domains and unknown flags, not arbitrary missing concepts. CARRY scores 86.2% on all identified questions but zero on changed outcomes, demonstrating why those strata must remain separate.
+- **Evidence-weighted prioritization does not show a benefit.** On 37 independently labeled eligible SCMs, FULL nDCG@5 is 0.417 versus 0.658 for direct ranking; the paired difference is −0.241 [−0.433, −0.050]. Uniform support gives identical scores. Only 16/37 FULL rankings are available: ten syntheses fail and eleven admitted models yield no priority. The labels describe structural slices, not minimal evidence or human reading benefit. Controlled FULL uses one model for priorities even when its outcome set uses alternatives.
+- **Explanation and reviewer performance are separate.** Forty of 72 explanations pass the frozen checks; all 56 generated explanations receive valid actual sentence-ID reviews. Strict agreement on performed reviewer controls is 201/224; three of 112 deliberately unsupported controls are accepted and 15 true factual controls are rejected. Same-model review is not independent adjudication. Two prose outputs exceed the requested word cap, which the frozen displayability check does not enforce.
+
+These are within-version paired findings. Different version-1 and version-2 benchmarks do not support a paired claim of improvement between campaigns.
+
+## Five Kings application
+
+Ten accessible first-season television transcriptions supply richer dialogue and scene context. Their unofficial fidelity remains unadjudicated. Fresh construction fails. A separately labeled refinement of an earlier LLM proposal retains **six variables, seven influences, four fixed scope boundaries, two connected functions and one functional interpretation**. No researcher-written story mechanism was inserted. The ten-node target was not met.
+
+All seven directional judgments are unsupported under the automated rubric; every path's weakest-link weight is zero. **Source ranking is unavailable.** The six-path game has 59 zero and five one coalitions, substitute routes and a negative marginal. An aligned path changes from −1/30 to 1/4 under a four-path collection while its individual factual event effect is zero. This is a useful distinction about the assumed program, not historical responsibility. The endpoint and factual-null policies coincide, so their zero games are one null-contrast check, not two robustness scenarios. One retained interpretation provides no across-model robustness evidence.
+
+The application prose fails numerical-field and sentence-count checks, although its reviewer covers the actual IDs. Independent review remains **pending at the researcher's explicit request**. Event/report/belief distinctions, planned versus realized actions, chronology, reference meanings, transcription fidelity, and generated necessity/inhibition assumptions require adjudication. The full local context is in `.private/v2/five_kings_review_packet.html`; public claims, source links, equations and questions are in [the review packet](five_kings_REVIEW_PACKET.md).
+
+The manuscript supports a **narrower controlled-methods and failure-analysis contribution**, not a validated Game of Thrones application contribution or a demonstrated improvement in reader understanding. New northern/Daenerys runs, a second model, extra application seeds, paraphrases and an interactive explorer were not run. Their absence is explicit; no graph was padded.
+
+## Verification, resources and retained failures
+
+Offline execution reproduces all 1,800 generating/family query answers across the 120 SCMs, all 89 admitted controlled coalition records, and the retained application calculations. All frozen hashes match. The process-identity repair passes fault-injection and actual-RunPod checks. The staged clean-export report records software tests, exact regenerated outputs and manuscript compilation; these are reproducibility checks, not source-validity evidence.
+
+The existing RTX 4090 ran cached Qwen3-14B-AWQ. The dedicated server counted **742,199 output tokens**; completed responses report 741,471. There are 1,091 logged requests and six API/JSON request failures; synthesis, validation and scientific failures are additional. Peak sampled VRAM is **22,345 MiB**. Approximate utilization-weighted GPU time is **1.94 hours**, with about **6.12 hours above 1 GiB resident**; neither is billed time. Billing cost is unknown. The 1.1-million-token ceiling was derived from the pilot, separately from version 1.
+
+Fixed inference finished at **2026-10-12 22:47:00 UTC**. Only the project model service was stopped. The shutdown check found 1 MiB GPU use, no compute processes, and Jupyter HTTP 302. The pod and unrelated services remain running. Final elapsed accounting is in [usage.json](usage.json); [release_validation.json](release_validation.json) also records the later packaging-verification time against the unchanged **2026-10-13 16:03:49 UTC** deadline. Analysis and packaging count toward that limit.
+
+Failed generations, private prompts, source context, checkpoints, protocol versions and raw logs remain local under `runs/campaign_v2_20261012T160349Z/` and `.private/`. The compact archive retains the numerical inputs, including failed fixed syntheses. Public source and developmental audits document access gaps and unsuccessful repairs. The release guard covers both versions together: **250 files, 8 MiB total, 2 MiB per file**.
+
+## Main artifacts
+
+- [Component results and intervals](RESULTS.md), [errors and mechanism-family coverage](ERROR_ANALYSIS.md), [source-priority evaluation](SOURCE_PRIORITY.md), [explanation/reviewer report](EXPLANATION_REPORT.md).
+- [Application evidence and mechanism audit](five_kings_APPLICATION_AUDIT.md), [path-coalition behavior](five_kings_PATH_BEHAVIOR.md), [source inspection flags](source_inspection.json).
+- [Anonymous manuscript PDF](../../paper/v2/manuscript.pdf), [LaTeX](../../paper/v2/manuscript.tex), [network SVG](../../figures/v2/five_kings_network.svg), [component figure](../../figures/v2/benchmark_components.pdf).
+- [Methodology revision](../../docs/V2_METHODOLOGY.md), [version-1 diagnosis](../../docs/V2_DIAGNOSIS.md), [frozen protocol](../../configs/v2_frozen_protocol.json), [reproduction instructions](../../docs/V2_REPRODUCIBILITY.md), [compact archive manifest](reproduction_manifest.json).

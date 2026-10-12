@@ -11,5 +11,31 @@
   "genai_disclosure_required": true,
   "human_review_and_responsibility_required": true,
   "submitted": false,
-  "failed_lookup": "https://saiconference.com/Computing/SubmissionGuidelines (web tool inaccessible); current rules read on the Call for Papers page."
+  "failed_lookup": "https://saiconference.com/Computing/SubmissionGuidelines (web tool inaccessible); current rules read on the Call for Papers page.",
+  "display_equation_check": {
+    "scope": "Post-hoc display reductions only; not synthesis inputs or source validity",
+    "rows_checked": 40,
+    "passed": true
+  },
+  "abstract_word_count": 218,
+  "pdf_pages": 18,
+  "main_text_pages": 17,
+  "references_start_page": 18,
+  "assistant_visual_inspection": {
+    "scope": "Final measured PDF, figures and tables at manuscript scale; not a human readability study",
+    "pages": [
+      1,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      17
+    ],
+    "findings": "No clipping in inspected figures or tables; identifiers connect the network to the equation/path table. Increased path-table column spacing after inspection. Unsupported evidence and duplicate null references remain visible."
+  },
+  "overfull_boxes_after_typesetting_repairs": 0,
+  "undefined_references": 0
 }

@@ -23,14 +23,16 @@ High-influence, weak-evidence paths remain visible in the table; zero evidence w
 
 ## Reference and path selection sensitivity
 
-| Scenario | Baseline | Full | Shares |
-|---|---:|---:|---|
-| declared | 0.0 | 1.0 | `[0.26667, 0.26667, -0.03333, 0.26667, 0.21667, 0.01667]` |
-| factual_null | 1.0 | 1.0 | `[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]` |
-| domain_endpoint_stress | 1.0 | 1.0 | `[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]` |
-| four_paths | 0.0 | 1.0 | `[0.25, 0.25, 0.25, 0.25]` |
+| Scenario | Baseline | Full | Coalition histogram | All selected paths required | Shares |
+|---|---:|---:|---|---|---|
+| declared | 0.0 | 1.0 | `{"0": 59, "1": 5}` | False | `[0.26667, 0.26667, -0.03333, 0.26667, 0.21667, 0.01667]` |
+| factual_null | 1.0 | 1.0 | `{"1": 64}` | False | `[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]` |
+| domain_endpoint_stress | 1.0 | 1.0 | `{"1": 64}` | False | `[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]` |
+| four_paths | 0.0 | 1.0 | `{"0": 15, "1": 1}` | True | `[0.25, 0.25, 0.25, 0.25]` |
 
 Factual-null and domain-endpoint references are explicit sensitivity checks, not necessarily meaningful alternative histories. Restricting the player set changes the estimand. A full selected-path coalition need not cover every explanatory route in a larger graph.
+
+The factual-null and domain-endpoint edge-reference assignments are identical in this retained model. Their zero allocations are the same null-contrast result, not two distinct robustness scenarios. Only the declared versus null reference assignments differ here. No additional reference history was selected after inspecting allocations.
 
 Principal minimal full-outcome coalitions: `[[1, 2, 4, 5], [1, 2, 4, 6]]`. Pair-interaction range: `[-1, 1]`.
 
@@ -44,6 +46,8 @@ Principal minimal full-outcome coalitions: `[[1, 2, 4, 5], [1, 2, 4, 6]]`. Pair-
 | X08 → W | 0.266667 | 0.250000 |
 
 These comparisons match the same node sequences within the fixed model. Changing the collection also changes which edges are coalition-controlled; edges outside the selected union retain their normal mechanisms. Shared-edge activation can consequently change an allocation or its sign without changing an equation. This sensitivity is a property of the defined coalition estimand, not a discovery that a narrative event changes historical causal responsibility.
+
+Edges outside the four-path union: `[["X06", "X09"], ["X08", "X09"]]`. The four-path game has no substitute full-outcome coalition and requires all its players. The scout path bundles a needed downstream edge even when the scout input itself is screened off by another active parent. This explains why a positive bundled-path allocation need not imply a positive event effect.
 
 A negative allocation concerns coalition contexts. It need not equal the effect of removing that event in the factual world. The intervention table supplies that distinct event-effect diagnostic. Neither quantity is a probability.
 

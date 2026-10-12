@@ -1,0 +1,645 @@
+{
+  "schema": 2,
+  "campaign_id": "campaign_v2_20261012T160349Z",
+  "archive": "results/v2/reproduction.tar.gz",
+  "archive_sha256": "b05808f9a22ae5cc5b4c07fbcc9ab3c9b5264d2900fb61387244cf68fe2e11e4",
+  "archive_bytes": 840853,
+  "expanded_bytes": 10109857,
+  "file_count": 158,
+  "scope": "Frozen controlled cases, paired records including failed synthesis, retained pilot rounds, accepted application records, and usage/supervision provenance. All expanded paths remain ignored.",
+  "local_only": "Full transcripts, private prompts, earlier application candidates, response fragments, model weights and raw service logs. These remain in the original project; no full-text redistribution permission is assumed.",
+  "files": {
+    "runs/campaign_v2_20261012T160349Z/COMPLETE": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runs/campaign_v2_20261012T160349Z/application/five_kings_refinement/final.json": {
+      "bytes": 135663,
+      "sha256": "bc9987d4a5ca2e5b176b43bba297e6df5c093cd9e45b02859d02a33b4bd8f0d0"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278000.json": {
+      "bytes": 47651,
+      "sha256": "9924e48fbfc5ed1be997e706dcbba97d31931662471023ab60ba936c0fb768a8"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278001.json": {
+      "bytes": 53133,
+      "sha256": "23c7f8e3c7a39fa98722f7a6d8b81752b9912a958901d4fe2f8dce49f98ef9f7"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278002.json": {
+      "bytes": 58095,
+      "sha256": "d5fc4a7cdc51fee5cdddb83e419d81104f63538190120050cb971ebcc1a380ab"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278003.json": {
+      "bytes": 46290,
+      "sha256": "97379a57beda74012bbb8a89e427dbf5d72619ae29e1336290807451f221f096"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278004.json": {
+      "bytes": 47528,
+      "sha256": "308b1ad131bfbe73b59a9e37d23e063770c536e4a76f2f389b6a114b9be26073"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278005.json": {
+      "bytes": 52042,
+      "sha256": "2aa999c4ea6c85fd20fe432bfc77930b9bd1ba4fc6c8a1d5ea946644b596dc29"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278006.json": {
+      "bytes": 53056,
+      "sha256": "1957d98936f92107cfd9801a8549b5e0bb0354633cc59b86065f40fbf327c515"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278007.json": {
+      "bytes": 47752,
+      "sha256": "7cd4903921e1564b77569d6c8b687aaec6665187e5f176110e35e6f042937b9d"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278008.json": {
+      "bytes": 51388,
+      "sha256": "a48c9e7002c32025b2a32dab9c0576650045fe96c8d0b6b64d4f6652d600ae66"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278009.json": {
+      "bytes": 54164,
+      "sha256": "1228555526e7d2c4389ae05d09c68eed570427cd24ec0f6479eef84e5a5c6897"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278010.json": {
+      "bytes": 50735,
+      "sha256": "a7517032b05df04db22034980ba1fd8eb6791af598f741ee053b507ca6848956"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278011.json": {
+      "bytes": 55455,
+      "sha256": "8b65c4ac4ab227300baf9ffbe661593f06bf59eac4e19a979c45953b7959f8a2"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278012.json": {
+      "bytes": 50713,
+      "sha256": "a69c9644b18a883caf3c8683255b6976c4f07f88db2669968ede4dd26c369fb4"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278013.json": {
+      "bytes": 49427,
+      "sha256": "314ad7908f8bd01e24f2c63d0d44245c492a2ed124367fbac964c18c3c203076"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278014.json": {
+      "bytes": 61700,
+      "sha256": "fe3df82065404ff570e04a4a1fb63a3dcefca5db97e01267b751c125f297a699"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278100.json": {
+      "bytes": 25919,
+      "sha256": "eb5dd6bea69fe34a86f6d229f3adc801f0b5ee3cf7c45e187d8233d31465dffb"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278101.json": {
+      "bytes": 50686,
+      "sha256": "015b8f0d97ebb0c41369d0d49dbffc150f091acfae8c59e5eba5a234abab51d5"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278102.json": {
+      "bytes": 24557,
+      "sha256": "64486b667796502d04d1f84c616a7f6e50ba14a462032375cc428f109454eb0b"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278103.json": {
+      "bytes": 60457,
+      "sha256": "4bd91b6571ac4bb8f6d541f7b6ac820878ba1d5d6351f0d17265376682730449"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278104.json": {
+      "bytes": 23667,
+      "sha256": "105a58c2b520e19dc3f9f7f8f9081f4505c313bfa01b0a3e8f856b2f691fa590"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278105.json": {
+      "bytes": 68984,
+      "sha256": "5a41f2a96eb948dc9d96fb6c2f8f1bfc27630c3ff2eee48de17e28bf8c0125e8"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278106.json": {
+      "bytes": 49821,
+      "sha256": "8c3ff800af68605d92dbafe7f95c3d53b0b2426c9a6f82e3969c00a9d8c50c81"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278107.json": {
+      "bytes": 24492,
+      "sha256": "0dd97ee0f093311921b1ad7a296012c4c5613f50672e1941f37470cbaec7f318"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278108.json": {
+      "bytes": 49767,
+      "sha256": "53a102dbbf2f26b3a79d8669c8afbab3ca62652e173d07182a9067cb5d56d78e"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278109.json": {
+      "bytes": 53099,
+      "sha256": "6136fafec5cdca80038634d6803b2bbf70c48ba70a5513fe98bed988b9e60434"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278110.json": {
+      "bytes": 60446,
+      "sha256": "0e4857a14cfa7e5514aa0ffd53cf31ccb0f5bf5a887d049586ce740b964bf182"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278111.json": {
+      "bytes": 25411,
+      "sha256": "c8320c7a53a3fc2e110c27144582286ed5e4414ed81986cf6797f5ceef661445"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278112.json": {
+      "bytes": 50469,
+      "sha256": "4ed70d9dc1d294ce164f07222010bc0381220f30d8f5e434a9afa449d6ae56f9"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278113.json": {
+      "bytes": 66560,
+      "sha256": "5d05ca03c076e350bb991d89a061f58dd619255590ae289a5368ac363369d642"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278114.json": {
+      "bytes": 25564,
+      "sha256": "2df76a7a6591568eeb9527cd1c80a2f4a82fdeaa6f1605c8edb180d4b8c96707"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278200.json": {
+      "bytes": 55424,
+      "sha256": "a16389cd9c3e1cf309e6c7101d4eab225aaac616d8307f3616386ea4be52f9fd"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278201.json": {
+      "bytes": 61509,
+      "sha256": "e4667527ad1d3c9188851038afbb65746ccf3ad8a9fce5648d2424a8b3822945"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278202.json": {
+      "bytes": 63126,
+      "sha256": "cc6e2c543599f1f9fe24ec063b794d112bcdf0e8da0572b394fa737125e35807"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278203.json": {
+      "bytes": 55324,
+      "sha256": "ec0bd5696379f5e4b08588ea76087e55c81e9faf7e7c9343814ec0f6972da0d0"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278204.json": {
+      "bytes": 47572,
+      "sha256": "590db2fdd5e3abd45aa21e04217ee1c5ebcbca2b634de96f845320abc5c0aeaa"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278205.json": {
+      "bytes": 25400,
+      "sha256": "6db7dc33e1674cfc9343dda5d616339f6018cc1cc69be2be5ec6d4dc033d08e9"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278206.json": {
+      "bytes": 50817,
+      "sha256": "6c52989d4c2efe82e4500aa2fffc331f00834371f27c85ebb271f74212ef018a"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278207.json": {
+      "bytes": 52546,
+      "sha256": "85d970799a7c445ad498989ca8a04eb0b1ebfaf8eafc49214d447dfdf7eacd4c"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278208.json": {
+      "bytes": 50675,
+      "sha256": "db27080e7e2cc637c48127be5aaf46b913af291510bb4ebb0ccfa383e5544d60"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278209.json": {
+      "bytes": 63727,
+      "sha256": "07e72f1a76fff2f62ed4b579abef0e502e5986e3aaa1e019b9b6ec347155d61f"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278210.json": {
+      "bytes": 60050,
+      "sha256": "99f8336d2e313cc790879a216c55990ad67c3b1206f3517053ae64917dd41f56"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278211.json": {
+      "bytes": 59721,
+      "sha256": "831ad9120fbf02b746b66fe8feb7fd74b303684ffc936d967693371d47470172"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278212.json": {
+      "bytes": 52761,
+      "sha256": "d4c1b513497f986c171a60609d5bfd20bf0d7dda93e527a8cf80994bd03e6c41"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278213.json": {
+      "bytes": 54727,
+      "sha256": "d316673b8706d4d4661f0db0c8bd81e6757c4fd5351fbc6494d36035d26f8713"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278214.json": {
+      "bytes": 69029,
+      "sha256": "98588597c662af15c5884237435ee37de2e68edab841cc205582eddc94c61129"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278300.json": {
+      "bytes": 51422,
+      "sha256": "ac3f813bc929d612bf3bb34cee6ab610f59a74ffc174b76b14dc476fb8146778"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278301.json": {
+      "bytes": 52170,
+      "sha256": "cf715d2f7b077bb7f02c416c3619cde4645eb31bc9f848c8b602598c70efab4a"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278302.json": {
+      "bytes": 26212,
+      "sha256": "ead459c6cafc1d74c1eac99fd4ea87e4f0c739d3c33d370a800d317b3087a572"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278303.json": {
+      "bytes": 50052,
+      "sha256": "decf008bd2766bb30334500c2dbb18f75224118969fff23bd3fed1e66738cc27"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278304.json": {
+      "bytes": 24826,
+      "sha256": "433aae8ee7e6014bd32a2f0564539491089a2af8ec41f8f32a86225eac4151c0"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278305.json": {
+      "bytes": 27259,
+      "sha256": "ad9a433fb1cfd56ac9e6c62bebdc38a57f7ef8d2ddbdbe41dcb86711890c125a"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278306.json": {
+      "bytes": 71345,
+      "sha256": "1177ff1534d8e8ee539fc4c23f6c84c6ab362e30f1a4b6c7cd007a8df53295b7"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278307.json": {
+      "bytes": 26581,
+      "sha256": "9b379b9ea88d67f51930a5f89c08c1cf2c1df91a6d22fdda2751c86d643bdf3d"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278308.json": {
+      "bytes": 27635,
+      "sha256": "4ea694a1dbb54ebcfbba331f9a9f33b5f7a8b236a8d4d6c5e8807f4f1663ed4f"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278309.json": {
+      "bytes": 26899,
+      "sha256": "81dffe892c068c4c5ea9b8b081ff9630df36f20ed27792333c564a72eb45494d"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278310.json": {
+      "bytes": 54960,
+      "sha256": "94bdae534d6b7ce70d100cc2963e8a70f73aff1ef4cb8a3ee0356666ea368d65"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278311.json": {
+      "bytes": 26868,
+      "sha256": "ac5662e0cd64aa5347836d95c45d4f93d2b20f2adbb398346805db99cc855012"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278312.json": {
+      "bytes": 66642,
+      "sha256": "edb495bafb551bbdbaa9e000cde5553e37eee9a9cadc60069880780765c9ae4a"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278313.json": {
+      "bytes": 28182,
+      "sha256": "f83f141dbaebbf7ec75e2cf26d401715936a8a6316b81b3ad5aa7f6a168c1f77"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_278314.json": {
+      "bytes": 26225,
+      "sha256": "d0378420aa11cd3b44f1a04f9c1fe34929bd63e43d4f25eb73083f911b23e5d1"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282000.json": {
+      "bytes": 64874,
+      "sha256": "598267edddc9bf84303eb168b5f5458612d6b613ab0ff0d40921c2154ce0653d"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282001.json": {
+      "bytes": 75862,
+      "sha256": "8d79573ae894c2f1a6fcf54fb712503e54518400f1bcf53d434ed0e754d06698"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282002.json": {
+      "bytes": 70877,
+      "sha256": "7aa7e3c938c6140bd5a0e099bfc5453600cd35b9c5b4af65759ecd43f9a59def"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282003.json": {
+      "bytes": 69685,
+      "sha256": "0e88a8a16be61b55e3ddc108ac7f2ed5e438a6df6ee1f20f213966f7be74ecae"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282004.json": {
+      "bytes": 76136,
+      "sha256": "e1279ba48ac90680f6b163e5585f3a30204b311ceb649829c51918bdbf2bfb65"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282005.json": {
+      "bytes": 64982,
+      "sha256": "4a7e86cbcc0a3ba50f689633b60e421e8a9648ef5f8177e35d11c85a1c9763f3"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282006.json": {
+      "bytes": 64649,
+      "sha256": "bf7cf0f6d2a6f01a9cccbeb70eb4a2362cec6746e61050b574e5605767f51a73"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282007.json": {
+      "bytes": 75170,
+      "sha256": "a0183163942f03d7426a5fe4462bffc785ff1cec69a06adddf2e4d7766e9434b"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282008.json": {
+      "bytes": 71276,
+      "sha256": "f2b41f53abe5a43acd22922de60a9ae500b72ff600ca425d283687aac6a2c8e1"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282009.json": {
+      "bytes": 64789,
+      "sha256": "d67a9d3e0347bad2e0bd672210a1b1082533cc1513dd961d9828a98e6a3fc87f"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282010.json": {
+      "bytes": 64983,
+      "sha256": "f3924f6a2e39c06eb017b3b2fd59e0472d3aae6fa7197a5a12ca5bcf37ae9567"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282011.json": {
+      "bytes": 65024,
+      "sha256": "3b3a69395df85d2b096ec35735aa9f8e13b87cdb14d017ef57c9db4d7367941e"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282012.json": {
+      "bytes": 74626,
+      "sha256": "5204bd7cb51e7bd3af917ac62e850bcebad27943aa464a0fda7539e4d41bd0d1"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282013.json": {
+      "bytes": 91569,
+      "sha256": "b9ec20ebad5d8ff1e5ae2fa8ccd7bdfbd810fe189ed4bcd0a3e3f52f6edcc548"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282014.json": {
+      "bytes": 87638,
+      "sha256": "da6ba627c65bc82a54cc242ca7dbfe5ec39101377e1c1a0c4148ff3ea4cb6721"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282100.json": {
+      "bytes": 39479,
+      "sha256": "d2f14009025efc48ba89a16cfc88433801a4cf5af81e89f64a716d62cb7f2d60"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282101.json": {
+      "bytes": 71576,
+      "sha256": "c27ed34462a100f0365091d3c98bded9cbc139b22451559bab911e3bae273399"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282102.json": {
+      "bytes": 36452,
+      "sha256": "c00bec47e3235754fbf259ae4f5f597685197433f918b3440d6c7ed19b8e3a4d"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282103.json": {
+      "bytes": 38058,
+      "sha256": "395047f206a7fa37941f3de6f09b834e5887288999e53d5d478f9b0215eca8a7"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282104.json": {
+      "bytes": 67398,
+      "sha256": "f01e3cc542ad75ed8a814aefd934d4e6440c69fbfc680e502403db3fa7dc6490"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282105.json": {
+      "bytes": 92723,
+      "sha256": "2b1a984615e9e62ee2e73b49dc0f970a92f288efc4ca454e37139e32c5f1e5c1"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282106.json": {
+      "bytes": 83304,
+      "sha256": "51729fc4cb2dcad081e03f7eb6ddd7910464daa83aa1feac4f0aed9d556a252f"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282107.json": {
+      "bytes": 37510,
+      "sha256": "4924c955accd887ee8597a411c15856cb1d19df4ea617c89c6aedfdcbfbdd0d8"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282108.json": {
+      "bytes": 72494,
+      "sha256": "43033833679dd3a8dfc4cab7ebe5863f4c53e1c10644e6a4c0d265015252eddc"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282109.json": {
+      "bytes": 41026,
+      "sha256": "f5f7085a7608d7e33f1ed9c4cfc449386e78a716597665d40128174649ebd89f"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282110.json": {
+      "bytes": 81773,
+      "sha256": "fc70a28894243b0a1322ba355a8c96a39109655bd7e11941f869e2d421171eae"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282111.json": {
+      "bytes": 73225,
+      "sha256": "6f496e03b5c53424c7a64937073c097ee26e7b61e8d61b967b28e66b021ff0bc"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282112.json": {
+      "bytes": 86337,
+      "sha256": "663dde8c1bbc199a60056fa53c61b047d93a6443bbca470ca35ddea5344bdbfc"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282113.json": {
+      "bytes": 37339,
+      "sha256": "0c869c072dcde3107d50235de70d8aa9527c1957facdaebf99484874562ea6c1"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282114.json": {
+      "bytes": 67765,
+      "sha256": "ce2796cac0b1cba7ca9d57b4a3c87ef1e6a4fefafad927a5841e70e1124d4437"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282200.json": {
+      "bytes": 76426,
+      "sha256": "dfdfc1da2c41c74d5e1884d3e692e15cb9afa84320a4ac61476c7070541209e2"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282201.json": {
+      "bytes": 66246,
+      "sha256": "c1f9c7121116109d55766f267d1a86a366f48b654e7464a84e68c69db589f47e"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282202.json": {
+      "bytes": 78530,
+      "sha256": "0ab57780eab3f74596ef678aeebeacf576df1f9f00452b44a9e4943a6e8b566d"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282203.json": {
+      "bytes": 69070,
+      "sha256": "eaa0e291b13fd09817d585337d3fa88ce8209b2cbfb3b16e66ff9ec0ac9979c2"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282204.json": {
+      "bytes": 76476,
+      "sha256": "4bfa403f7f8aafb2cb05c47aaebd8529da61ffdc1cb3b1b771c593b8c7c464f8"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282205.json": {
+      "bytes": 69088,
+      "sha256": "1acd5ae394ebce4cfde7f0e1388ea4a1d5d15a7aca9898d657217cbca96ddcc8"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282206.json": {
+      "bytes": 68197,
+      "sha256": "6b683c110722cd664f2d1d2cb28fab8226f66ba15ffca23ab7b05603e98d3324"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282207.json": {
+      "bytes": 68815,
+      "sha256": "0e700b976828e4366dc345eb752f13155db68f6f4c1653d48906d8c0c49595b5"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282208.json": {
+      "bytes": 68665,
+      "sha256": "8e0bc01c57e7512bed0edc16bb3139b369e52205fbb885418c855c6668a0825a"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282209.json": {
+      "bytes": 69092,
+      "sha256": "36b34646b1ee07d9b42c371c19d8f2b86778b16c7ee25c0d8b2b2fe48fd0ad9c"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282210.json": {
+      "bytes": 70202,
+      "sha256": "ff007f7b6c12f4d519d8235866b2d01f674af9cfa26b95a6631df869d971acf9"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282211.json": {
+      "bytes": 66468,
+      "sha256": "a11b6deb5f5f3d0ce66a3528db5f54ddb9e5665a7635c8ece7971bc7f75443d2"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282212.json": {
+      "bytes": 72396,
+      "sha256": "01aaa2956387837dac5d02d879b09e76d27ba782ca2de6b049c48ee7ecd47103"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282213.json": {
+      "bytes": 68153,
+      "sha256": "1cdc28d9ebbad566dbbfb3066d1be45a6cc89b83d18c216806d937ea1a87b034"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282214.json": {
+      "bytes": 66729,
+      "sha256": "e0c21f65498a978e9f67ba3c28b5ae31b989bc91be1a2576d73e4191aed0dab4"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282300.json": {
+      "bytes": 39374,
+      "sha256": "d5a1d34582412822d32bf430cecf0cd540c7b034372862ff12a7467c572bfa51"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282301.json": {
+      "bytes": 40866,
+      "sha256": "7e4bf2ae1b03ed08680d877e662d50c73a6e2693cab1468b693c4145a19a4456"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282302.json": {
+      "bytes": 86234,
+      "sha256": "0d8d61b9ef99e528d16f409fce52a2a8a1118ebb699b31fed8fc2a9fae3e210b"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282303.json": {
+      "bytes": 42103,
+      "sha256": "839ab1d145fd56be6705e18f0102c629a7db74c636ab8bbdd95c3ba1d5eae5e2"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282304.json": {
+      "bytes": 38931,
+      "sha256": "a46aea49a189ec4521ee0bf955ed425c476777d129b44a9fa8ba9f92dd0cc8e4"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282305.json": {
+      "bytes": 38142,
+      "sha256": "1d5af8ffcb676aab32e6bafed2f7c621a2444236f41fbf1962c8e8bddaaa53fb"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282306.json": {
+      "bytes": 70508,
+      "sha256": "c245ec98db1682d1a56018738f6ca2d25226e0f2af19b3302214b5730027000e"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282307.json": {
+      "bytes": 38629,
+      "sha256": "ce1e2b1924a0f86bf15efe6b6c5a189bc05aff5371c74832e9fdea561ee4b123"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282308.json": {
+      "bytes": 69980,
+      "sha256": "79ae492b16296e3fc63ad1a54a761196b989cf8f449f615013bb2dfcbd9a39cc"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282309.json": {
+      "bytes": 88284,
+      "sha256": "f6055326d3e4f2661b9ef1ba400f0309151089b1c59e89c768f4be9c1e4fc95a"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282310.json": {
+      "bytes": 70129,
+      "sha256": "666367f404521ef234a628de684ab1e1eec65114df4c82b660d6e220bc6fc2a5"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282311.json": {
+      "bytes": 40776,
+      "sha256": "cd5beca58db400655f5d9c84e9fa881ba827d1b7edaf6fe45d0f468b5adbb0a9"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282312.json": {
+      "bytes": 72483,
+      "sha256": "776ac92e5826dfeb0231e27a4c29d2e9d3f4d6e8d1e0a850f878a4803ed5dcf6"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282313.json": {
+      "bytes": 37638,
+      "sha256": "0a4bdf19348d64dae0c81d27dee90275c2cc50497bb7807f1f5574a3fe9601e1"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark/v2_scm_282314.json": {
+      "bytes": 38644,
+      "sha256": "5b2d6949dcb8af47400084401426c4312775506c21c5b7970447efd72c680262"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark_cases.jsonl": {
+      "bytes": 1580655,
+      "sha256": "c3acd3d7a6ddb453803ee43a1df266339e259a627e340d3fd09e1c9fa502b4e0"
+    },
+    "runs/campaign_v2_20261012T160349Z/benchmark_design.json": {
+      "bytes": 6909,
+      "sha256": "d4413d47821add50cde9e4f9ccd66f8c93522c3dd439c8c76282a0b606a1c396"
+    },
+    "runs/campaign_v2_20261012T160349Z/completion.json": {
+      "bytes": 804,
+      "sha256": "58a442284a56af73b5b12c2363c6fd60c3070b9dcc1e43bb19f08207ad660d78"
+    },
+    "runs/campaign_v2_20261012T160349Z/environment.json": {
+      "bytes": 1099,
+      "sha256": "34136ee89464eb2f53e5dca21b073325ead20385407366597842347fb1592e5f"
+    },
+    "runs/campaign_v2_20261012T160349Z/fixed_benchmark_failed_import_launch.json": {
+      "bytes": 1263,
+      "sha256": "4d3dc98bfb4e2b969910dd01dda6496b77895772288a17a29fa58a4a6bf9739d"
+    },
+    "runs/campaign_v2_20261012T160349Z/fixed_benchmark_launch.json": {
+      "bytes": 1263,
+      "sha256": "0598c34a10c0aa7b465fc8578e74b06794381671bb92a32363b6567e2670a284"
+    },
+    "runs/campaign_v2_20261012T160349Z/gpu_samples.jsonl": {
+      "bytes": 29452,
+      "sha256": "9021a8a3dffd6e0a69ed6d62a517bf41b718cb8c1a29b30d75d46279fe8088b7"
+    },
+    "runs/campaign_v2_20261012T160349Z/inference_finished.json": {
+      "bytes": 188,
+      "sha256": "147a767eba081244976f3249263a429d2b5c4b15bdb59fef9764f8da345b84ab"
+    },
+    "runs/campaign_v2_20261012T160349Z/inference_usage.json": {
+      "bytes": 5669,
+      "sha256": "0f835586dac453278986a0ada07178b4e0048b393ad69d6ac689a9c54917a80f"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round1/v2_scm_278000.json": {
+      "bytes": 47126,
+      "sha256": "5f0634c7255df0c244aba6fa6d58444f77a0149de5f97686e9ab15491f62c24e"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round1/v2_scm_278100.json": {
+      "bytes": 65257,
+      "sha256": "d804f1c55653e3f4b11eb89adf24becdb1061f68c69b4890dacee551354938b8"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round1/v2_scm_278200.json": {
+      "bytes": 53940,
+      "sha256": "b99296ea6906dbbf7d29371cb8883ac49f69e1b881f58006b5e5fe534a96b821"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round1/v2_scm_278300.json": {
+      "bytes": 32058,
+      "sha256": "a9047c81e96eaef21cdcd001bea72a77e119caae358daba393959d4d64403176"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round1_summary.json": {
+      "bytes": 608,
+      "sha256": "8396deb4bdf835f1ecfdd90a181ecd61f77092d03907e72cf13c2dabf240767a"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round2/v2_scm_278000.json": {
+      "bytes": 44773,
+      "sha256": "ace633fa979eac8d8e2dade59d5c10111b5e61ba511b3780afba124650d55890"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round2/v2_scm_278100.json": {
+      "bytes": 56887,
+      "sha256": "fc31d47a8f25a100a2e624ac903cd39620898148d26c0026223bbcaf5a9465e5"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round2/v2_scm_278200.json": {
+      "bytes": 45769,
+      "sha256": "3a0f2f9bd6f697267013720617ed1575742114542f383ba4b98e5fdd8e1c6dd8"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round2/v2_scm_278300.json": {
+      "bytes": 31200,
+      "sha256": "d190fd40df391a367d10a748d89ec5f2a97f0c31a5578bae8f4cee6613faacb5"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round3/v2_scm_278000.json": {
+      "bytes": 45419,
+      "sha256": "cd4095281dbda825a0119c49cc355dcbff3d26175131ad4f6f110b014303a9c4"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round3/v2_scm_278100.json": {
+      "bytes": 19659,
+      "sha256": "11e438dab54e03e1f1da6e8f38dd6dda5968a9559a83bc67dbd75833520718dd"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round3/v2_scm_278200.json": {
+      "bytes": 46416,
+      "sha256": "c515b0e5a3e0c5469cd18c5c617a5969d5ad6b632b2ede03c1464d8ab27cc9c4"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round3/v2_scm_278300.json": {
+      "bytes": 49498,
+      "sha256": "1c03abc4351fe7383f0bb4de9c0e26645b1dd429c7acb193d5ab3dd3ab3cf992"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round4/v2_scm_278000.json": {
+      "bytes": 45416,
+      "sha256": "36f3b9165bb441c39bfe69acc5b6eebb3879af40f9a6e9e8e3e2508e6caadcf1"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round4/v2_scm_278100.json": {
+      "bytes": 17653,
+      "sha256": "d02d63d6a607936a560059ed575089fffe45ae9b03ade563b1fed63a9534a90a"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round4/v2_scm_278200.json": {
+      "bytes": 46416,
+      "sha256": "63222b9dafb2e1b9a8adf96fa3de1e72f7e68850d9a87e0ef88b5f454af50e64"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round4/v2_scm_278300.json": {
+      "bytes": 49973,
+      "sha256": "8207055bdf54c1ae36e07545dcf99b5b16c070ea90a85576e8b73a85f2205ce8"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round5/v2_scm_278000.json": {
+      "bytes": 45419,
+      "sha256": "c9bf10dae785fa746d06e89c7c6154aa670addaf15d145986b5bd06320dd9317"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round5/v2_scm_278100.json": {
+      "bytes": 16469,
+      "sha256": "b4a5068fe0d123a99b6bee4d3d319ed138ef3fb67a5b430e3ccd6f29082f0329"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round5/v2_scm_278200.json": {
+      "bytes": 46414,
+      "sha256": "2128755451ed47d47d9b13872bf327374ac4435a56ea628c9724e233f32574d7"
+    },
+    "runs/campaign_v2_20261012T160349Z/pilot_round5/v2_scm_278300.json": {
+      "bytes": 27531,
+      "sha256": "a3e750b969917325910f04ee9878dd0fa57270435edb126241af9e356b2acee7"
+    },
+    "runs/campaign_v2_20261012T160349Z/processes.json": {
+      "bytes": 11329,
+      "sha256": "21daad813a4f085e2add35bad808fa8ae2f0195c5de364d176b696f328fe237b"
+    },
+    "runs/campaign_v2_20261012T160349Z/service_counters.json": {
+      "bytes": 756,
+      "sha256": "e79808bb358648d6fb988ccf9d22aeb43174f0c2eda504c15b7a693a925084c3"
+    },
+    "runs/campaign_v2_20261012T160349Z/shutdown_verification.json": {
+      "bytes": 428,
+      "sha256": "1a363a03c410bc17d4d56127a066d070a4be1f292a210b14f414fc952e2107db"
+    },
+    "runs/campaign_v2_20261012T160349Z/supervision_probe.json": {
+      "bytes": 270,
+      "sha256": "63b55237b78a7a4e0fea5ec90022f098318acf6f255591c158597677c1c9a93f"
+    },
+    "runs/campaign_v2_20261012T160349Z/usage_ledger.jsonl": {
+      "bytes": 775550,
+      "sha256": "ba58723de6983ee727459abb1d2df4c72559e712f3efe51d916c2fbd1f6d7189"
+    },
+    "runs/campaign_v2_20261012T160349Z/watchdog_final.json": {
+      "bytes": 71,
+      "sha256": "13165f577011ca9c313ee7a113805c35609b37266accfa34d63c2486473f3f2a"
+    }
+  }
+}
