@@ -1,0 +1,167 @@
+{
+  "artifact": "paper/narrative_maps_2027/manuscript.pdf",
+  "abstract_words": 207,
+  "pages": 19,
+  "main_pages": 14,
+  "references_appendix_pages": 5,
+  "text_width_mm": 122,
+  "caption_words": {
+    "CrowCaption": 18,
+    "BlackwaterCaption": 19,
+    "RedWeddingCaption": 18,
+    "BoltonCaption": 19,
+    "AstaporCaption": 19,
+    "HumptyCaption": 19,
+    "WolfCaption": 19
+  },
+  "references": 9,
+  "figures": 7,
+  "figure_hashes": {
+    "figures/publication/simple_stories/humpty.pdf": "00f6691dc6d9963cf79c3f73d2e71ae1cb773e58d9901073176693a08e69d138",
+    "figures/publication/simple_stories/wolf.pdf": "4d0c05de55bb496262a4dadb3257030da75d1c2448f575a26645f15baf7bb6f0",
+    "figures/publication/simple_stories/crow.pdf": "8cf8e557b04dc3864534e654ca09ed7bd7d738d77cec4a27435d1e61fb2ab9e2",
+    "figures/publication/got/blackwater_mechanism.pdf": "2da1696f4c8c08df3c4161c52a8dc57a3d5cd8e83fe4b9b2e684b1c3a43afe9b",
+    "figures/publication/got/red_wedding_mechanism.pdf": "788d74f631dd51bcec2bda436d0ce756529916c1d96f5204754cf613d51d023c",
+    "figures/publication/got/bolton_mechanism_interventions.pdf": "2561dc6fb1d1cd28f6041115a75c0afa6d7dfa46dba3d1663173008521842287",
+    "figures/publication/got/astapor_overview.pdf": "979f2a6978eeabfe4535dd2ad75fa562d2e5b47b80fd52dbfa1d15184816b0bb"
+  },
+  "template_sha256": "ddfc1f23edfbb51f13bb6a6e427b63c41cc9a965f08a3bc65e83c81ee9ae9560",
+  "source_sha256": "5e43eca30db17b4f3896ed1d01bc93dcbdcc753ba248cc6748fc05d031f19fdd",
+  "bibliography_sha256": "5dd87b179b26277caa0d52cd5665a0fdc0ff0caa6dfc73fd061b1e311292de72",
+  "pdf_sha256": "7c0b9fafe94bef41a03ad3d79593bac68ccc03709b106f79f13e7305a188ad42",
+  "pdf_bytes": 383287,
+  "checks": {
+    "abstract_150_to_250_words": true,
+    "main_at_most_18_pages": true,
+    "references_and_appendices_at_most_7_pages": true,
+    "all_references_cited": true,
+    "no_unresolved_references": true,
+    "no_overfull_boxes": true,
+    "captions_15_to_30_words": true,
+    "all_pdf_fonts_embedded": true,
+    "author_field_empty": true,
+    "no_identifying_project_strings": true,
+    "actual_template_width": true
+  },
+  "retained_science": {
+    "artifact_hashes": {
+      "results/v4/reproduction.json.xz": "9ddce167c6463adc8e23d5e5e33e148801387f46813779305c452478251bbb34",
+      "results/v2/test_summary.json": "03036b8f44c63d0d6c86ce208b4e0b2001079ffa5f8aacbd024005f521ad7a9e",
+      "experiments/simple_stories/frozen.json": "12d1e7c00fd59dd570d94edf83d7b707c3975678f5b30367c4c657152859b302",
+      "experiments/simple_stories/records.json.xz": "37dad65578eeb7b80a4ed847faf660ad73b47023a3bb810f440040cec6a777a8",
+      "experiments/simple_stories/reassessment.json": "42a1fb3df734a8645e01f1b1a892c080afc6f5feb8023904020ad04c85fdf2b8"
+    },
+    "application_counts": {
+      "cases": 6,
+      "variables": 69,
+      "relationships": 71,
+      "questions": 18,
+      "scenario_disagreements": 6,
+      "broad_sets_both_binary_values": 18,
+      "episode_pages": 41,
+      "scene_containers": 924
+    },
+    "application_reproduction": {
+      "cases": 6,
+      "queries": 18,
+      "scenario_queries": 36,
+      "source_locations": 0,
+      "formal_claims": 36
+    },
+    "manuscript_equations_match_archives": true,
+    "worked_interventions_reproduced": {
+      "crow": [
+        [
+          {
+            "A": 0
+          },
+          0
+        ],
+        [
+          {
+            "A": 0,
+            "B": 1
+          },
+          1
+        ]
+      ],
+      "humpty": [
+        [
+          {
+            "E": 1
+          },
+          0
+        ],
+        [
+          {
+            "E": 1,
+            "A": 0
+          },
+          1
+        ]
+      ],
+      "wolf": [
+        [
+          {
+            "F": 0
+          },
+          0
+        ],
+        [
+          {
+            "F": 0,
+            "N": 0
+          },
+          1
+        ]
+      ]
+    },
+    "reference_answers": 12,
+    "mutations_detected": 4,
+    "story_facts": {
+      "humpty_natural_attempt0": [
+        4,
+        6
+      ],
+      "humpty_controlled_attempt0": [
+        6,
+        6
+      ],
+      "wolf_natural_attempt0": [
+        8,
+        8
+      ],
+      "wolf_controlled_attempt0": [
+        5,
+        6
+      ],
+      "crow_natural_attempt0": [
+        8,
+        8
+      ],
+      "crow_controlled_attempt0": [
+        8,
+        8
+      ]
+    },
+    "benchmark_identified_percent": {
+      "B0": 56.7,
+      "B2": 77.8,
+      "ALT": 77.8,
+      "FULL": 77.8
+    },
+    "benchmark_changed_percent": {
+      "B0": 54.6,
+      "B2": 80.0,
+      "CARRY": 0.0
+    },
+    "benchmark_paired_difference_pp": {
+      "estimate": 21.0,
+      "lower": 9.6,
+      "upper": 32.8
+    },
+    "failed_benchmark_syntheses": 16,
+    "scope": "Arithmetic, expression transcription and execution checks; semantic judgments still require substantive review."
+  },
+  "inspection_note": "Automated checks complement the page-by-page editorial inspection documented in EDITORIAL.md."
+}

@@ -1,4 +1,12 @@
-# Latest addition: calibrated reassessment and publication figures (2026-10-13)
+# Latest addition: complete narrative-maps conference draft (2026-10-13)
+
+Read [the anonymous Computing Conference 2027 manuscript](../paper/narrative_maps_2027/manuscript.pdf), [LaTeX source](../paper/narrative_maps_2027/manuscript.tex), and [internal editorial note](../paper/narrative_maps_2027/EDITORIAL.md). The paper leads with the Crow reference example, develops six television cases through four detailed application figures, and puts Humpty, Wolf and the calibrated generation assessment in appendices. It uses the actual `svproc` class and unchanged 122 mm publication figures, with short new captions. The earlier explicit-rule benchmark is a separate supporting execution result. No previous experiment, figure, reassessment or manuscript was modified.
+
+Rebuild with `python3 scripts/build_narrative_paper.py` from GoT-war. The command verifies source counts, numerical claims, equation transcriptions, existing intervention results, figure hashes, conference limits and anonymous metadata. The final draft has 14 main pages plus five reference/appendix pages and a 207-word abstract. Source interpretation and author responsibility still require substantive human review; the paper does not claim independent adjudication or measured comprehension gains. There is no anonymous artifact URL yet. The documented storage allowance is now 360 files / 9.5 MiB total / 2 MiB per file to preserve earlier releases and add the separate draft. No inference, push or submission was performed.
+
+---
+
+# Preserved addition: calibrated reassessment and publication figures (2026-10-13)
 
 Read the [balanced simple-story reassessment](../experiments/simple_stories/REASSESSMENT.md), [machine-readable audit](../experiments/simple_stories/reassessment.json), and [publication figure index](../paper/publication/README.md). Seven new SVG/PDF figures cover three author-reference stories and the shortlisted Blackwater, Red Wedding, Bolton (combined mechanism/interventions) and Astapor views. [The actual-class inclusion proof](../paper/publication/example.pdf) supplies manuscript-ready captions. Reproduce with `python3 scripts/publication_figures.py --compile`.
 
