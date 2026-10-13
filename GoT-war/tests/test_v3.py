@@ -47,10 +47,12 @@ def test_no_active_parent_requirement():
     assert [1,1] in fam['local']['Y']['tables']
 
 
-def test_no_constraints_means_all_functions_not_one_invented_rule():
+def test_omitted_known_factual_constraint_is_rejected_not_silently_completed():
     r,f,p=fixture();f['functions'][0]['constraints']=[]
-    fam=build_family(r,f,p)
-    assert len(fam['models'])==4
+    with pytest.raises(ValueError,match='Known factual row not enforced'):build_family(r,f,p)
+    # With no established child observation, all four functions remain possible.
+    r['variables'][1]['factual']=None
+    assert len(build_family(r,f,p)['models'])==4
 
 
 def test_multiple_missing_intermediate_functions():
@@ -192,6 +194,7 @@ def test_fixed_background_is_reused_across_interventions():
 
 def test_missing_root_is_not_automatically_factual_carry_forward():
     r,f,p=fixture();r['variables'][0]['boundary']='unresolved';r['variables'][0]['factual']=None
+    r['variables'][1]['factual']=None
     r['mechanisms'].append({'id':'mS','child':'S','parents':[],'description':'Missing upstream process',
         'joint_description':'','evidence':[],'assumptions':[],'gaps':['upstream unknown']})
     r=validate_representation(r,p)

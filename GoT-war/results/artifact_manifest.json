@@ -175,8 +175,8 @@
       "sha256": "dece5fe7e98a9e94d6fe307ee1cf0be42b9282afb2937ce25b67f7ef3550143f"
     },
     "docs/V3_METHOD.md": {
-      "bytes": 14446,
-      "sha256": "1be41d90e08473e979aa718aa7a7c2caafb961c57679aea468a7a0d7f485204e"
+      "bytes": 15124,
+      "sha256": "1bb5a2dd287e87ed6adf300121ef9a855c20c0668829ffafdffdee0f9cd228b6"
     },
     "docs/reference_audit.json": {
       "bytes": 30778,
@@ -663,8 +663,8 @@
       "sha256": "5e3489d1f0cdb51fbefdc1234457b7dd47b627ce7bd79f779ea1ed075c4acff8"
     },
     "results/v3/validation.json": {
-      "bytes": 16253,
-      "sha256": "1624de10d308e54a79fa5f8ef7f473d99a17f641b879d62f15b5a05ee8889415"
+      "bytes": 17030,
+      "sha256": "f73df823bb720b38a5d0ecf3d022723a8ba8afcce615efba3b49368f369c4800"
     },
     "results/variable_equation_catalog.csv": {
       "bytes": 14116,
@@ -1031,8 +1031,8 @@
       "sha256": "fe26f725ecc8d157662db4aeb4303f05d975fc8d4cf6f2438f434b8229fdc49e"
     },
     "src/got_war/v3/core.py": {
-      "bytes": 27036,
-      "sha256": "24f993c7b7dfc5d4107a76d71d9207f0cb877d7e41b7567730b044375ae8cac2"
+      "bytes": 28688,
+      "sha256": "bcc6b55180dc43b3387839bd909e98daf3469140ea5f10a66256383ed13ac301"
     },
     "src/got_war/v3/offline.py": {
       "bytes": 14469,
@@ -1075,8 +1075,8 @@
       "sha256": "0be2aabe4c2da1da9a898e780febd3997ab113a01d01b4cd75c9973c983c5223"
     },
     "tests/test_v3.py": {
-      "bytes": 15735,
-      "sha256": "451a1858b487febf25a2bff9e2653c2fd4e94ccc2b5273db6adaf07079fd96d1"
+      "bytes": 15985,
+      "sha256": "520a2a64ce3c54c5883c8edb189efc8a67d548022d39c72e542d1e88c5ddc42c"
     }
   }
 }

@@ -310,10 +310,32 @@ def build_family(rep, functional, packet=None, max_tables=4096, max_models=512, 
             chosen.add(tuple(rng.randrange(len(local[k]['tables'])) for k in keys))
         combos = sorted(chosen)
     models = [{k: local[k]['tables'][i] for k, i in zip(keys, combo)} for combo in combos]
-    return {'functions': functions, 'local': local, 'models': models, 'exhaustive': exact,
+    result = {'functions': functions, 'local': local, 'models': models, 'exhaustive': exact,
             'coverage': 'exhaustive within declared family' if exact else 'sampled candidates',
             'cartesian_size_within_local_candidates': total, 'signatures': signatures,
             'frequency_is_probability': False}
+    # The compiler must retain established observations, not just its chosen
+    # subset of source constraints. Reject an underspecified family with a
+    # concrete diagnostic; never silently invent an unobserved output row.
+    established = {v['id']: v['factual'] for v in rep['variables']
+                   if v.get('event_status') in ('explicit', 'contextual') and v.get('factual') is not None}
+    for child, f in local.items():
+        if child in established and all(p in established for p in f['inputs']):
+            row = [established[p] for p in f['inputs']]
+            index = f['rows'].index(row)
+            bad = next((table[index] for table in f['tables'] if table[index] != established[child]), None)
+            if bad is not None:
+                raise ValueError('Known factual row not enforced for '+child+': inputs '+str(dict(zip(f['inputs'],row)))+
+                                 ' permit '+str(bad)+' but recorded evidence establishes '+str(established[child])+
+                                 '. Retain the observed constraint or revise the evidence assessment; do not complete unobserved rows.')
+    for index, model in enumerate(models):
+        world = solve(rep, result, model)
+        for ident, expected in established.items():
+            if world[ident] != expected:
+                raise ValueError('Known factual-state conflict in joint candidate '+str(index)+': '+ident+
+                                 ' computes '+str(world[ident])+' versus established '+str(expected)+
+                                 '. This bounded compiler requires explicit compatible observational constraints.')
+    return result
 
 
 def solve(rep, family, model, interventions=None):
