@@ -1,0 +1,15 @@
+{
+  "sha256": "9ddce167c6463adc8e23d5e5e33e148801387f46813779305c452478251bbb34",
+  "bytes": 50108,
+  "expanded_bytes": 937816,
+  "cases": [
+    "stark_lannister",
+    "northern_coalition",
+    "blackwater",
+    "red_wedding",
+    "bolton",
+    "astapor"
+  ],
+  "qwen_attempts": 17,
+  "scope": "Public references retain offsets/hashes/support judgments, not full quote text. Private packets or hash-matching reacquisition are required for source verification."
+}

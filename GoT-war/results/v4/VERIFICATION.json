@@ -1,0 +1,45 @@
+{
+  "verified_at": "2026-10-13T18:31:36.462054+00:00",
+  "campaign_started_at": "2026-10-13T17:09:51+00:00",
+  "elapsed_minutes_through_verification": 81.75770089999999,
+  "tests": {
+    "full_suite_passed": 83,
+    "seconds": 7.89,
+    "public_export_v4_passed": 12
+  },
+  "reproduction": {
+    "partial_queries": 18,
+    "conditional_queries": 36,
+    "formal_prose_claims": 36,
+    "exact_source_locations": 74,
+    "public_only_render_matches": 20
+  },
+  "figures": {
+    "views": 18,
+    "published_pdf_pages": 18,
+    "inspected_by": "Current Codex assistant; no human readability study",
+    "inspection_scale": "7 by 9.5 inch bounding box; minimum main label about 8.6 pt; detail views preferred for columns",
+    "combined_pdf_pixel_matches_inspected_individuals": 18,
+    "browser_gallery_figures": 18,
+    "browser_catalogue_sections": 30
+  },
+  "infrastructure": {
+    "at": "2026-10-13T18:24:23.605017+00:00",
+    "memory": "1 MiB",
+    "compute_processes": "",
+    "jupyter_http_status": 200,
+    "scope": "Read-only final infrastructure verification; no pod/billing/unrelated service mutation."
+  },
+  "remote_watchdog": {
+    "state": "completed",
+    "at": "2026-10-13T18:24:34.125990+00:00"
+  },
+  "limitations": [
+    "Independent researcher adjudication pending",
+    "Natural counterfactual gold unavailable",
+    "Codex token/build metadata unavailable",
+    "Raw model streams, original drafts and full source packets retained locally; curated public records reproduce calculation and rendering"
+  ],
+  "resolved_packaging_failure": "Fresh export pytest needed its .cache parent created; reproduction instructions corrected.",
+  "prior_scientific_versions_preserved": true
+}

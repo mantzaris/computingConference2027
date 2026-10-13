@@ -1,0 +1,30 @@
+# Version 4 Game of Thrones portfolio
+
+[Open the numbered gallery and mechanism catalogue](GALLERY.html). The SVG/PDF figures are in [figures/v4](../../figures/v4/); local PNG previews regenerate from the PDFs. [Independent-review packet](REVIEW_PACKET.md); [method and reproduction](../../docs/V4_METHOD.md).
+
+**6 of 6 case scopes completed**, with 69 variable records, 71 edge records and 18 distinct figure views. Each case retains a partial mechanism family and two explicitly assumed executable SCMs. There are no evidence-identified complete literary SCMs. All 18/18 selected answers remain unresolved under the partial families; 6 questions distinguish the two declared scenarios. These are targeted sensitivity examples, not independent statistical samples or an accuracy estimate.
+
+| Case | Nodes / edges | Conditional SCMs | Questions | Scenario disagreements |
+|---|---:|---:|---:|---:|
+| stark_lannister | 11 / 10 | 2 | 3 | 1 |
+| northern_coalition | 10 / 11 | 2 | 3 | 1 |
+| blackwater | 11 / 10 | 2 | 3 | 1 |
+| red_wedding | 13 / 14 | 2 | 3 | 1 |
+| bolton | 13 / 14 | 2 | 3 | 1 |
+| astapor | 11 / 12 | 2 | 3 | 1 |
+
+The portfolio improves explanatory inspection: allegations differ from facts, mobilization from assembled forces, permission from crossing, preparation from ambush, and encirclement from its later persistence. Every displayed edge has a specific process phrase, evidence status and a catalogue entry. Local truth tables expose exactly which additional assumptions produce the conditional answers. This is a demonstrated representation and execution capability, not independently established narrative causal discovery.
+
+The Stark–Lannister outcome is narrowed to Tywin's documented field-army order. The northern coalition outcome is the assembled host's negotiated crossing with Frey aid. Blackwater concerns repelling Stannis's assault; the Red Wedding concerns the gathered royal coalition, not all northern resistance. Bolton concerns military capture of Winterfell. Astapor concerns immediate defeat and departure with freed troops, not durable governance. These related cases overlap and are not independent observations.
+
+**Paper shortlist:** 08 (wildfire joint mechanism), 11 (Red Wedding preparation and exposure), 14 (relief inhibits persistent encirclement), 15 (joint-intervention sensitivity), 16 (Astapor overview), and 17 (recognized command plus implemented order). Figures 14 and 15 form a complementary pair. Selection reflects specificity, source visibility, mathematical consistency and layout, not a claim that selected cases establish general accuracy. Full overviews remain in the gallery; the detail views are easier to use at column width.
+
+**Inference and generation.** Qwen3-14B-AWQ ran on the newly authorized RTX 4090: 17 requests, 36,659 generated and 67,627 prompt tokens; 14 responses parsed as JSON. The 3 repairs are retained alongside the initial failures. Summed request wall time was 7.9 minutes; service residency was 31.5 minutes; peak sampled VRAM was 21,886 MiB. Sampled utilization-weighted time was 7.6 minutes, not billed GPU time. The server count was 36,659 generated tokens. The service stopped early after these passes, below both 150,000 tokens and two hours. Current Codex read explicit packets, generated the final representations/scenarios, revised proposals and reviewed them. Its exact served build, token usage and billing are unavailable. The final models are hybrid, assistant-mediated hypotheses, not autonomous Qwen outputs or a v3 A/B/C replication.
+
+**Failures and limitations.** Initial Blackwater responses exhausted the output allowance and failed JSON parsing. A smaller per-pass output schema repaired formatting, not interpretation. Inspected errors include Tyrion/Bronn role confusion, an overclaim of total fleet destruction, Edmure/Robb wedding confusion, and Meereen events imported into the Bolton scope. Astapor's proposed water-offer-to-negotiation link lacks support and was retracted. These examples are an error inventory, not a blinded error-rate assessment. Initial GPU access on the old pod remained broken; the user supplied a replacement. The new project environment worked. An initial watchdog launch lacked a module path; an absolute-path relaunch supplied working identity-checked supervision.
+
+Source access succeeded for 41 episode pages and 924 scene containers, but one unofficial transcription family is not independent corroboration. Some containers merge locations. Source assertions, contextual inferences and exact functions remain distinct; contextual labels are fallible Codex judgments awaiting researcher review. No support rubric was loosened to create nonzero path weights: v1/v2 zero-weight findings remain preserved. V4 does not claim a source-ranking or path-attribution benefit and does not add an attribution experiment. It also does not complete the unrun v3 comparison, estimate causal probabilities, or measure reader comprehension.
+
+The evidence-only implementation fixes factual input rows but leaves other rows free within the declared graph/domain/background. Every local family is exhaustive; the global products exceed the 512-candidate cap. Each reported binary outcome set is certified by retained 0 and 1 witnesses, not by interpreting a sampled singleton as identification. Scenario agreement is only agreement under the stated extra assumptions.
+
+**Next experiment:** independently adjudicate the six shortlisted views, especially Sansa's inferred communication, Frey risk protection, command recognition, and the necessity of relief or dragon fire. Freeze the resulting partial constraints before a source-matched, application-focused comparison of autonomous synthesis versus targeted mechanism revision. Assess source entailment and description/function contradictions before any reader study. The current manuscript can gain an exploratory application portfolio; a validated application-success claim remains unsupported. Prior controlled methods/failure-analysis findings are unchanged.

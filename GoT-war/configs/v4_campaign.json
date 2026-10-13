@@ -1,0 +1,220 @@
+{
+  "version": 4,
+  "run": "application_v4_20261013",
+  "base_commit": "1688384316d6c9762a41fb91b396e52c9b32206c",
+  "cases": [
+    {
+      "id": "stark_lannister",
+      "title": "Escalation into Stark–Lannister armed conflict",
+      "episodes": [
+        "s01e01",
+        "s01e02",
+        "s01e03",
+        "s01e04",
+        "s01e05",
+        "s01e06",
+        "s01e07",
+        "s01e08",
+        "s01e09",
+        "s01e10"
+      ],
+      "continuity": "HBO aired television",
+      "max_variables": 22,
+      "max_edges": 32,
+      "max_parents": 3,
+      "outcome": "Tywin orders Jaime to take a field army against the Riverlands by S01E07.",
+      "status": "constructed_conditional",
+      "endpoint_code": 107.9,
+      "interval": "S01E03 attribution through S01E07 military commitment",
+      "boundary": "A bounded escalation decision, not a claim to identify the onset of every war or every cause of Tywin’s policy.",
+      "research_questions": [
+        "Why does Tywin connect Tyrion’s imprisonment with family respect and an army against Riverrun? Does the royal summons independently motivate that commitment?"
+      ],
+      "detail_child": "C",
+      "overview_caption": "How allegations, detention and dynastic deterrence lead to a specific army commitment. Jaime’s street violence is a related branch; the royal-summons connection remains a dashed hypothesis.",
+      "detail_caption": "How a public accusation recruits available retainers into an implemented seizure. Baelish’s attribution is represented as a report, not proof of Tyrion’s guilt.",
+      "intervention_caption": "The hypothetical independent effect of Ned’s summons changes the no-attribution answer. Neither interpretation identifies a literary counterfactual."
+    },
+    {
+      "id": "northern_coalition",
+      "title": "Northern mobilization and Robb Stark’s coalition",
+      "episodes": [
+        "s01e01",
+        "s01e02",
+        "s01e03",
+        "s01e04",
+        "s01e05",
+        "s01e06",
+        "s01e07",
+        "s01e08",
+        "s01e09",
+        "s01e10"
+      ],
+      "continuity": "HBO aired television",
+      "max_variables": 22,
+      "max_edges": 32,
+      "max_parents": 3,
+      "outcome": "Robb's assembled northern host obtains and uses the Twins crossing with Frey military support by S01E09.",
+      "status": "constructed_conditional",
+      "endpoint_code": 109.9,
+      "interval": "S01E08 northern mobilization through S01E09 negotiated crossing",
+      "boundary": "Coalition assembly and operational access; exclude Ned’s later execution and Robb’s later coronation as causes.",
+      "research_questions": [
+        "What causes Robb to call the banners, how is leadership accepted, and what separates Frey promises from the actual crossing?"
+      ],
+      "detail_child": "G",
+      "overview_caption": "Mobilization, an assembled host, passage permission and a Frey troop pledge are separate steps in the operational coalition. Later coronation is outside this outcome.",
+      "detail_caption": "Does Catelyn’s mediation itself matter, or can another channel deliver an accepted bargain? Robb’s proposed alternative is not an observed successful substitute.",
+      "intervention_caption": "The two scenarios differ without Catelyn’s negotiation. Both require the accepted terms for this crossing, an assumption beyond the factual bargain."
+    },
+    {
+      "id": "blackwater",
+      "title": "The Battle of the Blackwater",
+      "episodes": [
+        "s02e01",
+        "s02e02",
+        "s02e03",
+        "s02e04",
+        "s02e05",
+        "s02e06",
+        "s02e07",
+        "s02e08",
+        "s02e09",
+        "s02e10"
+      ],
+      "continuity": "HBO aired television",
+      "max_variables": 22,
+      "max_edges": 32,
+      "max_parents": 3,
+      "outcome": "Stannis's assault on King's Landing is repelled by the end of the Blackwater battle in S02E09.",
+      "status": "constructed_conditional",
+      "endpoint_code": 209.99,
+      "interval": "S02E05 preparations through S02E09 retreat; S02E10 used only for retrospective attribution",
+      "boundary": "The observed assault is in progress. Model the naval trap, local defense and relief; exclude the origins of the war and post-battle marriage decisions.",
+      "research_questions": [
+        "Which physical and organizational steps link the trap to local military effects?",
+        "Are naval damage and the gate sortie substitutes or prerequisites for relief to repel the assault?",
+        "What remains undetermined about victory without the relief force?"
+      ],
+      "detail_child": "D",
+      "overview_caption": "How the wildfire trap, rear counterattack and timely relief converge on Stannis’s retreat. Naval losses are distinguished from the whole battle outcome.",
+      "detail_caption": "The trap’s intermediate steps: access to wildfire is not deployment, Tyrion’s signal is not Bronn’s ignition, and fuel/ignition/exposure jointly govern the assumed local loss mechanism.",
+      "intervention_caption": "Both candidate models preserve victory without trap ignition, but disagree without relief; removing relief and sortie participation produces defeat in both. The evidence-only family leaves every selected answer unresolved."
+    },
+    {
+      "id": "red_wedding",
+      "title": "The Red Wedding and Robb’s coalition collapse",
+      "episodes": [
+        "s02e07",
+        "s02e08",
+        "s02e09",
+        "s02e10",
+        "s03e01",
+        "s03e02",
+        "s03e03",
+        "s03e04",
+        "s03e05",
+        "s03e06",
+        "s03e07",
+        "s03e08",
+        "s03e09",
+        "s03e10"
+      ],
+      "continuity": "HBO aired television",
+      "max_variables": 22,
+      "max_edges": 32,
+      "max_parents": 3,
+      "outcome": "Robb's royal leadership and accompanying host are destroyed at the Twins during the Red Wedding by S03E09.",
+      "status": "constructed_conditional",
+      "endpoint_code": 309.99,
+      "interval": "S02E07 broken alliance background through S03E09; S03E10 is retrospective evidence",
+      "boundary": "Collapse of the gathered Robb-led coalition, not extinction of every northern house or later resistance.",
+      "research_questions": [
+        "What evidence separates Frey grievance, Lannister assurances, military need, entry under hospitality and implementation of the ambush?"
+      ],
+      "detail_child": "X",
+      "overview_caption": "Military depletion and the replacement marriage bring the coalition to a protected-looking occasion; grievance and assurances feed a separately prepared betrayal. Hall and camp attacks jointly define the bounded collapse.",
+      "detail_caption": "Preparation and exposure converge on the hall ambush. Promised hospitality is distinguished from actual protection, and retrospective assurances from their later report.",
+      "intervention_caption": "Removing Walder’s grievance separates a revenge-dependent plot from a protected strategic betrayal. The source does not choose between these complete functions."
+    },
+    {
+      "id": "bolton",
+      "title": "The northern campaign against Bolton rule",
+      "episodes": [
+        "s05e10",
+        "s06e01",
+        "s06e02",
+        "s06e03",
+        "s06e04",
+        "s06e05",
+        "s06e06",
+        "s06e07",
+        "s06e08",
+        "s06e09",
+        "s06e10"
+      ],
+      "continuity": "HBO aired television",
+      "max_variables": 22,
+      "max_edges": 32,
+      "max_parents": 3,
+      "outcome": "The Stark-led coalition takes Winterfell and ends Ramsay Bolton's control by the end of S06E09.",
+      "status": "constructed_conditional",
+      "endpoint_code": 609.99,
+      "interval": "S06E04 coalition decision through S06E09 victory",
+      "boundary": "The military capture of Winterfell; exclude later kingship and the separate Meereen battle in the same episode.",
+      "research_questions": [
+        "How are Sansa’s request, Vale availability and arrival connected, and how do Ramsay’s bait, the encirclement and the gate breach differ?"
+      ],
+      "detail_child": "H",
+      "overview_caption": "A battlefield trap, outside relief and a physical gate breach explain distinct stages of Winterfell’s capture. The dashed-free graph still contains contextual inference and assumed functions.",
+      "detail_caption": "Relief inhibits the persistence of an already formed enclosure. Initial encirclement is distinguished from the post-relief obstruction, which is factually absent.",
+      "intervention_caption": "Avoiding Rickon’s bait and losing relief jointly separates the scenarios. Relief is indispensable in one; in the other an unobserved successful advance after avoiding the trap substitutes for it."
+    },
+    {
+      "id": "astapor",
+      "title": "Daenerys’s capture of Astapor",
+      "episodes": [
+        "s03e01",
+        "s03e02",
+        "s03e03",
+        "s03e04",
+        "s03e05"
+      ],
+      "continuity": "HBO aired television",
+      "max_variables": 22,
+      "max_edges": 32,
+      "max_parents": 3,
+      "outcome": "Daenerys defeats the masters' armed control and departs Astapor with the freed Unsullied by S03E04.",
+      "status": "constructed_conditional",
+      "endpoint_code": 304.99,
+      "interval": "S03E03 bargain through S03E04 departure",
+      "boundary": "A bounded military acquisition and liberation campaign; no claim about lasting governance or subsequent Slaver’s Bay wars.",
+      "research_questions": [
+        "What distinguishes the dragon bargain, recognized command, orders carried out, dragon fire, emancipation and the soldiers’ decision to remain?"
+      ],
+      "detail_child": "U",
+      "overview_caption": "A bargain transfers command, an order is implemented in combat, and emancipation is followed by continued service and departure. Immediate victory is not lasting governance.",
+      "detail_caption": "Recognized command and an explicit attack order converge on the Unsullied’s implemented attack. Acquiring authority does not itself issue an order.",
+      "intervention_caption": "The necessity of dragon fire remains unresolved: the depicted guard defeat can be modeled as sufficient or as needing the simultaneous dragon strike. Neither scenario is identified."
+    }
+  ],
+  "initial_case": "blackwater",
+  "generation_route": "Hybrid: Qwen3-14B-AWQ source propositions on the new authorized GPU; current Codex source-grounded synthesis, targeted revision and same-assistant review. Not a replication of v3 A/B/C.",
+  "stage_sequence": [
+    "source reading and event propositions",
+    "candidate edge processes and missing-connection questions",
+    "broad-corpus retrieval and bounded representation revision",
+    "joint mechanisms and partial constraints",
+    "semantic review and formal counterexamples",
+    "questions frozen before execution",
+    "figures and catalogue"
+  ],
+  "max_repairs_per_case": 2,
+  "local_rows_limit": 64,
+  "local_candidate_limit": 4096,
+  "global_candidate_limit": 512,
+  "old_test_set_used": false,
+  "independent_researcher_review": "pending",
+  "literary_counterfactual_gold": null,
+  "case_independence": false
+}

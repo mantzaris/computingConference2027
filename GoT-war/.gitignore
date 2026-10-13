@@ -12,6 +12,8 @@ data/derived/segments.private.jsonl
 # Publication vectors and the manuscript PDF are retained; previews regenerate.
 /figures/**/*.png
 /figures/*.png
+# V4 publishes one vector PDF with 18 pages; individual PDF exports regenerate.
+/figures/v4/[0-9][0-9]_*.pdf
 /paper/template/*
 !/paper/template/SOURCE.json
 !/paper/template/svproc.cls
@@ -35,6 +37,9 @@ data/derived/segments.private.jsonl
 !/results/reproduction.tar.gz
 !/results/v2/reproduction.tar.gz
 !/results/v3/reproduction.tar.gz
+*.xz
+!/results/v4/reproduction.json.xz
+/results/v4/GALLERY_EXPANDED.html
 paper/*.aux
 paper/*.log
 paper/*.out

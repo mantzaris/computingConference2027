@@ -10,7 +10,7 @@ from pathlib import Path
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
-LIMITS = {'files': 280, 'bytes': 8 * 1024 * 1024, 'single_file_bytes': 2 * 1024 * 1024}
+LIMITS = {'files': 320, 'bytes': 8 * 1024 * 1024, 'single_file_bytes': 2 * 1024 * 1024}
 MANIFEST = 'results/artifact_manifest.json'
 
 
@@ -46,9 +46,10 @@ def check(write_manifest=False):
         manifest = {
             'scope': 'Published Git index content for GoT-war; excludes this self-referential manifest. Original campaign archives remain local.',
             'limits': LIMITS,
-            'files': {name: {'bytes': size, 'sha256': sha} for name, size, sha in entries if name != MANIFEST},
+            'entry_fields': ['bytes', 'sha256'],
+            'files': {name: [size, sha] for name, size, sha in entries if name != MANIFEST},
         }
-        (ROOT / MANIFEST).write_text(json.dumps(manifest, indent=2) + '\n')
+        (ROOT / MANIFEST).write_text(json.dumps(manifest, separators=(',', ':')) + '\n')
     return {'files': len(entries), 'bytes': total, 'limits': LIMITS, 'passed': True}
 
 

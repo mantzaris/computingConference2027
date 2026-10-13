@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "campaign_id": "application_v4_20261013",
+  "started_at": "2026-10-13T17:09:51+00:00",
+  "hard_deadline": "2026-10-13T23:09:51+00:00",
+  "target_completion": "2026-10-13T21:09:51+00:00",
+  "initial_infrastructure_diagnosis_deadline": "2026-10-13T17:39:51+00:00",
+  "max_elapsed_hours": 6,
+  "qwen_generated_token_ceiling": 150000,
+  "qwen_service_runtime_seconds": 7200,
+  "codex_generation_budget": "At most six cases, five primary interpretation stages and two targeted repair rounds per case; token/time metadata unavailable unless reported by the host. The absolute wall deadline covers all routes.",
+  "source_request_timeout_seconds": 25,
+  "source_acquisition_seconds": 3600,
+  "review": "pending",
+  "authorization": "User authorized v4 applications and source-grounded current-Codex fallback; no paid provisioning.",
+  "soft_deadline": "2026-10-13T22:39:51+00:00",
+  "no_heavy_jobs_after": "2026-10-13T21:09:51+00:00",
+  "output_token_ceiling": 150000
+}
