@@ -1,0 +1,13 @@
+{
+  "campaign_id": "development_v3_20261013",
+  "started_at": "2026-10-13T15:02:48.511042+00:00",
+  "hard_deadline": "2026-10-13T17:02:48.511042+00:00",
+  "soft_deadline": "2026-10-13T17:02:28.511042+00:00",
+  "no_heavy_jobs_after": "2026-10-13T17:02:48.511042+00:00",
+  "output_token_ceiling": 150000,
+  "analysis_reserve_hours": 0,
+  "request_timeout_seconds": 180,
+  "application_request_timeout_seconds": 180,
+  "immutable_service_seconds": 7200,
+  "scope": "V3 development; original v1/v2 budgets preserved"
+}

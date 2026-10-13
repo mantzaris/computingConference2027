@@ -1,5 +1,15 @@
 # Research handoff
 
+**Version 3 development delivery (2026-10-13):** mechanism-first records, evidence-driven revision, partial finite function families, separate source/description/execution checks, and informative Graphviz rendering are implemented under `src/got_war/v3/`. Read [the v3 report](../results/v3/RESULTS.md), [method/diagnosis](V3_METHOD.md), [catalogue](../results/v3/CATALOGUE.md) and [pending review packet](../results/v3/REVIEW_PACKET.md).
+
+The authorized pod's CUDA initialization failed with code 999 and `/dev/nvidia-uvm` returned an I/O error. The 15:02:48–17:02:48 UTC immutable v3 window was closed at 15:09:56 with zero inference requests/tokens. The planned three-case A/B/C comparison is **unrun**, not a measured negative or positive result. Offline authored fixtures and finite-engine checks are explicitly labeled; no fresh grounded literary construction is claimed. The pod/Jupyter remain intact, and only v3-owned supervision was stopped. Do not reset this completed budget; a subsequent inference attempt requires a separately authorized window.
+
+V1/v2 results and frozen inference code remain unchanged; old researcher review stays pending. All work remains on `main`, with pushing/submission left to the researcher. The documented file allowance is now 280 while the total 8-MiB and single-file 2-MiB caps are unchanged. The versioned bundle restores offline records and preserved pre-inference v3 files without full transcripts or weights.
+
+---
+
+**Preserved version 2 handoff follows.**
+
 **Version 2 delivery:** `campaign_v2_20261012T160349Z` completed all 120 fixed controlled records (24 development, 24 calibration, 72 test). Its original hard deadline remains 2026-10-13 16:03:49 UTC. The project model service stopped after inference at 22:47 UTC on 2026-10-12; the GPU was clear and Jupyter remained available. Final accounting and staged-export checks are separate artifacts. No push or submission is authorized.
 
 Read [the complete version 2 delivery report](../results/v2/DELIVERY.md), [results](../results/v2/RESULTS.md), [error analysis](../results/v2/ERROR_ANALYSIS.md), [manuscript](../paper/v2/manuscript.pdf), and [reproduction guide](V2_REPRODUCIBILITY.md). Primary execution accuracy is 77.8% versus direct 56.7%, with a paired gain of 21.0 points [9.6, 32.8]. Source ranking is worse than direct ranking. Sixteen held-out syntheses fail; 40/72 explanations pass the frozen checks. All failures remain in their primary denominators.

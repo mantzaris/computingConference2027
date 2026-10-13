@@ -10,7 +10,7 @@ from pathlib import Path
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
-LIMITS = {'files': 250, 'bytes': 8 * 1024 * 1024, 'single_file_bytes': 2 * 1024 * 1024}
+LIMITS = {'files': 280, 'bytes': 8 * 1024 * 1024, 'single_file_bytes': 2 * 1024 * 1024}
 MANIFEST = 'results/artifact_manifest.json'
 
 

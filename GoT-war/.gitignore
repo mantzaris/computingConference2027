@@ -34,6 +34,7 @@ data/derived/segments.private.jsonl
 # Small, curated records needed to reproduce the published measurements.
 !/results/reproduction.tar.gz
 !/results/v2/reproduction.tar.gz
+!/results/v3/reproduction.tar.gz
 paper/*.aux
 paper/*.log
 paper/*.out

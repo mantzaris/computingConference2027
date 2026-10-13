@@ -1,0 +1,411 @@
+{
+  "version": 3,
+  "development_only": true,
+  "base_commit": "d639553",
+  "created": "2026-10-13T15:01:27.781757+00:00",
+  "run": "development_v3_20261013",
+  "cases": [
+    {
+      "id": "beacon",
+      "kind": "controlled_complete",
+      "outcome": "The harbor beacon is illuminated at noon.",
+      "queries": [
+        {
+          "id": "q1",
+          "question": "Disconnect the grid at noon while leaving the backup battery and shutter as observed. Is the beacon illuminated?",
+          "gold": [
+            1
+          ],
+          "changing": false
+        },
+        {
+          "id": "q2",
+          "question": "Make both the grid and backup battery unavailable at noon. Is the beacon illuminated?",
+          "gold": [
+            0
+          ],
+          "changing": true
+        },
+        {
+          "id": "q3",
+          "question": "Close the opaque safety shutter at noon, with the other background conditions unchanged. Is the beacon illuminated?",
+          "gold": [
+            0
+          ],
+          "changing": true
+        },
+        {
+          "id": "q4",
+          "question": "Make the backup battery unavailable at noon while leaving the grid available. Is the beacon illuminated?",
+          "gold": [
+            1
+          ],
+          "changing": false
+        }
+      ],
+      "reference": {
+        "variables": [
+          "grid",
+          "backup",
+          "current",
+          "shutter_closed",
+          "illuminated"
+        ],
+        "factual": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "equations": {
+          "current": "grid OR backup",
+          "illuminated": "current AND NOT shutter_closed"
+        },
+        "scope": "Explicit deterministic rules in text; the later disconnected bell is not causal.",
+        "independent_human_verification": false
+      },
+      "packet_sha256": "879f15ebebdd97cf7ab0dd610fefe7a1315a0aacd27c8432be2d049d0a752800",
+      "passages": [
+        {
+          "id": "beacon_1",
+          "episode": "controlled time indices",
+          "source_id": "beacon",
+          "source_type": "authored controlled narrative",
+          "url": "controlled://v3/beacon_1",
+          "dependence_cluster": "beacon",
+          "start": 0,
+          "end": 486,
+          "first_line": 1,
+          "last_line": 1,
+          "scene": 1
+        },
+        {
+          "id": "beacon_2",
+          "episode": "controlled time indices",
+          "source_id": "beacon",
+          "source_type": "authored controlled narrative",
+          "url": "controlled://v3/beacon_2",
+          "dependence_cluster": "beacon",
+          "start": 0,
+          "end": 275,
+          "first_line": 1,
+          "last_line": 1,
+          "scene": 1
+        }
+      ],
+      "controlled_text": [
+        {
+          "id": "beacon_1",
+          "text": "At noon, the harbor beacon can draw current from the grid or from a charged backup battery. Either source alone provides current; with neither source there is no current. The selector always uses an available source and needs no operator action. The lamp illuminates exactly when current is available and its opaque safety shutter is open. A closed shutter prevents illumination even with current. These rules hold throughout the noon inspection; no other faults or inputs are in scope.",
+          "episode": "controlled time indices",
+          "source_id": "beacon",
+          "source_type": "authored controlled narrative",
+          "url": "controlled://v3/beacon_1",
+          "dependence_cluster": "beacon",
+          "start": 0,
+          "end": 486,
+          "first_line": 1,
+          "last_line": 1,
+          "scene": 1
+        },
+        {
+          "id": "beacon_2",
+          "text": "During the inspection the grid and the charged backup battery were both available, the shutter was open, current reached the lamp, and the beacon was illuminated. A clerk rang the lunch bell one minute later. The bell is electrically separate and does not operate the beacon.",
+          "episode": "controlled time indices",
+          "source_id": "beacon",
+          "source_type": "authored controlled narrative",
+          "url": "controlled://v3/beacon_2",
+          "dependence_cluster": "beacon",
+          "start": 0,
+          "end": 275,
+          "first_line": 1,
+          "last_line": 1,
+          "scene": 1
+        }
+      ]
+    },
+    {
+      "id": "ferry",
+      "kind": "controlled_partial",
+      "outcome": "The parcel is recorded as delivered at the far-bank station by noon.",
+      "queries": [
+        {
+          "id": "q1",
+          "question": "Remove Iona's permit at ten, keeping the boat ready. Is the parcel recorded as delivered by noon?",
+          "gold": [
+            0,
+            1
+          ],
+          "changing": null
+        },
+        {
+          "id": "q2",
+          "question": "Make the boat not ready at ten while Iona still has her permit. Is the parcel recorded as delivered by noon?",
+          "gold": [
+            0,
+            1
+          ],
+          "changing": null
+        },
+        {
+          "id": "q3",
+          "question": "Prevent the parcel from crossing before noon, replacing its crossing mechanism. Is it recorded as delivered by noon?",
+          "gold": [
+            0
+          ],
+          "changing": true
+        },
+        {
+          "id": "q4",
+          "question": "Set permit possession and boat readiness at ten to their observed present values. Is the parcel recorded as delivered by noon?",
+          "gold": [
+            1
+          ],
+          "changing": false
+        }
+      ],
+      "reference": {
+        "variables": [
+          "permit",
+          "boat_ready",
+          "crossing",
+          "recorded"
+        ],
+        "factual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "hidden_generating_equations": {
+          "crossing": "permit AND boat_ready",
+          "recorded": "crossing"
+        },
+        "compatible_family": "All 8 Boolean functions on permit/boat with f(1,1)=1; recorded=crossing.",
+        "scope": "Latent generating equation is not a uniquely defensible narrative answer; reference sets use declared missing information.",
+        "independent_human_verification": false
+      },
+      "packet_sha256": "fe57c7a9bf974b74b4633b95d43453334e70ec8693ef7edb7656e6d98a2f9ba2",
+      "passages": [
+        {
+          "id": "ferry_1",
+          "episode": "controlled time indices",
+          "source_id": "ferry",
+          "source_type": "authored controlled narrative",
+          "url": "controlled://v3/ferry_1",
+          "dependence_cluster": "ferry",
+          "start": 0,
+          "end": 521,
+          "first_line": 1,
+          "last_line": 1,
+          "scene": 1
+        },
+        {
+          "id": "ferry_2",
+          "episode": "controlled time indices",
+          "source_id": "ferry",
+          "source_type": "authored controlled narrative",
+          "url": "controlled://v3/ferry_2",
+          "dependence_cluster": "ferry",
+          "start": 0,
+          "end": 498,
+          "first_line": 1,
+          "last_line": 1,
+          "scene": 1
+        },
+        {
+          "id": "ferry_3",
+          "episode": "controlled time indices",
+          "source_id": "ferry",
+          "source_type": "authored controlled narrative",
+          "url": "controlled://v3/ferry_3",
+          "dependence_cluster": "ferry",
+          "start": 0,
+          "end": 511,
+          "first_line": 1,
+          "last_line": 1,
+          "scene": 1
+        }
+      ],
+      "controlled_text": [
+        {
+          "id": "ferry_1",
+          "text": "At ten, Iona stood at the ferry with a stamped permit in her hand and a boat ready at the landing. She showed the permit to the watchman. He inspected it, lifted the chain across the landing, and she carried the parcel aboard. At eleven the ferry crossed with the parcel. The account does not say whether a permit is indispensable, whether exceptions are allowed, or what happens when a boat is not ready. A causal influence of permission on departure is suggested by the exchange, but a universal policy is not recorded.",
+          "episode": "controlled time indices",
+          "source_id": "ferry",
+          "source_type": "authored controlled narrative",
+          "url": "controlled://v3/ferry_1",
+          "dependence_cluster": "ferry",
+          "start": 0,
+          "end": 521,
+          "first_line": 1,
+          "last_line": 1,
+          "scene": 1
+        },
+        {
+          "id": "ferry_2",
+          "text": "The controlled delivery system has this rule: a parcel crossing on the ferry before noon is always recorded as delivered at the far-bank station, and a parcel that does not cross before noon is not recorded there. No other route or recording failure is possible in this system. Today the parcel was recorded as delivered. At twelve Iona announced that she believed the permit had guaranteed success. Her later announcement is a belief about the completed trip, not a prior instruction to the ferry.",
+          "episode": "controlled time indices",
+          "source_id": "ferry",
+          "source_type": "authored controlled narrative",
+          "url": "controlled://v3/ferry_2",
+          "dependence_cluster": "ferry",
+          "start": 0,
+          "end": 498,
+          "first_line": 1,
+          "last_line": 1,
+          "scene": 1
+        },
+        {
+          "id": "ferry_3",
+          "text": "For this diagnostic, the only varying inputs to whether the parcel crosses are permit possession and boat readiness at ten. The omitted departure rule is some fixed deterministic Boolean function of these two inputs. Its factual output with both inputs present is crossing. The missing three configurations are not disclosed; investigators must not infer them from chronology or Iona's claim. Permission and physical departure are different events even if an analyst chooses to model their combined consequence.",
+          "episode": "controlled time indices",
+          "source_id": "ferry",
+          "source_type": "authored controlled narrative",
+          "url": "controlled://v3/ferry_3",
+          "dependence_cluster": "ferry",
+          "start": 0,
+          "end": 511,
+          "first_line": 1,
+          "last_line": 1,
+          "scene": 1
+        }
+      ]
+    },
+    {
+      "id": "five_kings",
+      "kind": "natural_uncertain",
+      "outcome": "Armed conflict between the Stark-led northern/Riverlands coalition and the Lannister-controlled crown is active by the end of season 1.",
+      "endpoint_code": 110,
+      "queries": [],
+      "reference": {
+        "gold": null,
+        "independent_human_verification": false
+      },
+      "acquisition": {
+        "source_packet_sha256": "da69b334d189edacd919dc65e3db882606f3420046a61f2285eda3da0f7f108f",
+        "method": "Existing BM25, outcome text only; 2600 characters each for early/middle/late episode strata (4/3/3 episodes); no handpicked causes",
+        "corpus_segments": 153,
+        "selected_segments": 7,
+        "source_validity": "Unofficial transcripts; dependent source records; fidelity unadjudicated"
+      },
+      "packet_sha256": "0eb420df6d060f781f5cd86f419352c956b249326b2aca2c172ea619b10f7be6",
+      "passages": [
+        {
+          "id": "screen_s01e02_s14_0",
+          "source_id": "screen_s01e02",
+          "episode": "s01e02",
+          "scene": "S14",
+          "first_line": "S14L1",
+          "last_line": "S14L2",
+          "start": 16268,
+          "end": 16366,
+          "source_type": "unofficial dialogue/stage-direction transcription",
+          "dependence_cluster": "aired_s01e02",
+          "url": "https://screenscripts.com/game-of-thrones/s01e02_the_kingsroad/#S14L1",
+          "retrieval_score": 0.9004988410096515
+        },
+        {
+          "id": "screen_s01e03_s18_0",
+          "source_id": "screen_s01e03",
+          "episode": "s01e03",
+          "scene": "S18",
+          "first_line": "S18L1",
+          "last_line": "S18L14",
+          "start": 30903,
+          "end": 32621,
+          "source_type": "unofficial dialogue/stage-direction transcription",
+          "dependence_cluster": "aired_s01e03",
+          "url": "https://screenscripts.com/game-of-thrones/s01e03_lord_snow/#S18L1",
+          "retrieval_score": 9.096369389871487
+        },
+        {
+          "id": "screen_s01e03_s20_0",
+          "source_id": "screen_s01e03",
+          "episode": "s01e03",
+          "scene": "S20",
+          "first_line": "S20L1",
+          "last_line": "S20L10",
+          "start": 32832,
+          "end": 33497,
+          "source_type": "unofficial dialogue/stage-direction transcription",
+          "dependence_cluster": "aired_s01e03",
+          "url": "https://screenscripts.com/game-of-thrones/s01e03_lord_snow/#S20L1",
+          "retrieval_score": 6.3541971407088464
+        },
+        {
+          "id": "screen_s01e05_s10_0",
+          "source_id": "screen_s01e05",
+          "episode": "s01e05",
+          "scene": "S10",
+          "first_line": "S10L1",
+          "last_line": "S10L14",
+          "start": 20754,
+          "end": 21563,
+          "source_type": "unofficial dialogue/stage-direction transcription",
+          "dependence_cluster": "aired_s01e05",
+          "url": "https://screenscripts.com/game-of-thrones/s01e05_the_wolf_and_the_lion/#S10L1",
+          "retrieval_score": 1.7182470166812682
+        },
+        {
+          "id": "screen_s01e06_s8_0",
+          "source_id": "screen_s01e06",
+          "episode": "s01e06",
+          "scene": "S8",
+          "first_line": "S8L1",
+          "last_line": "S8L20",
+          "start": 19106,
+          "end": 20833,
+          "source_type": "unofficial dialogue/stage-direction transcription",
+          "dependence_cluster": "aired_s01e06",
+          "url": "https://screenscripts.com/game-of-thrones/s01e06_a_golden_crown/#S8L1",
+          "retrieval_score": 5.767101079040195
+        },
+        {
+          "id": "screen_s01e10_s6_0",
+          "source_id": "screen_s01e10",
+          "episode": "s01e10",
+          "scene": "S6",
+          "first_line": "S6L1",
+          "last_line": "S6L3",
+          "start": 10856,
+          "end": 11215,
+          "source_type": "unofficial dialogue/stage-direction transcription",
+          "dependence_cluster": "aired_s01e10",
+          "url": "https://screenscripts.com/game-of-thrones/s01e10_fire_and_blood/#S6L1",
+          "retrieval_score": 2.102105899950871
+        },
+        {
+          "id": "screen_s01e10_s7_0",
+          "source_id": "screen_s01e10",
+          "episode": "s01e10",
+          "scene": "S7",
+          "first_line": "S7L1",
+          "last_line": "S7L17",
+          "start": 11217,
+          "end": 13344,
+          "source_type": "unofficial dialogue/stage-direction transcription",
+          "dependence_cluster": "aired_s01e10",
+          "url": "https://screenscripts.com/game-of-thrones/s01e10_fire_and_blood/#S7L1",
+          "retrieval_score": 5.504469149652404
+        }
+      ]
+    }
+  ],
+  "arms": {
+    "A": 20000,
+    "B_increment": 3000,
+    "C": 24000
+  },
+  "global_generated_token_cap": 150000,
+  "inference_service_seconds": 7200,
+  "seed": 3701,
+  "maximum_cases": 12,
+  "initial_cases": 3,
+  "expansion": "Only after all three pass the end-to-end gate; optional, no search for significance",
+  "old_test_set_used": false,
+  "review": "pending",
+  "packet_access": "identical within case",
+  "gold_access": "references/gold excluded from construction, repair, semantic review and query alignment"
+}

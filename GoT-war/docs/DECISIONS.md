@@ -1,5 +1,19 @@
 # Scientific decisions and deviations
 
+## Version 3 bounded development (2026-10-13)
+
+V3 preserves the original inference records and separates persistent mechanism propositions from complete structural functions. A richer label alone is evaluated as presentation, with unchanged v2 variables/functions; the mechanism-first arm can revise representations and retain partial functions. The old held-out set is not a v3 development set. The three new paired packets and eight controlled queries were specified before inference.
+
+An outcome-only lexical source audit selected only early episodes. Before model inference, the packet policy was revised to equal character budgets across early, middle and late episode windows, with no manually selected story cause. The initial packet policy and code versions remain local; the final pre-inference files are preserved in the v3 bundle.
+
+GPU startup failed with CUDA error 999 and an I/O error opening `/dev/nvidia-uvm`. No usable authorized inference API was found. The separately identified 150,000-token/two-hour v3 service window closed after 7.1 minutes with zero requests/tokens. No infrastructure reset, new pod or paid inference was used. All A/B/C cells are unrun; authored CPU examples are not substituted as model results. No expansion or new literary claim follows from the offline tests. Independent researcher review remains pending.
+
+Post-blocker changes strengthen display/provenance/result gates and test a bounded repair loop using scripted responses. These are implementation checks, not semantic model-quality measurements. The next experiment is the fixed three-case contrast after the operator restores GPU access and a new bounded window is authorized. Version 1/2 numerical artifacts and frozen source remain untouched.
+
+---
+
+**Original campaign decisions follow.**
+
 The campaign began at 2026-10-12 04:39:58 UTC. Its immutable hard deadline is 2026-10-13 04:39:58 UTC. The source continuity is HBO television only.
 
 ## Corpus gate

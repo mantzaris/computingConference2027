@@ -1,5 +1,11 @@
 # GoT-war
 
+**Version 3 prototype implemented; live development comparison blocked by CUDA/UVM failure.** The new method retains substantive edge and joint mechanisms, source provenance, partial function families, targeted revisions, and separate source/prose/execution checks. Offline contract checks pass, but no v3 inference ran and no new natural-narrative success is claimed. Start with the [v3 results and limitations](results/v3/RESULTS.md), [method and diagnosis](docs/V3_METHOD.md), [mechanism catalogue](results/v3/CATALOGUE.md), and [pending researcher review](results/v3/REVIEW_PACKET.md). The [beacon](figures/v3/beacon.svg) and [partial ferry](figures/v3/ferry.svg) diagrams are explicitly authored software examples.
+
+---
+
+**Preserved version 2 overview follows.**
+
 **Version 2 controlled study complete; application grounding remains unestablished.** The frozen campaign contains 120 independent SCMs and 72 held-out test SCMs. Executing synthesized models improves identified accuracy by 21.0 percentage points [9.6, 32.8] over direct answers, while source ranking underperforms the direct baseline. The conditional six-node Five Kings model has zero directional support on every path; fresh construction fails and independent review remains pending.
 
 Start with the [version 2 delivery and scientific decision](results/v2/DELIVERY.md), [measured results](results/v2/RESULTS.md), [anonymous manuscript PDF](paper/v2/manuscript.pdf), or [offline reproduction guide](docs/V2_REPRODUCIBILITY.md). The [methodology revision](docs/V2_METHODOLOGY.md) and [version 1 diagnosis](docs/V2_DIAGNOSIS.md) distinguish the two studies. Nothing is pushed or submitted.

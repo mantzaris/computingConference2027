@@ -1,0 +1,370 @@
+{
+  "engine": {
+    "type": "finite-engine validation, not narrative or LLM accuracy",
+    "generating_boolean_functions": 16,
+    "observation_masks_per_function": 16,
+    "local_family_comparisons": 256,
+    "outcome_set_comparisons": 1024,
+    "compatible_counts": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "failures": [],
+    "passed": true
+  },
+  "authored_queries": 8,
+  "authored_query_checks_pass": true,
+  "v2_query_replay_count": 8,
+  "v2_query_replay_pass": true,
+  "figures": [
+    {
+      "id": "beacon",
+      "dot": "digraph G {\ngraph [rankdir=TB, bgcolor=\"white\", pad=\"0.16\", nodesep=\"0.28\", ranksep=\"0.6\", splines=polyline, fontname=\"DejaVu Sans\", fontsize=12, labelloc=t, label=\"Beacon · offline controlled contract example\\nAuthored fixture; no new LLM inference or human review\\nq1: do {'G': 0}; outcome set [1]\"];\nnode [shape=box, style=\"rounded,filled\", fillcolor=\"#eef4f7\", fontname=\"DejaVu Sans\", fontsize=14, margin=\"0.12,0.08\", color=\"#355568\"];\nedge [fontname=\"DejaVu Sans\", fontsize=12, arrowsize=0.7, penwidth=1.2];\n\"G\" [label=\"Grid available\\nG · 1 → 0\\nBoundary input\", fillcolor=\"#fbf1da\", color=\"#6845a2\", penwidth=2, tooltip=\"Grid available during the stated controlled inspection or trip; 1 means present, 0 absent.\"];\n\"B\" [label=\"Backup charged\\nB · 1 (unchanged)\\nBoundary input\", fillcolor=\"#fbf1da\", color=\"#355568\", penwidth=1.2, tooltip=\"Backup charged during the stated controlled inspection or trip; 1 means present, 0 absent.\"];\n\"S\" [label=\"Safety shutter\\nclosed\\nS · 0 (unchanged)\\nBoundary input\", fillcolor=\"#fbf1da\", color=\"#355568\", penwidth=1.2, tooltip=\"Safety shutter closed during the stated controlled inspection or trip; 1 means present, 0 absent.\"];\n\"P\" [label=\"Current available\\nP · 1 (unchanged)\\nJoint mechanism mP\", fillcolor=\"#eef4f7\", color=\"#355568\", penwidth=1.2, tooltip=\"Current available during the stated controlled inspection or trip; 1 means present, 0 absent.\"];\n\"Y\" [label=\"Beacon illuminated\\nY · 1 (unchanged)\\nJoint mechanism mY\", fillcolor=\"#e0eff1\", color=\"#355568\", penwidth=1.2, tooltip=\"The harbor beacon is illuminated at noon.\"];\n\"G\" -> \"P\" [label=\"Supplies current\\nwithout backup\\ne1 · explicit\", style=\"solid\", color=\"#286c72\", fontcolor=\"#264e59\", tooltip=\"The available grid supplies current even when the backup is unavailable.\", URL=\"../../results/v3/CATALOGUE.md#beacon-e1\"];\n\"B\" -> \"P\" [label=\"Supplies current\\nwithout grid\\ne2 · explicit\", style=\"solid\", color=\"#286c72\", fontcolor=\"#264e59\", tooltip=\"The charged backup supplies current even when the grid is unavailable.\", URL=\"../../results/v3/CATALOGUE.md#beacon-e2\"];\n\"P\" -> \"Y\" [label=\"Energizes the exposed\\nlamp\\ne3 · explicit\", style=\"solid\", color=\"#286c72\", fontcolor=\"#264e59\", tooltip=\"Current illuminates the beacon when the safety shutter is open.\", URL=\"../../results/v3/CATALOGUE.md#beacon-e3\"];\n\"S\" -> \"Y\" [label=\"Blocks visible\\nillumination\\ne4 · explicit\", style=\"solid\", color=\"#286c72\", fontcolor=\"#264e59\", tooltip=\"A closed opaque shutter prevents illumination even when current is available.\", URL=\"../../results/v3/CATALOGUE.md#beacon-e4\"];\nlegend [shape=note,fontsize=11,fillcolor=\"#ffffff\",color=\"#c7cdd2\",label=\"Solid: explicit controlled-text relationship\\nDashed: unresolved hypothesis; no identified function\\nPurple border: intervention; orange fill: unresolved state\\nEdge/joint IDs link to the mechanism catalogue\\nNo widths encode probability or attribution\"];\n\"Y\" -> legend [style=invis];\n}\n",
+      "width_pt": 416.0,
+      "height_pt": 539.0,
+      "minimum_font_pt": 11.0,
+      "minimum_font_at_7inch_width_pt": 11.0,
+      "edges": [
+        {
+          "id": "e1",
+          "parent": "G",
+          "child": "P",
+          "label": "Supplies current without backup",
+          "status": "explicit",
+          "process": "The available grid supplies current even when the backup is unavailable."
+        },
+        {
+          "id": "e2",
+          "parent": "B",
+          "child": "P",
+          "label": "Supplies current without grid",
+          "status": "explicit",
+          "process": "The charged backup supplies current even when the grid is unavailable."
+        },
+        {
+          "id": "e3",
+          "parent": "P",
+          "child": "Y",
+          "label": "Energizes the exposed lamp",
+          "status": "explicit",
+          "process": "Current illuminates the beacon when the safety shutter is open."
+        },
+        {
+          "id": "e4",
+          "parent": "S",
+          "child": "Y",
+          "label": "Blocks visible illumination",
+          "status": "explicit",
+          "process": "A closed opaque shutter prevents illumination even when current is available."
+        }
+      ],
+      "intervention_trace": {
+        "id": "q1",
+        "question": "Disconnect the grid at noon while leaving the backup battery and shutter as observed. Is the beacon illuminated?",
+        "do": {
+          "G": 0
+        },
+        "result": {
+          "status": "exhaustive_set",
+          "values": [
+            1
+          ],
+          "identified": true,
+          "bounds": {
+            "inner": [
+              1
+            ],
+            "outer": [
+              1
+            ]
+          },
+          "certificate": null,
+          "factual_values": [
+            1
+          ],
+          "worlds": [
+            {
+              "factual": {
+                "G": 1,
+                "B": 1,
+                "S": 0,
+                "P": 1,
+                "Y": 1
+              },
+              "counterfactual": {
+                "G": 0,
+                "B": 1,
+                "S": 0,
+                "P": 1,
+                "Y": 1
+              }
+            }
+          ],
+          "intervention": {
+            "G": 0
+          },
+          "target": "Y",
+          "model_family_sha256": "a16db0fba5c8566816d77294fcee5cf11cefc8cc23a823eba0175efd45baeb08"
+        },
+        "reference": [
+          1
+        ],
+        "correct": true,
+        "execution_check": {
+          "passed": true,
+          "mismatches": [],
+          "family_sha256": "69966495d4cca07012f8f455d125273b871ff77217117a277b289a443ae4d083",
+          "scope": "Exact structured content only; free-text entailment is a separate semantic check."
+        }
+      },
+      "withheld": [],
+      "provenance": "software-authored controlled fixture, not LLM output",
+      "semantic_validity": "Author-defined controlled fixture only; not an empirical model result."
+    },
+    {
+      "id": "ferry",
+      "dot": "digraph G {\ngraph [rankdir=TB, bgcolor=\"white\", pad=\"0.16\", nodesep=\"0.28\", ranksep=\"0.6\", splines=polyline, fontname=\"DejaVu Sans\", fontsize=12, labelloc=t, label=\"Ferry · offline controlled contract example\\nAuthored fixture; no new LLM inference or human review\\nq1: do {'P': 0}; outcome set [0, 1]\"];\nnode [shape=box, style=\"rounded,filled\", fillcolor=\"#eef4f7\", fontname=\"DejaVu Sans\", fontsize=14, margin=\"0.12,0.08\", color=\"#355568\"];\nedge [fontname=\"DejaVu Sans\", fontsize=12, arrowsize=0.7, penwidth=1.2];\n\"P\" [label=\"Permit possessed\\nP · 1 → 0\\nBoundary input\", fillcolor=\"#fbf1da\", color=\"#6845a2\", penwidth=2, tooltip=\"Permit possessed during the stated controlled inspection or trip; 1 means present, 0 absent.\"];\n\"B\" [label=\"Boat ready\\nB · 1 (unchanged)\\nBoundary input\", fillcolor=\"#fbf1da\", color=\"#355568\", penwidth=1.2, tooltip=\"Boat ready during the stated controlled inspection or trip; 1 means present, 0 absent.\"];\n\"C\" [label=\"Parcel crosses\\nC · 1 → {0, 1}\\nJoint mechanism mC\", fillcolor=\"#fff0df\", color=\"#986447\", penwidth=1.2, tooltip=\"Parcel crosses during the stated controlled inspection or trip; 1 means present, 0 absent.\"];\n\"Y\" [label=\"Delivery recorded\\nY · 1 → {0, 1}\\nMechanism mY\", fillcolor=\"#fff0df\", color=\"#986447\", penwidth=1.2, tooltip=\"The parcel is recorded as delivered at the far-bank station by noon.\"];\n\"P\" -> \"C\" [label=\"Possible departure\\nauthorization\\ne1 · unresolved\", style=\"dashed\", color=\"#986447\", fontcolor=\"#815135\", tooltip=\"Permit possession is a proposed departure input; the missing rule leaves its influence unresolved.\", URL=\"../../results/v3/CATALOGUE.md#ferry-e1\"];\n\"B\" -> \"C\" [label=\"Possible transport\\navailability\\ne2 · unresolved\", style=\"dashed\", color=\"#986447\", fontcolor=\"#815135\", tooltip=\"Boat readiness is a proposed crossing input; the missing rule leaves its functional role unresolved.\", URL=\"../../results/v3/CATALOGUE.md#ferry-e2\"];\n\"C\" -> \"Y\" [label=\"Triggers the delivery\\nrecord\\ne3 · explicit\", style=\"solid\", color=\"#286c72\", fontcolor=\"#264e59\", tooltip=\"A crossing parcel is recorded as delivered; no crossing means no delivery record in this controlled system.\", URL=\"../../results/v3/CATALOGUE.md#ferry-e3\"];\nlegend [shape=note,fontsize=11,fillcolor=\"#ffffff\",color=\"#c7cdd2\",label=\"Solid: explicit controlled-text relationship\\nDashed: unresolved hypothesis; no identified function\\nPurple border: intervention; orange fill: unresolved state\\nEdge/joint IDs link to the mechanism catalogue\\nNo widths encode probability or attribution\"];\n\"Y\" -> legend [style=invis];\n}\n",
+      "width_pt": 380.0,
+      "height_pt": 524.0,
+      "minimum_font_pt": 11.0,
+      "minimum_font_at_7inch_width_pt": 11.0,
+      "edges": [
+        {
+          "id": "e1",
+          "parent": "P",
+          "child": "C",
+          "label": "Possible departure authorization",
+          "status": "unresolved",
+          "process": "Permit possession is a proposed departure input; the missing rule leaves its influence unresolved."
+        },
+        {
+          "id": "e2",
+          "parent": "B",
+          "child": "C",
+          "label": "Possible transport availability",
+          "status": "unresolved",
+          "process": "Boat readiness is a proposed crossing input; the missing rule leaves its functional role unresolved."
+        },
+        {
+          "id": "e3",
+          "parent": "C",
+          "child": "Y",
+          "label": "Triggers the delivery record",
+          "status": "explicit",
+          "process": "A crossing parcel is recorded as delivered; no crossing means no delivery record in this controlled system."
+        }
+      ],
+      "intervention_trace": {
+        "id": "q1",
+        "question": "Remove Iona's permit at ten, keeping the boat ready. Is the parcel recorded as delivered by noon?",
+        "do": {
+          "P": 0
+        },
+        "result": {
+          "status": "exhaustive_set",
+          "values": [
+            0,
+            1
+          ],
+          "identified": false,
+          "bounds": {
+            "inner": [
+              0,
+              1
+            ],
+            "outer": [
+              0,
+              1
+            ]
+          },
+          "certificate": null,
+          "factual_values": [
+            1
+          ],
+          "worlds": [
+            {
+              "factual": {
+                "P": 1,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              },
+              "counterfactual": {
+                "P": 0,
+                "B": 1,
+                "C": 0,
+                "Y": 0
+              }
+            },
+            {
+              "factual": {
+                "P": 1,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              },
+              "counterfactual": {
+                "P": 0,
+                "B": 1,
+                "C": 0,
+                "Y": 0
+              }
+            },
+            {
+              "factual": {
+                "P": 1,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              },
+              "counterfactual": {
+                "P": 0,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              }
+            },
+            {
+              "factual": {
+                "P": 1,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              },
+              "counterfactual": {
+                "P": 0,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              }
+            },
+            {
+              "factual": {
+                "P": 1,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              },
+              "counterfactual": {
+                "P": 0,
+                "B": 1,
+                "C": 0,
+                "Y": 0
+              }
+            },
+            {
+              "factual": {
+                "P": 1,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              },
+              "counterfactual": {
+                "P": 0,
+                "B": 1,
+                "C": 0,
+                "Y": 0
+              }
+            },
+            {
+              "factual": {
+                "P": 1,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              },
+              "counterfactual": {
+                "P": 0,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              }
+            },
+            {
+              "factual": {
+                "P": 1,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              },
+              "counterfactual": {
+                "P": 0,
+                "B": 1,
+                "C": 1,
+                "Y": 1
+              }
+            }
+          ],
+          "intervention": {
+            "P": 0
+          },
+          "target": "Y",
+          "model_family_sha256": "e9e320603b4293d08e24a7d7431c60b9c0fc7f4abd24b7c3258df3dd77e6ab6b"
+        },
+        "reference": [
+          0,
+          1
+        ],
+        "correct": true,
+        "execution_check": {
+          "passed": true,
+          "mismatches": [],
+          "family_sha256": "619e304d2eee988c4847de5b698698d033dee9f44c6267c699735170554efc13",
+          "scope": "Exact structured content only; free-text entailment is a separate semantic check."
+        }
+      },
+      "withheld": [],
+      "provenance": "software-authored controlled fixture, not LLM output",
+      "semantic_validity": "Author-defined controlled fixture only; not an empirical model result."
+    }
+  ],
+  "visual_inspection": {
+    "status": "inspected by automated assistant, not human readability study",
+    "figures": [
+      "beacon.svg/pdf",
+      "ferry.svg/pdf"
+    ],
+    "preview_max_dimension": 1000,
+    "readability": "Specific phrases, IDs, states and legend legible; no overlaps or cut-off labels observed.",
+    "at": "2026-10-13T15:49:48.152482+00:00"
+  },
+  "automated_checks_are_scientific_validation": false,
+  "tests": {
+    "passed": 71,
+    "seconds": 4.95,
+    "command": "PYTHONPATH=src python3 -m pytest -q --basetemp=.cache/v3_full_pytest"
+  },
+  "preservation": {
+    "v1_v2_artifacts_and_code": 135,
+    "changed": [],
+    "frozen_v2_files": 27,
+    "frozen_mismatches": [],
+    "base_commit": "d639553"
+  },
+  "offline_pipeline_replay": {
+    "scripted_revision_loop": true,
+    "original_description_retained": true,
+    "counterexample_triggers_one_repair": true,
+    "actual_llm_validation": false
+  },
+  "clean_export": {
+    "status": "passed",
+    "staged_files": 269,
+    "restored_members": 15,
+    "repeat_restore_members": 0,
+    "byte_identical_outputs": {
+      "results/v3/CATALOGUE.md": true,
+      "results/v3/RESULTS.md": true,
+      "results/v3/REVIEW_PACKET.md": true,
+      "results/v3/component_summary.json": true,
+      "figures/v3/beacon.svg": true,
+      "figures/v3/ferry.svg": true
+    },
+    "protected_source_access": "No private source packet or full original run directory available in clean export.",
+    "initial_packaging_failure": "First clean-export test command omitted creation of .cache parent; 65 tests passed, six temporary-directory setup errors. Repaired harness/docs create .cache before pytest; no test or scientific criterion weakened.",
+    "at": "2026-10-13T15:57:37.385032+00:00"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "development_only": true,
+  "planned_cases": 3,
+  "attempted_inference_cases": 0,
+  "arms": [
+    {
+      "case": "beacon",
+      "arm": "A",
+      "status": "unrun_infrastructure",
+      "reason": "CUDA initialization 999; /dev/nvidia-uvm I/O error; no reachable authorized inference API",
+      "generated_tokens": 0,
+      "inference_requests": 0,
+      "failed_synthesis": null,
+      "intervention_accuracy": null,
+      "source_packet_sha256": "879f15ebebdd97cf7ab0dd610fefe7a1315a0aacd27c8432be2d049d0a752800"
+    },
+    {
+      "case": "beacon",
+      "arm": "B",
+      "status": "unrun_infrastructure",
+      "reason": "CUDA initialization 999; /dev/nvidia-uvm I/O error; no reachable authorized inference API",
+      "generated_tokens": 0,
+      "inference_requests": 0,
+      "failed_synthesis": null,
+      "intervention_accuracy": null,
+      "source_packet_sha256": "879f15ebebdd97cf7ab0dd610fefe7a1315a0aacd27c8432be2d049d0a752800"
+    },
+    {
+      "case": "beacon",
+      "arm": "C",
+      "status": "unrun_infrastructure",
+      "reason": "CUDA initialization 999; /dev/nvidia-uvm I/O error; no reachable authorized inference API",
+      "generated_tokens": 0,
+      "inference_requests": 0,
+      "failed_synthesis": null,
+      "intervention_accuracy": null,
+      "source_packet_sha256": "879f15ebebdd97cf7ab0dd610fefe7a1315a0aacd27c8432be2d049d0a752800"
+    },
+    {
+      "case": "ferry",
+      "arm": "A",
+      "status": "unrun_infrastructure",
+      "reason": "CUDA initialization 999; /dev/nvidia-uvm I/O error; no reachable authorized inference API",
+      "generated_tokens": 0,
+      "inference_requests": 0,
+      "failed_synthesis": null,
+      "intervention_accuracy": null,
+      "source_packet_sha256": "fe57c7a9bf974b74b4633b95d43453334e70ec8693ef7edb7656e6d98a2f9ba2"
+    },
+    {
+      "case": "ferry",
+      "arm": "B",
+      "status": "unrun_infrastructure",
+      "reason": "CUDA initialization 999; /dev/nvidia-uvm I/O error; no reachable authorized inference API",
+      "generated_tokens": 0,
+      "inference_requests": 0,
+      "failed_synthesis": null,
+      "intervention_accuracy": null,
+      "source_packet_sha256": "fe57c7a9bf974b74b4633b95d43453334e70ec8693ef7edb7656e6d98a2f9ba2"
+    },
+    {
+      "case": "ferry",
+      "arm": "C",
+      "status": "unrun_infrastructure",
+      "reason": "CUDA initialization 999; /dev/nvidia-uvm I/O error; no reachable authorized inference API",
+      "generated_tokens": 0,
+      "inference_requests": 0,
+      "failed_synthesis": null,
+      "intervention_accuracy": null,
+      "source_packet_sha256": "fe57c7a9bf974b74b4633b95d43453334e70ec8693ef7edb7656e6d98a2f9ba2"
+    },
+    {
+      "case": "five_kings",
+      "arm": "A",
+      "status": "unrun_infrastructure",
+      "reason": "CUDA initialization 999; /dev/nvidia-uvm I/O error; no reachable authorized inference API",
+      "generated_tokens": 0,
+      "inference_requests": 0,
+      "failed_synthesis": null,
+      "intervention_accuracy": null,
+      "source_packet_sha256": "0eb420df6d060f781f5cd86f419352c956b249326b2aca2c172ea619b10f7be6"
+    },
+    {
+      "case": "five_kings",
+      "arm": "B",
+      "status": "unrun_infrastructure",
+      "reason": "CUDA initialization 999; /dev/nvidia-uvm I/O error; no reachable authorized inference API",
+      "generated_tokens": 0,
+      "inference_requests": 0,
+      "failed_synthesis": null,
+      "intervention_accuracy": null,
+      "source_packet_sha256": "0eb420df6d060f781f5cd86f419352c956b249326b2aca2c172ea619b10f7be6"
+    },
+    {
+      "case": "five_kings",
+      "arm": "C",
+      "status": "unrun_infrastructure",
+      "reason": "CUDA initialization 999; /dev/nvidia-uvm I/O error; no reachable authorized inference API",
+      "generated_tokens": 0,
+      "inference_requests": 0,
+      "failed_synthesis": null,
+      "intervention_accuracy": null,
+      "source_packet_sha256": "0eb420df6d060f781f5cd86f419352c956b249326b2aca2c172ea619b10f7be6"
+    }
+  ],
+  "offline_controlled_examples_are_not_method_results": true,
+  "expansion_performed": false,
+  "gate": "Not passed: actual end-to-end model generation/revision has not run."
+}

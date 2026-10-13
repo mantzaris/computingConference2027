@@ -1,0 +1,68 @@
+{
+  "files": {
+    "runs/development_v3_20261013/COMPLETE": {
+      "bytes": 33,
+      "sha256": "a57f9c7b08adb3312f7c8dfbb1db9c3ac5543285e3285db3788957c6d4114458"
+    },
+    "runs/development_v3_20261013/gpu_samples.jsonl": {
+      "bytes": 2623,
+      "sha256": "658ce4a2ac2d1c9c2a881104fdfd1d06b6dd242395e3db937de6a124938d572f"
+    },
+    "runs/development_v3_20261013/infrastructure.json": {
+      "bytes": 364,
+      "sha256": "2c45b5e7e1dadea3466aead7a5c11deb32d910ed07a1dc0e92f39b1cec912ad6"
+    },
+    "runs/development_v3_20261013/infrastructure_blocker.json": {
+      "bytes": 542,
+      "sha256": "074c92b1d6c40b445c30ab09222d95c649f182199400de5f2d792fab7e2d9f8a"
+    },
+    "runs/development_v3_20261013/offline.json": {
+      "bytes": 192328,
+      "sha256": "e7431156e6f10fb12c4ef4bb2dfe719952ab8fc512243c59f4029969113dfcf1"
+    },
+    "runs/development_v3_20261013/pre_inference_code/configs/v3_development.json": {
+      "bytes": 15596,
+      "sha256": "672e75110f62507c6bc2ddfc76068d9deb9e8ed5565307491cacab01aee9812c"
+    },
+    "runs/development_v3_20261013/pre_inference_code/docs/V3_METHOD.md": {
+      "bytes": 11240,
+      "sha256": "c74f391c8ddd2c17ff71662f2250ebe435eb8d9baa523191af082057810681f3"
+    },
+    "runs/development_v3_20261013/pre_inference_code/scripts/v3_ops.py": {
+      "bytes": 6555,
+      "sha256": "333f5ccdfd55336ee430a1e2f19905af38abd5f7fba36ac995f62548dc2ddf69"
+    },
+    "runs/development_v3_20261013/pre_inference_code/src/got_war/v3/__init__.py": {
+      "bytes": 81,
+      "sha256": "fe26f725ecc8d157662db4aeb4303f05d975fc8d4cf6f2438f434b8229fdc49e"
+    },
+    "runs/development_v3_20261013/pre_inference_code/src/got_war/v3/core.py": {
+      "bytes": 23496,
+      "sha256": "4cd4711031b72c13390cf56b5a6970d35627bece98bc325097cc35e12fac6944"
+    },
+    "runs/development_v3_20261013/pre_inference_code/src/got_war/v3/pipeline.py": {
+      "bytes": 21974,
+      "sha256": "c88786508eab8ecee5ae1f020fc092fae57122cf064d72495576922d74ae692e"
+    },
+    "runs/development_v3_20261013/pre_inference_code/src/got_war/v3/study.py": {
+      "bytes": 16317,
+      "sha256": "308ce276b10f705b02b822ae70cc64ae313668967fe3cb78b62d199c889f6fe4"
+    },
+    "runs/development_v3_20261013/pre_inference_code/tests/test_v3.py": {
+      "bytes": 8676,
+      "sha256": "3bde3030df3eb90a63968d92141841e5cf35aa9e831c3b45e0f37dd6628ccde8"
+    },
+    "runs/development_v3_20261013/pre_inference_freeze.json": {
+      "bytes": 847,
+      "sha256": "9838c0b0b6ab4731113b917c15e8d83d8f71c81aea204dc7a9995e8d643483b3"
+    },
+    "runs/development_v3_20261013/service_stop.json": {
+      "bytes": 542,
+      "sha256": "074c92b1d6c40b445c30ab09222d95c649f182199400de5f2d792fab7e2d9f8a"
+    }
+  },
+  "archive_bytes": 50364,
+  "archive_sha256": "ae537d09ee73d7ee557b9b350ebbfd0bde2a13f3065d189f5cd8f0403e81c4ba",
+  "expanded_bytes": 301214,
+  "scope": "Offline controlled contracts, original v2 generated descriptions/function behavior, pre-inference protocol versions and infrastructure closure. No new inference responses exist."
+}
