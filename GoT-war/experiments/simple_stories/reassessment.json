@@ -1,0 +1,1224 @@
+{
+  "scope": "Post hoc interface/partial-encoding audit of unchanged first attempts; not new generation or a replacement score.",
+  "independent_review": "pending",
+  "inference_requests": 0,
+  "records": [
+    {
+      "id": "humpty_natural_attempt0",
+      "input_sha256": "880c1c1d46f1dbc9af73a3c0fda949d694ce5af643d8b18db007c536917f9ac4",
+      "normalized_sha256": "f142dcd6e2d1c844bc1de4dd4797bbb97724b8425eda56ab592dba5d9d06ff71",
+      "operations": [
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 0,
+          "child": "H1",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 1,
+          "child": "H1",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 2,
+          "child": "H4",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 3,
+          "child": "H4",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 4,
+          "child": "H9",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 5,
+          "child": "H9",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 6,
+          "child": "H9",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 0,
+          "child": "H1",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 1,
+          "child": "H4",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 2,
+          "child": "H9",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        }
+      ],
+      "unresolved_attachments": [],
+      "variables": 9,
+      "declared_dependencies": 7,
+      "mechanisms": 3,
+      "before_schema_diagnostics": [
+        "H1: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "H1: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "H4: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "H4: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "H9: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "H9: missing nested claims; flat edges without child IDs cannot be assigned safely"
+      ],
+      "after_schema_diagnostics": [],
+      "original_strict_acceptance": false,
+      "original_compiler_error": "Representation diagnostics: [\"H1: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"H1: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"H4: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"H4: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"H9: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"H9: missing nested claims; flat edges without child IDs cannot be assigned safely\"]",
+      "normalized_strict_acceptance": false,
+      "normalized_compiler_error": "Temporal counterexample: H6 occurs after H9",
+      "projection": {
+        "status": "unavailable",
+        "reason": "Recorded cause follows its child: H9"
+      },
+      "archived_factual_audit": {
+        "supported": [
+          "H2",
+          "H3",
+          "H4",
+          "H5"
+        ],
+        "unsupported": [
+          "H1",
+          "H9"
+        ],
+        "excluded": [
+          "H6",
+          "H7",
+          "H8"
+        ],
+        "denominator_definition": "Asserted story event/state values; exclude null states and narrative metadata. Not executable factual reconstruction."
+      }
+    },
+    {
+      "id": "humpty_controlled_attempt0",
+      "input_sha256": "ad17a44bb9754d99e4ddf502b0a6e0f1aa4fea945a9612b83c33af667c70fabc",
+      "normalized_sha256": "260ef7b6920830973eb82df2ae073a63736c122dda783d4b5ae15359ad50524a",
+      "operations": [
+        {
+          "kind": "representation_precedence",
+          "child": "D",
+          "from": "fixed_context",
+          "to": "endogenous",
+          "reason": "Use the explicitly supplied mechanism in this derived view; retain the original contradiction in this ledger."
+        },
+        {
+          "kind": "representation_precedence",
+          "child": "Hd",
+          "from": "fixed_context",
+          "to": "endogenous",
+          "reason": "Use the explicitly supplied mechanism in this derived view; retain the original contradiction in this ledger."
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 0,
+          "child": "D",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 2,
+          "child": "S",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 3,
+          "child": "S",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 5,
+          "child": "Hd",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 0,
+          "child": "D",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 1,
+          "child": "S",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 2,
+          "child": "Hd",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        }
+      ],
+      "unresolved_attachments": [
+        {
+          "field": "edges",
+          "index": 1,
+          "candidate_children": [
+            "S",
+            "Hd"
+          ],
+          "reason": "No unique attachment; no interpretation or endpoint was invented."
+        },
+        {
+          "field": "edges",
+          "index": 4,
+          "candidate_children": [
+            "S",
+            "Hd"
+          ],
+          "reason": "No unique attachment; no interpretation or endpoint was invented."
+        }
+      ],
+      "variables": 6,
+      "declared_dependencies": 6,
+      "mechanisms": 3,
+      "before_schema_diagnostics": [
+        "D: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction",
+        "D: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "D: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "S: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "S: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "Hd: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction",
+        "Hd: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "Hd: missing nested claims; flat edges without child IDs cannot be assigned safely"
+      ],
+      "after_schema_diagnostics": [
+        "D: exact claim needs a separately stated rule implementing the quoted prose, not one when-row",
+        "S: exact claim needs a separately stated rule implementing the quoted prose, not one when-row",
+        "Hd: exact claim needs a separately stated rule implementing the quoted prose, not one when-row"
+      ],
+      "original_strict_acceptance": false,
+      "original_compiler_error": "Representation diagnostics: [\"D: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction\", \"D: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"D: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"S: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"S: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"Hd: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction\", \"Hd: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"Hd: missing nested claims; flat edges without child IDs cannot be assigned safely\"]",
+      "normalized_strict_acceptance": false,
+      "normalized_compiler_error": "Representation diagnostics: [\"D: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\", \"S: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\", \"Hd: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\"]",
+      "projection": {
+        "status": "diagnostic_projection",
+        "coverage": "exhaustive within declared family",
+        "compatible_models": 1024,
+        "unknown_rows": {
+          "D": 1,
+          "S": 6,
+          "Hd": 3
+        },
+        "source_errors_in_original_audit": [
+          {
+            "record": "edge[1]",
+            "dimension": "function",
+            "explanation": "S5 requires damage for repair success, not for making an attempt. The edge says an attempt is only possible if damaged; S7 makes attempt independently settable.",
+            "sentences": [
+              "S5",
+              "S7"
+            ]
+          }
+        ],
+        "queries": [
+          {
+            "id": "H1",
+            "question": "If Humpty does not fall, does he remain damaged after the attempt?",
+            "expected": 0,
+            "values": [
+              0,
+              1
+            ],
+            "identified_within_declared_family": false,
+            "coverage": "exhaustive_set"
+          },
+          {
+            "id": "H2",
+            "question": "If an effective method is available to the helpers, does Humpty remain damaged?",
+            "expected": 0,
+            "values": [
+              0,
+              1
+            ],
+            "identified_within_declared_family": false,
+            "coverage": "exhaustive_set"
+          },
+          {
+            "id": "H3",
+            "question": "If an effective method is available but the helpers do not attempt repair, does Humpty remain damaged?",
+            "expected": 1,
+            "values": [
+              0,
+              1
+            ],
+            "identified_within_declared_family": false,
+            "coverage": "exhaustive_set"
+          },
+          {
+            "id": "H4",
+            "question": "If the helpers do not attempt repair, with their factual lack of an effective method unchanged, does Humpty remain damaged?",
+            "expected": 1,
+            "values": [
+              0,
+              1
+            ],
+            "identified_within_declared_family": false,
+            "coverage": "exhaustive_set"
+          }
+        ],
+        "exact_prose_checks": [
+          {
+            "child": "D",
+            "claim": {
+              "child": "D",
+              "text": "Humpty becomes damaged exactly when he falls; there are no other sources of initial damage in the model.",
+              "type": "exact",
+              "rule": "F"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "compatible_not_entailed",
+            "passing_tables": 1,
+            "tables": 2,
+            "counterexample": {
+              "inputs": {
+                "F": 0
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          },
+          {
+            "child": "S",
+            "claim": {
+              "child": "S",
+              "text": "A repair succeeds exactly when Humpty is damaged, the helpers attempt repair, and an effective method is available.",
+              "type": "exact",
+              "rule": "D and A and E"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "compatible_not_entailed",
+            "passing_tables": 1,
+            "tables": 64,
+            "counterexample": {
+              "inputs": {
+                "D": 1,
+                "A": 0,
+                "E": 1
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          },
+          {
+            "child": "Hd",
+            "claim": {
+              "child": "Hd",
+              "text": "Humpty remains damaged exactly when he became damaged and repair does not succeed.",
+              "type": "exact",
+              "rule": "D and not S"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "compatible_not_entailed",
+            "passing_tables": 1,
+            "tables": 8,
+            "counterexample": {
+              "inputs": {
+                "D": 1,
+                "S": 1
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          }
+        ]
+      },
+      "archived_factual_audit": {
+        "supported": [
+          "F",
+          "D",
+          "A",
+          "E",
+          "S",
+          "Hd"
+        ],
+        "unsupported": [],
+        "excluded": [],
+        "denominator_definition": "Asserted story event/state values; exclude null states and narrative metadata. Not executable factual reconstruction."
+      }
+    },
+    {
+      "id": "wolf_natural_attempt0",
+      "input_sha256": "5030998d18764704b0af7e1140e6ea7dfc88e214baa27023b840af34fc8325cd",
+      "normalized_sha256": "90a99a059301304905e48fd9d1e06abf23fbee174a4d87dc4c2be36517a0c583",
+      "operations": [
+        {
+          "kind": "representation_precedence",
+          "child": "villagers_dismissed",
+          "from": "fixed_context",
+          "to": "endogenous",
+          "reason": "Use the explicitly supplied mechanism in this derived view; retain the original contradiction in this ledger."
+        },
+        {
+          "kind": "representation_precedence",
+          "child": "villagers_dismissed_real",
+          "from": "fixed_context",
+          "to": "endogenous",
+          "reason": "Use the explicitly supplied mechanism in this derived view; retain the original contradiction in this ledger."
+        },
+        {
+          "kind": "representation_precedence",
+          "child": "flock_harmed",
+          "from": "fixed_context",
+          "to": "endogenous",
+          "reason": "Use the explicitly supplied mechanism in this derived view; retain the original contradiction in this ledger."
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 0,
+          "child": "villagers_dismissed",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 1,
+          "child": "villagers_dismissed_real",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 2,
+          "child": "villagers_dismissed_real",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 3,
+          "child": "flock_harmed",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 4,
+          "child": "flock_harmed",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 0,
+          "child": "villagers_dismissed",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 1,
+          "child": "villagers_dismissed_real",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 2,
+          "child": "flock_harmed",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        }
+      ],
+      "unresolved_attachments": [],
+      "variables": 9,
+      "declared_dependencies": 5,
+      "mechanisms": 3,
+      "before_schema_diagnostics": [
+        "villagers_dismissed: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction",
+        "villagers_dismissed: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "villagers_dismissed: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "villagers_dismissed_real: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction",
+        "villagers_dismissed_real: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "villagers_dismissed_real: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "flock_harmed: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction",
+        "flock_harmed: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "flock_harmed: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "wolf_attack_possible_stop: fixed context cannot have an unknown factual value"
+      ],
+      "after_schema_diagnostics": [
+        "wolf_attack_possible_stop: fixed context cannot have an unknown factual value"
+      ],
+      "original_strict_acceptance": false,
+      "original_compiler_error": "Representation diagnostics: [\"villagers_dismissed: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction\", \"villagers_dismissed: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"villagers_dismissed: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"villagers_dismissed_real: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction\", \"villagers_dismissed_real: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"villagers_dismissed_real: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"flock_harmed: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction\", \"flock_harmed: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"flock_harmed: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"wolf_attack_possible_stop: fixed context cannot have an unknown factual value\"]",
+      "normalized_strict_acceptance": false,
+      "normalized_compiler_error": "Representation diagnostics: [\"wolf_attack_possible_stop: fixed context cannot have an unknown factual value\"]",
+      "projection": {
+        "status": "unavailable",
+        "reason": "Unknown root state for wolf_attack_possible_stop; no root distribution or function invented"
+      },
+      "archived_factual_audit": {
+        "supported": [
+          "boy_shouted_false",
+          "villagers_dismissed",
+          "real_wolf_appeared",
+          "boy_shouted_real",
+          "villagers_dismissed_real",
+          "flock_harmed",
+          "villagers_no_help",
+          "boy_waited_vainly"
+        ],
+        "unsupported": [],
+        "excluded": [
+          "wolf_attack_possible_stop"
+        ],
+        "denominator_definition": "Asserted story event/state values; exclude null states and narrative metadata. Not executable factual reconstruction."
+      }
+    },
+    {
+      "id": "wolf_controlled_attempt0",
+      "input_sha256": "ddac772fa44d4ca140f933ed60dc427a395ef33a08a9c4abece71039c6fb1962",
+      "normalized_sha256": "fce867b57c36a192ba5b7249cd5dbd3464ce3ea639ea80da34ecfef45f5e9cf5",
+      "operations": [
+        {
+          "kind": "representation_precedence",
+          "child": "villagers_distrust_boy",
+          "from": "fixed_context",
+          "to": "endogenous",
+          "reason": "Use the explicitly supplied mechanism in this derived view; retain the original contradiction in this ledger."
+        },
+        {
+          "kind": "representation_precedence",
+          "child": "boy_gives_new_warning",
+          "from": "fixed_context",
+          "to": "endogenous",
+          "reason": "Use the explicitly supplied mechanism in this derived view; retain the original contradiction in this ledger."
+        },
+        {
+          "kind": "representation_precedence",
+          "child": "villagers_respond_in_time",
+          "from": "fixed_context",
+          "to": "endogenous",
+          "reason": "Use the explicitly supplied mechanism in this derived view; retain the original contradiction in this ledger."
+        },
+        {
+          "kind": "representation_precedence",
+          "child": "flock_harmed",
+          "from": "fixed_context",
+          "to": "endogenous",
+          "reason": "Use the explicitly supplied mechanism in this derived view; retain the original contradiction in this ledger."
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 0,
+          "child": "villagers_distrust_boy",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 2,
+          "child": "villagers_respond_in_time",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 3,
+          "child": "villagers_respond_in_time",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 5,
+          "child": "flock_harmed",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 0,
+          "child": "villagers_distrust_boy",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 1,
+          "child": "boy_gives_new_warning",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 2,
+          "child": "villagers_respond_in_time",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 3,
+          "child": "flock_harmed",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        }
+      ],
+      "unresolved_attachments": [
+        {
+          "field": "edges",
+          "index": 1,
+          "candidate_children": [
+            "boy_gives_new_warning",
+            "flock_harmed"
+          ],
+          "reason": "No unique attachment; no interpretation or endpoint was invented."
+        },
+        {
+          "field": "edges",
+          "index": 4,
+          "candidate_children": [
+            "boy_gives_new_warning",
+            "flock_harmed"
+          ],
+          "reason": "No unique attachment; no interpretation or endpoint was invented."
+        }
+      ],
+      "variables": 6,
+      "declared_dependencies": 6,
+      "mechanisms": 4,
+      "before_schema_diagnostics": [
+        "villagers_distrust_boy: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction",
+        "villagers_distrust_boy: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "villagers_distrust_boy: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "boy_gives_new_warning: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction",
+        "boy_gives_new_warning: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "boy_gives_new_warning: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "villagers_respond_in_time: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction",
+        "villagers_respond_in_time: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "villagers_respond_in_time: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "flock_harmed: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction",
+        "flock_harmed: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "flock_harmed: missing nested claims; flat edges without child IDs cannot be assigned safely"
+      ],
+      "after_schema_diagnostics": [
+        "villagers_distrust_boy: exact claim needs a separately stated rule implementing the quoted prose, not one when-row",
+        "boy_gives_new_warning: exact claim needs a separately stated rule implementing the quoted prose, not one when-row",
+        "villagers_respond_in_time: exact claim needs a separately stated rule implementing the quoted prose, not one when-row",
+        "flock_harmed: exact claim needs a separately stated rule implementing the quoted prose, not one when-row"
+      ],
+      "original_strict_acceptance": false,
+      "original_compiler_error": "Representation diagnostics: [\"villagers_distrust_boy: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction\", \"villagers_distrust_boy: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"villagers_distrust_boy: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"boy_gives_new_warning: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction\", \"boy_gives_new_warning: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"boy_gives_new_warning: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"villagers_respond_in_time: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction\", \"villagers_respond_in_time: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"villagers_respond_in_time: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"flock_harmed: child has a mechanism but is labelled fixed_context; explicitly resolve this contradiction\", \"flock_harmed: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"flock_harmed: missing nested claims; flat edges without child IDs cannot be assigned safely\"]",
+      "normalized_strict_acceptance": false,
+      "normalized_compiler_error": "Representation diagnostics: [\"villagers_distrust_boy: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\", \"boy_gives_new_warning: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\", \"villagers_respond_in_time: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\", \"flock_harmed: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\"]",
+      "projection": {
+        "status": "diagnostic_projection",
+        "coverage": "exhaustive within declared family",
+        "compatible_models": 64,
+        "unknown_rows": {
+          "villagers_distrust_boy": 1,
+          "boy_gives_new_warning": 1,
+          "villagers_respond_in_time": 2,
+          "flock_harmed": 2
+        },
+        "source_errors_in_original_audit": [
+          {
+            "record": "villagers_respond_in_time",
+            "dimension": "event",
+            "explanation": "The generated factual value says timely response occurred; the source says villagers did not respond.",
+            "sentences": [
+              "S2",
+              "S5"
+            ]
+          }
+        ],
+        "queries": [
+          {
+            "id": "W1",
+            "question": "If there had been no earlier false alarms, is the flock harmed during the later episode?",
+            "expected": 0,
+            "values": [
+              1
+            ],
+            "identified_within_declared_family": true,
+            "coverage": "exhaustive_set"
+          },
+          {
+            "id": "W2",
+            "question": "If no real wolf appears, is the flock harmed?",
+            "expected": 0,
+            "values": [
+              0,
+              1
+            ],
+            "identified_within_declared_family": false,
+            "coverage": "exhaustive_set"
+          },
+          {
+            "id": "W3",
+            "question": "If there had been no earlier false alarms and the new warning is prevented, is the flock harmed?",
+            "expected": 1,
+            "values": [
+              1
+            ],
+            "identified_within_declared_family": true,
+            "coverage": "exhaustive_set"
+          },
+          {
+            "id": "W4",
+            "question": "If the new warning is prevented while the earlier false alarms remain as told, is the flock harmed?",
+            "expected": 1,
+            "values": [
+              1
+            ],
+            "identified_within_declared_family": true,
+            "coverage": "exhaustive_set"
+          }
+        ],
+        "exact_prose_checks": [
+          {
+            "child": "villagers_distrust_boy",
+            "claim": {
+              "child": "villagers_distrust_boy",
+              "text": "Villagers distrust the boy exactly when he has given earlier false alarms.",
+              "type": "exact",
+              "rule": "earlier_false_alarms"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "compatible_not_entailed",
+            "passing_tables": 1,
+            "tables": 2,
+            "counterexample": {
+              "inputs": {
+                "earlier_false_alarms": 0
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          },
+          {
+            "child": "boy_gives_new_warning",
+            "claim": {
+              "child": "boy_gives_new_warning",
+              "text": "The boy gives the new warning exactly when a real wolf appears, unless that warning is directly intervened on.",
+              "type": "exact",
+              "rule": "real_wolf_appears"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "compatible_not_entailed",
+            "passing_tables": 1,
+            "tables": 2,
+            "counterexample": {
+              "inputs": {
+                "real_wolf_appears": 0
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          },
+          {
+            "child": "villagers_respond_in_time",
+            "claim": {
+              "child": "villagers_respond_in_time",
+              "text": "Villagers respond in time exactly when a new warning is given and they do not distrust the boy.",
+              "type": "exact",
+              "rule": "boy_gives_new_warning and not villagers_distrust_boy"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "inconsistent",
+            "passing_tables": 0,
+            "tables": 4,
+            "counterexample": {
+              "inputs": {
+                "boy_gives_new_warning": 1,
+                "villagers_distrust_boy": 1
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          },
+          {
+            "child": "flock_harmed",
+            "claim": {
+              "child": "flock_harmed",
+              "text": "The flock is harmed exactly when a real wolf appears and villagers do not respond in time; timely help always prevents harm in this adaptation.",
+              "type": "exact",
+              "rule": "real_wolf_appears and not villagers_respond_in_time"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "inconsistent",
+            "passing_tables": 0,
+            "tables": 4,
+            "counterexample": {
+              "inputs": {
+                "real_wolf_appears": 1,
+                "villagers_respond_in_time": 1
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          }
+        ]
+      },
+      "archived_factual_audit": {
+        "supported": [
+          "earlier_false_alarms",
+          "real_wolf_appears",
+          "villagers_distrust_boy",
+          "boy_gives_new_warning",
+          "flock_harmed"
+        ],
+        "unsupported": [
+          "villagers_respond_in_time"
+        ],
+        "excluded": [],
+        "denominator_definition": "Asserted story event/state values; exclude null states and narrative metadata. Not executable factual reconstruction."
+      }
+    },
+    {
+      "id": "crow_natural_attempt0",
+      "input_sha256": "9c86f1d637dc87c6aab78cce2a1868f589709a5a92b9176d04d1fad471ecd922",
+      "normalized_sha256": "94fcf1e3f1cc794f45a5dceed534c92b2ecf43d7456441e9884100a3fca9dc16",
+      "operations": [
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 0,
+          "child": "water_level_rises",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 1,
+          "child": "water_reachable",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 2,
+          "child": "crow_drinks",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 0,
+          "child": "water_level_rises",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 1,
+          "child": "water_reachable",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 2,
+          "child": "crow_drinks",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        }
+      ],
+      "unresolved_attachments": [],
+      "variables": 9,
+      "declared_dependencies": 7,
+      "mechanisms": 3,
+      "before_schema_diagnostics": [
+        "outcome must name an existing variable",
+        "water_level_rises: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "water_level_rises: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "water_reachable: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "water_reachable: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "crow_drinks: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "crow_drinks: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "crow_drops_stones: endogenous variable missing mechanism",
+        "pitcher_leak: endogenous variable missing mechanism",
+        "thirst_relief: endogenous variable missing mechanism"
+      ],
+      "after_schema_diagnostics": [
+        "outcome must name an existing variable",
+        "crow_drops_stones: endogenous variable missing mechanism",
+        "pitcher_leak: endogenous variable missing mechanism",
+        "thirst_relief: endogenous variable missing mechanism"
+      ],
+      "original_strict_acceptance": false,
+      "original_compiler_error": "Representation diagnostics: [\"outcome must name an existing variable\", \"water_level_rises: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"water_level_rises: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"water_reachable: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"water_reachable: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"crow_drinks: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"crow_drinks: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"crow_drops_stones: endogenous variable missing mechanism\", \"pitcher_leak: endogenous variable missing mechanism\", \"thirst_relief: endogenous variable missing mechanism\"]",
+      "normalized_strict_acceptance": false,
+      "normalized_compiler_error": "Representation diagnostics: [\"outcome must name an existing variable\", \"crow_drops_stones: endogenous variable missing mechanism\", \"pitcher_leak: endogenous variable missing mechanism\", \"thirst_relief: endogenous variable missing mechanism\"]",
+      "projection": {
+        "status": "unavailable",
+        "reason": "Duplicate variable identifiers or nonexistent outcome; interpretation required"
+      },
+      "archived_factual_audit": {
+        "supported": [
+          "pitcher_intact",
+          "water_level_low",
+          "stones_present",
+          "crow_drops_stones",
+          "water_level_rises",
+          "water_reachable",
+          "crow_drinks",
+          "thirst_relief"
+        ],
+        "unsupported": [],
+        "excluded": [
+          "pitcher_leak"
+        ],
+        "denominator_definition": "Asserted story event/state values; exclude null states and narrative metadata. Not executable factual reconstruction."
+      }
+    },
+    {
+      "id": "crow_controlled_attempt0",
+      "input_sha256": "1cf96bb4b6e33b18be1086895a0d107dd31056693dee03d1ec1e0cda83e163dc",
+      "normalized_sha256": "574e96a816942549a1be4f6a94776a6791797b794ff9c6ad02119d99915c60ca",
+      "operations": [
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 0,
+          "child": "crow_adds_stones",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 3,
+          "child": "water_rises",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 5,
+          "child": "water_reachable",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 6,
+          "child": "water_reachable",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "edges",
+          "index": 7,
+          "child": "crow_drinks",
+          "criterion": "Unique declared mechanism containing this parent"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 0,
+          "child": "crow_adds_stones",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 1,
+          "child": "water_rises",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 2,
+          "child": "water_reachable",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        },
+        {
+          "kind": "lossless_relocation",
+          "field": "claims",
+          "index": 3,
+          "child": "crow_drinks",
+          "criterion": "Unique exact prose anchor (provenance, not semantic scoring)"
+        }
+      ],
+      "unresolved_attachments": [
+        {
+          "field": "edges",
+          "index": 1,
+          "candidate_children": [
+            "crow_adds_stones",
+            "water_rises",
+            "water_reachable"
+          ],
+          "reason": "No unique attachment; no interpretation or endpoint was invented."
+        },
+        {
+          "field": "edges",
+          "index": 2,
+          "candidate_children": [
+            "crow_adds_stones",
+            "water_rises",
+            "water_reachable"
+          ],
+          "reason": "No unique attachment; no interpretation or endpoint was invented."
+        },
+        {
+          "field": "edges",
+          "index": 4,
+          "candidate_children": [
+            "crow_adds_stones",
+            "water_rises",
+            "water_reachable"
+          ],
+          "reason": "No unique attachment; no interpretation or endpoint was invented."
+        }
+      ],
+      "variables": 8,
+      "declared_dependencies": 8,
+      "mechanisms": 4,
+      "before_schema_diagnostics": [
+        "crow_adds_stones: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "crow_adds_stones: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "water_rises: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "water_rises: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "water_reachable: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "water_reachable: missing nested claims; flat edges without child IDs cannot be assigned safely",
+        "crow_drinks: missing nested edges; flat edges without child IDs cannot be assigned safely",
+        "crow_drinks: missing nested claims; flat edges without child IDs cannot be assigned safely"
+      ],
+      "after_schema_diagnostics": [
+        "crow_adds_stones: exact claim needs a separately stated rule implementing the quoted prose, not one when-row",
+        "water_rises: exact claim needs a separately stated rule implementing the quoted prose, not one when-row",
+        "water_reachable: exact claim needs a separately stated rule implementing the quoted prose, not one when-row",
+        "crow_drinks: exact claim needs a separately stated rule implementing the quoted prose, not one when-row"
+      ],
+      "original_strict_acceptance": false,
+      "original_compiler_error": "Representation diagnostics: [\"crow_adds_stones: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"crow_adds_stones: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"water_rises: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"water_rises: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"water_reachable: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"water_reachable: missing nested claims; flat edges without child IDs cannot be assigned safely\", \"crow_drinks: missing nested edges; flat edges without child IDs cannot be assigned safely\", \"crow_drinks: missing nested claims; flat edges without child IDs cannot be assigned safely\"]",
+      "normalized_strict_acceptance": false,
+      "normalized_compiler_error": "Representation diagnostics: [\"crow_adds_stones: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\", \"water_rises: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\", \"water_reachable: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\", \"crow_drinks: exact claim needs a separately stated rule implementing the quoted prose, not one when-row\"]",
+      "projection": {
+        "status": "diagnostic_projection",
+        "coverage": "exhaustive within declared family",
+        "compatible_models": 4096,
+        "unknown_rows": {
+          "crow_adds_stones": 3,
+          "water_rises": 3,
+          "water_reachable": 5,
+          "crow_drinks": 1
+        },
+        "source_errors_in_original_audit": [
+          {
+            "record": "M_crow_adds_stones",
+            "dimension": "function",
+            "explanation": "An extra intact-pitcher requirement is inserted into the stone-adding rule, contrary to S3.",
+            "sentences": [
+              "S3"
+            ]
+          },
+          {
+            "record": "edge[3]",
+            "dimension": "function",
+            "explanation": "Water rises when stones are added omits the joint intact-pitcher condition.",
+            "sentences": [
+              "S4"
+            ]
+          },
+          {
+            "record": "edge[5]",
+            "dimension": "function",
+            "explanation": "Initially reachable water is asserted to remain reachable without the intact-pitcher qualifier.",
+            "sentences": [
+              "S5"
+            ]
+          },
+          {
+            "record": "edge[6]",
+            "dimension": "function",
+            "explanation": "Rising water is asserted sufficient for reachability without the intact-pitcher qualifier.",
+            "sentences": [
+              "S5"
+            ]
+          }
+        ],
+        "queries": [
+          {
+            "id": "C1",
+            "question": "If the crow does not add enough stones, does it drink from the pitcher?",
+            "expected": 0,
+            "values": [
+              0,
+              1
+            ],
+            "identified_within_declared_family": false,
+            "coverage": "exhaustive_set"
+          },
+          {
+            "id": "C2",
+            "question": "If the pitcher is not intact, does the crow drink from it?",
+            "expected": 0,
+            "values": [
+              0,
+              1
+            ],
+            "identified_within_declared_family": false,
+            "coverage": "exhaustive_set"
+          },
+          {
+            "id": "C3",
+            "question": "If the crow does not add enough stones but water is initially within reach, does it drink?",
+            "expected": 1,
+            "values": [
+              1
+            ],
+            "identified_within_declared_family": true,
+            "coverage": "exhaustive_set"
+          },
+          {
+            "id": "C4",
+            "question": "If water is initially within reach, with other inputs as told, does the crow drink?",
+            "expected": 1,
+            "values": [
+              1
+            ],
+            "identified_within_declared_family": true,
+            "coverage": "exhaustive_set"
+          }
+        ],
+        "exact_prose_checks": [
+          {
+            "child": "crow_adds_stones",
+            "claim": {
+              "child": "crow_adds_stones",
+              "text": "The crow adds stones exactly when enough stones are available and the pitcher is intact, unless directly intervened on.",
+              "type": "exact",
+              "rule": "enough_stones_available and pitcher_intact"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "compatible_not_entailed",
+            "passing_tables": 1,
+            "tables": 8,
+            "counterexample": {
+              "inputs": {
+                "enough_stones_available": 1,
+                "pitcher_intact": 0
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          },
+          {
+            "child": "water_rises",
+            "claim": {
+              "child": "water_rises",
+              "text": "Water rises exactly when the pitcher is intact and enough stones are added.",
+              "type": "exact",
+              "rule": "pitcher_intact and crow_adds_stones"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "compatible_not_entailed",
+            "passing_tables": 1,
+            "tables": 8,
+            "counterexample": {
+              "inputs": {
+                "pitcher_intact": 1,
+                "crow_adds_stones": 0
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          },
+          {
+            "child": "water_reachable",
+            "claim": {
+              "child": "water_reachable",
+              "text": "Water is reachable exactly when the pitcher is intact and either water was initially within reach or it rises after stones are added.",
+              "type": "exact",
+              "rule": "pitcher_intact and (initial_water_reachable or water_rises)"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "compatible_not_entailed",
+            "passing_tables": 1,
+            "tables": 32,
+            "counterexample": {
+              "inputs": {
+                "pitcher_intact": 1,
+                "initial_water_reachable": 0,
+                "water_rises": 0
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          },
+          {
+            "child": "crow_drinks",
+            "claim": {
+              "child": "crow_drinks",
+              "text": "The crow drinks exactly when water is reachable.",
+              "type": "exact",
+              "rule": "water_reachable"
+            },
+            "translation_provenance": "Archived Codex semantic audit, not independent adjudication",
+            "status": "compatible_not_entailed",
+            "passing_tables": 1,
+            "tables": 2,
+            "counterexample": {
+              "inputs": {
+                "water_reachable": 0
+              },
+              "output": 1,
+              "prose_requires": 0
+            }
+          }
+        ]
+      },
+      "archived_factual_audit": {
+        "supported": [
+          "pitcher_intact",
+          "sufficient_water",
+          "enough_stones_available",
+          "initial_water_reachable",
+          "crow_adds_stones",
+          "water_rises",
+          "water_reachable",
+          "crow_drinks"
+        ],
+        "unsupported": [],
+        "excluded": [],
+        "denominator_definition": "Asserted story event/state values; exclude null states and narrative metadata. Not executable factual reconstruction."
+      }
+    }
+  ],
+  "strict_acceptance": {
+    "original": 0,
+    "normalized": 0
+  }
+}

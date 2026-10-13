@@ -1,0 +1,19 @@
+{
+  "inference_requests": 0,
+  "generated_tokens": 0,
+  "gpu_use": "none",
+  "archived_results_modified": false,
+  "strict_original_models_accepted": 0,
+  "strict_normalized_models_accepted": 0,
+  "reference_interventions_reproduced": 12,
+  "conditional_bolton_answers_reproduced": 6,
+  "figure_count": 7,
+  "pdf_fonts_embedded": true,
+  "overfull_tex_boxes": false,
+  "template_text_width_tex_pt": 347.12354,
+  "figure_width_mm": 122,
+  "minimum_figure_font_pdf_pt": 8.5,
+  "proof_pdf_fonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nACGYFJ+TeXGyreTermes-Regular         Type 1C           Custom           yes yes no       8  0\nXXRSQK+txmiaX                        Type 1C           WinAnsi          yes yes no      18  0\nFPOFQS+TimesNewRomanPSMT             TrueType          WinAnsi          yes yes yes     10  0\nWGLKNQ+DejaVuSerif                   TrueType          WinAnsi          yes yes yes     12  0\nJMXGBV+TeXGyreTermes-Bold            Type 1C           WinAnsi          yes yes no      14  0\nYJBRLZ+NewTXMI                       Type 1C           Custom           yes yes yes     16  0\nDAKOKL+txsys                         Type 1C           Custom           yes yes no      29  0\nPRLCYL+TimesNewRomanPSMT             TrueType          WinAnsi          yes yes yes     25  0\nDBZKPX+DejaVuSerif                   TrueType          WinAnsi          yes yes yes     27  0\nSLWOAO+TimesNewRomanPSMT             TrueType          WinAnsi          yes yes yes     36  0\nQPRIXL+DejaVuSerif                   TrueType          WinAnsi          yes yes yes     38  0\nYUSAGR+DejaVuSerif                   TrueType          WinAnsi          yes yes yes     47  0\nQFOJDO+TimesNewRomanPSMT             TrueType          WinAnsi          yes yes yes     45  0\nBGNHNW+TeXGyreTermes-Italic          Type 1C           Custom           yes yes no      58  0\nDSNRCK+TimesNewRomanPSMT             TrueType          WinAnsi          yes yes yes     54  0\nCVNASQ+DejaVuSerif                   TrueType          WinAnsi          yes yes yes     56  0\nLRLHJU+DejaVuSerif                   TrueType          WinAnsi          yes yes yes     69  0\nDTNRMX+TimesNewRomanPS-BoldMT        TrueType          WinAnsi          yes yes yes     65  0\nLHEBHH+TimesNewRomanPSMT             TrueType          WinAnsi          yes yes yes     67  0\nLUKTWU+TimesNewRomanPS-BoldMT        TrueType          WinAnsi          yes yes yes     76  0\nFWJAOA+TimesNewRomanPSMT             TrueType          WinAnsi          yes yes yes     78  0\nPAIXCR+DejaVuSerif                   TrueType          WinAnsi          yes yes yes     80  0\n",
+  "visual_review": "Inspect the exported PDFs/SVGs and compiled pages at 122 mm; the assistant inspection record is in README.md.",
+  "independent_researcher_review": "pending"
+}

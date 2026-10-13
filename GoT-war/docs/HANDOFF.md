@@ -1,4 +1,14 @@
-# Latest addition: simple stories (2026-10-13)
+# Latest addition: calibrated reassessment and publication figures (2026-10-13)
+
+Read the [balanced simple-story reassessment](../experiments/simple_stories/REASSESSMENT.md), [machine-readable audit](../experiments/simple_stories/reassessment.json), and [publication figure index](../paper/publication/README.md). Seven new SVG/PDF figures cover three author-reference stories and the shortlisted Blackwater, Red Wedding, Bolton (combined mechanism/interventions) and Astapor views. [The actual-class inclusion proof](../paper/publication/example.pdf) supplies manuscript-ready captions. Reproduce with `python3 scripts/publication_figures.py --compile`.
+
+The historical 0/6 describes strict acceptance, not absence of useful events or explanations. Nine of 11 controlled joint descriptions are compatible but not entailed by their partial encodings; two Wolf descriptions conflict with the wrong factual response value. A general adapter recovers unambiguous attachments without changing facts, functions or parent sets. Separate diagnostic projections resolve two Crow questions correctly, leave all four Humpty questions unresolved, and expose a definite wrong Wolf answer; these are not rescored autonomous successes. No corrected SCM or fresh inference is substituted for the original generations.
+
+All prior results, archives and figures remain unchanged. Publication labels/layouts are editorial changes; equations and intervention answers are unchanged. Independent review remains pending. The documented release allowance is now 350 files / 9 MiB total / 2 MiB per file to preserve the old portfolio and add separate publication outputs. Commit on main; do not push or submit.
+
+---
+
+# Preserved addition: simple stories (2026-10-13)
 
 The separately requested introductory experiment is in [`experiments/simple_stories/`](../experiments/simple_stories/RESULTS.md): six frozen texts, three author reference SCMs, twelve intervention questions, exact Qwen request/output records, three SVGs and a three-page PDF, and a comparison table. Reproduce with `python3 scripts/simple_stories.py` from GoT-war. Qwen direct answers: 12/12; valid first constructions: 0/6; three repairs repeat their originals. Reference execution: 12/12; four targeted mutations detected. Figures are labelled author references, not generated successes. The service ran 6.26 minutes / 18,814 generated tokens and was stopped by its scoped watchdog; the pod and Jupyter remain available. Independent researcher review is pending. V1–V4 results and their closed budgets are preserved.
 

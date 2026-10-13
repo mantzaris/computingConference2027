@@ -1,0 +1,653 @@
+{
+  "template": "paper/template/svproc.cls",
+  "width_mm": 122,
+  "figure_count": 7,
+  "items": [
+    {
+      "stem": "figures/publication/simple_stories/humpty",
+      "width_mm": 122.0,
+      "height_mm": 65.61553777777777,
+      "node_font_pt": 9,
+      "edge_font_pt": 8.5,
+      "equation_font_pt": 9,
+      "layout_wrap": [
+        24,
+        24
+      ],
+      "nodes": [
+        "F",
+        "D",
+        "A",
+        "E",
+        "R",
+        "Y"
+      ],
+      "edges": [
+        {
+          "parent": "F",
+          "child": "D",
+          "label": "Damages Humpty",
+          "status": "explicit"
+        },
+        {
+          "parent": "D",
+          "child": "R",
+          "label": "Provides damage to repair",
+          "status": "explicit"
+        },
+        {
+          "parent": "A",
+          "child": "R",
+          "label": "Carries out repair",
+          "status": "explicit"
+        },
+        {
+          "parent": "E",
+          "child": "R",
+          "label": "Makes repair effective",
+          "status": "explicit"
+        },
+        {
+          "parent": "D",
+          "child": "Y",
+          "label": "Persists without repair",
+          "status": "explicit"
+        },
+        {
+          "parent": "R",
+          "child": "Y",
+          "label": "Removes damage",
+          "status": "explicit"
+        }
+      ],
+      "equations": [
+        "D = F;   R = D ∧ A ∧ E;   Y = D ∧ ¬R"
+      ],
+      "model_sha256": "06e77e928a6f1f77e4ea2e66c0c88c3c148742168d980f80bf7b65c82ef3f5f6",
+      "provenance": "Author reference model for the frozen controlled adaptation; not generated or corrected model.",
+      "comparison": null,
+      "source_figure_numbers": null,
+      "files": {
+        ".svg": {
+          "bytes": 4213,
+          "sha256": "c99d2dcd2ace17b4a44499a7457023e346d905bfac123bc3e81232495a9a4716"
+        },
+        ".pdf": {
+          "bytes": 34677,
+          "sha256": "00f6691dc6d9963cf79c3f73d2e71ae1cb773e58d9901073176693a08e69d138"
+        }
+      }
+    },
+    {
+      "stem": "figures/publication/simple_stories/wolf",
+      "width_mm": 122.0,
+      "height_mm": 58.91501777777777,
+      "node_font_pt": 9,
+      "edge_font_pt": 8.5,
+      "equation_font_pt": 9,
+      "layout_wrap": [
+        26,
+        24
+      ],
+      "nodes": [
+        "F",
+        "L",
+        "W",
+        "N",
+        "V",
+        "H"
+      ],
+      "edges": [
+        {
+          "parent": "F",
+          "child": "L",
+          "label": "Erodes trust",
+          "status": "explicit"
+        },
+        {
+          "parent": "W",
+          "child": "N",
+          "label": "Prompts warning",
+          "status": "explicit"
+        },
+        {
+          "parent": "N",
+          "child": "V",
+          "label": "Calls for help",
+          "status": "explicit"
+        },
+        {
+          "parent": "L",
+          "child": "V",
+          "label": "Blocks response",
+          "status": "explicit"
+        },
+        {
+          "parent": "W",
+          "child": "H",
+          "label": "Threatens flock",
+          "status": "explicit"
+        },
+        {
+          "parent": "V",
+          "child": "H",
+          "label": "Prevents harm",
+          "status": "explicit"
+        }
+      ],
+      "equations": [
+        "L = F;   N = W;   V = N ∧ ¬L;   H = W ∧ ¬V"
+      ],
+      "model_sha256": "106af2e84cd0b8929345fe59edb5d52e8e998d077ccf593c9bf52ed8eab1b739",
+      "provenance": "Author reference model for the frozen controlled adaptation; not generated or corrected model.",
+      "comparison": null,
+      "source_figure_numbers": null,
+      "files": {
+        ".svg": {
+          "bytes": 3871,
+          "sha256": "2f919c239f725220ef255d7cae68a936761aca3da0b0267fd99f23b3e0ddb4c1"
+        },
+        ".pdf": {
+          "bytes": 35477,
+          "sha256": "4d0c05de55bb496262a4dadb3257030da75d1c2448f575a26645f15baf7bb6f0"
+        }
+      }
+    },
+    {
+      "stem": "figures/publication/simple_stories/crow",
+      "width_mm": 122.0,
+      "height_mm": 83.60889777777777,
+      "node_font_pt": 9,
+      "edge_font_pt": 8.5,
+      "equation_font_pt": 9,
+      "layout_wrap": [
+        26,
+        24
+      ],
+      "nodes": [
+        "I",
+        "S",
+        "B",
+        "A",
+        "R",
+        "T",
+        "D"
+      ],
+      "edges": [
+        {
+          "parent": "S",
+          "child": "A",
+          "label": "Permits adding stones",
+          "status": "explicit"
+        },
+        {
+          "parent": "I",
+          "child": "R",
+          "label": "Retains raised water",
+          "status": "explicit"
+        },
+        {
+          "parent": "A",
+          "child": "R",
+          "label": "Lifts water",
+          "status": "explicit"
+        },
+        {
+          "parent": "I",
+          "child": "T",
+          "label": "Preserves access",
+          "status": "explicit"
+        },
+        {
+          "parent": "B",
+          "child": "T",
+          "label": "Provides initial reach",
+          "status": "explicit"
+        },
+        {
+          "parent": "R",
+          "child": "T",
+          "label": "Brings water within reach",
+          "status": "explicit"
+        },
+        {
+          "parent": "T",
+          "child": "D",
+          "label": "Enables drinking",
+          "status": "explicit"
+        }
+      ],
+      "equations": [
+        "A = S;   R = I ∧ A;   T = I ∧ (B ∨ R);   D = T"
+      ],
+      "model_sha256": "7547ccb31616325fa57d5e48efc7585c2630a98e824baed0929f42baf9130488",
+      "provenance": "Author reference model for the frozen controlled adaptation; not generated or corrected model.",
+      "comparison": null,
+      "source_figure_numbers": null,
+      "files": {
+        ".svg": {
+          "bytes": 4844,
+          "sha256": "aa323af713a739c3c734d808d1fcd8171a6eba56689098f66dff44c24ae401c6"
+        },
+        ".pdf": {
+          "bytes": 35879,
+          "sha256": "8cf8e557b04dc3864534e654ca09ed7bd7d738d77cec4a27435d1e61fb2ab9e2"
+        }
+      }
+    },
+    {
+      "stem": "figures/publication/got/blackwater_mechanism",
+      "width_mm": 122.0,
+      "height_mm": 51.50583777777777,
+      "node_font_pt": 9,
+      "edge_font_pt": 8.5,
+      "equation_font_pt": 9,
+      "layout_wrap": [
+        26,
+        24
+      ],
+      "nodes": [
+        "W",
+        "T",
+        "S",
+        "I",
+        "B",
+        "D"
+      ],
+      "edges": [
+        {
+          "parent": "W",
+          "child": "T",
+          "label": "Supplies fire trap",
+          "status": "contextual"
+        },
+        {
+          "parent": "S",
+          "child": "I",
+          "label": "Signals the shot",
+          "status": "explicit"
+        },
+        {
+          "parent": "T",
+          "child": "D",
+          "label": "Fuels explosion",
+          "status": "explicit"
+        },
+        {
+          "parent": "I",
+          "child": "D",
+          "label": "Ignites the trap",
+          "status": "explicit"
+        },
+        {
+          "parent": "B",
+          "child": "D",
+          "label": "Exposes ships to blast",
+          "status": "contextual"
+        }
+      ],
+      "equations": [
+        "T = W;   I = S;   D = T ∧ I ∧ B"
+      ],
+      "model_sha256": "d686a7555a9e2519db038e887eef123c83536d7b0069dc3c9a9f8294284081d4",
+      "provenance": "Codex-assisted v4 narrative hypothesis, unchanged equations; independent researcher adjudication pending.",
+      "comparison": null,
+      "source_figure_numbers": [
+        8
+      ],
+      "files": {
+        ".svg": {
+          "bytes": 3775,
+          "sha256": "49db81e190398ae9b7dff16610b09d63437d00143c01336f470d791711e23e7b"
+        },
+        ".pdf": {
+          "bytes": 33506,
+          "sha256": "2da1696f4c8c08df3c4161c52a8dc57a3d5cd8e83fe4b9b2e684b1c3a43afe9b"
+        }
+      }
+    },
+    {
+      "stem": "figures/publication/got/red_wedding_mechanism",
+      "width_mm": 122.0,
+      "height_mm": 65.97000888888888,
+      "node_font_pt": 9,
+      "edge_font_pt": 8.5,
+      "equation_font_pt": 9,
+      "layout_wrap": [
+        20,
+        20
+      ],
+      "nodes": [
+        "G",
+        "A",
+        "T",
+        "N",
+        "H",
+        "P",
+        "X"
+      ],
+      "edges": [
+        {
+          "parent": "G",
+          "child": "T",
+          "label": "Motivates retaliation",
+          "status": "contextual"
+        },
+        {
+          "parent": "A",
+          "child": "T",
+          "label": "Lowers Frey's risk in betraying Robb",
+          "status": "explicit"
+        },
+        {
+          "parent": "N",
+          "child": "P",
+          "label": "Brings guests to wedding",
+          "status": "contextual"
+        },
+        {
+          "parent": "H",
+          "child": "P",
+          "label": "Offers safety to guests",
+          "status": "contextual"
+        },
+        {
+          "parent": "T",
+          "child": "X",
+          "label": "Prepares concealed attack",
+          "status": "explicit"
+        },
+        {
+          "parent": "P",
+          "child": "X",
+          "label": "Puts leaders within reach",
+          "status": "contextual"
+        }
+      ],
+      "equations": [
+        "P = N ∧ H;   X = T ∧ P",
+        "T = G ∧ A  versus  T = A"
+      ],
+      "model_sha256": "747f2fea543141e7d5c706cc74ef453a40f1b27841810c25ff58d8780f0b5497",
+      "provenance": "Codex-assisted v4 narrative hypothesis, unchanged equations; independent researcher adjudication pending.",
+      "comparison": null,
+      "source_figure_numbers": [
+        11
+      ],
+      "files": {
+        ".svg": {
+          "bytes": 5954,
+          "sha256": "468e4a2e4bf90b8c48d1e63363d6133dd0cc053cca9812b29cc37183684cff47"
+        },
+        ".pdf": {
+          "bytes": 38741,
+          "sha256": "788d74f631dd51bcec2bda436d0ce756529916c1d96f5204754cf613d51d023c"
+        }
+      }
+    },
+    {
+      "stem": "figures/publication/got/bolton_mechanism_interventions",
+      "width_mm": 122.0,
+      "height_mm": 103.7172311111111,
+      "node_font_pt": 9,
+      "edge_font_pt": 8.5,
+      "equation_font_pt": 9,
+      "layout_wrap": [
+        18,
+        18
+      ],
+      "nodes": [
+        "J",
+        "S",
+        "E",
+        "A",
+        "V",
+        "R",
+        "H"
+      ],
+      "edges": [
+        {
+          "parent": "J",
+          "child": "E",
+          "label": "Commits host to melee",
+          "status": "contextual"
+        },
+        {
+          "parent": "S",
+          "child": "E",
+          "label": "Closes enclosure",
+          "status": "explicit"
+        },
+        {
+          "parent": "A",
+          "child": "R",
+          "label": "Secures outside aid",
+          "status": "contextual"
+        },
+        {
+          "parent": "V",
+          "child": "R",
+          "label": "Supplies relief force",
+          "status": "contextual"
+        },
+        {
+          "parent": "E",
+          "child": "H",
+          "label": "Keeps survivors trapped",
+          "status": "contextual"
+        },
+        {
+          "parent": "R",
+          "child": "H",
+          "label": "Breaks shield enclosure",
+          "status": "explicit"
+        }
+      ],
+      "equations": [
+        "E = J ∧ S;   R = A ∧ V;   H = E ∧ ¬R"
+      ],
+      "model_sha256": "d45137a6dff23263303d9a5347957e8c726233344452efd683a9b4d6af942b21",
+      "provenance": "Codex-assisted v4 narrative hypothesis, unchanged equations; independent researcher adjudication pending.",
+      "comparison": [
+        {
+          "label": "No Vale relief",
+          "do": {
+            "R": 0
+          },
+          "values": [
+            0,
+            0
+          ],
+          "partial_values": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "No Rickon bait",
+          "do": {
+            "B": 0
+          },
+          "values": [
+            1,
+            1
+          ],
+          "partial_values": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "Neither bait nor relief",
+          "do": {
+            "B": 0,
+            "R": 0
+          },
+          "values": [
+            0,
+            1
+          ],
+          "partial_values": [
+            0,
+            1
+          ]
+        }
+      ],
+      "source_figure_numbers": [
+        14,
+        15
+      ],
+      "files": {
+        ".svg": {
+          "bytes": 8012,
+          "sha256": "a7f8674b23bd51e9fd172111822f2a94defbf78597ac93d8aae06876b712666b"
+        },
+        ".pdf": {
+          "bytes": 54511,
+          "sha256": "2561dc6fb1d1cd28f6041115a75c0afa6d7dfa46dba3d1663173008521842287"
+        }
+      }
+    },
+    {
+      "stem": "figures/publication/got/astapor_overview",
+      "width_mm": 122.0,
+      "height_mm": 146.75482177777778,
+      "node_font_pt": 9,
+      "edge_font_pt": 8.5,
+      "equation_font_pt": 9,
+      "nodes": [
+        "O",
+        "B",
+        "C",
+        "Q",
+        "U",
+        "D",
+        "F",
+        "S",
+        "E",
+        "R",
+        "Y"
+      ],
+      "edges": [
+        {
+          "parent": "O",
+          "child": "B",
+          "label": "Meets price",
+          "status": "explicit"
+        },
+        {
+          "parent": "B",
+          "child": "C",
+          "label": "Transfers command",
+          "status": "explicit"
+        },
+        {
+          "parent": "C",
+          "child": "U",
+          "label": "Makes orders actionable",
+          "status": "contextual"
+        },
+        {
+          "parent": "Q",
+          "child": "U",
+          "label": "Directs soldiers to attack",
+          "status": "explicit"
+        },
+        {
+          "parent": "D",
+          "child": "F",
+          "label": "Triggers dragonfire",
+          "status": "explicit"
+        },
+        {
+          "parent": "U",
+          "child": "S",
+          "label": "Overwhelms guards",
+          "status": "explicit"
+        },
+        {
+          "parent": "F",
+          "child": "S",
+          "label": "Removes Kraznys",
+          "status": "contextual"
+        },
+        {
+          "parent": "E",
+          "child": "R",
+          "label": "Invites voluntary service",
+          "status": "explicit"
+        },
+        {
+          "parent": "S",
+          "child": "R",
+          "label": "Removes masters' restraint",
+          "status": "contextual"
+        },
+        {
+          "parent": "S",
+          "child": "Y",
+          "label": "Clears armed obstacles",
+          "status": "contextual"
+        },
+        {
+          "parent": "E",
+          "child": "Y",
+          "label": "Changes troop status",
+          "status": "explicit"
+        },
+        {
+          "parent": "R",
+          "child": "Y",
+          "label": "Retains freed soldiers",
+          "status": "contextual"
+        }
+      ],
+      "panels": [
+        {
+          "title": "(a) Purchase and command",
+          "keep": [
+            "O",
+            "B",
+            "C"
+          ],
+          "rankdir": "LR"
+        },
+        {
+          "title": "(b) Attack, emancipation and departure",
+          "keep": [
+            "C",
+            "Q",
+            "U",
+            "D",
+            "F",
+            "S",
+            "E",
+            "R",
+            "Y"
+          ],
+          "rankdir": "TB"
+        }
+      ],
+      "equations": [
+        "B = O;  C = B;  U = C ∧ Q;  F = D",
+        "S = U ∧ F  versus  S = U;   R = E ∧ S",
+        "Y = S ∧ E ∧ R"
+      ],
+      "model_sha256": "9d4cd76e102bb36c9f44a803daf4a9c7101c239dd03f8859be92ec0100f5306e",
+      "provenance": "Codex-assisted v4 narrative hypothesis, unchanged equations; independent researcher adjudication pending.",
+      "source_figure_numbers": [
+        16
+      ],
+      "files": {
+        ".svg": {
+          "bytes": 11620,
+          "sha256": "3a5640ec65ee020cda5bf22c504428dec1b8f7a56d211198e6771975b0d469ee"
+        },
+        ".pdf": {
+          "bytes": 59044,
+          "sha256": "979f2a6978eeabfe4535dd2ad75fa562d2e5b47b80fd52dbfa1d15184816b0bb"
+        }
+      }
+    }
+  ]
+}
