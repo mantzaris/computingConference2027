@@ -39,6 +39,7 @@ data/derived/segments.private.jsonl
 !/results/v3/reproduction.tar.gz
 *.xz
 !/results/v4/reproduction.json.xz
+!/experiments/simple_stories/records.json.xz
 /results/v4/GALLERY_EXPANDED.html
 paper/*.aux
 paper/*.log

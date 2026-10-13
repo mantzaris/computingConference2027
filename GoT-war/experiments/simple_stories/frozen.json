@@ -1,0 +1,772 @@
+{
+  "experiment": "simple_stories_20261013",
+  "frozen_at": "2026-10-13T19:10:34.617353+00:00",
+  "scope": "Introductory development sanity checks; stories are three clusters, not 12 independent samples.",
+  "generation_author": "Qwen/Qwen3-14B-AWQ if service available; no Codex model correction in primary scoring",
+  "story_author": "Original retellings and controlled adaptations written by Codex as experiment author from familiar tales; no reproduced third-party passages.",
+  "budget": {
+    "generated_tokens": 40000,
+    "service_seconds": 3600,
+    "max_first_requests": 9,
+    "max_repairs": 3,
+    "repair_policy": "At most one targeted compiler-error repair for each controlled model. No gold, reference graph, expected answer or alignment enters repair."
+  },
+  "analysis": {
+    "primary": "First attempts, failures in denominator; narrative source audit by Codex, independent researcher review pending.",
+    "controlled": "Score four frozen interventions/story and full mapped behavior over all mapped-variable interventions when tractable; do not require identical identifiers.",
+    "natural": "Preserve missing behavior; audit source support and test one frozen uncertainty question/story.",
+    "claims": "Translate typed prose propositions to universal necessity, sufficiency, conjunction and inhibitory comparisons; enumerate all local rows and candidate functions. Conjunction requires necessity of EACH conjunct and joint sufficiency.",
+    "baseline": "Three isolated direct-answer requests on same controlled text and four question wordings; no intermediate model/graph.",
+    "no_tuning": "No reference changes after outputs, no prompt revisions to manufacture success; bounded technical repairs separately reported."
+  },
+  "stories": [
+    {
+      "id": "humpty",
+      "title": "Humpty Dumpty",
+      "outcome": "Humpty remains damaged after the repair attempt.",
+      "natural": [
+        {
+          "id": "S1",
+          "origin": "retelling",
+          "text": "Humpty Dumpty sat high on a wall, looking out over the road below."
+        },
+        {
+          "id": "S2",
+          "origin": "retelling",
+          "text": "He fell from the wall and lay damaged on the ground, unable to put himself back together."
+        },
+        {
+          "id": "S3",
+          "origin": "retelling",
+          "text": "The king sent his horses and his men, and the helpers gathered around Humpty to attempt a repair."
+        },
+        {
+          "id": "S4",
+          "origin": "retelling",
+          "text": "They worked at putting him together, but their efforts did not succeed, and Humpty remained damaged when they stopped."
+        },
+        {
+          "id": "S5",
+          "origin": "retelling",
+          "text": "The tale does not say what Humpty was made of, what techniques the helpers tried, or whether somebody else might have repaired him."
+        },
+        {
+          "id": "S6",
+          "origin": "retelling",
+          "text": "It describes this fall and this unsuccessful attempt, without settling what would happen with different equipment or a different kind of repair."
+        }
+      ],
+      "controlled": [
+        {
+          "id": "S1",
+          "origin": "retelling",
+          "text": "Humpty Dumpty sat on a wall, fell to the ground, and became damaged."
+        },
+        {
+          "id": "S2",
+          "origin": "retelling",
+          "text": "The king's helpers attempted a repair, but no effective repair method was available to them, and Humpty remained damaged."
+        },
+        {
+          "id": "S3",
+          "origin": "retelling",
+          "text": "Nothing here identifies Humpty as an egg or rules out a better repair elsewhere."
+        },
+        {
+          "id": "S4",
+          "origin": "added_rule",
+          "text": "Added rule for this controlled adaptation: Humpty becomes damaged exactly when he falls; there are no other sources of initial damage in the model."
+        },
+        {
+          "id": "S5",
+          "origin": "added_rule",
+          "text": "Added rule: a repair succeeds exactly when Humpty is damaged, the helpers attempt repair, and an effective method is available."
+        },
+        {
+          "id": "S6",
+          "origin": "added_rule",
+          "text": "Added rule: Humpty remains damaged exactly when he became damaged and repair does not succeed."
+        },
+        {
+          "id": "S7",
+          "origin": "added_rule",
+          "text": "Added background: falling, attempting repair, and method availability are independently settable inputs; mechanisms stay fixed when an input is changed."
+        }
+      ],
+      "reference": {
+        "author": "Codex, as experiment author; fixed scoring specification, not a discovered interpretation",
+        "background": [
+          "No other initial damage; repair effectiveness is local to the specified helpers and attempt."
+        ],
+        "variables": [
+          {
+            "id": "F",
+            "label": "Falls from the wall",
+            "definition": "1 means Humpty falls in the episode; 0 means no fall.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 0,
+            "sentences": [
+              "S1"
+            ],
+            "equation": null,
+            "parents": []
+          },
+          {
+            "id": "D",
+            "label": "Damaged by the fall",
+            "definition": "1 means Humpty has initial damage after the fall.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 1,
+            "sentences": [
+              "S1",
+              "S4"
+            ],
+            "equation": "F",
+            "parents": [
+              "F"
+            ]
+          },
+          {
+            "id": "A",
+            "label": "Helpers attempt repair",
+            "definition": "1 means the helpers attempt repair.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 2,
+            "sentences": [
+              "S2",
+              "S7"
+            ],
+            "equation": null,
+            "parents": []
+          },
+          {
+            "id": "E",
+            "label": "Effective method available",
+            "definition": "1 means an effective method is available to these helpers.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 0,
+            "time": 2,
+            "sentences": [
+              "S2",
+              "S7"
+            ],
+            "equation": null,
+            "parents": []
+          },
+          {
+            "id": "R",
+            "label": "Repair succeeds",
+            "definition": "1 means the attempted repair removes the damage.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 0,
+            "time": 3,
+            "sentences": [
+              "S2",
+              "S5"
+            ],
+            "equation": "D and A and E",
+            "parents": [
+              "D",
+              "A",
+              "E"
+            ]
+          },
+          {
+            "id": "Y",
+            "label": "Remains damaged",
+            "definition": "1 means Humpty remains damaged after the attempt.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 4,
+            "sentences": [
+              "S2",
+              "S6"
+            ],
+            "equation": "D and not R",
+            "parents": [
+              "D",
+              "R"
+            ]
+          }
+        ],
+        "outcome": "Y",
+        "questions": [
+          {
+            "id": "H1",
+            "text": "If Humpty does not fall, does he remain damaged after the attempt?",
+            "do": {
+              "F": 0
+            },
+            "expected": 0,
+            "kind": "single"
+          },
+          {
+            "id": "H2",
+            "text": "If an effective method is available to the helpers, does Humpty remain damaged?",
+            "do": {
+              "E": 1
+            },
+            "expected": 0,
+            "kind": "single"
+          },
+          {
+            "id": "H3",
+            "text": "If an effective method is available but the helpers do not attempt repair, does Humpty remain damaged?",
+            "do": {
+              "E": 1,
+              "A": 0
+            },
+            "expected": 1,
+            "kind": "joint"
+          },
+          {
+            "id": "H4",
+            "text": "If the helpers do not attempt repair, with their factual lack of an effective method unchanged, does Humpty remain damaged?",
+            "do": {
+              "A": 0
+            },
+            "expected": 1,
+            "kind": "unchanged"
+          }
+        ]
+      },
+      "natural_checks": [
+        {
+          "id": "HN1",
+          "question": "Would an effective method available to the helpers guarantee that Humpty no longer remains damaged?",
+          "concept": "Effective method available",
+          "value": 1,
+          "expected": "unresolved",
+          "reason": "A different repair is not described; availability alone does not establish its use or outcome."
+        }
+      ]
+    },
+    {
+      "id": "wolf",
+      "title": "The Boy Who Cried Wolf",
+      "outcome": "The flock is harmed during the real wolf visit.",
+      "natural": [
+        {
+          "id": "S1",
+          "origin": "retelling",
+          "text": "A shepherd boy watching a flock near his village repeatedly shouted that a wolf was attacking when there was no wolf."
+        },
+        {
+          "id": "S2",
+          "origin": "retelling",
+          "text": "The villagers hurried out at these earlier alarms, found no danger, and grew unwilling to trust his warnings."
+        },
+        {
+          "id": "S3",
+          "origin": "retelling",
+          "text": "Later a real wolf appeared among the sheep, and the frightened boy shouted another warning."
+        },
+        {
+          "id": "S4",
+          "origin": "retelling",
+          "text": "The villagers took this new cry for another trick and did not come to help."
+        },
+        {
+          "id": "S5",
+          "origin": "retelling",
+          "text": "The wolf harmed the flock while the boy waited in vain for assistance."
+        },
+        {
+          "id": "S6",
+          "origin": "retelling",
+          "text": "This telling says nothing about the boy dying, how quickly help could have arrived, or whether every attack could have been stopped; it leaves those possibilities open."
+        }
+      ],
+      "controlled": [
+        {
+          "id": "S1",
+          "origin": "retelling",
+          "text": "A shepherd boy gave earlier false wolf alarms, and the villagers lost trust in him."
+        },
+        {
+          "id": "S2",
+          "origin": "retelling",
+          "text": "A real wolf then appeared, the boy gave a new warning, the villagers did not respond, and the flock was harmed."
+        },
+        {
+          "id": "S3",
+          "origin": "added_rule",
+          "text": "Added rule for this controlled adaptation: villagers distrust the boy exactly when he has given earlier false alarms."
+        },
+        {
+          "id": "S4",
+          "origin": "added_rule",
+          "text": "Added rule: the boy gives the new warning exactly when a real wolf appears, unless that warning is directly intervened on."
+        },
+        {
+          "id": "S5",
+          "origin": "added_rule",
+          "text": "Added rule: villagers respond in time exactly when a new warning is given and they do not distrust the boy."
+        },
+        {
+          "id": "S6",
+          "origin": "added_rule",
+          "text": "Added rule: the flock is harmed exactly when a real wolf appears and villagers do not respond in time; timely help always prevents harm in this adaptation."
+        },
+        {
+          "id": "S7",
+          "origin": "added_rule",
+          "text": "Added background: earlier false alarms and the real wolf's appearance are separate inputs, and there are no other threats."
+        }
+      ],
+      "reference": {
+        "author": "Codex, as experiment author; fixed scoring specification, not a discovered interpretation",
+        "background": [
+          "Timely response suffices to prevent harm; no other threats."
+        ],
+        "variables": [
+          {
+            "id": "F",
+            "label": "Earlier false alarms",
+            "definition": "1 means the boy has given earlier false alarms.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 0,
+            "sentences": [
+              "S1",
+              "S7"
+            ],
+            "equation": null,
+            "parents": []
+          },
+          {
+            "id": "L",
+            "label": "Villagers distrust him",
+            "definition": "1 means villagers distrust the new warning.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 1,
+            "sentences": [
+              "S1",
+              "S3"
+            ],
+            "equation": "F",
+            "parents": [
+              "F"
+            ]
+          },
+          {
+            "id": "W",
+            "label": "Real wolf appears",
+            "definition": "1 means a real wolf appears in the later episode.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 2,
+            "sentences": [
+              "S2",
+              "S7"
+            ],
+            "equation": null,
+            "parents": []
+          },
+          {
+            "id": "N",
+            "label": "New warning given",
+            "definition": "1 means the boy gives a new warning in the later episode.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 3,
+            "sentences": [
+              "S2",
+              "S4"
+            ],
+            "equation": "W",
+            "parents": [
+              "W"
+            ]
+          },
+          {
+            "id": "V",
+            "label": "Villagers respond in time",
+            "definition": "1 means villagers respond soon enough to prevent harm.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 0,
+            "time": 4,
+            "sentences": [
+              "S2",
+              "S5"
+            ],
+            "equation": "N and not L",
+            "parents": [
+              "N",
+              "L"
+            ]
+          },
+          {
+            "id": "H",
+            "label": "Flock is harmed",
+            "definition": "1 means the flock is harmed during the real wolf visit.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 5,
+            "sentences": [
+              "S2",
+              "S6"
+            ],
+            "equation": "W and not V",
+            "parents": [
+              "W",
+              "V"
+            ]
+          }
+        ],
+        "outcome": "H",
+        "questions": [
+          {
+            "id": "W1",
+            "text": "If there had been no earlier false alarms, is the flock harmed during the later episode?",
+            "do": {
+              "F": 0
+            },
+            "expected": 0,
+            "kind": "single"
+          },
+          {
+            "id": "W2",
+            "text": "If no real wolf appears, is the flock harmed?",
+            "do": {
+              "W": 0
+            },
+            "expected": 0,
+            "kind": "single"
+          },
+          {
+            "id": "W3",
+            "text": "If there had been no earlier false alarms and the new warning is prevented, is the flock harmed?",
+            "do": {
+              "F": 0,
+              "N": 0
+            },
+            "expected": 1,
+            "kind": "joint"
+          },
+          {
+            "id": "W4",
+            "text": "If the new warning is prevented while the earlier false alarms remain as told, is the flock harmed?",
+            "do": {
+              "N": 0
+            },
+            "expected": 1,
+            "kind": "unchanged"
+          }
+        ]
+      },
+      "natural_checks": [
+        {
+          "id": "WN1",
+          "question": "If villagers had come to help, would the flock certainly have escaped harm?",
+          "concept": "Villagers respond",
+          "value": 1,
+          "expected": "unresolved",
+          "reason": "The natural telling does not establish response timing or guaranteed prevention."
+        }
+      ]
+    },
+    {
+      "id": "crow",
+      "title": "The Crow and the Pitcher",
+      "outcome": "The crow drinks from the pitcher.",
+      "natural": [
+        {
+          "id": "S1",
+          "origin": "retelling",
+          "text": "A thirsty crow found an intact pitcher holding some water, but the water was too low for its beak to reach."
+        },
+        {
+          "id": "S2",
+          "origin": "retelling",
+          "text": "Small stones lay nearby, and the crow began dropping them into the pitcher instead of abandoning the drink."
+        },
+        {
+          "id": "S3",
+          "origin": "retelling",
+          "text": "As stones collected inside, the water rose, and after enough stones had been added the crow could reach it."
+        },
+        {
+          "id": "S4",
+          "origin": "retelling",
+          "text": "The crow drank from the pitcher and relieved its thirst."
+        },
+        {
+          "id": "S5",
+          "origin": "retelling",
+          "text": "This telling describes the successful sequence without specifying how many stones were needed or what would happen if the pitcher leaked."
+        },
+        {
+          "id": "S6",
+          "origin": "retelling",
+          "text": "It also does not settle every alternative way the crow might have found a drink; its account is limited to this pitcher, these stones, and this attempt."
+        }
+      ],
+      "controlled": [
+        {
+          "id": "S1",
+          "origin": "retelling",
+          "text": "A thirsty crow found an intact pitcher containing sufficient water, initially below beak reach, with enough stones available nearby."
+        },
+        {
+          "id": "S2",
+          "origin": "retelling",
+          "text": "The crow added enough stones; the water rose, became reachable, and the crow drank."
+        },
+        {
+          "id": "S3",
+          "origin": "added_rule",
+          "text": "Added rule for this controlled adaptation: the crow adds enough stones exactly when enough stones are available, unless that action is directly intervened on."
+        },
+        {
+          "id": "S4",
+          "origin": "added_rule",
+          "text": "Added rule: water rises exactly when the pitcher is intact and enough stones are added."
+        },
+        {
+          "id": "S5",
+          "origin": "added_rule",
+          "text": "Added rule: water is reachable exactly when the pitcher is intact and either water was initially within reach or it rises after stones are added."
+        },
+        {
+          "id": "S6",
+          "origin": "added_rule",
+          "text": "Added rule: the crow drinks exactly when water is reachable."
+        },
+        {
+          "id": "S7",
+          "origin": "added_rule",
+          "text": "Added background: sufficient water and the crow's readiness to drink stay fixed; pitcher integrity, stone availability, and initial reachability are separately settable inputs."
+        }
+      ],
+      "reference": {
+        "author": "Codex, as experiment author; fixed scoring specification, not a discovered interpretation",
+        "background": [
+          "Sufficient water and willingness to drink fixed at 1; Boolean qualitative reachability, no numerical fluid model."
+        ],
+        "variables": [
+          {
+            "id": "I",
+            "label": "Pitcher intact",
+            "definition": "1 means the pitcher retains its water throughout the attempt.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 0,
+            "sentences": [
+              "S1",
+              "S7"
+            ],
+            "equation": null,
+            "parents": []
+          },
+          {
+            "id": "S",
+            "label": "Enough stones available",
+            "definition": "1 means enough stones are available nearby.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 0,
+            "sentences": [
+              "S1",
+              "S7"
+            ],
+            "equation": null,
+            "parents": []
+          },
+          {
+            "id": "B",
+            "label": "Water initially reachable",
+            "definition": "1 means water is initially within beak reach before adding stones.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 0,
+            "time": 0,
+            "sentences": [
+              "S1",
+              "S7"
+            ],
+            "equation": null,
+            "parents": []
+          },
+          {
+            "id": "A",
+            "label": "Enough stones added",
+            "definition": "1 means the crow adds enough stones during the attempt.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 1,
+            "sentences": [
+              "S2",
+              "S3"
+            ],
+            "equation": "S",
+            "parents": [
+              "S"
+            ]
+          },
+          {
+            "id": "R",
+            "label": "Water rises",
+            "definition": "1 means water rises sufficiently during stone addition.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 2,
+            "sentences": [
+              "S2",
+              "S4"
+            ],
+            "equation": "I and A",
+            "parents": [
+              "I",
+              "A"
+            ]
+          },
+          {
+            "id": "T",
+            "label": "Water now reachable",
+            "definition": "1 means water is within beak reach after the attempt.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 3,
+            "sentences": [
+              "S2",
+              "S5"
+            ],
+            "equation": "I and (B or R)",
+            "parents": [
+              "I",
+              "B",
+              "R"
+            ]
+          },
+          {
+            "id": "D",
+            "label": "Crow drinks",
+            "definition": "1 means the crow drinks from this pitcher at the endpoint.",
+            "domain": [
+              0,
+              1
+            ],
+            "factual": 1,
+            "time": 4,
+            "sentences": [
+              "S2",
+              "S6"
+            ],
+            "equation": "T",
+            "parents": [
+              "T"
+            ]
+          }
+        ],
+        "outcome": "D",
+        "questions": [
+          {
+            "id": "C1",
+            "text": "If the crow does not add enough stones, does it drink from the pitcher?",
+            "do": {
+              "A": 0
+            },
+            "expected": 0,
+            "kind": "single"
+          },
+          {
+            "id": "C2",
+            "text": "If the pitcher is not intact, does the crow drink from it?",
+            "do": {
+              "I": 0
+            },
+            "expected": 0,
+            "kind": "single"
+          },
+          {
+            "id": "C3",
+            "text": "If the crow does not add enough stones but water is initially within reach, does it drink?",
+            "do": {
+              "A": 0,
+              "B": 1
+            },
+            "expected": 1,
+            "kind": "joint"
+          },
+          {
+            "id": "C4",
+            "text": "If water is initially within reach, with other inputs as told, does the crow drink?",
+            "do": {
+              "B": 1
+            },
+            "expected": 1,
+            "kind": "unchanged"
+          }
+        ]
+      },
+      "natural_checks": [
+        {
+          "id": "CN1",
+          "question": "If the pitcher were not intact, would the crow certainly fail to drink from it?",
+          "concept": "Pitcher intact",
+          "value": 0,
+          "expected": "unresolved",
+          "reason": "The natural account explicitly leaves leakage behavior unspecified."
+        }
+      ]
+    }
+  ]
+}

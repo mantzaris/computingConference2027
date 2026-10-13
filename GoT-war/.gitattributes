@@ -1,0 +1,2 @@
+# Publication PDFs contain compressed streams and PDF-specific whitespace.
+*.pdf binary

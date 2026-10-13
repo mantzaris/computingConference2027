@@ -1,0 +1,13 @@
+story	id	question	kind	expected	direct	direct_correct	executed	executed_correct	repair_executed	reference_executed
+humpty	H1	If Humpty does not fall, does he remain damaged after the attempt?	single	0	0	True	FAILED_MODEL	False	FAILED_MODEL	0
+humpty	H2	If an effective method is available to the helpers, does Humpty remain damaged?	single	0	0	True	FAILED_MODEL	False	FAILED_MODEL	0
+humpty	H3	If an effective method is available but the helpers do not attempt repair, does Humpty remain damaged?	joint	1	1	True	FAILED_MODEL	False	FAILED_MODEL	1
+humpty	H4	If the helpers do not attempt repair, with their factual lack of an effective method unchanged, does Humpty remain damaged?	unchanged	1	1	True	FAILED_MODEL	False	FAILED_MODEL	1
+wolf	W1	If there had been no earlier false alarms, is the flock harmed during the later episode?	single	0	0	True	FAILED_MODEL	False	FAILED_MODEL	0
+wolf	W2	If no real wolf appears, is the flock harmed?	single	0	0	True	FAILED_MODEL	False	FAILED_MODEL	0
+wolf	W3	If there had been no earlier false alarms and the new warning is prevented, is the flock harmed?	joint	1	1	True	FAILED_MODEL	False	FAILED_MODEL	1
+wolf	W4	If the new warning is prevented while the earlier false alarms remain as told, is the flock harmed?	unchanged	1	1	True	FAILED_MODEL	False	FAILED_MODEL	1
+crow	C1	If the crow does not add enough stones, does it drink from the pitcher?	single	0	0	True	FAILED_MODEL	False	FAILED_MODEL	0
+crow	C2	If the pitcher is not intact, does the crow drink from it?	single	0	0	True	FAILED_MODEL	False	FAILED_MODEL	0
+crow	C3	If the crow does not add enough stones but water is initially within reach, does it drink?	joint	1	1	True	FAILED_MODEL	False	FAILED_MODEL	1
+crow	C4	If water is initially within reach, with other inputs as told, does the crow drink?	unchanged	1	1	True	FAILED_MODEL	False	FAILED_MODEL	1
