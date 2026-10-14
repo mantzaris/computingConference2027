@@ -13,9 +13,11 @@ import lzma
 import os
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import statistics
 import sys
+import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = ROOT / "paper/narrative_maps_2027"
@@ -32,6 +34,35 @@ def run(args, cwd=PAPER, env=None):
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def check_portable_build(input_files):
+    """Compile only the manuscript folder's inputs, without project search paths."""
+    env = os.environ.copy()
+    for key in ("TEXINPUTS", "BIBINPUTS", "BSTINPUTS"):
+        env.pop(key, None)
+    with tempfile.TemporaryDirectory(prefix="standalone-", dir=BUILD) as temporary:
+        bundle = Path(temporary)
+        for name in input_files:
+            shutil.copy2(PAPER / name, bundle / name)
+        tex = ["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
+               "-file-line-error", "-recorder", "manuscript.tex"]
+        run(tex, cwd=bundle, env=env)
+        run(["bibtex", "manuscript"], cwd=bundle, env=env)
+        for _ in range(3):
+            run(tex, cwd=bundle, env=env)
+        expected = run(["pdftotext", "-layout", str(BUILD / "manuscript.pdf"), "-"])
+        actual = run(["pdftotext", "-layout", str(bundle / "manuscript.pdf"), "-"])
+        assert actual == expected, "Standalone compilation changed the rendered text"
+        for line in (bundle / "manuscript.fls").read_text().splitlines():
+            if line.startswith("INPUT "):
+                path = (bundle / line[6:]).resolve()
+                if ROOT in path.parents:
+                    assert bundle in path.parents, ("External project input", path)
+    return {"isolated_compilation": True, "rendered_text_matches": True,
+            "project_inputs_self_contained": True,
+            "input_hashes": {name: sha(PAPER / name) for name in input_files},
+            "system_dependencies": "A LaTeX distribution with pdfLaTeX, BibTeX and the standard packages named in manuscript.tex, including newtx."}
 
 
 def check_retained_science():
@@ -213,7 +244,7 @@ def build():
     write_benchmark_values()
     BUILD.mkdir(parents=True, exist_ok=True)
     env = os.environ.copy()
-    env["TEXINPUTS"] = str(ROOT / "paper/template") + os.pathsep + env.get("TEXINPUTS", "")
+    env.pop("TEXINPUTS", None)
     env["BIBINPUTS"] = str(PAPER) + os.pathsep + env.get("BIBINPUTS", "")
     tex = ["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
            "-file-line-error", "-output-directory=" + str(BUILD), "manuscript.tex"]
@@ -270,6 +301,13 @@ def build():
         path = ROOT / (item["stem"] + ".pdf")
         figure_hashes[str(path.relative_to(ROOT))] = sha(path)
         assert sha(path) == item["files"][".pdf"]["sha256"], path
+        assert sha(PAPER / path.name) == sha(path), ("Figure copy differs", path.name)
+    template_files = ["svproc.cls", "aliascnt.sty", "remreset.sty"]
+    for name in template_files:
+        assert sha(PAPER / name) == sha(ROOT / "paper/template" / name), name
+    input_files = (["manuscript.tex", "captions.tex", "benchmark_values.tex", "references.bib"]
+                   + template_files + [Path(path).name for path in figure_hashes])
+    portability = check_portable_build(input_files)
     result = {
         "artifact": "paper/narrative_maps_2027/manuscript.pdf",
         "abstract_words": abstract_words, "pages": pages, "main_pages": main_pages,
@@ -281,7 +319,8 @@ def build():
             "anonymous_review": True, "main_page_limit": 18, "additional_page_limit": 7,
             "abstract_word_limits": [150, 250], "generative_ai_declaration_required": True},
         "figures": len(figure_hashes), "figure_hashes": figure_hashes,
-        "template_sha256": sha(ROOT / "paper/template/svproc.cls"),
+        "template_sha256": sha(PAPER / "svproc.cls"),
+        "portability": portability,
         "source_sha256": sha(PAPER / "manuscript.tex"),
         "bibliography_sha256": sha(PAPER / "references.bib"),
         "benchmark_values_sha256": sha(PAPER / "benchmark_values.tex"),

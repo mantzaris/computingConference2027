@@ -14,6 +14,17 @@ The manuscript contains no temporary status, editorial instructions, pending-rev
 
 ## Reproduction and inspection
 
+This folder is self-contained for local LaTeX compilation: the seven figure PDFs and the official `svproc.cls`, `aliascnt.sty` and `remreset.sty` are beside `manuscript.tex`. They are byte-for-byte copies of the original publication assets; only the figure paths in the manuscript changed. With a LaTeX distribution containing the `newtx` fonts and the standard packages listed in the preamble, run from this folder:
+
+```sh
+pdflatex manuscript.tex
+bibtex manuscript
+pdflatex manuscript.tex
+pdflatex manuscript.tex
+```
+
+The full repository audit below additionally compiles an isolated copy of these fourteen source/asset files with project search paths removed, checks that no other repository input is read, and compares its rendered text with the normal build. Its portability record includes hashes of all fourteen files. All 20 pages also render identically to the pre-portability PDF at 120 dpi, and extracted text is identical. No source content, equations, captions or figure artwork changed for this portability update.
+
 From `GoT-war/`:
 
 ```sh

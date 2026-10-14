@@ -47,10 +47,32 @@
     "figures/publication/got/astapor_overview.pdf": "979f2a6978eeabfe4535dd2ad75fa562d2e5b47b80fd52dbfa1d15184816b0bb"
   },
   "template_sha256": "ddfc1f23edfbb51f13bb6a6e427b63c41cc9a965f08a3bc65e83c81ee9ae9560",
-  "source_sha256": "9d480a490577dbbd33d2524392491deee6628d5185637e822f0add8c5acaa3d0",
+  "portability": {
+    "isolated_compilation": true,
+    "rendered_text_matches": true,
+    "project_inputs_self_contained": true,
+    "input_hashes": {
+      "manuscript.tex": "f3780ec23be1011a16acee6756a46a84032754958d7b122a303ab19b8f16ef08",
+      "captions.tex": "99fe609f4005f560d5cce919372f5f8e5e3fde9c0dec7d3e03413f1ea6e1aad4",
+      "benchmark_values.tex": "7f914eca5689d2f86aeaa1bbd7a289327d71ec562ab67a85fdb0b69328cfd00e",
+      "references.bib": "5dd87b179b26277caa0d52cd5665a0fdc0ff0caa6dfc73fd061b1e311292de72",
+      "svproc.cls": "ddfc1f23edfbb51f13bb6a6e427b63c41cc9a965f08a3bc65e83c81ee9ae9560",
+      "aliascnt.sty": "8d17979fd3ca18f4ac7a379d039f47bf63ffe0409d19c5399d6f3611ed50f9d5",
+      "remreset.sty": "d8b2679ec5c20723a4766690cd46b6bc0ffd20a6555205cefc1521ecb65794a4",
+      "humpty.pdf": "00f6691dc6d9963cf79c3f73d2e71ae1cb773e58d9901073176693a08e69d138",
+      "wolf.pdf": "4d0c05de55bb496262a4dadb3257030da75d1c2448f575a26645f15baf7bb6f0",
+      "crow.pdf": "8cf8e557b04dc3864534e654ca09ed7bd7d738d77cec4a27435d1e61fb2ab9e2",
+      "blackwater_mechanism.pdf": "2da1696f4c8c08df3c4161c52a8dc57a3d5cd8e83fe4b9b2e684b1c3a43afe9b",
+      "red_wedding_mechanism.pdf": "788d74f631dd51bcec2bda436d0ce756529916c1d96f5204754cf613d51d023c",
+      "bolton_mechanism_interventions.pdf": "2561dc6fb1d1cd28f6041115a75c0afa6d7dfa46dba3d1663173008521842287",
+      "astapor_overview.pdf": "979f2a6978eeabfe4535dd2ad75fa562d2e5b47b80fd52dbfa1d15184816b0bb"
+    },
+    "system_dependencies": "A LaTeX distribution with pdfLaTeX, BibTeX and the standard packages named in manuscript.tex, including newtx."
+  },
+  "source_sha256": "f3780ec23be1011a16acee6756a46a84032754958d7b122a303ab19b8f16ef08",
   "bibliography_sha256": "5dd87b179b26277caa0d52cd5665a0fdc0ff0caa6dfc73fd061b1e311292de72",
   "benchmark_values_sha256": "7f914eca5689d2f86aeaa1bbd7a289327d71ec562ab67a85fdb0b69328cfd00e",
-  "pdf_sha256": "bea36e3b4c4a95f28e3a53e1648c5da4c6b98d83eb48517b4a2b8acfd5759798",
+  "pdf_sha256": "cc4ea237a69cb125b1c4b755ebf36733ca4cdcd1d5f286b0f10b00cf3e9aac15",
   "pdf_bytes": 387845,
   "checks": {
     "abstract_150_to_250_words": true,
