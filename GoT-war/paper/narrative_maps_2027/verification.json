@@ -1,6 +1,6 @@
 {
   "artifact": "paper/narrative_maps_2027/manuscript.pdf",
-  "abstract_words": 204,
+  "abstract_words": 211,
   "pages": 20,
   "main_pages": 15,
   "references_appendix_pages": 5,
@@ -52,7 +52,7 @@
     "rendered_text_matches": true,
     "project_inputs_self_contained": true,
     "input_hashes": {
-      "manuscript.tex": "f3780ec23be1011a16acee6756a46a84032754958d7b122a303ab19b8f16ef08",
+      "manuscript.tex": "1958691315adb1405925d6a88f311301505691259c1b5f380b441f112b893eb5",
       "captions.tex": "99fe609f4005f560d5cce919372f5f8e5e3fde9c0dec7d3e03413f1ea6e1aad4",
       "benchmark_values.tex": "7f914eca5689d2f86aeaa1bbd7a289327d71ec562ab67a85fdb0b69328cfd00e",
       "references.bib": "5dd87b179b26277caa0d52cd5665a0fdc0ff0caa6dfc73fd061b1e311292de72",
@@ -69,11 +69,11 @@
     },
     "system_dependencies": "A LaTeX distribution with pdfLaTeX, BibTeX and the standard packages named in manuscript.tex, including newtx."
   },
-  "source_sha256": "f3780ec23be1011a16acee6756a46a84032754958d7b122a303ab19b8f16ef08",
+  "source_sha256": "1958691315adb1405925d6a88f311301505691259c1b5f380b441f112b893eb5",
   "bibliography_sha256": "5dd87b179b26277caa0d52cd5665a0fdc0ff0caa6dfc73fd061b1e311292de72",
   "benchmark_values_sha256": "7f914eca5689d2f86aeaa1bbd7a289327d71ec562ab67a85fdb0b69328cfd00e",
-  "pdf_sha256": "cc4ea237a69cb125b1c4b755ebf36733ca4cdcd1d5f286b0f10b00cf3e9aac15",
-  "pdf_bytes": 387845,
+  "pdf_sha256": "571df8fbca36d4fa052c903363c86d18c5cb74cbb3a368f86f2a92bf1cb44e5e",
+  "pdf_bytes": 388476,
   "checks": {
     "abstract_150_to_250_words": true,
     "main_at_most_18_pages": true,
