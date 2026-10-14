@@ -1,4 +1,12 @@
-# Latest addition: complete narrative-maps conference draft (2026-10-13)
+# Latest addition: publication manuscript revision (2026-10-14)
+
+The [anonymous paper](../paper/narrative_maps_2027/manuscript.pdf) revises reviewed commit `955023a` into a finished manuscript: 15 main pages plus five reference/appendix pages, a 204-word abstract and seven unchanged publication figures. The contribution is stated concretely, the documented Blackwater construction trace links actual proposals and passages to equations and execution, and a new benchmark table reports the original model-level results and failure denominator. Partial-family uncertainty is explicitly distinguished from incomplete encoding and genuine factual errors. Temporary manuscript wording is removed; the single AI declaration states assistance and author responsibility without claiming completed independent review.
+
+Reproduce with `python3 scripts/build_narrative_paper.py`. The build derives the table from unrounded archived estimates, recomputes the comparison from SCM-level scores, replays existing queries, checks source locations when the private corpus is present, and verifies equations, figure hashes, fonts, anonymity, captions and conference limits. See [verification](../paper/narrative_maps_2027/verification.json) and the [editorial note](../paper/narrative_maps_2027/EDITORIAL.md). All final pages were inspected at publication size. No new inference or experiment, push or submission was performed. Original results, review packets, bibliography and figure files remain unchanged; independent researcher adjudication remains pending in its historical records.
+
+---
+
+# Preserved addition: complete narrative-maps conference draft (2026-10-13)
 
 Read [the anonymous Computing Conference 2027 manuscript](../paper/narrative_maps_2027/manuscript.pdf), [LaTeX source](../paper/narrative_maps_2027/manuscript.tex), and [internal editorial note](../paper/narrative_maps_2027/EDITORIAL.md). The paper leads with the Crow reference example, develops six television cases through four detailed application figures, and puts Humpty, Wolf and the calibrated generation assessment in appendices. It uses the actual `svproc` class and unchanged 122 mm publication figures, with short new captions. The earlier explicit-rule benchmark is a separate supporting execution result. No previous experiment, figure, reassessment or manuscript was modified.
 

@@ -1,8 +1,8 @@
 {
   "artifact": "paper/narrative_maps_2027/manuscript.pdf",
-  "abstract_words": 207,
-  "pages": 19,
-  "main_pages": 14,
+  "abstract_words": 204,
+  "pages": 20,
+  "main_pages": 15,
   "references_appendix_pages": 5,
   "text_width_mm": 122,
   "caption_words": {
@@ -15,6 +15,27 @@
     "WolfCaption": 19
   },
   "references": 9,
+  "rendered_caption_lines": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "conference_requirements_checked": {
+    "date": "2026-10-14",
+    "url": "https://saiconference.com/Computing/CallforPapers",
+    "anonymous_review": true,
+    "main_page_limit": 18,
+    "additional_page_limit": 7,
+    "abstract_word_limits": [
+      150,
+      250
+    ],
+    "generative_ai_declaration_required": true
+  },
   "figures": 7,
   "figure_hashes": {
     "figures/publication/simple_stories/humpty.pdf": "00f6691dc6d9963cf79c3f73d2e71ae1cb773e58d9901073176693a08e69d138",
@@ -26,10 +47,11 @@
     "figures/publication/got/astapor_overview.pdf": "979f2a6978eeabfe4535dd2ad75fa562d2e5b47b80fd52dbfa1d15184816b0bb"
   },
   "template_sha256": "ddfc1f23edfbb51f13bb6a6e427b63c41cc9a965f08a3bc65e83c81ee9ae9560",
-  "source_sha256": "5e43eca30db17b4f3896ed1d01bc93dcbdcc753ba248cc6748fc05d031f19fdd",
+  "source_sha256": "9d480a490577dbbd33d2524392491deee6628d5185637e822f0add8c5acaa3d0",
   "bibliography_sha256": "5dd87b179b26277caa0d52cd5665a0fdc0ff0caa6dfc73fd061b1e311292de72",
-  "pdf_sha256": "7c0b9fafe94bef41a03ad3d79593bac68ccc03709b106f79f13e7305a188ad42",
-  "pdf_bytes": 383287,
+  "benchmark_values_sha256": "7f914eca5689d2f86aeaa1bbd7a289327d71ec562ab67a85fdb0b69328cfd00e",
+  "pdf_sha256": "bea36e3b4c4a95f28e3a53e1648c5da4c6b98d83eb48517b4a2b8acfd5759798",
+  "pdf_bytes": 387845,
   "checks": {
     "abstract_150_to_250_words": true,
     "main_at_most_18_pages": true,
@@ -38,15 +60,21 @@
     "no_unresolved_references": true,
     "no_overfull_boxes": true,
     "captions_15_to_30_words": true,
+    "seven_figure_captions_at_most_two_lines": true,
     "all_pdf_fonts_embedded": true,
     "author_field_empty": true,
     "no_identifying_project_strings": true,
-    "actual_template_width": true
+    "actual_template_width": true,
+    "no_editorial_status_language": true,
+    "plain_manuscript_punctuation": true,
+    "one_ai_declaration": true
   },
   "retained_science": {
     "artifact_hashes": {
       "results/v4/reproduction.json.xz": "9ddce167c6463adc8e23d5e5e33e148801387f46813779305c452478251bbb34",
       "results/v2/test_summary.json": "03036b8f44c63d0d6c86ce208b4e0b2001079ffa5f8aacbd024005f521ad7a9e",
+      "results/v2/test_scm_scores.csv": "7afd88c7d9ce8bd68ca920c1a935c0526401fec0281f8b440579afd98c7b895b",
+      "configs/v2_frozen_protocol.json": "5153f3aa5512ade4bec4bebc1937281ae1e06c612ad9299c97730287ddc35593",
       "experiments/simple_stories/frozen.json": "12d1e7c00fd59dd570d94edf83d7b707c3975678f5b30367c4c657152859b302",
       "experiments/simple_stories/records.json.xz": "37dad65578eeb7b80a4ed847faf660ad73b47023a3bb810f440040cec6a777a8",
       "experiments/simple_stories/reassessment.json": "42a1fb3df734a8645e01f1b1a892c080afc6f5feb8023904020ad04c85fdf2b8"
@@ -65,10 +93,75 @@
       "cases": 6,
       "queries": 18,
       "scenario_queries": 36,
-      "source_locations": 0,
+      "source_locations": 74,
       "formal_claims": 36
     },
     "manuscript_equations_match_archives": true,
+    "blackwater_construction_trace": {
+      "proposal_records": [
+        {
+          "record": "runs/application_v4_20261013/qwen/blackwater/pass_00.json",
+          "content_sha256": "c62d1d5f6d0acdae112bcfa2d7d714e4eeabae5de3e8006f4ae9a1c08b3eb696",
+          "raw_proposal_inspected": true
+        },
+        {
+          "record": "runs/application_v4_20261013/qwen/blackwater/pass_01.json",
+          "content_sha256": "244363a7d81fd324a3dc9269710d5ae5a1fb9cdaad139dc13741dcb3e06a014b",
+          "raw_proposal_inspected": true
+        }
+      ],
+      "intervention_results": [
+        {
+          "scenario": "holding",
+          "do": {
+            "I": 0
+          },
+          "fleet_damage": [
+            0
+          ],
+          "assault_repelled": [
+            1
+          ]
+        },
+        {
+          "scenario": "substitution",
+          "do": {
+            "I": 0
+          },
+          "fleet_damage": [
+            0
+          ],
+          "assault_repelled": [
+            1
+          ]
+        }
+      ],
+      "revision_history": [
+        {
+          "stage": "source-to-description",
+          "operation": "distinguish",
+          "reason": "Separate signal giver Tyrion from archer Bronn; reject early retreat and total-fleet-loss claims.",
+          "passages": [
+            "s02e09_S15",
+            "s02e09_S21",
+            "s02e09_S35",
+            "s02e09_S56"
+          ]
+        },
+        {
+          "stage": "mechanism construction",
+          "operation": "mediator",
+          "reason": "Separate supply, deployment, signal, ignition and damage instead of drawing wildfire directly to victory.",
+          "passages": [
+            "s02e05_S15",
+            "s02e09_S14",
+            "s02e09_S15",
+            "s02e09_S16",
+            "s02e09_S19"
+          ]
+        }
+      ]
+    },
     "worked_interventions_reproduced": {
       "crow": [
         [
@@ -160,8 +253,18 @@
       "lower": 9.6,
       "upper": 32.8
     },
+    "benchmark_unrounded_difference": 0.21037345914796896,
+    "benchmark_evaluation_units": {
+      "identified_scms": 72,
+      "changing_scms": 40
+    },
+    "benchmark_question_counts": {
+      "identified_changed": 129,
+      "identified_unchanged": 729,
+      "underidentified": 222
+    },
     "failed_benchmark_syntheses": 16,
-    "scope": "Arithmetic, expression transcription and execution checks; semantic judgments still require substantive review."
+    "scope": "Arithmetic, expression transcription, passage identity and execution checks; these do not establish independent semantic adjudication."
   },
   "inspection_note": "Automated checks complement the page-by-page editorial inspection documented in EDITORIAL.md."
 }
