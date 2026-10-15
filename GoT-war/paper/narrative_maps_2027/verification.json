@@ -60,7 +60,7 @@
     "rendered_text_matches": true,
     "project_inputs_self_contained": true,
     "input_hashes": {
-      "manuscript.tex": "d04aa8847c121315c0548803a1a79e2753d9a061e695ebfc610da6908b01c116",
+      "manuscript.tex": "8e0e7370444af82b41a8c3bb28075c1da18389793f1fa7c9097099c7171aaafd",
       "captions.tex": "99fe609f4005f560d5cce919372f5f8e5e3fde9c0dec7d3e03413f1ea6e1aad4",
       "benchmark_values.tex": "7f914eca5689d2f86aeaa1bbd7a289327d71ec562ab67a85fdb0b69328cfd00e",
       "references.bib": "82d75235c6ecb0ddc345f13ad145e307b5826d450f2610df6fd44acf2a73a19d",
@@ -77,11 +77,11 @@
     },
     "system_dependencies": "A LaTeX distribution with pdfLaTeX, BibTeX and the standard packages named in manuscript.tex, including newtx."
   },
-  "source_sha256": "d04aa8847c121315c0548803a1a79e2753d9a061e695ebfc610da6908b01c116",
+  "source_sha256": "8e0e7370444af82b41a8c3bb28075c1da18389793f1fa7c9097099c7171aaafd",
   "bibliography_sha256": "82d75235c6ecb0ddc345f13ad145e307b5826d450f2610df6fd44acf2a73a19d",
   "benchmark_values_sha256": "7f914eca5689d2f86aeaa1bbd7a289327d71ec562ab67a85fdb0b69328cfd00e",
-  "pdf_sha256": "03b3656ac5a8cc6c8f9875189d0c1f9438ca060f64871bc57838b84bcb247054",
-  "pdf_bytes": 404115,
+  "pdf_sha256": "f1dc214458ee8e185d35c4162571121a375ea8ebfac146a03410cba96c4a71f8",
+  "pdf_bytes": 404140,
   "checks": {
     "abstract_150_to_250_words": true,
     "main_at_most_18_pages": true,
