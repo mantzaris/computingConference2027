@@ -1,9 +1,9 @@
 {
   "artifact": "paper/narrative_maps_2027/manuscript.pdf",
   "abstract_words": 211,
-  "pages": 20,
-  "main_pages": 15,
-  "references_appendix_pages": 5,
+  "pages": 22,
+  "main_pages": 16,
+  "references_appendix_pages": 6,
   "text_width_mm": 122,
   "caption_words": {
     "CrowCaption": 18,
@@ -14,7 +14,15 @@
     "HumptyCaption": 19,
     "WolfCaption": 19
   },
-  "references": 9,
+  "references": 29,
+  "bibliography_audit": {
+    "entries": 29,
+    "all_entries_cited": true,
+    "unique_keys_titles_and_dois": true,
+    "minimum_25_met": true,
+    "primary_source_audit": "paper/narrative_maps_2027/EDITORIAL.md",
+    "scope": "Identity and coverage checks; publication details and claim support were checked against primary records and full texts in the editorial audit."
+  },
   "rendered_caption_lines": [
     2,
     2,
@@ -52,10 +60,10 @@
     "rendered_text_matches": true,
     "project_inputs_self_contained": true,
     "input_hashes": {
-      "manuscript.tex": "1958691315adb1405925d6a88f311301505691259c1b5f380b441f112b893eb5",
+      "manuscript.tex": "d04aa8847c121315c0548803a1a79e2753d9a061e695ebfc610da6908b01c116",
       "captions.tex": "99fe609f4005f560d5cce919372f5f8e5e3fde9c0dec7d3e03413f1ea6e1aad4",
       "benchmark_values.tex": "7f914eca5689d2f86aeaa1bbd7a289327d71ec562ab67a85fdb0b69328cfd00e",
-      "references.bib": "5dd87b179b26277caa0d52cd5665a0fdc0ff0caa6dfc73fd061b1e311292de72",
+      "references.bib": "82d75235c6ecb0ddc345f13ad145e307b5826d450f2610df6fd44acf2a73a19d",
       "svproc.cls": "ddfc1f23edfbb51f13bb6a6e427b63c41cc9a965f08a3bc65e83c81ee9ae9560",
       "aliascnt.sty": "8d17979fd3ca18f4ac7a379d039f47bf63ffe0409d19c5399d6f3611ed50f9d5",
       "remreset.sty": "d8b2679ec5c20723a4766690cd46b6bc0ffd20a6555205cefc1521ecb65794a4",
@@ -69,11 +77,11 @@
     },
     "system_dependencies": "A LaTeX distribution with pdfLaTeX, BibTeX and the standard packages named in manuscript.tex, including newtx."
   },
-  "source_sha256": "1958691315adb1405925d6a88f311301505691259c1b5f380b441f112b893eb5",
-  "bibliography_sha256": "5dd87b179b26277caa0d52cd5665a0fdc0ff0caa6dfc73fd061b1e311292de72",
+  "source_sha256": "d04aa8847c121315c0548803a1a79e2753d9a061e695ebfc610da6908b01c116",
+  "bibliography_sha256": "82d75235c6ecb0ddc345f13ad145e307b5826d450f2610df6fd44acf2a73a19d",
   "benchmark_values_sha256": "7f914eca5689d2f86aeaa1bbd7a289327d71ec562ab67a85fdb0b69328cfd00e",
-  "pdf_sha256": "571df8fbca36d4fa052c903363c86d18c5cb74cbb3a368f86f2a92bf1cb44e5e",
-  "pdf_bytes": 388476,
+  "pdf_sha256": "03b3656ac5a8cc6c8f9875189d0c1f9438ca060f64871bc57838b84bcb247054",
+  "pdf_bytes": 404115,
   "checks": {
     "abstract_150_to_250_words": true,
     "main_at_most_18_pages": true,

@@ -36,6 +36,42 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def check_bibliography(cited_keys):
+    """Check entry identity and actual citation coverage, not bibliographic truth."""
+    source = (PAPER / "references.bib").read_text()
+    entries = re.split(r"(?m)^@", source)[1:]
+    keys, titles, dois = [], [], []
+
+    def field(entry, name):
+        match = re.search(r"\b" + name + r"\s*=\s*\{", entry, re.I)
+        if not match:
+            return ""
+        start, depth, end = match.end(), 1, match.end()
+        while depth and end < len(entry):
+            depth += (entry[end] == "{") - (entry[end] == "}")
+            end += 1
+        assert depth == 0, ("Unbalanced bibliography field", name)
+        return entry[start:end-1]
+
+    for entry in entries:
+        keys.append(re.match(r"\w+\s*\{\s*([^,\s]+)\s*,", entry)[1])
+        title = re.sub(r"[^a-z0-9]", "", field(entry, "title").lower())
+        assert title, ("Missing bibliography title", keys[-1])
+        titles.append(title)
+        doi = field(entry, "doi").strip().lower()
+        if doi:
+            dois.append(doi)
+    assert len(keys) == len(set(keys)), "Duplicate citation key"
+    assert len(titles) == len(set(titles)), "Duplicate work title"
+    assert len(dois) == len(set(dois)), "Duplicate work DOI"
+    assert set(keys) == cited_keys, ("Bibliography/citation mismatch", set(keys) ^ cited_keys)
+    assert len(keys) >= 25, "The manuscript requires at least 25 distinct references"
+    return {"entries": len(keys), "all_entries_cited": True,
+            "unique_keys_titles_and_dois": True, "minimum_25_met": True,
+            "primary_source_audit": "paper/narrative_maps_2027/EDITORIAL.md",
+            "scope": "Identity and coverage checks; publication details and claim support were checked against primary records and full texts in the editorial audit."}
+
+
 def check_portable_build(input_files):
     """Compile only the manuscript folder's inputs, without project search paths."""
     env = os.environ.copy()
@@ -275,6 +311,7 @@ def build():
     main_pages = int(re.search(r"\\newlabel\{sec:main-end\}\{\{[^}]*\}\{(\d+)\}", aux)[1])
     citation_keys = set(re.findall(r"\\bibcite\{([^}]+)\}", aux))
     cited_keys = set(k for match in re.findall(r"\\citation\{([^}]+)\}", aux) for k in match.split(","))
+    bibliography = check_bibliography(cited_keys)
     checks = {
         "abstract_150_to_250_words": 150 <= abstract_words <= 250,
         "main_at_most_18_pages": main_pages <= 18,
@@ -313,6 +350,7 @@ def build():
         "abstract_words": abstract_words, "pages": pages, "main_pages": main_pages,
         "references_appendix_pages": pages-main_pages, "text_width_mm": 122,
         "caption_words": caption_words, "references": len(citation_keys),
+        "bibliography_audit": bibliography,
         "rendered_caption_lines": caption_lines,
         "conference_requirements_checked": {"date": "2026-10-14",
             "url": "https://saiconference.com/Computing/CallforPapers",

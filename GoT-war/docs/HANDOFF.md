@@ -1,4 +1,8 @@
-# Latest addition: publication manuscript revision (2026-10-14)
+# Latest addition: manuscript literature coverage (2026-10-14)
+
+The [current paper](../paper/narrative_maps_2027/manuscript.pdf) now has 29 distinct cited works, adding 20 research references while preserving the original nine entries and the author's current manuscript edits. It contains 22 pages (16 main, two references, four appendices) and the unchanged 211-word abstract. The expanded argument covers narrative comprehension, causal reasoning, language-to-program methods, human-facing explanation, source grounding and the actual Qwen3 model family. [EDITORIAL.md](../paper/narrative_maps_2027/EDITORIAL.md) records primary-source verification, relevant full-text sections and citation locations for every addition. The build checks bibliography identity and citation coverage as well as the existing scientific and publication checks. All pages were visually inspected; experimental results, equations, seven figures and captions are unchanged. No inference was run. The previous revision notes below are historical.
+
+# Previous addition: publication manuscript revision (2026-10-14)
 
 The manuscript folder now also contains its seven figure PDFs and the official class/support files. It compiles locally with `pdflatex manuscript.tex`, `bibtex manuscript`, and two further pdfLaTeX passes, without sibling repository directories. The full build verifies all copies against the originals and repeats compilation in an isolated folder; see the editorial note for package requirements. This portability change does not alter scientific content or figure artwork.
 
