@@ -5,7 +5,7 @@ The current compiled manuscripts are tracked in this repository:
 | Project | Manuscript | PDF | Source |
 | --- | --- | --- | --- |
 | GoT-war | Explaining Narrative Events with Generative AI and Structural Causal Models | [Read PDF](GoT-war/paper/narrative_maps_2027/manuscript.pdf) | [LaTeX](GoT-war/paper/narrative_maps_2027/manuscript.tex) |
-| sem-update | Graph Repair and Intervention Prediction with Generative Structural Equation Models | [Read PDF](sem-update/manuscript/draft.pdf) | [LaTeX](sem-update/manuscript/main.tex) |
+| sem-update | Graph Repair and Intervention Prediction with Generative Structural Equation Models | [Read PDF](sem-update/main.pdf) | [LaTeX](sem-update/manuscript/main.tex) |
 
 Both PDFs are anonymous review versions. Earlier GoT-war manuscripts remain in
 `GoT-war/paper/` and `GoT-war/paper/v2/`; the current paper is in

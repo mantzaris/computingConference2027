@@ -15,7 +15,7 @@ HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parent
 ART = PROJECT / '.artifacts/manuscript_draft'
 BUILD = HERE / 'build'
-PDF = HERE / 'draft.pdf'
+PDF = HERE / 'main.pdf'
 SOURCES, CLAIMS = {}, []
 
 

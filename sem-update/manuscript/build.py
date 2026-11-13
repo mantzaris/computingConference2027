@@ -1,4 +1,4 @@
-"""Compile the draft using bundled assets, without experimental work."""
+"""Compile the full manuscript using bundled assets, without experimental work."""
 from pathlib import Path
 import argparse
 import hashlib
@@ -10,7 +10,7 @@ import sys
 HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parent
 BUILD = HERE / 'build'
-PDF = HERE / 'draft.pdf'
+PDF = HERE / 'main.pdf'
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -46,7 +46,9 @@ def main():
             raise SystemExit(result.returncode)
     subprocess.run(['pdftotext', '-layout', str(BUILD / 'main.pdf'),
                     str(BUILD / 'manuscript.txt')], check=True)
-    PDF.write_bytes((BUILD / 'main.pdf').read_bytes())
+    data = (BUILD / 'main.pdf').read_bytes()
+    PDF.write_bytes(data)
+    (PROJECT / 'main.pdf').write_bytes(data)
     print(PDF)
 
 if __name__ == '__main__':

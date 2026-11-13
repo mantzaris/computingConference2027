@@ -11,7 +11,8 @@ launched by its build or validation commands. Human scientific review is pending
 - All eight figure PDFs: [figures/](figures/).
 - Official conference template: `svproc.cls`, `aliascnt.sty` and `remreset.sty`,
   alongside `main.tex`. File origins and checksums are in [assets.json](assets.json).
-- Compiled draft: [draft.pdf](draft.pdf), beside `main.tex`.
+- Full compiled paper: [main.pdf](main.pdf), beside `main.tex`, with an identical
+  [copy directly in sem-update/](../main.pdf).
 - Author review: [REVIEW_MEMO.md](REVIEW_MEMO.md).
 - Implementation and claims: [EVIDENCE_MAP.md](EVIDENCE_MAP.md).
 - Evidence mapping: [claim_evidence.json](../.artifacts/manuscript_draft/claim_evidence.json).
@@ -28,9 +29,10 @@ python3 build.py
 
 `build.py` checks the bundled asset checksums and runs XeLaTeX three times. It needs
 Python's standard library, `xelatex` and `pdftotext`. It reads no external
-manuscript assets, experimental results or template archive. It writes `draft.pdf`
-beside `main.tex`. Intermediate files, logs and caches stay in the local `build/`
-directory and are ignored by Git. `draft.pdf` is tracked so fresh clones include
+manuscript assets, experimental results or template archive. It writes `main.pdf`
+beside `main.tex` and an identical copy to `sem-update/main.pdf` so the full paper
+is visible in the project directory. Intermediate files, logs and caches stay in
+the local `build/` directory and are ignored by Git. Both PDFs are tracked so fresh clones include
 the compiled manuscript. From the repository root, the equivalent
 command is `python3 sem-update/manuscript/build.py`.
 
@@ -71,7 +73,7 @@ storage. They are not required to compile the portable manuscript:
 python3 sem-update/manuscript/build.py --refresh-figures
 python3 sem-update/manuscript/validate.py
 mkdir -p sem-update/.artifacts/manuscript_draft/pages
-pdftoppm -r 140 -png sem-update/manuscript/draft.pdf sem-update/.artifacts/manuscript_draft/pages/page
+pdftoppm -r 140 -png sem-update/manuscript/main.pdf sem-update/.artifacts/manuscript_draft/pages/page
 ```
 
 Refreshing recomposes five figures and three table bodies from compact results,
@@ -108,7 +110,9 @@ The manuscript source, bundled figures and template were committed on 11 October
 2026 in `bfbe488`. The compiled PDF was originally ignored and was therefore
 absent from fresh clones. At the user's request on 13 November 2026, `draft.pdf`
 was rebuilt from that source and selected for version control alongside it.
-Commit an updated `draft.pdf` whenever publishing manuscript source changes.
+It is now named `main.pdf`, with an identical copy directly in `sem-update/`,
+at the user's request. Commit both updated PDFs whenever publishing manuscript
+source changes; `build.py` keeps the two copies identical.
 
 The original draft's cumulative storage-budget and validation records referred
 to ignored local files under `../.artifacts/manuscript_draft/`; those records

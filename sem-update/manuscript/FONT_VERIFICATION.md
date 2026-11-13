@@ -1,7 +1,8 @@
 # Times New Roman verification
 
 Verified on 11 October 2026. The updated source is `main.tex` and the compiled
-paper is `draft.pdf` in this directory. Run `python3 build.py` here to compile
+paper was originally named `draft.pdf` and is now `main.pdf` in this directory.
+Run `python3 build.py` here to compile
 with XeLaTeX, or run `xelatex -halt-on-error main.tex` three times for `main.pdf`.
 
 The existing system installation provides genuine Times New Roman version 2.82
@@ -18,7 +19,7 @@ and sentence-space increment of approximately 0.111 em are retained. Measured
 body and small-text baselines remain 12 pt and 11 pt. The official class files,
 text dimensions, margins, font sizes and document spacing commands are unchanged.
 
-`pdffonts draft.pdf` confirms embedded Times New Roman regular, bold and italic
+`pdffonts main.pdf` confirms embedded Times New Roman regular, bold and italic
 faces. The manuscript does not use bold italic text; a separate specimen using
 the same preamble confirms that the genuine bold italic face also embeds.
 All fonts in the paper are embedded.
