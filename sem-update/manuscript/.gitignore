@@ -1,6 +1,5 @@
-# Local compiler output and caches.
+# Track draft.pdf; keep compiler intermediates and duplicate output local.
 /build/
-/draft.pdf
 # Output from direct compilation of the portable source folder.
 /main.aux
 /main.log

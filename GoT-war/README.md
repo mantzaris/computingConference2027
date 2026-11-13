@@ -1,5 +1,7 @@
 # GoT-war
 
+**Current conference paper:** [Explaining Narrative Events with Generative AI and Structural Causal Models (PDF)](paper/narrative_maps_2027/manuscript.pdf), 22 pages. The compiled PDF and [LaTeX source](paper/narrative_maps_2027/manuscript.tex) are tracked in Git. See the [manuscript notes](paper/narrative_maps_2027/EDITORIAL.md) for build and verification details. The version 1–3 summaries below describe earlier project stages.
+
 **Version 3 prototype implemented; live development comparison blocked by CUDA/UVM failure.** The new method retains substantive edge and joint mechanisms, source provenance, partial function families, targeted revisions, and separate source/prose/execution checks. Offline contract checks pass, but no v3 inference ran and no new natural-narrative success is claimed. Start with the [v3 results and limitations](results/v3/RESULTS.md), [method and diagnosis](docs/V3_METHOD.md), [mechanism catalogue](results/v3/CATALOGUE.md), and [pending researcher review](results/v3/REVIEW_PACKET.md). The [beacon](figures/v3/beacon.svg) and [partial ferry](figures/v3/ferry.svg) diagrams are explicitly authored software examples.
 
 ---

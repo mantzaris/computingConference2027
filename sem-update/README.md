@@ -1,5 +1,7 @@
 # Intervention-guided repair of generative SCMs
 
+**Current conference paper:** [Graph Repair and Intervention Prediction with Generative Structural Equation Models (PDF)](manuscript/draft.pdf), 24 pages. The compiled PDF and [LaTeX source](manuscript/main.tex) are tracked in Git. See the [manuscript build instructions](manuscript/README.md).
+
 Execution workspace for Computing Conference 2027. Everything maintained here
 stays under `sem-update/`, on `main`. The user handles pushing. No submission or
 registration is authorized. See [the complete plan](RESEARCH_PLAN.txt),

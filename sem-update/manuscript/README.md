@@ -1,4 +1,4 @@
-# Anonymous first manuscript draft
+# Anonymous conference manuscript
 
 The paper synthesizes the completed experimental evidence. No experiments are
 launched by its build or validation commands. Human scientific review is pending.
@@ -30,7 +30,8 @@ python3 build.py
 Python's standard library, `xelatex` and `pdftotext`. It reads no external
 manuscript assets, experimental results or template archive. It writes `draft.pdf`
 beside `main.tex`. Intermediate files, logs and caches stay in the local `build/`
-directory. Both are ignored by Git. From the repository root, the equivalent
+directory and are ignored by Git. `draft.pdf` is tracked so fresh clones include
+the compiled manuscript. From the repository root, the equivalent
 command is `python3 sem-update/manuscript/build.py`.
 
 The manuscript folder is also portable. Copy `main.tex`, `figures/`, `svproc.cls`,
@@ -103,12 +104,14 @@ The paper preserves adverse findings and distinguishes the executed DCDI
 adaptation from converged native DCDI. Historical experimental reports and
 results are unchanged.
 
-Nothing was staged, committed or pushed. The existing cumulative unique-blob
-usage is 26,206,707 bytes against 26,214,400 bytes, leaving 7,693 bytes. Even the
-manuscript text and bibliography exceed that remainder. This draft intentionally
-remains available as untracked source and ignored build artifacts. It requires a
-separate repository-budget decision before any future commit. No evidence was
-deleted and no history was rewritten. Exact incremental sizes are in
-`../.artifacts/manuscript_draft/source_sizes.json`. The final PDF hash is in
-`validation.json`; the independent Git audit is in
-`.artifacts/manuscript_draft/repository_check.json`.
+The manuscript source, bundled figures and template were committed on 11 October
+2026 in `bfbe488`. The compiled PDF was originally ignored and was therefore
+absent from fresh clones. At the user's request on 13 November 2026, `draft.pdf`
+was rebuilt from that source and selected for version control alongside it.
+Commit an updated `draft.pdf` whenever publishing manuscript source changes.
+
+The original draft's cumulative storage-budget and validation records referred
+to ignored local files under `../.artifacts/manuscript_draft/`; those records
+are not included in a clone. Compiler intermediates, historical local copies
+and caches remain ignored. No experimental evidence is removed by retaining
+the compiled paper.
