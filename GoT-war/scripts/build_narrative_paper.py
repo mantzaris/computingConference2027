@@ -1,6 +1,7 @@
 """Build and check the anonymous Computing Conference 2027 manuscript.
 
 Run from GoT-war: python3 scripts/build_narrative_paper.py
+Final PDF: paper/final/GoT-war_final_paper.pdf.
 Uses retained svproc and publication figures. No inference or old-file updates.
 TeX products and page previews stay under .private/narrative_maps_2027/.
 """
@@ -20,7 +21,8 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PAPER = ROOT / "paper/narrative_maps_2027"
+PAPER = ROOT / "paper/final"
+PDF = PAPER / "GoT-war_final_paper.pdf"
 BUILD = ROOT / ".private/narrative_maps_2027"
 
 
@@ -68,7 +70,7 @@ def check_bibliography(cited_keys):
     assert len(keys) >= 25, "The manuscript requires at least 25 distinct references"
     return {"entries": len(keys), "all_entries_cited": True,
             "unique_keys_titles_and_dois": True, "minimum_25_met": True,
-            "primary_source_audit": "paper/narrative_maps_2027/EDITORIAL.md",
+            "primary_source_audit": "paper/final/EDITORIAL.md",
             "scope": "Identity and coverage checks; publication details and claim support were checked against primary records and full texts in the editorial audit."}
 
 
@@ -291,12 +293,12 @@ def build():
     run(["gs", "-q", "-dBATCH", "-dNOPAUSE", "-sDEVICE=pdfwrite",
          "-dCompatibilityLevel=1.5", "-dEmbedAllFonts=true", "-dSubsetFonts=true",
          "-dCompressFonts=true", "-dOmitInfoDate=true", "-dOmitID=true",
-         "-sOutputFile=" + str(PAPER / "manuscript.pdf"), str(BUILD / "manuscript.pdf")])
+         "-sOutputFile=" + str(PDF), str(BUILD / "manuscript.pdf")])
 
-    text = run(["pdftotext", "-layout", str(PAPER / "manuscript.pdf"), "-"])
+    text = run(["pdftotext", "-layout", str(PDF), "-"])
     (BUILD / "manuscript.txt").write_text(text)
-    info = run(["pdfinfo", str(PAPER / "manuscript.pdf")])
-    fonts = run(["pdffonts", str(PAPER / "manuscript.pdf")])
+    info = run(["pdfinfo", str(PDF)])
+    fonts = run(["pdffonts", str(PDF)])
     log = (BUILD / "manuscript.log").read_text()
     aux = (BUILD / "manuscript.aux").read_text()
     source = (PAPER / "manuscript.tex").read_text()
@@ -346,7 +348,7 @@ def build():
                    + template_files + [Path(path).name for path in figure_hashes])
     portability = check_portable_build(input_files)
     result = {
-        "artifact": "paper/narrative_maps_2027/manuscript.pdf",
+        "artifact": str(PDF.relative_to(ROOT)),
         "abstract_words": abstract_words, "pages": pages, "main_pages": main_pages,
         "references_appendix_pages": pages-main_pages, "text_width_mm": 122,
         "caption_words": caption_words, "references": len(citation_keys),
@@ -362,7 +364,7 @@ def build():
         "source_sha256": sha(PAPER / "manuscript.tex"),
         "bibliography_sha256": sha(PAPER / "references.bib"),
         "benchmark_values_sha256": sha(PAPER / "benchmark_values.tex"),
-        "pdf_sha256": sha(PAPER / "manuscript.pdf"), "pdf_bytes": (PAPER / "manuscript.pdf").stat().st_size,
+        "pdf_sha256": sha(PDF), "pdf_bytes": PDF.stat().st_size,
         "checks": checks,
         "retained_science": science,
         "inspection_note": "Automated checks complement the page-by-page editorial inspection documented in EDITORIAL.md.",

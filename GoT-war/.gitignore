@@ -51,6 +51,7 @@ paper/*.fls
 paper/*.fdb_latexmk
 
 # Versioned manuscript build products remain local.
+/paper/final/manuscript.pdf
 paper/**/*.aux
 paper/**/*.log
 paper/**/*.out

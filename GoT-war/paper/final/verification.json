@@ -1,5 +1,5 @@
 {
-  "artifact": "paper/narrative_maps_2027/manuscript.pdf",
+  "artifact": "paper/final/GoT-war_final_paper.pdf",
   "abstract_words": 211,
   "pages": 22,
   "main_pages": 16,
@@ -20,7 +20,7 @@
     "all_entries_cited": true,
     "unique_keys_titles_and_dois": true,
     "minimum_25_met": true,
-    "primary_source_audit": "paper/narrative_maps_2027/EDITORIAL.md",
+    "primary_source_audit": "paper/final/EDITORIAL.md",
     "scope": "Identity and coverage checks; publication details and claim support were checked against primary records and full texts in the editorial audit."
   },
   "rendered_caption_lines": [
@@ -80,7 +80,7 @@
   "source_sha256": "8e0e7370444af82b41a8c3bb28075c1da18389793f1fa7c9097099c7171aaafd",
   "bibliography_sha256": "82d75235c6ecb0ddc345f13ad145e307b5826d450f2610df6fd44acf2a73a19d",
   "benchmark_values_sha256": "7f914eca5689d2f86aeaa1bbd7a289327d71ec562ab67a85fdb0b69328cfd00e",
-  "pdf_sha256": "f1dc214458ee8e185d35c4162571121a375ea8ebfac146a03410cba96c4a71f8",
+  "pdf_sha256": "5e6cbe175b2639460c92f439d93e4b11ecc69866ef3dcdba8ade716aa226b3be",
   "pdf_bytes": 404140,
   "checks": {
     "abstract_150_to_250_words": true,
@@ -123,7 +123,7 @@
       "cases": 6,
       "queries": 18,
       "scenario_queries": 36,
-      "source_locations": 74,
+      "source_locations": 0,
       "formal_claims": 36
     },
     "manuscript_equations_match_archives": true,
@@ -132,12 +132,12 @@
         {
           "record": "runs/application_v4_20261013/qwen/blackwater/pass_00.json",
           "content_sha256": "c62d1d5f6d0acdae112bcfa2d7d714e4eeabae5de3e8006f4ae9a1c08b3eb696",
-          "raw_proposal_inspected": true
+          "raw_proposal_inspected": false
         },
         {
           "record": "runs/application_v4_20261013/qwen/blackwater/pass_01.json",
           "content_sha256": "244363a7d81fd324a3dc9269710d5ae5a1fb9cdaad139dc13741dcb3e06a014b",
-          "raw_proposal_inspected": true
+          "raw_proposal_inspected": false
         }
       ],
       "intervention_results": [

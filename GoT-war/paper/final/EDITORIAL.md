@@ -1,6 +1,6 @@
 # Literature expansion and verification, 14 October 2026
 
-The current [anonymous PDF](manuscript.pdf) contains **29 distinct cited works: 28 research publications and the ScreenScripts source collection**. This revision adds 20 research references to the nine existing entries, which remain byte-for-byte unchanged in [references.bib](references.bib). The starting point was the author's current manuscript at `1f51ab0`, including the author's edits after the earlier revision described below. No experimental results, equations, figure artwork, captions or generation records were changed. No inference was run.
+The current [anonymous PDF](GoT-war_final_paper.pdf) contains **29 distinct cited works: 28 research publications and the ScreenScripts source collection**. This revision adds 20 research references to the nine existing entries, which remain byte-for-byte unchanged in [references.bib](references.bib). The starting point was the author's current manuscript at `1f51ab0`, including the author's edits after the earlier revision described below. No experimental results, equations, figure artwork, captions or generation records were changed. No inference was run.
 
 The finished paper has **22 pages: 16 main-text pages, two reference pages and four appendix pages**, with the author's unchanged **211-word abstract**. Related Work grows from approximately 349 to 618 words, integrating human narrative comprehension, computational event representations, causal reasoning, language-to-program methods, explanation research and source-grounded generation. Additional citations support specific introduction, methodology and discussion claims. Li and Koupaee now have one normal author-led citation each. The text distinguishes relationship extraction, causal discovery from data and execution under specified assumptions; it does not attribute measured reader benefits to these maps or claim implementation of a cited retrieval algorithm.
 
@@ -51,7 +51,7 @@ The following note describes the earlier revision of `955023a` and its portabili
 
 ## Manuscript revision and verification, 14 October 2026
 
-The [anonymous paper](manuscript.pdf) and [editable LaTeX source](manuscript.tex) revise reviewed commit `955023a`. The paper contains 15 main-text pages, one reference page and four appendix pages, with a 204-word abstract. The seven publication figures, their short captions, the bibliography and all experimental records are unchanged. No inference campaign, new experiment, push or submission was performed.
+The [anonymous paper](GoT-war_final_paper.pdf) and [editable LaTeX source](manuscript.tex) revise reviewed commit `955023a`. The paper contains 15 main-text pages, one reference page and four appendix pages, with a 204-word abstract. The seven publication figures, their short captions, the bibliography and all experimental records are unchanged. No inference campaign, new experiment, push or submission was performed.
 
 ## Substantive changes
 
@@ -68,10 +68,10 @@ The manuscript contains no temporary status, editorial instructions, pending-rev
 This folder is self-contained for local LaTeX compilation: the seven figure PDFs and the official `svproc.cls`, `aliascnt.sty` and `remreset.sty` are beside `manuscript.tex`. They are byte-for-byte copies of the original publication assets; only the figure paths in the manuscript changed. With a LaTeX distribution containing the `newtx` fonts and the standard packages listed in the preamble, run from this folder:
 
 ```sh
-pdflatex manuscript.tex
-bibtex manuscript
-pdflatex manuscript.tex
-pdflatex manuscript.tex
+pdflatex -jobname=GoT-war_final_paper manuscript.tex
+bibtex GoT-war_final_paper
+pdflatex -jobname=GoT-war_final_paper manuscript.tex
+pdflatex -jobname=GoT-war_final_paper manuscript.tex
 ```
 
 The full repository audit below additionally compiles an isolated copy of these fourteen source/asset files with project search paths removed, checks that no other repository input is read, and compares its rendered text with the normal build. Its portability record includes hashes of all fourteen files. All 20 pages also render identically to the pre-portability PDF at 120 dpi, and extracted text is identical. No source content, equations, captions or figure artwork changed for this portability update.
